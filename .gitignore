@@ -1,0 +1,34 @@
+# ---------------------------------------------------------------------------
+# Files excluded pending de-identification review -- see DEIDENT_REVIEW.md.
+# The rule: raw questionnaire exports, free-text notes, and anything carrying
+# wallclock timestamps (scan date + subject ID is an indirect identifier)
+# stay out of history until reviewed. Git history is forever; adding a file
+# later is one commit, scrubbing one is a rewrite.
+# ---------------------------------------------------------------------------
+
+# raw questionnaire exports (health screening, free text)
+Data/screener_clean.csv
+Data/postscan_clean.csv
+Data/run_notes.csv
+Data/Data.zip
+
+# derived tables that carry wallclock timestamps
+Data/log_sessions.csv
+Data/log_runs.csv
+Data/log_run_attempts.csv
+Data/log_qc_flags.csv
+Data/physio_blocks.csv
+Data/physio_session_status.csv
+
+# Google Drive sync artefacts
+*.driveupload
+*.drivedownload
+.tmp.drive*
+desktop.ini
+Thumbs.db
+.DS_Store
+
+# R session cruft
+.Rhistory
+.RData
+.Rproj.user/

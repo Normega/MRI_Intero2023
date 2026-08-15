@@ -1,0 +1,30 @@
+onset	duration	trial_type	epoch_index	change_direction	change_amount	salience	n_pacer_cycles	response	accuracy	confidence	arousal	rating_of	valence_run	valence_epoch	n_sub_ratings	sdt_class	stimulus_change_known	resp_measured	resp_n_breaths	resp_coverage	resp_rate_brpm	actual_period_ratio	instructed_period_ratio	adhere_r	belt_grade	adherence_verified	actual_change_physio
+0	4.118614	valence_rating	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	6	n/a	3	n/a	FALSE	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a
+6.124953	16.51728	paced_breathing	1	Faster	0.65	low	9	Faster	1	6	6	n/a	6	n/a	3	hit	TRUE	FALSE	3	0.632	n/a	n/a	n/a	0.334	fail	FALSE	n/a
+22.642233	12.219044	rating	1	n/a	n/a	n/a	n/a	Faster	1	6	6	paced_breathing	6	n/a	3	n/a	FALSE	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a
+34.861277	20.180783	free_breathing	1	n/a	n/a	n/a	n/a	Slower	n/a	6	6	n/a	6	n/a	3	n/a	FALSE	FALSE	5	0.704	n/a	0.5723	n/a	0.334	fail	FALSE	n/a
+55.04206	12.208341	rating	1	n/a	n/a	n/a	n/a	Slower	n/a	6	6	free_breathing	6	n/a	3	n/a	FALSE	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a
+69.257545	16.520319	paced_breathing	2	Faster	0.65	low	9	Faster	1	6	6	n/a	6	n/a	3	hit	TRUE	FALSE	4	0.987	n/a	0.6613	0.715	0.334	fail	FALSE	n/a
+85.777864	12.212618	rating	2	n/a	n/a	n/a	n/a	Faster	1	6	6	paced_breathing	6	n/a	3	n/a	FALSE	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a
+97.990482	20.18749	free_breathing	2	n/a	n/a	n/a	n/a	Slower	n/a	6	6	n/a	6	n/a	3	n/a	FALSE	FALSE	4	0.906	n/a	0.9388	n/a	0.334	fail	FALSE	n/a
+118.177972	12.205961	rating	2	n/a	n/a	n/a	n/a	Slower	n/a	6	6	free_breathing	6	n/a	3	n/a	FALSE	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a
+132.390844	23.523885	paced_breathing	3	Slower	1.35	high	9	No Change	0	5	5	n/a	6	n/a	3	miss	TRUE	FALSE	5	0.978	n/a	1.2397	1.5096	0.334	fail	FALSE	n/a
+155.914729	12.214312	rating	3	n/a	n/a	n/a	n/a	No Change	0	5	5	paced_breathing	6	n/a	3	n/a	FALSE	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a
+168.129041	20.176752	free_breathing	3	n/a	n/a	n/a	n/a	No Change	n/a	5	5	n/a	6	n/a	3	n/a	FALSE	FALSE	5	0.973	n/a	0.8358	n/a	0.334	fail	FALSE	n/a
+188.305793	12.204864	rating	3	n/a	n/a	n/a	n/a	No Change	n/a	5	5	free_breathing	6	n/a	3	n/a	FALSE	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a
+202.517458	23.522149	paced_breathing	4	Slower	1.35	low	9	No Change	0	4	5	n/a	6	n/a	3	miss	TRUE	FALSE	5	0.893	n/a	1.6411	1.2684	0.334	fail	FALSE	n/a
+226.039607	12.209894	rating	4	n/a	n/a	n/a	n/a	No Change	0	4	5	paced_breathing	6	n/a	3	n/a	FALSE	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a
+238.249501	20.178282	free_breathing	4	n/a	n/a	n/a	n/a	Slower	n/a	5	5	n/a	6	n/a	3	n/a	FALSE	FALSE	5	0.885	n/a	0.4454	n/a	0.334	fail	FALSE	n/a
+258.427783	12.208472	rating	4	n/a	n/a	n/a	n/a	Slower	n/a	5	5	free_breathing	6	n/a	3	n/a	FALSE	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a
+272.642049	23.521242	paced_breathing	5	Slower	1.35	low	9	No Change	0	5	5	n/a	6	n/a	3	miss	TRUE	FALSE	7	0.988	n/a	1.2588	1.343	0.334	fail	FALSE	n/a
+296.163291	12.212483	rating	5	n/a	n/a	n/a	n/a	No Change	0	5	5	paced_breathing	6	n/a	3	n/a	FALSE	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a
+308.375774	20.175839	free_breathing	5	n/a	n/a	n/a	n/a	No Change	n/a	4	5	n/a	6	n/a	3	n/a	FALSE	FALSE	5	0.82	n/a	0.657	n/a	0.334	fail	FALSE	n/a
+328.551613	12.205371	rating	5	n/a	n/a	n/a	n/a	No Change	n/a	4	5	free_breathing	6	n/a	3	n/a	FALSE	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a
+342.76316	20.020338	paced_breathing	6	No Change	1	n/a	9	No Change	1	5	5	n/a	6	n/a	3	correct_rejection	TRUE	FALSE	4	0.792	n/a	1.1364	0.9998	0.334	fail	FALSE	n/a
+362.783498	12.205053	rating	6	n/a	n/a	n/a	n/a	No Change	1	5	5	paced_breathing	6	n/a	3	n/a	FALSE	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a
+374.988551	20.173507	free_breathing	6	n/a	n/a	n/a	n/a	Slower	n/a	6	5	n/a	6	n/a	3	n/a	FALSE	FALSE	4	0.944	n/a	1.2247	n/a	0.334	fail	FALSE	n/a
+395.162058	12.206816	rating	6	n/a	n/a	n/a	n/a	Slower	n/a	6	5	free_breathing	6	n/a	3	n/a	FALSE	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a
+409.375655	16.517319	paced_breathing	7	Faster	0.65	high	9	Faster	1	5	5	n/a	6	n/a	3	hit	TRUE	FALSE	4	0.851	n/a	0.9627	0.5502	0.334	fail	FALSE	n/a
+425.892974	12.213969	rating	7	n/a	n/a	n/a	n/a	Faster	1	5	5	paced_breathing	6	n/a	3	n/a	FALSE	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a
+438.106943	20.175591	free_breathing	7	n/a	n/a	n/a	n/a	No Change	n/a	5	5	n/a	6	n/a	3	n/a	FALSE	FALSE	4	0.835	n/a	1.0033	n/a	0.334	fail	FALSE	n/a
+458.282534	12.208423	rating	7	n/a	n/a	n/a	n/a	No Change	n/a	5	5	free_breathing	6	n/a	3	n/a	FALSE	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a

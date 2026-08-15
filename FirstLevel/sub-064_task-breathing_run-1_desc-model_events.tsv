@@ -1,0 +1,30 @@
+onset	duration	condition	epoch_index	confidence	arousal	change_direction	salience	response
+0	4.1	subrating	n/a	n/a	n/a	n/a	n/a	n/a
+6.118	23.217	paced_aware	1	4	2	Slower	low	Slower
+29.335	12.251	rating	1	n/a	n/a	n/a	n/a	Slower
+41.586	20.183	free	1	5	5	n/a	n/a	Faster
+61.769	12.251	rating	1	n/a	n/a	n/a	n/a	Faster
+76.036	17.219	paced_aware	2	5	5	Faster	low	Faster
+93.255	12.25	rating	2	n/a	n/a	n/a	n/a	Faster
+105.505	20.185	free	2	6	5	n/a	n/a	Faster
+125.69	12.282	rating	2	n/a	n/a	n/a	n/a	Faster
+139.99	20.201	paced_nochange	3	5	2	No Change	n/a	Slower
+160.191	12.251	rating	3	n/a	n/a	n/a	n/a	Slower
+172.441	20.184	free	3	6	2	n/a	n/a	Slower
+192.626	12.25	rating	3	n/a	n/a	n/a	n/a	Slower
+206.892	17.235	paced_aware	4	5	5	Faster	low	Faster
+224.127	12.25	rating	4	n/a	n/a	n/a	n/a	Faster
+236.377	20.185	free	4	5	4	n/a	n/a	No Change
+256.562	12.266	rating	4	n/a	n/a	n/a	n/a	No Change
+270.846	23.219	paced_aware	5	5	5	Slower	high	Slower
+294.064	12.267	rating	5	n/a	n/a	n/a	n/a	Slower
+306.331	20.185	free	5	5	3	n/a	n/a	Faster
+326.516	12.283	rating	5	n/a	n/a	n/a	n/a	Faster
+340.816	23.185	paced_unaware	6	3	2	Slower	low	No Change
+364.001	12.267	rating	6	n/a	n/a	n/a	n/a	No Change
+376.268	20.202	free	6	5	3	n/a	n/a	Faster
+396.47	12.265	rating	6	n/a	n/a	n/a	n/a	Faster
+410.752	17.168	paced_unaware	7	5	1	Faster	high	No Change
+427.921	12.233	rating	7	n/a	n/a	n/a	n/a	No Change
+440.154	20.185	free	7	2	1	n/a	n/a	Slower
+460.339	12.266	rating	7	n/a	n/a	n/a	n/a	Slower

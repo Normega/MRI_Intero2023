@@ -1,0 +1,30 @@
+onset	duration	trial_type	epoch_index	change_direction	change_amount	salience	n_pacer_cycles	response	accuracy	confidence	arousal	rating_of	valence_run	valence_epoch	n_sub_ratings	sdt_class	stimulus_change_known	resp_measured	resp_n_breaths	resp_coverage	resp_rate_brpm	actual_period_ratio	instructed_period_ratio	adhere_r	belt_grade	adherence_verified	actual_change_physio
+0	4.075988	valence_rating	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	5	n/a	3	n/a	FALSE	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a
+6.082711	20.014356	paced_breathing	1	No Change	1	n/a	9	Faster	0	6	3	n/a	5	n/a	3	false_alarm	TRUE	TRUE	4	0.862	n/a	0.8594	0.9997	0.463	good	TRUE	No Change
+26.097067	12.221548	rating	1	n/a	n/a	n/a	n/a	Faster	0	6	3	paced_breathing	5	n/a	3	n/a	FALSE	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a
+38.318615	20.192909	free_breathing	1	n/a	n/a	n/a	n/a	Slower	n/a	6	2	n/a	5	n/a	3	n/a	FALSE	TRUE	3	0.738	n/a	n/a	n/a	0.463	good	TRUE	n/a
+58.511524	12.216071	rating	1	n/a	n/a	n/a	n/a	Slower	n/a	6	2	free_breathing	5	n/a	3	n/a	FALSE	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a
+72.735124	17.518575	paced_breathing	2	Faster	0.75	low	9	No Change	0	5	3	n/a	5	n/a	3	miss	TRUE	TRUE	4	0.841	n/a	1.5164	0.8641	0.463	good	TRUE	No Change
+90.253699	12.218871	rating	2	n/a	n/a	n/a	n/a	No Change	0	5	3	paced_breathing	5	n/a	3	n/a	FALSE	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a
+102.47257	20.18829	free_breathing	2	n/a	n/a	n/a	n/a	Faster	n/a	7	5	n/a	5	n/a	3	n/a	FALSE	TRUE	9	0.885	n/a	0.6159	n/a	0.463	good	TRUE	No Change
+122.66086	12.212409	rating	2	n/a	n/a	n/a	n/a	Faster	n/a	7	5	free_breathing	5	n/a	3	n/a	FALSE	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a
+136.879845	22.520832	paced_breathing	3	Slower	1.25	low	9	Faster	0	5	3	n/a	5	n/a	3	wrong_direction	TRUE	TRUE	4	0.886	n/a	1.4885	1.1147	0.463	good	TRUE	No Change
+159.400677	12.209999	rating	3	n/a	n/a	n/a	n/a	Faster	0	5	3	paced_breathing	5	n/a	3	n/a	FALSE	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a
+171.610676	20.185283	free_breathing	3	n/a	n/a	n/a	n/a	Faster	n/a	5	3	n/a	5	n/a	3	n/a	FALSE	TRUE	9	0.983	n/a	0.9985	n/a	0.463	good	TRUE	No Change
+191.795959	12.204379	rating	3	n/a	n/a	n/a	n/a	Faster	n/a	5	3	free_breathing	5	n/a	3	n/a	FALSE	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a
+206.006912	17.522465	paced_breathing	4	Faster	0.75	high	9	Faster	1	5	5	n/a	5	n/a	3	hit	TRUE	TRUE	4	0.72	n/a	1.5994	n/a	0.463	good	TRUE	No Change
+223.529377	12.216707	rating	4	n/a	n/a	n/a	n/a	Faster	1	5	5	paced_breathing	5	n/a	3	n/a	FALSE	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a
+235.746084	20.189188	free_breathing	4	n/a	n/a	n/a	n/a	Slower	n/a	6	3	n/a	5	n/a	3	n/a	FALSE	TRUE	8	0.908	n/a	0.8264	n/a	0.463	good	TRUE	No Change
+255.935272	12.209857	rating	4	n/a	n/a	n/a	n/a	Slower	n/a	6	3	free_breathing	5	n/a	3	n/a	FALSE	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a
+270.151438	22.522177	paced_breathing	5	Slower	1.25	low	9	Slower	1	3	3	n/a	5	n/a	3	hit	TRUE	TRUE	4	0.895	n/a	3.0216	1.1185	0.463	good	TRUE	Slower
+292.673615	12.221648	rating	5	n/a	n/a	n/a	n/a	Slower	1	3	3	paced_breathing	5	n/a	3	n/a	FALSE	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a
+304.895263	20.185093	free_breathing	5	n/a	n/a	n/a	n/a	Slower	n/a	7	5	n/a	5	n/a	3	n/a	FALSE	TRUE	7	0.85	n/a	1.2279	n/a	0.463	good	TRUE	No Change
+325.080356	12.207463	rating	5	n/a	n/a	n/a	n/a	Slower	n/a	7	5	free_breathing	5	n/a	3	n/a	FALSE	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a
+339.296357	22.522439	paced_breathing	6	Slower	1.25	high	9	Faster	0	4	5	n/a	5	n/a	3	wrong_direction	TRUE	TRUE	5	0.887	n/a	1.459	1.4409	0.463	good	TRUE	No Change
+361.818796	12.218235	rating	6	n/a	n/a	n/a	n/a	Faster	0	4	5	paced_breathing	5	n/a	3	n/a	FALSE	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a
+374.037031	20.1862	free_breathing	6	n/a	n/a	n/a	n/a	Faster	n/a	5	6	n/a	5	n/a	3	n/a	FALSE	TRUE	5	0.744	n/a	0.7365	n/a	0.463	good	TRUE	No Change
+394.223231	12.212994	rating	6	n/a	n/a	n/a	n/a	Faster	n/a	5	6	free_breathing	5	n/a	3	n/a	FALSE	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a
+408.441651	17.523316	paced_breathing	7	Faster	0.75	low	9	Slower	0	6	5	n/a	5	n/a	3	wrong_direction	TRUE	TRUE	4	0.856	n/a	0.5007	0.8216	0.463	good	TRUE	Faster
+425.964967	12.217946	rating	7	n/a	n/a	n/a	n/a	Slower	0	6	5	paced_breathing	5	n/a	3	n/a	FALSE	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a
+438.182913	20.186356	free_breathing	7	n/a	n/a	n/a	n/a	Faster	n/a	5	5	n/a	5	n/a	3	n/a	FALSE	TRUE	5	0.807	n/a	1.1348	n/a	0.463	good	TRUE	No Change
+458.369269	12.209232	rating	7	n/a	n/a	n/a	n/a	Faster	n/a	5	5	free_breathing	5	n/a	3	n/a	FALSE	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a
