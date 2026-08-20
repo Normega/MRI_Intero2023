@@ -28,3 +28,20 @@ because scrubbing a committed file later requires a history rewrite.
 
 The capnograph-outage calendar dates quoted in prose (preregistration,
 comments) are equipment dates, not participant identifiers, and stay.
+
+## Public-release sweep (2026-08-20)
+
+Systematic scan of every committed file before the repository went public:
+
+| Class | Method | Result |
+|---|---|---|
+| PID + scan-date strings | regex `P###_20######` over tracked files | Two code files used `P052_20231025` as a parsing example — a synthetic pairing (not P052's real date, but the date itself was another participant's). Replaced with impossible date `20991231`; tests re-verified. |
+| Email addresses | regex over tracked files | Only the PI and REB office addresses inside consent-form text in `screener_codebook.csv` — public information, retained. |
+| IP addresses | regex | none |
+| Date-times in data files | regex over `*.csv`/`*.tsv` | none (all dated tables are excluded by `.gitignore`) |
+| Identifier-like columns | header scan for name/dob/sex/age/phone/address/email | none (matches were substrings: cover*age*, st*age*, sali*ence*) |
+| Remaining calendar dates | regex over docs | Collection window (2023-09 – 2024-06) and capnograph-outage bounds (2023-10-12 – 2024-01-18) in the preregistration — equipment/methods reporting that identifies no individual; retained deliberately. |
+
+Standing rule for the public repo: nothing joins a `sub-XXX` key to a
+calendar date, and the `.gitignore` boundary may only move after the
+column-level reviews above.

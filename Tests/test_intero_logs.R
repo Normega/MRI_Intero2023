@@ -33,9 +33,9 @@ check <- function(label, expr) {
 cat("\n-- ID normalisation --\n")
 check("all spellings of participant 52 agree",
       all(pid_num(c("P52", "P052", "sub-052", "Intero_P52.acq",
-                    "P052_20231025", 52, "52")) == 52L))
+                    "P052_20991231", 52, "52")) == 52L))
 check("dates in filenames are not mistaken for IDs",
-      pid_num("P052_20231025") == 52L)
+      pid_num("P052_20991231") == 52L)
 check("unpadded P90 and padded P090 collapse",
       pid_num("P90") == pid_num("P090"))
 check("BIDS label is zero-padded", pid_bids("P52") == "sub-052")

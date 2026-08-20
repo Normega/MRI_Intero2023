@@ -6,7 +6,7 @@
 #   run_notes/screener P052 ... but also a stray unpadded P90
 #   BIDS / fMRIPrep    sub-052
 #   Biopac physio      Intero_P52.acq
-#   Raw MRI dirs       P052_20231025
+#   Raw MRI dirs       P052_20991231   (synthetic example; not a real session date)
 #
 # Everything joins through pid_num() (an integer) and is displayed as
 # pid_bids() ("sub-052"). Nothing downstream should parse an ID by hand.
@@ -17,7 +17,7 @@
 
 #' Extract the canonical integer participant number from any project ID spelling.
 #'
-#' Accepts "P50", "P050", "sub-050", "Intero_P52.acq", "P052_20231025", 50, "50".
+#' Accepts "P50", "P050", "sub-050", "Intero_P52.acq", "P052_20991231", 50, "50".
 #' Returns NA_integer_ for anything with no recognisable participant number.
 pid_num <- function(x) {
   x <- as.character(x)
@@ -30,7 +30,7 @@ pid_num <- function(x) {
 
   # Everything else must carry an explicit P### or sub-### marker. We do NOT
   # fall back to "first number anywhere" -- filenames here are full of dates
-  # and timestamps that would match (P052_20231025 would yield 20231025).
+  # and timestamps that would match (P052_20991231 would yield 20991231).
   #
   # No \b before P: "_" is a word character, so a word boundary would refuse
   # to match "Intero_P52.acq", which is exactly how the physio files are named.
