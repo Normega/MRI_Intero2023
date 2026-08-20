@@ -29,8 +29,8 @@ Norman A. S. Farb (sole author).
 
 ## License
 
-[TO CONFIRM — recommend CC-By Attribution 4.0 International, matching the IEAT
-paper's open-access licence.]
+CC-By Attribution 4.0 International (confirmed 2026-08-20; matches the IEAT
+paper's open-access licence).
 
 ## Subject
 
@@ -79,8 +79,10 @@ one-sided in a 10 mm sphere at the IEAT peak (MNI −4, +12, +36). N = 43.
 
 ## Foreknowledge of data or evidence
 
-[Select the option closest to: "The data exist and I have accessed and
-analyzed some of the data relevant to this registration."]
+Selection (confirmed 2026-08-20): the option stating that the data exist and
+the author has accessed and analyzed some of the data relevant to this
+registration. See explanation below for exactly what has and has not been
+touched.
 
 ## Explanation of foreknowledge
 
