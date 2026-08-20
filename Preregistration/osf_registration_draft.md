@@ -59,8 +59,6 @@ No blinding is possible for the behavioural results (Q3). The imaging analyst ha
 
 | Name | Role | Approves freezing this registration | Date |
 |---|---|---|---|
-| Norman A. S. Farb | PI | ☐ | |
-| | | ☐ | |
-| | | ☐ | |
+| Norman A. S. Farb | PI (sole author) | ☐ | |
 
-*Add rows as needed. Freezing before first-level modelling is the commitment; edits after sign-off restart sign-off.*
+*Sole-author project. Freezing before first-level modelling is the commitment.*
