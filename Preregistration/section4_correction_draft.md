@@ -153,3 +153,89 @@ depends on the first of them.
    not reproduce from the fMRIPrep derivatives of record (median r 0.985 and
    0.996). Every other column reproduces bit-exactly. Regenerate the sheets
    before fitting so the analysis matches its stated inputs.
+
+---
+
+## Decision rule for the reinstated participants, and its sensitivity analysis
+
+**Added 2026-08-21, before the freeze and before any model was fitted.**
+
+### Why this decision can be made now
+
+Inclusion here is settled on evidence that is **blind to the effect being
+tested**. Three tiers are distinguishable, and only the third is off-limits
+before a registration is frozen:
+
+1. **Design and timing** — trial counts, contrast estimability, design
+   efficiency. No BOLD voxel is read.
+2. **Image quality that is not a function of the tested contrast** — tSNR,
+   framewise displacement, susceptibility-distortion correction, ghosting.
+   §4 already relies on this tier: the registered motion gate is computed from
+   fMRIPrep's `framewise_displacement`, which is BOLD-derived. Admitting FD
+   while refusing tSNR would be arbitrary.
+3. **Quantities computed from the contrast estimates** — whether including a
+   participant moves a result. This is the only prohibited tier, and nothing
+   below requires it.
+
+### The rule
+
+> **Single-run participants are retained, and the decision is not specific to
+> any participant.** A participant enters the analysable sample when the
+> registered criteria — usable event timing, trigger-locked imaging, and the
+> motion gate — are satisfied by at least one breathing run, irrespective of
+> how many runs they contribute. Where a participant contributes one run, the
+> fixed-effects step is that run.
+
+Stated this way the rule cannot be gerrymandered after the fact: it applies
+identically to participants **already inside the registered sample**. Two of
+the original 43 — **sub-074 and sub-114** — contribute exactly one breathing
+run, and sub-114 additionally yields no estimable H1 or H2 contrast under the
+§7 definition. Excluding sub-082 and sub-104 for contributing one run each
+would therefore not apply a registered standard; it would apply a standard to
+those two participants alone.
+
+### The result-blind evidence, for the record
+
+Subject-level SE multiplier for C1 (design algebra only; lower is more precise;
+registered sample median 0.0584, worst 0.1144):
+
+| participant | SE multiplier | position in the registered sample |
+|---|---|---|
+| sub-082 | 0.0836 | 8 of 42 registered participants are less precise |
+| sub-104 | 0.0717 | 10 of 42 registered participants are less precise |
+
+Image quality (MRIQC, acquired June 2026, blind to any task contrast):
+sub-082 tSNR 30.2 (68th percentile of breathing runs), sub-104 tSNR 29.1 (46th
+percentile) — both at or above the cohort median. Both runs have a PEPOLAR
+fieldmap and susceptibility-distortion correction applied. sub-082 carries more
+low-amplitude drift (mean FD 0.252 mm) but only 0.4 % of its volumes exceed the
+registered 0.5 mm threshold.
+
+Neither participant is an outlier on any result-blind index.
+
+### Registered sensitivity analysis S3 — two-run participants only
+
+Every hypothesis is additionally tested on the subset contributing **two**
+breathing runs, which removes **sub-074, sub-114, sub-082 and sub-104**
+together. The subset is defined by run count alone, so the two reinstated
+participants cannot be removed without also removing two participants from the
+original registered sample.
+
+| | participants | H1 | H2 | H3 | H6 |
+|---|---|---|---|---|---|
+| **Primary** (corrected sample) | 47 | 46 | 42 | 23 | 45 |
+| **S3** (two-run participants only) | 43 | 42 | 39 | 23 | 41 |
+
+Interpretation is fixed in advance: agreement between the primary and S3
+results is reported as such; divergence is reported as a limitation of the
+single-run participants' precision and **not** used to select which analysis to
+present.
+
+### What this does and does not buy
+
+Honestly stated: **the power gain is small.** H6 moves from 80 % power at
+r ≥ 0.374 (registered N = 43) to r ≥ 0.366 (N = 45); S3 sits at r ≥ 0.383.
+The case for reinstating sub-082 and sub-104 is that the inventory used to
+exclude them was wrong and the exclusion is inconsistent with participants
+already in the sample. It is a correctness and transparency argument, not a
+statistical rescue, and should not be presented as one.
