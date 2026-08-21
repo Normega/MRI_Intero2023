@@ -1,0 +1,9 @@
+subject,scope,entity,stage,check,value,grade,note,source,date_checked
+sub-056,run,task-breathing_run-1,imaging,motion_gate,0.1275977309689956,good,meanFD=0.128 fracFD>0.5=0.00 spikes=1,fMRIPrep framewise_displacement; prereg gate,2026-08-20
+sub-056,run,task-breathing_run-2,imaging,motion_gate,0.4712033994422311,fail,meanFD=0.471 fracFD>0.5=0.27 spikes=67,fMRIPrep framewise_displacement; prereg gate,2026-08-20
+sub-065,run,task-breathing_run-1,imaging,motion_gate,0.1359623869835537,good,meanFD=0.136 fracFD>0.5=0.00 spikes=0,fMRIPrep framewise_displacement; prereg gate,2026-08-20
+sub-065,run,task-breathing_run-2,imaging,motion_gate,0.1755702997272727,good,meanFD=0.176 fracFD>0.5=0.01 spikes=3,fMRIPrep framewise_displacement; prereg gate,2026-08-20
+sub-076,run,task-breathing_run-1,imaging,motion_gate,0.23463290410743798,good,meanFD=0.235 fracFD>0.5=0.15 spikes=36,fMRIPrep framewise_displacement; prereg gate,2026-08-20
+sub-076,run,task-breathing_run-2,imaging,motion_gate,0.17572795304958674,good,meanFD=0.176 fracFD>0.5=0.05 spikes=11,fMRIPrep framewise_displacement; prereg gate,2026-08-20
+sub-082,run,task-breathing_run-1,imaging,motion_gate,0.2408592662917355,good,meanFD=0.241 fracFD>0.5=0.00 spikes=1,fMRIPrep framewise_displacement; prereg gate,2026-08-20
+sub-104,run,task-breathing_run-1,imaging,motion_gate,0.15369430895867767,good,meanFD=0.154 fracFD>0.5=0.00 spikes=0,fMRIPrep framewise_displacement; prereg gate,2026-08-20
