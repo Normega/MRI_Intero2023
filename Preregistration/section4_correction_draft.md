@@ -1,7 +1,15 @@
 # Draft correction to prereg §4 — sample, exclusions, analysable N
 
-**Status: DRAFT for the registration holder. Not applied to
-`intero2023_imaging_prereg.md`.** Evidence: `VERIFICATION_REPORT.md`.
+**Status: APPLIED to `intero2023_imaging_prereg.md` v0.2 on 2026-08-24**, while
+the registration was still unfrozen. Retained as the evidence record for that
+amendment. Two things changed on application: the sensitivity analysis proposed
+below as "S3" is registered as **S6** (S3 was already taken by the
+CO2-availability cohort check), and the corrected Ns are one to two higher than
+the table below because the two-model split (`methods_decisions.md` decision 2)
+was adopted at the same time — H1 47, H2 44, H3 23, H4 43, H6 46. The
+tables below are left at their pre-split values as the record of what was
+proposed; §4 of the prereg carries the registered figures. Evidence:
+`VERIFICATION_REPORT.md`.
 This is a **pre-freeze correction**, not a deviation: no model has been fitted
 and no BOLD image has been read. If the registration is already frozen when
 this is read, everything here becomes a `deviations.md` entry instead.
@@ -213,7 +221,9 @@ registered 0.5 mm threshold.
 
 Neither participant is an outlier on any result-blind index.
 
-### Registered sensitivity analysis S3 — two-run participants only
+### Registered sensitivity analysis S6 — two-run participants only
+
+*(Proposed here as S3; registered as **S6** to avoid colliding with the existing S3.)*
 
 Every hypothesis is additionally tested on the subset contributing **two**
 breathing runs, which removes **sub-074, sub-114, sub-082 and sub-104**
@@ -224,7 +234,7 @@ original registered sample.
 | | participants | H1 | H2 | H3 | H6 |
 |---|---|---|---|---|---|
 | **Primary** (corrected sample) | 47 | 46 | 42 | 23 | 45 |
-| **S3** (two-run participants only) | 43 | 42 | 39 | 23 | 41 |
+| **S6** (two-run participants only) | 43 | 42 | 39 | 23 | 41 |
 
 Interpretation is fixed in advance: agreement between the primary and S3
 results is reported as such; divergence is reported as a limitation of the
@@ -234,7 +244,7 @@ present.
 ### What this does and does not buy
 
 Honestly stated: **the power gain is small.** H6 moves from 80 % power at
-r ≥ 0.374 (registered N = 43) to r ≥ 0.366 (N = 45); S3 sits at r ≥ 0.383.
+r ≥ 0.374 (registered N = 43) to r ≥ 0.362 (N = 46 under the adopted models); S6 sits at r ≥ 0.378.
 The case for reinstating sub-082 and sub-104 is that the inventory used to
 exclude them was wrong and the exclusion is inconsistent with participants
 already in the sample. It is a correctness and transparency argument, not a

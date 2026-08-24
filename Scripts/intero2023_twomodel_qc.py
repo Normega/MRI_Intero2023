@@ -66,6 +66,28 @@ def model_a(ev, cf, n_vol):
     return design(e, cf, n_vol)
 
 
+def model_c(ev, cf, n_vol):
+    """H4: paced CHANGE epochs split by salience; no awareness split, no PM.
+
+    S7 as registered lists only awareness-split paced regressors, so H4
+    (salience high vs low) had no regressor to be tested on. Model C supplies
+    it. Salience and awareness are not crossed: the median participant has 4
+    high-salience and 8 low-salience change trials, so a 2x2 split would leave
+    cells of ~1.
+    """
+    other = ev[~ev.condition.isin(PACED_MOD)][["onset", "duration", "condition"]] \
+        .rename(columns={"condition": "trial_type"}).assign(modulation=1.0)
+    nc = ev[ev.condition == "paced_nochange"][["onset", "duration"]] \
+        .assign(trial_type="paced_nochange", modulation=1.0)
+    ch = ev[ev.condition.isin(CHANGE_ONLY) & ev.salience.isin(["high", "low"])].copy()
+    if len(ch) == 0:
+        return None
+    ch = ch[["onset", "duration", "salience"]].rename(columns={"salience": "trial_type"})
+    ch["trial_type"] = "paced_" + ch.trial_type + "sal"
+    ch["modulation"] = 1.0
+    return design(pd.concat([other, nc, ch], ignore_index=True), cf, n_vol)
+
+
 def model_b(ev, cf, n_vol, trial_set):
     """Paced epochs in `trial_set` collapsed to one regressor + confidence PM."""
     other = ev[~ev.condition.isin(PACED_MOD)][["onset", "duration", "condition"]] \
@@ -171,6 +193,15 @@ def main(which):
             rec[f"B{tag}_rank_deficient"] = int(fullB is False)
             rec[f"B{tag}_n_reg"] = dmB.shape[1]
             rec[f"se_B{tag}_h2_conf"], _ = se_of(dmB, {"conf_pm": 1.0})
+        dmC = model_c(ev, cf, int(r.n_vol))
+        if dmC is not None:
+            _, fullC = se_of(dmC, {"free": 1.0})
+            rec["C_rank_deficient"] = int(fullC is False)
+            rec["se_C_h4_salience"], _ = se_of(
+                dmC, {"paced_highsal": 1.0, "paced_lowsal": -1.0})
+        else:
+            rec["C_rank_deficient"] = np.nan
+            rec["se_C_h4_salience"] = np.nan
         rows.append(rec)
 
     d = pd.DataFrame(rows)
@@ -185,6 +216,14 @@ def main(which):
     cnt["n_paced_h1"] = cnt.n_aware + cnt.n_unaware + cnt.n_nochange
     cnt["n_trial_chg"] = cnt.n_aware + cnt.n_unaware + cnt.n_wrongdir
     cnt["n_trial_all"] = cnt.n_trial_chg + cnt.n_nochange
+    sal = {}
+    for s_, g in keep.groupby("subject"):
+        ev = pd.concat([read_run(r.subject, r.bids_entity, int(r.n_vol))[0]
+                        for _, r in g.iterrows()])
+        v = ev[ev.condition.isin(CHANGE_ONLY)].salience.value_counts()
+        sal[s_] = (int(v.get("high", 0)), int(v.get("low", 0)))
+    cnt["n_highsal"] = [sal.get(i, (0, 0))[0] for i in cnt.index]
+    cnt["n_lowsal"] = [sal.get(i, (0, 0))[1] for i in cnt.index]
     # confidence must also VARY, or the PM is a constant column
     confvar = {}
     for s_, g in keep.groupby("subject"):
@@ -203,6 +242,7 @@ def main(which):
         "se_A_h3_aware_gt_unaware":    ["n_aware", "n_unaware"],
         "se_Bchg_h2_conf":             ["n_trial_chg"],
         "se_Ball_h2_conf":             ["n_trial_all"],
+        "se_C_h4_salience":            ["n_highsal", "n_lowsal"],
     }
 
     def n_with(col, registered=False):
@@ -224,6 +264,7 @@ def main(which):
     print(f"  Model A                 : {int(d.A_rank_deficient.sum())} / {len(d)} runs")
     print(f"  Model B (change trials) : {int(d.Bchg_rank_deficient.sum(skipna=True))} / {int(d.Bchg_rank_deficient.notna().sum())} runs")
     print(f"  Model B (all paced)     : {int(d.Ball_rank_deficient.sum(skipna=True))} / {int(d.Ball_rank_deficient.notna().sum())} runs")
+    print(f"  Model C (salience)      : {int(d.C_rank_deficient.sum(skipna=True))} / {int(d.C_rank_deficient.notna().sum())} runs")
     print("  (registered single model, for comparison: 9 / 91 -- see analysis/design_qc.csv)")
 
     print("\n=== participant-level N per hypothesis ===")
@@ -233,6 +274,7 @@ def main(which):
         ("H3 aware>unaware", "A", "se_A_h3_aware_gt_unaware"),
         ("H2 confidence PM, trial = change trials", "B(chg)", "se_Bchg_h2_conf"),
         ("H2 confidence PM, trial = all paced", "B(all)", "se_Ball_h2_conf"),
+        ("H4 salience high > low", "C", "se_C_h4_salience"),
     ]
     print(f"{'contrast':42s} {'model':7s} {'runs':>5s} {'N matrix':>9s} {'N registered':>13s}")
     got = {}
@@ -258,6 +300,16 @@ def main(which):
           f"median aware {out.n_aware.median():.1f}, "
           f"median unaware share {(out.n_unaware/(out.n_aware+out.n_unaware)).median():.2f}")
     print(f"  H3 in : {sorted(inn.index)}")
+
+    nruns = keep.groupby("subject").size()
+    tworun = set(nruns[nruns >= 2].index)
+    print(f"\n=== sensitivity: two-run participants only (N = {len(tworun)}) ===")
+    print(f"  removed: {sorted(set(subs) - tworun)}")
+    for label, mod, col in rowsN:
+        strict = [s_ for s_ in n_with(col, registered=True) if s_ in tworun]
+        print(f"  {label:42s} {len(strict):3d}")
+    print(f"  {'H6 MAIA x H1':42s} "
+          f"{len([s_ for s_ in h1 if s_ in maia and s_ in tworun]):3d}")
 
     print("\n=== precision cost of the split, runs where both are estimable ===")
     both = d[d.se_A_h1_adaptive.notna() & d.se_Ball_h2_conf.notna()]

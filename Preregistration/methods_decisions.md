@@ -59,7 +59,13 @@ to the reported outputs.
 ## Decision 2 — Two first-level models: awareness and confidence are never in the same design
 
 **Decided.** Two first-level models are fitted per run on the same
-preprocessed data:
+preprocessed data. A **third**, Model C, was added while applying this decision
+to the prereg body: §7 as registered contained no salience-split regressor, so
+H4 had nothing to be tested on at all. Model C splits the paced *change* epochs
+by salience (high/low) and by nothing else — salience is not crossed with
+awareness, because the median participant has 4 high-salience and 8
+low-salience change trials and a 2 × 2 split would leave cells of about one
+trial. Model C is rank-deficient in 0 of 90 runs and gives H4 **N = 43**.
 
 **Model A — authoritative.** The registered condition boxcars —
 `paced_aware`, `paced_unaware`, `paced_wrongdir`, `paced_nochange`, `free`,
@@ -165,6 +171,7 @@ This rule is fixed now, before any model is fitted.
 | H3 `aware_gt_unaware` | A | **23** |
 | H6 MAIA × H1 | A | **46** |
 | H2 `confidence_mod` | B | **44** |
+| H4 salience high > low | C | **43** |
 
 **Prereg edit:** §5 gains the two-model specification; §7 assigns each contrast
 to its model; §3 swaps the H2/H3 primacy and carries the two registered
@@ -207,8 +214,11 @@ count joins the reported design QC.
 
 **Decided:** all four are admitted, on the grounds set out in
 `Preregistration/section4_correction_draft.md` and `VERIFICATION_REPORT.md` §6,
-together with the single-run decision rule and sensitivity analysis **S3**
-already drafted there. sub-056 stays excluded — its run-2 fails the registered
+together with the single-run decision rule and the two-run-only sensitivity
+analysis already drafted there. **That analysis is registered as S6, not S3**:
+the draft named it S3, which collides with the existing S3 (CO2-available vs
+CO2-unavailable participants). S1–S5 keep their numbers so that references to
+them in the v0.1 record still resolve. sub-056 stays excluded — its run-2 fails the registered
 motion gate (FD 0.471, 26.7 % of volumes spiking) and its run-1 over-runs the
 acquisition by 28 s.
 
@@ -236,15 +246,24 @@ precise); tSNR 30.2 and 29.1 (68th and 46th percentile); both have PEPOLAR
 distortion correction.
 
 **Prereg edit:** §4 exclusion list, sample cascade and N table are replaced by
-`section4_correction_draft.md`, including sensitivity analysis S3.
+`section4_correction_draft.md`, including sensitivity analysis S6. Under the
+two-model split the corrected Ns are one to two higher than that draft's table,
+which predates it: H1 47 (draft 46), H2 44 (42), H3 23 (23), H4 43 (43), H6 46
+(45). S6 itself gives 43 / 23 / 41 / 43 / 42 on 43 participants.
 
 ---
 
+## Applied
+
+`Preregistration/intero2023_imaging_prereg.md` was rewritten to **v0.2** on
+2026-08-24 to carry all four decisions: §3 (hypotheses and primacy), §4 (sample
+and Ns), §5 (contrast definition and trailing events), §7 (the three models),
+§8 (power table and the H3 selection statement), §9 (S6), §12 (resolved items
+6–9), plus a change log in the header. This document remains the record of
+*why*; the prereg body is now the record of *what*.
+
 ## What is still open
 
-- Applying these edits into `Preregistration/intero2023_imaging_prereg.md`
-  itself. This document and `section4_correction_draft.md` hold the replacement
-  text; the prereg body has not yet been rewritten.
 - Optional and manifest-neutral: regenerating the 95 confound sheets so `csf`
   and `white_matter` come from the derivatives of record rather than the earlier
   anatomical pass (`VERIFICATION_REPORT.md` §2a). Staged at
