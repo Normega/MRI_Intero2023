@@ -201,3 +201,60 @@ cross-participant ICC of ROI means. Descriptive only. H3 excluded from it.
   regressors (9 designs go rank-deficient).
 - Do not report any condition-vs-rest contrast (there is no rest baseline).
 - Do not quote uncorrected or lag-/ROI-selected statistics as effect sizes.
+
+---
+
+## Addendum (2026-08-21): sub-082 / sub-104 — you are right, and here is the history
+
+> **Status (2026-11-24): resolved.** The verification this addendum asks for was
+> run on the Linux side on 2026-08-20 (`VERIFICATION_REPORT.md`): slot mapping
+> correct for both, one gate-passing breathing run each. sub-082 and sub-104 were
+> reinstated in prereg v0.2 (`firstlevel_manifest_candidates.csv`), and the Ns
+> are now those in §4 above (H1 47, not the 45 projected below). Kept for the
+> record only.
+
+You asked why these two are excluded when their imaging looks complete. The
+exclusion was made against the **stale Drive-side copy** of the derivatives,
+whose task labels for these two participants are shifted. Your copy is the
+dataset of record and was re-preprocessed after the labels were fixed — so on
+your side they SHOULD look complete and correctly named.
+
+**What actually happened in those sessions:** both acquired only THREE BOLD
+runs (localizer-1, ONE breathing run, authenticity; their PMU folders have
+exactly 3 recordings, and the task logs contain exactly one completed
+breathing run each, fully evented: 7 paced + 7 free epochs). Order-based
+naming on the stale copy then slid the labels: the file named `task-loc2`
+holds 242 volumes (breathing length) and the file named `task-breath1` holds
+172 volumes (authenticity length).
+
+**Verification required before re-inclusion** (report the table back):
+for each func run of sub-082 and sub-104 on your side, read the BIDS sidecar
+`ProtocolName` / `SeriesDescription` (Siemens `bto_ep2d_bold_p2s2_2mm_runN_*`)
+and the volume count. Expected if your labels are correct:
+
+| sidecar protocol | expected task label | expected volumes |
+|---|---|---|
+| ...run1... | loc1 / localizer | 196 |
+| ...run3... | breath1 / breathing run 1 | 242 |
+| ...run5... | auth1 / authenticity | ~172 |
+
+Any file whose protocol slot and task label disagree, or whose volume count
+does not match its slot, blocks re-inclusion and should be reported instead.
+
+**If verification passes:** commit each participant's breathing-run confounds
+TSV to `FirstLevel/incoming/` and push. The Windows-side session will rebuild
+their covariate sheets, add them to the manifest, and amend the registered Ns
+(the registration is not yet frozen, so this is a pre-freeze correction, not
+a deviation).
+
+**Already pre-verified on the Drive side** (from the mislabelled-but-identical
+confounds, FD column only): events complete for both; motion gate PASSES
+(mean FD 0.242 and 0.154, spike fractions 0.004 and 0.000); MAIA complete for
+both. If your verification passes, C1/C3/H6 move from N = 43 to **N = 45**,
+each contributing one breathing run.
+
+**While you are there:** spot-check two or three already-retained runs by
+comparing your (re-run) confounds row counts against the sheets' — fMRIPrep
+motion estimates should be effectively identical across re-runs, but if you
+see material differences, say so and ship replacements rather than adapting
+silently.
