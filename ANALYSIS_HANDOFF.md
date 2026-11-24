@@ -23,18 +23,18 @@ no exceptions.
 
 ## 1. Context in five sentences
 
-Participants (N = 43 analysable) breathed with a visual pacer whose rate
-increased, decreased, or held steady (step vs ramp salience), interleaved
-with free breathing, and reported the change direction with confidence and
-arousal ratings. Behaviour and physiology are fully analysed (that
-foreknowledge is disclosed in the registration): identification is well above
-chance, confidence is metacognitively valid, and "No Change" responses
-function as "I don't know". The imaging hypotheses are H1–H6 in the prereg;
-two are direct replications of Farb, Zuo & Price (2023, eNeuro) — insula/
-opercular DEACTIVATION under exogenous pacing (H1: paced < free, direction
-committed), and MAIA-moderated sparing of the ACC (H6: sphere at MNI
-−4, +12, +36). The functional images have never been touched beyond fMRIPrep;
-keep it that way until step 3.
+Participants (N = 47 analysable, 90 breathing runs; prereg v0.3) breathed
+with a visual pacer whose rate increased, decreased, or held steady (step vs
+ramp salience), interleaved with free breathing, and reported the change
+direction with confidence and arousal ratings. Behaviour and physiology are
+fully analysed (that foreknowledge is disclosed in the registration):
+identification is well above chance, confidence is metacognitively valid, and
+"No Change" responses function as "I don't know". The imaging hypotheses are
+H1–H6 in the prereg; H1 is a direct replication of Farb, Zuo & Price (2023,
+eNeuro) — insula/opercular DEACTIVATION under exogenous pacing (paced < free,
+direction committed) — and H6 is a **two-sided conceptual extension** of that
+paper's MAIA–ACC result (sphere at MNI −4, +12, +36). The functional images
+have never been touched beyond fMRIPrep; keep it that way until step 3.
 
 ## 2. Inputs
 
@@ -42,12 +42,10 @@ keep it that way until step 3.
 
 - BIDS dataset + **fMRIPrep 24.1.1 derivatives** (dataset of record; recently
   re-run). Space: `MNI152NLin2009cAsym`, 2 mm, TR = 2 s.
-- **Task naming differs from the covariate sheets.** The BIDS/derivatives tree
-  uses `task-breath1` / `task-breath2`; the sheets use
-  `task-breathing_run-1` / `task-breathing_run-2`. Mapping:
-  `breath1 ↔ task-breathing_run-1`, `breath2 ↔ task-breathing_run-2`.
-  (Also `loc1/loc2 ↔ task-localizer_run-{1,2}`, `auth1 ↔ task-authenticity`,
-  not needed for this analysis.)
+- **Task naming matches the covariate sheets.** The BIDS/derivatives tree of
+  record uses `task-breathing_run-1` / `task-breathing_run-2`, identical to the
+  sheets; the mapping is the identity. (An earlier version of this file said
+  `task-breath1/breath2` — that was the obsolete Windows `Data/Ready` copy.)
 
 ### From the repository (transfer or clone from the Windows/Drive copy)
 
@@ -59,9 +57,13 @@ keep it that way until step 3.
   row-aligned with the fMRIPrep confounds: motion 6+6, FD, CSF, WM, cosine*,
   spike_NN (FD > 0.5 mm), and physio (`rvt_rrf_z`, `rvt_z`, `resp_rate_c`,
   `petco2_hrf_lag00/10/20/30`), demeaned, NA→0. Conventions: `FirstLevel/README.md`.
-- `FirstLevel/firstlevel_manifest.csv` — **the run list is this file.**
-  `motion_gate_fail == FALSE` → 84 runs, 43 participants. Do not re-derive
-  inclusion from anything else.
+- **The run list is `FirstLevel/firstlevel_manifest.csv` +
+  `FirstLevel/firstlevel_manifest_candidates.csv`**, `motion_gate_fail ==
+  FALSE`, excluding sub-056 → **90 runs, 47 participants** (prereg §4). The
+  candidates file carries the four reinstated participants (sub-065, -076,
+  -082, -104). Do not re-derive inclusion from anything else.
+- Per-hypothesis participant sets: `analysis/design_qc_twomodel.csv`
+  (H3's 23 are also listed in prereg §3).
 - `Data/maia_scores.csv` — `maia_ieat_total` (0–5 metric) for H6.
 - `Data/prereg_sample.csv`, `Data/qc_ledger.csv` — reference only.
 
@@ -71,14 +73,17 @@ keep it that way until step 3.
    in MNI space and a confounds TSV whose **row count equals `n_vol`** in the
    manifest. Flag any mismatch; do not silently drop or trim.
    Watch for sub-065 and sub-076 specifically (late additions to the dataset)
-   and confirm sub-082 / sub-104 are NOT in the run list (excluded; shifted
-   run labels).
-2. Events sanity: per run, `events_end_s ≤ scan_dur_s + 10`; all seven
-   condition labels present across the set.
+   and confirm sub-082 / sub-104 ARE in the run list with one breathing run
+   each (reinstated in v0.2; the "shifted run labels" exclusion applied only
+   to the obsolete Windows copy).
+2. Events sanity: per run, `events_end_s ≤ scan_dur_s + 10`, **except** the
+   three registered clipped runs (prereg §5: sub-052 r1, sub-053 r1, sub-053
+   r2) — clip trailing events to `n_vol × TR`, drop any with duration ≤ 0,
+   and log the count. All seven condition labels present across the set.
 3. Design-matrix QC (allowed pre-freeze: this touches no BOLD data): build
-   all design matrices; report per-run VIFs among task regressors and the
-   correlation of confidence-modulator with the aware-vs-unaware contrast
-   vector. High collinearity is a finding to report, not to fix ad hoc.
+   all design matrices for Models A/B/C; confirm 0/90 rank-deficient in every
+   model (`Scripts/intero2023_twomodel_qc.py` reproduces this). High
+   collinearity is a finding to report, not to fix ad hoc.
 
 ## 4. The registered model, exactly
 
@@ -86,47 +91,67 @@ keep it that way until step 3.
 6 mm FWHM smoothing; drift handled by the cosine columns — do not add another
 high-pass):
 
-- 7 condition regressors (boxcars over epoch durations) as listed above.
-- Parametric modulators on paced epochs: confidence (primary), arousal
-  (secondary model), mean-centred **over the trials actually modelled**.
+Three models per run (prereg §7), identical nuisance set, boxcars over
+epoch durations:
+
+- **Model A (awareness → H1, H3, H6):** `paced_aware`, `paced_unaware`,
+  `paced_wrongdir`, `paced_nochange`, `free`, `rating`, `subrating`. No
+  parametric modulator.
+- **Model B (confidence → H2 only):** all paced epochs (incl. No Change) as
+  one `trial` regressor + mean-centred confidence modulator; `free`,
+  `rating`, `subrating` as in A.
+- **Model C (salience → H4):** paced change epochs split `high` / `low`
+  salience; `paced_nochange`, `free`, `rating`, `subrating` as in A.
+- Arousal is NOT a registered test. If run, it is a separate model of Model
+  B's form, labelled exploratory — never added to A or C.
 - All confound columns from the sheet. **Never global signal.**
 - Sensitivity variants: base / +RVT (`rvt_rrf_z`) / +PetCO2 (4-lag basis,
   all four columns or none) / +both.
 
+**No implicit baseline.** Events tile ~94% of every run. Interpret only
+between-condition contrasts; never report or plot a condition-vs-rest
+contrast or a single-condition beta map (prereg §5).
+
 **Combining runs:** fixed effects within participant (average of run
 contrasts weighted by design efficiency, or SPM-style FFX contrast across
-runs). Run as a random factor is registered OUT.
+runs). Run as a random factor is registered OUT. **For `confidence_mod`,
+skip runs where confidence is constant** (modulator all zeros): sub-106
+run-1 and sub-112 run-2 contribute their other run only; sub-066, sub-070,
+sub-114 are out of H2 entirely.
 
 **Contrasts (first level):**
-| name | definition |
-|---|---|
-| `paced_gt_free` | (aware + unaware + nochange)/3 − free  *(H1: prediction is NEGATIVE in insula/operculum, somatomotor)* |
-| `confidence_mod` | confidence parametric on paced epochs (H2) |
-| `aware_gt_unaware` | aware − unaware (H3) |
-| `salience_high_gt_low` | high − low salience change trials (H4; needs the events split by salience — column present in events file) |
-| `arousal_mod` | arousal parametric (secondary) |
+| name | model | definition |
+|---|---|---|
+| `paced_gt_free` (C1) | A | unweighted mean of the paced conditions **present in the run** among aware / unaware / nochange, minus free *(H1: prediction NEGATIVE in insula/operculum, somatomotor)* |
+| `aware_gt_unaware` (C2) | A | aware − unaware (H3) |
+| `confidence_mod` (C3) | B | confidence parametric on `trial` (H2) |
+| `salience_high_gt_low` (C5) | C | high − low salience change trials (H4) |
 
-**Group level:** one-sample t on participant contrast images (N = 43 for
-H1/H2; 21 for H3; 41 for H4). H6: add `maia_ieat_total` (demeaned) as a
-covariate on `paced_gt_free`; the MAIA effect is the test, one-sided
-(higher MAIA → less deactivation, i.e. positive covariate effect).
+**Group level:** one-sample t on participant contrast images. Ns: H1 47,
+H2 44, H3 23, H4 43 (≥ 3 trials per cell pooled across runs; sets in
+`analysis/design_qc_twomodel.csv`). H6 (N = 46; sub-065 has no MAIA): add
+`maia_ieat_total` (demeaned) as a covariate on `paced_gt_free`; the MAIA
+effect is the test, **two-sided** (conceptual extension; prereg §3).
 
 **ROIs:**
 - Harvard–Oxford (50% threshold): L anterior insula, R anterior insula,
   dACC/MCC, posterior insula, SMA, central operculum.
-- H2/H3 inference set: L AI, R AI, dACC (Bonferroni ×3).
-- H6: 10 mm sphere at MNI (−4, +12, +36) primary; atlas dACC secondary.
+- H2/H3/H4 inference set: L AI, R AI, dACC (Bonferroni ×3), one-sided.
+- H6: 10 mm sphere at MNI (−4, +12, +36) primary; atlas dACC secondary;
+  two-sided.
 
-**Inference:** whole-brain cluster-forming p < .001, cluster FWE p < .05
-(permutation-based cluster inference is acceptable and preferred if using
-nilearn); ROI small-volume FWE p < .05 with the stated Bonferroni. H6
-one-sided. **No uncorrected result is a finding.**
+**Inference:** whole-brain cluster-forming p < .001, cluster FWE p < .05,
+two-sided (permutation-based cluster inference is acceptable and preferred
+if using nilearn); ROI small-volume FWE p < .05 with the stated Bonferroni.
+**No uncorrected result is a finding.**
 
 **H5 (equivalence):** extract per-participant ROI estimates of
 `confidence_mod` from base vs +PetCO2 (N = 22) and base vs +RVT (N = 26)
-models; TOST on the paired difference, bounds dz = ±0.65 / ±0.59; fixed
+models; TOST on the paired difference, bounds dz = ±0.65 / ±0.60; fixed
 interpretation grid in prereg §12.4. Report the corrected–uncorrected
-correlation alongside.
+correlation alongside. The same comparison for `aware_gt_unaware` (12 / 14
+participants) is **descriptive only** — report estimates side by side, draw
+no survival/abolition conclusion.
 
 **Registered diagnostic:** run-1 vs run-2 spatial correlation of
 `paced_gt_free` and `confidence_mod` contrast maps within participants +
@@ -164,9 +189,15 @@ cross-participant ICC of ROI means. Descriptive only. H3 excluded from it.
   normalise any kernel by signed area (inverts biphasic kernels).
 - Do not fit or select a PetCO2 transit lag; the 4-lag basis IS the model.
 - Do not treat `paced_nochange` responses as correct rejections, and do not
-  build any contrast on "detected vs not" — the yes/no split measures
-  response bias here, not sensitivity.
+  build any detection-stage contrast ("said changed" vs "said no change"
+  across stimulus types, i.e. hits vs false alarms) — that split measures
+  response bias here, not sensitivity. H3's aware − unaware is different: it
+  is restricted to true-change trials and its aware side requires the
+  correct direction.
 - Do not re-derive run inclusion, motion gating, or subject exclusion —
   the manifest is authoritative.
 - Do not put global signal in any model.
+- Do not put the confidence modulator in the same design as the awareness
+  regressors (9 designs go rank-deficient).
+- Do not report any condition-vs-rest contrast (there is no rest baseline).
 - Do not quote uncorrected or lag-/ROI-selected statistics as effect sizes.

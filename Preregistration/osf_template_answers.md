@@ -4,6 +4,8 @@ Template: OSF Preregistration (osf.io registration form). Each heading below is
 one template field, in template order. Text under it is paste-ready. Items
 marked [TO CONFIRM] need the author's input before freezing.
 
+Synced to `intero2023_imaging_prereg.md` **v0.3** (2026-11-24).
+
 ---
 
 ## Title
@@ -19,9 +21,10 @@ the perceived direction of change with confidence and arousal ratings.
 Respiration was recorded with a chest belt and expired CO2 with a capnograph.
 This registration covers the functional imaging analysis only: all behavioural
 and physiological processing is complete and disclosed; no functional image
-statistic has been computed. Hypotheses include direct replications of Farb,
-Zuo & Price (2023, eNeuro): insula/opercular deactivation under exogenous
-respiratory pacing, and MAIA-moderated sparing of anterior cingulate activity.
+statistic has been computed. Hypotheses include a direct replication of Farb,
+Zuo & Price (2023, eNeuro) — insula/opercular deactivation under exogenous
+respiratory pacing — and a conceptual extension of that paper's MAIA–anterior
+cingulate result to this task's pacing contrast.
 
 ## Contributors
 
@@ -46,36 +49,55 @@ insula; PetCO2; RVT; metacognition; replication
 
 ## Research questions or hypotheses
 
-H1 (replication). Exogenously paced breathing, relative to free breathing,
-produces relative DEACTIVATION of the insula/operculum pathway and somatomotor
-cortex, replicating the Active Matching result of Farb, Zuo & Price (2023,
-eNeuro 10(6); "IEAT"). The volitional-control account predicts the opposite
-(activation); a reversed result will be reported as a failed replication, not
-reframed.
+Each hypothesis is tested in one of three first-level models (A awareness,
+B confidence, C salience); awareness and the confidence modulator are never
+estimated in the same design.
 
-H2 (primary awareness test). Trial-by-trial confidence on change trials
-correlates positively with BOLD activity in bilateral anterior insula and
-dorsal anterior cingulate cortex (dACC). N = 43.
+H1 (replication; Model A; N = 47). Exogenously paced breathing, relative to
+free breathing, produces relative DEACTIVATION of the insula/operculum pathway
+and somatomotor cortex, replicating the Active Matching result of Farb, Zuo &
+Price (2023, eNeuro 10(6); "IEAT"). "Deactivation" means lower activity during
+paced than free epochs; the design has no rest baseline. The volitional-control
+account predicts the opposite (activation); a reversed result will be reported
+as a failed replication, not reframed.
 
-H3 (secondary awareness test). Change trials answered with the correct
-direction ("aware") elicit greater activity than change trials answered "No
-Change" ("unaware") in the same three regions of interest. N = 21;
-ROI-restricted. Registered in advance: a null here alongside a positive H2
-will be attributed to power, since only large effects (dz ≈ 1.0) are
-detectable at this N.
+H3 (authoritative awareness test; Model A; N = 23). Change trials answered
+with the correct direction ("aware") elicit greater activity than change
+trials answered "No Change" ("unaware") in left anterior insula, right
+anterior insula and dACC (ROI-restricted, Bonferroni ×3). H3 is authoritative
+because confidence and awareness covary behaviourally (within-participant
+r = .316 median), so a parametric confidence effect cannot arbitrate between
+them. Registered limitation: the 23 participants with ≥ 3 trials in both cells
+over-represent less frequent detectors (median unaware share .36 vs .19); the
+estimate is not generalised beyond this subsample.
 
-H4. High-salience (step) changes elicit greater salience-network activity
-(anterior insula, dACC) than low-salience (ramp) changes, consistent with the
+H2 (supportive awareness test; Model B; N = 44). Trial-by-trial confidence on
+paced trials correlates positively with activity in the same three ROIs.
+Model B's confidence effect absorbs the awareness effect rather than being
+adjusted for it. Registered in advance: a null H3 alongside a positive H2 is
+NOT evidence that confidence rather than awareness drives the effect, because
+that comparison (N = 23 vs 44) is confounded with power.
+
+H4 (Model C; N = 43). High-salience (step) changes elicit greater activity
+than low-salience (ramp) changes in the same three ROIs, consistent with the
 behavioural finding that salience affects noticing (p = .043) but not
-direction discrimination (p = .26). N = 41.
+direction discrimination (p = .26). Supported if the effect survives in at
+least one ROI; falsified if in none. Salience is not crossed with awareness
+(cells of ~1 trial).
 
 H5. Adding physiological regressors (RVT; PetCO2) attenuates but does not
-abolish the H2 awareness effects. Adjudicated by a preregistered equivalence
-criterion (see Inference criteria), not by threshold-crossing alone.
+abolish the awareness-related effects. The confirmatory test is an
+equivalence criterion on the H2 confidence effect (see Inference criteria).
+The same comparison for H3 is descriptive only: 12 of its 23 participants have
+PetCO2 and 14 have RVT, too few for an equivalence claim.
 
-H6 (replication). Higher self-reported interoceptive sensibility (MAIA)
-predicts greater (spared) ACC activity during paced breathing, tested
-one-sided in a 10 mm sphere at the IEAT peak (MNI −4, +12, +36). N = 43.
+H6 (conceptual extension; Model A; N = 46; two-sided). MAIA interoceptive
+sensibility moderates paced-vs-free activity in the anterior cingulate, tested
+in a 10 mm sphere at the IEAT's coordinate (MNI −4, +12, +36). In the IEAT,
+higher MAIA predicted reduced ACC deactivation on Active Interoception vs
+Active Exteroception; this task has no exteroceptive condition, and the IEAT
+did not relate MAIA to its pacing contrast, so the sign is not fixed by prior
+work and the test is two-sided.
 
 ## Foreknowledge of data or evidence
 
@@ -93,16 +115,20 @@ accuracy 0.525 vs chance 1/3; ordinal sensitivity 0.698 probit units/step;
 confidence type-2 AUC 0.661); respiration-belt processing including pacer
 adherence; capnography/PetCO2 extraction; RVT; and all quality control and
 exclusion decisions. The functional images have not been examined beyond
-fMRIPrep preprocessing: no first-level model has been fitted, no contrast
-image exists, no statistical map has been computed or viewed. Two narrow,
-documented exceptions: fMRIPrep's global_signal column was used to verify the
-physiological regressors carry the physiologically correct sign, and its
+automated preprocessing (fMRIPrep, and MRIQC image-quality metrics used for
+run QC): no first-level model has been fitted, no contrast image exists, no
+statistical map has been computed or viewed. Before freezing, the design
+matrices themselves were built and checked (rank, collinearity, contrast
+efficiency, event coverage, trial counts) — properties of the timing and
+confound sheets; no BOLD voxel was read. Two narrow, documented exceptions:
+fMRIPrep's global_signal column was used to verify the physiological
+regressors carry the physiologically correct sign, and its
 framewise_displacement column was used to apply the preregistered motion
 exclusion. No task regressor has been related to any imaging measure.
 Consequence, stated plainly: H2–H4 are informed by known behavioural results;
-they are untested predictions about brain data but are not blind. H1 and H6
-take their direction and coordinates from an independent published sample
-(IEAT). The full analysis plan with dated decision history is attached
+they are untested predictions about brain data but are not blind. H1 takes its
+direction, and H6 its region, from an independent published sample (IEAT).
+The full analysis plan with dated decision history is attached
 (intero2023_imaging_prereg.md) and git-versioned.
 
 ---
@@ -141,14 +167,16 @@ runs. Each breathing run: 7 cycles of [paced-breathing epoch (~20 s, visual
 pacer; instructed change Faster / Slower / No Change; for changes, salience
 high = step at midpoint vs low = linear ramp; endpoint ±25–35% of period) →
 rating window (direction of change, confidence 1–7, arousal 1–7) →
-free-breathing epoch (~20 s) → rating window]. Change direction and salience
-orders randomized within run. Two protocol versions exist (v1 n≈9 with
-per-epoch valence ratings and longer runs; v2 the remainder); protocol version
-is a registered group-level covariate (sensitivity S5). Acquisition: 3T
-Siemens, EPI, TR = 2 s, 2 mm isotropic; PEPOLAR fieldmaps; fMRIPrep 24.1.1,
-MNI152NLin2009cAsym. Concurrent physiological recording: Biopac respiration
-belt and capnograph (2 kHz, downsampled to 100 Hz), scanner-triggered;
-Siemens PMU respiration (400 Hz) as a validation stream.
+free-breathing epoch (~20 s) → rating window]. These events cover ~94% of
+each run, so there is no rest baseline; only between-condition contrasts are
+interpreted. Change direction and salience orders randomized within run. Two
+protocol versions exist (v1 n≈9 with per-epoch valence ratings and longer
+runs; v2 the remainder); protocol version is a registered group-level
+covariate (sensitivity S5). Acquisition: 3T Siemens, EPI, TR = 2 s, 2 mm
+isotropic; PEPOLAR fieldmaps; fMRIPrep 24.1.1, MNI152NLin2009cAsym.
+Concurrent physiological recording: Biopac respiration belt and capnograph
+(2 kHz, downsampled to 100 Hz), scanner-triggered; Siemens PMU respiration
+(400 Hz) as a validation stream.
 
 ## Randomization
 
@@ -172,20 +200,23 @@ inclusion criteria beyond MRI safety.]
 ## Sample size
 
 Collected: 54 non-pilot participants with usable task logs (105 breathing
-runs). After preregistered exclusions (below), the analysable samples are:
-H1/H2/H6: N = 43; H4: N = 41; H3: N = 21; sensitivity S1 (PetCO2): N = 22;
-S2 (RVT): N = 26. Trials per participant (median): 7 aware, 2 unaware,
-1 wrong-direction, 2 no-change, 14 free.
+runs). After preregistered exclusions (below): 90 breathing runs from 47
+participants. Analysable samples: H1 N = 47; H2 N = 44; H3 N = 23; H4 N = 43;
+H6 N = 46; sensitivity S1 (PetCO2) N = 22; S2 (RVT) N = 26; S4 (verified
+pacer adherence) N = 26; S6 (two-run participants only) N = 43. Trials per
+participant (median): 7 aware, 3 unaware, 1 wrong-direction, 2 no-change,
+14 free.
 
 ## Sample size rationale
 
 The sample was collected before this registration; no further collection will
 occur, so size is characterized rather than justified. Smallest detectable
-effect at 80% power (one-sample t): N = 43 → d = 0.44 at α = .05 (ROI),
-d = 0.67 at cluster-forming p < .001; N = 21 → d = 0.63 / 1.01. H6 at N = 43
-has ~67% one-sided power at the IEAT's observed effect (r ≈ 0.32); this is
-stated so a marginal replication is read against it. Equivalence bounds for
-H5 are set by what these Ns support (see Inference criteria).
+effect at 80% power (one-sample t): N = 47 → d = 0.42 at α = .05 (ROI),
+d = 0.64 at cluster-forming p < .001; N = 44 → 0.43 / 0.67; N = 23 →
+0.61 / 0.98. H6 (two-sided, N = 46) has 80% power for |r| ≥ 0.40 and ≈ 44–59%
+at the IEAT's ROI-level |r| ≈ 0.27–0.32; this is stated so a null is not read
+as evidence against the IEAT result. Equivalence bounds for H5 are set by what
+these Ns support (see Inference criteria).
 
 ## Starting and stopping rules
 
@@ -247,78 +278,104 @@ is underpowered at ~3 breaths/epoch and is not used inferentially).
 ## Statistical models
 
 First level (per run, GLM, canonical HRF + temporal derivative, 6 mm FWHM
-smoothing, MNI152NLin2009cAsym): event regressors paced_aware, paced_unaware,
-paced_wrongdir, paced_nochange, free, rating, subrating; parametric modulators
-confidence (primary) and arousal (secondary) on paced epochs, mean-centred
-over modelled trials; nuisance: 6 motion + 6 derivatives, framewise
-displacement, CSF, white matter, cosine drift (128 s), one spike regressor
-per volume with FD > 0.5 mm. Sensitivity models add (S2) RVT ⊗ RRF or
-(S1) the 4-lag PetCO2 basis, or both. Global signal is never a regressor.
+smoothing, MNI152NLin2009cAsym, no drift model beyond the cosine confounds).
+Three models share one nuisance set and differ only in how paced epochs are
+split:
+Model A (awareness; H1, H3, H6): paced_aware, paced_unaware, paced_wrongdir,
+paced_nochange, free, rating, subrating; no parametric modulator.
+Model B (confidence; H2 only): all paced epochs as one regressor carrying the
+mean-centred confidence modulator; free, rating, subrating as in A.
+Model C (salience; H4): paced change epochs split into high vs low salience;
+paced_nochange, free, rating, subrating as in A.
+Arousal is not a registered test; if reported, it is fitted in a separate
+model of Model B's form and labelled exploratory.
+Nuisance (all models): 6 motion + 6 derivatives, framewise displacement, CSF,
+white matter, cosine drift (128 s), one spike regressor per volume with
+FD > 0.5 mm. Sensitivity models add (S2) RVT ⊗ RRF or (S1) the 4-lag PetCO2
+basis, or both. Global signal is never a regressor. Design QC before freezing:
+all 90 designs are full rank in every model.
+Contrasts: C1 (H1) = free vs the unweighted mean of the paced conditions
+(aware, unaware, nochange) present in that run; C2 (H3) = aware − unaware;
+C3 (H2) = confidence modulator; C5 (H4) = high − low salience. Only
+between-condition contrasts are interpreted; no condition-vs-rest contrast
+is reported.
 Runs are combined within participant by fixed effects (run as a random factor
 is degenerate at 2 levels; runs are behaviourally exchangeable: accuracy
-0.800 vs 0.754, p = .22).
+0.800 vs 0.754, p = .22). For C3, only runs in which the confidence modulator
+varies enter (excludes sub-106 run-1 and sub-112 run-2).
 Group level: one-sample t on participant contrast images for H1–H4; MAIA
-total as a group covariate for H6 (one-sided); protocol version as covariate
-in sensitivity S5. Registered descriptive diagnostic: run-1 vs run-2 spatial
-correlation of contrast maps and cross-participant ICC of ROI means for the
-two well-powered contrasts (behavioural benchmark r ≈ 0.7); H3 is excluded
+total (demeaned) as a group covariate on C1 for H6 (two-sided); protocol
+version as covariate in sensitivity S5. Registered descriptive diagnostic:
+run-1 vs run-2 spatial correlation of contrast maps and cross-participant ICC
+of ROI means for C1 and C3 (behavioural benchmark r ≈ 0.7); H3 is excluded
 from this diagnostic (estimable in both runs for only 1 participant).
 
 ## Transformations
 
-Confidence and arousal mean-centred within participant over modelled trials.
+Confidence and arousal mean-centred within run over modelled trials.
 RVT z-scored within run (belt gain is uncalibrated and hand-set per session;
 raw amplitude would compare amplifier settings). PetCO2 series demeaned by
 convolution; physiological confound columns demeaned within run with missing
 volumes set to 0 (mean imputation); a physiological column with < 50%
 coverage in a run is omitted for that run (whole-basis rule for PetCO2: the
-4 lag columns enter together or not at all). MAIA responses converted from
-the administered 1–6 coding to the canonical 0–5 metric. No other
-transformations.
+4 lag columns enter together or not at all). Trailing events that extend past
+the end of the acquisition are clipped to the scan end and counted (3 runs).
+MAIA responses converted from the administered 1–6 coding to the canonical
+0–5 metric. No other transformations.
 
 ## Inference criteria
 
-Whole brain: cluster-forming p < .001 uncorrected, cluster-level FWE p < .05.
+Whole brain: cluster-forming p < .001 uncorrected, cluster-level FWE p < .05,
+two-sided.
 ROI: small-volume FWE p < .05, Bonferroni-corrected over the ROIs tested per
-hypothesis (H2/H3: left anterior insula, right anterior insula, dACC; ×3).
-H6: one-sided p < .05, small-volume corrected in a 10 mm sphere at MNI
+hypothesis (H2/H3/H4: left anterior insula, right anterior insula, dACC; ×3),
+one-sided in the predicted direction.
+H6: two-sided p < .05, small-volume corrected in a 10 mm sphere at MNI
 (−4, +12, +36), with the Harvard–Oxford dACC mask as a secondary test.
 No uncorrected result will be reported as a finding.
 H5 equivalence: TOST (α = .05 per side) on the paired within-participant
 difference between corrected and uncorrected ROI estimates of the H2 effect;
-bounds dz = ±0.65 (PetCO2, N = 22) and ±0.59 (RVT, N = 26), the smallest
-bounds supportable at ≥ 80% power. Fixed interpretation grid: TOST passes →
+bounds dz = ±0.65 (PetCO2, N = 22) and ±0.60 (RVT, N = 26), the smallest
+bounds supportable at 80% power. Fixed interpretation grid: TOST passes →
 statistically equivalent; TOST fails but corrected effect remains significant
 → attenuated but present; both fail → indeterminate (not "abolished"; the
 design cannot separate abolition from power loss at these bounds). The
 corrected–uncorrected correlation is reported so the bound can be read in raw
-units.
+units. The corresponding H3 comparison is descriptive.
 
 ## Data inclusion and exclusion
 
 Applied before this registration, from non-imaging data plus fMRIPrep's FD
-column only: (1) pilot/QA identifiers excluded; (2) sub-082 and sub-104
-excluded for shifted run labels in the derivatives (task-breath1 file holds
-172 volumes where the slot expects 242; all 242 other runs reconcile exactly);
-(3) motion gate: run excluded if mean FD > 0.5 mm or > 25% of volumes exceed
-FD 0.5 mm — removes 11/95 runs and 5 participants (median 81 spike volumes vs
-3 in retained runs); a registered check shows the gate does not select
-against pacer-adherent breathers (FD–adherence r = −0.003); (4) per-contrast
-estimability: ≥ 3 trials per cell per participant. Wrong-direction trials
+column only: (1) pilot/QA identifiers excluded; (2) sub-051 (no MRI acquired)
+and sub-056 (run-1 truncated at 229 volumes; run-2 fails the motion gate)
+excluded; (3) motion gate: run excluded if mean FD > 0.5 mm or > 25% of
+volumes exceed FD 0.5 mm — fails 12 of 103 runs and removes 5 participants
+entirely (median 81 spike volumes vs 3 in retained runs); a registered check
+shows the gate does not select against pacer-adherent breathers (FD–adherence
+r = −0.003); (4) a participant enters when at least one breathing run passes
+these criteria — run count is not an inclusion criterion (four participants
+contribute one run; sensitivity S6 removes them together); (5) per-contrast
+estimability: ≥ 3 trials per cell per participant, pooled across runs; for
+H2, participants whose confidence is constant across all paced trials
+(sub-066, sub-070, sub-114) are excluded from H2 only. Wrong-direction trials
 (median 1/participant) are modelled but never contrasted. No outlier
 exclusion beyond these rules; no exclusions may be added after imaging
 analysis begins.
+Note on an earlier draft: sub-082 and sub-104 were at one stage excluded for
+"shifted run labels"; that applied only to an obsolete Windows copy of the
+data. In the dataset of record their runs map correctly, and both are
+included (one gate-passing breathing run each).
 
 ## Missing data
 
 A missing physiological regressor excludes a run only from the corresponding
 sensitivity model, never from the base model. Physio gaps within a run:
 mean-imputed (0 after demeaning) when coverage ≥ 50%, else the column is
-omitted for that run. MAIA is complete for all 43 analysable participants.
-Participants contributing one run (rather than two) enter with that run's
-fixed-effects estimate. No imputation of behavioural responses; paced trials
-without a response (0 in the current data) would be modelled as a separate
-no-interest regressor.
+omitted for that run. MAIA is complete for 46 of the 47 analysable
+participants (sub-065 has none and does not enter H6). Participants
+contributing one run (rather than two) enter with that run's estimate. No
+imputation of behavioural responses; paced trials without a response (0 in
+the current data) would be modelled as a separate no-interest regressor.
 
 ## Other planned analysis
 
@@ -326,8 +383,10 @@ S1: ±PetCO2 model comparison (N = 22). S2: ±RVT (N = 26). S3: CO2-available
 vs unavailable participants on the uncorrected H2 contrast — registered as a
 cohort check only: CO2 availability is nearly collinear with protocol version
 (capnograph outage 2023-10-12 to 2024-01-18), so this cannot isolate CO2.
-S4: H2 restricted to participants with verified pacer adherence (N = 24
-pre-gate). S5: protocol version as group covariate.
+S4: H2 and H3 restricted to participants with verified pacer adherence on a
+retained run (N = 26; H2 25, H3 14). S5: protocol version as group covariate.
+S6: every hypothesis on two-run participants only (N = 43; H1 43, H3 23,
+H2 41, H4 43, H6 42).
 Exploratory (labelled as such regardless of outcome): brainstem/thalamic
 effects; free-breathing epochs vs measured respiratory change (noise floor
 sd_log = 0.399 comparable to the imposed signal); arousal modulation; MAIA
@@ -342,17 +401,20 @@ ACC-seeded PPI with the dorsal attention network.
 
 This study descends directly from the IEAT (Farb, Zuo & Price, 2023, eNeuro
 10(6):ENEURO.0088-23.2023): its paced epochs correspond to the IEAT's Active
-Matching condition and its free epochs to Active Interoception; H1 and H6 are
-replications with direction and coordinates fixed by that paper. Key
-behavioural facts constraining the hypotheses (already analysed, see
-Foreknowledge): three-category identification is well above chance (0.525 vs
-1/3) with direction accuracy 0.778 on true changes, while No Change trials
-are at chance and "No Change" is the lowest-confidence response — it
-functions as "I don't know", so no detection-stage d′ is interpreted as
-sensitivity. PetCO2 is a partial MEDIATOR of the task (pacing manipulates
-end-tidal CO2 by design), which is why H5 is framed as attenuation with an
-equivalence criterion rather than as a purity check. The attached full
-analysis plan (intero2023_imaging_prereg.md) contains the dated decision
-history; the analysis repository (git) will be linked as an OSF component,
-and any deviation after freezing is logged in deviations.md with date,
-rationale, and whether the affected result had been seen.
+Matching condition and its free epochs to Active Interoception. H1 is a
+replication with its direction fixed by that paper; H6 carries the IEAT's
+MAIA-sensitive ACC region over to this task's pacing contrast as a two-sided
+conceptual extension, because the IEAT's MAIA effect was on interoception vs
+exteroception, a contrast this design does not contain. Key behavioural facts
+constraining the hypotheses (already analysed, see Foreknowledge):
+three-category identification is well above chance (0.525 vs 1/3); when a
+direction is reported on a true change it is correct 0.778 of the time, while
+No Change trials are at chance and "No Change" is the lowest-confidence
+response — it functions as "I don't know", so no detection-stage d′ is
+interpreted as sensitivity. PetCO2 is a partial MEDIATOR of the task (pacing
+manipulates end-tidal CO2 by design), which is why H5 is framed as
+attenuation with an equivalence criterion rather than as a purity check. The
+attached full analysis plan (intero2023_imaging_prereg.md, v0.3) contains the
+dated decision history; the analysis repository (git) will be linked as an
+OSF component, and any deviation after freezing is logged in deviations.md
+with date, rationale, and whether the affected result had been seen.

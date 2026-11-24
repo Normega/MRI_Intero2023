@@ -6,7 +6,7 @@ behavioural counts only — `Scripts/intero2023_designqc.py` and
 `Scripts/intero2023_twomodel_qc.py`, outputs in `analysis/design_qc.csv` and
 `analysis/design_qc_twomodel.csv`.
 
-This document records four choices that `VERIFICATION_REPORT.md` §7 identified
+This document records the choices that `VERIFICATION_REPORT.md` §7 identified
 as blocking the freeze, the evidence each rests on, and the exact prereg text
 each one changes. It is the amendment log: the prereg body is edited to match,
 and this file preserves *why*.
@@ -253,6 +253,99 @@ which predates it: H1 47 (draft 46), H2 44 (42), H3 23 (23), H4 43 (43), H6 46
 
 ---
 
+# v0.3 decisions (2026-11-24, pre-freeze)
+
+These five came out of an independent re-check of every registered number against
+`FirstLevel/` event sheets, the two manifests, `Data/breathing_trials.csv` and
+`Data/maia_scores.csv`, and a re-reading of the IEAT paper (Farb, Zuo & Price,
+2023). No BOLD image was read. Every registered N in §4 and S6 was
+reproduced exactly: 90 runs, 47 participants, the motion gate failing 12 of 103
+runs, H1 47, H3 23 (identical ID list), H2 44, H4 43, H6 46, and S6
+43 / 23 / 41 / 43 / 42. The decisions below concern what those numbers support.
+
+## Decision 5 — H6 is a two-sided conceptual extension
+
+**Evidence.** The IEAT's MAIA covariate was entered on the Active Interoception
+vs Active Exteroception contrast (Methods, "Hypothesis testing"). Its Results
+read: "greater MAIA scores were associated with reduced deactivation during
+Active Interoception relative to Active Exteroception". This task has no
+exteroceptive condition. H6 as written in v0.2 tested MAIA on paced − free,
+which is the analogue of the IEAT's Matching vs Interoception contrast. The IEAT
+never related MAIA to that contrast. So v0.2's justification for a one-sided
+test ("the direction is fully specified by the prior study") does not hold.
+Under the mapping §1b itself uses (free ≈ Active Interoception), the IEAT effect
+would, if anything, predict a *negative* MAIA effect on paced − free. The
+handoff had specified a positive one.
+
+**Decided.** H6 is relabelled a conceptual extension and tested two-sided in the
+same a priori sphere. The power cost is stated: |r| ≥ 0.40 for 80% at N = 46,
+≈ 44–59% at the IEAT's ROI-level |r| ≈ 0.27–0.32 (IEAT Table 9). The coordinate
+is kept at the IEAT Results value (−4, +12, +36, k = 1205, the cluster it carried
+forward as a PPI seed). The paper's Methods give a different dACC description
+(k = 794, (−4, +58, +14)); that discrepancy is recorded in §1b rather than
+resolved by choice.
+
+## Decision 6 — No implicit baseline: only between-condition contrasts
+
+**Evidence.** Modelled events (paced, free, rating, sub-rating) cover a median
+**94.3%** of each run's acquisition across the 90 runs (min 63.2%, max 98.0%).
+The remainder is mostly ~2 s transitions. Every single-condition parameter is
+therefore relative to a few seconds of gaps.
+
+**Decided.** Only between-condition contrasts are interpreted. "Deactivation"
+(H1) and "spared" (H6) are relative to the comparison condition. No
+condition-vs-rest contrast is reported, even as exploratory, and single-condition
+beta maps are not shown. This rules out, before any result exists, the most
+natural post-hoc workaround for H6 (a free-vs-rest contrast standing in for the
+IEAT's interoception contrast).
+
+## Decision 7 — Physiological-subset Ns corrected to post-gate values
+
+**Evidence.** Counted on the 90 post-gate runs: RVT on every retained run, 26
+participants (54 runs); PetCO2, 22 (46 runs); both, 18 (38 runs); verified pacer
+adherence on ≥1 retained run, 26. v0.2's §4 cascade, §8 power table, §9 (S1, S2,
+S3, S4) and §12.4 carried the pre-gate values (30 / 24 / 20 / 24), while the §4
+N table and the handoff had 22 / 26. For adherence, `Data/prereg_sample.csv`
+gives 24, but that file predates the correction. Against the retained runs, the
+four reinstated participants all carry `adherence_verified` and the gated
+sub-062 and sub-094 drop out, which gives 26. TOST power by simulation (paired,
+α = .05 per side, true difference 0): N = 22 needs dz ≥ 0.65 and N = 26 needs
+dz ≥ 0.60 for 80%.
+
+**Decided.** The bounds are dz = ±0.65 (PetCO2) and ±0.60 (RVT) at 80% power. The
+0.59 in the v0.2 N table and OSF drafts was at the 80% boundary and is rounded to
+the defensible value.
+
+## Decision 8 — H3 under physiological correction is descriptive
+
+**Evidence.** Of H3's 23 participants, 12 have PetCO2 on all retained runs and 14
+have RVT. 80% TOST power at those Ns needs dz ≈ 0.92 and 0.84.
+
+**Decided.** The confirmatory H5 test is the TOST on H2 (already the case in
+v0.2). The H5 hypothesis text no longer predicts that H3's effects "will
+survive". The corrected-vs-uncorrected H3 comparison is reported descriptively,
+with no survival or abolition conclusion.
+
+## Decision 9 — Model B run exceptions and minor corrections
+
+**Model B.** Seven runs have constant paced confidence within the run, so the
+mean-centred modulator is all zeros there. Five belong to the three H2-excluded
+participants. Two do not: **sub-106 run-1** and **sub-112 run-2**. For C3, these
+two participants are combined over their other run only. The general rule is
+that the C3 fixed-effects step uses only runs in which the modulator varies.
+
+**Minor:**
+- H2's falsification criterion now includes the dACC, matching its inference set.
+- H4 gains an explicit inference set (the H3 masks), a support criterion and a
+  null outcome.
+- §5 trial medians use the corrected sample (unaware 3, not 2).
+- The §2 direction-accuracy figure (0.778) is labelled as conditional on
+  reporting a direction (0.562 over all change trials).
+- §1b's description of the IEAT insula effect follows the IEAT Results
+  (bilateral) rather than its abstract (right).
+
+---
+
 ## Applied
 
 `Preregistration/intero2023_imaging_prereg.md` was rewritten to **v0.2** on
@@ -261,6 +354,11 @@ and Ns), §5 (contrast definition and trailing events), §7 (the three models),
 §8 (power table and the H3 selection statement), §9 (S6), §12 (resolved items
 6–9), plus a change log in the header. This document remains the record of
 *why*; the prereg body is now the record of *what*.
+
+Decisions 5–9 were applied as **v0.3** on 2026-11-24: §0, §1b, §2, §3 (H1, H2, H4,
+H5, H6), §4, §5, §8, §9, §12 (items 10–13), and the header change log. The OSF
+draft, `osf_template_answers.md` and `ANALYSIS_HANDOFF.md` were brought in line
+in the same pass.
 
 ## What is still open
 
