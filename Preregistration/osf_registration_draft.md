@@ -8,7 +8,7 @@
 
 ## Q1. What are the hypotheses under investigation?
 
-There are six hypotheses, each stated in full with falsification criteria in §3 of the attached plan. Each is tested in one of three first-level models: **A** awareness, **B** confidence, **C** salience. Awareness and the confidence modulator are never estimated in the same design (§7).
+There are seven hypotheses, each stated in full with falsification criteria in §3 of the attached plan. H1–H6 are each tested in one of three first-level models: **A** awareness, **B** confidence, **C** salience. H7 uses a separate connectivity model. Awareness and the confidence modulator are never estimated in the same design (§7).
 
 - **H1 (Model A, N = 47).** Paced (exogenously controlled) breathing produces relative *deactivation* of the insula/operculum pathway and somatomotor cortex compared with free breathing. This replicates the Active Matching result of Farb, Zuo & Price (2023, eNeuro; "IEAT"). The direction is committed to the replication: the volitional-control account predicts the opposite, and a reversed result will be reported as a failed replication. The design has no rest baseline, so "deactivation" means relative to free breathing. Inference is in three somatomotor-network masks (posterior insula, central operculum, sensorimotor cortex), Bonferroni ×3.
 - **H3 (authoritative awareness test; Model A, N = 23).** Aware (correct-direction) > unaware (responded "No Change") change trials, in bilateral anterior insula and dACC. Inference is ROI-restricted, Bonferroni ×3. The 23-participant subsample over-represents less frequent detectors, and its estimate is not generalised beyond it.
@@ -16,6 +16,8 @@ There are six hypotheses, each stated in full with falsification criteria in §3
 - **H4 (Model C, N = 43).** Salience (step vs ramp) effects fall in the salience-network ROIs. This is consistent with the behavioural finding that salience affects noticing, not direction discrimination.
 - **H5.** Physiological correction attenuates but does not abolish the awareness-related effects. It is adjudicated by a preregistered TOST equivalence criterion on the H2 effect (bounds dz = ±0.61 for PetCO2 at H2 N = 25 and ±0.59 for Biopac-belt RVT at H2 N = 27; interpretation grid fixed in §12.4). The same comparison for H3 is descriptive: 13 and 15 of its participants have the two physiological regressors. A robustness version (S2b) adds RVT from the scanner's PMU respiration cushion where the Biopac belt failed (H2 N = 38; H3 21 of 23).
 - **H6 (conceptual extension; Model A, N = 46; two-sided).** MAIA interoceptive sensibility moderates paced-vs-free activity in a 10 mm sphere at the IEAT's ACC coordinate (MNI −4, +12, +36). The IEAT's MAIA effect was on interoception vs exteroception, a contrast this task does not contain. The sign on this study's contrast is therefore not fixed by prior work.
+
+- **H7 (connectivity; both parts confirmatory).** The salience network couples more strongly with the somatomotor and executive networks (CAREN SAL–SMN, SAL–ECN), as follows. **H7a** (N = 47): during paced than during free epochs. **H7b** (N = 23): on aware than on unaware change epochs. The test is a two-sided paired t on Fisher-z coupling, Holm-corrected across the two pairs. A supported effect counts as network coupling only if it survives partialling the global signal, because pacing changes CO2 by design. H7b is powered only for large effects (dz ≥ 0.61).
 
 ## Q2. What data will be used, and how were they generated?
 
@@ -48,7 +50,7 @@ The sample is the full collected cohort minus preregistered exclusions, all alre
 - **One-run rule:** a participant enters when at least one breathing run passes. Run count is not an inclusion criterion.
 - **Estimability rule:** a contrast counts for a participant when each of its cells has ≥ 3 trials, pooled across runs.
 
-**Post-gate sample: 90 runs, 47 participants.** Final Ns: H1 47, H2 44, H3 23, H4 43, H6 46. Sensitivity samples: S1 (PetCO2) 25, S2 (Biopac RVT) 30, S2b (RVT incl. PMU fallback) 41, S4 (adherence) 26, S6 (two-run only) 43. A registered check shows the motion gate does not select against pacer-adherent breathers (fd–adherence r = −0.003). sub-082 and sub-104, excluded in an earlier draft for "shifted run labels", are included. That problem affected only an obsolete copy of the data (§4).
+**Post-gate sample: 90 runs, 47 participants.** Final Ns: H1 47, H2 44, H3 23, H4 43, H6 46, H7a 47, H7b 23. Sensitivity samples: S1 (PetCO2) 25, S2 (Biopac RVT) 30, S2b (RVT incl. PMU fallback) 41, S4 (adherence) 26, S6 (two-run only) 43. A registered check shows the motion gate does not select against pacer-adherent breathers (fd–adherence r = −0.003). sub-082 and sub-104, excluded in an earlier draft for "shifted run labels", are included. That problem affected only an obsolete copy of the data (§4).
 
 ## Q5. Which variables enter the analysis?
 
@@ -61,9 +63,11 @@ Arousal is exploratory only. The nuisance set is the fMRIPrep motion parameters 
 
 Group level is a one-sample t on fixed-effects-combined participant contrasts, with MAIA total as a covariate on the paced-vs-free contrast for H6.
 
+Connectivity (H7, §7) uses the median signal of the CAREN SAL, SMN and ECN networks from the unsmoothed preprocessed BOLD. Each run is band-passed at 0.01–0.1 Hz, and the data are regressed on the nuisance set and the Model A task regressors. Windows are epoch-locked, shifted 4 s and demeaned per epoch. Coupling is the Fisher-z correlation per condition.
+
 ## Q6. What are the statistical models and inference criteria?
 
-§7–§8 in full. Whole-brain tests use cluster-forming p < .001 and cluster FWE p < .05, two-sided. ROI tests use small-volume FWE p < .05, one-sided in the predicted direction, Bonferroni-corrected across the ROIs tested per hypothesis. The masks come from the CAREN consensus network atlas (network × AAL-3 region): anterior insula and dACC from the salience network, and posterior insula, central operculum and sensorimotor cortex from the somatomotor network. A Harvard–Oxford version is reported as atlas sensitivity only. H6 is two-sided. H5 is decided by the TOST grid. No uncorrected result will be reported as a finding.
+§7–§8 in full. Whole-brain tests use cluster-forming p < .001 and cluster FWE p < .05, two-sided. ROI tests use small-volume FWE p < .05, one-sided in the predicted direction, Bonferroni-corrected across the ROIs tested per hypothesis. The masks come from the CAREN consensus network atlas (network × AAL-3 region): anterior insula and dACC from the salience network, and posterior insula, central operculum and sensorimotor cortex from the somatomotor network. A Harvard–Oxford version is reported as atlas sensitivity only. H6 is two-sided. H7 uses two-sided paired tests, Holm-corrected across two network pairs, with a global-signal interpretation gate. H5 is decided by the TOST grid. No uncorrected result will be reported as a finding.
 
 Power for every registered N is tabulated in §4/§8. This includes the statement that H6 has 80% power only for |r| ≥ 0.40, and ≈ 44–59% at IEAT-sized correlations.
 

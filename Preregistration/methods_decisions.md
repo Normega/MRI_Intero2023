@@ -475,6 +475,62 @@ The NIfTI files are gitignored because CAREN's redistribution terms are not
 established and the repository is public. Building the masks read the
 fMRIPrep brain masks only, never BOLD intensities.
 
+## Decision 13 — H7: between-network coupling, paced vs free and aware vs unaware
+
+**Request.** Test for greater inter-network coupling in the breathing-attention
+and breathing-awareness contexts, using the MindLock connectivity analysis as
+the template. The PI chose:
+- **Contexts:** paced vs free as the attention contrast (H7a), and aware vs
+  unaware as the awareness contrast (H7b).
+- **Pairs:** SAL–SMN and SAL–ECN.
+- **Status:** both parts confirmatory.
+
+**What is carried over from MindLock:**
+- whole CAREN network masks;
+- median network signal, with the mean as a sensitivity specification;
+- a 0.01–0.1 Hz band-pass applied identically to data and regressors;
+- per-epoch demeaning before concatenation;
+- Fisher z, with a paired test equivalent to `z ~ condition + (1|participant)`;
+- no global signal regression in the primary pipeline;
+- the non-neural-account checks, reported with the result;
+- an exploratory all-pairs specificity analysis with FDR;
+- the rule that the per-participant coupling difference is not an
+  individual-differences measure.
+
+**What changes, and why:**
+1. **Task-evoked responses are regressed out before correlating** (Model A
+   regressors). MindLock's 50 s blocks made this optional. Here the epochs are
+   about 20 s and abut rating windows, so the evoked responses at every switch
+   are shared across networks and would inflate every correlation (Cole et
+   al., 2019).
+2. **The global-signal check is a pre-committed interpretation gate rather
+   than a post-hoc test.** Paced breathing changes ventilation and CO2 by
+   construction. H1 also predicts lower regional activity under pacing, which
+   is exactly the condition MindLock identified as pushing measured coupling
+   up for non-neural reasons. A supported H7 is called a network-coupling
+   effect only if it survives partialling the identically processed global
+   signal.
+3. **Spike volumes are excluded from the windows** instead of being regressed,
+   because spike regressors do not survive band-pass filtering.
+
+**Feasibility, counted from event timing before the freeze** (no BOLD read):
+- Epochs are about 20 s at TR = 2 s, with a 4 s window shift.
+- Every participant has 7–14 paced and 7–14 free epochs, a median of 139 and
+  141 volumes (minimum 70).
+- In the 23 H3 participants, the medians are 67 aware and 44 unaware volumes
+  (ranges 34–89 and 27–77).
+- MindLock had about 500 volumes per mode, at a shorter TR.
+
+**Power at 80%:**
+- **H7a (N = 47):** dz 0.42 at α .05 and 0.46 at Holm's first step.
+- **H7b (N = 23):** dz 0.61 and 0.68.
+- **Caveat:** MindLock's registered coupling effect was dz 0.49, measured on
+  more data. H7b is registered as confirmatory knowing that it detects only
+  large effects, and its null is pre-declared uninformative.
+
+**Prior evidence, stated so that it is not overread.** MindLock's SMN–SAL
+test was null (dz 0.17). Its coupling changes were confined to ECN pairs.
+
 ---
 
 ## Applied
@@ -493,7 +549,7 @@ in the same pass.
 
 Decisions 10–11 were applied as **v0.4** on 2026-11-25 (prereg header, §3 H5, §4, §6, §8, §9 S1/S2/S2b/S3, §12.4, §12 item 14), with the code and data changes in commits `4aae7cd` and `bd88f7f`.
 
-Decision 12 was applied as **v0.5** on 2026-11-25 (prereg header, §0, §3 H1 and H6, §8, §12 item 15). The OSF draft, `osf_template_answers.md` and `ANALYSIS_HANDOFF.md` were updated in the same pass.
+Decisions 12–13 were applied as **v0.5** on 2026-11-25 (prereg header, §0, §1, §3 H1, H6 and H7, §7 connectivity model, §8, §10, §12 items 15–16). The OSF draft, `osf_template_answers.md` and `ANALYSIS_HANDOFF.md` were updated in the same pass.
 
 ## What is still open
 

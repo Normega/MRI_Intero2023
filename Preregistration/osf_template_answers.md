@@ -103,6 +103,19 @@ Active Exteroception; this task has no exteroceptive condition, and the IEAT
 did not relate MAIA to its pacing contrast, so the sign is not fixed by prior
 work and the test is two-sided.
 
+H7 (between-network coupling; connectivity model; both parts confirmatory).
+Coupling of the salience network (CAREN SAL) with the somatomotor (SMN) and
+executive (ECN) networks is greater (H7a, N = 47) during paced than free
+breathing epochs, and (H7b, N = 23, the H3 participants) on aware than
+unaware change epochs. Two-sided paired t on Fisher-z coupling, Holm across
+the two pairs within each part; supported if at least one pair shows the
+predicted direction and survives Holm. A supported effect is reported as
+network coupling only if it stays significant after the identically
+processed global signal is partialled out. Otherwise it is reported as not
+separable from global signal, because pacing changes CO2 by design. H7b is
+powered only for large effects (dz ≥ 0.61), and its null is
+pre-declared uninformative.
+
 ## Foreknowledge of data or evidence
 
 Selection (confirmed 2026-08-20): the option stating that the data exist and
@@ -206,7 +219,7 @@ inclusion criteria beyond MRI safety.]
 Collected: 54 non-pilot participants with usable task logs (105 breathing
 runs). After preregistered exclusions (below): 90 breathing runs from 47
 participants. Analysable samples: H1 N = 47; H2 N = 44; H3 N = 23; H4 N = 43;
-H6 N = 46; sensitivity S1 (PetCO2) N = 25; S2 (Biopac RVT) N = 30; S2b (RVT
+H6 N = 46; H7a N = 47; H7b N = 23; sensitivity S1 (PetCO2) N = 25; S2 (Biopac RVT) N = 30; S2b (RVT
 with PMU fallback) N = 41; S4 (verified pacer adherence) N = 26; S6 (two-run participants only) N = 43. Trials per
 participant (median): 7 aware, 3 unaware, 1 wrong-direction, 2 no-change,
 14 free.
@@ -219,7 +232,10 @@ effect at 80% power (one-sample t): N = 47 → d = 0.42 at α = .05 (ROI),
 d = 0.64 at cluster-forming p < .001; N = 44 → 0.43 / 0.67; N = 23 →
 0.61 / 0.98. H6 (two-sided, N = 46) has 80% power for |r| ≥ 0.40 and ≈ 44–59%
 at the IEAT's ROI-level |r| ≈ 0.27–0.32; this is stated so a null is not read
-as evidence against the IEAT result. Equivalence bounds for H5 are set by what
+as evidence against the IEAT result. H7 (paired, two-sided): dz = 0.42 at
+N = 47 and 0.61 at N = 23 (0.46 / 0.68 at Holm's first step), with about 140
+volumes per condition per participant for H7a and medians of 67 aware / 44
+unaware volumes for H7b. Equivalence bounds for H5 are set by what
 these Ns support (see Inference criteria).
 
 ## Starting and stopping rules
@@ -314,6 +330,20 @@ version as covariate in sensitivity S5. Registered descriptive diagnostic:
 run-1 vs run-2 spatial correlation of contrast maps and cross-participant ICC
 of ROI means for C1 and C3 (behavioural benchmark r ≈ 0.7); H3 is excluded
 from this diagnostic (estimable in both runs for only 1 participant).
+Connectivity (H7): fMRIPrep preprocessed BOLD, unsmoothed. Per run, a
+0.01–0.1 Hz band-pass is applied identically to the data and to the
+regressors. The data are regressed on the base nuisance set (without cosines
+or spike columns) and on all Model A task regressors, which removes the
+condition-locked evoked responses. There is no global signal regression.
+The median signal is taken in each CAREN network (SAL, SMN, ECN).
+Windows run from epoch onset + 4 s to offset + 4 s, excluding FD > 0.5 mm
+volumes, and are demeaned per epoch and concatenated within condition. Coupling
+is Pearson r, Fisher z, per pair, condition and participant, compared by a
+paired t. Reported with every result: the global signal and the five-network
+mean partialled out, temporal SD by condition, network-mean activation, and
+the +RVT / +PetCO2 versions. Pre-declared specifications: median/mean ×
+4/6 s shift × (H7a only) Model A or FIR task removal. All 10 network pairs
+are tested, FDR-corrected, as exploratory.
 
 ## Transformations
 
@@ -346,6 +376,10 @@ group brain mask. They were built and SHA-256 checksummed before the freeze
 sensitivity, never for inference.
 H6: two-sided p < .05, small-volume corrected in a 10 mm sphere at MNI
 (−4, +12, +36), with the CAREN dACC mask reported descriptively.
+H7a/H7b: two-sided paired t on Fisher-z coupling, Holm across SAL–SMN and
+SAL–ECN within each part. Predicted direction required for support.
+Interpretation gate: the effect must remain p < .05 in the predicted
+direction with the global signal partialled out.
 No uncorrected result will be reported as a finding.
 H5 equivalence: TOST (α = .05 per side) on the paired within-participant
 difference between corrected and uncorrected ROI estimates of the H2 effect;

@@ -30,10 +30,11 @@ direction with confidence and arousal ratings. Behaviour and physiology are
 fully analysed (that foreknowledge is disclosed in the registration):
 identification is well above chance, confidence is metacognitively valid, and
 "No Change" responses function as "I don't know". The imaging hypotheses are
-H1–H6 in the prereg; H1 is a direct replication of Farb, Zuo & Price (2023,
+H1–H7 in the prereg; H1 is a direct replication of Farb, Zuo & Price (2023,
 eNeuro) — insula/opercular DEACTIVATION under exogenous pacing (paced < free,
 direction committed) — and H6 is a **two-sided conceptual extension** of that
-paper's MAIA–ACC result (sphere at MNI −4, +12, +36). The functional images
+paper's MAIA–ACC result (sphere at MNI −4, +12, +36). H7 (added v0.5) is a
+between-network coupling test, adapted from the MindLock analysis. The functional images
 have never been touched beyond fMRIPrep; keep it that way until step 3.
 
 ## 2. Inputs
@@ -176,6 +177,39 @@ no survival/abolition conclusion.
 `paced_gt_free` and `confidence_mod` contrast maps within participants +
 cross-participant ICC of ROI means. Descriptive only. H3 excluded from it.
 
+**H7 connectivity (prereg §3 H7 and §7, final subsection; follow it step by step):**
+- **Data:** the unsmoothed `desc-preproc_bold` for each manifest run;
+  masks `ROIs/net_SAL`, `net_SMN`, `net_ECN` (checksums in the manifest).
+- **Per run:**
+  1. Zero-phase Butterworth 0.01–0.1 Hz, applied to the voxel series AND to
+     every regressor.
+  2. Regress on motion 6+6, FD, CSF and WM (no cosines, no spike columns)
+     plus all seven Model A task regressors (spm + derivative). This removes
+     the evoked responses.
+  3. Take the median across network voxels.
+- **Windows and coupling:**
+  - Each window is [onset + 4 s, onset + duration + 4 s). Drop FD > 0.5 mm
+    volumes, demean each epoch segment, and concatenate within condition
+    across runs.
+  - Coupling is Pearson r, then Fisher z.
+- **Contrasts:**
+  - H7a: paced (all four paced conditions) vs free, N = 47.
+  - H7b: aware vs unaware, N = 23, the H3 list.
+  - Pairs SAL–SMN and SAL–ECN; two-sided paired t; Holm ×2 within each part.
+- **Interpretation gate:** the same test with fMRIPrep `global_signal`
+  (processed identically) partialled out of each pair correlation. A
+  supported H7 that fails this gate is reported as "not separable from
+  global signal".
+- **Also report:**
+  - the five-network-mean partial;
+  - temporal SD by condition;
+  - network-mean Model A activation for the same contrast;
+  - the +RVT (Biopac, S2) and +PetCO2 (S1) versions;
+  - the 8 (H7a) and 4 (H7b) pre-declared specifications;
+  - all 10 network pairs with FDR, as exploratory.
+- **Never** correlate H7 difference scores with MAIA or behaviour as a
+  confirmatory test.
+
 ## 5. Implementation notes (choices left to you, within the spec)
 
 - **nilearn** is the pragmatic choice here (`FirstLevelModel` with
@@ -217,7 +251,9 @@ cross-participant ICC of ROI means. Descriptive only. H3 excluded from it.
   correct direction.
 - Do not re-derive run inclusion, motion gating, or subject exclusion —
   the manifest is authoritative.
-- Do not put global signal in any model.
+- Do not put global signal in any model. The one exception is the H7
+  interpretation gate, which partials the global signal out of a coupling
+  estimate as a registered check. It is not a GLM regressor.
 - Do not put the confidence modulator in the same design as the awareness
   regressors (9 designs go rank-deficient).
 - Do not report any condition-vs-rest contrast (there is no rest baseline).

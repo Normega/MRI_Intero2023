@@ -33,9 +33,10 @@
 13. **§6, §9: the Siemens PMU respiration cushion is registered as a fallback RVT source, used in a new robustness analysis S2b only.** The confirmatory S2/H5 test stays on the Biopac belt. PMU RVT couples to the global signal at least as well as the Biopac belt, but the two belts' RVT time courses agree poorly. The saturation gate was revised after some fallback-run quality metrics had been seen. That sequence is disclosed in §6.
 14. **§3, §4, §12.4: the TOST N is the H2 subset, and the bounds are restated at it.** v0.2/v0.3 quoted the whole-sample physio N (22 / 26) for a test defined on the H2 effect; the correct H2 ∩ RVT N was 24. At v0.4: PetCO2 N = 25, dz = ±0.61; Biopac RVT N = 27, dz = ±0.59 (80% power).
 
-**Changes in v0.5 (2026-11-25), pre-freeze, before any model was fitted.** No BOLD intensity was read. Rationale is in `methods_decisions.md` decision 12.
+**Changes in v0.5 (2026-11-25), pre-freeze, before any model was fitted.** No BOLD intensity was read. Rationale is in `methods_decisions.md` decisions 12–13.
 
 15. **§3, §8: the ROI masks are now constructible, and H1 has a fixed inference set.** v0.4 named Harvard–Oxford masks the atlas does not contain: it has a single insula label (no anterior/posterior division) and no dACC/mid-cingulate label (its anterior cingulate division runs from pregenual to mid-cingulate cortex). H1's masks and its Bonferroni count were not stated. The masks are now defined from the CAREN consensus network atlas (Doucet, Lee & Frangou, 2019) by network × AAL-3 region membership, following the procedure used in the lab's MindLock study. The salience network supplies the anterior insula and dACC, and the somatomotor network supplies the posterior insula, central operculum and sensorimotor cortex. H1 is tested in three masks, Bonferroni ×3. A Harvard–Oxford version is registered as an atlas-sensitivity check. The masks were built and checksummed before the freeze (`ROIs/roi_manifest.csv`).
+16. **§3, §7, §8, §10: H7 is added, a confirmatory test of between-network coupling.** H7a is paced vs free (N = 47) and H7b is aware vs unaware (N = 23), each for salience–somatomotor and salience–executive coupling. The method follows the lab's MindLock connectivity analysis, with two changes for this design. Task-evoked responses are removed before correlating, because the epochs here are short. And a global-signal interpretation gate is fixed in advance, because paced breathing moves CO2 and H1 predicts lower regional activity. Feasibility was counted from event timing only. Rationale is in `methods_decisions.md` decision 13.
 
 ---
 
@@ -73,6 +74,7 @@ The task manipulates the rate of paced breathing (faster / slower / no change, d
 2. Identify the correlates of **awareness of a respiratory change** — the central question.
 3. Determine whether those correlates survive **correction for physiological (vascular) confounds**, which in this paradigm are partly manipulated by the task itself.
 4. **Replicate key results of the direct predecessor study**, the IEAT (Farb, Zuo & Price, 2023, eNeuro 10(6):ENEURO.0088-23.2023), in a larger sample with an added awareness manipulation.
+5. Test whether the salience network couples more strongly with the somatomotor and executive networks when breathing is paced, and when a change is noticed (H7, added v0.5).
 
 ### 1b. Relation to the predecessor study (IEAT)
 
@@ -115,7 +117,7 @@ Two consequences carry directly into the imaging model:
 
 ## 3. Hypotheses
 
-Regions are specified a priori as ROIs in §8. Directional predictions are one-sided in the sense stated; whole-brain tests remain two-sided. Each hypothesis is assigned to one of the three first-level models defined in §7; **awareness and confidence are never estimated in the same model** (§7, and `Preregistration/methods_decisions.md` decision 2).
+Regions are specified a priori as ROIs in §8. Directional predictions are one-sided in the sense stated; whole-brain tests remain two-sided. H1–H6 are each assigned to one of the three first-level models defined in §7, and H7 uses the connectivity model at the end of §7; **awareness and confidence are never estimated in the same model** (§7, and `Preregistration/methods_decisions.md` decision 2).
 
 **H1 — Exogenous respiratory control (replication of IEAT Active Matching). Model A, N = 47.**
 Two competing directions exist for the paced vs free contrast, and this document commits to the replication direction. The naive volitional-control account predicts paced > free activation in SMA, sensorimotor cortex, and insula. The IEAT found the opposite: exogenous pacing produced greater **deactivation** along the insula/operculum pathway, somatomotor cortex, ventral occipital cortex, and cerebellum relative to endogenous breathing.
@@ -173,6 +175,33 @@ No sign is registered, and the test is two-sided.
 *Coverage and power:* 46 of the 47 analysable participants have complete MAIA (sub-065 has none). At N = 46, two-sided α = .05, 80% power requires |r| ≥ 0.40. At the IEAT's ROI-level |r| ≈ 0.27–0.32, power is ≈ 44–59%. **H6 is underpowered for an IEAT-sized effect, and a null is not evidence against the IEAT result**, which concerned a different contrast.
 *Rationale:* a fixed a priori region and construct from an independent sample, applied to the contrast this design affords. MAIA subscale analyses (the Attention Regulation vs Noticing dissociation reported in the IEAT) are exploratory (§10).
 *Administration note (registered):* this study administered the 37-item MAIA-2 with response boxes coded 1–6; scores are converted to the canonical 0–5 metric before use. The IEAT used the original MAIA; the six retained subscales are common to both.
+
+**H7 — Between-network coupling in the attention and awareness contexts (added v0.5; both parts confirmatory). Connectivity model (§7, final subsection).**
+*Rationale.* Monitoring an imposed respiratory change, and becoming aware of one, should require the salience network to exchange signal with two other networks: the one that carries the bodily input and the one that uses it. Two pairs are named.
+- **SAL–SMN:** somatomotor input to salience. The IEAT's pacing effect fell on the somatomotor-network regions that H1 tests.
+- **SAL–ECN:** salience-to-executive broadcast, the standard network account of access (Menon & Uddin, 2010; Sridharan, Levitin & Menon, 2008).
+
+Networks are the whole CAREN salience (SAL), somatomotor (SMN) and executive (ECN) networks (§8). *Prior evidence is weak and is stated now:* in MindLock, the analogous SMN–SAL test was null (dz = +0.17), and coupling changes appeared only in pairs involving ECN.
+
+**H7a — attention context (paced vs free). N = 47.** *Prediction:* coupling is greater during paced than during free epochs, for SAL–SMN and SAL–ECN.
+
+**H7b — awareness context (aware vs unaware). N = 23, the H3 participants.** *Prediction:* coupling is greater on aware than on unaware change epochs, for the same two pairs.
+
+*Test:* a two-sided paired t on the per-participant difference in Fisher-z coupling, Holm-corrected across the two pairs within each part. *Supported if* at least one pair shows the predicted direction and survives Holm. *Falsified if* neither does. An effect that survives Holm in the opposite direction is reported as contrary to the prediction, not reframed.
+
+*Interpretation gate, fixed now.* A supported H7a or H7b is reported as a network-coupling effect only if it stays significant (two-sided p < .05, predicted direction) once the fMRIPrep global signal, processed identically, is partialled out of the pair correlation (§7). If it does not, it is reported as **a coupling change not separable from the global signal**. Two features of this design make that the live alternative:
+- Paced breathing changes ventilation and CO2 by construction (§6), which moves the whole-brain signal.
+- H1 predicts lower regional activity under pacing. On its own, that pushes measured coupling up for non-neural reasons, because shared noise becomes a larger share of the remaining variance (MindLock, Tests of Non-Neural Accounts).
+
+The other non-neural checks (§7) are reported alongside, descriptively: co-activation, temporal amplitude, the five-network mean, and the physiological corrections. For H7a the physiological corrections use +RVT on 30 participants and +PetCO2 on 25. For H7b they use 15 and 13.
+
+*Power.* At 80% power, the detectable dz is:
+- **H7a:** 0.42 at α = .05, or 0.46 at Holm's first-step α = .025.
+- **H7b:** 0.61 and 0.68.
+
+MindLock's registered coupling effect was dz = 0.49, from about 3–4 times as many volumes per condition. Here each participant contributes about 140 volumes per condition for H7a, and medians of 67 aware and 44 unaware volumes for H7b. The within-participant estimates are therefore noisier. **H7b is powered only for a large effect, and a null H7b is not evidence against awareness-related coupling.**
+
+*Not an individual-differences measure.* MindLock's per-participant coupling differences had no between-participant reliability (split-half −0.13 to +0.20) although each coupling estimate was reliable. No H7 difference score will be correlated with MAIA or behaviour in a confirmatory test.
 
 ---
 
@@ -365,6 +394,32 @@ The global signal is **not** included as a nuisance regressor in any model.
 
 **Design QC, computed before the freeze and before any model was fitted.** `Scripts/intero2023_designqc.py` and `Scripts/intero2023_twomodel_qc.py` build every design matrix and report rank, per-contrast SE multipliers, VIF among the task regressors, and the modulator/awareness correlation; outputs are committed as `analysis/design_qc.csv` and `analysis/design_qc_twomodel.csv`. No BOLD image is read by either.
 
+**Connectivity model (H7; registered v0.5).** It is computed from the fMRIPrep preprocessed BOLD (MNI152NLin2009cAsym res-2), unsmoothed, and is separate from the GLM fits.
+
+1. **Networks.** The CAREN whole-network masks `ROIs/net_SAL`, `net_SMN` and `net_ECN` are checksummed in `ROIs/roi_manifest.csv` and share no voxels. Voxel time series are denoised (step 2), and the network signal is the **median** across voxels at each volume. The mean is used as a sensitivity specification.
+2. **Denoising, per run.**
+   - A zero-phase Butterworth band-pass at 0.01–0.1 Hz is applied identically to the voxel time series and to every regressor (Lindquist et al., 2019).
+   - The data are then regressed on (a) the base nuisance set of this section without the cosine terms, which the band-pass supersedes, and without the spike columns, which step 3 replaces by excluding the volumes; and (b) **all seven Model A task regressors** (canonical HRF + temporal derivative).
+   - Removing the condition-locked mean evoked responses leaves the fluctuations around them ("background" connectivity; Al-Aidroos, Said & Turk-Browne, 2012). Without this step, epochs this short, abutting rating windows, would inflate every between-network correlation (Cole et al., 2019).
+   - No global signal regression.
+3. **Windows.** An epoch contributes the volumes acquired in [onset + 4 s, onset + duration + 4 s). Volumes with FD > 0.5 mm are excluded. Each network's segment is demeaned within each epoch, and the segments are concatenated across epochs and runs within a condition.
+4. **Coupling.** Pearson r for each pair, condition and participant, then Fisher z.
+   - **H7a:** paced (all four paced conditions) vs free.
+   - **H7b:** aware vs unaware, in participants with ≥ 3 epochs in each cell (the 23 H3 participants).
+5. **Group test.** A paired t on the z difference. With two observations per participant this is equivalent to MindLock's `z ~ condition + (1 | participant)`.
+6. **Non-neural checks, reported with every H7 result.**
+   - (i) **Global signal (the interpretation gate, §3):** the fMRIPrep `global_signal` is put through the identical filter and regression and partialled out of each pair correlation within the concatenated windows. The effect is then re-tested.
+   - (ii) The mean of the five CAREN networks, partialled out in the same way.
+   - (iii) **Amplitude:** each network's temporal SD by condition, tested paired.
+   - (iv) **Co-activation:** the network-mean Model A estimate for the same condition contrast.
+   - (v) **Physiology:** steps 2–5 are repeated with RVT ⊗ RRF from the Biopac belt (the S2 participants) and with the 4-lag PetCO2 basis (S1) added to the regression.
+7. **Pre-declared sensitivity specifications, all reported.**
+   - **H7a, 8 specifications:** signal summary (median / mean) × window shift (4 / 6 s) × task removal (Model A canonical, or a finite impulse response basis of 2 s bins over 0–32 s for paced, free, rating and sub-rating).
+   - **H7b, 4 specifications:** summary × shift. A FIR basis by awareness cell would not be estimable.
+8. **Specificity (exploratory, §10).** All 10 pairs among the five CAREN networks are tested for both contrasts, FDR-corrected.
+
+Feasibility was counted from the event timing only, before the freeze. Every participant has 7–14 paced and 7–14 free epochs, a median of about 140 volumes per condition (minimum 70). In the H3 set, the medians are 67 aware volumes (range 34–89) and 44 unaware volumes (range 27–77).
+
 ---
 
 ## 8. Group model, ROIs, and inference
@@ -412,6 +467,8 @@ The global signal is **not** included as a nuisance regressor in any model.
 
 The H1–H4 ROI tests are repeated in these masks. Disagreement with the CAREN result is reported, not resolved.
 
+*Network masks for H7:* the whole CAREN SAL, SMN, ECN, DMN and VIS networks (`ROIs/net_*`; 4156, 9033, 7154, 9952 and 8966 voxels), built by the same script. They share no voxels. The H3/H2/H4 masks lie inside SAL, and the H1 masks inside SMN. H7 does not use the ROI masks.
+
 **ROI restriction for H3** (resolved 2026-08-14): H3 is tested in three masks only — left anterior insula, right anterior insula, and dACC (Bonferroni ×3). The dACC is retained alongside the insula on two grounds: the IEAT found the ACC, not the insula, to be the region tied to breath-focused interoceptive awareness; and its liminal-vs-salient distinction predicts ACC involvement for exactly the kind of salient respiratory signal this task uses. Narrowing to anterior insula alone would have encoded the heartbeat-detection literature's prediction while discarding the direct predecessor's.
 
 **Smoothing** (resolved 2026-08-14): 6 mm FWHM, matching the IEAT for replication comparability.
@@ -420,7 +477,7 @@ The H1–H4 ROI tests are repeated in these masks. Disagreement with the CAREN r
 
 - **Whole brain:** cluster-forming p < 0.001 uncorrected, cluster-level FWE p < 0.05
 - **ROI:** small-volume FWE p < 0.05 within each ROI, Bonferroni-corrected across the number of ROIs tested for that hypothesis
-- **Sidedness:** H1 is one-sided (paced < free) in its ROIs. H2 is one-sided (positive). H3 and H4 are one-sided in the stated direction. H6 is **two-sided**. All whole-brain tests are two-sided.
+- **Sidedness:** H1 is one-sided (paced < free) in its ROIs. H2 is one-sided (positive). H3 and H4 are one-sided in the stated direction. H6 is **two-sided**. H7a and H7b are two-sided paired tests on Fisher z, Holm-corrected across their two network pairs, with the predicted direction required for support (§3). All whole-brain tests are two-sided.
 - No uncorrected results will be reported as findings; any uncorrected map shown will be labelled descriptive
 
 **Power.** Smallest detectable Cohen's d at 80% power (one-sample t):
@@ -477,6 +534,8 @@ Every hypothesis is additionally tested on the subset contributing **two** breat
 - Any relationship between neural measures and questionnaire/screener variables beyond the registered MAIA test (H6); MAIA subscale dissociations (Attention Regulation vs Noticing, per the IEAT) are exploratory
 - Direction-specific effects (Faster vs Slower), given the behavioural asymmetry (0.614 vs 0.511)
 - ACC-seeded PPI connectivity with the dorsal attention network during paced vs free breathing (conceptual extension of the IEAT's H4)
+- Specificity of H7: all 10 CAREN network pairs for paced vs free and aware vs unaware, FDR-corrected (§7, connectivity step 8)
+- Any connectivity analysis other than H7, including dynamic or seed-based methods
 
 ---
 
@@ -507,3 +566,4 @@ Any departure from this document will be recorded in `Repo/Preregistration/devia
 13. ~~**Model B run exceptions.**~~ **Resolved 2026-11-24:** C3 is combined only over runs whose confidence modulator varies. This affects sub-106 run-1 and sub-112 run-2 (§4).
 14. ~~**Physiological coverage.**~~ **Resolved 2026-11-25:** three pipeline bugs are fixed (§6). PMU fallback RVT is registered for robustness analysis S2b only. The confirmatory RVT comparison uses the Biopac belt. See `methods_decisions.md` decisions 10–11.
 15. ~~**ROI masks and H1's inference set.**~~ **Resolved 2026-11-25:** CAREN network × region masks (§8), built and checksummed before the freeze. H1 uses posterior insula, central operculum and sensorimotor cortex (×3). Harvard–Oxford is the atlas-sensitivity set. See `methods_decisions.md` decision 12.
+16. ~~**Between-network coupling.**~~ **Resolved 2026-11-25:** H7a (paced vs free) and H7b (aware vs unaware) are confirmatory, for SAL–SMN and SAL–ECN, Holm ×2 within each, with a global-signal interpretation gate (§3, §7). See `methods_decisions.md` decision 13.
