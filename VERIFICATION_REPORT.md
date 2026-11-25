@@ -112,7 +112,7 @@ which would silently discard them.
 registered: SPM HRF + temporal derivative, `drift_model=None`, sheet columns as
 confounds, confidence PM mean-centred over the trials actually modelled.
 Median 43 regressors, median residual df 199 (min 144). Full output:
-`analysis/design_qc.csv`.
+`Analysis/design_qc.csv`.
 
 ### 4a. VIF among task regressors
 

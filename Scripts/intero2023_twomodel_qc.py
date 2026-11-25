@@ -217,7 +217,7 @@ def main(which):
         rows.append(rec)
 
     d = pd.DataFrame(rows)
-    d.to_csv("../analysis/design_qc_twomodel.csv", index=False)
+    d.to_csv("Analysis/design_qc_twomodel.csv", index=False)
 
     subs = sorted(d.subject.unique())
     maia = set(pd.read_csv("Data/maia_scores.csv").subject)
@@ -277,7 +277,7 @@ def main(which):
     print(f"  Model B (change trials) : {int(d.Bchg_rank_deficient.sum(skipna=True))} / {int(d.Bchg_rank_deficient.notna().sum())} runs")
     print(f"  Model B (all paced)     : {int(d.Ball_rank_deficient.sum(skipna=True))} / {int(d.Ball_rank_deficient.notna().sum())} runs")
     print(f"  Model C (salience)      : {int(d.C_rank_deficient.sum(skipna=True))} / {int(d.C_rank_deficient.notna().sum())} runs")
-    print("  (registered single model, for comparison: 9 / 91 -- see analysis/design_qc.csv)")
+    print("  (registered single model, for comparison: 9 / 91 -- see Analysis/design_qc.csv)")
 
     print("\n=== participant-level N per hypothesis ===")
     rowsN = [
@@ -327,7 +327,7 @@ def main(which):
     both = d[d.se_A_h1_adaptive.notna() & d.se_Ball_h2_conf.notna()]
     print(f"  n={len(both)}  median SE(H1 | Model A) = {both.se_A_h1_adaptive.median():.4f}")
     print(f"           median SE(H2 | Model B all) = {both.se_Ball_h2_conf.median():.4f}")
-    print("\nwrote analysis/design_qc_twomodel.csv")
+    print("\nwrote Analysis/design_qc_twomodel.csv")
 
 
 if __name__ == "__main__":

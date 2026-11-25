@@ -23,7 +23,7 @@ no exceptions.
 
 ## 1. Context in five sentences
 
-Participants (N = 47 analysable, 90 breathing runs; prereg v0.7) breathed
+Participants (N = 47 analysable, 90 breathing runs; prereg v0.8) breathed
 with a visual pacer whose rate increased, decreased, or held steady (step vs
 ramp salience), interleaved with free breathing, and reported the change
 direction with confidence and arousal ratings. Behaviour and physiology are
@@ -64,7 +64,7 @@ have never been touched beyond fMRIPrep; keep it that way until step 3.
   FALSE`, excluding sub-056 → **90 runs, 47 participants** (prereg §4). The
   candidates file carries the four reinstated participants (sub-065, -076,
   -082, -104). Do not re-derive inclusion from anything else.
-- Per-hypothesis participant sets: `analysis/design_qc_twomodel.csv`.
+- Per-hypothesis participant sets: `Analysis/design_qc_twomodel.csv`.
   **H3 is superseded there (v0.6):** use `Data/h3_sets.csv`. `in_H3` is the
   primary H3 set (45), `h3_runs` the runs that enter its joint model, and
   `in_S7` the ≥ 3-trial set (23), which is also the H7b sample.
@@ -140,7 +140,7 @@ sub-114 are out of H2 entirely.
 
 **Group level:** one-sample t on participant contrast images. Ns: H1 47,
 H2 44, H4 43 (≥ 3 trials per cell pooled across runs; sets in
-`analysis/design_qc_twomodel.csv`).
+`Analysis/design_qc_twomodel.csv`).
 
 **H3 group level (v0.6), the one exception:**
 1. **Joint first level (v0.7).** Fit ONE GLM per participant over all runs
@@ -194,16 +194,23 @@ two-sided (permutation-based cluster inference is acceptable and preferred
 if using nilearn); ROI small-volume FWE p < .05 with the stated Bonferroni.
 **No uncorrected result is a finding.**
 
-**H5 (equivalence):** extract per-participant ROI estimates of
-`confidence_mod` from base vs +PetCO2 (H2 N = 25) and base vs +RVT (H2 N =
-27; **`rvt_source == "biopac"` runs only**) models; TOST on the paired
-difference, bounds dz = ±0.61 / ±0.59; fixed
-interpretation grid in prereg §12.4. Report the corrected–uncorrected
-correlation alongside. S2b repeats the RVT comparison with PMU-sourced runs
-included (`rvt_source` in {biopac, pmu}; H2 N = 38, dz ±0.49) as robustness.
-The same comparison for `aware_gt_unaware` (13 / 15 participants; 21 in S2b)
-is **descriptive only** — report estimates side by side, draw
-no survival/abolition conclusion.
+**H5 (equivalence; target revised v0.8):** the confirmatory TOST is on
+**H3** `aware_gt_unaware` from the joint first level, **if H3 is supported**.
+Extract per-participant ROI means from base vs +PetCO2 (H3 N = 25, dz ±0.61)
+and base vs +RVT (H3 N = 28, dz ±0.58; **`rvt_source == "biopac"` runs
+only**) joint models. The physio columns are nuisance, so they are
+run-specific in the joint design. TOST on the equal-weighted paired
+difference, in each of the three ROIs; the verdict is read in the ROI(s)
+where H3 was supported. The grid's "corrected effect remains significant"
+cell uses the same FLAME 1 ROI test as H3, on the corrected model in the
+same subset. Do the same for H2 `confidence_mod` (N = 25 / 27, dz ±0.61 /
+±0.59): it is **supportive**, and H3 governs if they disagree. If H3 is not
+supported, the H5 verdict comes from H2 and is stated about the confidence
+measure only. If neither is supported, both are descriptive. Report the
+corrected–uncorrected correlation alongside each. S2b repeats the RVT
+comparison with PMU-sourced runs (`rvt_source` in {biopac, pmu}; H3 N = 39,
+H2 N = 38, dz ±0.49) as robustness. Decision rule in full: prereg §3 H5 and
+§12.4.
 
 **Registered diagnostic:** run-1 vs run-2 spatial correlation of
 `paced_gt_free` and `confidence_mod` contrast maps within participants +

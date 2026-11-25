@@ -203,7 +203,7 @@ def main(which):
         rows.append(rec)
 
     d = pd.DataFrame(rows)
-    d.to_csv("../analysis/design_qc.csv", index=False)
+    d.to_csv("Analysis/design_qc.csv", index=False)
     vcols = [c for c in d.columns if c.startswith("vif_")]
     scols = [c for c in d.columns if c.startswith("se_")
              and c not in ("se_rank_deficient", "se_n_paced_conditions")]
@@ -242,7 +242,7 @@ def main(which):
     print(f"  runs with |r| > 0.5: {int((s.abs()>0.5).sum())}")
     worst = d.reindex(d["r_confpm_awareVunaware"].abs().sort_values(ascending=False).index).head(5)
     print(worst[["subject", "entity", "r_confpm_awareVunaware"]].to_string(index=False))
-    print("\nwrote analysis/design_qc.csv")
+    print("\nwrote Analysis/design_qc.csv")
 
 
 if __name__ == "__main__":

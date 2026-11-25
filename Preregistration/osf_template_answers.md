@@ -4,7 +4,7 @@ Template: OSF Preregistration (osf.io registration form). Each heading below is
 one template field, in template order. Text under it is paste-ready. Items
 marked [TO CONFIRM] need the author's input before freezing.
 
-Synced to `intero2023_imaging_prereg.md` **v0.7** (2026-11-25).
+Synced to `intero2023_imaging_prereg.md` **v0.8** (2026-11-25).
 
 ---
 
@@ -95,10 +95,11 @@ least one ROI; falsified if in none. Salience is not crossed with awareness
 
 H5. Adding physiological regressors (RVT; PetCO2) attenuates but does not
 abolish the awareness-related effects. The confirmatory test is an
-equivalence criterion on the H2 confidence effect (see Inference criteria).
-The same comparison for H3 is descriptive only (25 of its 45 participants have
-PetCO2 and 28 have Biopac-belt RVT): the confirmatory target was fixed on H2,
-whose per-participant estimates are more precise.
+equivalence criterion on the H3 aware > unaware effect, applied if H3 is
+supported (25 of H3's 45 participants have PetCO2 and 28 have Biopac-belt
+RVT). The same test on the H2 confidence effect is supportive, and H3
+governs if they disagree. If H3 is not supported, H5 is read from H2 and
+stated about the confidence measure only (see Inference criteria).
 
 H6 (conceptual extension; Model A; N = 46; two-sided). MAIA interoceptive
 sensibility moderates paced-vs-free activity in the anterior cingulate, tested
@@ -393,15 +394,18 @@ SAL–ECN within each part. Predicted direction required for support.
 Interpretation gate: the effect must remain p < .05 in the predicted
 direction with the global signal partialled out.
 No uncorrected result will be reported as a finding.
-H5 equivalence: TOST (α = .05 per side) on the paired within-participant
-difference between corrected and uncorrected ROI estimates of the H2 effect;
-bounds dz = ±0.61 (PetCO2, H2 N = 25) and ±0.59 (Biopac RVT, H2 N = 27), the smallest
-bounds supportable at 80% power. Fixed interpretation grid: TOST passes →
-statistically equivalent; TOST fails but corrected effect remains significant
-→ attenuated but present; both fail → indeterminate (not "abolished"; the
-design cannot separate abolition from power loss at these bounds). The
-corrected–uncorrected correlation is reported so the bound can be read in raw
-units. The corresponding H3 comparison is descriptive.
+H5 equivalence: TOST (α = .05 per side) on the equal-weighted paired
+within-participant difference between corrected and uncorrected ROI
+estimates. Confirmatory target: the H3 effect, if H3 is supported; bounds
+dz = ±0.61 (PetCO2, N = 25) and ±0.58 (Biopac RVT, N = 28), the smallest
+bounds supportable at 80% power. Supportive: the H2 effect, ±0.61 (N = 25)
+and ±0.59 (N = 27). If H3 is not supported, the H2 test gives the verdict,
+stated about the confidence measure only. Fixed interpretation grid: TOST
+passes → statistically equivalent; TOST fails but corrected effect remains
+significant → attenuated but present; both fail → indeterminate (not
+"abolished"; the design cannot separate abolition from power loss at these
+bounds). The corrected–uncorrected correlation is reported so the bound can
+be read in raw units.
 
 ## Data inclusion and exclusion
 
@@ -485,7 +489,7 @@ response — it functions as "I don't know", so no detection-stage d′ is
 interpreted as sensitivity. PetCO2 is a partial MEDIATOR of the task (pacing
 manipulates end-tidal CO2 by design), which is why H5 is framed as
 attenuation with an equivalence criterion rather than as a purity check. The
-attached full analysis plan (intero2023_imaging_prereg.md, v0.7) contains the
+attached full analysis plan (intero2023_imaging_prereg.md, v0.8) contains the
 dated decision history; the analysis repository (git) will be linked as an
 OSF component, and any deviation after freezing is logged in deviations.md
 with date, rationale, and whether the affected result had been seen.

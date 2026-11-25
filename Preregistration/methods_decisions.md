@@ -3,8 +3,8 @@
 **Status:** decided 2026-08-24, pre-freeze. Nothing here has been estimated on
 BOLD data. Every number below comes from design matrices, event sheets and
 behavioural counts only — `Scripts/intero2023_designqc.py` and
-`Scripts/intero2023_twomodel_qc.py`, outputs in `analysis/design_qc.csv` and
-`analysis/design_qc_twomodel.csv`.
+`Scripts/intero2023_twomodel_qc.py`, outputs in `Analysis/design_qc.csv` and
+`Analysis/design_qc_twomodel.csv`.
 
 This document records the choices that `VERIFICATION_REPORT.md` §7 identified
 as blocking the freeze, the evidence each rests on, and the exact prereg text
@@ -49,7 +49,7 @@ empty, not because their data improved.
 average in different participants. Given that the weights carry no theoretical
 content, this is a smaller distortion than dropping 18 runs. Runs where only
 one paced condition is present contribute a single-condition contrast; the
-per-run composition is logged in `analysis/design_qc.csv`
+per-run composition is logged in `Analysis/design_qc.csv`
 (`se_n_paced_conditions`).
 
 **Prereg edit:** §5/§7 contrast table — replace the fixed 1/3 specification of
@@ -152,7 +152,7 @@ less often**. Two consequences are registered in advance:
    confounded with power. This specific inference is ruled out in advance.
 
 The 23 participants are fixed now and listed in
-`analysis/design_qc_twomodel.csv` so the subsample cannot drift:
+`Analysis/design_qc_twomodel.csv` so the subsample cannot drift:
 
 > sub-057, sub-060, sub-061, sub-064, sub-065, sub-066, sub-067, sub-068,
 > sub-071, sub-073, sub-076, sub-077, sub-078, sub-084, sub-100, sub-102,
@@ -332,6 +332,9 @@ have RVT. 80% TOST power at those Ns needs dz ≈ 0.92 and 0.84.
 v0.2). The H5 hypothesis text no longer predicts that H3's effects "will
 survive". The corrected-vs-uncorrected H3 comparison is reported descriptively,
 with no survival or abolition conclusion.
+
+*Superseded v0.8 (decision 19):* at H3 N = 45 the subsets are 25 and 28, and
+the confirmatory TOST moves to H3.
 
 ## Decision 9 — Model B run exceptions and minor corrections
 
@@ -719,6 +722,56 @@ only, so the QC now drops them.
 - The per-participant estimates in `Analysis/h3_joint_design_qc.csv` were
   computed with the corrected formula from the start.
 
+## Decision 19 — The confirmatory H5 equivalence test moves to H3
+
+**Evidence.** Decision 8 kept H3's physiological comparison descriptive because
+only 12–15 of v0.5's 23 H3 participants had the regressors. From v0.6 H3 has
+45 participants, and the subsets are 25 (PetCO2) and 28 (Biopac RVT), as
+large as H2's 25 and 27. Paired TOST power by simulation (α = .05 per side,
+true difference 0, 200,000 draws): N = 25 at ±0.61 gives 0.81; N = 28 at
+±0.58 gives 0.82 (±0.57 gives 0.807); N = 39 at ±0.49 gives 0.83.
+
+**Why H3 and not H2.**
+- H3 is the authoritative awareness test. Without this change, any claim that
+  the awareness effect is not respiratory or CO2-driven would be unregistered.
+- H2's confidence effect bundles awareness with confidence. Equivalence on H2
+  is indirect evidence about H3.
+- The confound is sharpest for H3. Detection may track trials on which
+  breathing followed the pacer more closely, so aware and unaware trials may
+  differ in physiology systematically. H2's confidence weighting is spread
+  over all paced trials.
+
+**Costs, registered.**
+- H3's per-participant estimates are noisier, so "indeterminate" is more
+  likely for H3. Power in dz units is unchanged; the bound is wider in raw
+  units, and the corrected–uncorrected correlation is reported so it can be
+  read.
+- The H3 test only means something if H3 is supported, so the conditional
+  rule is stated in advance.
+- Two equivalence tests could disagree. H3 governs and H2 is supportive, so
+  the verdict comes from one test, and no false-positive inflation arises.
+
+**Decided.**
+- *H3 supported:* the H5 verdict is the H3 TOST grid cell, read in the ROI(s)
+  where H3 was supported. Bounds: ±0.61 (PetCO2, N = 25) and ±0.58 (Biopac
+  RVT, N = 28); S2b ±0.49 (N = 39). The H2 TOST is supportive, and H3 governs
+  if they disagree.
+- *H3 not supported, H2 supported:* the verdict is the H2 TOST cell, stated as
+  a conclusion about the confidence measure only.
+- *Neither supported:* both are descriptive.
+- *Weighting:* the paired difference is equal-weighted, although H3's group
+  model is FLAME-weighted. Weighting it would need the covariance of two
+  estimates from nearly identical models, which FLAME does not supply. Equal
+  weighting is the conservative choice.
+- *Corrected-effect significance (grid cell 2):* the same one-sided ROI test
+  as the hypothesis, on the corrected model in the same subset (FLAME 1 for
+  H3).
+
+**Also changed.** The design-QC scripts now write into the repository
+(`Analysis/design_qc.csv`, `Analysis/design_qc_twomodel.csv`). The copies
+committed before were from August, before the decision-18 SE fix. A re-run
+reproduces the verified outputs byte for byte.
+
 ---
 
 ## Applied
@@ -739,9 +792,11 @@ Decisions 10–11 were applied as **v0.4** on 2026-11-25 (prereg header, §3 H5,
 
 Decisions 12–13 were applied as **v0.5** on 2026-11-25 (prereg header, §0, §1, §3 H1, H6 and H7, §7 connectivity model, §8, §10, §12 items 15–16). The OSF draft, `osf_template_answers.md` and `ANALYSIS_HANDOFF.md` were updated in the same pass.
 
-Decisions 17–18 were applied as **v0.7** on 2026-11-25 (prereg header, §3 H3, §4, §5, §8, §9 S7, §10 Model A-g, §12 items 19–20). `Data/h3_sets.csv` was rebuilt (script v1.1), and the QC outputs in `analysis/` were re-run.
+Decisions 17–18 were applied as **v0.7** on 2026-11-25 (prereg header, §3 H3, §4, §5, §8, §9 S7, §10 Model A-g, §12 items 19–20). `Data/h3_sets.csv` was rebuilt (script v1.1), and the QC outputs were re-run (written to `Analysis/` from v0.8).
 
 Decisions 14–16 were applied as **v0.6** on 2026-11-25 (prereg header, §3 H2, H3, H5 and H7b, §4, §5, §7, §8, §9 S1–S7, §10, §12 items 17–18). The data changes are in `FirstLevel/*_desc-model_confounds.tsv` (tissue columns) and `Data/h3_sets.csv`. The OSF draft, `osf_template_answers.md` and `ANALYSIS_HANDOFF.md` were updated in the same pass.
+
+Decision 19 was applied as **v0.8** on 2026-11-25 (prereg header, §3 H5, §4 N table, §8 design QC, §9 S1/S2/S2b, §12.4, §12 items 12 and 21). The OSF draft, `osf_template_answers.md` and `ANALYSIS_HANDOFF.md` were updated in the same pass.
 
 ## What is still open
 
