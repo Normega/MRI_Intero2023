@@ -19,6 +19,12 @@ The amendment splits it in two:
 This script builds both, per run, and reports rank, contrast estimability and
 participant-level Ns. It fits nothing and reads no BOLD: legal pre-freeze.
 
+Fixed 2026-11-25: se_of() scaled the contrast by the column SDs instead of
+dividing by them (SEs wrong whenever the contrasted columns differed in scale),
+and the designs carried the physio columns, which belong to the sensitivity
+models only. Rank and estimability verdicts are unchanged by either fix in
+full-rank designs.
+
 Model B has one genuinely ambiguous choice -- whether `trial` spans the change
 trials only or all paced epochs including paced_nochange -- so BOTH variants are
 computed and reported side by side.
@@ -37,6 +43,11 @@ CONDITIONS = ["paced_aware", "paced_unaware", "paced_wrongdir", "paced_nochange"
 PACED_MOD = ["paced_aware", "paced_unaware", "paced_wrongdir", "paced_nochange"]
 PACED_SIDE = ["paced_aware", "paced_unaware", "paced_nochange"]   # H1 paced side
 CHANGE_ONLY = ["paced_aware", "paced_unaware", "paced_wrongdir"]
+# Physiological columns belong to the sensitivity models only (prereg S6-S7).
+# Design QC describes the BASE model, which is what every hypothesis is fitted
+# in, so they are dropped here (fixed 2026-11-25; earlier versions kept them).
+PHYSIO = ["rvt_rrf_z", "rvt_z", "resp_rate_c",
+          "petco2_hrf_lag00", "petco2_hrf_lag10", "petco2_hrf_lag20", "petco2_hrf_lag30"]
 
 
 def read_run(subject, entity, n_vol):
@@ -44,6 +55,7 @@ def read_run(subject, entity, n_vol):
     ev = pd.read_csv(f"{FL}/{subject}_{entity}_desc-model_events.tsv", sep="\t")
     cf = pd.read_csv(f"{FL}/{subject}_{entity}_desc-model_confounds.tsv", sep="\t")
     assert len(cf) == n_vol, f"{subject} {entity}: sheet {len(cf)} rows vs n_vol {n_vol}"
+    cf = cf.drop(columns=[c for c in PHYSIO if c in cf.columns])
     ev = ev[ev.condition.isin(CONDITIONS)].copy()
     scan_end = n_vol * TR
     over = (ev.onset + ev.duration) > scan_end
@@ -125,7 +137,7 @@ def se_of(dm, spec):
     c = np.zeros(len(names))
     for k, w in spec.items():
         c[names.index(k)] = w
-    cs = c * sd
+    cs = c / sd          # beta_s = sd * beta, so c'beta = (c/sd)'beta_s (fixed 2026-11-25; was c*sd)
     if not full_rank:
         Vr = vt[:rank]
         if np.linalg.norm(cs - Vr.T @ (Vr @ cs)) > 1e-8 * max(1.0, np.linalg.norm(cs)):

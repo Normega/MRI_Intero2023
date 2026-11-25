@@ -23,7 +23,7 @@ no exceptions.
 
 ## 1. Context in five sentences
 
-Participants (N = 47 analysable, 90 breathing runs; prereg v0.6) breathed
+Participants (N = 47 analysable, 90 breathing runs; prereg v0.7) breathed
 with a visual pacer whose rate increased, decreased, or held steady (step vs
 ramp salience), interleaved with free breathing, and reported the change
 direction with confidence and arousal ratings. Behaviour and physiology are
@@ -66,7 +66,7 @@ have never been touched beyond fMRIPrep; keep it that way until step 3.
   -082, -104). Do not re-derive inclusion from anything else.
 - Per-hypothesis participant sets: `analysis/design_qc_twomodel.csv`.
   **H3 is superseded there (v0.6):** use `Data/h3_sets.csv`. `in_H3` is the
-  primary H3 set (45), `h3_runs` the runs that enter its contrast, and
+  primary H3 set (45), `h3_runs` the runs that enter its joint model, and
   `in_S7` the ≥ 3-trial set (23), which is also the H7b sample.
 - `Data/maia_scores.csv` — `maia_ieat_total` (0–5 metric) for H6.
 - `Data/prereg_sample.csv`, `Data/qc_ledger.csv` — reference only.
@@ -143,11 +143,17 @@ H2 44, H4 43 (≥ 3 trials per cell pooled across runs; sets in
 `analysis/design_qc_twomodel.csv`).
 
 **H3 group level (v0.6), the one exception:**
-1. For each participant, compute `aware_gt_unaware` effect and variance
-   (nilearn `output_type="all"`) in each run listed in `h3_runs`. Skip runs
-   that lack either cell.
-2. Combine those runs by fixed effects (inverse-variance) into a
-   participant cope, varcope and residual dof.
+1. **Joint first level (v0.7).** Fit ONE GLM per participant over all runs
+   in `h3_runs`:
+   - scale each run to percent signal change (nilearn's
+     `signal_scaling=0` per run), then concatenate;
+   - share the task columns across runs and keep the nuisance columns and
+     intercept run-specific, exactly as `build_joint_design()` in
+     `Scripts/intero2023_h3_joint_qc.py`;
+   - use the AR(1) noise model, 6 mm smoothing, and the same HRF as
+     everywhere else.
+2. From that model take the `aware_gt_unaware` effect, variance and residual
+   dof (nilearn `output_type="all"`).
 3. Run **FSL FLAME 1** on the 45 participants: `flameo --runmode=flame1`,
    one-group design, with the group brain mask (`ROIs/group_brain_mask.nii`).
 4. ROI: voxel FWE p < .05 by GRF within each of `caren_AInsL`,
@@ -156,10 +162,14 @@ H2 44, H4 43 (≥ 3 trials per cell pooled across runs; sets in
 5. Whole brain: GRF cluster FWE at z > 3.09, two-sided.
 6. Report each participant's weight share.
 7. Robustness: a REML random-effects meta-analysis of per-ROI means.
-8. S7: the same model on `in_S7` (23), plus the v0.5 OLS one-sample model.
+8. S7: the same pipeline on `in_S7` (23), plus the v0.5 OLS one-sample
+   model. Per-run robustness check: the contrast per run where both cells
+   exist (`n_*_sharedrun`), fixed effects over runs, then the same FLAME
+   model.
 9. Exploratory Model A-g (prereg §10): aware and unaware epochs as one
    regressor, with modulator g = +confidence (aware) / −confidence
-   (unaware), centred within run. Same FLAME pipeline and masks. H6 (N = 46; sub-065 has no MAIA): add
+   (unaware), centred within run. Same joint first level, FLAME pipeline and
+   masks. H6 (N = 46; sub-065 has no MAIA): add
 `maia_ieat_total` (demeaned) as a covariate on `paced_gt_free`; the MAIA
 effect is the test, **two-sided** (conceptual extension; prereg §3).
 

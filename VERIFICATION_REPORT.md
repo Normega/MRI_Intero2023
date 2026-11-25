@@ -176,7 +176,7 @@ average, so it cannot be formed when one of the three is absent:
 Averaging instead over the paced conditions actually present in the run —
 `paced_gt_free_adaptive` in the QC output — recovers all but the 9
 rank-deficient ones (82/91). SE multipliers are otherwise near-identical
-(median 0.0830 vs 0.0840), so this costs nothing in precision.
+(median 0.0830 vs 0.0840), so this costs nothing in precision. *(Corrected 2026-11-25: the QC script scaled contrasts by the column SDs instead of dividing by them; the corrected medians are 0.247 for both forms, so the conclusion stands. `Preregistration/methods_decisions.md` decision 18.)*
 
 ## 5. Corrected per-hypothesis Ns
 

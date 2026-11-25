@@ -146,7 +146,7 @@ depends on the first of them.
    `(aware + unaware + nochange)/3 − free`, it is undefined in 18 of 91 runs —
    17 lack `paced_unaware` because the participant never answered "No Change"
    on a change trial. Proposed: average over the paced conditions **present in
-   that run**. Precision is unchanged (median SE multiplier 0.0830 vs 0.0840).
+   that run**. Precision is unchanged (median SE multiplier 0.0830 vs 0.0840; corrected: 0.247 for both, decision 18).
 2. **§7, confidence modulator.** Median |r| with the aware-minus-unaware
    direction is 0.437 across runs, exceeds 0.5 in 26 of 70, and is exactly 1 in
    9 runs, where the design becomes rank-deficient. H2 and H3 are not fully
@@ -204,7 +204,10 @@ those two participants alone.
 
 ### The result-blind evidence, for the record
 
-Subject-level SE multiplier for C1 (design algebra only; lower is more precise;
+*(Corrected 2026-11-25, `methods_decisions.md` decision 18: the SE multipliers in this document came from a scaling error in the QC script.)* Corrected values for the adaptive C1, on the current sheets:
+registered sample median 0.175, worst 0.263; sub-082 0.242 and sub-104 0.250, each with 1 of 43 registered participants less precise.
+
+Subject-level SE multiplier for C1 as originally computed (design algebra only; lower is more precise;
 registered sample median 0.0584, worst 0.1144):
 
 | participant | SE multiplier | position in the registered sample |

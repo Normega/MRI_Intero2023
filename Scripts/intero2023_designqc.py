@@ -10,7 +10,12 @@ Registered design, per run:
   SPM canonical HRF + temporal derivative, drift_model=None (the cosine columns
   in the confound sheet ARE the high-pass), TR = 2 s, 7 condition boxcars,
   confidence parametric modulator on paced epochs (mean-centred over the trials
-  actually modelled), all confound-sheet columns. No global signal, ever.
+  actually modelled), the base nuisance columns of the confound sheet (physio
+  columns dropped: they enter sensitivity models only). No global signal, ever.
+
+Fixed 2026-11-25: the SE multiplier scaled the contrast by the column SDs
+instead of dividing by them, so SEs were wrong whenever the contrasted columns
+differed in scale; and physio columns were in the design.
 
 Reports, per run:
   * VIF of each task regressor AMONG THE TASK REGRESSORS (handoff step 3.3).
@@ -36,6 +41,11 @@ FL = "FirstLevel"
 CONDITIONS = ["paced_aware", "paced_unaware", "paced_wrongdir", "paced_nochange",
               "free", "rating", "subrating"]
 PACED_MOD = ["paced_aware", "paced_unaware", "paced_wrongdir", "paced_nochange"]
+# Physiological columns belong to the sensitivity models only (prereg S6-S7).
+# Design QC describes the BASE model, which is what every hypothesis is fitted
+# in, so they are dropped here (fixed 2026-11-25; earlier versions kept them).
+PHYSIO = ["rvt_rrf_z", "rvt_z", "resp_rate_c",
+          "petco2_hrf_lag00", "petco2_hrf_lag10", "petco2_hrf_lag20", "petco2_hrf_lag30"]
 
 
 def build(subject, entity, n_vol):
@@ -43,6 +53,7 @@ def build(subject, entity, n_vol):
     ev = pd.read_csv(f"{FL}/{subject}_{entity}_desc-model_events.tsv", sep="\t")
     cf = pd.read_csv(f"{FL}/{subject}_{entity}_desc-model_confounds.tsv", sep="\t")
     assert len(cf) == n_vol, f"{subject} {entity}: sheet {len(cf)} rows vs n_vol {n_vol}"
+    cf = cf.drop(columns=[c for c in PHYSIO if c in cf.columns])
 
     ev = ev[ev.condition.isin(CONDITIONS)].copy()
     # Trailing events can over-run the acquisition (scanner stopped mid-rating).
@@ -139,7 +150,8 @@ def contrast_se(dm):
         c = np.zeros(len(names))
         for k, w in spec.items():
             c[names.index(k)] = w
-        cs = c * sd                      # contrast in standardised coordinates
+        cs = c / sd                      # contrast in standardised coordinates:
+        # beta_s = sd * beta, so c'beta = (c/sd)'beta_s (fixed 2026-11-25; was c*sd)
         if full_rank:
             estimable = True
         else:
@@ -153,7 +165,7 @@ def contrast_se(dm):
         for k in present:
             c[names.index(k)] = 1.0 / len(present)
         c[names.index("free")] = -1.0
-        cs = c * sd
+        cs = c / sd
         ok = full_rank or (np.linalg.norm(cs - Vr.T @ (Vr @ cs))
                            <= 1e-8 * max(1.0, np.linalg.norm(cs)))
         out["paced_gt_free_adaptive"] = float(np.sqrt(cs @ XtX_inv @ cs)) if ok else np.nan

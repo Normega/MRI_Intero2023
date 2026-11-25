@@ -4,7 +4,7 @@ Template: OSF Preregistration (osf.io registration form). Each heading below is
 one template field, in template order. Text under it is paste-ready. Items
 marked [TO CONFIRM] need the author's input before freezing.
 
-Synced to `intero2023_imaging_prereg.md` **v0.6** (2026-11-25).
+Synced to `intero2023_imaging_prereg.md` **v0.7** (2026-11-25).
 
 ---
 
@@ -71,8 +71,8 @@ trials answered "No Change" ("unaware") in left anterior insula, right
 anterior insula and dACC (ROI-restricted, Bonferroni ×3). H3 is authoritative
 because confidence and awareness covary behaviourally (within-participant
 r = .316 median), so a parametric confidence effect cannot arbitrate between
-them. Every participant with at least one aware and one unaware trial in the
-same run enters (45 of 47; sub-070 and sub-114 never answered "No Change" on a
+them. Every participant with at least one aware and one unaware trial across
+their runs enters (45 of 47; sub-070 and sub-114 never answered "No Change" on a
 change trial). Because unaware counts run from 1 to 8, the group model is
 precision-weighted (FSL FLAME 1). The earlier rule of ≥ 3 trials per cell
 kept only 23 participants and over-represented less frequent detectors
@@ -329,10 +329,12 @@ is reported.
 Runs are combined within participant by fixed effects (run as a random factor
 is degenerate at 2 levels; runs are behaviourally exchangeable: accuracy
 0.800 vs 0.754, p = .22). For C3, only runs in which the confidence modulator
-varies enter (excludes sub-106 run-1 and sub-112 run-2). For C2, only runs
-containing both cells enter.
+varies enter (excludes sub-106 run-1 and sub-112 run-2). C2 (H3) is instead
+estimated in one joint first-level model of the participant's runs (task
+regressors shared across runs; nuisance regressors and intercept per run), so
+aware trials in a run without an unaware trial still enter.
 Group level: one-sample t on participant contrast images for H1, H2 and H4.
-H3 uses FSL FLAME 1 on each participant's fixed-effects contrast, variance
+H3 uses FSL FLAME 1 on each participant's joint-model contrast, variance
 and degrees of freedom, so participants are weighted by precision; its ROI
 and whole-brain inference use Gaussian random field theory. MAIA
 total (demeaned) as a group covariate on C1 for H6 (two-sided); protocol
@@ -414,7 +416,7 @@ r = −0.003); (4) a participant enters when at least one breathing run passes
 these criteria — run count is not an inclusion criterion (four participants
 contribute one run; sensitivity S6 removes them together); (5) per-contrast
 estimability: ≥ 3 trials per cell per participant, pooled across runs, except
-H3, which needs ≥ 1 aware and ≥ 1 unaware trial in the same run (N = 45;
+H3, which needs ≥ 1 aware and ≥ 1 unaware trial across runs (N = 45;
 participants are then weighted by precision); for
 H2, participants whose confidence is constant across all paced trials
 (sub-066, sub-070, sub-114) are excluded from H2 only. Wrong-direction trials
@@ -483,7 +485,7 @@ response — it functions as "I don't know", so no detection-stage d′ is
 interpreted as sensitivity. PetCO2 is a partial MEDIATOR of the task (pacing
 manipulates end-tidal CO2 by design), which is why H5 is framed as
 attenuation with an equivalence criterion rather than as a purity check. The
-attached full analysis plan (intero2023_imaging_prereg.md, v0.6) contains the
+attached full analysis plan (intero2023_imaging_prereg.md, v0.7) contains the
 dated decision history; the analysis repository (git) will be linked as an
 OSF component, and any deviation after freezing is logged in deviations.md
 with date, rationale, and whether the affected result had been seen.

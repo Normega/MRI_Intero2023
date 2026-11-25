@@ -36,8 +36,10 @@ breathing, and the fixed form implements that claim only by accident of trial
 counts.
 
 **What it costs:** nothing in precision. Median SE multiplier
-`sqrt(c'(X'X)^-1 c)` is **0.0827** for the adaptive form and **0.0830** for the
-fixed form in runs where both are defined.
+`sqrt(c'(X'X)^-1 c)` is **0.235** for both the adaptive and the fixed form, in
+the 72 runs where both are defined. *(Corrected 2026-11-25, decision 18. This
+entry originally quoted 0.0827 and 0.0830, from a scaling error in the QC
+script; the conclusion is unchanged.)*
 
 **What it buys:** H1 goes from **N = 45** to **N = 47**, and the two
 participants recovered (sub-070, sub-114) are recovered because a cell was
@@ -240,9 +242,14 @@ amendment rather than a silent absorption.
 
 **Blindness:** the decision rule in the §4 draft uses only design/timing
 evidence and contrast-free image quality — never a contrast estimate. sub-082's
-H1 SE multiplier is 0.0836 and sub-104's 0.0717, both inside the range of the
-registered sample (8 and 10 registered participants respectively are less
-precise); tSNR 30.2 and 29.1 (68th and 46th percentile); both have PEPOLAR
+participant-level H1 SE multiplier is 0.242 and sub-104's 0.250. Both are inside
+the range of the registered sample (median 0.175, worst 0.263), but near its
+imprecise end: 1 of the 43 registered participants is less precise than each.
+That is expected for one-run participants, and S6 removes them together with
+the other two. *(Corrected 2026-11-25, decision 18. This entry originally quoted
+0.0836 and 0.0717, with 8 and 10 registered participants less precise, from
+the QC scaling error. The reinstatement rests on the inventory being wrong, not
+on these figures.)* tSNR 30.2 and 29.1 (68th and 46th percentile); both have PEPOLAR
 distortion correction.
 
 **Prereg edit:** §4 exclusion list, sample cascade and N table are replaced by
@@ -555,8 +562,9 @@ unaware contrast, and chose to include everyone with a precision weighting.
 - **Inclusion:** a participant enters H3 when at least one gate-passing run
   contains ≥ 1 aware and ≥ 1 unaware trial. This gives N = 45. sub-070 and
   sub-114 have no unaware trial and cannot enter.
-- **Participant contrast:** the fixed-effects (inverse-variance) combination
-  over the runs that contain both cells. In 28 of 45 participants both runs
+- **Participant contrast:** *(superseded by decision 17: a joint two-run
+  model)* the fixed-effects (inverse-variance) combination over the runs that
+  contain both cells. In 28 of 45 participants both runs
   contribute. Aware trials in a run with no unaware trial are lost to the
   contrast: 56 of 290 (19%), in 14 participants. Every unaware trial is used.
 - **Group model:** FSL FLAME 1 on each participant's effect, variance and
@@ -637,6 +645,80 @@ overlaps H2's modulator, which already absorbs the awareness effect. It
 can describe whether confidence grades the awareness contrast. It cannot
 adjudicate H3.
 
+# v0.7 decisions (2026-11-25, pre-freeze)
+
+## Decision 17 — H3's first level is one joint model of both runs
+
+**Request.** The PI chose the combined-run approach, so that every trial
+contributes to H3.
+
+**The alternative considered and rejected.** One option was to estimate aware
+and unaware activity separately, each against the implicit baseline, and
+subtract them at the group level. The events tile about 94% of every run, so
+a single-condition estimate is measured against a few seconds of gaps, and
+baseline differences between runs do not cancel. By design algebra its
+variance is a median 4.4 times that of the within-run contrast (78% less total
+precision). The contrast is therefore kept at the first level.
+
+**Decision.**
+- **Design:** one nilearn GLM per participant over all gate-passing runs:
+  - each run is scaled to percent signal change, then the runs are
+    concatenated;
+  - the Model A task regressors and their derivatives are shared across runs;
+  - the base nuisance regressors and the intercept are run-specific;
+  - the noise model is AR(1).
+- **Group level:** the aware − unaware effect, variance and dof enter FLAME 1
+  as before.
+- **Reference implementation:** `build_joint_design()` in
+  `Scripts/intero2023_h3_joint_qc.py`.
+- **What it buys:** total H3 precision +12.5%. In the 14 participants whose
+  aware trials a per-run model discards (56 of 290), the contrast variance
+  falls by a median 22%. In the other 31 it falls by a median 7%, because
+  free, rating and sub-rating are estimated from both runs.
+- **What it assumes:** each condition's response and the noise variance are
+  the same in both runs. The runs are behaviourally exchangeable (§8).
+  Concatenation alone would not make them comparable; the
+  percent-signal-change scaling per run does.
+- **Robustness:** the v0.6 per-run form (fixed effects over runs with both
+  cells) is reported alongside.
+- **Model A-g** is fitted in the same joint form.
+- **N is unchanged at 45.** The entry rule now reads "≥ 1 of each cell across
+  runs", and in these data that is the same set (`Data/h3_sets.csv`, script
+  v1.1, which asserts it).
+
+**What was seen.** Design matrices and trial counts only.
+
+## Decision 18 — Design-QC standard errors corrected
+
+**The bug.** `Scripts/intero2023_designqc.py` and
+`Scripts/intero2023_twomodel_qc.py` standardise the design columns for
+numerical stability. Because beta_std = sd × beta, a contrast c on the raw
+betas is c / sd on the standardised ones. Both scripts used c × sd. SEs were
+therefore wrong whenever the contrasted columns differed in scale, by about a
+factor of 3 in practice. The same vector was used in the estimability check
+of rank-deficient designs.
+
+**Second fix.** Both scripts built designs from every sheet column, which
+includes the physiological regressors. Those belong to the sensitivity models
+only, so the QC now drops them.
+
+**Re-run, 2026-11-25:**
+- **Unchanged:**
+  - The single-model QC still finds 9 / 91 rank-deficient designs, with the
+    confidence-modulator / awareness median |r| at 0.437.
+  - The two-model QC still finds 0 / 90 rank-deficient designs in every
+    model.
+  - Every registered N is reproduced.
+- **Corrected figures:**
+  - C1 median SE 0.235 for both forms (was quoted as 0.0827 / 0.0830).
+  - sub-082 0.242 and sub-104 0.250, against a registered median of 0.175;
+    1 of 43 registered participants is less precise than each (was quoted as
+    8 and 10). The entries of decisions 1 and 4 are corrected in place.
+- **No registered decision rested on the absolute values.** The C1 claim was
+  comparative and holds. The reinstatement rested on the inventory.
+- The per-participant estimates in `Analysis/h3_joint_design_qc.csv` were
+  computed with the corrected formula from the start.
+
 ---
 
 ## Applied
@@ -656,6 +738,8 @@ in the same pass.
 Decisions 10–11 were applied as **v0.4** on 2026-11-25 (prereg header, §3 H5, §4, §6, §8, §9 S1/S2/S2b/S3, §12.4, §12 item 14), with the code and data changes in commits `4aae7cd` and `bd88f7f`.
 
 Decisions 12–13 were applied as **v0.5** on 2026-11-25 (prereg header, §0, §1, §3 H1, H6 and H7, §7 connectivity model, §8, §10, §12 items 15–16). The OSF draft, `osf_template_answers.md` and `ANALYSIS_HANDOFF.md` were updated in the same pass.
+
+Decisions 17–18 were applied as **v0.7** on 2026-11-25 (prereg header, §3 H3, §4, §5, §8, §9 S7, §10 Model A-g, §12 items 19–20). `Data/h3_sets.csv` was rebuilt (script v1.1), and the QC outputs in `analysis/` were re-run.
 
 Decisions 14–16 were applied as **v0.6** on 2026-11-25 (prereg header, §3 H2, H3, H5 and H7b, §4, §5, §7, §8, §9 S1–S7, §10, §12 items 17–18). The data changes are in `FirstLevel/*_desc-model_confounds.tsv` (tissue columns) and `Data/h3_sets.csv`. The OSF draft, `osf_template_answers.md` and `ANALYSIS_HANDOFF.md` were updated in the same pass.
 
