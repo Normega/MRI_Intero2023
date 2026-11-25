@@ -4,7 +4,7 @@ Template: OSF Preregistration (osf.io registration form). Each heading below is
 one template field, in template order. Text under it is paste-ready. Items
 marked [TO CONFIRM] need the author's input before freezing.
 
-Synced to `intero2023_imaging_prereg.md` **v0.3** (2026-11-24).
+Synced to `intero2023_imaging_prereg.md` **v0.4** (2026-11-25).
 
 ---
 
@@ -88,8 +88,8 @@ least one ROI; falsified if in none. Salience is not crossed with awareness
 H5. Adding physiological regressors (RVT; PetCO2) attenuates but does not
 abolish the awareness-related effects. The confirmatory test is an
 equivalence criterion on the H2 confidence effect (see Inference criteria).
-The same comparison for H3 is descriptive only: 12 of its 23 participants have
-PetCO2 and 14 have RVT, too few for an equivalence claim.
+The same comparison for H3 is descriptive only: 13 of its 23 participants have
+PetCO2 and 15 have Biopac-belt RVT, too few for an equivalence claim.
 
 H6 (conceptual extension; Model A; N = 46; two-sided). MAIA interoceptive
 sensibility moderates paced-vs-free activity in the anterior cingulate, tested
@@ -202,8 +202,8 @@ inclusion criteria beyond MRI safety.]
 Collected: 54 non-pilot participants with usable task logs (105 breathing
 runs). After preregistered exclusions (below): 90 breathing runs from 47
 participants. Analysable samples: H1 N = 47; H2 N = 44; H3 N = 23; H4 N = 43;
-H6 N = 46; sensitivity S1 (PetCO2) N = 22; S2 (RVT) N = 26; S4 (verified
-pacer adherence) N = 26; S6 (two-run participants only) N = 43. Trials per
+H6 N = 46; sensitivity S1 (PetCO2) N = 25; S2 (Biopac RVT) N = 30; S2b (RVT
+with PMU fallback) N = 41; S4 (verified pacer adherence) N = 26; S6 (two-run participants only) N = 43. Trials per
 participant (median): 7 aware, 3 unaware, 1 wrong-direction, 2 no-change,
 14 free.
 
@@ -291,8 +291,9 @@ Arousal is not a registered test; if reported, it is fitted in a separate
 model of Model B's form and labelled exploratory.
 Nuisance (all models): 6 motion + 6 derivatives, framewise displacement, CSF,
 white matter, cosine drift (128 s), one spike regressor per volume with
-FD > 0.5 mm. Sensitivity models add (S2) RVT ⊗ RRF or (S1) the 4-lag PetCO2
-basis, or both. Global signal is never a regressor. Design QC before freezing:
+FD > 0.5 mm. Sensitivity models add (S2) RVT ⊗ RRF from the Biopac belt, (S2b)
+the same with the Siemens PMU cushion as fallback source, or (S1) the 4-lag
+PetCO2 basis, or both. Global signal is never a regressor. Design QC before freezing:
 all 90 designs are full rank in every model.
 Contrasts: C1 (H1) = free vs the unweighted mean of the paced conditions
 (aware, unaware, nochange) present in that run; C2 (H3) = aware − unaware;
@@ -335,7 +336,7 @@ H6: two-sided p < .05, small-volume corrected in a 10 mm sphere at MNI
 No uncorrected result will be reported as a finding.
 H5 equivalence: TOST (α = .05 per side) on the paired within-participant
 difference between corrected and uncorrected ROI estimates of the H2 effect;
-bounds dz = ±0.65 (PetCO2, N = 22) and ±0.60 (RVT, N = 26), the smallest
+bounds dz = ±0.61 (PetCO2, H2 N = 25) and ±0.59 (Biopac RVT, H2 N = 27), the smallest
 bounds supportable at 80% power. Fixed interpretation grid: TOST passes →
 statistically equivalent; TOST fails but corrected effect remains significant
 → attenuated but present; both fail → indeterminate (not "abolished"; the
@@ -379,7 +380,11 @@ the current data) would be modelled as a separate no-interest regressor.
 
 ## Other planned analysis
 
-S1: ±PetCO2 model comparison (N = 22). S2: ±RVT (N = 26). S3: CO2-available
+S1: ±PetCO2 model comparison (N = 25). S2: ±RVT, Biopac belt (N = 30).
+S2b (robustness): ±RVT with PMU fallback where the belt failed (N = 41; PMU
+RVT tracks the global signal but agrees poorly with the belt, so it is not
+confirmatory; one gate was revised after fallback metrics were seen —
+disclosed in prereg §6). S3: CO2-available
 vs unavailable participants on the uncorrected H2 contrast — registered as a
 cohort check only: CO2 availability is nearly collinear with protocol version
 (capnograph outage 2023-10-12 to 2024-01-18), so this cannot isolate CO2.
@@ -414,7 +419,7 @@ response — it functions as "I don't know", so no detection-stage d′ is
 interpreted as sensitivity. PetCO2 is a partial MEDIATOR of the task (pacing
 manipulates end-tidal CO2 by design), which is why H5 is framed as
 attenuation with an equivalence criterion rather than as a purity check. The
-attached full analysis plan (intero2023_imaging_prereg.md, v0.3) contains the
+attached full analysis plan (intero2023_imaging_prereg.md, v0.4) contains the
 dated decision history; the analysis repository (git) will be linked as an
 OSF component, and any deviation after freezing is logged in deviations.md
 with date, rationale, and whether the affected result had been seen.

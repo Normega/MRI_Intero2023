@@ -23,7 +23,7 @@ no exceptions.
 
 ## 1. Context in five sentences
 
-Participants (N = 47 analysable, 90 breathing runs; prereg v0.3) breathed
+Participants (N = 47 analysable, 90 breathing runs; prereg v0.4) breathed
 with a visual pacer whose rate increased, decreased, or held steady (step vs
 ramp salience), interleaved with free breathing, and reported the change
 direction with confidence and arousal ratings. Behaviour and physiology are
@@ -104,9 +104,16 @@ epoch durations:
   salience; `paced_nochange`, `free`, `rating`, `subrating` as in A.
 - Arousal is NOT a registered test. If run, it is a separate model of Model
   B's form, labelled exploratory — never added to A or C.
-- All confound columns from the sheet. **Never global signal.**
-- Sensitivity variants: base / +RVT (`rvt_rrf_z`) / +PetCO2 (4-lag basis,
-  all four columns or none) / +both.
+- **Base model nuisance = the sheet's non-physio columns only:** motion 6+6,
+  `framewise_displacement`, `csf`, `white_matter`, `cosine*`, `spike_*`.
+  The physio columns (`rvt_rrf_z`, `rvt_z`, `resp_rate_c`,
+  `petco2_hrf_lag*`) are NOT in the base model. **Never global signal.**
+- Sensitivity variants: base / +RVT (`rvt_rrf_z` only — `rvt_z` and
+  `resp_rate_c` are not registered regressors) / +PetCO2 (4-lag basis, all
+  four columns or none) / +both. S2 and the H5 TOST use RVT only from runs
+  with `rvt_source == "biopac"`; S2b also admits `rvt_source == "pmu"`.
+  A participant enters a physio variant only if every retained run has the
+  regressor (manifest `has_rvt` / `has_petco2`).
 
 **No implicit baseline.** Events tile ~94% of every run. Interpret only
 between-condition contrasts; never report or plot a condition-vs-rest
@@ -146,11 +153,14 @@ if using nilearn); ROI small-volume FWE p < .05 with the stated Bonferroni.
 **No uncorrected result is a finding.**
 
 **H5 (equivalence):** extract per-participant ROI estimates of
-`confidence_mod` from base vs +PetCO2 (N = 22) and base vs +RVT (N = 26)
-models; TOST on the paired difference, bounds dz = ±0.65 / ±0.60; fixed
+`confidence_mod` from base vs +PetCO2 (H2 N = 25) and base vs +RVT (H2 N =
+27; **`rvt_source == "biopac"` runs only**) models; TOST on the paired
+difference, bounds dz = ±0.61 / ±0.59; fixed
 interpretation grid in prereg §12.4. Report the corrected–uncorrected
-correlation alongside. The same comparison for `aware_gt_unaware` (12 / 14
-participants) is **descriptive only** — report estimates side by side, draw
+correlation alongside. S2b repeats the RVT comparison with PMU-sourced runs
+included (`rvt_source` in {biopac, pmu}; H2 N = 38, dz ±0.49) as robustness.
+The same comparison for `aware_gt_unaware` (13 / 15 participants; 21 in S2b)
+is **descriptive only** — report estimates side by side, draw
 no survival/abolition conclusion.
 
 **Registered diagnostic:** run-1 vs run-2 spatial correlation of

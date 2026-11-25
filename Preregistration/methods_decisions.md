@@ -346,6 +346,78 @@ that the C3 fixed-effects step uses only runs in which the modulator varies.
 
 ---
 
+# v0.4 decisions (2026-11-25, pre-freeze)
+
+## Decision 10 — Physio pipeline bugs fixed; recovered runs adopted
+
+**Evidence.** A run-by-run audit of all 90 analysable breathing runs (no BOLD
+read; fMRIPrep `global_signal` used only as the disclosed validity check) found
+three bugs that had withheld valid Biopac data. Code fixes and rebuilt tables
+are in commit `4aae7cd`:
+
+1. **The cache-key regex** `_part-([^_]*)_physio` could not parse sub-070's
+   part label `_A`. The scripts silently read a 1341-s fragment recording
+   instead, which gave run-1 its "40% coverage" and left run-2 empty. sub-083
+   (`_PartA`; not in the analysable set) had the same problem.
+2. **A stale hard-coded exclusion** blocked sub-082 and sub-104 in the RVT, RRF
+   and covariate scripts.
+3. **Missing volume counts:** sub-065 and sub-076 had none, because the old
+   imaging snapshot lacked them. Counts now come from the derivatives of record.
+
+Recovered under the registered pipeline and thresholds, otherwise unchanged:
+RVT for sub-065 r1/r2, sub-076 r1, sub-082 r1, sub-104 r1 and sub-070 r1/r2.
+PetCO2 for sub-065 r1/r2, sub-082 r1, sub-104 r1 and sub-070 r2. sub-070 r1
+PetCO2 fails on the correct recording (swing 0.56 < 0.8) and stays out.
+Biopac-RVT participants rise from 26 to 30, PetCO2 from 22 to 25, and both
+from 18 to 21.
+
+**Verification.** Re-running the unfixed code in the same environment reproduces
+HEAD for every table that doesn't depend on the global signal, and 152/153
+Biopac regressors byte-for-byte. The exception is sub-065 localizer run-1,
+whose re-conversion took it from 167 to 196 volumes. The 25 changed confound
+sheets gained physio columns only; all other columns are textually identical
+and no existing physio column changed. Outside the affected participants
+exactly one thing moves: the cohort cut-points for `actual_change_physio`
+shift, reclassifying 20 epochs in 15 participants. That variable enters no
+registered test.
+
+**Not adopted:** the 2 PetCO2 runs that miss the swing floor by < 0.01, and the
+2 that would need the capnogram rate floor lowered. Registered thresholds stand.
+
+**Also corrected:** the TOST N was quoted as the whole-sample physio N, but the
+test is defined on H2. It is now the H2 ∩ subset N: PetCO2 25 (dz ±0.61) and
+Biopac RVT 27 (dz ±0.59).
+
+## Decision 11 — Siemens PMU RVT as a fallback source, robustness only (S2b)
+
+**Evidence.** `Analysis/pmu_rvt_validation.md` (commit `bd88f7f`).
+- *Alignment:* `AcquisitionTime − LogStartMDHTime + 0.62 s` predicts the
+  Biopac-locked offset at r = 0.993 on 46 runs with a reliable reference.
+- *Global-signal coupling:* on 51 dual-belt runs, PMU RVT⊗RRF couples to the
+  global signal at median +0.34, positive in 90%, against Biopac's +0.22 on
+  the same runs.
+- *Inter-belt agreement is poor:* the two belts' RVT time courses correlate at
+  median 0.17 over all 51 runs, and 0.05 on the 25 not used to develop the
+  method. An earlier figure of 0.34 came from 27 runs pre-selected for good
+  raw-trace alignment, and does not hold.
+
+**Decided (by the PI, 2026-11-25).** The PMU fallback (rule and gates in prereg
+§6) supplies RVT for 18 further runs, giving 41 participants and H3 coverage of
+21/23. It is used only in robustness analysis **S2b**. The confirmatory RVT
+comparison (S2) and the H5 TOST stay on the Biopac belt, because PMU RVT is not
+interchangeable with the registered measure. The 7 PMU runs at 10–15%
+saturation are not used.
+
+**Disclosure (also in prereg §6).**
+- *Saturation gate.* The gate pre-set at < 5% of the whole file refused 17 of
+  28 candidates. It was replaced by < 10% in the scan window, derived from the
+  dual-belt validation runs only. The fallback runs' quality metrics, including
+  their global-signal r, had been printed before the replacement.
+- *Alignment-reliability filter.* This (sharpness ≥ 0.05) was set after the
+  residuals were seen. It changes no constant or gate.
+
+---
+
 ## Applied
 
 `Preregistration/intero2023_imaging_prereg.md` was rewritten to **v0.2** on
@@ -359,6 +431,8 @@ Decisions 5–9 were applied as **v0.3** on 2026-11-24: §0, §1b, §2, §3 (H1,
 H5, H6), §4, §5, §8, §9, §12 (items 10–13), and the header change log. The OSF
 draft, `osf_template_answers.md` and `ANALYSIS_HANDOFF.md` were brought in line
 in the same pass.
+
+Decisions 10–11 were applied as **v0.4** on 2026-11-25 (prereg header, §3 H5, §4, §6, §8, §9 S1/S2/S2b/S3, §12.4, §12 item 14), with the code and data changes in commits `4aae7cd` and `bd88f7f`.
 
 ## What is still open
 

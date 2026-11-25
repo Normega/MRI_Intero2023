@@ -1,8 +1,8 @@
 # Preregistration — Neural correlates of respiratory change awareness (MRI_Intero2023)
 
 **Status:** draft for discussion — **pre-freeze**
-**Version:** 0.3
-**Date:** 2026-11-24 (v0.2: 2026-08-24; v0.1: 2026-08-13)
+**Version:** 0.4
+**Date:** 2026-11-25 (v0.3: 2026-11-24; v0.2: 2026-08-24; v0.1: 2026-08-13)
 **Analysis code:** `Repo/R/`, `Repo/Scripts/` (all preprocessing and behavioural code already written and versioned)
 
 **Changes in v0.2, all made before the registration was frozen and before any model was fitted.** Each is evidenced in `VERIFICATION_REPORT.md` and recorded with its rationale in `Preregistration/methods_decisions.md`:
@@ -17,10 +17,21 @@
 
 6. **§3, §8: H6 is re-framed as a two-sided conceptual extension.** The IEAT's MAIA effect was a covariate on Active Interoception vs Active Exteroception. This task has no exteroceptive condition, and the paced − free contrast H6 uses is the analogue of the IEAT's Matching vs Interoception contrast, which the IEAT never related to MAIA. The prior study therefore does not fix the sign, and the one-sided test is withdrawn.
 7. **§5, §7: the design has no implicit baseline, and this is now registered.** Modelled events cover a median 94% of each run (minimum 63%). Only between-condition contrasts are interpreted. "Deactivation" means relative to free breathing, and no condition-vs-rest contrast will be reported.
-8. **§4, §8, §9, §12.4: the physiological-subset Ns are corrected to their post-gate values.** These are PetCO2 22, RVT 26, both 18, and verified adherence 26. The several places that carried pre-gate values (24 / 30 / 20 / 24) are fixed. The TOST bounds are restated at the true Ns: dz = ±0.65 and ±0.60 at 80% power.
-9. **§3: H5's claim about H3 is descriptive.** Only 12 of H3's 23 participants have PetCO2 and 14 have RVT. The confirmatory H5 test is the TOST on H2.
+8. **§4, §8, §9, §12.4: the physiological-subset Ns are corrected to their post-gate values.** These are PetCO2 22, RVT 26, both 18, and verified adherence 26 (superseded by v0.4 item 12). The several places that carried pre-gate values (24 / 30 / 20 / 24) are fixed. The TOST bounds are restated at the true Ns: dz = ±0.65 and ±0.60 at 80% power.
+9. **§3: H5's claim about H3 is descriptive.** Only 12 of H3's 23 participants had PetCO2 and 14 had RVT (13 and 15 after v0.4). The confirmatory H5 test is the TOST on H2.
 10. **§4: run-level exceptions for Model B are registered.** These are runs whose confidence is constant within the run.
-11. **Minor corrections.** H2's falsification criterion includes the dACC. H4 gains an explicit inference set and a null outcome. The §5 trial medians are updated to the corrected sample. The direction-accuracy definition is stated. The IEAT's insula laterality is corrected (bilateral in its Results).
+11. **Minor corrections (v0.3).** H2's falsification criterion includes the dACC. H4 gains an explicit inference set and a null outcome. The §5 trial medians are updated to the corrected sample. The direction-accuracy definition is stated. The IEAT's insula laterality is corrected (bilateral in its Results).
+
+**Changes in v0.4 (2026-11-25), pre-freeze, before any model was fitted.** These follow a re-examination of the physiological recordings (`Analysis/pmu_rvt_validation.md`; code changes in commits `4aae7cd` and `bd88f7f`). No BOLD image was read. Rationale is in `methods_decisions.md` decisions 10–11.
+
+12. **§4, §6, §9: physiological coverage recovered by fixing three pipeline bugs, with the registered pipeline and thresholds otherwise unchanged.** 7 RVT and 5 PetCO2 breathing runs are recovered:
+    - The physio cache-key regex could not parse sub-070's part label, so sub-070's breathing runs had been built from the wrong recording.
+    - A stale hard-coded exclusion had blocked sub-082 and sub-104.
+    - sub-065 and sub-076 had been skipped because the old imaging snapshot did not contain them.
+
+    Biopac RVT on every retained run: 26 → **30** participants. PetCO2: 22 → **25**. Both: 18 → **21**.
+13. **§6, §9: the Siemens PMU respiration cushion is registered as a fallback RVT source, used in a new robustness analysis S2b only.** The confirmatory S2/H5 test stays on the Biopac belt. PMU RVT couples to the global signal at least as well as the Biopac belt, but the two belts' RVT time courses agree poorly. The saturation gate was revised after some fallback-run quality metrics had been seen. That sequence is disclosed in §6.
+14. **§3, §4, §12.4: the TOST N is the H2 subset, and the bounds are restated at it.** v0.2/v0.3 quoted the whole-sample physio N (22 / 26) for a test defined on the H2 effect; the correct H2 ∩ RVT N was 24. At v0.4: PetCO2 N = 25, dz = ±0.61; Biopac RVT N = 27, dz = ±0.59 (80% power).
 
 ---
 
@@ -138,9 +149,9 @@ High-salience (step) > low-salience (ramp) change trials will elicit greater act
 
 **H5 — Physiological correction attenuates but does not abolish awareness effects.**
 Adding physiological regressors (§6) will reduce cluster extent in H1–H4 but the anterior insula and dACC effects will survive.
-*Confirmatory test (revised 2026-11-24):* the TOST of §12.4 on the **H2** confidence effect, at N = 22 (±PetCO2) and N = 26 (±RVT). *Descriptive only:* the same comparison for **H3**. Only 12 of H3's 23 participants have PetCO2 on all retained runs and 14 have RVT. At those Ns, 80% TOST power requires bounds of dz ≈ 0.92 (N = 12) and 0.84 (N = 14), which are too loose to support an equivalence claim. The corrected and uncorrected H3 estimates will be reported side by side, with their correlation and the per-participant differences, and no conclusion of survival or abolition will be drawn from them.
+*Confirmatory test (revised 2026-11-24; Ns updated 2026-11-25):* the TOST of §12.4 on the **H2** confidence effect, in the H2 participants who have the regressor on every retained run. That is N = 25 for ±PetCO2 and N = 27 for ±RVT, using the Biopac belt only. *Descriptive only:* the same comparison for **H3**. Of H3's 23 participants, 13 have PetCO2 and 15 have Biopac RVT. At those Ns, 80% TOST power requires bounds of dz ≈ 0.87 and 0.81, too loose to support an equivalence claim. The PMU-extended RVT set (S2b, §9) raises H3's RVT coverage to 21 of 23 (dz ≈ 0.67), and is reported as robustness, also descriptively. The corrected and uncorrected H3 estimates will be reported side by side, with their correlation and the per-participant differences, and no conclusion of survival or abolition will be drawn from them.
 This is directional and consequential: PetCO2 is a **mediator** in this design, not a pure nuisance — the pacing manipulation changes end-tidal CO2 by construction. Regressing it out therefore removes part of the effect of interest for H1 in particular. Both corrected and uncorrected models will be reported side by side, and neither is designated "the" result for H1. Precedent: the IEAT found RVT associated with widespread deactivation, and that controlling respiration rate and RVT at both levels attenuated but did not eliminate its interoception deactivation effect.
-*Note on the TOST target (revised 2026-08-24; Ns corrected 2026-11-24):* the equivalence bounds in §12.4 are defined on the H2 confidence effect, because the ±PetCO2 and ±RVT subsamples (N = 22 and 26) do not support the same test on H3's 23 participants (12 and 14 of whom are in those subsamples). The TOST is therefore reported as an equivalence statement about the **supportive** measure, and is not read as an equivalence statement about H3.
+*Note on the TOST target (revised 2026-08-24; Ns corrected 2026-11-25):* the equivalence bounds in §12.4 are defined on the H2 confidence effect, because the ±PetCO2 and ±RVT subsamples (H2 N = 25 and 27) do not support the same test on H3's 23 participants (13 and 15 of whom are in those subsamples). The TOST is therefore reported as an equivalence statement about the **supportive** measure, and is not read as an equivalence statement about H3.
 
 **H6 — MAIA and the ACC (conceptual extension of the IEAT; two-sided). Model A, N = 46.**
 *What is carried over, and what is not.* In the IEAT, higher MAIA predicted reduced ACC deactivation on the **Active Interoception vs Active Exteroception** contrast. This task has no exteroceptive condition, so that contrast cannot be reproduced. The contrast available here is paced vs free, the analogue of the IEAT's Active Matching vs Active Interoception, and the IEAT did not relate MAIA to it. H6 therefore tests whether the IEAT's individual-differences region, defined in advance, is MAIA-sensitive on this study's control contrast. It is **not a direct replication**, and was labelled as one in v0.2 in error (corrected 2026-11-24, before any model was fitted).
@@ -184,16 +195,17 @@ Exclusions are already applied and are not contingent on imaging results.
 | + usable imaging | **103** | **53** |
 | − sub-056 (truncated run-1, gated run-2) | 101 | 52 |
 | **− motion gate (11 of the remaining 101 runs)** | **90** | **47** |
-| of which: RVT regressor on every retained run | 54 | 26 |
-| of which: PetCO2 regressor on every retained run | 46 | 22 |
-| of which: both, on every retained run | 38 | 18 |
+| of which: Biopac RVT on every retained run (S2) | 61 | 30 |
+| of which: RVT from Biopac or PMU fallback on every retained run (S2b) | 79 | 41 |
+| of which: PetCO2 on every retained run (S1) | 51 | 25 |
+| of which: both Biopac RVT and PetCO2, on every retained run | 43 | 21 |
 | of which: verified pacer adherence (≥1 retained run) | — | 26 |
 
-*(v0.3: the physiological rows are now counted on the 90 post-gate runs. v0.2 carried pre-gate values here (64 / 51 / 43 runs; 30 / 24 / 20 participants; adherence 24), although the N table below already had the post-gate 22 and 26.)*
+*(v0.4: physiological rows updated after the pipeline-bug fixes and the PMU fallback, §6. v0.3: the physiological rows are counted on the 90 post-gate runs. v0.2 carried pre-gate values here (64 / 51 / 43 runs; 30 / 24 / 20 participants; adherence 24), although the N table below already had the post-gate 22 and 26.)*
 
 **Additional motion exclusion, applied before modelling:** a run is dropped if mean framewise displacement > 0.5 mm or if > 25% of its volumes exceed FD 0.5 mm. A participant is dropped if this leaves fewer than one usable breathing run. This criterion is fixed now and will not be adjusted after seeing results.
 
-**The gate has been applied** (2026-08-14, using fMRIPrep's FD column only — no BOLD signal or contrast has been examined). Across the full 103-run set it fails 12 runs, one of which is sub-056 run-2, already removed on the line above. It removes exactly the same 5 participants entirely as in the registered version (sub-058, -062, -080, -085, -094); two more lose one of two runs. Gated runs are unambiguous (median 81 spike volumes vs 3 in retained runs; median FD 0.52 vs 0.18 mm). **Post-gate: 90 runs, 47 participants** (`Repo/FirstLevel/firstlevel_manifest.csv` plus `firstlevel_manifest_candidates.csv`). None of the four reinstated participants has a breathing-run RVT or PetCO2 regressor, so they do not enter S1/S2. All four do have belt-verified pacer adherence on their retained runs, and so enter S4.
+**The gate has been applied** (2026-08-14, using fMRIPrep's FD column only — no BOLD signal or contrast has been examined). Across the full 103-run set it fails 12 runs, one of which is sub-056 run-2, already removed on the line above. It removes exactly the same 5 participants entirely as in the registered version (sub-058, -062, -080, -085, -094); two more lose one of two runs. Gated runs are unambiguous (median 81 spike volumes vs 3 in retained runs; median FD 0.52 vs 0.18 mm). **Post-gate: 90 runs, 47 participants** (`Repo/FirstLevel/firstlevel_manifest.csv` plus `firstlevel_manifest_candidates.csv`). All four reinstated participants have belt-verified pacer adherence on their retained runs, and so enter S4. Their physiological regressors had not been built because of pipeline bugs, now fixed (§6, v0.4). sub-065, sub-082 and sub-104 now have Biopac RVT and PetCO2 on every retained run. sub-076 has Biopac RVT on run-1 and PMU RVT on run-2, so it enters S2b only, and it has no valid capnogram.
 
 *Registered check on a paradigm-specific selection risk:* deep paced breathing could inflate FD and the gate could then preferentially remove adherent breathers. It does not: fd–adherence correlation across belt-usable runs r = −0.003 (n = 81), and gated runs show *lower* pacer adherence (median 0.230 vs 0.335).
 
@@ -211,9 +223,10 @@ Exclusions are already applied and are not contingent on imaging results.
 | C5 salience high vs low (H4) | C | **43** |
 | H6 MAIA moderation | A | **46** |
 | C4 wrong-direction vs aware | — | 13 — **not analysed as a planned contrast** |
-| S1 ±PetCO2 (basis on all retained runs) | — | **22** — TOST bound dz = 0.65 (80%) |
-| S2 ±RVT (regressor on all retained runs) | — | **26** — TOST bound dz = 0.60 (80%) |
-| S4 verified pacer adherence | — | **26** |
+| S1 ±PetCO2 (basis on all retained runs) | — | **25** (H2 25, H3 13) — TOST on H2, dz = ±0.61 (80%) |
+| S2 ±RVT, Biopac belt (all retained runs) | — | **30** (H2 27, H3 15) — TOST on H2, dz = ±0.59 (80%) |
+| S2b ±RVT, Biopac or PMU fallback (robustness) | — | **41** (H2 38, H3 21) |
+| S4 verified pacer adherence | — | **26** (H2 25, H3 14) |
 
 Three participants — **sub-066, sub-070 and sub-114** — give the same confidence rating on every retained paced trial (all 14 rated 6, all 14 rated 7, and all 7 rated 7 respectively). A constant modulator is not a regressor, so they are **excluded from H2 only** and retained for every other hypothesis. This is a property of the behaviour, not of the sample correction, and the rule is fixed now, before any model is fitted.
 
@@ -269,7 +282,26 @@ The larger over-runs elsewhere in the event files (sub-058, sub-094: 19–67 s) 
 Two independent physiological measures are available, both already built and validated:
 
 **RVT** (respiration volume per time, Birn et al. 2006), convolved with the respiration response function (Birn et al. 2008), z-scored within run.
-Validated: RVT ⊗ RRF predicts the global signal at **r = +0.223, positive in 86% of runs**, at zero lag with no lag selection. Available for 153 runs / 41 participants overall.
+Validated: RVT ⊗ RRF predicts the global signal at **r = +0.223, positive in 86% of runs**, at zero lag with no lag selection. Available for 153 runs / 41 participants overall, counted across all tasks before v0.4; breathing-run coverage after v0.4 is in §4.
+
+**Pipeline fixes (v0.4, 2026-11-25).** Three bugs had withheld valid Biopac data from the breathing runs. Fixing them recovers 7 RVT and 5 PetCO2 runs under the registered pipeline and thresholds, unchanged:
+1. The physio cache-key regex could not parse a part label containing an underscore. sub-070's breathing runs had therefore been built from a 1341-s fragment recording; its derived rows were rebuilt from the correct one.
+2. A hard-coded exclusion of sub-082 and sub-104, left over from the withdrawn "shifted labels" rationale, was removed.
+3. Volume counts are now taken from the derivatives of record, so sub-065 and sub-076 are no longer skipped.
+
+One knock-on outside these participants: the cohort-level cut-points that classify each epoch's *measured* breathing change moved slightly (0.526 / 1.898 → 0.544 / 2.044). This reclassifies `actual_change_physio` in 20 epochs from 15 other participants. That variable enters no registered test. `adherence_verified` is unchanged for everyone else.
+
+**PMU fallback RVT (v0.4; robustness analysis S2b only).** Where a run has no usable Biopac belt, RVT can be taken from the Siemens PMU respiration cushion. The rule (code: `Scripts/intero2023_pmu_rvt.R`; validation: `Analysis/pmu_rvt_validation.md`):
+- *Source priority.* Biopac if `rvt_rrf_z` covers ≥ 50% of volumes, otherwise PMU if it passes every gate, otherwise none.
+- *Alignment.* Scan start in the PMU log = `AcquisitionTime − LogStartMDHTime + 0.62 s`. This predicts the Biopac-trigger-locked offset at r = 0.993 across the 46 runs with a reliable reference (residuals −1.1 to +2.0 s).
+- *Gates.* The log covers ≥ 95% of the scan; band ratio ≥ 0.90; < 10% of samples on a 12-bit rail in the scan window; ≥ 5 kept breaths; RVT on ≥ 50% of volumes; inverted polarity.
+- *Processing.* The same RVT ⊗ RRF chain as the Biopac route.
+
+This gives 18 breathing runs, raising RVT coverage from 30 to 41 participants (H3: 15 → 21 of 23).
+
+*Why PMU is robustness only.* On 51 dual-belt runs, PMU RVT ⊗ RRF predicts the global signal at median r = +0.34, positive in 90% of runs, against +0.22 for the Biopac belt on the same runs. But the two belts' RVT time courses agree poorly (median r = 0.17 over all 51; 0.05 on the 25 not used to develop the method). The PMU signal carries respiratory information, but it is not interchangeable with the belt the plan registered. The confirmatory comparison (S2, H5) therefore stays on the Biopac belt.
+
+*Disclosure of the gate sequence.* Before any fallback run was scored, the saturation gate was set at < 5% of the whole PMU file. The first scoring printed every fallback run's quality metrics, including its RVT ⊗ RRF correlation with the global signal, and that gate refused 17 of 28 candidates. The dual-belt validation runs themselves reach 27% saturation, so the gate was re-derived from the validation runs only, and set at < 10% within the scan window. The fallback runs' metrics were not used to choose the cut, but they had been seen when it was chosen. The alignment-reliability filter above (reference sharpness ≥ 0.05) was also set after the alignment residuals were seen; it changes neither the +0.62 s constant nor any gate. The 7 runs at 10–15% saturation are not used. These steps involved the global signal only (the exception disclosed in §0); no task regressor was related to any imaging measure.
 
 **PetCO2**, as an HRF-convolved basis at lags 0/10/20/30 s.
 The lag is **not identifiable** in these data — band-passed group lag profiles are correctly signed and cross zero at ~9 s but plateau from 18 s to 40 s without turning over, so a single fitted lag would be false precision. The 4-lag basis gives median multiple R² = 0.125 against the band-passed global signal. Available for 112 runs / 28 participants.
@@ -368,9 +400,11 @@ The global signal is **not** included as a nuisance regressor in any model.
 | 47 | H1 (Model A) | 0.42 | 0.64 |
 | 44 | H2 (Model B) | 0.43 | 0.67 |
 | 43 | H4 (Model C) | 0.44 | 0.67 |
-| 26 | ±RVT (S2), adherence (S4) | 0.57 | 0.91 |
+| 41 | ±RVT, PMU-extended (S2b) | 0.45 | 0.69 |
+| 30 | ±RVT, Biopac (S2) | 0.53 | 0.83 |
+| 26 | adherence (S4) | 0.57 | 0.91 |
+| 25 | ±PetCO2 (S1) | 0.58 | 0.93 |
 | 23 | **H3 (Model A)** | **0.61** | **0.98** |
-| 22 | ±PetCO2 (S1) | 0.63 | 1.01 |
 
 **H3 at N = 23 requires a large effect (d ≈ 1.0) at whole-brain thresholds, which is why it is ROI-restricted.** It is nonetheless the *authoritative* awareness test (§3): being the better-identified contrast and being the better-powered one are different properties, and this document deliberately assigns primacy on identification rather than on power. The consequence is stated in advance in §3 and repeated here — **a null H3 is not to be reinterpreted afterwards, and a null H3 beside a positive H2 is not evidence that confidence rather than awareness drives the effect**, because that comparison (N = 23 vs 44) is confounded with power.
 
@@ -380,12 +414,14 @@ The global signal is **not** included as a nuisance regressor in any model.
 
 Each is fully specified now and will be reported whatever the outcome. Where a sensitivity analysis names a hypothesis, it is refitted in **that hypothesis's own model** (§7) — H1/H3/H6 in Model A, H2 in Model B, H4 in Model C — with the physiological or subsetting change applied identically to all of them. S6 is ordered last because it was added in v0.2; the numbering of S1–S5 is unchanged so that references to them in the v0.1 record still resolve.
 
-**S1 — ±PetCO2 (the primary methodological question, N = 22).**
-Fit H1–H4 with and without the PetCO2 basis in the 22 participants who have it on all retained runs (H3 in the 12 of them who are among its 23; that comparison is descriptive, §3 H5). Compare (a) peak z and cluster extent in each ROI, (b) whether each hypothesis's conclusion changes. Because this is a within-participant model comparison, it is better powered than the between-group comparison originally considered.
+**S1 — ±PetCO2 (the primary methodological question, N = 25).**
+Fit H1–H4 with and without the PetCO2 basis in the 25 participants who have it on all retained runs (H1 25, H2 25, H3 13, H4 22, H6 24; the H3 comparison is descriptive, §3 H5). Compare (a) peak z and cluster extent in each ROI, (b) whether each hypothesis's conclusion changes. Because this is a within-participant model comparison, it is better powered than the between-group comparison originally considered.
 
-**S2 — ±RVT (N = 26).** As S1, with the RVT regressor (H3 in 14 participants, descriptive).
+**S2 — ±RVT, Biopac belt (N = 30).** As S1, with the Biopac RVT regressor (H1 30, H2 27, H3 15 descriptive, H4 26, H6 29). This is the confirmatory RVT comparison, and the H5 TOST uses it.
 
-**S3 — CO2-available vs CO2-unavailable participants.** Test whether the 22 participants with usable capnography differ from the remainder on the uncorrected H2 contrast (H2 rather than H3, because the subgroup comparison needs the larger sample to be worth running at all). **Registered caveat:** CO2 availability is near-collinear with cohort and protocol version (the capnograph outage was an unbroken date block from 2023-10-12 to 2024-01-18), so this comparison **cannot isolate CO2** and will be reported as a cohort check only, not as evidence about physiological correction.
+**S2b — ±RVT with the PMU fallback (robustness; N = 41).** As S2, but runs without a usable Biopac belt take RVT from the Siemens PMU cushion under the rule in §6 (H1 41, H2 38, H3 21, H4 37, H6 40). The TOST is also computed here (H2 N = 38, dz = ±0.49) and reported as robustness. If S2 and S2b disagree, the disagreement is reported. S2 remains the registered result.
+
+**S3 — CO2-available vs CO2-unavailable participants.** Test whether the 25 participants with usable capnography differ from the remainder on the uncorrected H2 contrast (H2 rather than H3, because the subgroup comparison needs the larger sample to be worth running at all). **Registered caveat:** CO2 availability is near-collinear with cohort and protocol version (the capnograph outage was an unbroken date block from 2023-10-12 to 2024-01-18), so this comparison **cannot isolate CO2** and will be reported as a cohort check only, not as evidence about physiological correction.
 
 **S4 — Adherence conditioning (N = 26; H2 25, H3 14).** Repeat **H3 and H2** restricted to participants with verified pacer adherence on at least one retained run. Adherence is a run-level property (per-epoch classification is underpowered at AUC 0.66–0.69), and this is registered as robustness, not as the primary analysis.
 
@@ -427,9 +463,9 @@ Any departure from this document will be recorded in `Repo/Preregistration/devia
 3. ~~**H3 ROI restriction.**~~ **Resolved 2026-08-14:** bilateral anterior insula + dACC (three masks, Bonferroni ×3). The dACC is retained on the IEAT's evidence; see §8.
 4. ~~**Formal equivalence test for H5.**~~ **Resolved 2026-08-14.** Registered criterion:
    - *Test:* TOST (two one-sided tests, α = .05 each) on the **paired within-participant difference** between the corrected and uncorrected ROI contrast estimates (the H2 confidence effect, extracted per participant from each of the three primary ROIs).
-   - *Bounds, set by what the samples can support at 80% power:* **dz = ±0.65** for ±PetCO2 (N = 22) and **dz = ±0.60** for ±RVT (N = 26). Tighter bounds are not honestly supportable: dz = 0.3 would require N ≈ 90. *(Ns corrected 2026-11-24. v0.2 stated these bounds at the pre-gate N = 24 / 30, with 82% / 84% power; at the true post-gate Ns the same bounds give 80%, by simulation.)*
+   - *Bounds, set by what the samples can support at 80% power:* **dz = ±0.61** for ±PetCO2 (H2 N = 25) and **dz = ±0.59** for ±RVT on the Biopac belt (H2 N = 27). The S2b robustness version (H2 N = 38) uses dz = ±0.49. Tighter bounds are not honestly supportable: dz = 0.3 would require N ≈ 90. *(v0.4, 2026-11-25: Ns are now the H2 participants in each subset, after the physio pipeline fixes. v0.3 stated dz = ±0.65 / ±0.60 at the whole-sample N = 22 / 26, although the H2 ∩ RVT N was 24. Ns corrected 2026-11-24. v0.2 stated these bounds at the pre-gate N = 24 / 30, with 82% / 84% power; at the true post-gate Ns the same bounds give 80%, by simulation.)*
    - *Interpretation grid, fixed in advance:* TOST passes → correction leaves the effect **statistically equivalent**; TOST fails but the corrected effect remains significant in the ROI → **attenuated but present**; TOST fails and the corrected effect is not significant → **indeterminate** (not "abolished" — the design cannot distinguish abolition from power loss at these bounds).
-   - *Context for the bound's meaning:* the paired SD is the SD of the difference between two estimates from nearly identical models. If the two estimates correlate at r = 0.95, dz = 0.65 on the difference corresponds to ≈ 0.21 between-participant SD of the estimate itself — a materially tight bound despite the modest N. The observed corrected–uncorrected correlation will be reported alongside the TOST so the bound can be read in raw units.
+   - *Context for the bound's meaning:* the paired SD is the SD of the difference between two estimates from nearly identical models. If the two estimates correlate at r = 0.95, dz = 0.61 on the difference corresponds to ≈ 0.19 between-participant SD of the estimate itself — a materially tight bound despite the modest N. The observed corrected–uncorrected correlation will be reported alongside the TOST so the bound can be read in raw units.
 5. ~~**MAIA scoring check.**~~ **Resolved 2026-08-14, updated 2026-08-24:** MAIA-2 complete (all 37 items) for all 58 scored participants. Under the corrected sample, 46 of the 47 analysable participants are covered — sub-065 has none. Scores in `Repo/Data/maia_scores.csv`. **H6 finalised at N = 46.**
 6. ~~**Imaging inventory.**~~ **Resolved 2026-08-20:** sub-065, sub-076, sub-082 and sub-104 reinstated; sub-051 and sub-056 named as excluded. Rationale in §4 and `Preregistration/section4_correction_draft.md`; evidence in `VERIFICATION_REPORT.md`.
 7. ~~**One model or two.**~~ **Resolved 2026-08-24:** three models (§7). Awareness and confidence are never in the same design. Rationale in `Preregistration/methods_decisions.md` decision 2.
@@ -439,3 +475,4 @@ Any departure from this document will be recorded in `Repo/Preregistration/devia
 11. ~~**Baseline.**~~ **Resolved 2026-11-24:** there is no implicit baseline. Only between-condition contrasts are interpreted, and no condition-vs-rest contrast will be reported (§5).
 12. ~~**H5 and H3.**~~ **Resolved 2026-11-24:** H3 under physiological correction is descriptive; the confirmatory H5 test is the TOST on H2 (§3).
 13. ~~**Model B run exceptions.**~~ **Resolved 2026-11-24:** C3 is combined only over runs whose confidence modulator varies. This affects sub-106 run-1 and sub-112 run-2 (§4).
+14. ~~**Physiological coverage.**~~ **Resolved 2026-11-25:** three pipeline bugs are fixed (§6). PMU fallback RVT is registered for robustness analysis S2b only. The confirmatory RVT comparison uses the Biopac belt. See `methods_decisions.md` decisions 10–11.
