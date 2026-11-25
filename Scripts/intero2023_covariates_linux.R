@@ -37,7 +37,7 @@
 # FD > 0.5 mm. Flagged in the manifest and the QC ledger; files are still
 # written so the gate remains reviewable rather than silently applied.
 #
-# Script version: 1.0-linux1
+# Script version: 1.0-linux2 (2026-11-24: PMU RVT fallback + rvt_source)
 # Author: RADlab
 #
 # ---------------------------------------------------------------------------
@@ -174,6 +174,13 @@ for (i in seq_len(nrow(conf_idx))) {
   physio_note <- c()
   rf <- file.path(dir_reg, sprintf("%s_%s_resp.tsv", sb, ent))
   pf <- file.path(dir_reg, sprintf("%s_%s_petco2.tsv", sb, ent))
+  # PMU fallback (2026-11-24; Scripts/intero2023_pmu_rvt.R): the PMU-derived file
+  # is used only when the Biopac file is absent or its rvt_rrf_z covers < 50% of
+  # volumes. Same logic as Scripts/intero2023_physio_sheets.R.
+  rf_pmu <- file.path(dir_reg, sprintf("%s_%s_desc-pmu_resp.tsv", sb, ent))
+  bio_ok <- file.exists(rf) && mean(is.finite(fit_len(suppressWarnings(read_tsv(rf,
+    show_col_types = FALSE, progress = FALSE, na = "n/a"))$rvt_rrf_z, n_vol))) >= PHYSIO_MIN_COV
+  if (!bio_ok && file.exists(rf_pmu)) rf <- rf_pmu
   has_rvt <- FALSE; has_co2 <- FALSE
   if (file.exists(rf)) {
     r <- suppressWarnings(read_tsv(rf, show_col_types = FALSE, progress = FALSE,
@@ -224,6 +231,7 @@ for (i in seq_len(nrow(conf_idx))) {
     fd_mean = round(fd_mean, 3), fd_frac_gt_thresh = round(fd_frac, 3),
     n_spikes = length(spikes), motion_gate_fail = gate_fail,
     has_rvt = has_rvt, has_petco2 = has_co2,
+    rvt_source = if (!has_rvt) "none" else if (rf == rf_pmu) "pmu" else "biopac",
     note = if (length(physio_note)) paste(physio_note, collapse = "; ") else NA_character_)
 
   qc[[length(qc) + 1]] <- qc_entry(sb, "imaging", "motion_gate",

@@ -161,3 +161,72 @@ pmu_window <- function(sig, fs, n_vol, tr = 2) {
   n <- min(need, length(sig))
   list(signal = sig[seq_len(n)], covered = n / need, n_needed = need)
 }
+
+# ===========================================================================
+# PMU AS A FALLBACK RVT SOURCE (added 2026-11-24; supersedes the STATUS note
+# above for volume-wise use). See Scripts/intero2023_pmu_rvt.R for the
+# validation and the gates; the functions here are the mechanics only.
+#
+# THE ALIGNMENT IS SOLVED BY THE SCAN'S OWN CLOCK. The note above found that
+# LogStartMDHTime - LogStartMPCUTime does not locate the acquisition. The
+# comparison that does is against the BOLD series' AcquisitionTime (DICOM, as
+# carried into the BIDS sidecar), which is stamped on the same scanner (MDH)
+# clock:
+#
+#   scan start, seconds into the PMU file = AcquisitionTime - LogStartMDHTime
+#                                           + PMU_CAL_S
+#
+# PMU_CAL_S is a single constant, the negated median residual of that formula
+# against the Biopac-trigger-locked offsets in Data/pmu_wide_offsets.csv.
+# ===========================================================================
+
+PMU_CAL_S <- 0.62   # s; fixed 2026-11-24 from 26 dual-belt breathing runs
+
+#' Seconds-since-midnight of a BIDS sidecar's AcquisitionTime ("HH:MM:SS.ffffff").
+#' Read from the dataset of record; only the derived OFFSET is ever written out
+#' (a time of day joined to a subject ID is an indirect identifier).
+bids_acq_seconds <- function(json_path) {
+  if (!file.exists(json_path)) return(NA_real_)
+  t <- jsonlite::fromJSON(json_path)$AcquisitionTime
+  if (is.null(t)) return(NA_real_)
+  p <- as.numeric(strsplit(t, ":", fixed = TRUE)[[1]])
+  p[1] * 3600 + p[2] * 60 + p[3]
+}
+
+#' Scan-start offset (s) inside a parsed PMU log, before calibration.
+pmu_scan_offset_raw <- function(p, acq_s) acq_s - p$mdh_start_ms / 1000
+
+#' PMU respiration -> per-volume RVT, rate and RVT (x) RRF for one run.
+#'
+#' Decimates 400 -> 100 Hz by block means (the Biopac cache rate), inverts the
+#' trace (PMU_SIGN; chosen on agreement with the Biopac RVT in the validation
+#' set), cuts n_vol * tr seconds from the calibrated offset, and then runs the
+#' SAME belt_analyse() -> rvt_series()/rate_series()/rvt_convolved() chain as
+#' the Biopac route, so the two sources differ only in transducer.
+PMU_SIGN <- -1
+pmu_rvt_run <- function(p, acq_s, n_vol, tr = 2, cal = PMU_CAL_S, sign = PMU_SIGN) {
+  x  <- p$signal
+  n4 <- floor(length(x) / 4) * 4
+  x  <- colMeans(matrix(x[seq_len(n4)], nrow = 4)) * sign
+  fs <- p$fs / 4
+  off <- pmu_scan_offset_raw(p, acq_s) + cal
+  s <- round(off * fs) + 1L; e <- s + round(n_vol * tr * fs) - 1L
+  covered <- (min(e, length(x)) - max(s, 1L) + 1L) / (e - s + 1L)
+  # saturation is judged on the RAW 12-bit samples inside the scan window
+  s4 <- max(1L, round(off * p$fs) + 1L); e4 <- min(length(p$signal), s4 + round(n_vol * tr * p$fs) - 1L)
+  sat <- mean(p$signal[s4:e4] %in% c(0, PMU_MAX))
+  out <- list(offset_s = off, covered = covered, sat_win = sat, ok = FALSE)
+  if (covered <= 0) return(out)
+  a <- belt_analyse(x[max(s, 1L):min(e, length(x))], fs)
+  if (is.null(a)) return(out)
+  modifyList(out, list(ok = TRUE, a = a,
+                       rvt  = rvt_series(a$bt, n_vol, tr),
+                       rvtc = rvt_convolved(a$bt, n_vol, tr),
+                       rate = rate_series(a$bt, n_vol, tr)))
+}
+
+# Gates, fixed 2026-11-24 (see intero2023_pmu_rvt.R header for provenance).
+PMU_MIN_COVERED  <- 0.95   # PMU log must span the scan
+PMU_MIN_BAND     <- 0.90   # = the registered "good" Biopac band-ratio criterion
+PMU_MAX_SAT      <- 0.10   # fraction of 12-bit-rail samples in the scan window
+PMU_MIN_RVT_COV  <- 0.50   # = PHYSIO_MIN_COV of the covariate sheets
