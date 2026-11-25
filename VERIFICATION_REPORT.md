@@ -82,6 +82,8 @@ manifest and therefore the registered sample bit-identical, and it is free to
 do before the freeze. Regenerated files are staged at
 `analysis/verify_regen/` and have **not** been written into `FirstLevel/`.
 
+**Adopted 2026-11-25 (prereg v0.6, `methods_decisions.md` decision 15).** `Scripts/intero2023_tissue_confounds.R` rewrote only `csf` and `white_matter` in the 95 sheets. The rewritten values equal the staged files, and no other column changed. Per-run agreement is in `Analysis/tissue_confounds_regen.csv`.
+
 ## 3. Step 3.2 — events sanity
 
 **Seven condition labels are present across the set** — `paced_aware`,
