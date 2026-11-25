@@ -4,7 +4,7 @@ Template: OSF Preregistration (osf.io registration form). Each heading below is
 one template field, in template order. Text under it is paste-ready. Items
 marked [TO CONFIRM] need the author's input before freezing.
 
-Synced to `intero2023_imaging_prereg.md` **v0.4** (2026-11-25).
+Synced to `intero2023_imaging_prereg.md` **v0.5** (2026-11-25).
 
 ---
 
@@ -59,7 +59,11 @@ and somatomotor cortex, replicating the Active Matching result of Farb, Zuo &
 Price (2023, eNeuro 10(6); "IEAT"). "Deactivation" means lower activity during
 paced than free epochs; the design has no rest baseline. The volitional-control
 account predicts the opposite (activation); a reversed result will be reported
-as a failed replication, not reframed.
+as a failed replication, not reframed. Inference set: bilateral posterior
+insula, central operculum and sensorimotor cortex (somatomotor-network masks,
+Bonferroni ×3), one-sided paced < free. Supported if paced < free survives in
+at least one mask, falsified if in none. The opposite tail is tested in the
+same masks at the same correction.
 
 H3 (authoritative awareness test; Model A; N = 23). Change trials answered
 with the correct direction ("aware") elicit greater activity than change
@@ -329,10 +333,19 @@ MAIA responses converted from the administered 1–6 coding to the canonical
 Whole brain: cluster-forming p < .001 uncorrected, cluster-level FWE p < .05,
 two-sided.
 ROI: small-volume FWE p < .05, Bonferroni-corrected over the ROIs tested per
-hypothesis (H2/H3/H4: left anterior insula, right anterior insula, dACC; ×3),
-one-sided in the predicted direction.
+hypothesis, one-sided in the predicted direction. H2/H3/H4: left anterior
+insula, right anterior insula, dACC (×3). H1: posterior insula, central
+operculum, sensorimotor cortex (×3).
+ROI masks: CAREN consensus network atlas (Doucet, Lee & Frangou, 2019),
+network × AAL-3 region membership. Anterior insula and dACC come from the
+salience network; posterior insula, central operculum and sensorimotor cortex
+from the somatomotor network. They are resampled to the fMRIPrep
+MNI152NLin2009cAsym res-2 grid by nearest neighbour and intersected with the
+group brain mask. They were built and SHA-256 checksummed before the freeze
+(ROIs/roi_manifest.csv). A Harvard–Oxford version is reported as atlas
+sensitivity, never for inference.
 H6: two-sided p < .05, small-volume corrected in a 10 mm sphere at MNI
-(−4, +12, +36), with the Harvard–Oxford dACC mask as a secondary test.
+(−4, +12, +36), with the CAREN dACC mask reported descriptively.
 No uncorrected result will be reported as a finding.
 H5 equivalence: TOST (α = .05 per side) on the paired within-participant
 difference between corrected and uncorrected ROI estimates of the H2 effect;
@@ -419,7 +432,7 @@ response — it functions as "I don't know", so no detection-stage d′ is
 interpreted as sensitivity. PetCO2 is a partial MEDIATOR of the task (pacing
 manipulates end-tidal CO2 by design), which is why H5 is framed as
 attenuation with an equivalence criterion rather than as a purity check. The
-attached full analysis plan (intero2023_imaging_prereg.md, v0.4) contains the
+attached full analysis plan (intero2023_imaging_prereg.md, v0.5) contains the
 dated decision history; the analysis repository (git) will be linked as an
 OSF component, and any deviation after freezing is logged in deviations.md
 with date, rationale, and whether the affected result had been seen.

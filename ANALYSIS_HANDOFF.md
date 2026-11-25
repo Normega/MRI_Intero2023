@@ -23,7 +23,7 @@ no exceptions.
 
 ## 1. Context in five sentences
 
-Participants (N = 47 analysable, 90 breathing runs; prereg v0.4) breathed
+Participants (N = 47 analysable, 90 breathing runs; prereg v0.5) breathed
 with a visual pacer whose rate increased, decreased, or held steady (step vs
 ramp salience), interleaved with free breathing, and reported the change
 direction with confidence and arousal ratings. Behaviour and physiology are
@@ -140,12 +140,21 @@ H2 44, H3 23, H4 43 (≥ 3 trials per cell pooled across runs; sets in
 `maia_ieat_total` (demeaned) as a covariate on `paced_gt_free`; the MAIA
 effect is the test, **two-sided** (conceptual extension; prereg §3).
 
-**ROIs:**
-- Harvard–Oxford (50% threshold): L anterior insula, R anterior insula,
-  dACC/MCC, posterior insula, SMA, central operculum.
-- H2/H3/H4 inference set: L AI, R AI, dACC (Bonferroni ×3), one-sided.
-- H6: 10 mm sphere at MNI (−4, +12, +36) primary; atlas dACC secondary;
-  two-sided.
+**ROIs (prereg v0.5 §8): use the frozen masks in `ROIs/`, never rebuild them ad hoc.**
+- Build once with `$FSLDIR/bin/fslpython Scripts/intero2023_build_rois.py`
+  (needs `Atlas/caren/`, gitignored). Then check every `ROIs/*.nii` against
+  `sha256_file` in `ROIs/roi_manifest.csv`. **Stop if any checksum
+  differs.**
+- H2/H3/H4: `caren_AInsL`, `caren_AInsR`, `caren_dACC` (Bonferroni ×3),
+  one-sided.
+- H1: `caren_PIns`, `caren_COper`, `caren_SM` (Bonferroni ×3), one-sided
+  paced < free. Also test the opposite tail in the same masks at the same
+  correction (failed-replication check).
+- H6: `ieat_ACCsphere` primary, two-sided; `caren_dACC` descriptive.
+- `caren_SMA`: descriptive only. `ho_*`: Harvard–Oxford atlas-sensitivity
+  repeat of the H1–H4 ROI tests, reported, never inferential.
+- `net_*`: whole CAREN networks, built for the proposed connectivity
+  analysis. Not registered.
 
 **Inference:** whole-brain cluster-forming p < .001, cluster FWE p < .05,
 two-sided (permutation-based cluster inference is acceptable and preferred
@@ -178,8 +187,10 @@ cross-participant ICC of ROI means. Descriptive only. H3 excluded from it.
 - Events: build per-condition onsets from the `_desc-model_events.tsv`
   directly; `salience` and `change_direction` columns are present for the H4
   split. Modulator columns are RAW — centre them at design time.
-- Anatomical masks: nilearn's Harvard–Oxford fetcher
-  (`cort-maxprob-thr50-2mm`) matches the registered 50% threshold.
+- Anatomical masks: do **not** use nilearn's atlas fetchers. The registered
+  masks are the checksummed files in `ROIs/`, already on the fMRIPrep res-2
+  grid. Report each mask's coverage within the group second-level mask (signal
+  dropout), but do not alter the masks.
 - Keep every fitted image under a derivatives-style tree, e.g.
   `derivatives/firstlevel/<sub>/`, with contrast maps named by the table
   above; write a `group/` tree per hypothesis. Log software versions.

@@ -36,3 +36,9 @@ Thumbs.db
 # python cruft
 __pycache__/
 *.pyc
+
+# Atlas sources and built ROI masks: redistribution terms for CAREN not
+# established and this repository is public. Scripts/intero2023_build_rois.py
+# rebuilds them; ROIs/roi_manifest.csv holds the registered checksums.
+Atlas/
+ROIs/*.nii

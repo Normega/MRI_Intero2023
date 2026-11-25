@@ -418,6 +418,65 @@ saturation are not used.
 
 ---
 
+# v0.5 decisions (2026-11-25, pre-freeze)
+
+## Decision 12 — ROI masks from the CAREN atlas; H1's inference set fixed
+
+**Problem.** §8 of v0.4 named six Harvard–Oxford (HO) masks at a 50% threshold.
+Two of them cannot be built from that atlas:
+- HO has a single "Insular Cortex" label. The registered anterior insula (the
+  primary mask for H2/H3/H4) and posterior insula have no HO definition, so an
+  analyst would have had to choose a cut-off after the freeze.
+- HO has no dACC/mid-cingulate label. Its "Cingulate Gyrus, anterior division"
+  runs from pregenual to mid-cingulate cortex (1531 voxels, centroid y = +19).
+H1's text said "the insula/operculum and somatomotor ROIs" without naming the
+masks or the Bonferroni count.
+
+**Decision.** Masks are defined from the CAREN consensus atlas of resting-state
+networks (Doucet, Lee & Frangou, 2019) by network × AAL-3 region membership.
+This is the procedure locked for the lab's MindLock study (MindLock
+`Docs/Preregistration_Deviations.md`, C1 and C6):
+- Salience network ∩ Insula_L and ∩ Insula_R give the left and right anterior
+  insula (centroids y ≈ +5 / +7).
+- Salience ∩ (Cingulate_Mid, ACC_sup) gives dACC/aMCC (centroid (0, +6, +36)).
+  The IEAT coordinate (−4, +12, +36) falls inside it.
+- Somatomotor network ∩ Insula gives the posterior insula (centroid y ≈ −15).
+  Somatomotor ∩ Rolandic_Oper gives the central operculum, and ∩
+  Precentral/Postcentral gives sensorimotor cortex.
+
+**Why CAREN.** CAREN is a consensus of published network atlases rather than
+a single parcellation. Its networks split the insula along the
+anterior/posterior functional division without any coordinate chosen by us.
+It is the same source and procedure as MindLock, so the lab's two studies
+share ROI definitions.
+
+**H1 inference set.** The three bilateral somatomotor-network masks are
+posterior insula, central operculum and sensorimotor cortex, Bonferroni ×3.
+They are the three regions named in the IEAT's pacing result ("insula/operculum
+pathway, somatomotor cortex"). The opposite tail is tested in the same masks
+at the same correction, because H1 is registered as diagnostic in both
+directions.
+
+**Atlas sensitivity.** An HO version is registered for checking (insula split
+at y = 0; HO anterior cingulate; central opercular cortex; pre/postcentral)
+and is never used for inference.
+
+**Freeze mechanism.** `Scripts/intero2023_build_rois.py` builds every mask on
+the fMRIPrep res-2 grid, and the masks are checksummed:
+- `ROIs/roi_manifest.csv` holds voxels, centroid, and SHA-256 of each mask
+  file and its data.
+- `ROIs/roi_sources.csv` holds the SHA-256 of every atlas file used.
+- `ROIs/roi_overlap.csv` holds the pairwise shared voxels.
+MindLock lost a set of primary masks when one variant overwrote another at a
+fixed path, so every mask here has its own file name. Checksums are the
+record.
+
+The NIfTI files are gitignored because CAREN's redistribution terms are not
+established and the repository is public. Building the masks read the
+fMRIPrep brain masks only, never BOLD intensities.
+
+---
+
 ## Applied
 
 `Preregistration/intero2023_imaging_prereg.md` was rewritten to **v0.2** on
@@ -433,6 +492,8 @@ draft, `osf_template_answers.md` and `ANALYSIS_HANDOFF.md` were brought in line
 in the same pass.
 
 Decisions 10–11 were applied as **v0.4** on 2026-11-25 (prereg header, §3 H5, §4, §6, §8, §9 S1/S2/S2b/S3, §12.4, §12 item 14), with the code and data changes in commits `4aae7cd` and `bd88f7f`.
+
+Decision 12 was applied as **v0.5** on 2026-11-25 (prereg header, §0, §3 H1 and H6, §8, §12 item 15). The OSF draft, `osf_template_answers.md` and `ANALYSIS_HANDOFF.md` were updated in the same pass.
 
 ## What is still open
 

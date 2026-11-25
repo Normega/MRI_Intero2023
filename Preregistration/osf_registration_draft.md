@@ -1,8 +1,8 @@
 # OSF Registration Draft — Neural correlates of respiratory change awareness
 
 **Registration type:** Preregistration of a secondary data analysis (template after Mertens & Krypotos, 2019)
-**Companion document:** `intero2023_imaging_prereg.md` **v0.4** (full analysis plan; to be attached to the registration). Section references (§) below point into it.
-**Status:** DRAFT. To be frozen on OSF before any first-level model is fitted. Synced to plan v0.4 on 2026-11-25.
+**Companion document:** `intero2023_imaging_prereg.md` **v0.5** (full analysis plan; to be attached to the registration). Section references (§) below point into it.
+**Status:** DRAFT. To be frozen on OSF before any first-level model is fitted. Synced to plan v0.5 on 2026-11-25.
 
 ---
 
@@ -10,7 +10,7 @@
 
 There are six hypotheses, each stated in full with falsification criteria in §3 of the attached plan. Each is tested in one of three first-level models: **A** awareness, **B** confidence, **C** salience. Awareness and the confidence modulator are never estimated in the same design (§7).
 
-- **H1 (Model A, N = 47).** Paced (exogenously controlled) breathing produces relative *deactivation* of the insula/operculum pathway and somatomotor cortex compared with free breathing. This replicates the Active Matching result of Farb, Zuo & Price (2023, eNeuro; "IEAT"). The direction is committed to the replication: the volitional-control account predicts the opposite, and a reversed result will be reported as a failed replication. The design has no rest baseline, so "deactivation" means relative to free breathing.
+- **H1 (Model A, N = 47).** Paced (exogenously controlled) breathing produces relative *deactivation* of the insula/operculum pathway and somatomotor cortex compared with free breathing. This replicates the Active Matching result of Farb, Zuo & Price (2023, eNeuro; "IEAT"). The direction is committed to the replication: the volitional-control account predicts the opposite, and a reversed result will be reported as a failed replication. The design has no rest baseline, so "deactivation" means relative to free breathing. Inference is in three somatomotor-network masks (posterior insula, central operculum, sensorimotor cortex), Bonferroni ×3.
 - **H3 (authoritative awareness test; Model A, N = 23).** Aware (correct-direction) > unaware (responded "No Change") change trials, in bilateral anterior insula and dACC. Inference is ROI-restricted, Bonferroni ×3. The 23-participant subsample over-represents less frequent detectors, and its estimate is not generalised beyond it.
 - **H2 (supportive awareness test; Model B, N = 44).** Trial-by-trial confidence on paced trials correlates positively with activity in the same three ROIs. Model B's confidence effect absorbs the awareness effect, so a null H3 alongside a positive H2 is not evidence that confidence rather than awareness drives the effect. That comparison is confounded with power.
 - **H4 (Model C, N = 43).** Salience (step vs ramp) effects fall in the salience-network ROIs. This is consistent with the behavioural finding that salience affects noticing, not direction discrimination.
@@ -32,6 +32,8 @@ MRI_Intero2023 is a single-session fMRI study (3T Siemens, TR = 2 s, fMRIPrep 24
 *Computed before freezing, from timing and confound sheets only:* the design matrices themselves. These are rank, collinearity, contrast efficiency, event coverage, trial counts and estimability. No BOLD voxel was read.
 
 *Physiological re-examination before freezing (prereg §6, v0.4):* three pipeline bugs that had withheld valid recordings were fixed. A PMU-belt fallback for RVT was developed, using the global signal as its validity check. One gate was revised after the fallback runs' quality metrics had been seen; that sequence is disclosed in full in §6, and the fallback is used only in robustness analysis S2b.
+
+*ROI masks (prereg §8, v0.5):* built before freezing from the CAREN atlas and fMRIPrep's run-level brain masks, which fix the grid and the coverage mask. No BOLD intensity was read. The masks are frozen by SHA-256 checksum.
 
 *Documented exceptions:* fMRIPrep's `global_signal` confound column was used to verify that the physiological regressors carry the physiologically correct sign (§6). Its `framewise_displacement` column was used to apply the preregistered motion gate. No task regressor has been related to any imaging measure.
 
@@ -61,7 +63,7 @@ Group level is a one-sample t on fixed-effects-combined participant contrasts, w
 
 ## Q6. What are the statistical models and inference criteria?
 
-§7–§8 in full. Whole-brain tests use cluster-forming p < .001 and cluster FWE p < .05, two-sided. ROI tests use small-volume FWE p < .05, one-sided in the predicted direction, Bonferroni-corrected across the ROIs tested per hypothesis. H6 is two-sided. H5 is decided by the TOST grid. No uncorrected result will be reported as a finding.
+§7–§8 in full. Whole-brain tests use cluster-forming p < .001 and cluster FWE p < .05, two-sided. ROI tests use small-volume FWE p < .05, one-sided in the predicted direction, Bonferroni-corrected across the ROIs tested per hypothesis. The masks come from the CAREN consensus network atlas (network × AAL-3 region): anterior insula and dACC from the salience network, and posterior insula, central operculum and sensorimotor cortex from the somatomotor network. A Harvard–Oxford version is reported as atlas sensitivity only. H6 is two-sided. H5 is decided by the TOST grid. No uncorrected result will be reported as a finding.
 
 Power for every registered N is tabulated in §4/§8. This includes the statement that H6 has 80% power only for |r| ≥ 0.40, and ≈ 44–59% at IEAT-sized correlations.
 

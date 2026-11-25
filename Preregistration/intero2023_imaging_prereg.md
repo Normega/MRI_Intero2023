@@ -1,8 +1,8 @@
 # Preregistration — Neural correlates of respiratory change awareness (MRI_Intero2023)
 
 **Status:** draft for discussion — **pre-freeze**
-**Version:** 0.4
-**Date:** 2026-11-25 (v0.3: 2026-11-24; v0.2: 2026-08-24; v0.1: 2026-08-13)
+**Version:** 0.5
+**Date:** 2026-11-25 (v0.4: 2026-11-25; v0.3: 2026-11-24; v0.2: 2026-08-24; v0.1: 2026-08-13)
 **Analysis code:** `Repo/R/`, `Repo/Scripts/` (all preprocessing and behavioural code already written and versioned)
 
 **Changes in v0.2, all made before the registration was frozen and before any model was fitted.** Each is evidenced in `VERIFICATION_REPORT.md` and recorded with its rationale in `Preregistration/methods_decisions.md`:
@@ -33,6 +33,10 @@
 13. **§6, §9: the Siemens PMU respiration cushion is registered as a fallback RVT source, used in a new robustness analysis S2b only.** The confirmatory S2/H5 test stays on the Biopac belt. PMU RVT couples to the global signal at least as well as the Biopac belt, but the two belts' RVT time courses agree poorly. The saturation gate was revised after some fallback-run quality metrics had been seen. That sequence is disclosed in §6.
 14. **§3, §4, §12.4: the TOST N is the H2 subset, and the bounds are restated at it.** v0.2/v0.3 quoted the whole-sample physio N (22 / 26) for a test defined on the H2 effect; the correct H2 ∩ RVT N was 24. At v0.4: PetCO2 N = 25, dz = ±0.61; Biopac RVT N = 27, dz = ±0.59 (80% power).
 
+**Changes in v0.5 (2026-11-25), pre-freeze, before any model was fitted.** No BOLD intensity was read. Rationale is in `methods_decisions.md` decision 12.
+
+15. **§3, §8: the ROI masks are now constructible, and H1 has a fixed inference set.** v0.4 named Harvard–Oxford masks the atlas does not contain: it has a single insula label (no anterior/posterior division) and no dACC/mid-cingulate label (its anterior cingulate division runs from pregenual to mid-cingulate cortex). H1's masks and its Bonferroni count were not stated. The masks are now defined from the CAREN consensus network atlas (Doucet, Lee & Frangou, 2019) by network × AAL-3 region membership, following the procedure used in the lab's MindLock study. The salience network supplies the anterior insula and dACC, and the somatomotor network supplies the posterior insula, central operculum and sensorimotor cortex. H1 is tested in three masks, Bonferroni ×3. A Harvard–Oxford version is registered as an atlas-sensitivity check. The masks were built and checksummed before the freeze (`ROIs/roi_manifest.csv`).
+
 ---
 
 ## 0. Transparency: what is already known
@@ -52,6 +56,8 @@ This document is written **after** the behavioural and physiological data were f
 - No first-level model has been fitted; no contrast image exists; no group map has been computed or viewed
 
 **Computed before the freeze, and used to write v0.2 and v0.3:** the design matrices themselves. These are rank, per-contrast SE multipliers, collinearity among task regressors, event coverage of the scan, trial counts, and estimability (`Scripts/intero2023_designqc.py`, `Scripts/intero2023_twomodel_qc.py`, outputs in `analysis/`). These are properties of the timing and the confound sheets. No BOLD voxel is read by either script, and no quantity below is a function of any contrast estimate. Run-level image quality (framewise displacement, tSNR) is used for exclusion decisions, as §4's registered motion gate already required.
+
+The ROI masks (§8) were built before the freeze from atlas files and fMRIPrep's run-level `desc-brain_mask` images. The brain masks fix the target grid and the group coverage mask. They are automated preprocessing outputs, and no BOLD intensity is read to build them.
 
 The global signal *has* been used, for one narrow purpose: validating that the physiological regressors have the physiologically correct sign (§6). No task regressor has been related to any imaging measure.
 
@@ -113,7 +119,8 @@ Regions are specified a priori as ROIs in §8. Directional predictions are one-s
 
 **H1 — Exogenous respiratory control (replication of IEAT Active Matching). Model A, N = 47.**
 Two competing directions exist for the paced vs free contrast, and this document commits to the replication direction. The naive volitional-control account predicts paced > free activation in SMA, sensorimotor cortex, and insula. The IEAT found the opposite: exogenous pacing produced greater **deactivation** along the insula/operculum pathway, somatomotor cortex, ventral occipital cortex, and cerebellum relative to endogenous breathing.
-*Registered prediction:* **paced < free** (relative deactivation) in the insula/operculum and somatomotor ROIs, replicating the IEAT. "Deactivation" here means lower activity during paced than during free epochs. The design has no rest baseline (§5), so nothing is claimed about either condition relative to rest.
+*Registered prediction:* **paced < free** (relative deactivation) in the insula/operculum and somatomotor ROIs, replicating the IEAT.
+*Inference set (registered v0.5):* three bilateral masks, all drawn from the somatomotor network (§8): **posterior insula, central operculum and sensorimotor cortex**. Small-volume FWE, one-sided paced < free, Bonferroni ×3, plus the two-sided whole-brain test. *Supported if* paced < free survives in at least one of the three masks. *Falsified if* it survives in none. The opposite tail (paced > free) is also tested in the same three masks at the same correction, and a surviving effect there is the failed replication described next. "Deactivation" here means lower activity during paced than during free epochs. The design has no rest baseline (§5), so nothing is claimed about either condition relative to rest.
 *The test is diagnostic either way:* a paced > free effect in these regions would contradict the predecessor study in a larger sample and will be reported as a failed replication, not reframed. This hypothesis was revised from the volitional-control direction on 2026-08-14, on reading the IEAT results and **before any imaging analysis**.
 
 **H3 — Awareness, categorical (AUTHORITATIVE). Model A, N = 23.**
@@ -161,7 +168,7 @@ This is directional and consequential: PetCO2 is a **mediator** in this design, 
 - If the sparing reflects resistance to the deactivation that exogenous pacing drives (H1), it predicts a **positive** effect.
 
 No sign is registered, and the test is two-sided.
-*Test:* MAIA total is entered as a demeaned group-level covariate on the C1 contrast (paced − free) from Model A. It is scored as in the IEAT: the mean of the six subscales, omitting Not-Worrying and Not-Distracting. Scores are in `Repo/Data/maia_scores.csv`; the scoring code is `intero2023_maia.R`. Inference is small-volume, two-sided α = .05, in a 10 mm sphere at the IEAT Results coordinate (−4, +12, +36), with the atlas dACC ROI as a secondary mask.
+*Test:* MAIA total is entered as a demeaned group-level covariate on the C1 contrast (paced − free) from Model A. It is scored as in the IEAT: the mean of the six subscales, omitting Not-Worrying and Not-Distracting. Scores are in `Repo/Data/maia_scores.csv`; the scoring code is `intero2023_maia.R`. Inference is small-volume, two-sided α = .05, in a 10 mm sphere at the IEAT Results coordinate (−4, +12, +36), with the CAREN dACC mask (§8) reported as a secondary, descriptive mask. The support criterion uses the sphere only.
 *Supported if* the MAIA effect survives small-volume correction in the sphere, in either direction. The sign is then reported and interpreted against the three mappings above. *Not supported if* it does not survive.
 *Coverage and power:* 46 of the 47 analysable participants have complete MAIA (sub-065 has none). At N = 46, two-sided α = .05, 80% power requires |r| ≥ 0.40. At the IEAT's ROI-level |r| ≈ 0.27–0.32, power is ≈ 44–59%. **H6 is underpowered for an IEAT-sized effect, and a null is not evidence against the IEAT result**, which concerned a different contrast.
 *Rationale:* a fixed a priori region and construct from an independent sample, applied to the contrast this design affords. MAIA subscale analyses (the Attention Regulation vs Noticing dissociation reported in the IEAT) are exploratory (§10).
@@ -373,14 +380,37 @@ The global signal is **not** included as a nuisance regressor in any model.
 
 **Registered reliability diagnostic (descriptive, not a gate):** for C1 (paced vs free, Model A) and C3 (confidence parametric, Model B), run-1 vs run-2 agreement of first-level contrast estimates — spatial correlation of contrast maps within participants, and cross-participant ICC of ROI means. Reported alongside the behavioural benchmark (r ≈ 0.7). H3 is excluded from this diagnostic because it is estimable in both runs for only 1 participant; this is stated now so its absence is not read as an omission later.
 
-**A priori ROIs** (Harvard–Oxford probabilistic atlas, thresholded at 50%, bilateral where applicable):
+**A priori ROIs (registered v0.5, replacing the v0.4 Harvard–Oxford list).** Masks are defined from the **CAREN** consensus atlas of resting-state networks (Doucet, Lee & Frangou, 2019, *Hum Brain Mapp* 40:4577). Each mask is a set of network × AAL-3 regions taken from CAREN's own region breakdown, so no second atlas is intersected and no coordinate cut is chosen. The salience and somatomotor networks divide the insula on their own. Salience-network insula is centred at y ≈ +6 (anterior insula), and somatomotor-network insula at y ≈ −15 (posterior/mid insula).
 
-1. Anterior insula (primary for H3/H2, with dACC)
-2. Posterior insula
-3. Dorsal anterior cingulate / mid-cingulate (primary for H3/H2, with anterior insula)
-4. Supplementary motor area
-5. Central operculum / sensorimotor cortex (H1)
-6. **IEAT ACC sphere:** 10 mm radius at MNI (−4, +12, +36), the IEAT Results coordinate of its MAIA-moderated ACC cluster (H6, conceptual extension; see §1b for the IEAT's alternative Methods coordinate)
+| # | Mask | Definition (CAREN network ∩ AAL-3 regions) | Voxels (2 mm) | Centroid (MNI) | Used for |
+|---|---|---|---|---|---|
+| 1 | L anterior insula | Salience ∩ Insula_L | 588 | (−37, +5, +2) | H3, H2, H4 |
+| 2 | R anterior insula | Salience ∩ Insula_R | 527 | (+38, +7, +1) | H3, H2, H4 |
+| 3 | dACC / anterior MCC | Salience ∩ (Cingulate_Mid_L/R, ACC_sup_L/R) | 661 | (0, +6, +36) | H3, H2, H4; H6 secondary |
+| 4 | Posterior insula, bilateral | Somatomotor ∩ Insula_L/R | 285 | (±37, −15, +12) | H1 |
+| 5 | Central operculum, bilateral | Somatomotor ∩ Rolandic_Oper_L/R | 531 | (±49, −15, +14) | H1 |
+| 6 | Sensorimotor cortex, bilateral | Somatomotor ∩ (Precentral_L/R, Postcentral_L/R) | 4232 | bilateral, z ≈ +49 | H1 |
+| 7 | SMA, bilateral | Somatomotor ∩ Supp_Motor_Area_L/R | 406 | (0, −13, +58) | descriptive |
+| 8 | **IEAT ACC sphere** | 10 mm radius at MNI (−4, +12, +36), the IEAT Results coordinate of its MAIA-moderated ACC cluster (see §1b for the IEAT's alternative Methods coordinate) | 528 | (−4, +12, +36) | H6 |
+
+*Inference sets, Bonferroni-corrected within each:* H3, H2 and H4 use masks 1–3 (×3). H1 uses masks 4–6 (×3). H6 uses mask 8 alone, with mask 3 reported descriptively. Mask 7 enters no test.
+
+*Construction* (`Scripts/intero2023_build_rois.py`, run with FSL's Python):
+- The atlas is resampled to the fMRIPrep MNI152NLin2009cAsym res-2 grid (97 × 115 × 97, 2 mm) by sform, nearest neighbour.
+- Each mask is intersected with the group brain mask, the intersection of the 90 analysed runs' fMRIPrep brain masks. Coverage is 100% for every mask.
+- Masks 1–7 share no voxels with each other. The IEAT sphere shares 209 of its 528 voxels with mask 3; H6 is a separate test.
+- CAREN is distributed on the FSL MNI152 2 mm grid, not in MNI152NLin2009cAsym. The template difference is small, is not corrected, and is declared here, as it was in MindLock.
+- Signal dropout cannot be assessed without reading BOLD intensities. Each mask's coverage within the group second-level mask is therefore reported after the freeze, but the masks are not altered by it.
+- **The masks are frozen by checksum.** `ROIs/roi_manifest.csv` holds each mask's voxel count, centroid, and SHA-256 of file and data. `ROIs/roi_sources.csv` holds the SHA-256 of every atlas file used. A mask whose checksum does not match may not be used. The NIfTI files are gitignored because CAREN's redistribution terms are not established. The script and checksums are committed.
+
+*Atlas-sensitivity set (reported, never used for inference):* Harvard–Oxford cortical maxprob-thr50, built by the same script:
+- Anterior insula: HO insula with y > 0, split by hemisphere.
+- Posterior insula: HO insula with y ≤ 0.
+- dACC: the HO anterior cingulate division.
+- Central operculum: the HO central opercular cortex.
+- Sensorimotor cortex: HO pre- and postcentral gyri.
+
+The H1–H4 ROI tests are repeated in these masks. Disagreement with the CAREN result is reported, not resolved.
 
 **ROI restriction for H3** (resolved 2026-08-14): H3 is tested in three masks only — left anterior insula, right anterior insula, and dACC (Bonferroni ×3). The dACC is retained alongside the insula on two grounds: the IEAT found the ACC, not the insula, to be the region tied to breath-focused interoceptive awareness; and its liminal-vs-salient distinction predicts ACC involvement for exactly the kind of salient respiratory signal this task uses. Narrowing to anterior insula alone would have encoded the heartbeat-detection literature's prediction while discarding the direct predecessor's.
 
@@ -476,3 +506,4 @@ Any departure from this document will be recorded in `Repo/Preregistration/devia
 12. ~~**H5 and H3.**~~ **Resolved 2026-11-24:** H3 under physiological correction is descriptive; the confirmatory H5 test is the TOST on H2 (§3).
 13. ~~**Model B run exceptions.**~~ **Resolved 2026-11-24:** C3 is combined only over runs whose confidence modulator varies. This affects sub-106 run-1 and sub-112 run-2 (§4).
 14. ~~**Physiological coverage.**~~ **Resolved 2026-11-25:** three pipeline bugs are fixed (§6). PMU fallback RVT is registered for robustness analysis S2b only. The confirmatory RVT comparison uses the Biopac belt. See `methods_decisions.md` decisions 10–11.
+15. ~~**ROI masks and H1's inference set.**~~ **Resolved 2026-11-25:** CAREN network × region masks (§8), built and checksummed before the freeze. H1 uses posterior insula, central operculum and sensorimotor cortex (×3). Harvard–Oxford is the atlas-sensitivity set. See `methods_decisions.md` decision 12.
