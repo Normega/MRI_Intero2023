@@ -61,7 +61,9 @@ dir.create(dir_fl, showWarnings = FALSE, recursive = TRUE)
 
 cat(sprintf("Run started: %s\n", Sys.time()))
 
-EXCLUDE <- c("sub-082", "sub-104")
+# EXCLUDE of sub-082/sub-104 removed 2026-11-24: the label shift exists only in the
+# old Data/Ready snapshot (prereg v0.2 §4). Kept empty so the filter below reads the same.
+EXCLUDE <- character(0)
 TASK_MAP <- c(breath1 = "task-breathing_run-1", breath2 = "task-breathing_run-2")
 conf_idx <- tibble(path = list.files(dir_ready, pattern = "desc-confounds_timeseries[.]tsv$",
                                      recursive = TRUE, full.names = TRUE)) %>%

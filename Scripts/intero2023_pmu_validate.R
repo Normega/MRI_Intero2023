@@ -27,15 +27,18 @@ suppressPackageStartupMessages({
   library(readr); library(dplyr); library(tibble); library(purrr); library(stringr)
 })
 
-dir_root  <- "I:/Shared drives/MRI_Intero2023"
+# Paths default to the Windows shared drive; INTERO_ROOT / RESPKIT_R / INTERO_FMRIPREP
+# override them (2026-11-24: lets the same script run against the Linux tree).
+dir_root  <- Sys.getenv("INTERO_ROOT", "I:/Shared drives/MRI_Intero2023")
 dir_out   <- file.path(dir_root, "Repo", "Data")
 dir_R     <- file.path(dir_root, "Repo", "R")
 dir_fig   <- file.path(dir_root, "Repo", "Figures")
 dir_cache <- file.path(dir_root, "Data", "Physio", "cache")
-dir_mri   <- file.path(dir_root, "Data", "MRI")
+dir_mri   <- Sys.getenv("INTERO_PMU", file.path(dir_root, "Data", "MRI"))
+dir_ready <- Sys.getenv("INTERO_FMRIPREP", file.path(dir_root, "Data", "Ready"))
 TR <- 2
 
-rk <- "I:/Shared drives/TechnicalReference/respkit/R"
+rk <- Sys.getenv("RESPKIT_R", "I:/Shared drives/TechnicalReference/respkit/R")
 for (f in list.files(rk, pattern = "[.]R$", full.names = TRUE)) source(f)
 for (f in c("intero_ids.R", "intero_qc.R", "intero_resp.R", "intero_pmu.R"))
   source(file.path(dir_R, f))
@@ -66,11 +69,7 @@ cat(sprintf("runs with PMU and a good Biopac belt: %d (%d participants)\n",
             nrow(tgt), n_distinct(tgt$subject)))
 
 cache_files <- list.files(dir_cache, pattern = "_physio[.]rds$", full.names = TRUE)
-ckey <- tibble(cpath = cache_files,
-               subject = sub("(_part-[^_]*)?_physio[.]rds$", "", basename(cache_files)),
-               part = ifelse(grepl("_part-", basename(cache_files)),
-                             sub("^.*_part-([^_]*)_physio[.]rds$", "\\1",
-                                 basename(cache_files)), "-"))
+ckey <- physio_cache_index(cache_files) %>% rename(cpath = path)   # see R/intero_ids.R
 
 bandpass_resp <- function(x, fs, lo = 0.1, hi = 0.5) {
   ok <- is.finite(x); if (sum(ok) < 100) return(rep(NA_real_, length(x)))
@@ -91,7 +90,7 @@ for (i in seq_len(nrow(tgt))) {
   if (!nrow(bi)) next
   bp <- bi$part[1]; if (is.na(bp)) bp <- "-"
   cf <- ckey %>% filter(subject == sb, part == bp)
-  if (!nrow(cf)) cf <- ckey %>% filter(subject == sb) %>% slice(1)
+  # no exact part match -> skip; the old slice(1) fallback read a different recording
   if (!nrow(cf)) next
   rr <- try(readRDS(cf$cpath[1]), silent = TRUE)
   if (inherits(rr, "try-error") || is.null(rr$belt)) next
@@ -101,7 +100,9 @@ for (i in seq_len(nrow(tgt))) {
   s <- max(1L, round(bi$onset_s[1] * fsb)); e <- min(length(belt), round(bi$end_s[1] * fsb))
   if (e - s < fsb * 60) next
   bseg <- belt[s:e]
-  n_vol <- bi$n_volumes[1]; if (is.na(n_vol)) n_vol <- floor((e - s) / fsb / TR)
+  n_vol <- bi$n_volumes[1]
+  if (is.na(n_vol)) n_vol <- n_vol_of_record(dir_ready, sb, ent)   # dataset of record
+  if (is.na(n_vol)) n_vol <- floor((e - s) / fsb / TR)
 
   w <- pmu_window(p$signal, p$fs, n_vol, TR)
   if (w$covered < 0.5) next

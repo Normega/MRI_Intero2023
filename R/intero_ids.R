@@ -116,3 +116,50 @@ bids_entities <- function(log_run) {
                 paste0("task-", task),
                 paste0("task-", task, "_run-", run)))
 }
+
+# ---- physio cache keys and the dataset of record (added 2026-11-24) -------
+
+#' Index Biopac session caches by subject and acquisition part.
+#'
+#' Cache files are `<sub>_physio.rds` or `<sub>_part-<label>_physio.rds`, where
+#' <label> is the .acq part suffix: "-", "a", "b", "c", but also "_A" and
+#' "_PartA". The regex every physio script used to carry inline,
+#' `(_part-[^_]*)?_physio` / `_part-([^_]*)_physio`, cannot match a label that
+#' itself contains "_": it keyed `sub-070_part-_A_physio.rds` as subject
+#' "sub-070_part-_A", and each script's "no exact part -> take the subject's
+#' first file" fallback then read sub-070's 1341-s fragment recording instead
+#' of the full session (sub-083 "_PartA" likewise). Everything after "_part-"
+#' up to "_physio.rds" is now the label, and callers no longer fall back to a
+#' different file when no exact match exists.
+physio_cache_index <- function(paths) {
+  bn <- basename(paths)
+  m <- regmatches(bn, regexec("^(sub-[0-9]+)(?:_part-(.*))?_physio[.]rds$", bn, perl = TRUE))
+  subj <- vapply(m, function(z) if (length(z)) z[2] else NA_character_, "")
+  part <- vapply(m, function(z) if (length(z) && nzchar(z[3])) z[3] else "-", "")
+  tibble::tibble(path = paths, subject = subj, part = part)
+}
+
+#' Volume count of a BOLD run from the fMRIPrep derivatives of record.
+#'
+#' physio_blocks.csv carries n_volumes from the imaging inventory it was built
+#' against; for runs that inventory missed (sub-065, sub-076) it is NA, and the
+#' scripts then guessed floor(block duration / TR). The confounds table of the
+#' derivatives of record has exactly one row per volume, so it is the answer.
+#' `dir_fmriprep` may be either a BIDS-derivatives tree
+#' (<sub>/func/<sub>_task-breathing_run-1_desc-confounds_timeseries.tsv) or the
+#' old flat Data/Ready snapshot; NA if the run is not found.
+n_vol_of_record <- function(dir_fmriprep, subject, bids_entity) {
+  f <- file.path(dir_fmriprep, subject, "func",
+                 sprintf("%s_%s_desc-confounds_timeseries.tsv", subject, bids_entity))
+  if (!file.exists(f)) return(NA_integer_)
+  length(readLines(f, warn = FALSE)) - 1L
+}
+
+#' BIDS entity of an fMRIPrep confounds filename, in either naming scheme.
+#' Old Data/Ready names (`task-breath1`) go through `task_map`; names of the
+#' derivatives of record (`task-breathing_run-1`) are already the entity.
+confounds_entity <- function(bn, task_map) {
+  old <- unname(task_map[stringr::str_match(bn, "_task-([a-z0-9]+)_")[, 2]])
+  new <- stringr::str_match(bn, "^sub-[0-9]+_(task-[a-z]+(?:_run-[0-9]+)?)_desc-confounds")[, 2]
+  ifelse(!is.na(old), old, new)
+}

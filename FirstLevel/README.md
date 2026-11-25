@@ -21,6 +21,12 @@ breathing run. Confounds are row-aligned with the fMRIPrep confounds file
   The basis is present whole or absent whole (never a subset of lags).
 - A physio column with <50% coverage in a run is omitted for that run;
   see firstlevel_manifest.csv (has_rvt / has_petco2).
+- rvt_source (manifest, added 2026-11-24): where the belt columns came from --
+  `biopac` (Data/regressors/<sub>_<ent>_resp.tsv), `pmu` (the Siemens PMU
+  fallback, Data/regressors/<sub>_<ent>_desc-pmu_resp.tsv, used only when the
+  Biopac rvt_rrf_z covers <50% of volumes; Scripts/intero2023_pmu_rvt.R), or
+  `none`. Physio columns are (re)written by Scripts/intero2023_physio_sheets.R,
+  which leaves every non-physio column as committed.
 
 ## gates
 - motion_gate_fail in the manifest applies the preregistered rule

@@ -26,5 +26,5 @@ onset	duration	trial_type	epoch_index	change_direction	change_amount	salience	n_
 396.02985	12.250914	rating	6	n/a	n/a	n/a	n/a	No Change	n/a	6	4	free_breathing	5	n/a	3	n/a	FALSE	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a
 410.297537	17.682966	paced_breathing	7	Faster	0.75	low	9	No Change	0	5	4	n/a	5	n/a	3	miss	TRUE	TRUE	4	0.929	n/a	0.891	0.8318	0.362	good	TRUE	No Change
 427.980503	12.267822	rating	7	n/a	n/a	n/a	n/a	No Change	0	5	4	paced_breathing	5	n/a	3	n/a	FALSE	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a
-440.248325	20.199524	free_breathing	7	n/a	n/a	n/a	n/a	Slower	n/a	6	4	n/a	5	n/a	3	n/a	FALSE	TRUE	4	0.923	n/a	2.0165	n/a	0.362	good	TRUE	Slower
+440.248325	20.199524	free_breathing	7	n/a	n/a	n/a	n/a	Slower	n/a	6	4	n/a	5	n/a	3	n/a	FALSE	TRUE	4	0.923	n/a	2.0165	n/a	0.362	good	TRUE	No Change
 460.447849	12.283526	rating	7	n/a	n/a	n/a	n/a	Slower	n/a	6	4	free_breathing	5	n/a	3	n/a	FALSE	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a

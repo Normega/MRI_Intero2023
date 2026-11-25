@@ -19,13 +19,15 @@ suppressPackageStartupMessages({
   library(readr); library(dplyr); library(tibble); library(purrr); library(stringr)
 })
 
-dir_root  <- "I:/Shared drives/MRI_Intero2023"
+# Paths default to the Windows shared drive; INTERO_ROOT / RESPKIT_R / INTERO_FMRIPREP
+# override them (2026-11-24: lets the same script run against the Linux tree).
+dir_root  <- Sys.getenv("INTERO_ROOT", "I:/Shared drives/MRI_Intero2023")
 dir_out   <- file.path(dir_root, "Repo", "Data")
 dir_ev    <- file.path(dir_out, "events")
 dir_R     <- file.path(dir_root, "Repo", "R")
 dir_cache <- file.path(dir_root, "Data", "Physio", "cache")
 
-rk <- "I:/Shared drives/TechnicalReference/respkit/R"
+rk <- Sys.getenv("RESPKIT_R", "I:/Shared drives/TechnicalReference/respkit/R")
 for (f in list.files(rk, pattern = "[.]R$", full.names = TRUE)) source(f)
 for (f in c("intero_ids.R", "intero_qc.R", "intero_resp.R")) source(file.path(dir_R, f))
 
@@ -37,11 +39,7 @@ blocks <- read_csv(file.path(dir_out, "physio_blocks.csv"),
          grepl("task-breathing", bids_entity))
 
 cache_files <- list.files(dir_cache, pattern = "_physio[.]rds$", full.names = TRUE)
-cache_key <- tibble(path = cache_files,
-                    subject = sub("(_part-[^_]*)?_physio[.]rds$", "", basename(cache_files)),
-                    part = ifelse(grepl("_part-", basename(cache_files)),
-                                  sub("^.*_part-([^_]*)_physio[.]rds$", "\\1",
-                                      basename(cache_files)), "-"))
+cache_key <- physio_cache_index(cache_files)   # see R/intero_ids.R (part labels with "_")
 
 ep_all <- list(); run_all <- list(); qc <- list()
 
@@ -54,7 +52,10 @@ for (sb in sort(unique(blocks$subject))) {
   for (j in seq_len(nrow(b_i))) {
     ent <- b_i$bids_entity[j]
     bp <- b_i$part[j]; if (is.na(bp)) bp <- "-"
-    cfp <- cf %>% filter(part == bp); if (!nrow(cfp)) cfp <- cf[1, ]
+    cfp <- cf %>% filter(part == bp)
+    # No exact part match -> skip. The old fallback (cf[1, ]) silently read a
+    # different recording; see physio_cache_index().
+    if (!nrow(cfp)) { message(sprintf("no cache for %s part %s", sb, bp)); next }
     r <- try(readRDS(cfp$path[1]), silent = TRUE)
     if (inherits(r, "try-error") || is.null(r$belt)) next
 

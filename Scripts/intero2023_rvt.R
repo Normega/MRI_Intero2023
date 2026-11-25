@@ -27,16 +27,18 @@ suppressPackageStartupMessages({
   library(signal)
 })
 
-dir_root  <- "I:/Shared drives/MRI_Intero2023"
+# Paths default to the Windows shared drive; INTERO_ROOT / RESPKIT_R / INTERO_FMRIPREP
+# override them (2026-11-24: lets the same script run against the Linux tree).
+dir_root  <- Sys.getenv("INTERO_ROOT", "I:/Shared drives/MRI_Intero2023")
 dir_out   <- file.path(dir_root, "Repo", "Data")
 dir_R     <- file.path(dir_root, "Repo", "R")
 dir_fig   <- file.path(dir_root, "Repo", "Figures")
 dir_reg   <- file.path(dir_out, "regressors")
 dir_cache <- file.path(dir_root, "Data", "Physio", "cache")
-dir_ready <- file.path(dir_root, "Data", "Ready")
+dir_ready <- Sys.getenv("INTERO_FMRIPREP", file.path(dir_root, "Data", "Ready"))
 TR <- 2
 
-rk <- "I:/Shared drives/TechnicalReference/respkit/R"
+rk <- Sys.getenv("RESPKIT_R", "I:/Shared drives/TechnicalReference/respkit/R")
 for (f in list.files(rk, pattern = "[.]R$", full.names = TRUE)) source(f)
 for (f in c("intero_ids.R", "intero_qc.R", "intero_resp.R", "intero_rrf.R",
             "intero_rvt.R")) source(file.path(dir_R, f))
@@ -44,7 +46,11 @@ dir.create(dir_reg, showWarnings = FALSE, recursive = TRUE)
 
 cat(sprintf("Run started: %s\n", Sys.time()))
 
-EXCLUDE <- c("sub-082", "sub-104")   # shifted run labels, see intero2023_rrf.R
+# EXCLUDE of sub-082/sub-104 removed 2026-11-24: their run labels are shifted only in
+# the old Data/Ready snapshot; physio_blocks maps them by scanner slot and the BIDS
+# tree of record agrees (prereg v0.2 §4). Kept as an empty vector so the filters
+# below still read the same.
+EXCLUDE <- character(0)
 TASK_MAP <- c(loc1 = "task-localizer_run-1", loc2 = "task-localizer_run-2",
               breath1 = "task-breathing_run-1", breath2 = "task-breathing_run-2",
               auth1 = "task-authenticity")
@@ -52,8 +58,7 @@ conf <- tibble(path = list.files(dir_ready, pattern = "desc-confounds_timeseries
                                  recursive = TRUE, full.names = TRUE)) %>%
   mutate(bn = basename(path),
          subject = str_match(bn, "^(sub-[0-9]+)_")[, 2],
-         rtask   = str_match(bn, "_task-([a-z0-9]+)_")[, 2],
-         bids_entity = unname(TASK_MAP[rtask])) %>%
+         bids_entity = confounds_entity(bn, TASK_MAP)) %>%   # old or BIDS naming
   dplyr::filter(!is.na(bids_entity), !subject %in% EXCLUDE)
 
 blocks <- read_csv(file.path(dir_out, "physio_blocks.csv"), show_col_types = FALSE,
@@ -61,10 +66,7 @@ blocks <- read_csv(file.path(dir_out, "physio_blocks.csv"), show_col_types = FAL
   dplyr::filter(kind == "bold", !is.na(bids_entity), is.na(dup_slot) | !dup_slot)
 
 cfl <- list.files(dir_cache, pattern = "_physio[.]rds$", full.names = TRUE)
-ckey <- tibble(cpath = cfl,
-               subject = sub("(_part-[^_]*)?_physio[.]rds$", "", basename(cfl)),
-               part = ifelse(grepl("_part-", basename(cfl)),
-                             sub("^.*_part-([^_]*)_physio[.]rds$", "\\1", basename(cfl)), "-"))
+ckey <- physio_cache_index(cfl) %>% rename(cpath = path)   # see R/intero_ids.R
 
 rows <- list(); qc <- list(); nreg <- 0L
 
@@ -73,7 +75,7 @@ for (j in seq_len(nrow(blocks))) {
   if (sb %in% EXCLUDE) next
   bp <- blocks$part[j]; if (is.na(bp)) bp <- "-"
   ck <- ckey %>% dplyr::filter(subject == sb, part == bp)
-  if (!nrow(ck)) ck <- ckey %>% dplyr::filter(subject == sb) %>% slice(1)
+  # no exact part match -> skip; the old slice(1) fallback read a different recording
   if (!nrow(ck)) next
   rr <- try(readRDS(ck$cpath[1]), silent = TRUE)
   if (inherits(rr, "try-error") || is.null(rr$belt)) next

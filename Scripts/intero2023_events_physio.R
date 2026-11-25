@@ -32,7 +32,8 @@ suppressPackageStartupMessages({
   library(readr); library(dplyr); library(tibble); library(purrr); library(stringr)
 })
 
-dir_root <- "I:/Shared drives/MRI_Intero2023"
+# INTERO_ROOT overrides the Windows default (2026-11-24).
+dir_root <- Sys.getenv("INTERO_ROOT", "I:/Shared drives/MRI_Intero2023")
 dir_out  <- file.path(dir_root, "Repo", "Data")
 dir_ev   <- file.path(dir_out, "events")
 dir_R    <- file.path(dir_root, "Repo", "R")
@@ -70,16 +71,18 @@ for (f in list.files(dir_ev, pattern = "_events[.]tsv$", full.names = TRUE)) {
 
   # Join on (epoch_index, trial_type): epoch_index alone is not unique because
   # a paced and a free epoch share an index within each cycle.
-  j <- e_i %>% select(-subject, -bids_entity) %>% rename(.k = epoch_index)
+  # Event TSVs carry only the TWO columns intero_events.R reserved (see header);
+  # the full set goes to breathing_trials.csv below. (2026-11-24: the code had
+  # drifted to joining all ten here, which the committed event files never had.)
+  j <- e_i %>% select(epoch_index, trial_type, adherence_verified, actual_change_physio) %>%
+    rename(.k = epoch_index)
   d2 <- d %>% select(-any_of(c("adherence_verified", "actual_change_physio"))) %>%
     left_join(j, by = c(".k", "trial_type"))
 
   # Rating and valence rows are not breathing epochs and must stay n/a rather
   # than inherit a neighbouring epoch's physiology.
   is_ep <- d2$trial_type %in% c("paced_breathing", "free_breathing")
-  newc <- c("resp_measured", "resp_n_breaths", "resp_coverage", "resp_rate_brpm",
-            "actual_period_ratio", "instructed_period_ratio", "adhere_r",
-            "belt_grade", "adherence_verified", "actual_change_physio")
+  newc <- c("adherence_verified", "actual_change_physio")
   for (cc in newc) {
     v <- as.character(d2[[cc]])
     v[!is_ep | is.na(v)] <- "n/a"
@@ -96,7 +99,9 @@ cat(sprintf("event files updated: %d  (%d breathing epochs carry physio)\n",
 # ---- the pooled trial table ------------------------------------------------
 bt <- read_csv(file.path(dir_out, "breathing_trials.csv"), show_col_types = FALSE,
                progress = FALSE) %>%
-  select(-any_of(c("adherence_verified", "actual_change_physio"))) %>%
+  # Drop EVERY column this script adds, so a re-run replaces rather than
+  # duplicating them as .x/.y (2026-11-24; previously only two were dropped).
+  select(-any_of(setdiff(names(ep), c("subject", "bids_entity", "epoch_index", "trial_type")))) %>%
   left_join(ep, by = c("subject", "bids_entity", "epoch_index", "trial_type"))
 write_csv(bt, file.path(dir_out, "breathing_trials.csv"))
 

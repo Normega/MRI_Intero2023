@@ -457,37 +457,194 @@ sub-064,run,task-localizer_run-2,physio,rvt_coverage,0.979591836734694,good,"80 
 sub-065,run,task-localizer_run-1,imaging,volume_count_vs_mode,-29,fail,167 vs v2 mode 196 (-14.8%),inventory.tsv vs cohort mode,2026-08-10
 sub-065,run,task-authenticity,physio,acq_log_time_match,0.18849992752075195,good,margin=811s part=-,acq header vs log trigger_time,2026-08-10
 sub-065,run,task-authenticity,physio,belt_flatline,6.103515625e-4,fail,IQR volts; amplitude not comparable across sessions,DA100C channel,2026-08-10
-sub-065,run,task-authenticity,physio,capnogram_valid,NA,fail,no peaks detected,whole-run capnogram morphology,2026-08-11
+sub-065,run,task-authenticity,physio,capnogram_valid,NA,fail,no peaks detected,whole-run capnogram morphology,2026-11-24
 sub-065,run,task-authenticity,physio,co2_present,0.67596435546875,fail,p99 %CO2; <2 means mask off or capnograph dead,CO2100C channel,2026-08-10
-sub-065,run,task-authenticity,physio,petco2_coverage,0,fail,0 of 170 volumes have PetCO2,interpolated end-tidal series,2026-08-11
+sub-065,run,task-authenticity,physio,petco2_coverage,0,fail,0 of 172 volumes have PetCO2,interpolated end-tidal series,2026-11-24
 sub-065,run,task-breathing_run-1,physio,acq_log_time_match,0.434999942779541,good,margin=542s part=-,acq header vs log trigger_time,2026-08-10
 sub-065,run,task-breathing_run-1,physio,belt_flatline,0.00823974609375,info,IQR volts; amplitude not comparable across sessions,DA100C channel,2026-08-10
-sub-065,run,task-breathing_run-1,physio,belt_usable,0.00798610088307885,good,filtered_iqr=0.00799 band_ratio=0.965,"resp_quality, cut calibrated on this sample",2026-08-12
-sub-065,run,task-breathing_run-1,physio,capnogram_valid,0.9894112678414756,good,baseline=0.99 swing=1.92 rate=7.8,whole-run capnogram morphology,2026-08-11
+sub-065,run,task-breathing_run-1,physio,belt_usable,0.00798610088303147,good,filtered_iqr=0.00799 band_ratio=0.965,"resp_quality, cut calibrated on this sample",2026-11-24
+sub-065,run,task-breathing_run-1,physio,capnogram_valid,0.9894112678414756,good,baseline=0.99 swing=1.92 rate=7.8,whole-run capnogram morphology,2026-11-24
 sub-065,run,task-breathing_run-1,physio,co2_present,3.31695556640625,good,p99 %CO2; <2 means mask off or capnograph dead,CO2100C channel,2026-08-10
-sub-065,run,task-breathing_run-1,physio,pacer_adherence,0.8125324854154978,good,gain=0.92 mae=0.59s n=24 period_ratio=0.93,"measured vs instructed breath period, pooled over paced epochs",2026-08-12
-sub-065,run,task-breathing_run-1,physio,petco2_coverage,0.983402489626556,good,237 of 241 volumes have PetCO2,interpolated end-tidal series,2026-08-11
-sub-065,run,task-breathing_run-1,physio,resp_epoch_coverage,1,good,14 of 14 epochs measurable,epoch_features coverage + breath count,2026-08-12
+sub-065,run,task-breathing_run-1,physio,pacer_adherence,0.8125324854154978,good,gain=0.92 mae=0.59s n=24 period_ratio=0.93,"measured vs instructed breath period, pooled over paced epochs",2026-11-24
+sub-065,run,task-breathing_run-1,physio,petco2_coverage,0.9793388429752066,good,237 of 242 volumes have PetCO2,interpolated end-tidal series,2026-11-24
+sub-065,run,task-breathing_run-1,physio,petco2_predicts_global_bold,0.20263369179736393,info,"r with global signal, RRF-convolved at fitted lag",fMRIPrep confounds global_signal,2026-11-24
+sub-065,run,task-breathing_run-1,physio,resp_epoch_coverage,1,good,14 of 14 epochs measurable,epoch_features coverage + breath count,2026-11-24
+sub-065,run,task-breathing_run-1,physio,rvt_coverage,0.9628099173553719,good,"72 kept breaths, belt good",breath_table rvt interpolated to volumes,2026-11-24
 sub-065,run,task-breathing_run-2,physio,acq_log_time_match,0.06399989128112793,good,margin=600s part=-,acq header vs log trigger_time,2026-08-10
 sub-065,run,task-breathing_run-2,physio,belt_flatline,0.00518798828125,info,IQR volts; amplitude not comparable across sessions,DA100C channel,2026-08-10
-sub-065,run,task-breathing_run-2,physio,belt_usable,0.0071314282230962,good,filtered_iqr=0.00713 band_ratio=0.976,"resp_quality, cut calibrated on this sample",2026-08-12
-sub-065,run,task-breathing_run-2,physio,capnogram_valid,0.8500613055378922,good,baseline=0.85 swing=1.98 rate=7.3,whole-run capnogram morphology,2026-08-11
+sub-065,run,task-breathing_run-2,physio,belt_usable,0.00713142822325387,good,filtered_iqr=0.00713 band_ratio=0.976,"resp_quality, cut calibrated on this sample",2026-11-24
+sub-065,run,task-breathing_run-2,physio,capnogram_valid,0.8500613055378922,good,baseline=0.85 swing=1.98 rate=7.3,whole-run capnogram morphology,2026-11-24
 sub-065,run,task-breathing_run-2,physio,co2_present,3.1561279296875,good,p99 %CO2; <2 means mask off or capnograph dead,CO2100C channel,2026-08-10
-sub-065,run,task-breathing_run-2,physio,pacer_adherence,0.5293275168328464,good,gain=0.75 mae=0.76s n=23 period_ratio=0.90,"measured vs instructed breath period, pooled over paced epochs",2026-08-12
-sub-065,run,task-breathing_run-2,physio,petco2_coverage,0.9791666666666666,good,235 of 240 volumes have PetCO2,interpolated end-tidal series,2026-08-11
-sub-065,run,task-breathing_run-2,physio,resp_epoch_coverage,0.9285714285714286,good,13 of 14 epochs measurable,epoch_features coverage + breath count,2026-08-12
+sub-065,run,task-breathing_run-2,physio,pacer_adherence,0.5293275168328464,good,gain=0.75 mae=0.76s n=23 period_ratio=0.90,"measured vs instructed breath period, pooled over paced epochs",2026-11-24
+sub-065,run,task-breathing_run-2,physio,petco2_coverage,0.9710743801652892,good,235 of 242 volumes have PetCO2,interpolated end-tidal series,2026-11-24
+sub-065,run,task-breathing_run-2,physio,petco2_predicts_global_bold,0.16422196014841584,info,"r with global signal, RRF-convolved at fitted lag",fMRIPrep confounds global_signal,2026-11-24
+sub-065,run,task-breathing_run-2,physio,resp_epoch_coverage,0.9285714285714286,good,13 of 14 epochs measurable,epoch_features coverage + breath count,2026-11-24
+sub-065,run,task-breathing_run-2,physio,rvt_coverage,0.9504132231404959,good,"74 kept breaths, belt good",breath_table rvt interpolated to volumes,2026-11-24
 sub-065,run,task-localizer_run-1,physio,acq_log_time_match,0.3064999580383301,degraded,margin=661s part=-,acq header vs log trigger_time,2026-08-10
 sub-065,run,task-localizer_run-1,physio,belt_flatline,0.00152587890625,info,IQR volts; amplitude not comparable across sessions,DA100C channel,2026-08-10
-sub-065,run,task-localizer_run-1,physio,capnogram_valid,1.1478819767663828,fail,implausible rate,whole-run capnogram morphology,2026-08-11
+sub-065,run,task-localizer_run-1,physio,capnogram_valid,1.1478819767663828,fail,implausible rate,whole-run capnogram morphology,2026-11-24
 sub-065,run,task-localizer_run-1,physio,co2_present,3.37921142578125,good,p99 %CO2; <2 means mask off or capnograph dead,CO2100C channel,2026-08-10
-sub-065,run,task-localizer_run-1,physio,petco2_coverage,0.9760479041916168,good,163 of 167 volumes have PetCO2,interpolated end-tidal series,2026-08-11
+sub-065,run,task-localizer_run-1,physio,petco2_coverage,0.9760479041916168,good,163 of 167 volumes have PetCO2,interpolated end-tidal series,2026-11-24
 sub-065,run,task-localizer_run-1,physio,pulse_vs_volume,29,degraded,196 pulses vs 167 volumes,acq trigger count vs NIfTI header,2026-08-10
-sub-065,run,task-localizer_run-1,physio,rvt_coverage,0.8622754491017964,degraded,"43 kept breaths, belt good",breath_table rvt interpolated to volumes,2026-08-13
+sub-065,run,task-localizer_run-1,physio,rvt_coverage,0.8571428571428571,degraded,"43 kept breaths, belt good",breath_table rvt interpolated to volumes,2026-11-24
 sub-065,run,task-localizer_run-2,physio,acq_log_time_match,0.34349989891052246,good,margin=543s part=-,acq header vs log trigger_time,2026-08-10
 sub-065,run,task-localizer_run-2,physio,belt_flatline,0.00518798828125,info,IQR volts; amplitude not comparable across sessions,DA100C channel,2026-08-10
-sub-065,run,task-localizer_run-2,physio,capnogram_valid,1.1600232970358106,good,baseline=1.16 swing=1.90 rate=6.9,whole-run capnogram morphology,2026-08-11
+sub-065,run,task-localizer_run-2,physio,capnogram_valid,1.1600232970358106,good,baseline=1.16 swing=1.90 rate=6.9,whole-run capnogram morphology,2026-11-24
 sub-065,run,task-localizer_run-2,physio,co2_present,3.3331298828125,good,p99 %CO2; <2 means mask off or capnograph dead,CO2100C channel,2026-08-10
-sub-065,run,task-localizer_run-2,physio,petco2_coverage,0.9381443298969072,good,182 of 194 volumes have PetCO2,interpolated end-tidal series,2026-08-11
+sub-065,run,task-localizer_run-2,physio,petco2_coverage,0.9285714285714286,good,182 of 196 volumes have PetCO2,interpolated end-tidal series,2026-11-24
+sub-065,run,task-localizer_run-2,physio,petco2_predicts_global_bold,0.07910408290980256,degraded,"r with global signal, RRF-convolved at fitted lag",fMRIPrep confounds global_signal,2026-11-24
+sub-065,run,task-localizer_run-2,physio,rvt_coverage,0.9438775510204082,good,"52 kept breaths, belt good",breath_table rvt interpolated to volumes,2026-11-24
+sub-070,run,task-authenticity,imaging,volume_count_vs_mode,0,exact,172 vs v2 mode 172 (0.0%),inventory.tsv vs cohort mode,2026-08-10
+sub-070,run,task-breathing_run-1,imaging,motion_gate,0.12694478649999996,good,meanFD=0.127 fracFD>0.5=0.01 spikes=3,fMRIPrep framewise_displacement; prereg gate,2026-08-14
+sub-070,run,task-breathing_run-1,imaging,volume_count_vs_mode,0,exact,242 vs v2 mode 242 (0.0%),inventory.tsv vs cohort mode,2026-08-10
+sub-070,run,task-breathing_run-2,imaging,motion_gate,0.16344792366280989,good,meanFD=0.163 fracFD>0.5=0.02 spikes=6,fMRIPrep framewise_displacement; prereg gate,2026-08-14
+sub-070,run,task-breathing_run-2,imaging,volume_count_vs_mode,0,exact,242 vs v2 mode 242 (0.0%),inventory.tsv vs cohort mode,2026-08-10
+sub-070,run,task-localizer_run-1,imaging,volume_count_vs_mode,0,exact,196 vs v2 mode 196 (0.0%),inventory.tsv vs cohort mode,2026-08-10
+sub-070,run,task-localizer_run-2,imaging,volume_count_vs_mode,0,exact,196 vs v2 mode 196 (0.0%),inventory.tsv vs cohort mode,2026-08-10
+sub-070,run,task-authenticity,physio,acq_log_time_match,0.557499885559082,exact,margin=702s part=_A,acq header vs log trigger_time,2026-08-10
+sub-070,run,task-authenticity,physio,belt_flatline,0.0030517578125,info,IQR volts; amplitude not comparable across sessions,DA100C channel,2026-08-10
+sub-070,run,task-authenticity,physio,capnogram_valid,0.37437550618740434,fail,swing too small; implausible rate,whole-run capnogram morphology,2026-11-24
+sub-070,run,task-authenticity,physio,co2_present,3.8260711669921577,good,p99 %CO2; <2 means mask off or capnograph dead,CO2100C channel,2026-08-10
+sub-070,run,task-authenticity,physio,petco2_coverage,0.12209302325581396,fail,21 of 172 volumes have PetCO2,interpolated end-tidal series,2026-11-24
+sub-070,run,task-authenticity,physio,pulse_vs_volume,0,exact,172 pulses vs 172 volumes,acq trigger count vs NIfTI header,2026-08-10
+sub-070,run,task-authenticity,physio,rvt_coverage,0.9709302325581395,good,"87 kept breaths, belt degraded",breath_table rvt interpolated to volumes,2026-11-24
+sub-070,run,task-breathing_run-1,physio,acq_log_time_match,0.5320000648498535,exact,margin=453s part=_A,acq header vs log trigger_time,2026-08-10
+sub-070,run,task-breathing_run-1,physio,belt_flatline,0.00274658203125,info,IQR volts; amplitude not comparable across sessions,DA100C channel,2026-08-10
+sub-070,run,task-breathing_run-1,physio,belt_usable,0.00208307433948287,good,filtered_iqr=0.00208 band_ratio=0.937,"resp_quality, cut calibrated on this sample",2026-11-24
+sub-070,run,task-breathing_run-1,physio,capnogram_valid,0.3851596362381702,fail,swing too small,whole-run capnogram morphology,2026-11-24
+sub-070,run,task-breathing_run-1,physio,co2_present,3.092041015625,good,p99 %CO2; <2 means mask off or capnograph dead,CO2100C channel,2026-08-10
+sub-070,run,task-breathing_run-1,physio,pacer_adherence,0.13116273397480607,degraded,gain=0.26 mae=1.22s n=27 period_ratio=0.83,"measured vs instructed breath period, pooled over paced epochs",2026-11-24
+sub-070,run,task-breathing_run-1,physio,petco2_coverage,0.9421487603305784,good,228 of 242 volumes have PetCO2,interpolated end-tidal series,2026-11-24
+sub-070,run,task-breathing_run-1,physio,petco2_predicts_global_bold,0.16721877271394936,info,"r with global signal, RRF-convolved at fitted lag",fMRIPrep confounds global_signal,2026-08-12
+sub-070,run,task-breathing_run-1,physio,pulse_vs_volume,0,exact,242 pulses vs 242 volumes,acq trigger count vs NIfTI header,2026-08-10
+sub-070,run,task-breathing_run-1,physio,resp_epoch_coverage,1,good,14 of 14 epochs measurable,epoch_features coverage + breath count,2026-11-24
+sub-070,run,task-breathing_run-1,physio,rvt_coverage,0.9834710743801653,good,"111 kept breaths, belt good",breath_table rvt interpolated to volumes,2026-11-24
+sub-070,run,task-breathing_run-2,physio,acq_log_time_match,1.2190001010894775,exact,margin=549s part=_A,acq header vs log trigger_time,2026-08-10
+sub-070,run,task-breathing_run-2,physio,belt_flatline,0.00335693359375,info,IQR volts; amplitude not comparable across sessions,DA100C channel,2026-08-10
+sub-070,run,task-breathing_run-2,physio,belt_usable,0.00195089559558274,good,filtered_iqr=0.00195 band_ratio=0.976,"resp_quality, cut calibrated on this sample",2026-11-24
+sub-070,run,task-breathing_run-2,physio,capnogram_valid,0.4006927463720851,good,baseline=0.40 swing=1.19 rate=6.5,whole-run capnogram morphology,2026-11-24
+sub-070,run,task-breathing_run-2,physio,co2_present,4.8333740234375,good,p99 %CO2; <2 means mask off or capnograph dead,CO2100C channel,2026-08-10
+sub-070,run,task-breathing_run-2,physio,pacer_adherence,-0.00546642903174735,degraded,gain=-0.01 mae=1.02s n=23 period_ratio=0.88,"measured vs instructed breath period, pooled over paced epochs",2026-11-24
+sub-070,run,task-breathing_run-2,physio,petco2_coverage,0.9297520661157024,good,225 of 242 volumes have PetCO2,interpolated end-tidal series,2026-11-24
+sub-070,run,task-breathing_run-2,physio,petco2_predicts_global_bold,0.20223022726174436,info,"r with global signal, RRF-convolved at fitted lag",fMRIPrep confounds global_signal,2026-11-24
+sub-070,run,task-breathing_run-2,physio,pulse_vs_volume,0,exact,242 pulses vs 242 volumes,acq trigger count vs NIfTI header,2026-08-10
+sub-070,run,task-breathing_run-2,physio,resp_epoch_coverage,0.9285714285714286,good,13 of 14 epochs measurable,epoch_features coverage + breath count,2026-11-24
+sub-070,run,task-breathing_run-2,physio,rvt_coverage,0.9752066115702479,good,"114 kept breaths, belt good",breath_table rvt interpolated to volumes,2026-11-24
+sub-070,run,task-localizer_run-1,physio,acq_log_time_match,0.8580000400543213,exact,margin=623s part=_A,acq header vs log trigger_time,2026-08-10
+sub-070,run,task-localizer_run-1,physio,belt_flatline,0.008544921875,info,IQR volts; amplitude not comparable across sessions,DA100C channel,2026-08-10
+sub-070,run,task-localizer_run-1,physio,capnogram_valid,0.4326604018278545,good,baseline=0.43 swing=2.31 rate=10.8,whole-run capnogram morphology,2026-11-24
+sub-070,run,task-localizer_run-1,physio,co2_present,5.584716796875,good,p99 %CO2; <2 means mask off or capnograph dead,CO2100C channel,2026-08-10
+sub-070,run,task-localizer_run-1,physio,petco2_coverage,0.9744897959183674,good,191 of 196 volumes have PetCO2,interpolated end-tidal series,2026-11-24
+sub-070,run,task-localizer_run-1,physio,petco2_predicts_global_bold,-8.886133204048254e-4,degraded,"r with global signal, RRF-convolved at fitted lag",fMRIPrep confounds global_signal,2026-11-24
+sub-070,run,task-localizer_run-1,physio,pulse_vs_volume,0,exact,196 pulses vs 196 volumes,acq trigger count vs NIfTI header,2026-08-10
+sub-070,run,task-localizer_run-1,physio,rvt_coverage,0.9693877551020408,good,"86 kept breaths, belt degraded",breath_table rvt interpolated to volumes,2026-11-24
+sub-070,run,task-localizer_run-2,physio,acq_log_time_match,1.2320001125335691,exact,margin=451s part=_A,acq header vs log trigger_time,2026-08-10
+sub-070,run,task-localizer_run-2,physio,belt_flatline,0.0048828125,info,IQR volts; amplitude not comparable across sessions,DA100C channel,2026-08-10
+sub-070,run,task-localizer_run-2,physio,capnogram_valid,0.4087724478311021,good,baseline=0.41 swing=1.64 rate=9.7,whole-run capnogram morphology,2026-11-24
+sub-070,run,task-localizer_run-2,physio,co2_present,5.15869140625,good,p99 %CO2; <2 means mask off or capnograph dead,CO2100C channel,2026-08-10
+sub-070,run,task-localizer_run-2,physio,petco2_coverage,0.9336734693877552,good,183 of 196 volumes have PetCO2,interpolated end-tidal series,2026-11-24
+sub-070,run,task-localizer_run-2,physio,petco2_predicts_global_bold,0.24586989597523337,info,"r with global signal, RRF-convolved at fitted lag",fMRIPrep confounds global_signal,2026-11-24
+sub-070,run,task-localizer_run-2,physio,pulse_vs_volume,0,exact,196 pulses vs 196 volumes,acq trigger count vs NIfTI header,2026-08-10
+sub-070,run,task-localizer_run-2,physio,rvt_coverage,0.9846938775510204,good,"87 kept breaths, belt degraded",breath_table rvt interpolated to volumes,2026-11-24
+sub-076,run,task-authenticity,physio,acq_log_time_match,2.8375000953674316,good,margin=725s part=-,acq header vs log trigger_time,2026-08-10
+sub-076,run,task-authenticity,physio,belt_flatline,0.0018310546875,info,IQR volts; amplitude not comparable across sessions,DA100C channel,2026-08-10
+sub-076,run,task-authenticity,physio,capnogram_valid,NA,fail,no peaks detected,whole-run capnogram morphology,2026-11-24
+sub-076,run,task-authenticity,physio,co2_present,1.2689208984375,fail,p99 %CO2; <2 means mask off or capnograph dead,CO2100C channel,2026-08-10
+sub-076,run,task-authenticity,physio,petco2_coverage,0,fail,0 of 172 volumes have PetCO2,interpolated end-tidal series,2026-11-24
+sub-076,run,task-breathing_run-1,physio,acq_log_time_match,2.697000026702881,good,margin=493s part=-,acq header vs log trigger_time,2026-08-10
+sub-076,run,task-breathing_run-1,physio,belt_flatline,0.0018310546875,info,IQR volts; amplitude not comparable across sessions,DA100C channel,2026-08-10
+sub-076,run,task-breathing_run-1,physio,belt_usable,0.00353675750529377,good,filtered_iqr=0.00354 band_ratio=0.955,"resp_quality, cut calibrated on this sample",2026-11-24
+sub-076,run,task-breathing_run-1,physio,capnogram_valid,1.4374812356816955,fail,implausible rate,whole-run capnogram morphology,2026-11-24
+sub-076,run,task-breathing_run-1,physio,co2_present,5.128173828125,good,p99 %CO2; <2 means mask off or capnograph dead,CO2100C channel,2026-08-10
+sub-076,run,task-breathing_run-1,physio,pacer_adherence,0.3894973105260758,info,gain=0.51 mae=1.37s n=17 period_ratio=0.70,"measured vs instructed breath period, pooled over paced epochs",2026-11-24
+sub-076,run,task-breathing_run-1,physio,petco2_coverage,0.9380165289256198,good,227 of 242 volumes have PetCO2,interpolated end-tidal series,2026-11-24
+sub-076,run,task-breathing_run-1,physio,resp_epoch_coverage,0.5,fail,7 of 14 epochs measurable,epoch_features coverage + breath count,2026-11-24
+sub-076,run,task-breathing_run-1,physio,rvt_coverage,0.9421487603305785,good,"47 kept breaths, belt good",breath_table rvt interpolated to volumes,2026-11-24
+sub-076,run,task-breathing_run-2,physio,acq_log_time_match,2.5859999656677246,good,margin=547s part=-,acq header vs log trigger_time,2026-08-10
+sub-076,run,task-breathing_run-2,physio,belt_flatline,0.0018310546875,info,IQR volts; amplitude not comparable across sessions,DA100C channel,2026-08-10
+sub-076,run,task-breathing_run-2,physio,belt_usable,9.153787104008044e-4,fail,filtered_iqr=0.00092 band_ratio=0.957,"resp_quality, cut calibrated on this sample",2026-11-24
+sub-076,run,task-breathing_run-2,physio,capnogram_valid,1.7022473079649196,fail,implausible rate,whole-run capnogram morphology,2026-11-24
+sub-076,run,task-breathing_run-2,physio,co2_present,5.4229736328125,good,p99 %CO2; <2 means mask off or capnograph dead,CO2100C channel,2026-08-10
+sub-076,run,task-breathing_run-2,physio,pacer_adherence,0.5066419373720056,good,gain=0.78 mae=1.71s n=25 period_ratio=0.66,"measured vs instructed breath period, pooled over paced epochs",2026-11-24
+sub-076,run,task-breathing_run-2,physio,petco2_coverage,0.9049586776859504,good,219 of 242 volumes have PetCO2,interpolated end-tidal series,2026-11-24
+sub-076,run,task-breathing_run-2,physio,resp_epoch_coverage,0,fail,0 of 14 epochs measurable,epoch_features coverage + breath count,2026-11-24
+sub-076,run,task-localizer_run-1,physio,acq_log_time_match,2.7054998874664307,good,margin=649s part=-,acq header vs log trigger_time,2026-08-10
+sub-076,run,task-localizer_run-1,physio,belt_flatline,0.00152587890625,info,IQR volts; amplitude not comparable across sessions,DA100C channel,2026-08-10
+sub-076,run,task-localizer_run-1,physio,capnogram_valid,1.5047663667623308,fail,implausible rate,whole-run capnogram morphology,2026-11-24
+sub-076,run,task-localizer_run-1,physio,co2_present,5.89508056640625,good,p99 %CO2; <2 means mask off or capnograph dead,CO2100C channel,2026-08-10
+sub-076,run,task-localizer_run-1,physio,petco2_coverage,0.9489795918367347,good,186 of 196 volumes have PetCO2,interpolated end-tidal series,2026-11-24
+sub-076,run,task-localizer_run-1,physio,rvt_coverage,0.9744897959183674,good,"75 kept breaths, belt good",breath_table rvt interpolated to volumes,2026-11-24
+sub-076,run,task-localizer_run-2,physio,acq_log_time_match,2.2730000019073486,good,margin=488s part=-,acq header vs log trigger_time,2026-08-10
+sub-076,run,task-localizer_run-2,physio,belt_flatline,0.0018310546875,info,IQR volts; amplitude not comparable across sessions,DA100C channel,2026-08-10
+sub-076,run,task-localizer_run-2,physio,capnogram_valid,1.3314854875263165,fail,implausible rate,whole-run capnogram morphology,2026-11-24
+sub-076,run,task-localizer_run-2,physio,co2_present,5.5554473876953026,good,p99 %CO2; <2 means mask off or capnograph dead,CO2100C channel,2026-08-10
+sub-076,run,task-localizer_run-2,physio,petco2_coverage,0.9744897959183674,good,191 of 196 volumes have PetCO2,interpolated end-tidal series,2026-11-24
+sub-082,run,task-authenticity,imaging,volume_count_vs_mode,0,exact,172 vs v2 mode 172 (0.0%),inventory.tsv vs cohort mode,2026-08-10
+sub-082,run,task-breathing_run-1,imaging,volume_count_vs_mode,0,exact,242 vs v2 mode 242 (0.0%),inventory.tsv vs cohort mode,2026-08-10
+sub-082,run,task-localizer_run-1,imaging,volume_count_vs_mode,0,exact,196 vs v2 mode 196 (0.0%),inventory.tsv vs cohort mode,2026-08-10
+sub-082,run,task-authenticity,physio,acq_log_time_match,0.4749999046325683,exact,margin=548s part=-,acq header vs log trigger_time,2026-08-10
+sub-082,run,task-authenticity,physio,belt_flatline,0.01129150390625,info,IQR volts; amplitude not comparable across sessions,DA100C channel,2026-08-10
+sub-082,run,task-authenticity,physio,capnogram_valid,0.5801345579158833,good,baseline=0.58 swing=5.58 rate=9.8,whole-run capnogram morphology,2026-11-24
+sub-082,run,task-authenticity,physio,co2_present,6.64337158203125,good,p99 %CO2; <2 means mask off or capnograph dead,CO2100C channel,2026-08-10
+sub-082,run,task-authenticity,physio,petco2_coverage,0.9709302325581396,good,167 of 172 volumes have PetCO2,interpolated end-tidal series,2026-11-24
+sub-082,run,task-authenticity,physio,petco2_predicts_global_bold,0.21020493704887613,info,"r with global signal, RRF-convolved at fitted lag",fMRIPrep confounds global_signal,2026-11-24
+sub-082,run,task-authenticity,physio,pulse_vs_volume,0,exact,172 pulses vs 172 volumes,acq trigger count vs NIfTI header,2026-08-10
+sub-082,run,task-authenticity,physio,rvt_coverage,0.9651162790697675,good,"55 kept breaths, belt good",breath_table rvt interpolated to volumes,2026-11-24
+sub-082,run,task-breathing_run-1,physio,acq_log_time_match,0.02300000190734863,exact,margin=549s part=-,acq header vs log trigger_time,2026-08-10
+sub-082,run,task-breathing_run-1,physio,belt_flatline,0.01434326171875,info,IQR volts; amplitude not comparable across sessions,DA100C channel,2026-08-10
+sub-082,run,task-breathing_run-1,physio,belt_usable,0.0135269642139439,good,filtered_iqr=0.01353 band_ratio=0.971,"resp_quality, cut calibrated on this sample",2026-11-24
+sub-082,run,task-breathing_run-1,physio,capnogram_valid,0.5567886447569443,good,baseline=0.56 swing=5.27 rate=9.0,whole-run capnogram morphology,2026-11-24
+sub-082,run,task-breathing_run-1,physio,co2_present,6.53228759765625,good,p99 %CO2; <2 means mask off or capnograph dead,CO2100C channel,2026-08-10
+sub-082,run,task-breathing_run-1,physio,pacer_adherence,0.7656009139632967,good,gain=0.80 mae=0.39s n=20 period_ratio=0.95,"measured vs instructed breath period, pooled over paced epochs",2026-11-24
+sub-082,run,task-breathing_run-1,physio,petco2_coverage,0.975206611570248,good,236 of 242 volumes have PetCO2,interpolated end-tidal series,2026-11-24
+sub-082,run,task-breathing_run-1,physio,petco2_predicts_global_bold,0.30638135983330184,good,"r with global signal, RRF-convolved at fitted lag",fMRIPrep confounds global_signal,2026-11-24
+sub-082,run,task-breathing_run-1,physio,pulse_vs_volume,0,exact,242 pulses vs 242 volumes,acq trigger count vs NIfTI header,2026-08-10
+sub-082,run,task-breathing_run-1,physio,resp_epoch_coverage,0.5714285714285714,degraded,8 of 14 epochs measurable,epoch_features coverage + breath count,2026-11-24
+sub-082,run,task-breathing_run-1,physio,rvt_coverage,0.9793388429752066,good,"74 kept breaths, belt good",breath_table rvt interpolated to volumes,2026-11-24
+sub-082,run,task-localizer_run-1,physio,acq_log_time_match,0.04150009155273437,exact,margin=636s part=-,acq header vs log trigger_time,2026-08-10
+sub-082,run,task-localizer_run-1,physio,belt_flatline,0.01220703125,info,IQR volts; amplitude not comparable across sessions,DA100C channel,2026-08-10
+sub-082,run,task-localizer_run-1,physio,capnogram_valid,0.5659550988306057,good,baseline=0.57 swing=5.22 rate=9.5,whole-run capnogram morphology,2026-11-24
+sub-082,run,task-localizer_run-1,physio,co2_present,6.2591552734375,good,p99 %CO2; <2 means mask off or capnograph dead,CO2100C channel,2026-08-10
+sub-082,run,task-localizer_run-1,physio,petco2_coverage,0.9693877551020408,good,190 of 196 volumes have PetCO2,interpolated end-tidal series,2026-11-24
+sub-082,run,task-localizer_run-1,physio,petco2_predicts_global_bold,0.17728931468140688,info,"r with global signal, RRF-convolved at fitted lag",fMRIPrep confounds global_signal,2026-11-24
+sub-082,run,task-localizer_run-1,physio,pulse_vs_volume,0,exact,196 pulses vs 196 volumes,acq trigger count vs NIfTI header,2026-08-10
+sub-082,run,task-localizer_run-1,physio,rvt_coverage,0.9642857142857143,good,"63 kept breaths, belt good",breath_table rvt interpolated to volumes,2026-11-24
+sub-083,run,task-localizer_run-1,imaging,volume_count_vs_mode,0,exact,196 vs v2 mode 196 (0.0%),inventory.tsv vs cohort mode,2026-08-10
+sub-083,run,task-localizer_run-1,physio,acq_log_time_match,2.4079999923706055,good,margin=402s part=_PartA,acq header vs log trigger_time,2026-08-10
+sub-083,run,task-localizer_run-1,physio,belt_flatline,0.00335693359375,info,IQR volts; amplitude not comparable across sessions,DA100C channel,2026-08-10
+sub-083,run,task-localizer_run-1,physio,capnogram_valid,3.422063430115731,fail,baseline never flushes; swing too small,whole-run capnogram morphology,2026-11-24
+sub-083,run,task-localizer_run-1,physio,co2_present,4.86175537109375,good,p99 %CO2; <2 means mask off or capnograph dead,CO2100C channel,2026-08-10
+sub-083,run,task-localizer_run-1,physio,petco2_coverage,0.9183673469387756,good,180 of 196 volumes have PetCO2,interpolated end-tidal series,2026-11-24
+sub-083,run,task-localizer_run-1,physio,pulse_vs_volume,0,exact,196 pulses vs 196 volumes,acq trigger count vs NIfTI header,2026-08-10
+sub-083,run,task-localizer_run-1,physio,rvt_coverage,0.9642857142857143,good,"80 kept breaths, belt good",breath_table rvt interpolated to volumes,2026-11-24
+sub-104,run,task-authenticity,imaging,volume_count_vs_mode,0,exact,172 vs v2 mode 172 (0.0%),inventory.tsv vs cohort mode,2026-08-10
+sub-104,run,task-breathing_run-1,imaging,volume_count_vs_mode,0,exact,242 vs v2 mode 242 (0.0%),inventory.tsv vs cohort mode,2026-08-10
+sub-104,run,task-localizer_run-1,imaging,volume_count_vs_mode,0,exact,196 vs v2 mode 196 (0.0%),inventory.tsv vs cohort mode,2026-08-10
+sub-104,run,task-authenticity,physio,acq_log_time_match,3.6670000553131104,good,margin=584s part=-,acq header vs log trigger_time,2026-08-10
+sub-104,run,task-authenticity,physio,belt_flatline,0.001220703125,info,IQR volts; amplitude not comparable across sessions,DA100C channel,2026-08-10
+sub-104,run,task-authenticity,physio,capnogram_valid,5.588660492402864,fail,baseline never flushes; swing too small; implausible rate,whole-run capnogram morphology,2026-11-24
+sub-104,run,task-authenticity,physio,co2_present,7.0038116455078026,good,p99 %CO2; <2 means mask off or capnograph dead,CO2100C channel,2026-08-10
+sub-104,run,task-authenticity,physio,petco2_coverage,0.9418604651162792,good,162 of 172 volumes have PetCO2,interpolated end-tidal series,2026-11-24
+sub-104,run,task-authenticity,physio,pulse_vs_volume,0,exact,172 pulses vs 172 volumes,acq trigger count vs NIfTI header,2026-08-10
+sub-104,run,task-authenticity,physio,rvt_coverage,0.9709302325581395,good,"56 kept breaths, belt degraded",breath_table rvt interpolated to volumes,2026-11-24
+sub-104,run,task-breathing_run-1,physio,acq_log_time_match,3.299499988555908,good,margin=577s part=-,acq header vs log trigger_time,2026-08-10
+sub-104,run,task-breathing_run-1,physio,belt_flatline,0.0079345703125,info,IQR volts; amplitude not comparable across sessions,DA100C channel,2026-08-10
+sub-104,run,task-breathing_run-1,physio,belt_usable,0.01008723945659737,good,filtered_iqr=0.01009 band_ratio=0.926,"resp_quality, cut calibrated on this sample",2026-11-24
+sub-104,run,task-breathing_run-1,physio,capnogram_valid,0.6437684871854794,good,baseline=0.64 swing=4.00 rate=12.0,whole-run capnogram morphology,2026-11-24
+sub-104,run,task-breathing_run-1,physio,co2_present,6.6748046875,good,p99 %CO2; <2 means mask off or capnograph dead,CO2100C channel,2026-08-10
+sub-104,run,task-breathing_run-1,physio,pacer_adherence,0.8093858277765633,good,gain=1.13 mae=0.55s n=21 period_ratio=0.87,"measured vs instructed breath period, pooled over paced epochs",2026-11-24
+sub-104,run,task-breathing_run-1,physio,petco2_coverage,0.9710743801652892,good,235 of 242 volumes have PetCO2,interpolated end-tidal series,2026-11-24
+sub-104,run,task-breathing_run-1,physio,petco2_predicts_global_bold,0.255525225006016,info,"r with global signal, RRF-convolved at fitted lag",fMRIPrep confounds global_signal,2026-11-24
+sub-104,run,task-breathing_run-1,physio,pulse_vs_volume,0,exact,242 pulses vs 242 volumes,acq trigger count vs NIfTI header,2026-08-10
+sub-104,run,task-breathing_run-1,physio,resp_epoch_coverage,0.9285714285714286,good,13 of 14 epochs measurable,epoch_features coverage + breath count,2026-11-24
+sub-104,run,task-breathing_run-1,physio,rvt_coverage,0.9793388429752066,good,"96 kept breaths, belt good",breath_table rvt interpolated to volumes,2026-11-24
+sub-104,run,task-localizer_run-1,physio,acq_log_time_match,2.9079999923706055,good,margin=652s part=-,acq header vs log trigger_time,2026-08-10
+sub-104,run,task-localizer_run-1,physio,belt_flatline,0.001220703125,info,IQR volts; amplitude not comparable across sessions,DA100C channel,2026-08-10
+sub-104,run,task-localizer_run-1,physio,capnogram_valid,0.9917990538233504,fail,implausible rate,whole-run capnogram morphology,2026-11-24
+sub-104,run,task-localizer_run-1,physio,co2_present,6.7755126953125,good,p99 %CO2; <2 means mask off or capnograph dead,CO2100C channel,2026-08-10
+sub-104,run,task-localizer_run-1,physio,petco2_coverage,0.9693877551020408,good,190 of 196 volumes have PetCO2,interpolated end-tidal series,2026-11-24
+sub-104,run,task-localizer_run-1,physio,pulse_vs_volume,0,exact,196 pulses vs 196 volumes,acq trigger count vs NIfTI header,2026-08-10
+sub-104,run,task-localizer_run-1,physio,rvt_coverage,0.9642857142857143,good,"39 kept breaths, belt good",breath_table rvt interpolated to volumes,2026-11-24
 sub-066,run,task-authenticity,imaging,volume_count_vs_mode,0,exact,172 vs v2 mode 172 (0.0%),inventory.tsv vs cohort mode,2026-08-10
 sub-066,run,task-breathing_run-1,imaging,motion_gate,0.2730688536528925,good,meanFD=0.273 fracFD>0.5=0.09 spikes=22,fMRIPrep framewise_displacement; prereg gate,2026-08-14
 sub-066,run,task-breathing_run-1,imaging,volume_count_vs_mode,0,exact,242 vs v2 mode 242 (0.0%),inventory.tsv vs cohort mode,2026-08-10
@@ -692,47 +849,6 @@ sub-069,run,task-localizer_run-2,physio,petco2_coverage,0.979591836734694,good,1
 sub-069,run,task-localizer_run-2,physio,petco2_predicts_global_bold,0.05979648959053862,degraded,"r with global signal, RRF-convolved at fitted lag",fMRIPrep confounds global_signal,2026-08-12
 sub-069,run,task-localizer_run-2,physio,pulse_vs_volume,0,exact,196 pulses vs 196 volumes,acq trigger count vs NIfTI header,2026-08-10
 sub-069,run,task-localizer_run-2,physio,rvt_coverage,0.9744897959183674,good,"76 kept breaths, belt degraded",breath_table rvt interpolated to volumes,2026-08-13
-sub-070,run,task-authenticity,imaging,volume_count_vs_mode,0,exact,172 vs v2 mode 172 (0.0%),inventory.tsv vs cohort mode,2026-08-10
-sub-070,run,task-breathing_run-1,imaging,motion_gate,0.12694478649999996,good,meanFD=0.127 fracFD>0.5=0.01 spikes=3,fMRIPrep framewise_displacement; prereg gate,2026-08-14
-sub-070,run,task-breathing_run-1,imaging,volume_count_vs_mode,0,exact,242 vs v2 mode 242 (0.0%),inventory.tsv vs cohort mode,2026-08-10
-sub-070,run,task-breathing_run-2,imaging,motion_gate,0.16344792366280989,good,meanFD=0.163 fracFD>0.5=0.02 spikes=6,fMRIPrep framewise_displacement; prereg gate,2026-08-14
-sub-070,run,task-breathing_run-2,imaging,volume_count_vs_mode,0,exact,242 vs v2 mode 242 (0.0%),inventory.tsv vs cohort mode,2026-08-10
-sub-070,run,task-localizer_run-1,imaging,volume_count_vs_mode,0,exact,196 vs v2 mode 196 (0.0%),inventory.tsv vs cohort mode,2026-08-10
-sub-070,run,task-localizer_run-2,imaging,volume_count_vs_mode,0,exact,196 vs v2 mode 196 (0.0%),inventory.tsv vs cohort mode,2026-08-10
-sub-070,run,task-authenticity,physio,acq_log_time_match,0.557499885559082,exact,margin=702s part=_A,acq header vs log trigger_time,2026-08-10
-sub-070,run,task-authenticity,physio,belt_flatline,0.0030517578125,info,IQR volts; amplitude not comparable across sessions,DA100C channel,2026-08-10
-sub-070,run,task-authenticity,physio,co2_present,3.8260711669921577,good,p99 %CO2; <2 means mask off or capnograph dead,CO2100C channel,2026-08-10
-sub-070,run,task-authenticity,physio,pulse_vs_volume,0,exact,172 pulses vs 172 volumes,acq trigger count vs NIfTI header,2026-08-10
-sub-070,run,task-breathing_run-1,physio,acq_log_time_match,0.5320000648498535,exact,margin=453s part=_A,acq header vs log trigger_time,2026-08-10
-sub-070,run,task-breathing_run-1,physio,belt_flatline,0.00274658203125,info,IQR volts; amplitude not comparable across sessions,DA100C channel,2026-08-10
-sub-070,run,task-breathing_run-1,physio,belt_usable,0.00801196175338365,good,filtered_iqr=0.00801 band_ratio=0.944,"resp_quality, cut calibrated on this sample",2026-08-12
-sub-070,run,task-breathing_run-1,physio,capnogram_valid,0.5003672626030975,good,baseline=0.50 swing=3.59 rate=8.8,whole-run capnogram morphology,2026-08-11
-sub-070,run,task-breathing_run-1,physio,co2_present,3.092041015625,good,p99 %CO2; <2 means mask off or capnograph dead,CO2100C channel,2026-08-10
-sub-070,run,task-breathing_run-1,physio,pacer_adherence,NA,fail,gain=NA mae=NAs n=0 period_ratio=NA,"measured vs instructed breath period, pooled over paced epochs",2026-08-12
-sub-070,run,task-breathing_run-1,physio,petco2_coverage,0.4173553719008264,fail,101 of 242 volumes have PetCO2,interpolated end-tidal series,2026-08-11
-sub-070,run,task-breathing_run-1,physio,petco2_predicts_global_bold,0.16721877271394936,info,"r with global signal, RRF-convolved at fitted lag",fMRIPrep confounds global_signal,2026-08-12
-sub-070,run,task-breathing_run-1,physio,pulse_vs_volume,0,exact,242 pulses vs 242 volumes,acq trigger count vs NIfTI header,2026-08-10
-sub-070,run,task-breathing_run-1,physio,resp_epoch_coverage,0.42857142857142855,fail,6 of 14 epochs measurable,epoch_features coverage + breath count,2026-08-12
-sub-070,run,task-breathing_run-1,physio,rvt_coverage,0.4049586776859504,fail,"44 kept breaths, belt good",breath_table rvt interpolated to volumes,2026-08-13
-sub-070,run,task-breathing_run-2,physio,acq_log_time_match,1.2190001010894775,exact,margin=549s part=_A,acq header vs log trigger_time,2026-08-10
-sub-070,run,task-breathing_run-2,physio,belt_flatline,0.00335693359375,info,IQR volts; amplitude not comparable across sessions,DA100C channel,2026-08-10
-sub-070,run,task-breathing_run-2,physio,co2_present,4.8333740234375,good,p99 %CO2; <2 means mask off or capnograph dead,CO2100C channel,2026-08-10
-sub-070,run,task-breathing_run-2,physio,pulse_vs_volume,0,exact,242 pulses vs 242 volumes,acq trigger count vs NIfTI header,2026-08-10
-sub-070,run,task-localizer_run-1,physio,acq_log_time_match,0.8580000400543213,exact,margin=623s part=_A,acq header vs log trigger_time,2026-08-10
-sub-070,run,task-localizer_run-1,physio,belt_flatline,0.008544921875,info,IQR volts; amplitude not comparable across sessions,DA100C channel,2026-08-10
-sub-070,run,task-localizer_run-1,physio,capnogram_valid,0.50798008605215,fail,implausible rate,whole-run capnogram morphology,2026-08-11
-sub-070,run,task-localizer_run-1,physio,co2_present,5.584716796875,good,p99 %CO2; <2 means mask off or capnograph dead,CO2100C channel,2026-08-10
-sub-070,run,task-localizer_run-1,physio,petco2_coverage,0.6173469387755102,degraded,121 of 196 volumes have PetCO2,interpolated end-tidal series,2026-08-11
-sub-070,run,task-localizer_run-1,physio,pulse_vs_volume,0,exact,196 pulses vs 196 volumes,acq trigger count vs NIfTI header,2026-08-10
-sub-070,run,task-localizer_run-1,physio,rvt_coverage,0.979591836734694,good,"112 kept breaths, belt degraded",breath_table rvt interpolated to volumes,2026-08-13
-sub-070,run,task-localizer_run-2,physio,acq_log_time_match,1.2320001125335691,exact,margin=451s part=_A,acq header vs log trigger_time,2026-08-10
-sub-070,run,task-localizer_run-2,physio,belt_flatline,0.0048828125,info,IQR volts; amplitude not comparable across sessions,DA100C channel,2026-08-10
-sub-070,run,task-localizer_run-2,physio,capnogram_valid,0.44468462443944634,good,baseline=0.44 swing=3.22 rate=9.5,whole-run capnogram morphology,2026-08-11
-sub-070,run,task-localizer_run-2,physio,co2_present,5.15869140625,good,p99 %CO2; <2 means mask off or capnograph dead,CO2100C channel,2026-08-10
-sub-070,run,task-localizer_run-2,physio,petco2_coverage,0.9693877551020408,good,190 of 196 volumes have PetCO2,interpolated end-tidal series,2026-08-11
-sub-070,run,task-localizer_run-2,physio,petco2_predicts_global_bold,0.29305168615538424,info,"r with global signal, RRF-convolved at fitted lag",fMRIPrep confounds global_signal,2026-08-12
-sub-070,run,task-localizer_run-2,physio,pulse_vs_volume,0,exact,196 pulses vs 196 volumes,acq trigger count vs NIfTI header,2026-08-10
-sub-070,run,task-localizer_run-2,physio,rvt_coverage,0.9693877551020408,good,"73 kept breaths, belt good",breath_table rvt interpolated to volumes,2026-08-13
 sub-071,run,task-authenticity,imaging,volume_count_vs_mode,0,exact,172 vs v2 mode 172 (0.0%),inventory.tsv vs cohort mode,2026-08-10
 sub-071,run,task-breathing_run-1,imaging,motion_gate,0.11520349803760328,good,meanFD=0.115 fracFD>0.5=0.00 spikes=0,fMRIPrep framewise_displacement; prereg gate,2026-08-14
 sub-071,run,task-breathing_run-1,imaging,volume_count_vs_mode,0,exact,242 vs v2 mode 242 (0.0%),inventory.tsv vs cohort mode,2026-08-10
@@ -939,37 +1055,6 @@ sub-074,run,task-localizer_run-2,physio,rvt_coverage,0.9642857142857144,good,"68
 sub-075,run,task-breathing_run-1,imaging,motion_gate,0.17499250840082642,good,meanFD=0.175 fracFD>0.5=0.00 spikes=0,fMRIPrep framewise_displacement; prereg gate,2026-08-14
 sub-075,run,task-breathing_run-2,imaging,motion_gate,0.18165658149917355,good,meanFD=0.182 fracFD>0.5=0.00 spikes=0,fMRIPrep framewise_displacement; prereg gate,2026-08-14
 sub-075,session,NA,physio,acq_trigger_present,NA,fail,no trigger blocks detected in any .acq part,Intero_P75.acq,2026-08-10
-sub-076,run,task-authenticity,physio,acq_log_time_match,2.8375000953674316,good,margin=725s part=-,acq header vs log trigger_time,2026-08-10
-sub-076,run,task-authenticity,physio,belt_flatline,0.0018310546875,info,IQR volts; amplitude not comparable across sessions,DA100C channel,2026-08-10
-sub-076,run,task-authenticity,physio,capnogram_valid,NA,fail,no peaks detected,whole-run capnogram morphology,2026-08-11
-sub-076,run,task-authenticity,physio,co2_present,1.2689208984375,fail,p99 %CO2; <2 means mask off or capnograph dead,CO2100C channel,2026-08-10
-sub-076,run,task-authenticity,physio,petco2_coverage,0,fail,0 of 170 volumes have PetCO2,interpolated end-tidal series,2026-08-11
-sub-076,run,task-breathing_run-1,physio,acq_log_time_match,2.697000026702881,good,margin=493s part=-,acq header vs log trigger_time,2026-08-10
-sub-076,run,task-breathing_run-1,physio,belt_flatline,0.0018310546875,info,IQR volts; amplitude not comparable across sessions,DA100C channel,2026-08-10
-sub-076,run,task-breathing_run-1,physio,belt_usable,0.00353675750534039,good,filtered_iqr=0.00354 band_ratio=0.955,"resp_quality, cut calibrated on this sample",2026-08-12
-sub-076,run,task-breathing_run-1,physio,capnogram_valid,1.4374812356816955,fail,implausible rate,whole-run capnogram morphology,2026-08-11
-sub-076,run,task-breathing_run-1,physio,co2_present,5.128173828125,good,p99 %CO2; <2 means mask off or capnograph dead,CO2100C channel,2026-08-10
-sub-076,run,task-breathing_run-1,physio,pacer_adherence,0.3894973105260758,info,gain=0.51 mae=1.37s n=17 period_ratio=0.70,"measured vs instructed breath period, pooled over paced epochs",2026-08-12
-sub-076,run,task-breathing_run-1,physio,petco2_coverage,0.9458333333333332,good,227 of 240 volumes have PetCO2,interpolated end-tidal series,2026-08-11
-sub-076,run,task-breathing_run-1,physio,resp_epoch_coverage,0.5,fail,7 of 14 epochs measurable,epoch_features coverage + breath count,2026-08-12
-sub-076,run,task-breathing_run-2,physio,acq_log_time_match,2.5859999656677246,good,margin=547s part=-,acq header vs log trigger_time,2026-08-10
-sub-076,run,task-breathing_run-2,physio,belt_flatline,0.0018310546875,info,IQR volts; amplitude not comparable across sessions,DA100C channel,2026-08-10
-sub-076,run,task-breathing_run-2,physio,belt_usable,9.153787104152076e-4,fail,filtered_iqr=0.00092 band_ratio=0.957,"resp_quality, cut calibrated on this sample",2026-08-12
-sub-076,run,task-breathing_run-2,physio,capnogram_valid,1.7022473079649196,fail,implausible rate,whole-run capnogram morphology,2026-08-11
-sub-076,run,task-breathing_run-2,physio,co2_present,5.4229736328125,good,p99 %CO2; <2 means mask off or capnograph dead,CO2100C channel,2026-08-10
-sub-076,run,task-breathing_run-2,physio,pacer_adherence,0.5066419373720056,good,gain=0.78 mae=1.71s n=25 period_ratio=0.66,"measured vs instructed breath period, pooled over paced epochs",2026-08-12
-sub-076,run,task-breathing_run-2,physio,petco2_coverage,0.9125,good,219 of 240 volumes have PetCO2,interpolated end-tidal series,2026-08-11
-sub-076,run,task-breathing_run-2,physio,resp_epoch_coverage,0,fail,0 of 14 epochs measurable,epoch_features coverage + breath count,2026-08-12
-sub-076,run,task-localizer_run-1,physio,acq_log_time_match,2.7054998874664307,good,margin=649s part=-,acq header vs log trigger_time,2026-08-10
-sub-076,run,task-localizer_run-1,physio,belt_flatline,0.00152587890625,info,IQR volts; amplitude not comparable across sessions,DA100C channel,2026-08-10
-sub-076,run,task-localizer_run-1,physio,capnogram_valid,1.5047663667623308,fail,implausible rate,whole-run capnogram morphology,2026-08-11
-sub-076,run,task-localizer_run-1,physio,co2_present,5.89508056640625,good,p99 %CO2; <2 means mask off or capnograph dead,CO2100C channel,2026-08-10
-sub-076,run,task-localizer_run-1,physio,petco2_coverage,0.9587628865979382,good,186 of 194 volumes have PetCO2,interpolated end-tidal series,2026-08-11
-sub-076,run,task-localizer_run-2,physio,acq_log_time_match,2.2730000019073486,good,margin=488s part=-,acq header vs log trigger_time,2026-08-10
-sub-076,run,task-localizer_run-2,physio,belt_flatline,0.0018310546875,info,IQR volts; amplitude not comparable across sessions,DA100C channel,2026-08-10
-sub-076,run,task-localizer_run-2,physio,capnogram_valid,1.3314854875263165,fail,implausible rate,whole-run capnogram morphology,2026-08-11
-sub-076,run,task-localizer_run-2,physio,co2_present,5.5554473876953026,good,p99 %CO2; <2 means mask off or capnograph dead,CO2100C channel,2026-08-10
-sub-076,run,task-localizer_run-2,physio,petco2_coverage,0.9794871794871794,good,191 of 195 volumes have PetCO2,interpolated end-tidal series,2026-08-11
 sub-077,run,task-authenticity,imaging,volume_count_vs_mode,0,exact,172 vs v2 mode 172 (0.0%),inventory.tsv vs cohort mode,2026-08-10
 sub-077,run,task-breathing_run-1,imaging,motion_gate,0.13568482931404957,good,meanFD=0.136 fracFD>0.5=0.00 spikes=0,fMRIPrep framewise_displacement; prereg gate,2026-08-14
 sub-077,run,task-breathing_run-1,imaging,volume_count_vs_mode,0,exact,242 vs v2 mode 242 (0.0%),inventory.tsv vs cohort mode,2026-08-10
@@ -1150,35 +1235,6 @@ sub-080,run,task-localizer_run-2,physio,pulse_vs_volume,0,exact,196 pulses vs 19
 sub-080,run,task-localizer_run-2,physio,rvt_coverage,0.6530612244897959,degraded,"47 kept breaths, belt degraded",breath_table rvt interpolated to volumes,2026-08-13
 sub-081,run,task-breathing_run-1,imaging,motion_gate,0.14030399417454545,good,meanFD=0.140 fracFD>0.5=0.00 spikes=0,fMRIPrep framewise_displacement; prereg gate,2026-08-14
 sub-081,run,task-breathing_run-2,imaging,motion_gate,0.15063550534710743,good,meanFD=0.151 fracFD>0.5=0.00 spikes=1,fMRIPrep framewise_displacement; prereg gate,2026-08-14
-sub-082,run,task-authenticity,imaging,volume_count_vs_mode,0,exact,172 vs v2 mode 172 (0.0%),inventory.tsv vs cohort mode,2026-08-10
-sub-082,run,task-breathing_run-1,imaging,volume_count_vs_mode,0,exact,242 vs v2 mode 242 (0.0%),inventory.tsv vs cohort mode,2026-08-10
-sub-082,run,task-localizer_run-1,imaging,volume_count_vs_mode,0,exact,196 vs v2 mode 196 (0.0%),inventory.tsv vs cohort mode,2026-08-10
-sub-082,run,task-authenticity,physio,acq_log_time_match,0.4749999046325683,exact,margin=548s part=-,acq header vs log trigger_time,2026-08-10
-sub-082,run,task-authenticity,physio,belt_flatline,0.01129150390625,info,IQR volts; amplitude not comparable across sessions,DA100C channel,2026-08-10
-sub-082,run,task-authenticity,physio,capnogram_valid,0.5801345579158833,good,baseline=0.58 swing=5.58 rate=9.8,whole-run capnogram morphology,2026-08-11
-sub-082,run,task-authenticity,physio,co2_present,6.64337158203125,good,p99 %CO2; <2 means mask off or capnograph dead,CO2100C channel,2026-08-10
-sub-082,run,task-authenticity,physio,petco2_coverage,0.9709302325581396,good,167 of 172 volumes have PetCO2,interpolated end-tidal series,2026-08-11
-sub-082,run,task-authenticity,physio,pulse_vs_volume,0,exact,172 pulses vs 172 volumes,acq trigger count vs NIfTI header,2026-08-10
-sub-082,run,task-breathing_run-1,physio,acq_log_time_match,0.02300000190734863,exact,margin=549s part=-,acq header vs log trigger_time,2026-08-10
-sub-082,run,task-breathing_run-1,physio,belt_flatline,0.01434326171875,info,IQR volts; amplitude not comparable across sessions,DA100C channel,2026-08-10
-sub-082,run,task-breathing_run-1,physio,belt_usable,0.01352696421399165,good,filtered_iqr=0.01353 band_ratio=0.971,"resp_quality, cut calibrated on this sample",2026-08-12
-sub-082,run,task-breathing_run-1,physio,capnogram_valid,0.5567886447569443,good,baseline=0.56 swing=5.27 rate=9.0,whole-run capnogram morphology,2026-08-11
-sub-082,run,task-breathing_run-1,physio,co2_present,6.53228759765625,good,p99 %CO2; <2 means mask off or capnograph dead,CO2100C channel,2026-08-10
-sub-082,run,task-breathing_run-1,physio,pacer_adherence,0.7656009139632967,good,gain=0.80 mae=0.39s n=20 period_ratio=0.95,"measured vs instructed breath period, pooled over paced epochs",2026-08-12
-sub-082,run,task-breathing_run-1,physio,petco2_coverage,0.975206611570248,good,236 of 242 volumes have PetCO2,interpolated end-tidal series,2026-08-11
-sub-082,run,task-breathing_run-1,physio,pulse_vs_volume,0,exact,242 pulses vs 242 volumes,acq trigger count vs NIfTI header,2026-08-10
-sub-082,run,task-breathing_run-1,physio,resp_epoch_coverage,0.5714285714285714,degraded,8 of 14 epochs measurable,epoch_features coverage + breath count,2026-08-12
-sub-082,run,task-localizer_run-1,physio,acq_log_time_match,0.04150009155273437,exact,margin=636s part=-,acq header vs log trigger_time,2026-08-10
-sub-082,run,task-localizer_run-1,physio,belt_flatline,0.01220703125,info,IQR volts; amplitude not comparable across sessions,DA100C channel,2026-08-10
-sub-082,run,task-localizer_run-1,physio,capnogram_valid,0.5659550988306057,good,baseline=0.57 swing=5.22 rate=9.5,whole-run capnogram morphology,2026-08-11
-sub-082,run,task-localizer_run-1,physio,co2_present,6.2591552734375,good,p99 %CO2; <2 means mask off or capnograph dead,CO2100C channel,2026-08-10
-sub-082,run,task-localizer_run-1,physio,petco2_coverage,0.9693877551020408,good,190 of 196 volumes have PetCO2,interpolated end-tidal series,2026-08-11
-sub-082,run,task-localizer_run-1,physio,pulse_vs_volume,0,exact,196 pulses vs 196 volumes,acq trigger count vs NIfTI header,2026-08-10
-sub-083,run,task-localizer_run-1,imaging,volume_count_vs_mode,0,exact,196 vs v2 mode 196 (0.0%),inventory.tsv vs cohort mode,2026-08-10
-sub-083,run,task-localizer_run-1,physio,acq_log_time_match,2.4079999923706055,good,margin=402s part=_PartA,acq header vs log trigger_time,2026-08-10
-sub-083,run,task-localizer_run-1,physio,belt_flatline,0.00335693359375,info,IQR volts; amplitude not comparable across sessions,DA100C channel,2026-08-10
-sub-083,run,task-localizer_run-1,physio,co2_present,4.86175537109375,good,p99 %CO2; <2 means mask off or capnograph dead,CO2100C channel,2026-08-10
-sub-083,run,task-localizer_run-1,physio,pulse_vs_volume,0,exact,196 pulses vs 196 volumes,acq trigger count vs NIfTI header,2026-08-10
 sub-084,run,task-authenticity,imaging,volume_count_vs_mode,0,exact,172 vs v2 mode 172 (0.0%),inventory.tsv vs cohort mode,2026-08-10
 sub-084,run,task-breathing_run-1,imaging,motion_gate,0.18678323061570246,good,meanFD=0.187 fracFD>0.5=0.00 spikes=1,fMRIPrep framewise_displacement; prereg gate,2026-08-14
 sub-084,run,task-breathing_run-1,imaging,volume_count_vs_mode,0,exact,242 vs v2 mode 242 (0.0%),inventory.tsv vs cohort mode,2026-08-10
@@ -1722,30 +1778,6 @@ sub-102,run,task-localizer_run-2,physio,co2_present,4.3341064453125,good,p99 %CO
 sub-102,run,task-localizer_run-2,physio,petco2_coverage,0.9642857142857144,good,189 of 196 volumes have PetCO2,interpolated end-tidal series,2026-08-11
 sub-102,run,task-localizer_run-2,physio,petco2_predicts_global_bold,0.33236473535695793,good,"r with global signal, RRF-convolved at fitted lag",fMRIPrep confounds global_signal,2026-08-12
 sub-102,run,task-localizer_run-2,physio,pulse_vs_volume,0,exact,196 pulses vs 196 volumes,acq trigger count vs NIfTI header,2026-08-10
-sub-104,run,task-authenticity,imaging,volume_count_vs_mode,0,exact,172 vs v2 mode 172 (0.0%),inventory.tsv vs cohort mode,2026-08-10
-sub-104,run,task-breathing_run-1,imaging,volume_count_vs_mode,0,exact,242 vs v2 mode 242 (0.0%),inventory.tsv vs cohort mode,2026-08-10
-sub-104,run,task-localizer_run-1,imaging,volume_count_vs_mode,0,exact,196 vs v2 mode 196 (0.0%),inventory.tsv vs cohort mode,2026-08-10
-sub-104,run,task-authenticity,physio,acq_log_time_match,3.6670000553131104,good,margin=584s part=-,acq header vs log trigger_time,2026-08-10
-sub-104,run,task-authenticity,physio,belt_flatline,0.001220703125,info,IQR volts; amplitude not comparable across sessions,DA100C channel,2026-08-10
-sub-104,run,task-authenticity,physio,capnogram_valid,5.588660492402864,fail,baseline never flushes; swing too small; implausible rate,whole-run capnogram morphology,2026-08-11
-sub-104,run,task-authenticity,physio,co2_present,7.0038116455078026,good,p99 %CO2; <2 means mask off or capnograph dead,CO2100C channel,2026-08-10
-sub-104,run,task-authenticity,physio,petco2_coverage,0.9418604651162792,good,162 of 172 volumes have PetCO2,interpolated end-tidal series,2026-08-11
-sub-104,run,task-authenticity,physio,pulse_vs_volume,0,exact,172 pulses vs 172 volumes,acq trigger count vs NIfTI header,2026-08-10
-sub-104,run,task-breathing_run-1,physio,acq_log_time_match,3.299499988555908,good,margin=577s part=-,acq header vs log trigger_time,2026-08-10
-sub-104,run,task-breathing_run-1,physio,belt_flatline,0.0079345703125,info,IQR volts; amplitude not comparable across sessions,DA100C channel,2026-08-10
-sub-104,run,task-breathing_run-1,physio,belt_usable,0.0100872394565631,good,filtered_iqr=0.01009 band_ratio=0.926,"resp_quality, cut calibrated on this sample",2026-08-12
-sub-104,run,task-breathing_run-1,physio,capnogram_valid,0.6437684871854794,good,baseline=0.64 swing=4.00 rate=12.0,whole-run capnogram morphology,2026-08-11
-sub-104,run,task-breathing_run-1,physio,co2_present,6.6748046875,good,p99 %CO2; <2 means mask off or capnograph dead,CO2100C channel,2026-08-10
-sub-104,run,task-breathing_run-1,physio,pacer_adherence,0.8093858277765633,good,gain=1.13 mae=0.55s n=21 period_ratio=0.87,"measured vs instructed breath period, pooled over paced epochs",2026-08-12
-sub-104,run,task-breathing_run-1,physio,petco2_coverage,0.9710743801652892,good,235 of 242 volumes have PetCO2,interpolated end-tidal series,2026-08-11
-sub-104,run,task-breathing_run-1,physio,pulse_vs_volume,0,exact,242 pulses vs 242 volumes,acq trigger count vs NIfTI header,2026-08-10
-sub-104,run,task-breathing_run-1,physio,resp_epoch_coverage,0.9285714285714286,good,13 of 14 epochs measurable,epoch_features coverage + breath count,2026-08-12
-sub-104,run,task-localizer_run-1,physio,acq_log_time_match,2.9079999923706055,good,margin=652s part=-,acq header vs log trigger_time,2026-08-10
-sub-104,run,task-localizer_run-1,physio,belt_flatline,0.001220703125,info,IQR volts; amplitude not comparable across sessions,DA100C channel,2026-08-10
-sub-104,run,task-localizer_run-1,physio,capnogram_valid,0.9917990538233504,fail,implausible rate,whole-run capnogram morphology,2026-08-11
-sub-104,run,task-localizer_run-1,physio,co2_present,6.7755126953125,good,p99 %CO2; <2 means mask off or capnograph dead,CO2100C channel,2026-08-10
-sub-104,run,task-localizer_run-1,physio,petco2_coverage,0.9693877551020408,good,190 of 196 volumes have PetCO2,interpolated end-tidal series,2026-08-11
-sub-104,run,task-localizer_run-1,physio,pulse_vs_volume,0,exact,196 pulses vs 196 volumes,acq trigger count vs NIfTI header,2026-08-10
 sub-106,run,task-authenticity,imaging,volume_count_vs_mode,0,exact,172 vs v2 mode 172 (0.0%),inventory.tsv vs cohort mode,2026-08-10
 sub-106,run,task-breathing_run-1,imaging,motion_gate,0.2063031825826446,good,meanFD=0.206 fracFD>0.5=0.00 spikes=0,fMRIPrep framewise_displacement; prereg gate,2026-08-14
 sub-106,run,task-breathing_run-1,imaging,volume_count_vs_mode,0,exact,242 vs v2 mode 242 (0.0%),inventory.tsv vs cohort mode,2026-08-10

@@ -1,6 +1,6 @@
 onset	duration	trial_type	epoch_index	change_direction	change_amount	salience	n_pacer_cycles	response	accuracy	confidence	arousal	rating_of	valence_run	valence_epoch	n_sub_ratings	sdt_class	stimulus_change_known	resp_measured	resp_n_breaths	resp_coverage	resp_rate_brpm	actual_period_ratio	instructed_period_ratio	adhere_r	belt_grade	adherence_verified	actual_change_physio
 0	4.127459	valence_rating	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	2	n/a	3	n/a	FALSE	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a
-6.144494	23.665835	paced_breathing	1	Slower	1.35	low	9	Faster	0	4	1	n/a	2	n/a	3	wrong_direction	TRUE	TRUE	5	0.986	n/a	2.0356	1.2729	0.305	good	TRUE	Slower
+6.144494	23.665835	paced_breathing	1	Slower	1.35	low	9	Faster	0	4	1	n/a	2	n/a	3	wrong_direction	TRUE	TRUE	5	0.986	n/a	2.0356	1.2729	0.305	good	TRUE	No Change
 29.810329	12.283229	rating	1	n/a	n/a	n/a	n/a	Faster	0	4	1	paced_breathing	2	n/a	3	n/a	FALSE	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a
 42.093558	20.200186	free_breathing	1	n/a	n/a	n/a	n/a	Slower	n/a	5	1	n/a	2	n/a	3	n/a	FALSE	TRUE	3	0.813	n/a	n/a	n/a	0.305	good	TRUE	n/a
 62.293744	12.248647	rating	1	n/a	n/a	n/a	n/a	Slower	n/a	5	1	free_breathing	2	n/a	3	n/a	FALSE	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a

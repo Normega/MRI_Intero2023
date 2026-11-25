@@ -13,6 +13,9 @@
 # Global signal comes from Data/Ready (fMRIPrep 24.1.1 confounds), so no images
 # are read.
 #
+# [2026-11-24: NO LONGER EXCLUDED. The shift below is a property of the old
+#  Data/Ready snapshot only; the blocks and the BIDS tree of record map these
+#  runs by scanner slot. Original note kept for the record:]
 # sub-082 and sub-104 ARE EXCLUDED. Their run labels are shifted: the file
 # named task-breath1 holds 172 volumes where the breathing slot expects 242,
 # and 172 is the authenticity length. Every other run in the tree agrees with
@@ -33,16 +36,18 @@ suppressPackageStartupMessages({
   library(signal)   # masks filter(); dplyr:: is qualified below where it matters
 })
 
-dir_root  <- "I:/Shared drives/MRI_Intero2023"
+# Paths default to the Windows shared drive; INTERO_ROOT / RESPKIT_R / INTERO_FMRIPREP
+# override them (2026-11-24: lets the same script run against the Linux tree).
+dir_root  <- Sys.getenv("INTERO_ROOT", "I:/Shared drives/MRI_Intero2023")
 dir_out   <- file.path(dir_root, "Repo", "Data")
 dir_R     <- file.path(dir_root, "Repo", "R")
 dir_fig   <- file.path(dir_root, "Repo", "Figures")
 dir_reg   <- file.path(dir_out, "regressors")
 dir_cache <- file.path(dir_root, "Data", "Physio", "cache")
-dir_ready <- file.path(dir_root, "Data", "Ready")
+dir_ready <- Sys.getenv("INTERO_FMRIPREP", file.path(dir_root, "Data", "Ready"))
 TR <- 2
 
-rk <- "I:/Shared drives/TechnicalReference/respkit/R"
+rk <- Sys.getenv("RESPKIT_R", "I:/Shared drives/TechnicalReference/respkit/R")
 for (f in list.files(rk, pattern = "[.]R$", full.names = TRUE)) source(f)
 for (f in c("intero_ids.R", "intero_qc.R", "intero_petco2.R", "intero_rrf.R"))
   source(file.path(dir_R, f))
@@ -54,7 +59,8 @@ cat(sprintf("RRF peak at %.1f s, HRF peak at %.1f s\n",
             which.max(rrf_birn(seq(0, 45, 0.1))) * 0.1 - 0.1,
             which.max(hrf_spm(seq(0, 45, 0.1))) * 0.1 - 0.1))
 
-EXCLUDE <- c("sub-082", "sub-104")   # shifted run labels; see header
+# EXCLUDE of sub-082/sub-104 removed 2026-11-24 -- see the note added to the header.
+EXCLUDE <- character(0)
 TASK_MAP <- c(loc1 = "task-localizer_run-1", loc2 = "task-localizer_run-2",
               breath1 = "task-breathing_run-1", breath2 = "task-breathing_run-2",
               auth1 = "task-authenticity")
@@ -63,8 +69,7 @@ conf <- tibble(path = list.files(dir_ready, pattern = "desc-confounds_timeseries
                                  recursive = TRUE, full.names = TRUE)) %>%
   mutate(bn = basename(path),
          subject = str_match(bn, "^(sub-[0-9]+)_")[, 2],
-         rtask   = str_match(bn, "_task-([a-z0-9]+)_")[, 2],
-         bids_entity = unname(TASK_MAP[rtask])) %>%
+         bids_entity = confounds_entity(bn, TASK_MAP)) %>%   # old or BIDS naming
   dplyr::filter(!is.na(bids_entity), !subject %in% EXCLUDE)
 
 pcr <- read_csv(file.path(dir_out, "petco2_runs.csv"), show_col_types = FALSE,
