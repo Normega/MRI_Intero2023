@@ -37,7 +37,7 @@ MRI_Intero2023 is a single-session fMRI study (3T Siemens, TR = 2 s, fMRIPrep 24
 
 *Before freezing, v0.6:* the CSF and white-matter regressors were regenerated from the fMRIPrep derivatives of record. They had come from an earlier anatomical pass; no other column changed. The H3 inclusion rule was revised on trial counts alone.
 
-*ROI masks (prereg §8, v0.5):* built before freezing from the CAREN atlas and fMRIPrep's run-level brain masks, which fix the grid and the coverage mask. No BOLD intensity was read. The masks are frozen by SHA-256 checksum.
+*ROI masks (prereg §8, v0.5):* built before freezing from the CAREN atlas and fMRIPrep's run-level brain masks, which fix the grid and the coverage mask. No BOLD intensity was read. The masks are frozen by SHA-256 checksum. The generating code and checksums are published; the mask files themselves are not, because they derive from a third-party atlas.
 
 *Documented exceptions:* fMRIPrep's `global_signal` confound column was used to verify that the physiological regressors carry the physiologically correct sign (§6). Its `framewise_displacement` column was used to apply the preregistered motion gate. No task regressor has been related to any imaging measure.
 

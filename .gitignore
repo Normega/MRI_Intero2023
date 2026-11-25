@@ -37,8 +37,8 @@ Thumbs.db
 __pycache__/
 *.pyc
 
-# Atlas sources and built ROI masks: redistribution terms for CAREN not
-# established and this repository is public. Scripts/intero2023_build_rois.py
+# Atlas sources and built ROI masks are never published (PI decision
+# 2026-11-25; derived from the third-party CAREN atlas). Scripts/intero2023_build_rois.py
 # rebuilds them; ROIs/roi_manifest.csv holds the registered checksums.
 Atlas/
 ROIs/*.nii

@@ -471,8 +471,9 @@ MindLock lost a set of primary masks when one variant overwrote another at a
 fixed path, so every mask here has its own file name. Checksums are the
 record.
 
-The NIfTI files are gitignored because CAREN's redistribution terms are not
-established and the repository is public. Building the masks read the
+The NIfTI files are not published, in the repository or on OSF. This was
+decided by the PI on 2026-11-25: the masks derive from a third-party atlas.
+The generating script and the checksums are published. Building the masks read the
 fMRIPrep brain masks only, never BOLD intensities.
 
 ## Decision 13 — H7: between-network coupling, paced vs free and aware vs unaware
@@ -557,8 +558,7 @@ unaware contrast, and chose to include everyone with a precision weighting.
 - **Participant contrast:** the fixed-effects (inverse-variance) combination
   over the runs that contain both cells. In 28 of 45 participants both runs
   contribute. Aware trials in a run with no unaware trial are lost to the
-  contrast, so the median aware count used is 4 (pooled 7). Every unaware
-  trial is used.
+  contrast: 56 of 290 (19%), in 14 participants. Every unaware trial is used.
 - **Group model:** FSL FLAME 1 on each participant's effect, variance and
   degrees of freedom. ROI inference is voxel FWE by GRF within each mask,
   Bonferroni ×3, and whole-brain inference is GRF cluster FWE. Permutation is
