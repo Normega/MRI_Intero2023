@@ -517,7 +517,7 @@ the template. The PI chose:
 - Epochs are about 20 s at TR = 2 s, with a 4 s window shift.
 - Every participant has 7–14 paced and 7–14 free epochs, a median of 139 and
   141 volumes (minimum 70).
-- In the 23 H3 participants, the medians are 67 aware and 44 unaware volumes
+- In the 23 H7b participants (the v0.5 H3 set), the medians are 67 aware and 44 unaware volumes
   (ranges 34–89 and 27–77).
 - MindLock had about 500 volumes per mode, at a shorter TR.
 
@@ -530,6 +530,112 @@ the template. The PI chose:
 
 **Prior evidence, stated so that it is not overread.** MindLock's SMN–SAL
 test was null (dz 0.17). Its coupling changes were confined to ECN pairs.
+
+---
+
+# v0.6 decisions (2026-11-25, pre-freeze)
+
+## Decision 14 — H3 enters every participant in whom the contrast exists, precision-weighted
+
+**Request.** The PI asked why so few participants qualify for the aware vs
+unaware contrast, and chose to include everyone with a precision weighting.
+
+**Why the v0.5 rule bit.**
+- The design offers at most 12 change trials per participant (6 per run).
+- Participants answer "No Change" on only 28% of them. That is the liberal
+  bias in the behaviour: P(say change) is about 0.70.
+- Of the 24 participants the ≥ 3-trial rule excluded, 23 failed on the unaware
+  cell alone, and 46 of 47 had ≥ 3 aware trials.
+- The rule selected toward less frequent detectors. The included 23 had a
+  median unaware share of aware + unaware trials of 0.36, against 0.19 for
+  those excluded.
+
+**Decision.**
+- **Inclusion:** a participant enters H3 when at least one gate-passing run
+  contains ≥ 1 aware and ≥ 1 unaware trial. This gives N = 45. sub-070 and
+  sub-114 have no unaware trial and cannot enter.
+- **Participant contrast:** the fixed-effects (inverse-variance) combination
+  over the runs that contain both cells. In 28 of 45 participants both runs
+  contribute. Aware trials in a run with no unaware trial are lost to the
+  contrast, so the median aware count used is 4 (pooled 7). Every unaware
+  trial is used.
+- **Group model:** FSL FLAME 1 on each participant's effect, variance and
+  degrees of freedom. ROI inference is voxel FWE by GRF within each mask,
+  Bonferroni ×3, and whole-brain inference is GRF cluster FWE. Permutation is
+  not used for H3, because a precision-weighted model is not exchangeable
+  under sign-flipping. As a robustness check, the ROI means go into a REML
+  random-effects meta-analysis.
+- **S7:** the v0.5 rule and its 23 participants, fitted with FLAME and with
+  the v0.5 OLS model.
+- **H7b keeps the ≥ 3-epoch rule (N = 23).** A correlation over one or two
+  epochs of about 10 volumes is not estimable in a useful sense.
+- The sets are frozen in `Data/h3_sets.csv`
+  (`Scripts/intero2023_h3_sets.R`). The S7 set reproduces the registered
+  v0.5 list exactly.
+
+**Why FLAME rather than a lower threshold.** At ≥ 2 trials per cell, N would
+be 36, and the selection would remain (unaware share 0.33 vs 0.08). Precision
+weighting is the standard treatment of unequal trial counts. It keeps
+low-count participants at low weight instead of discarding them, and removes
+most of the selection. The cost is a second group-level engine, used for H3
+only. The handoff's no-mixing rule is amended for this one model.
+
+**Consequences.**
+- H3 Ns in the physiological subsets: S1 25, S2 28, S2b 39, S4 26, S6 42.
+- The H5 comparison on H3 stays descriptive, although its subsets now match
+  H2's. The confirmatory target was fixed on H2 before this change, and H3's
+  per-participant estimates are less precise.
+- H2's ruled-out inference ("a null H3 beside a positive H2 …") still
+  holds. The Ns now match (45 vs 44), but the comparison is still confounded
+  with per-participant precision.
+
+**What was seen.** Trial counts from the event sheets only. No imaging
+data.
+
+## Decision 15 — Tissue confounds regenerated from the derivatives of record
+
+**Request.** The PI confirmed that CSF should be controlled and that the
+open regeneration item should be adopted.
+
+**Decision.** `csf` and `white_matter` in all first-level confound sheets now
+come from the fMRIPrep derivatives of record
+(`Scripts/intero2023_tissue_confounds.R`). The script was written fresh,
+rather than copying `analysis/verify_regen/`, because those staged sheets
+predate the v0.4 physio fixes.
+- **What changed:** 95 sheets (the registered participants). The 8 sheets of
+  the reinstated participants were already built from the record.
+- **Agreement with the old columns:** median r 0.985 / 0.996, with minima
+  0.887 / 0.936 (`Analysis/tissue_confounds_regen.csv`).
+- **Checks:**
+  - Every rewritten value equals the staged regeneration.
+  - No other column changed in any sheet.
+  - Each sheet's motion and FD columns were matched to the fMRIPrep file
+    before rewriting.
+- **Unchanged:** the manifest, gates and Ns. The nuisance set itself is
+  unchanged: both columns were always in it.
+
+## Decision 16 — Exploratory graded-awareness model
+
+**Request.** The PI asked to explore treating a low-confidence aware response
+as less aware.
+
+**Decision.** Model A-g (exploratory, prereg §10):
+- **Regressor:** one regressor for aware and unaware change epochs together.
+- **Modulator:** g = +confidence on aware trials and −confidence on unaware
+  trials (confidence on a 1–7 scale), mean-centred within run.
+- **Other conditions:** as in Model A.
+- **Test:** the H3 masks, with the H3 group model, N = 45.
+- **Variants:** aware-only confidence, and rank-transformed g.
+
+**Behavioural background.** Confidence is high in both cells. Aware trials
+are mostly rated 5–7, unaware trials mostly 4–6, and few trials are rated
+below 4. The low-confidence end of g is therefore sparse.
+
+**Why it is exploratory.** g is a monotone function of the H3 category plus
+within-category confidence, so it overlaps H3 by construction. It also
+overlaps H2's modulator, which already absorbs the awareness effect. It
+can describe whether confidence grades the awareness contrast. It cannot
+adjudicate H3.
 
 ---
 
@@ -551,12 +657,12 @@ Decisions 10–11 were applied as **v0.4** on 2026-11-25 (prereg header, §3 H5,
 
 Decisions 12–13 were applied as **v0.5** on 2026-11-25 (prereg header, §0, §1, §3 H1, H6 and H7, §7 connectivity model, §8, §10, §12 items 15–16). The OSF draft, `osf_template_answers.md` and `ANALYSIS_HANDOFF.md` were updated in the same pass.
 
+Decisions 14–16 were applied as **v0.6** on 2026-11-25 (prereg header, §3 H2, H3, H5 and H7b, §4, §5, §7, §8, §9 S1–S7, §10, §12 items 17–18). The data changes are in `FirstLevel/*_desc-model_confounds.tsv` (tissue columns) and `Data/h3_sets.csv`. The OSF draft, `osf_template_answers.md` and `ANALYSIS_HANDOFF.md` were updated in the same pass.
+
 ## What is still open
 
-- Optional and manifest-neutral: regenerating the 95 confound sheets so `csf`
-  and `white_matter` come from the derivatives of record rather than the earlier
-  anatomical pass (`VERIFICATION_REPORT.md` §2a). Staged at
-  `analysis/verify_regen/`, not adopted.
+- Nothing in the analysis plan. Three legacy tables in `Data/` hold stale
+  rows and are read by no registered analysis (`Data/STALE_TABLES.md`).
 
 **The freeze gate remains in force.** No first-level model is fitted until the
 OSF registration is frozen (`ANALYSIS_HANDOFF.md` §0).

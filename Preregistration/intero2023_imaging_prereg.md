@@ -1,8 +1,8 @@
 # Preregistration — Neural correlates of respiratory change awareness (MRI_Intero2023)
 
 **Status:** draft for discussion — **pre-freeze**
-**Version:** 0.5
-**Date:** 2026-11-25 (v0.4: 2026-11-25; v0.3: 2026-11-24; v0.2: 2026-08-24; v0.1: 2026-08-13)
+**Version:** 0.6
+**Date:** 2026-11-25 (v0.5: 2026-11-25; v0.4: 2026-11-25; v0.3: 2026-11-24; v0.2: 2026-08-24; v0.1: 2026-08-13)
 **Analysis code:** `Repo/R/`, `Repo/Scripts/` (all preprocessing and behavioural code already written and versioned)
 
 **Changes in v0.2, all made before the registration was frozen and before any model was fitted.** Each is evidenced in `VERIFICATION_REPORT.md` and recorded with its rationale in `Preregistration/methods_decisions.md`:
@@ -37,6 +37,12 @@
 
 15. **§3, §8: the ROI masks are now constructible, and H1 has a fixed inference set.** v0.4 named Harvard–Oxford masks the atlas does not contain: it has a single insula label (no anterior/posterior division) and no dACC/mid-cingulate label (its anterior cingulate division runs from pregenual to mid-cingulate cortex). H1's masks and its Bonferroni count were not stated. The masks are now defined from the CAREN consensus network atlas (Doucet, Lee & Frangou, 2019) by network × AAL-3 region membership, following the procedure used in the lab's MindLock study. The salience network supplies the anterior insula and dACC, and the somatomotor network supplies the posterior insula, central operculum and sensorimotor cortex. H1 is tested in three masks, Bonferroni ×3. A Harvard–Oxford version is registered as an atlas-sensitivity check. The masks were built and checksummed before the freeze (`ROIs/roi_manifest.csv`).
 16. **§3, §7, §8, §10: H7 is added, a confirmatory test of between-network coupling.** H7a is paced vs free (N = 47) and H7b is aware vs unaware (N = 23), each for salience–somatomotor and salience–executive coupling. The method follows the lab's MindLock connectivity analysis, with two changes for this design. Task-evoked responses are removed before correlating, because the epochs here are short. And a global-signal interpretation gate is fixed in advance, because paced breathing moves CO2 and H1 predicts lower regional activity. Feasibility was counted from event timing only. Rationale is in `methods_decisions.md` decision 13.
+
+**Changes in v0.6 (2026-11-25), pre-freeze, before any model was fitted.** Decided on trial counts and confound sheets only; no BOLD intensity was read. Rationale is in `methods_decisions.md` decisions 14–16.
+
+17. **§3, §4, §8, §9: H3 now includes every participant in whom the contrast exists, with a precision-weighted group model.** The v0.5 rule (≥ 3 trials per cell, pooled) excluded 24 of 47 participants, 23 of them on the unaware cell alone. Participants answer "No Change" on only 28% of change trials, and the design offers at most 12. The rule also selected toward less frequent detectors. H3 now enters every participant with at least one aware and one unaware trial in the same gate-passing run: **N = 45**. sub-070 and sub-114 never answered "No Change" on a change trial and cannot enter. The participant's contrast is the fixed-effects combination of the runs that contain both cells. The group model for H3 is FSL FLAME 1 on each participant's effect and variance, so a participant with few trials gets little weight instead of being dropped. The v0.5 rule and its 23 participants are kept as sensitivity analysis **S7** and as the **H7b** sample, which still needs ≥ 3 epochs per cell to estimate a correlation.
+18. **§7: the CSF and white-matter regressors are regenerated from the fMRIPrep derivatives of record.** In the 95 sheets of the registered participants they came from an earlier anatomical pass (median r with the record 0.985 and 0.996; `VERIFICATION_REPORT.md` §2a). Every other column already reproduced bit-exactly. The nuisance set is unchanged, and no gate or N depends on these columns (`Scripts/intero2023_tissue_confounds.R`, `Analysis/tissue_confounds_regen.csv`).
+19. **§10: an exploratory graded-awareness model is added**, in which a low-confidence aware trial counts as less aware than a high-confidence one.
 
 ---
 
@@ -125,14 +131,18 @@ Two competing directions exist for the paced vs free contrast, and this document
 *Inference set (registered v0.5):* three bilateral masks, all drawn from the somatomotor network (§8): **posterior insula, central operculum and sensorimotor cortex**. Small-volume FWE, one-sided paced < free, Bonferroni ×3, plus the two-sided whole-brain test. *Supported if* paced < free survives in at least one of the three masks. *Falsified if* it survives in none. The opposite tail (paced > free) is also tested in the same three masks at the same correction, and a surviving effect there is the failed replication described next. "Deactivation" here means lower activity during paced than during free epochs. The design has no rest baseline (§5), so nothing is claimed about either condition relative to rest.
 *The test is diagnostic either way:* a paced > free effect in these regions would contradict the predecessor study in a larger sample and will be reported as a failed replication, not reframed. This hypothesis was revised from the volitional-control direction on 2026-08-14, on reading the IEAT results and **before any imaging analysis**.
 
-**H3 — Awareness, categorical (AUTHORITATIVE). Model A, N = 23.**
-Change trials answered with the correct direction ("aware") > change trials answered "No Change" ("unaware") in bilateral anterior insula and dACC. ROI-restricted inference only (three masks, Bonferroni ×3, §8).
+**H3 — Awareness, categorical (AUTHORITATIVE). Model A, N = 45 (v0.6; was 23).**
+Change trials answered with the correct direction ("aware") > change trials answered "No Change" ("unaware") in bilateral anterior insula and dACC. ROI-restricted inference only (three masks, Bonferroni ×3, §8). The group model is precision-weighted (FSL FLAME 1, §8), because participants contribute between 1 and 8 unaware trials.
 
 *Why this is the authoritative awareness test (revised 2026-08-24, before any imaging analysis).* H3 is a within-participant comparison of two classes of trial. H2 is a parametric effect that is **confounded with that same comparison**: confidence and awareness covary in the behaviour, with a within-participant point-biserial r(confidence, aware) of median 0.316 (IQR 0.126–0.570, positive in 37 of 43 participants; aware trials rated a median 0.50 points higher). A measure that carries the confound cannot arbitrate it, so the categorical contrast is designated the confirmatory test and the parametric one is designated supportive. The earlier version of this document had the primacy the other way round, on power grounds alone.
 
-*Registered limitation — the H3 sample is selected, and it is selected in a direction that matters.* Under the registered ≥3-trials-per-cell rule, H3 is estimable in 23 of the 47 participants. Those 23 have a pooled median of 4 unaware trials against 2 for the 24 who do not qualify (median unaware share of change trials 0.36 vs 0.19). The H3 sample therefore **over-represents participants who detected changes less often**, and its estimate does not generalise to the full sample. The subsample's detection rate is reported next to every H3 result. The 23 participants are fixed now, before any model is fitted, and listed in `analysis/design_qc_twomodel.csv`:
+*Who enters, and why the weighting (registered v0.6).* A participant enters H3 when at least one gate-passing run contains both an aware and an unaware trial. That is 45 of the 47 participants. The two who cannot enter, **sub-070 and sub-114**, never answered "No Change" on a change trial. Within those 45, unaware counts run from 1 to 8 (median 3). Aware trials in a run with no unaware trial cannot enter that run's contrast, so the aware trials used have a median of 4 (pooled median 7). A participant with one unaware trial has a far noisier contrast than one with eight. The FLAME group model estimates each participant's within-participant variance and the between-participant variance and weights each participant by the inverse of their sum. Weak participants are thus down-weighted rather than excluded.
+
+*What this changes about the sample.* The v0.5 rule (≥ 3 trials per cell, pooled) kept 23 participants. Those 23 said "No Change" more often (median 4 unaware trials against 2; unaware share of their aware + unaware trials 0.36 against 0.19 for the 24 excluded), so the v0.5 sample over-represented less frequent detectors. The v0.6 sample excludes only two participants, both by necessity. The residual selection is that the most frequent detectors contribute the least precise contrasts and so carry the least weight. The weight distribution is reported with the result. The v0.5 set is retained as sensitivity analysis S7 (§9), with its list fixed here:
 
 > sub-057, sub-060, sub-061, sub-064, sub-065, sub-066, sub-067, sub-068, sub-071, sub-073, sub-076, sub-077, sub-078, sub-084, sub-100, sub-102, sub-106, sub-108, sub-112, sub-120, sub-130, sub-132, sub-134
+
+Both sets, with per-participant trial counts and the runs that contribute, are frozen in `Data/h3_sets.csv`.
 
 *Falsified if* no aware > unaware effect survives small-volume correction in either anterior insula ROI or the dACC.
 
@@ -144,8 +154,8 @@ Trial-by-trial confidence on paced trials will correlate positively with activit
 
 *Two inferences are ruled out in advance*, so the N asymmetry between the authoritative and supportive tests cannot be read as a result:
 
-1. **A null H3 alongside a positive H2 is not evidence that confidence rather than awareness drives the effect.** At N = 23 against N = 44 that comparison is confounded with power.
-2. **H3's estimate is not to be generalised beyond its subsample**, per the selection stated above, whichever way it comes out.
+1. **A null H3 alongside a positive H2 is not evidence that confidence rather than awareness drives the effect.** The Ns are now similar (45 and 44), but they are not comparable in precision. H3 contrasts two cells of about 3 and 4 trials, whereas H2's modulator uses every paced trial. The comparison therefore remains confounded with power.
+2. **The S7 estimate (the 23-participant v0.5 subsample) is not to be generalised beyond that subsample**, per the selection stated above, whichever way it comes out.
 
 *Falsified if* no positive confidence effect survives small-volume correction in any of the three masks: either anterior insula ROI or the dACC (Bonferroni ×3, the same inference set as H3). *(v0.3: the dACC was previously omitted from this criterion although it is tested.)*
 
@@ -158,9 +168,9 @@ High-salience (step) > low-salience (ramp) change trials will elicit greater act
 
 **H5 — Physiological correction attenuates but does not abolish awareness effects.**
 Adding physiological regressors (§6) will reduce cluster extent in H1–H4 but the anterior insula and dACC effects will survive.
-*Confirmatory test (revised 2026-11-24; Ns updated 2026-11-25):* the TOST of §12.4 on the **H2** confidence effect, in the H2 participants who have the regressor on every retained run. That is N = 25 for ±PetCO2 and N = 27 for ±RVT, using the Biopac belt only. *Descriptive only:* the same comparison for **H3**. Of H3's 23 participants, 13 have PetCO2 and 15 have Biopac RVT. At those Ns, 80% TOST power requires bounds of dz ≈ 0.87 and 0.81, too loose to support an equivalence claim. The PMU-extended RVT set (S2b, §9) raises H3's RVT coverage to 21 of 23 (dz ≈ 0.67), and is reported as robustness, also descriptively. The corrected and uncorrected H3 estimates will be reported side by side, with their correlation and the per-participant differences, and no conclusion of survival or abolition will be drawn from them.
+*Confirmatory test (revised 2026-11-24; Ns updated 2026-11-25):* the TOST of §12.4 on the **H2** confidence effect, in the H2 participants who have the regressor on every retained run. That is N = 25 for ±PetCO2 and N = 27 for ±RVT, using the Biopac belt only. *Descriptive only:* the same comparison for **H3**. Of H3's 45 participants, 25 have PetCO2 and 28 have Biopac RVT, and 39 have RVT in the PMU-extended set (S2b, §9). *(v0.5, at H3 N = 23: 13, 15 and 21.)* The H3 comparison stays descriptive although its subsets are now as large as H2's. Its per-participant estimates are less precise, and the confirmatory target was fixed on H2 before this change. The corrected and uncorrected H3 estimates will be reported side by side, with their correlation and the per-participant differences, and no conclusion of survival or abolition will be drawn from them.
 This is directional and consequential: PetCO2 is a **mediator** in this design, not a pure nuisance — the pacing manipulation changes end-tidal CO2 by construction. Regressing it out therefore removes part of the effect of interest for H1 in particular. Both corrected and uncorrected models will be reported side by side, and neither is designated "the" result for H1. Precedent: the IEAT found RVT associated with widespread deactivation, and that controlling respiration rate and RVT at both levels attenuated but did not eliminate its interoception deactivation effect.
-*Note on the TOST target (revised 2026-08-24; Ns corrected 2026-11-25):* the equivalence bounds in §12.4 are defined on the H2 confidence effect, because the ±PetCO2 and ±RVT subsamples (H2 N = 25 and 27) do not support the same test on H3's 23 participants (13 and 15 of whom are in those subsamples). The TOST is therefore reported as an equivalence statement about the **supportive** measure, and is not read as an equivalence statement about H3.
+*Note on the TOST target (revised 2026-08-24; Ns corrected 2026-11-25):* the equivalence bounds in §12.4 are defined on the H2 confidence effect, because the ±PetCO2 and ±RVT subsamples (H2 N = 25 and 27) did not support the same test on v0.5's 23 H3 participants (13 and 15 of whom were in those subsamples). From v0.6 the H3 subsets are 25 and 28; the target stays on H2 (see above). The TOST is therefore reported as an equivalence statement about the **supportive** measure, and is not read as an equivalence statement about H3.
 
 **H6 — MAIA and the ACC (conceptual extension of the IEAT; two-sided). Model A, N = 46.**
 *What is carried over, and what is not.* In the IEAT, higher MAIA predicted reduced ACC deactivation on the **Active Interoception vs Active Exteroception** contrast. This task has no exteroceptive condition, so that contrast cannot be reproduced. The contrast available here is paced vs free, the analogue of the IEAT's Active Matching vs Active Interoception, and the IEAT did not relate MAIA to it. H6 therefore tests whether the IEAT's individual-differences region, defined in advance, is MAIA-sensitive on this study's control contrast. It is **not a direct replication**, and was labelled as one in v0.2 in error (corrected 2026-11-24, before any model was fitted).
@@ -185,7 +195,7 @@ Networks are the whole CAREN salience (SAL), somatomotor (SMN) and executive (EC
 
 **H7a — attention context (paced vs free). N = 47.** *Prediction:* coupling is greater during paced than during free epochs, for SAL–SMN and SAL–ECN.
 
-**H7b — awareness context (aware vs unaware). N = 23, the H3 participants.** *Prediction:* coupling is greater on aware than on unaware change epochs, for the same two pairs.
+**H7b — awareness context (aware vs unaware). N = 23, the participants with ≥ 3 epochs in each cell (the S7 set, §3 H3).** A correlation needs several epochs per cell, so H7b keeps the v0.5 rule when H3 relaxes it (v0.6). *Prediction:* coupling is greater on aware than on unaware change epochs, for the same two pairs.
 
 *Test:* a two-sided paired t on the per-participant difference in Fisher-z coupling, Holm-corrected across the two pairs within each part. *Supported if* at least one pair shows the predicted direction and survives Holm. *Falsified if* neither does. An effect that survives Holm in the opposite direction is reported as contrary to the prediction, not reframed.
 
@@ -247,22 +257,25 @@ Exclusions are already applied and are not contingent on imaging results.
 
 **Run count is not an inclusion criterion.** A participant enters the analysable sample when the registered criteria — usable event timing, trigger-locked imaging, and the motion gate — are met by **at least one** breathing run, irrespective of how many runs they contribute. Where a participant contributes one run, the fixed-effects step of §8 is that run. This is stated as a general rule because it cannot otherwise be applied consistently: two participants of the original registered 43 — **sub-074 and sub-114** — already contribute exactly one breathing run, so excluding sub-082 and sub-104 for contributing one run each would apply a standard to those two participants alone rather than a registered criterion. Sensitivity analysis **S6** (§9) tests every hypothesis on two-run participants only, which removes all four together.
 
-**Estimability rule.** A contrast counts for a participant when every cell it involves has **≥ 3 trials pooled across that participant's gate-passing runs**, and the contrast is estimable in the corresponding design (§7). This is the rule used throughout; it is stricter than matrix rank, and it is what produces H3's N.
+**Estimability rule.** A contrast counts for a participant when every cell it involves has **≥ 3 trials pooled across that participant's gate-passing runs**, and the contrast is estimable in the corresponding design (§7). This rule is stricter than matrix rank. It applies to every contrast except H3.
+
+**H3 exception (registered v0.6).** For C2, a participant enters when **at least one gate-passing run contains ≥ 1 aware and ≥ 1 unaware trial**. The participant's contrast is the fixed-effects combination over those runs only. The H3 group model is precision-weighted (§8), so the low-count participants this admits are down-weighted rather than excluded. This gives N = 45. In 28 of the 45, both runs contribute. The v0.5 rule is kept as S7 (§9) and is the rule for H7b.
 
 **Final registered Ns (post-gate, post-correction, under the §7 models):**
 
 | Contrast | model | N |
 |---|---|---|
 | C1 paced vs free (H1) | A | **47** |
-| C2 aware vs unaware (H3, authoritative) | A | **23** |
+| C2 aware vs unaware (H3, authoritative; precision-weighted) | A | **45** |
+| C2 under the v0.5 ≥ 3-trial rule (S7; also the H7b sample) | A | 23 |
 | C3 confidence parametric (H2, supportive) | B | **44** |
 | C5 salience high vs low (H4) | C | **43** |
 | H6 MAIA moderation | A | **46** |
 | C4 wrong-direction vs aware | — | 13 — **not analysed as a planned contrast** |
-| S1 ±PetCO2 (basis on all retained runs) | — | **25** (H2 25, H3 13) — TOST on H2, dz = ±0.61 (80%) |
-| S2 ±RVT, Biopac belt (all retained runs) | — | **30** (H2 27, H3 15) — TOST on H2, dz = ±0.59 (80%) |
-| S2b ±RVT, Biopac or PMU fallback (robustness) | — | **41** (H2 38, H3 21) |
-| S4 verified pacer adherence | — | **26** (H2 25, H3 14) |
+| S1 ±PetCO2 (basis on all retained runs) | — | **25** (H2 25, H3 25) — TOST on H2, dz = ±0.61 (80%) |
+| S2 ±RVT, Biopac belt (all retained runs) | — | **30** (H2 27, H3 28) — TOST on H2, dz = ±0.59 (80%) |
+| S2b ±RVT, Biopac or PMU fallback (robustness) | — | **41** (H2 38, H3 39) |
+| S4 verified pacer adherence | — | **26** (H2 25, H3 26) |
 
 Three participants — **sub-066, sub-070 and sub-114** — give the same confidence rating on every retained paced trial (all 14 rated 6, all 14 rated 7, and all 7 rated 7 respectively). A constant modulator is not a regressor, so they are **excluded from H2 only** and retained for every other hypothesis. This is a property of the behaviour, not of the sample correction, and the rule is fixed now, before any model is fitted.
 
@@ -285,7 +298,7 @@ Per breathing run, the following events are modelled (already extracted and vali
 - **Rating window**, modelled explicitly rather than left in the implicit baseline
 - **Valence/sub-rating events** as nuisance
 
-Trial counts per participant (median, corrected 47-participant sample): 7 aware-correct, 3 unaware, 1 wrong-direction, 2 No Change, 14 free. v0.2 quoted 2 unaware, a figure carried over from the pre-correction sample. The design is short — 14 paced trials per participant — and that shortness is the reason the awareness contrast is estimable in only 23 participants (§3, §4).
+Trial counts per participant (median, corrected 47-participant sample): 7 aware-correct, 3 unaware, 1 wrong-direction, 2 No Change, 14 free. v0.2 quoted 2 unaware, a figure carried over from the pre-correction sample. The design is short — 14 paced trials per participant — and that shortness is why the awareness contrast rests on few trials per participant. Under the v0.5 ≥ 3-trial rule it was estimable in only 23 participants. v0.6 admits 45 and weights them by precision (§3, §4, §8).
 
 **Wrong-direction trials** (median 1 per participant) are modelled as a **separate regressor of no interest** so they do not contaminate the aware or unaware regressors. They are not contrasted.
 
@@ -380,7 +393,7 @@ The paced **change** epochs are split into high-salience (step) and low-salience
 
 - 6 rigid-body motion parameters + temporal derivatives
 - Framewise displacement
-- CSF and white matter mean signals
+- CSF and white matter mean signals, taken from the fMRIPrep derivatives of record (regenerated v0.6; see change log item 18)
 - Cosine drift terms (fMRIPrep, 128 s high-pass)
 - Spike regressors for volumes with FD > 0.5 mm
 
@@ -405,7 +418,7 @@ The global signal is **not** included as a nuisance regressor in any model.
 3. **Windows.** An epoch contributes the volumes acquired in [onset + 4 s, onset + duration + 4 s). Volumes with FD > 0.5 mm are excluded. Each network's segment is demeaned within each epoch, and the segments are concatenated across epochs and runs within a condition.
 4. **Coupling.** Pearson r for each pair, condition and participant, then Fisher z.
    - **H7a:** paced (all four paced conditions) vs free.
-   - **H7b:** aware vs unaware, in participants with ≥ 3 epochs in each cell (the 23 H3 participants).
+   - **H7b:** aware vs unaware, in participants with ≥ 3 epochs in each cell (the 23 participants of the S7 set).
 5. **Group test.** A paired t on the z difference. With two observations per participant this is equivalent to MindLock's `z ~ condition + (1 | participant)`.
 6. **Non-neural checks, reported with every H7 result.**
    - (i) **Global signal (the interpretation gate, §3):** the fMRIPrep `global_signal` is put through the identical filter and regression and partialled out of each pair correlation within the concatenated windows. The effect is then re-tested.
@@ -418,13 +431,22 @@ The global signal is **not** included as a nuisance regressor in any model.
    - **H7b, 4 specifications:** summary × shift. A FIR basis by awareness cell would not be estimable.
 8. **Specificity (exploratory, §10).** All 10 pairs among the five CAREN networks are tested for both contrasts, FDR-corrected.
 
-Feasibility was counted from the event timing only, before the freeze. Every participant has 7–14 paced and 7–14 free epochs, a median of about 140 volumes per condition (minimum 70). In the H3 set, the medians are 67 aware volumes (range 34–89) and 44 unaware volumes (range 27–77).
+Feasibility was counted from the event timing only, before the freeze. Every participant has 7–14 paced and 7–14 free epochs, a median of about 140 volumes per condition (minimum 70). In the H7b set, the medians are 67 aware volumes (range 34–89) and 44 unaware volumes (range 27–77).
 
 ---
 
 ## 8. Group model, ROIs, and inference
 
-**Group model:** one-sample t-test on first-level contrast images, participant as the unit. Where a participant contributes two runs, run-level contrasts are combined at a fixed-effects intermediate level before entering the group model.
+**Group model:** one-sample t-test on first-level contrast images, participant as the unit. Where a participant contributes two runs, run-level contrasts are combined at a fixed-effects intermediate level before entering the group model. H3 is the one exception, described next.
+
+**H3 group model (registered v0.6).** H3 uses a mixed-effects model that weights participants by precision. The first level is unchanged (nilearn, Model A), and the pipeline runs as follows:
+1. For each run that contains both cells, the aware − unaware effect and its variance are computed.
+2. Those runs are combined by fixed effects (inverse-variance), giving each participant an effect image, a variance image and residual degrees of freedom.
+3. These enter **FSL FLAME 1** (`flameo --runmode=flame1`) as a one-group mean within the group brain mask. FLAME estimates the between-participant variance and weights each participant by 1 / (own variance + between-participant variance).
+4. **ROI inference:** voxel-level FWE p < .05 within each mask by Gaussian random field theory, one-sided, Bonferroni ×3. The smoothness is estimated from the FLAME residuals (`smoothest`), and the resel count is each mask's.
+5. **Whole-brain:** cluster-forming z > 3.09, cluster FWE p < .05 by GRF, two-sided.
+
+Permutation inference is not used for H3, because a precision-weighted model is not exchangeable under sign-flipping. The participant weights (as a share of the total) are reported with the result. *Robustness, reported but not inferential:* each participant's mean effect and variance within each H3 mask are entered into a random-effects meta-analysis (REML), so the ROI result can be checked without the GRF assumptions. S6 and S7 for H3 use the same FLAME model; S7 is additionally reported under the OLS model of v0.5.
 
 **Why fixed-effects combination (decided 2026-08-14, before any imaging analysis):**
 
@@ -476,7 +498,7 @@ The H1–H4 ROI tests are repeated in these masks. Disagreement with the CAREN r
 **Thresholds:**
 
 - **Whole brain:** cluster-forming p < 0.001 uncorrected, cluster-level FWE p < 0.05
-- **ROI:** small-volume FWE p < 0.05 within each ROI, Bonferroni-corrected across the number of ROIs tested for that hypothesis
+- **ROI:** small-volume FWE p < 0.05 within each ROI, Bonferroni-corrected across the number of ROIs tested for that hypothesis. For H3, voxel FWE comes from GRF on the FLAME result (see above).
 - **Sidedness:** H1 is one-sided (paced < free) in its ROIs. H2 is one-sided (positive). H3 and H4 are one-sided in the stated direction. H6 is **two-sided**. H7a and H7b are two-sided paired tests on Fisher z, Holm-corrected across their two network pairs, with the predicted direction required for support (§3). All whole-brain tests are two-sided.
 - No uncorrected results will be reported as findings; any uncorrected map shown will be labelled descriptive
 
@@ -485,15 +507,16 @@ The H1–H4 ROI tests are repeated in these masks. Disagreement with the CAREN r
 | N | hypothesis | α = 0.05 (ROI) | α = 0.001 (cluster-forming) |
 |---|---|---|---|
 | 47 | H1 (Model A) | 0.42 | 0.64 |
+| 45 | **H3 (Model A; equal-weight approximation)** | **0.43** | **0.66** |
 | 44 | H2 (Model B) | 0.43 | 0.67 |
 | 43 | H4 (Model C) | 0.44 | 0.67 |
 | 41 | ±RVT, PMU-extended (S2b) | 0.45 | 0.69 |
 | 30 | ±RVT, Biopac (S2) | 0.53 | 0.83 |
 | 26 | adherence (S4) | 0.57 | 0.91 |
 | 25 | ±PetCO2 (S1) | 0.58 | 0.93 |
-| 23 | **H3 (Model A)** | **0.61** | **0.98** |
+| 23 | S7 (v0.5 H3 set) and H7b | 0.61 | 0.98 |
 
-**H3 at N = 23 requires a large effect (d ≈ 1.0) at whole-brain thresholds, which is why it is ROI-restricted.** It is nonetheless the *authoritative* awareness test (§3): being the better-identified contrast and being the better-powered one are different properties, and this document deliberately assigns primacy on identification rather than on power. The consequence is stated in advance in §3 and repeated here — **a null H3 is not to be reinterpreted afterwards, and a null H3 beside a positive H2 is not evidence that confidence rather than awareness drives the effect**, because that comparison (N = 23 vs 44) is confounded with power.
+**H3's row assumes equal per-participant precision. Its effective power is lower, because participants with one or two unaware trials contribute little weight.** No closed-form figure is registered for that loss. v0.5's H3 at N = 23 needed d ≈ 1.0 at whole-brain thresholds, and H3 remains ROI-restricted. It is nonetheless the *authoritative* awareness test (§3): being the better-identified contrast and being the better-powered one are different properties, and this document deliberately assigns primacy on identification rather than on power. The consequence is stated in advance in §3 and repeated here — **a null H3 is not to be reinterpreted afterwards, and a null H3 beside a positive H2 is not evidence that confidence rather than awareness drives the effect**, because that comparison is confounded with per-participant precision (§3).
 
 ---
 
@@ -502,25 +525,27 @@ The H1–H4 ROI tests are repeated in these masks. Disagreement with the CAREN r
 Each is fully specified now and will be reported whatever the outcome. Where a sensitivity analysis names a hypothesis, it is refitted in **that hypothesis's own model** (§7) — H1/H3/H6 in Model A, H2 in Model B, H4 in Model C — with the physiological or subsetting change applied identically to all of them. S6 is ordered last because it was added in v0.2; the numbering of S1–S5 is unchanged so that references to them in the v0.1 record still resolve.
 
 **S1 — ±PetCO2 (the primary methodological question, N = 25).**
-Fit H1–H4 with and without the PetCO2 basis in the 25 participants who have it on all retained runs (H1 25, H2 25, H3 13, H4 22, H6 24; the H3 comparison is descriptive, §3 H5). Compare (a) peak z and cluster extent in each ROI, (b) whether each hypothesis's conclusion changes. Because this is a within-participant model comparison, it is better powered than the between-group comparison originally considered.
+Fit H1–H4 with and without the PetCO2 basis in the 25 participants who have it on all retained runs (H1 25, H2 25, H3 25, H4 22, H6 24; the H3 comparison is descriptive, §3 H5). Compare (a) peak z and cluster extent in each ROI, (b) whether each hypothesis's conclusion changes. Because this is a within-participant model comparison, it is better powered than the between-group comparison originally considered.
 
-**S2 — ±RVT, Biopac belt (N = 30).** As S1, with the Biopac RVT regressor (H1 30, H2 27, H3 15 descriptive, H4 26, H6 29). This is the confirmatory RVT comparison, and the H5 TOST uses it.
+**S2 — ±RVT, Biopac belt (N = 30).** As S1, with the Biopac RVT regressor (H1 30, H2 27, H3 28 descriptive, H4 26, H6 29). This is the confirmatory RVT comparison, and the H5 TOST uses it.
 
-**S2b — ±RVT with the PMU fallback (robustness; N = 41).** As S2, but runs without a usable Biopac belt take RVT from the Siemens PMU cushion under the rule in §6 (H1 41, H2 38, H3 21, H4 37, H6 40). The TOST is also computed here (H2 N = 38, dz = ±0.49) and reported as robustness. If S2 and S2b disagree, the disagreement is reported. S2 remains the registered result.
+**S2b — ±RVT with the PMU fallback (robustness; N = 41).** As S2, but runs without a usable Biopac belt take RVT from the Siemens PMU cushion under the rule in §6 (H1 41, H2 38, H3 39, H4 37, H6 40). The TOST is also computed here (H2 N = 38, dz = ±0.49) and reported as robustness. If S2 and S2b disagree, the disagreement is reported. S2 remains the registered result.
 
 **S3 — CO2-available vs CO2-unavailable participants.** Test whether the 25 participants with usable capnography differ from the remainder on the uncorrected H2 contrast (H2 rather than H3, because the subgroup comparison needs the larger sample to be worth running at all). **Registered caveat:** CO2 availability is near-collinear with cohort and protocol version (the capnograph outage was an unbroken date block from 2023-10-12 to 2024-01-18), so this comparison **cannot isolate CO2** and will be reported as a cohort check only, not as evidence about physiological correction.
 
-**S4 — Adherence conditioning (N = 26; H2 25, H3 14).** Repeat **H3 and H2** restricted to participants with verified pacer adherence on at least one retained run. Adherence is a run-level property (per-epoch classification is underpowered at AUC 0.66–0.69), and this is registered as robustness, not as the primary analysis.
+**S4 — Adherence conditioning (N = 26; H2 25, H3 26).** Repeat **H3 and H2** restricted to participants with verified pacer adherence on at least one retained run. Adherence is a run-level property (per-epoch classification is underpowered at AUC 0.66–0.69), and this is registered as robustness, not as the primary analysis.
 
 **S6 — Two-run participants only (N = 43).**
 Every hypothesis is additionally tested on the subset contributing **two** breathing runs. The subset is defined by run count alone, so it removes **sub-074, sub-114, sub-082 and sub-104** together — two participants from the original registered sample and two of the reinstated ones — and cannot be used to remove the reinstated participants selectively.
 
 | | participants | H1 | H3 | H2 | H4 | H6 |
 |---|---|---|---|---|---|---|
-| **Primary** (corrected sample) | 47 | 47 | 23 | 44 | 43 | 46 |
-| **S6** (two-run participants only) | 43 | 43 | 23 | 41 | 43 | 42 |
+| **Primary** (corrected sample) | 47 | 47 | 45 | 44 | 43 | 46 |
+| **S6** (two-run participants only) | 43 | 43 | 42 | 41 | 43 | 42 |
 
 *Interpretation fixed in advance:* agreement between the primary and S6 results is reported as such; divergence is reported as a limitation of the single-run participants' precision and **not** used to select which analysis to present.
+
+**S7 — The v0.5 H3 rule (N = 23; registered v0.6).** H3 is repeated in the 23 participants with ≥ 3 aware and ≥ 3 unaware trials pooled across runs (list in §3). It is fitted twice: with the FLAME model of §8 and with the OLS one-sample model of v0.5. sub-078's 7 aware trials include 5 in a run with no unaware trial, so its contrast uses 2 aware and 4 unaware. *Interpretation fixed in advance:* agreement with the primary H3 is reported as such. Divergence is reported as a dependence on the inclusion rule and is not used to select which result to present. S7 carries the v0.5 selection toward less frequent detectors (§3), so it is not a cleaner test, only a stricter one.
 
 **S5 — Protocol version.** v1 (n = 221 trials) and v2 (n = 1218 trials) differ in rating structure. Include protocol version as a group-level covariate; report whether the **H3 and H2** conclusions change.
 
@@ -534,6 +559,7 @@ Every hypothesis is additionally tested on the subset contributing **two** breat
 - Any relationship between neural measures and questionnaire/screener variables beyond the registered MAIA test (H6); MAIA subscale dissociations (Attention Regulation vs Noticing, per the IEAT) are exploratory
 - Direction-specific effects (Faster vs Slower), given the behavioural asymmetry (0.614 vs 0.511)
 - ACC-seeded PPI connectivity with the dorsal attention network during paced vs free breathing (conceptual extension of the IEAT's H4)
+- **Graded awareness (Model A-g; added v0.6).** A variant of Model A in which aware and unaware change epochs form one regressor. Its parametric modulator is g = +confidence on aware trials and −confidence on unaware trials (confidence 1–7), mean-centred within run. A low-confidence aware trial therefore sits close to the low-confidence unaware trials, and a confident aware trial sits furthest from them. Wrong-direction, No Change, free, rating and sub-rating are modelled as in Model A. It is tested in the H3 masks with the H3 group model (N = 45; g varies in every run that contains both cells). Unlike Model B's confidence modulator, g is anchored to the categorical outcome, so it asks whether confidence grades the awareness contrast rather than standing in for it. It cannot rescue or overturn H3. Two variants are also reported: confidence on aware trials only, and rank-transformed g.
 - Specificity of H7: all 10 CAREN network pairs for paced vs free and aware vs unaware, FDR-corrected (§7, connectivity step 8)
 - Any connectivity analysis other than H7, including dynamic or seed-based methods
 
@@ -567,3 +593,5 @@ Any departure from this document will be recorded in `Repo/Preregistration/devia
 14. ~~**Physiological coverage.**~~ **Resolved 2026-11-25:** three pipeline bugs are fixed (§6). PMU fallback RVT is registered for robustness analysis S2b only. The confirmatory RVT comparison uses the Biopac belt. See `methods_decisions.md` decisions 10–11.
 15. ~~**ROI masks and H1's inference set.**~~ **Resolved 2026-11-25:** CAREN network × region masks (§8), built and checksummed before the freeze. H1 uses posterior insula, central operculum and sensorimotor cortex (×3). Harvard–Oxford is the atlas-sensitivity set. See `methods_decisions.md` decision 12.
 16. ~~**Between-network coupling.**~~ **Resolved 2026-11-25:** H7a (paced vs free) and H7b (aware vs unaware) are confirmatory, for SAL–SMN and SAL–ECN, Holm ×2 within each, with a global-signal interpretation gate (§3, §7). See `methods_decisions.md` decision 13.
+17. ~~**H3 inclusion.**~~ **Resolved 2026-11-25:** every participant with both cells in at least one run (N = 45), precision-weighted with FSL FLAME 1. The v0.5 ≥ 3-trial rule is sensitivity analysis S7 and the H7b rule. See `methods_decisions.md` decision 14.
+18. ~~**Tissue confounds.**~~ **Resolved 2026-11-25:** `csf` and `white_matter` are regenerated from the derivatives of record. See `methods_decisions.md` decision 15.

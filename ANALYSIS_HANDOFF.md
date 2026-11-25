@@ -23,7 +23,7 @@ no exceptions.
 
 ## 1. Context in five sentences
 
-Participants (N = 47 analysable, 90 breathing runs; prereg v0.5) breathed
+Participants (N = 47 analysable, 90 breathing runs; prereg v0.6) breathed
 with a visual pacer whose rate increased, decreased, or held steady (step vs
 ramp salience), interleaved with free breathing, and reported the change
 direction with confidence and arousal ratings. Behaviour and physiology are
@@ -55,7 +55,8 @@ have never been touched beyond fMRIPrep; keep it that way until step 3.
   rating / subrating`), raw confidence and arousal on breathing epochs.
   Onset 0 = first scanner trigger = volume 1.
 - `FirstLevel/<sub>_<ent>_desc-model_confounds.tsv` — one row per volume,
-  row-aligned with the fMRIPrep confounds: motion 6+6, FD, CSF, WM, cosine*,
+  row-aligned with the fMRIPrep confounds: motion 6+6, FD, CSF, WM (CSF/WM
+  regenerated from the derivatives of record, v0.6), cosine*,
   spike_NN (FD > 0.5 mm), and physio (`rvt_rrf_z`, `rvt_z`, `resp_rate_c`,
   `petco2_hrf_lag00/10/20/30`), demeaned, NA→0. Conventions: `FirstLevel/README.md`.
 - **The run list is `FirstLevel/firstlevel_manifest.csv` +
@@ -63,8 +64,10 @@ have never been touched beyond fMRIPrep; keep it that way until step 3.
   FALSE`, excluding sub-056 → **90 runs, 47 participants** (prereg §4). The
   candidates file carries the four reinstated participants (sub-065, -076,
   -082, -104). Do not re-derive inclusion from anything else.
-- Per-hypothesis participant sets: `analysis/design_qc_twomodel.csv`
-  (H3's 23 are also listed in prereg §3).
+- Per-hypothesis participant sets: `analysis/design_qc_twomodel.csv`.
+  **H3 is superseded there (v0.6):** use `Data/h3_sets.csv`. `in_H3` is the
+  primary H3 set (45), `h3_runs` the runs that enter its contrast, and
+  `in_S7` the ≥ 3-trial set (23), which is also the H7b sample.
 - `Data/maia_scores.csv` — `maia_ieat_total` (0–5 metric) for H6.
 - `Data/prereg_sample.csv`, `Data/qc_ledger.csv` — reference only.
 
@@ -136,8 +139,27 @@ sub-114 are out of H2 entirely.
 | `salience_high_gt_low` (C5) | C | high − low salience change trials (H4) |
 
 **Group level:** one-sample t on participant contrast images. Ns: H1 47,
-H2 44, H3 23, H4 43 (≥ 3 trials per cell pooled across runs; sets in
-`analysis/design_qc_twomodel.csv`). H6 (N = 46; sub-065 has no MAIA): add
+H2 44, H4 43 (≥ 3 trials per cell pooled across runs; sets in
+`analysis/design_qc_twomodel.csv`).
+
+**H3 group level (v0.6), the one exception:**
+1. For each participant, compute `aware_gt_unaware` effect and variance
+   (nilearn `output_type="all"`) in each run listed in `h3_runs`. Skip runs
+   that lack either cell.
+2. Combine those runs by fixed effects (inverse-variance) into a
+   participant cope, varcope and residual dof.
+3. Run **FSL FLAME 1** on the 45 participants: `flameo --runmode=flame1`,
+   one-group design, with the group brain mask (`ROIs/group_brain_mask.nii`).
+4. ROI: voxel FWE p < .05 by GRF within each of `caren_AInsL`,
+   `caren_AInsR` and `caren_dACC`, one-sided. Use `smoothest` on the FLAME
+   residuals with the mask's resels, then Bonferroni ×3.
+5. Whole brain: GRF cluster FWE at z > 3.09, two-sided.
+6. Report each participant's weight share.
+7. Robustness: a REML random-effects meta-analysis of per-ROI means.
+8. S7: the same model on `in_S7` (23), plus the v0.5 OLS one-sample model.
+9. Exploratory Model A-g (prereg §10): aware and unaware epochs as one
+   regressor, with modulator g = +confidence (aware) / −confidence
+   (unaware), centred within run. Same FLAME pipeline and masks. H6 (N = 46; sub-065 has no MAIA): add
 `maia_ieat_total` (demeaned) as a covariate on `paced_gt_free`; the MAIA
 effect is the test, **two-sided** (conceptual extension; prereg §3).
 
@@ -194,7 +216,7 @@ cross-participant ICC of ROI means. Descriptive only. H3 excluded from it.
   - Coupling is Pearson r, then Fisher z.
 - **Contrasts:**
   - H7a: paced (all four paced conditions) vs free, N = 47.
-  - H7b: aware vs unaware, N = 23, the H3 list.
+  - H7b: aware vs unaware, N = 23, `in_S7` in `Data/h3_sets.csv`.
   - Pairs SAL–SMN and SAL–ECN; two-sided paired t; Holm ×2 within each part.
 - **Interpretation gate:** the same test with fMRIPrep `global_signal`
   (processed identically) partialled out of each pair correlation. A
@@ -217,7 +239,9 @@ cross-participant ICC of ROI means. Descriptive only. H3 excluded from it.
   the sheet columns passed as the design's confounds;
   `non_parametric_inference` for group cluster FWE). SPM12 on MATLAB is
   equally valid if present — the IEAT used SPM12 — but do not mix engines
-  across hypotheses.
+  across hypotheses. **Registered exception (v0.6):** H3's group level (and
+  S7, Model A-g) uses FSL FLAME 1 on nilearn first-level outputs. Every
+  first level stays in nilearn.
 - Events: build per-condition onsets from the `_desc-model_events.tsv`
   directly; `salience` and `change_direction` columns are present for the H4
   split. Modulator columns are RAW — centre them at design time.
