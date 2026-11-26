@@ -88,3 +88,11 @@ On sub-082 run-1 the saved maps now equal `FirstLevelModel`'s to within
 2e-7 / 5e-7. The 0.019 residual quoted above was this quantisation.
 The permutation ROI tests pass `threshold=0.002` only so that nilearn returns
 the t map alongside the voxel max-t FWE map.
+
+**Speed fix (2026-11-26, 14:55).** The ROI permutation tests no longer pass
+`threshold=0.002`. That argument made nilearn rebuild a whole-brain cluster map
+on every permutation, which costs about 7 minutes per analysis. The observed t
+map is now computed directly by OLS (`ols_t`). On the H1 posterior insula test
+it equals nilearn's t map to within 2e-6. The FWE p-values come from the same
+call with the same seed, so analyses run before and after the change are
+identical.

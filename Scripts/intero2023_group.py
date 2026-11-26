@@ -131,9 +131,9 @@ def nilearn_tests(analysis, subs, variant, label, maia):
             rmask = nib.load(ROI(roi)).get_fdata() > 0
             res = non_parametric_inference(use, design_matrix=dm, second_level_contrast=contrast,
                                            mask=ROI(roi), n_perm=N_PERM, two_sided_test=two,
-                                           threshold=0.002, random_state=SEED, n_jobs=N_JOBS)
-            # (threshold only makes nilearn return the t map too; the ROI test is the voxel max-t FWE)
-            tmap, lp = res["t"], res["logp_max_t"]
+                                           random_state=SEED, n_jobs=N_JOBS)
+            lp = res                                   # voxel max-t FWE map (-log10 p)
+            tmap = ols_t(use, dm, contrast, ROI(roi))  # the observed t map, computed directly
             lpv = lp.get_fdata()[rmask]
             pmin = float(10 ** -np.nanmax(lpv))
             if two:   # peak of |t|, reported with its sign
@@ -163,6 +163,16 @@ def nilearn_tests(analysis, subs, variant, label, maia):
         g.save_float32(wb[k], os.path.join(od, f"wholebrain_{k}.nii.gz"))
     clusters = cluster_table(wb["t"], wb["logp_max_size"], len(subs) - dm.shape[1])
     return pd.DataFrame(rows), clusters
+
+
+def ols_t(imgs, dm, contrast, mask):
+    """Observed OLS t map for one design column (the statistic permuted_ols permutes)."""
+    mk = NiftiMasker(mask_img=mask).fit()
+    Y = np.vstack([mk.transform(i) for i in imgs]); X = dm.values.astype(float)
+    c = np.array([1.0 if col == contrast else 0.0 for col in dm.columns])
+    XtXi = np.linalg.pinv(X.T @ X); B = XtXi @ X.T @ Y; R = Y - X @ B
+    s2 = (R ** 2).sum(0) / (X.shape[0] - np.linalg.matrix_rank(X))
+    return mk.inverse_transform(np.ravel((c @ B) / np.sqrt(s2 * (c @ XtXi @ c))))   # 3-D
 
 
 def protocol_of(subs):
@@ -299,9 +309,9 @@ def ols_s7(subs, variant, label):
     for roi in SETS["H3"]:
         res = non_parametric_inference(imgs, design_matrix=dm, second_level_contrast="intercept",
                                        mask=ROI(roi), n_perm=N_PERM, two_sided_test=False,
-                                       threshold=0.002, random_state=SEED, n_jobs=N_JOBS)
-        lp = res["logp_max_t"].get_fdata()[nib.load(ROI(roi)).get_fdata() > 0]
-        coord, tpk = peak_mni(res["t"], ROI(roi), +1)
+                                       random_state=SEED, n_jobs=N_JOBS)
+        lp = res.get_fdata()[nib.load(ROI(roi)).get_fdata() > 0]
+        coord, tpk = peak_mni(ols_t(imgs, dm, "intercept", ROI(roi)), ROI(roi), +1)
         pmin = float(10 ** -np.nanmax(lp))
         rows.append(dict(analysis="S7ols", label=label, variant=variant, roi=roi, N=len(subs),
                          peak_t=round(tpk, 3), peak_mni=coord, p_fwe_min=pmin, p_fwe_bonf=min(1, 3 * pmin)))
