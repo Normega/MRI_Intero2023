@@ -1,0 +1,3 @@
+analysis,N,tail,min_p_fwe_tfce,t_at_min,mni,n_vox_p_lt_05
+EXPLORATORY E4,45,aware>unaware,0.5560887822435513,4.296,"[-6.5, -70.5, -18.5]",0
+EXPLORATORY E4,45,aware<unaware,0.9602079584083183,-4.786,"[-8.5, -34.5, -22.5]",0
