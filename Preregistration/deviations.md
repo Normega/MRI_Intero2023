@@ -112,4 +112,4 @@ what changed, why, and whether the affected result had been seen.
 
 | Date | Change | Why | Result seen? |
 |---|---|---|---|
-| | | | |
+| 2026-11-26 | **Added an EXPLORATORY two-sided analysis of aware vs unaware (E1).** It uses the registered H3 FLAME fit (base model, N = 45), with no refit and no change to the model, masks or sample. Both tails are tested in the three H3 masks (left and right anterior insula, dACC), with GRF voxel FWE per tail as in the registered test and Bonferroni ×6 (3 masks × 2 tails). The REML meta-analysis is reported for both directions. The registered whole-brain test is already two-sided and is reported as it stands. Script: `Scripts/intero2023_explore_h3.py`. | Requested by the PI after the registered one-sided H3 test was null. Aware < unaware was not registered. | **Yes.** The registered H3 result (aware > unaware, no mask surviving) had been seen. This analysis is exploratory and cannot support or overturn H3. |
