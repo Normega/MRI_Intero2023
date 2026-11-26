@@ -11,14 +11,17 @@ travel with it in this repository:
 
 ## 0. Gate: do not fit anything yet
 
-The registration must be **frozen on OSF before the first GLM is fitted**.
-Ask the user to confirm the OSF registration is frozen before you run any
-model. Design-matrix construction and input verification (steps 1–2) are fine
-before the freeze; parameter estimation is not.
+The OSF registration of record is https://osf.io/swc7p, registered
+2026-08-20 from plan v0.1. Plan v0.2–v0.8 postdate it, and their changes are
+listed as deviations D1–D26 in `Preregistration/deviations.md`. They are filed
+as an OSF update to swc7p. **No GLM is fitted until the user confirms that the
+swc7p update is approved.** Design-matrix construction and input verification
+(steps 1–2) are fine before that; parameter estimation is not. (Where this
+document says "freeze", read "approval of the swc7p update".)
 
-After the freeze, any departure from the plan goes in
-`Preregistration/deviations.md`: date, what changed, why, and whether the
-affected result had been seen. Post-hoc analyses are labelled exploratory,
+After the update, any departure from the plan goes in the "After the update"
+table of `Preregistration/deviations.md`: date, what changed, why, and whether
+the affected result had been seen. Post-hoc analyses are labelled exploratory,
 no exceptions.
 
 ## 1. Context in five sentences

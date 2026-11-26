@@ -17,7 +17,7 @@ see `DEIDENT_REVIEW.md` for the boundary and its rationale.
 | `Data/` | Derived, de-identified tables; `Data/events/` = BIDS-style event files; `Data/regressors/` = per-volume physiological regressors |
 | `FirstLevel/` | GLM-ready covariate sheets, one events + one confounds file per run, row-aligned with fMRIPrep confounds; `firstlevel_manifest.csv` carries the registered gates |
 | `Figures/` | QC and validation figures |
-| `Preregistration/` | The imaging preregistration, its OSF registration draft, and `deviations.md` once analysis begins |
+| `Preregistration/` | The imaging analysis plan, the OSF form text (`osf_template_answers.md`, filed as the update to https://osf.io/swc7p), and `deviations.md`, the deviations from that registration |
 
 ## Reproducing
 
@@ -30,6 +30,7 @@ regenerated, here.
 ## Preregistration
 
 `Preregistration/intero2023_imaging_prereg.md` is the living document; the
-frozen, citable registration is on OSF (link added at registration time). Any
-post-registration deviation is logged in `Preregistration/deviations.md` with
-date and rationale.
+registration of record is https://osf.io/swc7p (registered 2026-08-20 from
+plan v0.1). Every later change is logged against the registered text in
+`Preregistration/deviations.md`, with date, rationale, and whether any affected
+result had been seen.

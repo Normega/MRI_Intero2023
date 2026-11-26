@@ -1,9 +1,11 @@
 # Preregistration — Neural correlates of respiratory change awareness (MRI_Intero2023)
 
-**Status:** final for registration (submitted to OSF 2026-11-26). Any change after the freeze is logged in `Preregistration/deviations.md`.
+**Status:** final; filed 2026-11-26 as an update to OSF registration swc7p (registered 2026-08-20 from v0.1). Deviations from the registered text: `Preregistration/deviations.md`.
 **Version:** 0.8
 **Date:** 2026-11-25 (v0.7: 2026-11-25; v0.6: 2026-11-25; v0.5: 2026-11-25; v0.4: 2026-11-25; v0.3: 2026-11-24; v0.2: 2026-08-24; v0.1: 2026-08-13)
 **Analysis code:** `Repo/R/`, `Repo/Scripts/` (all preprocessing and behavioural code already written and versioned)
+
+**Correction (2026-11-26): this plan was registered before these revisions.** The OSF registration https://osf.io/swc7p was made on **2026-08-20** from plan v0.1 (commit `aa0752b`) and the form text at commit `7472481`. Every revision from v0.2 (2026-08-24) to v0.8 therefore postdates the registration. Where this document says "pre-freeze" or "before the registration was frozen", read "before the registration update and before any imaging model was fitted". That second claim is true throughout: no first-level model has been fitted. Each change is listed against the registered text in `Preregistration/deviations.md` and is filed as an update to swc7p.
 
 **Changes in v0.2, all made before the registration was frozen and before any model was fitted.** Each is evidenced in `VERIFICATION_REPORT.md` and recorded with its rationale in `Preregistration/methods_decisions.md`:
 

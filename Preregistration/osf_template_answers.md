@@ -1,12 +1,59 @@
-# OSF Preregistration — field-by-field answers (copy-paste ready)
+# OSF Preregistration — field-by-field text for the update to swc7p
 
-Template: OSF Preregistration (osf.io registration form). Each heading below is
-one template field, in template order. Text under it is paste-ready. Items
-marked [TO CONFIRM] need the author's input before freezing.
+Registration of record: https://osf.io/swc7p (OSF Preregistration template,
+registered 2026-08-20 from this file at commit `7472481` and plan v0.1). This
+file is the text for its **update**: on the registration page choose *Update*,
+enter the justification below, and replace each changed field with the text
+under its heading. Fields marked *(unchanged)* keep their registered answer.
+Every change is listed against the registered text in `deviations.md`
+(D1–D26).
 
 Synced to `intero2023_imaging_prereg.md` **v0.8** (2026-11-25).
 
 ---
+
+## Justification for update
+
+This update brings the registration in line with the analysis plan as revised
+between 2026-08-24 and 2026-11-25. **No imaging analysis has been run at any
+point:** no first-level model has been fitted and no contrast or statistical
+image exists. The revisions were decided from timing sheets, behaviour,
+physiology, design matrices and fMRIPrep confound columns. The one rule
+decided with a BOLD-derived quantity in view is a quality gate for a
+robustness-only physiological regressor (S2b), revised after its
+RVT–global-signal correlations had been seen.
+
+The main changes are:
+- **Sample corrected.** The registered inventory came from an obsolete copy of
+  the data. Four participants are reinstated and two are named as excluded,
+  giving 90 runs from 47 participants (was 43).
+- **Models.** One first-level model became three (awareness, confidence,
+  salience), because the single model was rank-deficient in 9 of 91 designs.
+- **Awareness tests.** The categorical aware > unaware test (H3) is now
+  authoritative and the confidence effect (H2) supportive, because confidence
+  covaries with awareness. H3 now includes every participant with both trial
+  types (N = 45, was 21), precision-weighted with FSL FLAME 1, and fits both
+  runs in one model. The registered 3-trial rule is kept as sensitivity
+  analysis S7.
+- **H5** equivalence test moved to H3, with bounds restated at the corrected
+  Ns.
+- **H6** is now a two-sided conceptual extension, not a one-sided replication.
+- **Regions** come from the CAREN network atlas, with Harvard–Oxford as atlas
+  sensitivity. H1's inference set is now specified.
+- **H7 (between-network coupling) is added as a confirmatory hypothesis.** It
+  was added after the original registration and before any imaging analysis,
+  and it will be reported with that history.
+- **Physiology.** Three pipeline bugs were fixed, and the CSF and white-matter
+  regressors were regenerated from the derivatives of record.
+
+The full list, with the registered text, the new text, the date and the
+reason for each change, is `Preregistration/deviations.md` in the linked
+repository (https://github.com/Normega/MRI_Intero2023). The revised analysis
+plan (v0.8) is attached.
+
+---
+
+*Title, Description, Contributors, License, Subject and Tags are registration metadata, not fields of the update form. They are listed for reference and are not changed by the update.*
 
 ## Title
 
@@ -124,12 +171,15 @@ pre-declared uninformative.
 
 ## Foreknowledge of data or evidence
 
-Selection (confirmed 2026-08-20): the option stating that the data exist and
-the author has accessed and analyzed some of the data relevant to this
-registration. See explanation below for exactly what has and has not been
-touched.
+Registered selection: "Authors' limited observation of the data could not
+influence their analysis decisions." [TO CONFIRM: keep this selection, or
+change it to the option stating that the authors' observation of the data
+could have influenced their analysis decisions. The second is the more
+conservative reading: H2–H4 are informed by analysed behaviour, and one S2b
+gate was revised with a BOLD-derived quality metric in view. The explanation
+below discloses both either way.]
 
-## Explanation of foreknowledge
+## Explanation of foreknowledge (field title on the form: Explanation of foreknowledge and managing unintended influences)
 
 Data collection is complete (September 2023 – June 2024). Everything EXCEPT
 the functional imaging has been analysed before this registration: task logs
@@ -159,8 +209,9 @@ CAREN atlas and fMRIPrep's run-level brain masks and frozen by checksum.
 Consequence, stated plainly: H2–H4 are informed by known behavioural results;
 they are untested predictions about brain data but are not blind. H1 takes its
 direction, and H6 its region, from an independent published sample (IEAT).
-The full analysis plan with dated decision history is attached
-(intero2023_imaging_prereg.md) and git-versioned.
+The plan was revised after the original registration (2026-08-20) and before
+any imaging analysis; each change is listed in deviations.md. The full analysis
+plan (v0.8) with dated decision history is attached and git-versioned.
 
 ---
 
@@ -168,27 +219,26 @@ The full analysis plan with dated decision history is attached
 
 ## Study type
 
-Randomized Experiment (conditions randomized within participant at the trial
-level; no between-participant manipulation).
+Randomized Experiment *(unchanged)*.
 
 ## Intention for causal interpretation
 
-Direct inference for the within-participant task manipulations (pacing,
-change direction, salience). No causal interpretation for the
-individual-difference moderator (H6, MAIA) or for awareness contrasts (H2/H3),
-which condition on the participant's response.
+Direct inference on causal relationship(s) *(unchanged)*. This applies to the
+within-participant manipulations (pacing, change direction, salience). The
+awareness contrasts (H2, H3) condition on the participant's response and the
+MAIA moderation (H6) is an individual difference, so neither is interpreted
+causally (see Context).
 
 ## Blinding of experimental treatments
 
-Subject blinding: participants could not anticipate the direction or salience
-of an upcoming trial. No researcher or analyst blinding.
+No blinding is involved *(unchanged)*.
 
 ## Additional blinding
 
 Analyst blinding to behavioural outcomes is impossible (see Foreknowledge);
-the analyst has seen no functional imaging statistic. Post-registration
-deviations will be logged with date and whether the affected result had been
-seen (deviations.md, git-versioned).
+the analyst has seen no functional imaging statistic. Deviations from this
+registration are logged with date, rationale and whether the affected result
+had been seen (deviations.md, git-versioned).
 
 ## Study design
 
@@ -224,11 +274,16 @@ software at session time. No between-participant randomization.
 Data are already collected (September 2023 – June 2024, single site,
 University of Toronto). Community adult sample; standard MRI safety screening
 via Qualtrics before the session; questionnaire battery including the 37-item
-MAIA-2 (coded 1–6, converted to the canonical 0–5 metric). Sessions lasted
-about 2 hours, and participants were compensated $65. The study was approved
-by the University of Toronto Research Ethics Board.
-[TO CONFIRM: REB protocol number, recruitment channels, and any inclusion
-criteria beyond MRI safety.]
+MAIA-2 (coded 1–6, converted to the canonical 0–5 metric). Approved by the
+University of Toronto Research Ethics Board (protocol 45079). Sessions lasted
+2 hours (30 min training, 1 h in the scanner including safety screening,
+30 min questionnaires), and participants were compensated $65. Eligibility
+was MRI safety, determined by the screening questionnaire before entry:
+people with metal implants such as surgical clips, prosthetic heart valves,
+neurostimulators, implanted pumps, cochlear implants, hearing aids, dentures or
+pacemakers were not scanned, and any "yes" answer was reviewed with the
+investigator and MRI technologist before deciding. Metallic piercings that
+could not be removed meant the session was cancelled.
 
 ## Sample size
 
@@ -258,8 +313,7 @@ these Ns support (see Inference criteria).
 ## Starting and stopping rules
 
 Collection is complete; no starting or stopping rule remains operative.
-[TO CONFIRM: the original stopping rule — target N and/or funding window —
-for the record.]
+*(unchanged)*
 
 ---
 
@@ -501,5 +555,5 @@ manipulates end-tidal CO2 by design), which is why H5 is framed as
 attenuation with an equivalence criterion rather than as a purity check. The
 attached full analysis plan (intero2023_imaging_prereg.md, v0.8) contains the
 dated decision history; the analysis repository (git) will be linked as an
-OSF component, and any deviation after freezing is logged in deviations.md
+OSF component, and every deviation from this registration is logged in deviations.md
 with date, rationale, and whether the affected result had been seen.

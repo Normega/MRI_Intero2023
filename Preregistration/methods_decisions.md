@@ -1,5 +1,7 @@
 # Registered methods decisions
 
+**Correction (2026-11-26): this plan was registered before these revisions.** The OSF registration https://osf.io/swc7p was made on **2026-08-20** from plan v0.1 (commit `aa0752b`) and the form text at commit `7472481`. Every revision from v0.2 (2026-08-24) to v0.8 therefore postdates the registration. Where this document says "pre-freeze" or "before the registration was frozen", read "before the registration update and before any imaging model was fitted". That second claim is true throughout: no first-level model has been fitted. Each change is listed against the registered text in `Preregistration/deviations.md` and is filed as an update to swc7p.
+
 **Status:** decided 2026-08-24, pre-freeze. Nothing here has been estimated on
 BOLD data. Every number below comes from design matrices, event sheets and
 behavioural counts only — `Scripts/intero2023_designqc.py` and

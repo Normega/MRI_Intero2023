@@ -2,7 +2,7 @@
 
 **Registration type:** Preregistration of a secondary data analysis (template after Mertens & Krypotos, 2019)
 **Companion document:** `intero2023_imaging_prereg.md` **v0.8** (full analysis plan; to be attached to the registration). Section references (§) below point into it.
-**Status:** final for registration (submitted to OSF 2026-11-26), before any first-level model is fitted. Synced to plan v0.8.
+**Status:** not used for OSF. The registration of record is https://osf.io/swc7p (OSF Preregistration template, registered 2026-08-20); its update text is `osf_template_answers.md`. This short form is kept as a summary. Synced to plan v0.8.
 
 ---
 
