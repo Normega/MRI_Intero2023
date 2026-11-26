@@ -1,0 +1,3 @@
+analysis,label,variant,test,direction,roi,N,peak_t_signed,peak_mni,p_fwe_min,p_fwe_bonf,bonferroni_k,n_vox_sig_bonf,descriptive,roi_mean,roi_dz
+H6,H6_var-base_set-S2,base,maia,two-sided,ieat_ACCsphere,29,3.598,"[3.5, 15.5, 31.5]",0.0360963903609639,0.0360963903609639,1,1,False,,
+H6,H6_var-base_set-S2,base,maia,two-sided,caren_dACC,29,3.641,"[3.5, 15.5, 29.5]",0.06319368063193681,0.06319368063193681,1,0,True,,

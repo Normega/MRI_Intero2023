@@ -1,0 +1,7 @@
+analysis,label,variant,test,direction,roi,N,peak_t_signed,peak_mni,p_fwe_min,p_fwe_bonf,bonferroni_k,n_vox_sig_bonf,descriptive,roi_mean,roi_dz
+H2,H2_var-base_set-all_atlas-ho,base,predicted,positive,ho_AInsL,44,3.245,"[-38.5, 9.5, -2.5]",0.0424957504249575,0.12748725127487248,3,0,False,0.01715969294309616,0.18001779913902283
+H2,H2_var-base_set-all_atlas-ho,base,predicted,positive,ho_AInsR,44,3.097,"[33.5, 13.5, 5.5]",0.07119288071192882,0.21357864213578648,3,0,False,0.021884797140955925,0.2236429899930954
+H2,H2_var-base_set-all_atlas-ho,base,predicted,positive,ho_dACC,44,2.938,"[3.5, 21.5, 27.5]",0.2718728127187282,0.8156184381561846,3,0,False,0.007543346378952265,0.07786236703395844
+H2,H2_var-base_set-all_atlas-ho,base,opposite,negative,ho_AInsL,44,-1.333,"[-38.5, 9.5, -14.5]",0.7689231076892311,1.0,3,0,False,0.01715969294309616,0.18001779913902283
+H2,H2_var-base_set-all_atlas-ho,base,opposite,negative,ho_AInsR,44,-1.883,"[33.5, 15.5, -14.5]",0.5264473552644735,1.0,3,0,False,0.021884797140955925,0.2236429899930954
+H2,H2_var-base_set-all_atlas-ho,base,opposite,negative,ho_dACC,44,-2.848,"[-0.5, 33.5, -4.5]",0.3124687531246875,0.9374062593740626,3,0,False,0.007543346378952265,0.07786236703395844

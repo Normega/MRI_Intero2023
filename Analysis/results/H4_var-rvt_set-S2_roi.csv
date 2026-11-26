@@ -1,0 +1,7 @@
+analysis,label,variant,test,direction,roi,N,peak_t_signed,peak_mni,p_fwe_min,p_fwe_bonf,bonferroni_k,n_vox_sig_bonf,descriptive,roi_mean,roi_dz
+H4,H4_var-rvt_set-S2,rvt,predicted,positive,caren_AInsL,26,1.998,"[-38.5, -18.5, 1.5]",0.5228477152284772,1.0,3,0,False,-0.005264850798994303,-0.03399946913123131
+H4,H4_var-rvt_set-S2,rvt,predicted,positive,caren_AInsR,26,2.441,"[41.5, 13.5, -8.5]",0.3488651134886511,1.0,3,0,False,0.0028180135414004326,0.01952095329761505
+H4,H4_var-rvt_set-S2,rvt,predicted,positive,caren_dACC,26,2.345,"[-8.5, 5.5, 35.5]",0.35276472352764726,1.0,3,0,False,0.013252870179712772,0.07239488512277603
+H4,H4_var-rvt_set-S2,rvt,opposite,negative,caren_AInsL,26,-2.481,"[-36.5, 3.5, 7.5]",0.31796820317968205,0.9539046095390462,3,0,False,-0.005264850798994303,-0.03399946913123131
+H4,H4_var-rvt_set-S2,rvt,opposite,negative,caren_AInsR,26,-2.414,"[39.5, 5.5, 11.5]",0.3661633836616338,1.0,3,0,False,0.0028180135414004326,0.01952095329761505
+H4,H4_var-rvt_set-S2,rvt,opposite,negative,caren_dACC,26,-1.603,"[-10.5, -30.5, 39.5]",0.6931306869313069,1.0,3,0,False,0.013252870179712772,0.07239488512277603

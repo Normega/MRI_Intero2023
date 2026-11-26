@@ -1,0 +1,4 @@
+analysis,label,variant,test,direction,roi,N,peak_t_signed,peak_mni,p_fwe_min,p_fwe_bonf,bonferroni_k,n_vox_sig_bonf,descriptive,roi_mean,roi_dz
+S3,S3_var-base_set-all,base,co2group,two-sided,caren_AInsL,44,3.241,"[-34.5, 1.5, 5.5]",0.1072892710728927,0.3218678132186781,3,0,False,,
+S3,S3_var-base_set-all,base,co2group,two-sided,caren_AInsR,44,3.581,"[37.5, 11.5, -2.5]",0.05169483051694831,0.15508449155084492,3,0,False,,
+S3,S3_var-base_set-all,base,co2group,two-sided,caren_dACC,44,3.218,"[-4.5, 15.5, 31.5]",0.15798420157984203,0.47395260473952605,3,0,False,,

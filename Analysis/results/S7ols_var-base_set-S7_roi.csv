@@ -1,0 +1,4 @@
+analysis,label,variant,roi,N,peak_t,peak_mni,p_fwe_min,p_fwe_bonf
+S7ols,S7ols_var-base_set-S7,base,caren_AInsL,23,3.564,"[-40.5, 1.5, -2.5]",0.07819218078192182,0.23457654234576547
+S7ols,S7ols_var-base_set-S7,base,caren_AInsR,23,3.265,"[37.5, 15.5, 5.5]",0.10488951104889511,0.31466853314668536
+S7ols,S7ols_var-base_set-S7,base,caren_dACC,23,3.045,"[-8.5, 3.5, 43.5]",0.1745825417458254,0.5237476252374762

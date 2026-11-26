@@ -1,0 +1,9 @@
+contrast,measure,roi,N,median,q25,q75,icc31,pearson_r
+C1,spatial_r_within_participant,group_mask,43,0.3355430555033827,0.24634966114218326,0.4495800719887262,,
+C1,roi_mean_across_participants,caren_PIns,43,,,,0.4471018612384796,0.45582627453747054
+C1,roi_mean_across_participants,caren_COper,43,,,,0.318078875541687,0.3210106678107367
+C1,roi_mean_across_participants,caren_SM,43,,,,0.4264652729034424,0.426573467880409
+C3,spatial_r_within_participant,group_mask,39,0.0007692725084567284,-0.0532034442497378,0.20736065817803268,,
+C3,roi_mean_across_participants,caren_AInsL,39,,,,0.34628647565841675,0.3643639100766803
+C3,roi_mean_across_participants,caren_AInsR,39,,,,0.2643001079559326,0.2657690324581031
+C3,roi_mean_across_participants,caren_dACC,39,,,,0.22367702424526215,0.22421482697615747
