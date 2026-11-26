@@ -76,7 +76,10 @@ def main(sub):
     assert len(runs), sub
     od = os.path.join(g.OUT, "firstlevel", sub); os.makedirs(od, exist_ok=True)
     masker = NiftiMasker(mask_img=g.GROUP_MASK, smoothing_fwhm=6, standardize=False).fit()
-    save = lambda arr, name: masker.inverse_transform(arr).to_filename(os.path.join(od, name))
+    def save(arr, name):
+        if "variance" in name and not (arr > 0).all():
+            raise ValueError(f"{sub} {name}: {(arr <= 0).sum()} non-positive variances")
+        g.save_float32(masker.inverse_transform(arr), os.path.join(od, name))
     log = dict(subject=sub, nilearn=nilearn.__version__, runs=[], joint={})
     C2 = {"paced_aware": 1.0, "paced_unaware": -1.0}
     C5 = {"paced_highsal": 1.0, "paced_lowsal": -1.0}

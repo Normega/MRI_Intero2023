@@ -131,7 +131,8 @@ def nilearn_tests(analysis, subs, variant, label, maia):
             rmask = nib.load(ROI(roi)).get_fdata() > 0
             res = non_parametric_inference(use, design_matrix=dm, second_level_contrast=contrast,
                                            mask=ROI(roi), n_perm=N_PERM, two_sided_test=two,
-                                           random_state=SEED, n_jobs=N_JOBS)
+                                           threshold=0.002, random_state=SEED, n_jobs=N_JOBS)
+            # (threshold only makes nilearn return the t map too; the ROI test is the voxel max-t FWE)
             tmap, lp = res["t"], res["logp_max_t"]
             lpv = lp.get_fdata()[rmask]
             pmin = float(10 ** -np.nanmax(lpv))
@@ -150,8 +151,8 @@ def nilearn_tests(analysis, subs, variant, label, maia):
                              n_vox_sig_bonf=int((lpv > -np.log10(0.05 / k_bonf)).sum()), descriptive=descr,
                              roi_mean=np.nan if analysis in ("H6", "S3") else float(means.mean()),
                              roi_dz=np.nan if analysis in ("H6", "S3") else float(means.mean() / means.std(ddof=1))))
-            tmap.to_filename(os.path.join(od, f"{tag}_{roi}_t.nii.gz"))
-            lp.to_filename(os.path.join(od, f"{tag}_{roi}_logpFWE.nii.gz"))
+            g.save_float32(tmap, os.path.join(od, f"{tag}_{roi}_t.nii.gz"))
+            g.save_float32(lp, os.path.join(od, f"{tag}_{roi}_logpFWE.nii.gz"))
     if not WB:
         return pd.DataFrame(rows), pd.DataFrame()
     # whole brain: cluster-forming p < .001 per tail, cluster-size FWE two-sided
@@ -159,7 +160,7 @@ def nilearn_tests(analysis, subs, variant, label, maia):
                                   mask=g.GROUP_MASK, n_perm=N_PERM, two_sided_test=True,
                                   threshold=0.002, random_state=SEED, n_jobs=N_JOBS)
     for k in ("t", "logp_max_size"):
-        wb[k].to_filename(os.path.join(od, f"wholebrain_{k}.nii.gz"))
+        g.save_float32(wb[k], os.path.join(od, f"wholebrain_{k}.nii.gz"))
     clusters = cluster_table(wb["t"], wb["logp_max_size"], len(subs) - dm.shape[1])
     return pd.DataFrame(rows), clusters
 
@@ -298,7 +299,7 @@ def ols_s7(subs, variant, label):
     for roi in SETS["H3"]:
         res = non_parametric_inference(imgs, design_matrix=dm, second_level_contrast="intercept",
                                        mask=ROI(roi), n_perm=N_PERM, two_sided_test=False,
-                                       random_state=SEED, n_jobs=N_JOBS)
+                                       threshold=0.002, random_state=SEED, n_jobs=N_JOBS)
         lp = res["logp_max_t"].get_fdata()[nib.load(ROI(roi)).get_fdata() > 0]
         coord, tpk = peak_mni(res["t"], ROI(roi), +1)
         pmin = float(10 ** -np.nanmax(lp))

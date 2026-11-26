@@ -68,3 +68,23 @@ registered test. Any later change to them goes in `Preregistration/deviations.md
   `mean_random_effects_var1`.
 - **Robustness.** REML random-effects meta-analysis of each participant's ROI
   mean effect, with the ROI mean variance as its sampling variance.
+
+## Pipeline fix before any result (2026-11-26, 12:50)
+
+The first full first-level pass wrote every map through nilearn's
+`inverse_transform`, which copies the **uint8** header of the group mask. Every
+saved effect and variance map was therefore quantised to 8 bits, and small
+variances were stored as exactly 0. The symptom was found at the first group
+step: FLAME estimated only 15,314 of 219,413 voxels, and the permutation tests
+crashed on an unrelated return-type error. No group statistic was read: the H3
+table was never printed, and the other tests did not run.
+
+**Fix.**
+- All images are now written as float32 (`save_float32`).
+- The first level refuses to save any variance map with a non-positive voxel.
+- The quantised outputs were deleted and every first level refitted.
+
+On sub-082 run-1 the saved maps now equal `FirstLevelModel`'s to within
+2e-7 / 5e-7. The 0.019 residual quoted above was this quantisation.
+The permutation ROI tests pass `threshold=0.002` only so that nilearn returns
+the t map alongside the voxel max-t FWE map.

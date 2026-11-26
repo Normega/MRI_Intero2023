@@ -82,6 +82,15 @@ def spec_vector(dm, spec):
     return np.array([spec.get(c, 0.0) for c in dm.columns])
 
 
+def save_float32(img, path):
+    """Write an image as float32. nilearn's inverse_transform copies the header of the
+    (uint8) mask, so a plain to_filename() would quantise the data to 8 bits."""
+    import nibabel as nib
+    out = nib.Nifti1Image(np.asarray(img.get_fdata(dtype=np.float32)), img.affine)
+    out.set_data_dtype(np.float32)
+    out.to_filename(path)
+
+
 def sha256(path):
     h = hashlib.sha256()
     with open(path, "rb") as f:

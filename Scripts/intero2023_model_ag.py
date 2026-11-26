@@ -71,8 +71,8 @@ def main(sub):
             log[kind] = "not estimable"; continue
         out, dof = fit(np.vstack(Ys), J, {kind: {col: 1.0}})
         e, v = out[kind]
-        masker.inverse_transform(e).to_filename(os.path.join(od, f"{sub}_var-base_con-{kind}joint_effect.nii.gz"))
-        masker.inverse_transform(v).to_filename(os.path.join(od, f"{sub}_var-base_con-{kind}joint_variance.nii.gz"))
+        g.save_float32(masker.inverse_transform(e), os.path.join(od, f"{sub}_var-base_con-{kind}joint_effect.nii.gz"))
+        g.save_float32(masker.inverse_transform(v), os.path.join(od, f"{sub}_var-base_con-{kind}joint_variance.nii.gz"))
         log[kind] = dict(dof=dof, n_reg=J.shape[1])
     json.dump(log, open(os.path.join(od, f"{sub}_model_ag.json"), "w"), indent=1)
     print(sub, {k: (v if isinstance(v, str) else "ok") for k, v in log.items()})
