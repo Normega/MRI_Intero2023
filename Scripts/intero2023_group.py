@@ -35,7 +35,8 @@ SETS["S3"] = SETS["H2"]
 if ATLAS == "ho":
     for k in ("H1", "H2", "H3", "H4", "S3"):
         SETS[k] = [r.replace("caren_", "ho_") for r in SETS[k]]
-CON = dict(H1="C1", H2="C3", H4="C5", H6="C1", H3="C2joint", H3perrun="C2", S7ols="C2joint", S3="C3")
+CON = dict(H1="C1", H2="C3", H4="C5", H6="C1", H3="C2joint", H3perrun="C2", S7ols="C2joint", S3="C3",
+           AG="AGjoint", AGrank="AGrankjoint", AGaw="AGawjoint")      # AG*: exploratory Model A-g
 SIGN = dict(H1=-1, H2=+1, H3=+1, H4=+1)          # predicted direction (H6 two-sided)
 
 
@@ -78,7 +79,8 @@ def subject_sets():
 
 def subjects_for(analysis, variant, subset, sets):
     base = dict(H1=sets["all"], H2=sets["all"], H4=sets["H4"], H6=sets["H6"], H3=sets["H3"],
-                H3perrun=sets["H3"], S7ols=sets["S7"], S3=sets["all"])[analysis]
+                H3perrun=sets["H3"], S7ols=sets["S7"], S3=sets["all"],
+                AG=sets["H3"], AGrank=sets["H3"], AGaw=sets["H3"])[analysis]
     if analysis in ("H3", "H3perrun") and subset == "S7":
         base = sets["S7"]
     keep = [x for x in base if subset in ("all", "S7") or x in sets[subset]]
@@ -219,6 +221,9 @@ def flame_tests(analysis, subs, variant, label):
         js = json.load(open(os.path.join(g.OUT, "firstlevel", s, f"{s}_firstlevel.json")))
         if con == "C2joint":
             dofs.append(js["joint"][variant]["dof"])
+        elif analysis.startswith("AG"):
+            ag = json.load(open(os.path.join(g.OUT, "firstlevel", s, f"{s}_model_ag.json")))
+            dofs.append(ag[analysis]["dof"])
         else:   # per-run FFX: sum of the dofs of the runs that formed C2
             dofs.append(sum(r["variants"][variant]["dof_A"] for r in js["runs"]
                             if variant in r["variants"] and "C2" in r["variants"][variant]["contrasts"]))
@@ -309,7 +314,7 @@ def main(analysis, variant="base", subset="all"):
         + (f"_cov-{COV}" if COV else "")
     rd = os.path.join(g.REPO, "Analysis", "results"); os.makedirs(rd, exist_ok=True)
     print(f"{label}: N = {len(subs)}")
-    if analysis in ("H3", "H3perrun"):
+    if analysis in ("H3", "H3perrun") or analysis.startswith("AG"):
         roi, cl, w = flame_tests(analysis, subs, variant, label)
         w.to_csv(f"{rd}/{label}_weights.csv", index=False)
     elif analysis == "S7ols":
