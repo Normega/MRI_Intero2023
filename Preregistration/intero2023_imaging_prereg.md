@@ -1,6 +1,6 @@
 # Preregistration — Neural correlates of respiratory change awareness (MRI_Intero2023)
 
-**Status:** draft for discussion — **pre-freeze**
+**Status:** final for registration (submitted to OSF 2026-11-26). Any change after the freeze is logged in `Preregistration/deviations.md`.
 **Version:** 0.8
 **Date:** 2026-11-25 (v0.7: 2026-11-25; v0.6: 2026-11-25; v0.5: 2026-11-25; v0.4: 2026-11-25; v0.3: 2026-11-24; v0.2: 2026-08-24; v0.1: 2026-08-13)
 **Analysis code:** `Repo/R/`, `Repo/Scripts/` (all preprocessing and behavioural code already written and versioned)

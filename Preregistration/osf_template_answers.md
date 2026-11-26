@@ -148,6 +148,14 @@ fMRIPrep's global_signal column was used to verify the physiological
 regressors carry the physiologically correct sign, and its
 framewise_displacement column was used to apply the preregistered motion
 exclusion. No task regressor has been related to any imaging measure.
+Also before freezing, and also without reading any BOLD intensity: three
+physiology pipeline bugs that had withheld valid recordings were fixed, and a
+fallback RVT source (the scanner's PMU cushion) was developed for robustness
+analysis S2b only, with one of its gates revised after the fallback runs'
+quality metrics had been seen (disclosed in full in plan §6); the CSF and
+white-matter confound columns were regenerated from the fMRIPrep derivatives
+of record (no other column changed); and the ROI masks were built from the
+CAREN atlas and fMRIPrep's run-level brain masks and frozen by checksum.
 Consequence, stated plainly: H2–H4 are informed by known behavioural results;
 they are untested predictions about brain data but are not blind. H1 takes its
 direction, and H6 its region, from an independent published sample (IEAT).
@@ -216,9 +224,11 @@ software at session time. No between-participant randomization.
 Data are already collected (September 2023 – June 2024, single site,
 University of Toronto). Community adult sample; standard MRI safety screening
 via Qualtrics before the session; questionnaire battery including the 37-item
-MAIA-2 (coded 1–6, converted to the canonical 0–5 metric).
-[TO CONFIRM: recruitment channels, compensation, REB protocol number, and any
-inclusion criteria beyond MRI safety.]
+MAIA-2 (coded 1–6, converted to the canonical 0–5 metric). Sessions lasted
+about 2 hours, and participants were compensated $65. The study was approved
+by the University of Toronto Research Ethics Board.
+[TO CONFIRM: REB protocol number, recruitment channels, and any inclusion
+criteria beyond MRI safety.]
 
 ## Sample size
 

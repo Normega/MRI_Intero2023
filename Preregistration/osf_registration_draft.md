@@ -2,7 +2,7 @@
 
 **Registration type:** Preregistration of a secondary data analysis (template after Mertens & Krypotos, 2019)
 **Companion document:** `intero2023_imaging_prereg.md` **v0.8** (full analysis plan; to be attached to the registration). Section references (§) below point into it.
-**Status:** DRAFT. To be frozen on OSF before any first-level model is fitted. Synced to plan v0.8 on 2026-11-25.
+**Status:** final for registration (submitted to OSF 2026-11-26), before any first-level model is fitted. Synced to plan v0.8.
 
 ---
 
