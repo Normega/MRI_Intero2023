@@ -9,15 +9,14 @@ travel with it in this repository:
 - `Preregistration/intero2023_imaging_prereg.md` — the full plan. **Binding.**
 - `Preregistration/osf_template_answers.md` — the OSF form text.
 
-## 0. Gate: do not fit anything yet
+## 0. Gate: lifted 2026-11-26 (swc7p update approved)
 
 The OSF registration of record is https://osf.io/swc7p, registered
 2026-08-20 from plan v0.1. Plan v0.2–v0.8 postdate it, and their changes are
 listed as deviations D1–D26 in `Preregistration/deviations.md`. They are filed
-as an OSF update to swc7p. **No GLM is fitted until the user confirms that the
-swc7p update is approved.** Design-matrix construction and input verification
-(steps 1–2) are fine before that; parameter estimation is not. (Where this
-document says "freeze", read "approval of the swc7p update".)
+as an OSF update to swc7p, **approved 2026-11-26 (16:59 UTC)**. The gate is
+lifted: the registered analyses may now be fitted. (Where this document says
+"freeze", read "approval of the swc7p update".)
 
 After the update, any departure from the plan goes in the "After the update"
 table of `Preregistration/deviations.md`: date, what changed, why, and whether

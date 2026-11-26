@@ -6,7 +6,9 @@ file is the text for its **update**: on the registration page choose *Update*,
 enter the justification below, and replace each changed field with the text
 under its heading. Fields marked *(unchanged)* keep their registered answer.
 Every change is listed against the registered text in `deviations.md`
-(D1–D26).
+(D1–D26). **Filed and approved 2026-11-26**; three fields (study design,
+additional blinding, context) were left at their original text; see
+`deviations.md`.
 
 Synced to `intero2023_imaging_prereg.md` **v0.8** (2026-11-25).
 

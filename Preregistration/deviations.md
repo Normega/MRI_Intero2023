@@ -2,7 +2,10 @@
 
 **Registration of record:** OSF Preregistration *Neural correlates of awareness
 of respiratory change during paced breathing*, https://osf.io/swc7p, registered
-**2026-08-20 12:23 UTC** (08:23 EDT), public, no embargo, no later update. The
+**2026-08-20 12:23 UTC** (08:23 EDT), public, no embargo. **Updated
+2026-11-26** (OSF schema response `6b0863b9dab3517393f851af`, submitted 16:59
+UTC and approved the same day), carrying D1–D26 below with the justification
+text from `osf_template_answers.md`. The
 registered form text is the repository's `Preregistration/osf_template_answers.md`
 at commit `7472481` (2026-08-20 08:09 EDT); two fields (foreknowledge and data
 collection procedures) were edited on the form before submission. The companion
@@ -14,7 +17,7 @@ registration.
 (2026-11-25) were all written after the registration. Those documents call
 their changes "pre-freeze"; that wording is wrong with respect to swc7p (see the
 correction note in each document). Every change below is therefore a deviation
-from the registration. They are filed together as an OSF registration update.
+from the registration. They were filed together as the 2026-11-26 OSF update.
 
 **Imaging results seen before any deviation: none.** No first-level model has
 been fitted at any point, no contrast or statistical image exists, and no BOLD
@@ -82,7 +85,25 @@ version and date the change was decided. Rationale in full is in
 | D23 | Study design text cut off after "7 cycles of [paced-breathing epoch." | Full description of the run structure | Text was truncated on the form |
 | D24 | Data collection: single site, community adult sample, MRI safety screening | Adds University of Toronto REB protocol 45079, 2-hour session, $65 compensation, and the MRI contraindications from the consent form | Completes the field |
 | D25 | Plan described as attached; none attached | Plan v0.8 attached; v0.1 identified by commit `aa0752b` | Correction |
-| D26 | Foreknowledge option: "limited observation of the data could not influence analysis decisions" | Author to choose; see the note in the update text | The hypotheses are informed by analysed behaviour, and D11's gate revision used a BOLD-derived quantity |
+| D26 | Foreknowledge option: "limited observation of the data could not influence analysis decisions" | "Authors have observed the data, but have not performed the proposed analyses" (chosen in the update) | The hypotheses are informed by analysed behaviour, and D11's gate revision used a BOLD-derived quantity |
+
+## What the approved update contains
+
+Checked against the OSF API on 2026-11-26. **14 fields were updated, and each
+matches `osf_template_answers.md` exactly:** hypotheses, foreknowledge and its
+explanation, data collection, sample size and rationale, manipulated and
+measured variables, statistical models, transformations, inference criteria,
+inclusion and exclusion, missing data, and other planned analyses. The
+indices field was already identical.
+
+**Three fields still carry the original 2026-08-20 text.** Where they
+conflict with the updated fields, the updated fields and plan v0.8 govern:
+- *Study design:* still truncated after "7 cycles of [paced-breathing epoch." (D23 not applied). The full run structure is in plan §5.
+- *Additional blinding:* minor wording only ("post-registration deviations will be logged …"); no conflict.
+- *Context and additional information:* still describes H1 and H6 as "replications with direction and coordinates fixed by that paper". **This conflicts with the updated hypotheses field, where H6 is a two-sided conceptual extension.** The updated H6 governs.
+
+No file is attached to the registration (D25). The plan of record is v0.8 in
+the linked repository.
 
 ## After the update
 
