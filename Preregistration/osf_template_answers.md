@@ -190,7 +190,7 @@ adherence; capnography/PetCO2 extraction; RVT; and all quality control and
 exclusion decisions. The functional images have not been examined beyond
 automated preprocessing (fMRIPrep, and MRIQC image-quality metrics used for
 run QC): no first-level model has been fitted, no contrast image exists, no
-statistical map has been computed or viewed. Before freezing, the design
+statistical map has been computed or viewed. Before this update, the design
 matrices themselves were built and checked (rank, collinearity, contrast
 efficiency, event coverage, trial counts) — properties of the timing and
 confound sheets; no BOLD voxel was read. Two narrow, documented exceptions:
@@ -198,7 +198,7 @@ fMRIPrep's global_signal column was used to verify the physiological
 regressors carry the physiologically correct sign, and its
 framewise_displacement column was used to apply the preregistered motion
 exclusion. No task regressor has been related to any imaging measure.
-Also before freezing, and also without reading any BOLD intensity: three
+Also before this update, and also without reading any BOLD intensity: three
 physiology pipeline bugs that had withheld valid recordings were fixed, and a
 fallback RVT source (the scanner's PMU cushion) was developed for robustness
 analysis S2b only, with one of its gates revised after the fallback runs'
@@ -384,7 +384,7 @@ Nuisance (all models): 6 motion + 6 derivatives, framewise displacement, CSF,
 white matter (both from the fMRIPrep derivatives of record), cosine drift (128 s), one spike regressor per volume with
 FD > 0.5 mm. Sensitivity models add (S2) RVT ⊗ RRF from the Biopac belt, (S2b)
 the same with the Siemens PMU cushion as fallback source, or (S1) the 4-lag
-PetCO2 basis, or both. Global signal is never a regressor. Design QC before freezing:
+PetCO2 basis, or both. Global signal is never a regressor. Design QC before any model was fitted:
 all 90 designs are full rank in every model.
 Contrasts: C1 (H1) = free vs the unweighted mean of the paced conditions
 (aware, unaware, nochange) present in that run; C2 (H3) = aware − unaware;
@@ -448,7 +448,7 @@ network × AAL-3 region membership. Anterior insula and dACC come from the
 salience network; posterior insula, central operculum and sensorimotor cortex
 from the somatomotor network. They are resampled to the fMRIPrep
 MNI152NLin2009cAsym res-2 grid by nearest neighbour and intersected with the
-group brain mask. They were built and SHA-256 checksummed before the freeze
+group brain mask. They were built and SHA-256 checksummed before any model was fitted
 (ROIs/roi_manifest.csv). A Harvard–Oxford version is reported as atlas
 sensitivity, never for inference.
 H6: two-sided p < .05, small-volume corrected in a 10 mm sphere at MNI
@@ -473,8 +473,8 @@ be read in raw units.
 
 ## Data inclusion and exclusion
 
-Applied before this registration, from non-imaging data plus fMRIPrep's FD
-column only: (1) pilot/QA identifiers excluded; (2) sub-051 (no MRI acquired)
+Applied before any imaging analysis, from non-imaging data plus fMRIPrep's
+FD column only: (1) pilot/QA identifiers excluded; (2) sub-051 (no MRI acquired)
 and sub-056 (run-1 truncated at 229 volumes; run-2 fails the motion gate)
 excluded; (3) motion gate: run excluded if mean FD > 0.5 mm or > 25% of
 volumes exceed FD 0.5 mm — fails 12 of 103 runs and removes 5 participants
