@@ -377,12 +377,13 @@ def dissociation():
         mk = NiftiMasker(mask_img=G.ROI(roi)).fit()
         D[roi] = [float(mk.transform(f).mean()) for f in D.file]
         b, se, n_sub = pooled_wls(D, roi)
+        Dc = D[D.groupby("subject").cell.transform("size") >= 2]
         for k in ("report", "stimulus", "inter"):
             rows.append(dict(analysis=f"EXPLORATORY {TAG} (descriptive)", part="E10wd-a pooled WLS", roi=roi,
                              term={"report": "report F - S (stimulus held)", "stimulus": "stimulus F - S (report held)",
                                    "inter": "correct - wrong direction"}[k],
-                             N_participants=n_sub, N_cells=len(D), N_epochs=int(D.n.sum()),
-                             N_wrongdir_epochs=int(D.n[D.cell.isin(["FS", "SF"])].sum()),
+                             N_participants=n_sub, N_cells=len(Dc), N_epochs=int(Dc.n.sum()),
+                             N_wrongdir_epochs=int(Dc.n[Dc.cell.isin(["FS", "SF"])].sum()),
                              estimate=b[k], se_CR1=se[k], ci95_lo=b[k] - stats.t.isf(.025, n_sub - 1) * se[k],
                              ci95_hi=b[k] + stats.t.isf(.025, n_sub - 1) * se[k]))
         w = D.pivot(index="subject", columns="cell", values=roi)
@@ -399,7 +400,10 @@ def dissociation():
 
 def pooled_wls(D, y):
     """WLS of cell mask means on report, stimulus and their product with participant fixed effects,
-    weights = epochs in the cell; CR1 cluster-robust SE by participant."""
+    weights = epochs in the cell; CR1 cluster-robust SE by participant. Only participants with >= 2
+    cells contribute under the fixed effects, so only they are counted (changed after the pre-fit
+    commit bda9a05: the first group run also counted 1 single-cell participant, G 47 not 46)."""
+    D = D[D.groupby("subject").cell.transform("size") >= 2]
     subs = sorted(D.subject.unique())
     X = np.column_stack([D[["report", "stimulus", "inter"]].values] +
                         [(D.subject == s).values.astype(float) for s in subs])

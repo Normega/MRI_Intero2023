@@ -97,6 +97,7 @@ cortical/subcortical and the FSL cerebellar atlas, and are descriptive.
 | E6 | Change vs No Change, H3 masks, two-sided voxel max-t, ×3 | 47 | Null: p_FWE×3 = 1.0 in all three; no voxel p < .05. Mask-mean dz +0.02, +0.10, −0.06; BF01 (r 0.707) 6.2, 5.0, 5.8. |
 | E7 | Transient response to the pacer change: FIR (15 × 2 s bins), joint model, H3 masks, two-sided voxel max-t, ×3 | 46 | Null. Primary (step − ramp, [12, 18) s minus [6, 12) s): best dACC t 3.40, p .54; insulae p 1.0. Mask-mean dz +0.05, +0.01, +0.06; BF01 6.0, 6.2, 5.9. Secondary step − No Change [12, 18) s: best right anterior insula t 3.43, p .31, dz +0.14; ramp − No Change [6, 12) s: p 1.0 everywhere. BF01 4.2–6.2 for every test. Whole brain (primary): largest cluster 26 voxels, p_FWE .67. |
 | E8 | Report period: the rating window after paced change epochs, split by the report, joint model, H3 masks, two-sided voxel max-t, ×3 | 36 / 32 / 44 | Primary (reported change − reported No Change, i.e. hit + wrong-direction − miss): null. p_FWE×3 1.0, 1.0, .68 (best dACC t −3.09). Mask-mean dz −0.11, −0.17, −0.20 (change < No Change); BF01 4.6, 3.4, 2.9. Whole brain: largest cluster 13 voxels, p_FWE .93. Robustness (28 two-run participants): run-1/run-2 sign agreement 54%, 57%, 68%; r −0.03, −0.02, +0.51. Secondary confidence modulator (N 44): null, p 1.0 everywhere, dz +0.25, +0.15, +0.04, BF01 1.7, 3.8, 5.9. Secondary Faster − Slower (**motor / key-mapping diagnostic**, N 32): Slower > Faster in left anterior insula (t −5.21, p ×3 .004), right anterior insula (t −4.68, p .017), dACC (t −4.20, p .071). dz −0.48 to −0.53, BF10 4.3–7.9. Whole brain: four negative clusters survive: right frontal pole (934 voxels, p .004), medial superior frontal / pre-SMA (487, p .010), pregenual ACC (198, p .037), left precuneus (194, p .038). There is no left-sensorimotor (finger) cluster. |
+| E10 | Is E8's Faster − Slower rating effect about the report or about the stimulus? Same rating split as E8; paced change epochs split by stimulus direction × outcome (joint model, H3 masks, two-sided voxel max-t, ×3) | 32 / 22 / 47 | Primary, reported Faster − Slower with the epochs direction-controlled (E10rep, N 32): **survives, almost unchanged**. Slower > Faster in left anterior insula (t −4.40, p ×3 .034), right anterior insula (t −4.75, p .015), dACC (t −3.87, p .14). dz −0.42, −0.50, −0.38 (E8FS in the same 32: −0.48, −0.53, −0.49; ratio of mask means 1.00, 1.05, 0.89; r across participants .97). BF10 2.2, 5.4, 1.4. Whole brain: three negative clusters survive, all right frontal: frontal pole (699 voxels, p .005), frontal pole / inferior frontal pars triangularis (399, p .011), inferior frontal pars triangularis / opercularis (175, p .041). E8's pre-SMA, pregenual ACC and precuneus clusters do not survive (the nearest are paracingulate / medial frontal 104 voxels, p .08, and SMA 77, p .12). Secondary, epoch stimulus direction × noticed ((F hit − S hit) − (F miss − S miss), N 22, ≥ 1 per cell): null, p 1.0 everywhere, dz −0.04, −0.22, +0.01, BF01 4.4, 2.8, 4.5. Diagnostic, epoch stimulus Slower − Faster (N 47): null, p ×3 .96, .65, 1.0, dz −0.11, −0.12, +0.01, BF01 4.9, 4.6, 6.3; whole brain null (largest 160 voxels, p .057). Wrong-direction dissociation (descriptive; 79 epochs; a voxelwise test was infeasible, only 10 participants have both wrong-direction cells): the pooled WLS (46 participants) splits the effect into report F − S −0.085, −0.088, −0.067 and stimulus F − S −0.052, −0.076, −0.058. Every 95% CI includes 0. Rating SF − FS in the 10 participants: −0.02, −0.00, +0.02 (5–6 of 10 negative). |
 
 **Reading.** The salience masks show no detectable response to a change in
 pace, whether or not it was noticed (E3a, E6), and moderate evidence against
@@ -113,9 +114,19 @@ N is 36), and the estimate is not stable across runs. The Faster − Slower
 diagnostic does differ (Slower > Faster in both anterior insulae and medial
 frontal cortex), but it is not a finger pattern. About 80% of each of its cells
 share the preceding stimulus direction, and Slower epochs are longer (23.0 s vs
-17.5 s) and breathed more slowly, which Model A does not split. It is therefore
-read as a carry-over from the preceding paced epoch, not as a report effect;
-untested. There is moderate evidence against aware > unaware in the
+17.5 s) and breathed more slowly, which Model A does not split. E8 therefore read
+it as a probable carry-over from the preceding paced epoch. **E10 tested that and does
+not support it.** When the epochs are split by stimulus direction, the rating-period
+Slower > Faster effect is essentially unchanged in both anterior insulae (mask means 0.89–1.05
+of E8's), and the right frontal pole / inferior frontal clusters remain. The epoch itself
+shows no stimulus-direction effect (BF01 4.6–6.3), so there is no epoch response for the
+rating effect to have leaked from. E10 cannot settle whether the effect follows the report or
+is an after-effect of the stimulus that falls in the rating window. Report and stimulus agree
+in about 80% of epochs, and the 79 wrong-direction epochs split the effect about evenly
+between the two, with every interval including zero. The best current reading is a
+rating-period difference after Slower vs Faster trials that the epoch model does not explain,
+of undetermined source (report or stimulus). There is no epoch-level direction × noticed
+interaction (E10, BF01 2.8–4.5). There is moderate evidence against aware > unaware in the
 left anterior insula and dACC. The right anterior insula is consistently the
 best region but inconclusive (BF01 2.2). The CAREN anterior insula and dACC masks
 are broad: they extend back to y = −20.5 and y = −44.5.
