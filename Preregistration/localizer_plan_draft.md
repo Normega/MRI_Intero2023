@@ -1,4 +1,4 @@
-# Localizer analysis plan: DRAFT (v0.1, 2026-11-27)
+# Localizer analysis plan: DRAFT (v0.2, 2026-11-27)
 
 **Status.** This draft is for the PI's review. Nothing has been fitted to localizer imaging data. It merges two plans written independently and blind to localizer BOLD: one by Claude, one by a separate review agent. Where they differed, the choice taken here is marked **[decision]**.
 
@@ -90,11 +90,15 @@ Per-run versions of all contrasts are saved for split-half analyses.
 
 ## 6. Participant-specific ROIs (fROIs)
 - **Constraint parcels.** The frozen a-priori masks: AInsL, AInsR, dACC, PIns, the IEAT sphere. The anterior insula and dACC masks are broad (y down to −20.5 and −44.5), which is exactly the case where sub-selection can help.
-- **Primary rule.** Within each parcel, each participant's top 10% of voxels by C1 t (two-run model, 4 mm), with a floor of 50 voxels.
-- **Secondary rules (pre-specified).**
-  - Top 10% by C3.
+- **Primary rule (PI decision, 2026-11-27).** Within each parcel, each participant's top 10% of voxels by C1 t (Intero > Extero; two-run model, 4 mm), with a floor of 50 voxels.
+- **Exploratory rules (PI decision, 2026-11-27),** reported alongside the primary and never substituted for it.
+  - Top 10% by C2 alone (Intero > Self).
+  - Top 10% by C3, the conjunction min-t(C1, C2).
+
+  Each goes through the same reliability gate and the same transfer tests (T1–T3). Their results are labelled exploratory.
+- **Other secondary rules (pre-specified).**
   - Top 10% by C5, negative direction (for H1/H6 transfer).
-  - 5% and 20% sensitivity.
+  - 5% and 20% sensitivity for the primary rule.
 - **GSS-style group fallback.** Top 10% of the leave-one-subject-out group C1 map within the parcel.
 - **Specificity control.** The parcel complement (the remaining 90%), and the bottom 10% (Extero > Intero voxels).
 - **Reliability gate.** Computed on localizer data only, before any transfer. A parcel passes only if all three hold:
@@ -133,7 +137,9 @@ Contrasts are re-extracted from the registered first levels (refit at 4 mm). The
 
 The transfer tests are "pre-specified, target data known". The breathing-run awareness results are already known (null). What is new is the localizer-defined measurement.
 
-**Exploratory:** everything else, including connectivity, gPPI, RSA, decoding, gradients, T2, T4, T5 and phase-locked responses.
+**Exploratory:** everything else, including the C2 and C3 fROI rules, connectivity, gPPI, RSA, decoding, gradients, T2, T4, T5 and phase-locked responses.
+
+**Decided 2026-11-27:** the PI chose to add this plan to the pre-registration (swc7p).
 
 ## 9. Other techniques (ranked; exploratory)
 1. Per-epoch pattern expression (T4).
