@@ -50,6 +50,10 @@ stages, and none has been run.
   Extero, relative to the visual-tracking condition. Its suprathreshold voxels are part of one whole-brain negative C1 cluster of
   72,521 voxels (below), which covers 54% of AInsL, 16% of AInsR and 51% of
   dACC, so it is not specific to the salience masks.
+  The direction matches prior work: Farb et al. (2023, *eNeuro*) found
+  widespread cortical deactivation when attention moved to the breath rather than
+  an exteroceptive target. L1 was registered two-sided with no predicted
+  direction. The result therefore replicates that pattern and is not a reversal.
 - **L2** meets its registered criterion, a voxel FWE peak in the mask, in two of
   three masks. The effect is a single suprathreshold voxel in each mask. Each sits in a
   larger right-hemisphere C5 cluster centred outside the mask (inferior frontal
@@ -143,6 +147,10 @@ periventricular clusters. This is the pattern expected from deeper breathing
   CO2 contribution.
 - The salience-mask L1 effect should therefore be read as part of a global
   Intero < Extero difference, not as a salience-specific increase or decrease.
+  That global deactivation is the pattern reported by Farb et al. (2023, *eNeuro*).
+  The open question is how much of it is attentional and how much comes from
+  the deeper Intero breathing. The RVT rule says the attentional part survives
+  breathing correction; the PetCO2 subset cannot rule out a CO2 contribution.
 
 ## Deviations
 None in stage A. `Preregistration/localizer_deviations.md` is unchanged.
