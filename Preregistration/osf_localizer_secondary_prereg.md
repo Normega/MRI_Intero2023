@@ -208,6 +208,52 @@ How each derived measure is computed. All are computed per participant; group in
 11. **Detection rate:** change epochs reported in the correct direction / all change epochs.
 12. **Mean confidence:** mean confidence (1–7) over paced epochs.
 
+### Transformations
+No data are log-transformed, winsorized or trimmed. The transformations are listed below.
+
+**Event timing**
+1. **Event timing.**
+   - Event onsets are taken from the task logs and aligned to the first scanner trigger.
+   - Protocol v1 offsets are derived block by block (§1).
+   - Events that run past the end of the scan are clipped to it.
+   - Intero blocks with fewer than 4 presses are recoded into a separate regressor of no interest.
+
+**BOLD and first level**
+2. **Preprocessing.** fMRIPrep 24.1.1 outputs in MNI152NLin2009cAsym, 2 mm.
+3. **Spatial smoothing.** A 6 mm FWHM Gaussian for group maps; 4 mm for participant-specific ROIs and pattern analyses. The breathing-run contrasts used for transfer are refitted at 4 mm; only the smoothing changes from the swc7p model.
+4. **Intensity scaling.** Each run is converted to percent signal change: each voxel's time series is divided by its run mean, then 1 is subtracted and the result multiplied by 100 (nilearn `mean_scaling`, as in swc7p). Effects are therefore in percent signal change.
+5. **Temporal filtering.**
+   - A 200 s discrete-cosine high-pass set enters the design matrix.
+   - fMRIPrep's 128 s `cosine_*` regressors are removed from the nuisance set.
+   - AR(1) prewhitening.
+6. **Joint two-run model.** Runs are concatenated, each with its own intercept and nuisance regressors. Task regressors are shared across runs.
+7. **Contrast coding.** Contrast weights of +1/−1 on the condition regressors, with Rest as the implicit baseline. For example, C1 = +1 Intero, −1 Extero. C3 is the voxelwise minimum of the C1 and C2 t maps, not a weighted contrast.
+8. **Physiological regressors** (sensitivity and co-report models only).
+   - RVT is z-scored within run and convolved with the respiration response function.
+   - PetCO2 is entered as in swc7p.
+
+**Covariates and coding**
+9. **MAIA.** MAIA-2 items were recorded as 1–6 and are recoded to 0–5 by subtracting 1. Subscales are averaged (Indices, item 6), and the score is mean-centred across the analysed sample before entering a group model.
+10. **Other group covariates.** ΔRVT and Extero entrainment are mean-centred.
+11. **Protocol version.** Effect-coded (v1 = +0.5, v2 = −0.5), then mean-centred.
+
+**Physiology**
+12. **Belt signal.**
+    - Band-passed at 0.05–1 Hz (2nd-order zero-phase Butterworth).
+    - Sign-flipped per participant where the polarity estimated from the Match blocks is negative, so that inhalation is positive.
+    - Phase comes from the Hilbert transform.
+    - Phase-locking values are analysed untransformed (bounded 0–1).
+
+**Connectivity** (exploratory)
+13. **Network time series.** For each network, the median signal over its voxels, as in swc7p H7.
+    - Band-pass and nuisance regression as in H7.
+    - Correlations are Fisher z-transformed before averaging and testing.
+    - gPPI interaction terms use the deconvolved seed signal multiplied by each condition's regressor.
+
+**Statistics**
+14. **Bootstrap CIs.** Percentile intervals from 10,000 resamples of participants.
+15. **Pattern expression (T4).** LSS betas (one model per epoch). The C1 map is scaled to unit L2 norm, and the resulting index is z-scored within participant.
+
 ### Missing data
 - **MAIA** is missing for some participants: 46 of the 48 Intero-eligible; 42 of the 44 fROI-eligible. Those participants are excluded from L3 and T3b only.
 - **Respiration:**
