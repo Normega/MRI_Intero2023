@@ -1,0 +1,28 @@
+{
+ "subject": "sub-060",
+ "fwhm": 6,
+ "contrasts": {
+  "C1": {
+   "max_abs_diff_effect": 0.0,
+   "max_abs_diff_variance": 0.0,
+   "max_abs_effect": 2.2298271656036377
+  },
+  "C3": {
+   "max_abs_diff_effect": 0.0,
+   "max_abs_diff_variance": 0.0,
+   "max_abs_effect": 2.2951385974884033
+  },
+  "C2joint": {
+   "max_abs_diff_effect": 3.725290298461914e-09,
+   "max_abs_diff_variance": 0.0,
+   "max_abs_effect": 4.5459065437316895
+  },
+  "E3changejoint": {
+   "max_abs_diff_effect": 0.0,
+   "max_abs_diff_variance": 0.0,
+   "max_abs_effect": 3.808025360107422
+  }
+ },
+ "joint_dof": 417,
+ "swc7p_joint_dof": 417
+}

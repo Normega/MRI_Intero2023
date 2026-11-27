@@ -19,8 +19,9 @@ committed (400f1c8, c36230a) before any localizer statistic existed.
 - the registered sensitivity analyses;
 - descriptive whole-brain maps.
 
-Participant-specific ROIs, L4, T1, T3b and every exploratory analysis are later
-stages, and none has been run.
+Participant-specific ROIs, L4, T1, T3b, T3, T2 and the C2 / C3 fROI rules are stage B
+(section "Stage B" below). Connectivity, gPPI, T4, T5, decoding, RSA and PLV
+relations are stage C and have not been run.
 
 ## Verification (design only, before any statistic)
 - **Nuisance sheets.** Built by the breathing-sheet rule. Rebuilding all 103
@@ -152,5 +153,233 @@ periventricular clusters. This is the pattern expected from deeper breathing
   the deeper Intero breathing. The RVT rule says the attentional part survives
   breathing correction; the PetCO2 subset cannot rule out a CO2 contribution.
 
-## Deviations
-None in stage A. `Preregistration/localizer_deviations.md` is unchanged.
+## Deviations (stage A)
+None in stage A.
+
+---
+
+# Stage B: participant-specific ROIs, L4 and the transfer tests (OSF p5ztc)
+
+Run 2026-11-27. Choices: `Analysis/localizer_stageB_implementation_notes.md`,
+committed (03ef477) before any fROI or stage-B statistic existed. Scripts:
+`Scripts/intero2023_loc_breath4mm.py` (breathing-run refit) and
+`Scripts/intero2023_loc_froi.py`. Tables: `Analysis/results/LOC_froi_*`,
+`LOC_L4_gate*`, `LOC_T1*`, `LOC_T3b.csv`, `LOC_T3.csv`, `LOC_T2.csv`,
+`LOC_exploratory_rules.csv`, `LOC_stageB_sensitivity.csv`.
+
+**Contrast names.** The breathing-run files use the swc7p numbering:
+- aware − unaware is `C2joint` (H3);
+- paced − free is `C1` (H1/H6);
+- confidence is `C3` (H2);
+- change − No Change is `E3changejoint`.
+
+"C1/C2/C3/C5" without a qualifier below means the **localizer** contrast.
+
+**Pipeline checks.**
+- **Refit.** The breathing-run refit code, run at 6 mm, reproduces the swc7p maps
+  for sub-060: max |Δ| 0 for C1, C3 and E3changejoint; 4e-9 for C2joint; dof 417
+  in both (`Analysis/localizer_stageB_refit_check.json`).
+- **Batch.** All 47 refits (4 mm and unsmoothed) completed without error. The
+  only absent maps are the registered ones: no C3 for sub-066/070/114, and no
+  C2joint for sub-070/114.
+- **Extraction.** The 6 mm parcel means equal an independent NiftiMasker
+  extraction.
+
+**Sets.** fROI-eligible 44.
+- T1: 40, the fROI set ∩ H3. Excluded: sub-056, 080 and 085 (no usable breathing
+  run) and sub-070 (never "No Change").
+- T3: 41.
+- T3b: 40 (sub-065 has no MAIA).
+- T2: confidence 39; change − No Change 41.
+- No-v1: 34 / 34.
+
+## Verdicts
+
+| Test | N | Verdict | Key numbers |
+|---|---|---|---|
+| **L4** reliability gate (per parcel; all three criteria) | 44 | **Not met in any parcel** | (1) fails everywhere: the cross-run C1 effect is negative in all five parcels (dz −0.17 to −0.53; 32–41% of participants > 0). (2) Dice median .09–.14 against chance .10 fails, except PIns (.22 against chance .18). (3) passes in AInsL, dACC and PIns, and fails in AInsR (p .21) and the IEAT sphere (p .13). **The LOSO group fallback is therefore primary in AInsR and the sphere.** |
+| **T1** aware > unaware in the C1 fROIs, and > complement (one-sided, ×3; FLAME as H3) | 40 | **Not supported** | Gate-primary fROIs: AInsL (individual) dz +0.14, FLAME z 0.92, p ×3 .54; AInsR (fallback) dz +0.33, z 0.90, p .55; dACC (individual) dz −0.04, z 0.88, p .57. fROI − complement dz: −0.13 [−0.44, 0.19], −0.05 [−0.44, 0.24], −0.05 [−0.35, 0.28]. BF01 4.1 / 0.84 / 5.7 (directional BF0+ 2.6 / 0.43 / 7.2). |
+| **T3b** MAIA × paced − free > 0 in the ACC-sphere fROI (one-sided) | 40 | **Supported at the registered criterion; weak, and not specific to the fROI** | Gate-primary (fallback) fROI: r .26, slope t 1.63, permutation p .042. JZS BF10 0.57, so the Bayes factor is inconclusive. The rest of the sphere carries the effect more strongly (complement r .38, p .006; whole sphere r .37, p .007). fROI − complement slope −0.011 [−0.049, 0.024]. |
+| T3 (secondary) paced − free < 0 in the C5 fROIs (one-sided, ×5) | 41 | Negative in all five parcels; the C5 fROIs do not concentrate it | fROI dz −0.58 (AInsL), −0.76 (AInsR), −0.89 (dACC), −0.82 (PIns), −0.78 (sphere). Sign-flip p ×5 .002 (AInsL), .0005 (others, the floor). Parcel dz −0.78 to −1.13. The fROI is no more negative than its complement anywhere: (fROI − complement) dz on the negated effect −0.21 to +0.04, every CI includes 0. |
+
+**How the verdicts read.**
+- **L4.** The two-run C1 fROIs are not reliable participant-specific regions in
+  any parcel.
+  - **Selection.** Within the selecting data the fROIs look strongly
+    breath-preferring:
+    - median fROI C1 t 1.0–1.5;
+    - fROI C1 effect > 0 in 91–98% of participants;
+    - parcel means −0.09 to −0.17%.
+  - **Cross-run.** Defined in one run and measured in the other, the same voxels
+    are Intero < Extero in every parcel.
+  - **Reading.** The group C1 effect in these parcels is a deactivation (stage A,
+    L1), and the top 10% of each person's C1 map is mostly selection noise
+    around it, not a stable breath-preferring subregion.
+  - **Spatial structure.** Within-participant spatial r is low (median .005–.10)
+    but beats between-participant r in three parcels. So a weak individual
+    spatial pattern exists, just not one that yields a reliable positive fROI.
+  - **What the registered rule changes.** The fallback replaces the individual
+    fROI only in AInsR and the sphere, because the fallback triggers on (3)
+    alone. In AInsL, dACC and PIns the individual fROIs remain primary although
+    (1) failed, and every transfer result below carries that caveat.
+- **T1.**
+  - **Primary result.** Using participant-specific or group-constrained ROIs does
+    not reveal an awareness effect that the anatomical masks missed.
+    - In AInsL and dACC the fROI Bayes factors favour the null (BF01 4.1 and
+      5.7), as do the same parcels' 4 mm means in these 40 (3.1, 5.8) and E5
+      (5.1, 5.8). As registered, BF01 > 3 in the fROIs counts as a result: in
+      those two masks, spatial dilution does not explain the H3 null.
+    - In AInsR the evidence is inconclusive in every form (gate-primary fROI
+      BF01 0.84, parcel 1.15, E5 2.2).
+  - **Non-primary AInsR fROIs.** Several fROIs that are not primary do reach the
+    fROI component in AInsR:
+    - the individual C1 fROI, rejected by the gate's (3): dz +0.43, p ×3 .025,
+      BF10 4.1;
+    - the exploratory C2 and C3 rules: p ×3 .045 and .030.
+
+    None beats its complement (every paired CI includes 0). The AInsR parcel
+    itself has dz +0.30 in these 40 (p ×3 .20). The pattern fits a weak,
+    parcel-wide right anterior insula awareness effect, the region that was
+    already "best but inconclusive" in H3/E1/E5. It is not a localizer-specific
+    gain. A post-hoc check (deviations log) gives this individual AInsR fROI
+    dz +0.36 to +0.44 across specifications. FLAME p ×3 is .007–.039 except
+    unsmoothed (.43), and the paired CI always includes 0.
+- **T3b** passes its registered one-sided criterion, but only just.
+  - It passes in the group-defined (fallback) fROI, which is the sphere's most
+    C1-positive voxels at group level.
+  - The Bayes factor is inconclusive.
+  - The effect is weaker in the fROI than in the rest of the sphere.
+  - It is not robust to the unsmoothed extraction (p .17).
+  - The individual sphere fROI (not primary) is null (p .15), and its MAIA slope
+    is smaller than the complement's (CI [−0.083, −0.000]).
+
+  The result is best read as the swc7p H6 effect (MAIA × paced − free across the
+  IEAT sphere) reappearing at 4 mm in this subset. It is not evidence that a
+  localizer-defined ACC region carries it.
+- **T3.** Paced − free is strongly negative in every C5-defined fROI, as in H1. The
+  localizer Match < Intero voxels are no more pacing-sensitive in the breathing
+  runs than the rest of their parcel.
+
+## T1 in detail (gate-primary fROIs, N 40, breathing C2joint at 4 mm)
+
+| Parcel | fROI used | fROI dz / FLAME z / p ×3 | Complement dz / p ×3 | Parcel (anatomical control, same 40, 4 mm) dz / z / p ×3 | fROI − complement dz [95% CI] | dz(fROI) − dz(complement) [95% CI] | fROI BF01 / BF0+ | Parcel BF01 / BF0+ | E5 (N 45, 6 mm) BF01 / BF0+, and registered H3 |
+|---|---|---|---|---|---|---|---|---|---|
+| AInsL | individual | +0.14 / 0.92 / .54 | +0.19 / .43 | +0.19 / 1.04 / .44 | −0.13 [−0.44, +0.19] | −0.05 [−0.26, +0.14] | 4.09 / 2.56 | 3.05 / 1.75 | 5.06 / 3.44 (H3 z 2.67, p .58) |
+| AInsR | LOSO fallback | +0.33 / 0.90 / .55 | +0.29 / .17 | +0.30 / 1.51 / .20 | −0.05 [−0.44, +0.24] | +0.04 [−0.24, +0.30] | 0.84 / 0.43 | 1.15 / 0.60 | 2.18 / 1.18 (H3 z 3.07, p .23) |
+| dACC | individual | −0.04 / 0.88 / .57 | −0.01 / 1.00 | −0.01 / 0.33 / 1.00 | −0.05 [−0.35, +0.28] | −0.03 [−0.23, +0.20] | 5.66 / 7.17 | 5.84 / 6.25 | 5.81 / 8.05 (H3 z 2.25, p 1.00) |
+
+- The largest FLAME weight share is 0.049 / 0.050 / 0.076.
+- **FLAME versus the unweighted estimate.** FLAME and the unweighted estimate
+  differ in places. In the AInsR fallback fROI the unweighted t is 2.08
+  (dz +0.33) and FLAME z is 0.90. In dACC the unweighted t is −0.28 and FLAME z
+  is +0.88. The registered estimator is FLAME, and neither form reaches
+  significance after ×3.
+- **Fallback fROI in AInsL** (not primary there): dz +0.32, p ×3 .17, fROI −
+  complement +0.23 [−0.08, +0.55].
+
+## L4 gate in detail (C1 rule, N 44, per-run 4 mm maps)
+
+| Parcel | Cross-run C1: mean % (dz), p one-sided, share > 0 | (1) | Dice median (chance) | (2) | r within / between (median), p one-sided | (3) | L4 | Primary fROI |
+|---|---|---|---|---|---|---|---|---|
+| AInsL | −0.041 (−0.22), .93, .41 | fail | .119 (.100) | fail | .090 / .013, .0004 | pass | not met | individual |
+| AInsR | −0.036 (−0.17), .86, .34 | fail | .113 (.101) | fail | .005 / .013, .21 | fail | not met | LOSO fallback |
+| dACC | −0.054 (−0.23), .93, .41 | fail | .142 (.101) | fail | .068 / .016, .003 | pass | not met | individual |
+| PIns | −0.104 (−0.53), 1.00, .34 | fail | .220 (.175) | pass | .103 / .019, .008 | pass | not met | individual |
+| IEAT sphere | −0.090 (−0.31), .98, .32 | fail | .094 (.100) | fail | .048 / .025, .13 | fail | not met | LOSO fallback |
+
+**Distribution of the fROI C1 values** (two-run 4 mm map, the selecting data, so circular):
+
+| Parcel | fROI voxels | fROI mean C1 t, median [IQR] | fROI mean C1 effect % | Share with fROI C1 effect > 0 | Complement C1 effect % | Parcel C1 effect % |
+|---|---|---|---|---|---|---|
+| AInsL | 59 | 1.39 [0.99, 1.79] | +0.314 | .98 | −0.180 | −0.131 |
+| AInsR | 53 | 1.45 [0.92, 1.92] | +0.348 | .98 | −0.138 | −0.089 |
+| dACC | 67 | 1.50 [0.83, 2.01] | +0.342 | .95 | −0.181 | −0.128 |
+| PIns | 50 | 1.01 [0.39, 1.31] | +0.222 | .91 | −0.231 | −0.151 |
+| IEAT sphere | 53 | 1.40 [0.68, 1.87] | +0.363 | .93 | −0.233 | −0.173 |
+
+The LOSO fallback fROIs (top 10% of the group map) have a mean C1 effect of
++0.005% (AInsR) and −0.05 to −0.11% elsewhere (`LOC_froi_definition_summary.csv`).
+
+## T3b in detail (sphere, breathing C1 at 4 mm, N 40)
+
+| Region | r(MAIA) | Slope (% per MAIA point) / t | p one-sided, permutation (parametric) | JZS BF10 |
+|---|---|---|---|---|
+| fROI, LOSO fallback (**gate primary**) | .26 | 0.075 / 1.63 | **.042** (.056) | 0.57 |
+| Complement of that fROI | .38 | 0.086 / 2.50 | .006 (.008) | 2.64 |
+| Whole sphere (same 40) | .37 | 0.085 / 2.44 | .007 (.010) | 2.32 |
+| fROI, individual C1 (not primary) | .16 | 0.042 / 1.02 | .15 (.16) | 0.28 |
+
+fROI − complement slope: −0.011 [−0.049, +0.024] for the fallback fROI and
+−0.048 [−0.083, −0.000] for the individual fROI.
+
+## Exploratory (labelled; cannot support or overturn L4, T1 or T3b)
+
+**C2 (Intero > Self) and C3 (conjunction) fROI rules** (`LOC_L4_gate.csv`,
+`LOC_exploratory_rules.csv`).
+- **Gate.** Neither passes L4 in any parcel.
+  - (1) fails: the cross-run C2 effect is negative in every parcel (dz −0.14
+    to −0.96). For C3, both the C1 and the C2 cross-run effects are negative.
+  - (2) fails except PIns.
+  - (3) passes everywhere (C2: r within .12–.22 against between .05–.09, p ≤ .0011),
+    so the individual fROIs are primary.
+- **T1.** Not supported for either rule.
+  - The AInsR fROI component reaches p ×3 .045 (C2, dz +0.35) and .030
+    (C3, dz +0.39), but fROI − complement is +0.14 [−0.18, +0.47] and
+    +0.24 [−0.07, +0.57].
+  - AInsL: p ×3 .32 / .47. dACC: p .79 / .66, BF01 5.8 / 5.9.
+- **T3b.** Not supported for either rule: individual fROIs p .18 / .18. The MAIA
+  slope is smaller in the fROI than in its complement (C2 −0.050 [−0.085, −0.002]).
+  The non-primary LOSO versions give p .037 / .030.
+
+**T2** (C1 fROIs, gate-primary; FLAME, two-sided, ×3; `LOC_T2.csv`). Null.
+
+| Contrast | N | AInsL dz / p ×3 / BF01 | AInsR dz / p ×3 / BF01 | dACC dz / p ×3 / BF01 |
+|---|---|---|---|---|
+| Confidence (breathing C3) | 39 | +0.23 / 1.0 / 2.2 | +0.29 / 1.0 / 1.3 | +0.18 / 1.0 / 3.2 |
+| Change − No Change (E3) | 41 | +0.14 / 1.0 / 4.0 | +0.13 / 1.0 / 4.3 | −0.12 / 1.0 / 4.4 |
+
+The uncorrected FLAME p is .51–.88 throughout, and every fROI − complement CI
+includes 0.
+
+**T3, H6 analogue** (sphere C5 fROI, N 40): r .29, permutation p .043, BF10 0.80.
+fROI − complement slope −0.023 [−0.052, +0.016]. This has the same character as T3b.
+
+## Sensitivity analyses (stage B; `LOC_stageB_sensitivity.csv`)
+
+**T1.** Each cell shows fROI dz / p ×3 / fROI − complement dz [95% CI] / BF01.
+The primary fROI is the gate's choice.
+**T3b.** fallback fROI r / permutation p / fROI − complement slope [CI].
+
+| Specification | N | AInsL | AInsR | dACC | T3b |
+|---|---|---|---|---|---|
+| Primary (4 mm, 10%) | 40 | +0.14 / .54 / −0.13 [−0.44, +0.19] / 4.09 | +0.33 / .55 / −0.05 [−0.44, +0.24] / 0.84 | −0.04 / .57 / −0.05 [−0.35, +0.28] / 5.66 | +.26 / .042 / −0.011 [−0.049, +0.024] |
+| Unsmoothed extraction | 40 | +0.17 / 1.0 / −0.05 [−0.38, +0.26] / 3.50 | +0.44 / 1.0 / +0.06 [−0.30, +0.34] / 0.22 | −0.13 / 1.0 / −0.13 [−0.35, +0.24] / 4.32 | +.14 / .17 / −0.006 [−0.078, +0.100] |
+| 6 mm extraction (added) | 40 | +0.14 / .32 / −0.09 [−0.41, +0.23] / 4.10 | +0.25 / .36 / −0.14 [−0.53, +0.17] / 1.91 | −0.00 / .32 / +0.00 [−0.31, +0.32] / 5.86 | +.32 / .014 / −0.009 [−0.038, +0.016] |
+| fROI 5% (= 50 voxels) | 40 | +0.13 / .55 / −0.13 [−0.45, +0.18] / 4.25 | +0.33 / .54 / −0.05 [−0.45, +0.24] / 0.80 | −0.06 / .67 / −0.07 [−0.38, +0.25] / 5.51 | +.26 / .038 / −0.012 [−0.049, +0.022] |
+| fROI 20% | 40 | +0.18 / .49 / −0.09 [−0.39, +0.23] / 3.30 | +0.28 / .49 / −0.16 [−0.54, +0.15] / 1.36 | −0.02 / .56 / −0.01 [−0.30, +0.34] / 5.83 | +.27 / .030 / +0.000 [−0.040, +0.043] |
+| Without protocol v1 | 34 | +0.20 / .54 / −0.07 [−0.41, +0.28] / 2.98 | +0.30 / .63 / −0.14 [−0.62, +0.17] / 1.44 | −0.05 / .59 / −0.06 [−0.36, +0.32] / 5.20 | +.30 / .027 / −0.005 [−0.043, +0.033] |
+| Other fROI form, individual vs LOSO (not primary) | 40 | LOSO: +0.32 / .17 / +0.23 [−0.08, +0.55] / 0.95 | individual: +0.43 / .025 / +0.26 [−0.04, +0.57] / 0.24 | LOSO: −0.04 / 1.0 / −0.05 [−0.42, +0.25] / 5.71 | individual: +.16 / .15 / −0.048 [−0.083, −0.000] |
+
+**Reading.**
+- **T1** is null in every specification for the gate-primary fROIs. No
+  specification gives a fROI − complement CI above 0. In AInsL and dACC, BF01
+  stays above 3 in every row except the no-v1 AInsL row (2.98).
+- **T3b** keeps p < .05 at 6 mm, 5%, 20% and without v1. It is lost unsmoothed
+  (p .17), and its fROI − complement slope never departs from 0.
+- **Post hoc (deviations log), AInsR individual C1 fROI**
+  (`LOC_T1_posthoc_AInsR_individual.csv`):
+  - dz: +0.36 (6 mm), +0.39 (20%), +0.43 (5%), +0.44 (unsmoothed), +0.44 (no v1);
+  - FLAME p ×3: .007, .039, .023, .43 and .034;
+  - fROI − complement CI: includes 0 in all.
+
+## Deviations (stage B)
+Each is logged in `Preregistration/localizer_deviations.md`.
+- **Readings before running:**
+  - T3 is formed in the five constraint parcels, ×5.
+  - The scope of the sensitivity analyses: the high-pass, +RVT/+PetCO2 and
+    covariate checks are not repeated for transfer.
+  - The analyst definitions of L4 and the fallback.
+- **One addition before running:** the 6 mm extraction, at the PI's instruction.
+- **One post-hoc descriptive check:** the AInsR individual fROI, added after T1
+  was seen and labelled as such.
+- No registered test was changed.
