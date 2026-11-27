@@ -10,7 +10,7 @@
 
 **Before submitting.**
 1. Fill in the item marked **[PI to confirm]**, under Prior publication.
-2. Replace d29136b with the commit hash that freezes the plan.
+2. The plan is frozen at commit d29136b (https://github.com/Normega/MRI_Intero2023/blob/d29136b/Preregistration/intero2023_localizer_prereg.md); cite that link in the registration.
 
 ---
 
