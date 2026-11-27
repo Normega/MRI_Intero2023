@@ -287,6 +287,60 @@ No data are log-transformed, winsorized or trimmed. The transformations are list
 | T1 (fROI ∩ the swc7p H3 set) | 40 |
 | T3b | about 40 (fROI ∩ swc7p H6 set) |
 
+### Data inclusion and exclusion
+All rules below were fixed before any localizer BOLD signal was examined. Each is applied once, in this order. Every exclusion is reported with counts, by participant and run.
+
+**Inclusion**
+1. **Participants.** Every non-pilot participant in the Intero2023 dataset with at least one localizer run. Pilot and test identifiers (P00, P01, P50, P999) are excluded, as in swc7p. Eligibility was MRI safety only.
+2. **Run of record.** Where a localizer run was restarted, the attempt with the most completed blocks is used. Aborted attempts (2–8 blocks; sub-070, sub-114 and sub-118 run 1) are not used.
+3. **Independence from the breathing-run exclusions.** Localizer analyses (L1–L4) include participants whose breathing runs were excluded in swc7p, because their localizer runs are judged on their own. Transfer tests (T1, T3b) require inclusion in both.
+
+**Run-level exclusion**
+4. **Incomplete task.** A run is excluded if the task program stopped before all 10 blocks ran, so that a condition is missing. This applies to sub-058 run 2 and sub-114 run 2.
+5. **Motion.** The swc7p run-level gate excludes a run with mean FD > 0.5 mm or > 25% of volumes with FD > 0.5 mm. This applies to sub-058 run 2 and sub-108 run 1.
+6. **Scan shorter than task** (6 protocol-v1 runs): the run is not excluded; events are clipped to the end of the scan.
+
+Result: **102 runs, 54 participants.**
+
+**Volume-level**
+7. Volumes with FD > 0.5 mm are censored by spike regressors, as in swc7p. In connectivity analyses (as in H7) they are removed from the time series.
+
+**Block-level**
+8. **Intero compliance.** An Intero block with fewer than 4 logged presses is non-compliant (16 of 207 blocks). It is modelled by a separate regressor of no interest and does not contribute to Intero contrasts or to breath-tracking measures.
+9. **No performance-based exclusion for the other conditions.** Extero, Match and Self responses are overwritten in the logs by the scanner trigger, so those blocks are never excluded on performance.
+
+**Participant-level, per analysis**
+
+| Analysis | Inclusion rule | N |
+|---|---|---|
+| Contrasts without Intero (C4, C6) | ≥ 1 usable run | 54 |
+| Intero contrasts (L1, L2, C1–C3, C5) | ≥ 3 of 4 compliant Intero blocks over two usable runs, or 2 of 2 with one usable run | 48 |
+| L3 | as L1, and MAIA available | 46 |
+| Participant-specific ROIs (L4) | two usable runs, ≥ 3 of 4 compliant Intero blocks, ≥ 1 compliant Intero block in each run | 44 |
+| T1 | fROI-eligible and in the swc7p H3 set | 40 |
+| T3b | fROI-eligible, in the swc7p H6 set, and MAIA available | about 40 |
+
+10. **fROI fallback.** If a participant's mask cannot yield 50 voxels, the group-constrained fallback ROI is used for that participant. The participant is not excluded.
+
+**Physiological data** (affects only the measures that need it)
+11. **Rate, depth and RVT.** Require:
+    - belt grade good or degraded;
+    - trigger timing exact or good;
+    - a complete log.
+
+    This gives 71 runs, 41 participants.
+12. **Phase measures** (pacer phase-locking, breath tracking).
+    - These also require scanner pulses equal to volumes and a resolved belt polarity. sub-071 is excluded because its polarity is unresolved.
+    - This gives 70 runs, 40 participants.
+    - Breath-tracking blocks also need ≥ 4 belt breaths.
+13. **+RVT co-report for L1.** Requires RVT regressors on both runs (about 29 of the 44 fROI-eligible).
+14. **Breathing-run data used in transfer and exploratory relations.** The swc7p exclusions and models are used unchanged (90 runs, 47 participants). The only change is the 4 mm refit.
+
+**Not done**
+- No participant or run is excluded for outlying BOLD values, outlying behaviour, or MAIA scores.
+- No exclusion is made after seeing localizer results.
+- Any departure from these rules will be reported as a deviation, with its reason and whether results had been seen.
+
 ### Statistical outliers
 No participant is removed as a statistical outlier. FLAME 1 down-weights high-variance participants. Each participant's share of the total weight is reported, as in swc7p.
 
