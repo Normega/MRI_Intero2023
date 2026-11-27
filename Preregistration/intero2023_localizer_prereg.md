@@ -1,6 +1,6 @@
-# Localizer analysis plan: pre-registration addendum to OSF swc7p (v1.0, 2026-11-27)
+# Localizer analysis plan: linked secondary-data preregistration (v1.0, 2026-11-27)
 
-**Status.** This is the plan of record for the two localizer runs (`task-localizer`), for submission as an addendum to OSF swc7p. Nothing has been fitted to localizer imaging data. History:
+**Status.** This is the plan of record for the two localizer runs (`task-localizer`), for submission as a new OSF Secondary Data Preregistration that links to swc7p (same sample). It is not an update of swc7p. The paste-ready form answers are in `osf_localizer_secondary_prereg.md`. Nothing has been fitted to localizer imaging data. History:
 - **v0.1:** merged from two plans, written independently and blind to localizer BOLD (one by Claude, one by a separate review agent).
 - **v0.2:** the PI's choice of fROI rule.
 - **v1.0:** adds the step-1 QC results and the PI's decisions of 2026-11-27: 200 s high-pass; phase-locking as the exploratory tracking measure; the breathing-robustness rule for L1.
