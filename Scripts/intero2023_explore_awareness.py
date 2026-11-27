@@ -6,6 +6,7 @@ intero2023_explore_awareness.py -- EXPLORATORY E3, E4, E5 (deviations.md, 2026-1
   python Scripts/intero2023_explore_awareness.py e3group             # E3 group map + awareness in its mask
   python Scripts/intero2023_explore_awareness.py e4                  # TFCE aware vs unaware
   python Scripts/intero2023_explore_awareness.py e5                  # Bayes factors in the H3 masks
+  python Scripts/intero2023_explore_awareness.py e6                  # change - No Change in the H3 masks
 
 E3a: joint two-run Model A (as H3: shared task columns, run-specific nuisance and intercept,
      PSC per run, AR(1)); contrast = unweighted mean of the change conditions present
@@ -14,6 +15,7 @@ E3b: mask = voxels of E3a clusters with p_FWE < .05 (either sign); the registere
      map tested in it, both tails, GRF voxel FWE (mask resels, H3 smoothness), Bonferroni x2.
 E4:  TFCE, sign-flip, two-sided, 5,000 permutations, equal-weighted, on the H3 C2joint effects.
 E5:  JZS Bayes factors (Rouder et al. 2009) on ROI-mean effects; r = 0.707 (0.5, 1.0 robustness).
+E6:  E3a contrast in the three H3 masks: two-sided voxel max-t FWE (10,000 sign-flips), x3; mask-mean dz and BF10.
 """
 import os, sys, json, warnings
 import numpy as np, pandas as pd, nibabel as nib
@@ -160,7 +162,36 @@ def e5():
     d = pd.DataFrame(rows); d.to_csv(os.path.join(RD, "EXPLORATORY_E5_bayes_factors.csv"), index=False)
     print(d[d.prior_r == 0.707].round(3).to_string(index=False))
 
+def e6():
+    import intero2023_group as G
+    subs = json.load(open(os.path.join(RD, "EXPLORATORY_E3a_change_vs_nochange_subjects.json")))["subjects"]
+    files = [G.fl(s, "base", "E3changejoint", "effect") for s in subs]
+    imgs = [nib.load(f) for f in files]
+    dm = pd.DataFrame({"intercept": np.ones(len(files))})
+    rows = []
+    for roi in G.SETS["H3"]:
+        rmask = nib.load(G.ROI(roi)).get_fdata() > 0
+        lp = non_parametric_inference(imgs, design_matrix=dm, second_level_contrast="intercept",
+                                      mask=G.ROI(roi), n_perm=G.N_PERM, two_sided_test=True,
+                                      random_state=G.SEED, n_jobs=G.N_JOBS)
+        tmap = G.ols_t(imgs, dm, "intercept", G.ROI(roi))
+        lpv = lp.get_fdata()[rmask]; tv = tmap.get_fdata()[rmask]
+        k = int(np.nanargmax(np.abs(tv))); ijk = np.argwhere(rmask)[k]
+        pmin = float(10 ** -np.nanmax(lpv))
+        mk = NiftiMasker(mask_img=G.ROI(roi)).fit()
+        y = np.array([mk.transform(f).mean() for f in files])
+        row = dict(analysis="EXPLORATORY E6", roi=roi, N=len(files), peak_abs_t_signed=round(float(tv[k]), 3),
+                   peak_mni=[round(float(c), 1) for c in nib.affines.apply_affine(tmap.affine, ijk)],
+                   p_fwe=pmin, p_fwe_bonf3=min(1.0, 3 * pmin), n_vox_p_lt_05=int((lpv > -np.log10(0.05)).sum()),
+                   mask_mean=float(y.mean()), mask_mean_dz=float(y.mean() / y.std(ddof=1)),
+                   mask_mean_t=float(stats.ttest_1samp(y, 0).statistic))
+        for r in (0.5, 0.707, 1.0):
+            row[f"BF10_r{r}"] = jzs_bf10(row["mask_mean_t"], len(y), r)
+        rows.append(row)
+    d = pd.DataFrame(rows); d.to_csv(os.path.join(RD, "EXPLORATORY_E6_change_vs_nochange_h3masks.csv"), index=False)
+    print(d.round(4).to_string(index=False))
+
 
 if __name__ == "__main__":
     a = sys.argv[1]
-    {"e3subject": lambda: e3subject(sys.argv[2]), "e3group": e3group, "e4": e4, "e5": e5}[a]()
+    {"e3subject": lambda: e3subject(sys.argv[2]), "e3group": e3group, "e4": e4, "e5": e5, "e6": e6}[a]()

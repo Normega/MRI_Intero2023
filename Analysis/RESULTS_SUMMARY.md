@@ -15,13 +15,13 @@ FWE with the registered Bonferroni. Permutation p has a floor of 1e-4
 | **H2** confidence, salience masks (supportive) | 44 | **Not supported** | Best mask right anterior insula, t 3.39, p .17 (×3). Whole brain null. |
 | **H4** step > ramp, salience masks | 43 | **Not supported** | Best mask left anterior insula, t 2.98, p .40 (×3). Whole brain null. |
 | **H5** physiological correction | — | **Not tested** | Neither H3 nor H2 is supported, so under the registered rule both comparisons are descriptive (below). |
-| **H6** MAIA × paced − free, IEAT ACC sphere, two-sided | 46 | **Supported** | t +3.28 at (−2.5, 13.5, 45.5), p_FWE .036, 4 voxels. Higher MAIA means less deactivation under pacing. Whole brain: one positive cluster, 687 voxels, peak (3.5, 35.5, 3.5), p .005. |
+| **H6** MAIA × paced − free, IEAT ACC sphere, two-sided | 46 | **Supported** | t +3.28 at (−2.5, 13.5, 45.5), p_FWE .036, 4 voxels. Higher MAIA means less deactivation under pacing. Whole brain: one positive cluster, 687 voxels, peak (3.5, 35.5, 3.5), pregenual ACC (Harvard–Oxford 86%), p .005. |
 | **H7a** coupling paced vs free | 47 | **Not supported** | SAL–SMN dz −0.10, SAL–ECN +0.13. Holm p .72 for both. |
 | **H7b** coupling aware vs unaware | 23 | **Not supported** | SAL–SMN dz −0.02, SAL–ECN +0.12. Holm p 1.0 for both. |
 
 **Whole brain, H1.**
 - Four clusters survive. The largest is negative: 87,588 voxels, peak t −10.4 at (−52.5, −54.5, 25.5). It is widespread deactivation, as in the IEAT.
-- One cluster is positive: 3,381 voxels, peak t 8.1 at (45.5, −62.5, 7.5), right lateral occipitotemporal cortex. It is plausibly the moving visual pacer. Not yet labelled against an atlas.
+- One cluster is positive: 3,381 voxels, peak t 8.1 at (45.5, −62.5, 7.5), right lateral occipitotemporal cortex. Harvard–Oxford labels it lateral occipital / middle temporal cortex, near MT, which fits the moving visual pacer. The negative peak is in left angular / supramarginal gyrus.
 
 ## Sensitivity analyses (best mask of the hypothesis's registered set; ×3 or the registered k)
 
@@ -80,8 +80,45 @@ RVT correction shifts the aware − unaware estimate downward (dz about −0.4).
 
 ## Exploratory (labelled as such; cannot support or overturn any hypothesis)
 
-- **E1, aware vs unaware two-sided** (added at the PI's request after H3 was seen; `Preregistration/deviations.md`): null in both tails. Best: right anterior insula aware > unaware, z 3.07, p .46 (×6).
-- **Model A-g, graded awareness** (FLAME, H3 masks): best is the right anterior insula in every version, but nothing survives ×3:
-  - signed confidence: p .15;
-  - rank-transformed: p .12;
-  - aware-only confidence (N 38): p .086.
+All are logged in `Preregistration/deviations.md` ("After the update"), each
+added after the registered results were seen. Atlas labels are Harvard–Oxford
+cortical/subcortical and the FSL cerebellar atlas, and are descriptive.
+
+### Awareness
+
+| | Question | N | Result |
+|---|---|---|---|
+| E1 | Aware vs unaware, H3 masks, both tails (FLAME, GRF, ×6) | 45 | Null. Best: right anterior insula aware > unaware, z 3.07, p .46. |
+| Model A-g | Graded awareness (confidence modulator), H3 masks, ×3 | 45 / 38 | Null. Right anterior insula is best each time: signed p .15, rank p .12, aware-only p .086. |
+| E3a | Change (aware, unaware, wrong-direction) vs No Change, whole brain, two-sided | 47 | Null. Largest cluster 23 voxels, p_FWE .78. |
+| E3b | Aware vs unaware inside E3a's surviving clusters | — | Not run: no cluster survived E3a, so the mask is empty. |
+| E4 | Aware vs unaware, whole-brain TFCE, two-sided (5,000 permutations) | 45 | Null. Smallest p: aware > unaware .56, aware < unaware .96. No voxel p < .05. |
+| E5 | JZS Bayes factors, H3 masks (r = 0.707) | 45 | Aware − unaware BF01: left anterior insula 5.1, right 2.2, dACC 5.8 (directional BF0+ 3.4, 1.2, 8.1). Confidence (H2, N 44) BF01: 2.6, 2.0, 5.5. |
+| E6 | Change vs No Change, H3 masks, two-sided voxel max-t, ×3 | 47 | Null: p_FWE×3 = 1.0 in all three; no voxel p < .05. Mask-mean dz +0.02, +0.10, −0.06; BF01 (r 0.707) 6.2, 5.0, 5.8. |
+
+**Reading.** The salience masks show no detectable response to a change in
+pace, whether or not it was noticed (E3a, E6), and moderate evidence against
+one (E6 BF01 5–6). There is moderate evidence against aware > unaware in the
+left anterior insula and dACC. The right anterior insula is consistently the
+best region but inconclusive (BF01 2.2). The CAREN anterior insula and dACC masks
+are broad: they extend back to y = −20.5 and y = −44.5.
+
+### Physiological regressors (E2: whole brain, two-sided, cluster FWE)
+
+| Regressor | Sample | Result |
+|---|---|---|
+| RVT ⊗ RRF | S2b (N 41) | One positive cluster, 65,613 voxels (about 30% of the mask), peak t 10.4 in right cerebellum Crus II. |
+| RVT ⊗ RRF | S2 Biopac (N 30) | 12 positive clusters. The largest are: right cerebellum X/VIII (11,595 voxels, peak t 8.5); left hippocampus / medial temporal (3,913); right planum polare / posterior insula (3,181); precuneus / paracentral (598); SMA / superior frontal (570); right thalamus (239). |
+| Net PetCO2 (sum of 4 lags) | S1 (N 25) | Two small clusters: positive left occipital pole (179 voxels, p .012); negative lingual gyrus / vermis (161 voxels, p .015). |
+
+**Reading.** RVT has the expected widespread positive BOLD relation, strongest
+in cerebellum, deep grey matter and peri-vascular territory. Correcting for it
+barely changes H1 or H6, so neither is a breathing-volume artifact. The net
+CO2 term carries little unique spatial variance.
+
+### Physiological correction of the supported hypotheses
+
+H1 is unchanged by every correction: mask dz shifts by 10% or less, and p stays
+.0003. H6 survives RVT correction (S2 .028, S2b .022). In S1 it is null in the
+base model as well as the corrected one, so the loss there comes from the
+subset (see Sensitivity).
