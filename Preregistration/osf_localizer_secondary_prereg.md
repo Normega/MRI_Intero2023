@@ -9,7 +9,7 @@
 - The plan of record is `Preregistration/intero2023_localizer_prereg.md` (v1.0) in https://github.com/Normega/MRI_Intero2023. Section references (§) below point into it.
 
 **Before submitting.**
-1. Fill in the item marked **[PI to confirm]**, under Prior publication.
+1. Prior publication: none (confirmed by the PI, 2026-11-27).
 2. The plan is frozen at commit d29136b (https://github.com/Normega/MRI_Intero2023/blob/d29136b/Preregistration/intero2023_localizer_prereg.md); cite that link in the registration.
 
 ---
@@ -206,10 +206,9 @@ Not applicable.
 ## Knowledge of data
 
 ### Prior publication/dissemination
-- OSF swc7p (registration, and its approved update) for the breathing change-detection runs of this dataset.
-- The breathing-run results (registered tests and exploratory analyses E1–E10) are summarised in the linked repository (`Analysis/RESULTS_SUMMARY.md`); not yet published.
-- **[PI to confirm]** whether the companion behavioural manuscript (the BCAT preprint) includes any of this sample.
-- No localizer analysis has been presented or published.
+None. No publications, working papers or conference presentations are based on this dataset.
+- The breathing change-detection runs are registered at OSF swc7p (with its approved update).
+- Their results (registered tests and exploratory analyses E1–E10) are summarised only in the linked repository (`Analysis/RESULTS_SUMMARY.md`) and have not been published or presented.
 
 ### Prior knowledge*
 **Norman Farb** designed the study and knows the following.
