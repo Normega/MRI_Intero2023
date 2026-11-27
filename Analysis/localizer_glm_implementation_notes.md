@@ -125,7 +125,9 @@ The breathing-run sheets were written by three R scripts:
 | L3 | Intero set with `maia_ieat_total` | 46 |
 | RVT co-report (L1) and +RVT sensitivity | Intero set, **two usable runs, `rvt_rrf_z` on both** | 29 |
 | +PetCO2 sensitivity | Intero set, PetCO2 basis on every used run, as swc7p S1 | 24 (L3 24) |
-| No v1 | Intero set minus P51–59 | 40 (L3 subset accordingly) |
+| No v1 | Intero set minus P51–59 | 40 (L3 38) |
+| ΔRVT / Extero-entrainment covariate | Intero set with the covariate (belt usable for rate and depth on a used run) | 35 (L3 34) |
+| +RVT for L3 | the RVT co-report set with MAIA | 28 |
 
 - **RVT subset.** The registration says "RVT regressors on both runs (about 29
   of the 44 fROI-eligible)", and it is read literally. Three one-run Intero
