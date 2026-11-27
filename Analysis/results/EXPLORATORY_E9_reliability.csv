@@ -1,0 +1,4 @@
+measure,N,icc31,pearson_r,spearman_brown,mean,sd,min,max,frac_ratings_ge6
+"C1 ieat_ACCsphere mean, run 1 vs run 2",43,0.48456546664237976,0.4859082102775574,,,,,,
+"mean paced confidence, odd vs even epochs (Spearman-Brown)",47,,0.8392758765041191,0.9126155431335474,,,,,
+mean paced confidence across participants,47,,,,5.470002338087444,0.7982790129720665,3.5714285714285716,7.0,0.5056179775280899

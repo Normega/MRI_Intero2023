@@ -1,0 +1,9 @@
+analysis,role,x,y,covariate,N,spearman_rho,p_perm,pearson_r,BF10_s1.0,BF10_s0.707,BF10_s0.354,note,p_holm_secondary,holm_m
+E9a,primary,C1_sphere,conf,,47,-0.015736190632279354,0.9185081491850815,0.028617456281856225,0.11613549895887065,0.1611510130765841,0.293874278614214,,,4.0
+E9b,secondary,C1_sphere,conf,maia,46,-0.12678323994294052,0.394960503949605,,,,,,1.0,4.0
+E9b chain,descriptive,maia,C1_sphere,,46,0.36552574776441565,,0.3487647288134506,,,,,,4.0
+E9b chain,descriptive,maia,conf,,46,0.232774895360015,,0.3151292895868497,,,,,,4.0
+E9b chain,descriptive,C1_sphere,conf,,46,-0.02968311894702206,,0.02479213993581634,,,,,,4.0
+E9a-LOO,secondary,C1_loo,conf,,47,0.055250228139069095,0.7114288571142886,0.17215649613168824,,,,"fold clusters 43-1182 vox, median 670; Dice vs full 0.12-1.00",1.0,4.0
+E9a-LOO chain,descriptive,maia,C1_loo,,46,0.4682701202590195,,,,,,,,4.0
+type-2 AUC,descriptive,C1_sphere,type2_auc,,31,-0.35586046460615306,,,,,,"bootstrap 95% CI [-0.671, -0.005]",,

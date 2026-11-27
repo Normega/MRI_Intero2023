@@ -270,12 +270,12 @@ def run():
     # ---------------- Holm over the secondary family
     R = pd.DataFrame(rows)
     sec = [("E9b", R.loc[R.analysis == "E9b", "p_perm"].iloc[0])]
-    sec += [(f"E9c {c}", p_) for c, p_ in zip(C.map, C.p_fwe)]
+    sec += [(f"E9c {c}", p_) for c, p_ in zip(C["map"], C.p_fwe)]
     if n_empty == 0:
         sec.append(("E9a-LOO", R.loc[R.analysis == "E9a-LOO", "p_perm"].iloc[0]))
     hp = dict(zip([k for k, _ in sec], holm([p_ for _, p_ in sec])))
     R["p_holm_secondary"] = [hp.get(a, np.nan) for a in R.analysis]
-    C["p_holm_secondary"] = [hp[f"E9c {c}"] for c in C.map]
+    C["p_holm_secondary"] = [hp[f"E9c {c}"] for c in C["map"]]
     C["holm_m"] = R["holm_m"] = len(sec)
 
     # ---------------- descriptives
@@ -342,7 +342,7 @@ def plot():
         ax.tick_params(colors="#52514e")
         ax.legend(frameon=False, fontsize=8, loc="lower right")
     cb = fig.colorbar(sc, ax=axs[0].tolist(), fraction=0.04, pad=0.02); cb.set_label("MAIA (IEAT total)", color="#52514e")
-    fig.suptitle("EXPLORATORY E9 — pacing-related ACC response and confidence", fontsize=11, x=0.01, ha="left")
+    fig.suptitle("EXPLORATORY E9 — pacing-related ACC response and confidence", fontsize=11, x=0.01, y=1.06, ha="left")
     os.makedirs(OD, exist_ok=True)
     fig.savefig(os.path.join(OD, "E9_scatter.png"), dpi=160, bbox_inches="tight", facecolor="#fcfcfb")
     print("wrote", os.path.join(OD, "E9_scatter.png"))

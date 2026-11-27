@@ -1,0 +1,3 @@
+analysis,role,map,roi,N,peak_abs_t_signed,peak_mni,p_fwe,p_fwe_bonf2,n_vox_p_lt_05,roi_mean_rho_maia,roi_mean,roi_mean_dz,p_holm_secondary,holm_m
+E9c,secondary,C3,ieat_ACCsphere,43,1.496,"[-6.5, 3.5, 31.5]",0.9012098790120988,1.0,0,-0.033373603141045004,-0.00771101051941514,-0.06383742392063141,1.0,4
+E9c,secondary,E8confjoint,ieat_ACCsphere,43,2.408,"[-6.5, 17.5, 41.5]",0.281971802819718,0.563943605639436,0,0.1836303231652069,0.0028892613481730223,0.027207447215914726,1.0,4

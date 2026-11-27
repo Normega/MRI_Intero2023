@@ -120,6 +120,39 @@ left anterior insula and dACC. The right anterior insula is consistently the
 best region but inconclusive (BF01 2.2). The CAREN anterior insula and dACC masks
 are broad: they extend back to y = −20.5 and y = −44.5.
 
+### Interoceptive trait and confidence
+
+E9 asks whether the H6 effect (MAIA × paced − free in the registered IEAT ACC
+sphere) relates to confidence. Behaviourally, MAIA tracks mean paced confidence
+(Spearman .23, Pearson .32, n 46) but not direction accuracy (Spearman −.09).
+Confidence is the mean over each participant's paced epochs (7–14). Everything
+below is exploratory.
+
+| | Question | N | Result |
+|---|---|---|---|
+| E9a (primary) | C1 (paced − free) in the IEAT ACC sphere vs mean confidence, Spearman, permutation | 47 | Null. ρ −.02, p .92 (Pearson r +.03). JZS BF10 0.12 (s 1; 0.16 at s 0.707, 0.29 at s 0.354), so BF01 about 9: moderate-to-strong evidence of no linear relation. |
+| E9b | As E9a, partial on MAIA (ranks) | 46 | Null. Partial ρ −.13, p .40 (Holm ×4: 1.0). Chain, descriptive: MAIA–C1 ρ +.37, MAIA–confidence ρ +.23, C1–confidence ρ −.03. |
+| E9c | MAIA × confidence-modulator maps in the sphere, two-sided voxel max-t FWE | 43 / 43 | Null. C3 (Model B, epoch): peak t +1.50, p_FWE .90. E8conf (rating window): peak t +2.41, p_FWE .28 (×2: .56). Holm ×4: 1.0 for both. No voxel p < .05. |
+| E9a-LOO | C1 in a leave-one-out H6 cluster vs confidence | 47 | Feasible: no fold empty, and every fold cluster contains the H6 peak (43–1,182 voxels, median 670; Dice with the full cluster .12–1.00, median .94). Null: ρ +.06, p .71 (Holm 1.0). MAIA–C1(LOO) ρ +.47. |
+| Descriptive | C1 in the sphere vs type-2 AUC | 31 | ρ −.36, bootstrap 95% CI [−.67, −.01]. Not a test. The sign is opposite to the MAIA chain, the N is small and the AUCs rest on few trials. |
+
+Reliability (descriptive): the sphere C1 has run-1 vs run-2 ICC(3,1) .49 (N 43).
+Mean confidence has split-half reliability .91 (Spearman–Brown). Between-person
+SD is 0.80 on the 1–7 scale, and 51% of paced ratings are 6 or 7.
+
+**Reading.** The ACC response that tracks MAIA does not track confidence. This
+holds between people (E9a, with BF01 about 9, and E9a-LOO), after removing MAIA
+(E9b), and within people: MAIA does not moderate how ACC activity follows
+trial-by-trial confidence, either during the epoch or during the rating (E9c).
+The MAIA–C1 and MAIA–confidence relations are both present in this sample, but
+they do not share variance: C1 and confidence are uncorrelated (ρ −.03). On
+these data, H6 and the MAIA–confidence link look like separate correlates of
+the trait, not a single pathway. Caveats:
+- With N 47, only correlations of about |ρ| ≥ .29 are detectable at 50% power.
+- The sphere C1 has reliability of about .5, which attenuates any true relation by about 0.7.
+- Confidence has a restricted range.
+- The behavioural MAIA–confidence correlation itself is modest (Spearman .23, p .12).
+
 ### Physiological regressors (E2: whole brain, two-sided, cluster FWE)
 
 | Regressor | Sample | Result |
