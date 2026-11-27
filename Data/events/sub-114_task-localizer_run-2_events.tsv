@@ -1,0 +1,9 @@
+onset	duration	trial_type	block_index	protocol_version	n_presses	compliant
+0.0	8.1996	instruction	1	v2	n/a	n/a
+8.1996	30.0225	match	1	v2	n/a	n/a
+38.2221	8.1946	instruction	2	v2	n/a	n/a
+46.4167	30.02	extero	2	v2	n/a	n/a
+76.4367	8.172	instruction	3	v2	n/a	n/a
+84.6086	30.0232	rest	3	v2	n/a	n/a
+114.6319	8.2387	instruction	4	v2	n/a	n/a
+122.8706	30.1092	self	4	v2	n/a	n/a
