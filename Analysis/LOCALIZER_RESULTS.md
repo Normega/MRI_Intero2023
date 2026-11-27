@@ -434,3 +434,147 @@ compared with the base model **in the same participants**:
     with.
   - The stage-A loss of L1 significance in the PetCO2 subset reflects the
     smaller N (24), not removal of the effect: the mask means keep 84–94%.
+
+# Stage C1 (exploratory): breath tracking and pacer adherence
+
+**Everything in this section is exploratory** (plan §4; p5ztc "Exploratory analysis"). No result here is a test of a registered hypothesis.
+- Definitions were logged in `Preregistration/localizer_deviations.md` and committed before any stage-C value was computed (a247228). Post hoc additions made after the first tables were seen are logged separately and labelled below.
+- Script: `Scripts/intero2023_loc_behaviour.py`. It reuses the step-1 functions in `intero2023_localizer_qc.py`; the split into callable helpers reproduces every step-1 CSV exactly.
+- Tables: `Analysis/results/EXPLORATORY_LOC_C1_*.csv`. Figure: `Figures/localizer/loc_C1_breath_tracking_adherence.png`.
+
+**Run sets.**
+- **Localizer:** the 102 usable runs (motion gate applied). Phase measures also need a usable belt, exact or good trigger timing with pulses = volumes, and a resolved polarity.
+- **Change-detection:** the 90 swc7p runs. 58 runs (33 participants; 25 with both runs) have a usable belt and timing. Of the 32 lost, 29 have a failed or missing belt and 3 fail on timing.
+
+## Were participants breathing along with the pacer, in both tasks?
+
+**Yes, nearly all of those who could be measured.** "Above chance" means the participant's own pacer blocks beat their own null blocks (one-sided Mann–Whitney p < .05). Values are medians [IQR] of participant means.
+
+| Measure | N | PLV | Null | PLV > null | Above chance (p < .05) |
+|---|---|---|---|---|---|
+| Localizer Match (instructed) | 40 participants / 69 runs | .87 [.77–.91] | .32 | 40/40 | **38/40** participants; 58/69 runs |
+| Change-detection paced epochs, registered null (free epochs vs a virtual pacer) | 33 / 58 | .82 [.78–.89] | .31 | 33/33 | **33/33**; 55/58 runs |
+| Change-detection paced epochs, added length-matched null (other epochs' pacer traces) | 33 / 58 | .82 | .58 | 33/33 | **32/33** (one-sided Wilcoxon over epochs); 55/58 runs |
+| Localizer Extero (unintended entrainment) | 40 / 69 | .56 [.36–.68] | .32 | 34/40 | 16/40; 23/69 runs |
+
+- **Both tasks:** 33 participants have usable belts in both. **32/33 are above chance in both.** The exception (sub-054) has a single localizer run with two Match blocks (PLV .76 vs null .43, p .14). That test cannot reach p < .05 with so few blocks.
+- **Following the pacer's changes.** Against the length-matched null, paced PLV is still well above it (median .82 vs .58). Participants followed the pacer's rate changes, not just its baseline rate.
+- **Agreement with the registered measure.** `adhere_r` has a median of .43, and ≥ .30 in 22/35 participants.
+  - Raw paced PLV tracks `adhere_r` closely: ρ .74 [.52, .87], n 33, BF10 71.
+  - The registered PLV − null index does not (ρ .10 [−.25, .43]).
+- **Extero.** Unintended entrainment is clear at group level (index > 0 in 34/40). For most individuals it is not significant on four blocks.
+
+**Caveat on the registered null (post hoc; logged).** The free-epoch and Rest/Self/Intero nulls compare free breathing with a virtual pacer at the pacer's rate. They therefore score regular breathing near that rate, not only chance.
+- The null PLV is a stable participant trait. The localizer null and the change-detection null correlate ρ .51 [.14, .79], n 33.
+- It dominates the null-subtracted indices:
+  - change-detection index × its free null: ρ −.77 (n 33);
+  - Match index × its null: ρ −.57 (n 40).
+- That is why the change-detection index is so reliable (ICC .85) and yet unrelated to `adhere_r`. The index with the length-matched null relates to `adhere_r` at ρ .65 [.39, .81].
+- The registered indices are kept and reported first. For relating adherence across tasks, raw paced PLV and the length-matched index are more interpretable.
+
+## Breath-tracking accuracy (localizer Intero)
+
+| Measure | N | Median [IQR] | Chance | Above chance |
+|---|---|---|---|---|
+| Tracking PLV (registered aggregate) | 38 participants / 66 runs | .79 [.71–.87] | .26 (shift mean) | **38/38** participants (p < .05 vs 200 shifts); 61/66 runs |
+| Pair score, cross-validated (post hoc, disclosed) | 36 / 61 | .79 [.60–.88] | .39 | 36/36 > chance mean; 61/61 runs |
+
+Run 1 vs run 2 reliability, ICC(3,1):
+
+| Measure | ICC | n | Step-1 QC value |
+|---|---|---|---|
+| Tracking PLV, registered aggregate | .44 | 28 | — |
+| Tracking PLV, step-1 mean-of-blocks form | .44 | 28 | — |
+| Tracking PLV, with the motion-failed sub-108 run 1 kept | .43 | 29 | .43 (29) |
+| Pair score | .55 | 25 | .56 (26) |
+
+- The step-1 values are reproduced exactly when that run is kept.
+- For comparison:
+  - Match index ICC .37 (29);
+  - Extero index .24 (29);
+  - change-detection paced PLV .51 (25);
+  - `adhere_r` .49 (26).
+
+## Manipulation check (rate, depth, RVT; step-1 values, not recomputed)
+
+From `EXPLORATORY_LOC_C1_manipulation_check.csv` (= `breathing_by_condition.csv`), N 41 participants:
+
+| | Rest | Self | Intero | Extero | Match |
+|---|---|---|---|---|---|
+| Rate, brpm (median) | 13.7 | 13.4 | 13.4 | 12.2 | 12.6 |
+| Relative depth | 0.75 | 0.79 | 1.40 | 1.04 | 1.80 |
+| RVT z | −0.42 | −0.35 | 0.53 | −0.20 | 0.74 |
+
+- **Intero vs Extero:**
+  - rate does not differ (dz .31, p .13);
+  - Intero breathing is deeper (depth dz .59, RVT dz .88, both p < .001).
+- **Match is the deepest condition:** RVT vs Extero dz 1.16; vs Intero dz .38, p .018.
+
+## Exploratory relations
+
+- **Statistics:** Spearman ρ (permutation p), bootstrap 95% CI, Pearson r, and JZS BF10 (s = 1).
+- **Correction:** BH-FDR across the 18 listed relations. **None survives FDR** (smallest q .14).
+
+| Relation | n | ρ [95% CI] | r | BF10 | q (FDR 18) |
+|---|---|---|---|---|---|
+| Tracking × MAIA | 33 | −.00 [−.35, .36] | −.04 | 0.14 | .99 |
+| Tracking × detection rate | 34 | .21 [−.11, .48] | .18 | 0.22 | .73 |
+| Tracking × mean confidence | 34 | .02 [−.34, .39] | −.06 | 0.14 | .99 |
+| **Tracking × breathing-run adherence (`adhere_r`)** | 33 | **.46 [.11, .74]**, p .008 | .42 | 2.73 | .14 |
+| Tracking × C1 in the fROIs (cross-run; AInsL, AInsR, dACC, PIns, sphere) | 31 | −.23 to .09; every CI spans 0 | −.29 to .00 | 0.14–0.48 | ≥ .73 |
+| Tracking × C1 in the masks (joint 6 mm; same five) | 34 | −.25 to −.05; every CI spans 0 | −.18 to −.07 | 0.14–0.22 | ≥ .73 |
+| Localizer Match index × `adhere_r` | 34 | .15 [−.23, .49] | .19 | 0.23 | .78 |
+| `adhere_r` × H1 C1 (paced − free), PIns / COper / SM mask means | 35 | .27 [−.11, .60] / .17 [−.18, .49] / .02 [−.32, .37] | .24 / .08 / −.03 | 0.35 / 0.14 / 0.13 | .73 / .78 / .99 |
+
+- **Strongest relation:** tracking × `adhere_r`. Better breath trackers in the localizer followed the change-detection pacer more closely. It does not survive FDR, and the BF10 of 2.7 is anecdotal.
+- **Tracking is unrelated to MAIA, detection, confidence and C1.**
+  - Most BF10 values are 0.14–0.22, i.e. BF01 of about 4.5–7: moderate evidence for no linear relation.
+  - The fROI and mask rows are less conclusive: AInsR fROI BF10 0.48, PIns fROI 0.28.
+  - The secondary pair score gives the same picture: |ρ| ≤ .21 with MAIA, detection, confidence and `adhere_r` (it was not related to C1).
+  - The AInsR gate-primary LOSO fROI: ρ −.09.
+- **Adherence across tasks.**
+  - The registered Match index is only weakly related to `adhere_r`.
+  - Same-scale rows (sensitivity, outside the family):
+    - Match index × change-detection index: ρ .50 [.18, .72], BF10 13. Part of this is the shared null-PLV trait.
+    - Raw Match PLV × raw change-detection paced PLV (post hoc): ρ .64 [.37, .82], BF10 20.
+    - Raw Match PLV × `adhere_r` (post hoc): ρ .36 [−.01, .66].
+  - People who followed the pacer closely in one task tended to do so in the other.
+- **Other descriptive and post hoc rows:**
+  - tracking × Extero entrainment: ρ .32 [.02, .56], n 38, BF10 1.1;
+  - tracking × change-detection paced PLV (post hoc): ρ .49 [.14, .75], BF10 4.2.
+
+## Breathing-run adherence as a moderator of H1 (paced − free)
+
+This is the swc7p H6 group model (nilearn permutation, 10,000, seed 20261126) with demeaned `adhere_r`. It is run two-sided in each H1 mask, Bonferroni ×3, on N 35 (the H1 set ∩ adherence available).
+
+| Moderator | N | PIns peak t, p_FWE ×3 | COper | SM | Mask-mean ρ (PIns / COper / SM) |
+|---|---|---|---|---|---|
+| `adhere_r` (listed) | 35 | +2.98, .99 | +2.70, 1.0 | −3.60, 1.0 | .27 / .17 / .02 |
+| Change-detection index (sensitivity) | 33 | −2.24, 1.0 | −1.95, 1.0 | −2.98, 1.0 | −.05 / −.07 / −.13 |
+| Change-detection paced PLV (post hoc) | 33 | +3.93, .53 | −3.22, 1.0 | −4.46, 1.0 | .26 / .18 / .05 |
+
+- **No moderation.** No voxel survives, and the mask-mean relations are small with CIs spanning 0 (BF10 0.13–0.35 for `adhere_r`).
+- The PIns mask mean leans positive: closer pacer following goes with less paced-breathing deactivation (ρ .27 [−.11, .60]).
+- H1's deactivation (mask C1 dz −0.82 to −1.06 in this subset) therefore does not depend detectably on how closely people followed the pacer.
+
+## Reading
+
+- Participants were breathing along with the pacer in both tasks:
+  - 38/40 in the localizer Match blocks;
+  - 33/33 in the change-detection paced epochs;
+  - 32/33 in both.
+- They also tracked their own breath far above chance (38/38), with modest run-to-run reliability (ICC about .44).
+- Individual differences in tracking do not relate to MAIA, change detection, confidence or the localizer C1 response in this sample.
+- The one moderate signal links tracking with pacer adherence. It is exploratory, does not survive FDR, and may reflect general task engagement or breathing regularity.
+- **Power.** The relation Ns are 31–38 and the measures' reliabilities are about .4–.5. Only correlations of about |ρ| ≥ .45 were detectable with reasonable power, so small true relations cannot be excluded.
+
+## Deviations (stage C1)
+
+- **Analyst definitions and readings, logged before running.** The main ones:
+  - the motion gate is applied, so tracking N is 38 participants / 66 runs (the registered "67 runs" includes the motion-failed run);
+  - the change-detection belt is located from the raw `.acq` with the step-1 rule;
+  - the FDR family;
+  - the H1 moderation model.
+- **One added sensitivity null, logged before running:** the length-matched null.
+- **Post hoc additions after the first tables were seen** (raw paced PLV, null-term diagnostics, paced PLV as moderator). They are logged and labelled and lie outside the FDR family.
+- No registered result was changed.
