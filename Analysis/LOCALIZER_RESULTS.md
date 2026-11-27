@@ -620,7 +620,6 @@ Match − Intero (C5, the L2 / H1-replication contrast) is much stronger:
 | Whole-brain dz | −0.30 | −0.61 |
 | PIns dz | −0.04 | −0.39 |
 | SM dz | −0.13 | −0.50 |
-| COper | (not computed here) | (not computed here) |
 | Negative extent | 12,755 voxels | 68,082 voxels |
 
 - So the weak, peak-level L2 result is partly due to the registered nuisance model. Paced breathing produces a task-locked global and CSF signal change, and the CSF regressor removes part of it.
