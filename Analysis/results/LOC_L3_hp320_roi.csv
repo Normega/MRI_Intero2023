@@ -1,0 +1,2 @@
+test,label,engine,contrast,variant,covariates,roi,N,direction,peak_z,peak_mni,resels,p_fwe,p_fwe_bonf,bonferroni_k,z_thresh_bonf,n_vox_sig,flame_ok,roi_mean,max_weight_share,maia_r,maia_slope,maia_slope_t,maia_p_two,bf10,bf10_r354
+L3,LOC_L3_hp320,FLAME1+GRF,C1,hp320,,ieat_ACCsphere,46,two-sided,-2.083,"[-8.5, 7.5, 29.5]",7.64,0.6817993936391147,0.6817993936391147,1,3.454,0,True,-0.17252163589000702,0.028699010610580444,-0.07517381344543203,-0.02181714454664056,-0.5000616180202483,0.6195235545743376,0.18002627945813943,0.3232303099939733

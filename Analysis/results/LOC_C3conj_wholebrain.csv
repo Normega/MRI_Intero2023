@@ -1,0 +1,88 @@
+contrast,sign,size_vox,peak_z,peak_mni,p_cluster,p_fwe_two_sided,labels
+"C3 conjunction min(z_C1, z_C2)",-,64254,-7.069,"[43.5, -26.5, 61.5]",,,"47% Postcentral Gyrus, 4% Precentral Gyrus; 55% Right Cerebral Cortex, 41% Right Cerebral White Matter"
+"C3 conjunction min(z_C1, z_C2)",+,906,5.289,"[33.5, -66.5, 9.5]",,,"4% Lateral Occipital Cortex, inferior division; 96% Right Cerebral White Matter, 4% Right Cerebral Cortex"
+"C3 conjunction min(z_C1, z_C2)",+,825,5.525,"[-26.5, -46.5, 19.5]",,,"94% Left Cerebral White Matter, 6% Left Lateral Ventricle"
+"C3 conjunction min(z_C1, z_C2)",-,351,-4.931,"[59.5, -60.5, 31.5]",,,"25% Lateral Occipital Cortex, superior division, 16% Angular Gyrus; 47% Right Cerebral Cortex, 0% Right Cerebral White Matter"
+"C3 conjunction min(z_C1, z_C2)",-,267,-4.67,"[-10.5, -24.5, -32.5]",,,100% Brain-Stem
+"C3 conjunction min(z_C1, z_C2)",+,152,4.713,"[7.5, -34.5, 9.5]",,,"1% Cingulate Gyrus, posterior division; 77% Right Cerebral White Matter, 16% Right Thalamus, 2% Right Lateral Ventricle, 0% Right Cerebral Cortex"
+"C3 conjunction min(z_C1, z_C2)",+,87,3.754,"[-28.5, -72.5, -20.5]",,,"27% Occipital Fusiform Gyrus, 1% Lateral Occipital Cortex, inferior division; 29% Left Cerebral Cortex, 0% Left Cerebral White Matter; 66% Left VI, 13% Left Crus I"
+"C3 conjunction min(z_C1, z_C2)",-,79,-4.293,"[-44.5, -36.5, -18.5]",,,"27% Inferior Temporal Gyrus, posterior division, 25% Temporal Fusiform Cortex, posterior division, 1% Inferior Temporal Gyrus, temporooccipital part; 57% Left Cerebral Cortex, 43% Left Cerebral White Matter"
+"C3 conjunction min(z_C1, z_C2)",-,64,-3.898,"[5.5, -60.5, -46.5]",,,"96% Right IX, 1% Right VIIIb"
+"C3 conjunction min(z_C1, z_C2)",+,48,4.226,"[29.5, -54.5, -42.5]",,,
+"C3 conjunction min(z_C1, z_C2)",-,47,-4.395,"[35.5, -90.5, 1.5]",,,"39% Occipital Pole, 29% Lateral Occipital Cortex, inferior division, 5% Lateral Occipital Cortex, superior division; 75% Right Cerebral Cortex, 21% Right Cerebral White Matter"
+"C3 conjunction min(z_C1, z_C2)",+,38,3.859,"[-6.5, -30.5, -50.5]",,,66% Brain-Stem
+"C3 conjunction min(z_C1, z_C2)",+,38,4.318,"[-24.5, -82.5, 9.5]",,,"3% Lateral Occipital Cortex, superior division, 2% Lateral Occipital Cortex, inferior division; 92% Left Cerebral White Matter, 7% Left Cerebral Cortex, 1% Left Lateral Ventricle"
+"C3 conjunction min(z_C1, z_C2)",-,38,-4.206,"[5.5, -14.5, 5.5]",,,100% Right Thalamus
+"C3 conjunction min(z_C1, z_C2)",-,36,-4.104,"[-16.5, -56.5, -36.5]",,,
+"C3 conjunction min(z_C1, z_C2)",-,36,-4.469,"[-6.5, -60.5, -44.5]",,,"76% Left IX, 9% Vermis VIIIb, 8% Vermis IX, 4% Left VIIIb"
+"C3 conjunction min(z_C1, z_C2)",+,35,4.021,"[11.5, -40.5, -50.5]",,,"36% Brain-Stem; 13% Right VIIIb, 7% Right IX, 4% Right X"
+"C3 conjunction min(z_C1, z_C2)",+,30,4.17,"[-30.5, -52.5, -38.5]",,,
+"C3 conjunction min(z_C1, z_C2)",+,30,3.628,"[-2.5, -72.5, -36.5]",,,"35% Vermis VIIIa, 34% Vermis Crus II, 19% Vermis VIIb, 7% Left Crus II, 4% Left VIIb, 1% Left VIIIa"
+"C3 conjunction min(z_C1, z_C2)",+,28,4.159,"[-24.5, 9.5, 31.5]",,,100% Left Cerebral White Matter
+"C3 conjunction min(z_C1, z_C2)",-,28,-3.898,"[5.5, -44.5, -42.5]",,,79% Brain-Stem; 25% Right IX
+"C3 conjunction min(z_C1, z_C2)",+,22,3.61,"[1.5, -50.5, 7.5]",,,"12% Cingulate Gyrus, posterior division, 9% Precuneous Cortex, 3% Lingual Gyrus, 1% Intracalcarine Cortex; 25% Right Cerebral Cortex, 3% Left Cerebral Cortex, 0% Right Cerebral White Matter"
+"C3 conjunction min(z_C1, z_C2)",+,21,4.163,"[-14.5, -72.5, -46.5]",,,"87% Left VIIb, 7% Left Crus II, 1% Left VIIIa"
+"C3 conjunction min(z_C1, z_C2)",-,21,-3.408,"[-6.5, -96.5, 19.5]",,,"67% Occipital Pole, 2% Cuneal Cortex; 70% Left Cerebral Cortex, 19% Left Cerebral White Matter"
+"C3 conjunction min(z_C1, z_C2)",+,21,3.854,"[-36.5, -82.5, -44.5]",,,68% Left Crus II
+"C3 conjunction min(z_C1, z_C2)",-,20,-3.586,"[-2.5, -20.5, -8.5]",,,0% Left Cerebral White Matter
+"C3 conjunction min(z_C1, z_C2)",+,18,3.505,"[25.5, 31.5, 11.5]",,,
+"C3 conjunction min(z_C1, z_C2)",+,18,3.411,"[-32.5, -78.5, 1.5]",,,
+"C3 conjunction min(z_C1, z_C2)",+,17,4.123,"[-26.5, 35.5, 13.5]",,,
+"C3 conjunction min(z_C1, z_C2)",+,16,3.843,"[-4.5, -90.5, -30.5]",,,
+"C3 conjunction min(z_C1, z_C2)",-,14,-3.438,"[-0.5, -86.5, 13.5]",,,
+"C3 conjunction min(z_C1, z_C2)",+,14,3.6,"[-22.5, -38.5, 45.5]",,,
+"C3 conjunction min(z_C1, z_C2)",+,13,3.529,"[17.5, -8.5, 29.5]",,,
+"C3 conjunction min(z_C1, z_C2)",+,12,3.682,"[1.5, -70.5, -4.5]",,,
+"C3 conjunction min(z_C1, z_C2)",+,11,3.439,"[-18.5, 25.5, 13.5]",,,
+"C3 conjunction min(z_C1, z_C2)",-,11,-3.548,"[-18.5, -90.5, -12.5]",,,
+"C3 conjunction min(z_C1, z_C2)",-,8,-3.751,"[3.5, -38.5, -10.5]",,,
+"C3 conjunction min(z_C1, z_C2)",-,8,-3.343,"[-44.5, -40.5, -32.5]",,,
+"C3 conjunction min(z_C1, z_C2)",+,8,3.417,"[-26.5, -42.5, -42.5]",,,
+"C3 conjunction min(z_C1, z_C2)",-,7,-3.676,"[-46.5, -62.5, -14.5]",,,
+"C3 conjunction min(z_C1, z_C2)",-,7,-3.536,"[21.5, -98.5, -0.5]",,,
+"C3 conjunction min(z_C1, z_C2)",-,7,-3.965,"[-4.5, -38.5, -10.5]",,,
+"C3 conjunction min(z_C1, z_C2)",+,6,3.489,"[-16.5, -90.5, -38.5]",,,
+"C3 conjunction min(z_C1, z_C2)",+,6,3.383,"[-20.5, -46.5, -46.5]",,,
+"C3 conjunction min(z_C1, z_C2)",+,5,3.371,"[45.5, -38.5, 35.5]",,,
+"C3 conjunction min(z_C1, z_C2)",-,5,-3.639,"[-62.5, -6.5, 27.5]",,,
+"C3 conjunction min(z_C1, z_C2)",-,4,-3.171,"[13.5, -66.5, 25.5]",,,
+"C3 conjunction min(z_C1, z_C2)",+,4,3.614,"[7.5, -90.5, -36.5]",,,
+"C3 conjunction min(z_C1, z_C2)",-,4,-3.245,"[57.5, 3.5, 33.5]",,,
+"C3 conjunction min(z_C1, z_C2)",-,3,-3.287,"[15.5, -24.5, -2.5]",,,
+"C3 conjunction min(z_C1, z_C2)",-,3,-3.23,"[17.5, -56.5, -36.5]",,,
+"C3 conjunction min(z_C1, z_C2)",+,3,3.554,"[-20.5, -56.5, 39.5]",,,
+"C3 conjunction min(z_C1, z_C2)",+,3,3.144,"[-0.5, -78.5, -10.5]",,,
+"C3 conjunction min(z_C1, z_C2)",-,3,-3.451,"[-20.5, -100.5, -0.5]",,,
+"C3 conjunction min(z_C1, z_C2)",+,3,3.351,"[37.5, -50.5, 1.5]",,,
+"C3 conjunction min(z_C1, z_C2)",+,3,3.388,"[17.5, -72.5, -16.5]",,,
+"C3 conjunction min(z_C1, z_C2)",-,2,-3.209,"[-20.5, -0.5, -34.5]",,,
+"C3 conjunction min(z_C1, z_C2)",+,2,3.23,"[3.5, 17.5, 11.5]",,,
+"C3 conjunction min(z_C1, z_C2)",+,2,3.291,"[-24.5, 15.5, 23.5]",,,
+"C3 conjunction min(z_C1, z_C2)",-,2,-3.393,"[-48.5, -70.5, -10.5]",,,
+"C3 conjunction min(z_C1, z_C2)",-,2,-3.433,"[19.5, -84.5, -28.5]",,,
+"C3 conjunction min(z_C1, z_C2)",-,2,-3.281,"[39.5, -6.5, -32.5]",,,
+"C3 conjunction min(z_C1, z_C2)",-,2,-3.331,"[13.5, -38.5, 1.5]",,,
+"C3 conjunction min(z_C1, z_C2)",-,2,-3.321,"[-18.5, -20.5, -0.5]",,,
+"C3 conjunction min(z_C1, z_C2)",-,2,-3.157,"[-8.5, -46.5, -40.5]",,,
+"C3 conjunction min(z_C1, z_C2)",-,2,-3.202,"[37.5, -80.5, -14.5]",,,
+"C3 conjunction min(z_C1, z_C2)",+,2,3.291,"[19.5, 13.5, 21.5]",,,
+"C3 conjunction min(z_C1, z_C2)",+,1,3.136,"[-20.5, -36.5, -36.5]",,,
+"C3 conjunction min(z_C1, z_C2)",+,1,3.133,"[-18.5, 29.5, 7.5]",,,
+"C3 conjunction min(z_C1, z_C2)",+,1,3.159,"[-22.5, 39.5, -0.5]",,,
+"C3 conjunction min(z_C1, z_C2)",+,1,3.216,"[35.5, -44.5, -2.5]",,,
+"C3 conjunction min(z_C1, z_C2)",-,1,-3.137,"[-40.5, 1.5, -8.5]",,,
+"C3 conjunction min(z_C1, z_C2)",-,1,-3.102,"[-46.5, 39.5, 19.5]",,,
+"C3 conjunction min(z_C1, z_C2)",-,1,-3.245,"[-30.5, -96.5, 7.5]",,,
+"C3 conjunction min(z_C1, z_C2)",+,1,3.14,"[39.5, -34.5, -6.5]",,,
+"C3 conjunction min(z_C1, z_C2)",+,1,3.306,"[7.5, -82.5, -46.5]",,,
+"C3 conjunction min(z_C1, z_C2)",+,1,3.191,"[5.5, -28.5, -50.5]",,,
+"C3 conjunction min(z_C1, z_C2)",+,1,3.124,"[27.5, -60.5, -38.5]",,,
+"C3 conjunction min(z_C1, z_C2)",-,1,-3.097,"[-4.5, -40.5, -36.5]",,,
+"C3 conjunction min(z_C1, z_C2)",-,1,-3.126,"[9.5, -18.5, -34.5]",,,
+"C3 conjunction min(z_C1, z_C2)",-,1,-3.209,"[1.5, -32.5, -36.5]",,,
+"C3 conjunction min(z_C1, z_C2)",-,1,-3.128,"[-8.5, -16.5, -40.5]",,,
+"C3 conjunction min(z_C1, z_C2)",-,1,-3.17,"[33.5, -82.5, -12.5]",,,
+"C3 conjunction min(z_C1, z_C2)",-,1,-3.177,"[39.5, -2.5, 33.5]",,,
+"C3 conjunction min(z_C1, z_C2)",-,1,-3.321,"[43.5, -48.5, -12.5]",,,
+"C3 conjunction min(z_C1, z_C2)",-,1,-3.092,"[47.5, -64.5, 31.5]",,,
+"C3 conjunction min(z_C1, z_C2)",-,1,-3.153,"[59.5, 9.5, 31.5]",,,

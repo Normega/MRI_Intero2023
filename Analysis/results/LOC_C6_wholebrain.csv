@@ -1,0 +1,101 @@
+contrast,sign,size_vox,peak_z,peak_mni,p_cluster,p_fwe_two_sided,labels
+C6,-,28028,-8.24,"[13.5, -66.5, 25.5]",0.0,0.0,"47% Precuneous Cortex, 22% Cuneal Cortex, 13% Supracalcarine Cortex; 84% Right Cerebral Cortex, 16% Right Cerebral White Matter"
+C6,+,5849,7.22,"[-52.5, 23.5, -8.5]",1.32e-41,2.64e-41,"14% Frontal Orbital Cortex, 10% Inferior Frontal Gyrus, pars triangularis, 6% Frontal Operculum Cortex, 1% Inferior Frontal Gyrus, pars opercularis; 41% Left Cerebral Cortex, 1% Left Cerebral White Matter"
+C6,+,5555,6.77,"[-8.5, 7.5, 53.5]",3.54e-40,7.08e-40,"36% Juxtapositional Lobule Cortex (formerly Supplementary Motor Cortex), 9% Paracingulate Gyrus, 7% Superior Frontal Gyrus; 60% Left Cerebral Cortex, 40% Left Cerebral White Matter"
+C6,+,1666,6.79,"[31.5, -80.5, -34.5]",1.31e-17,2.62e-17,"90% Right Crus I, 10% Right Crus II"
+C6,+,1565,7.15,"[-22.5, -98.5, -10.5]",7.31e-17,1.462e-16,"58% Occipital Pole, 4% Lateral Occipital Cortex, inferior division; 63% Left Cerebral Cortex, 32% Left Cerebral White Matter"
+C6,-,1180,-5.0,"[-60.5, -6.5, 7.5]",7.56e-14,1.512e-13,"45% Central Opercular Cortex, 12% Postcentral Gyrus, 11% Planum Polare, 6% Precentral Gyrus, 3% Heschl's Gyrus (includes H1 and H2), 2% Planum Temporale, 1% Superior Temporal Gyrus, anterior division; 88% Left Cerebral Cortex, 3% Left Cerebral White Matter"
+C6,+,872,4.83,"[43.5, 21.5, 11.5]",3.44e-11,6.88e-11,"20% Inferior Frontal Gyrus, pars triangularis, 9% Inferior Frontal Gyrus, pars opercularis, 2% Precentral Gyrus; 60% Right Cerebral White Matter, 39% Right Cerebral Cortex"
+C6,+,725,5.46,"[-46.5, -36.5, 1.5]",8.21e-10,1.642e-09,"21% Superior Temporal Gyrus, posterior division, 6% Middle Temporal Gyrus, posterior division, 1% Supramarginal Gyrus, posterior division; 67% Left Cerebral White Matter, 33% Left Cerebral Cortex"
+C6,-,560,-5.72,"[1.5, 11.5, 1.5]",5.96e-08,1.192e-07,"11% Subcallosal Cortex; 60% Right Lateral Ventricle, 18% Right Cerebral Cortex, 13% Right Cerebral White Matter, 3% Left Cerebral Cortex, 2% Left Lateral Ventricle, 2% Left Cerebral White Matter, 0% Right Accumbens, 0% Right Caudate"
+C6,+,478,6.29,"[19.5, -98.5, -8.5]",2.98e-07,5.96e-07,"69% Occipital Pole, 1% Lateral Occipital Cortex, inferior division; 70% Right Cerebral Cortex, 25% Right Cerebral White Matter"
+C6,+,424,5.98,"[-44.5, 3.5, -38.5]",1.19e-06,2.38e-06,"60% Temporal Pole, 13% Inferior Temporal Gyrus, anterior division; 77% Left Cerebral Cortex, 23% Left Cerebral White Matter"
+C6,-,326,-7.45,"[-12.5, -46.5, -50.5]",1.82e-05,3.64e-05,"8% Brain-Stem; 69% Left IX, 26% Left VIIIb, 1% Left X"
+C6,+,303,4.81,"[13.5, -4.5, 15.5]",3.58e-05,7.16e-05,"53% Right Cerebral White Matter, 27% Right Caudate, 18% Right Thalamus, 2% Right Lateral Ventricle"
+C6,-,242,-5.11,"[31.5, 33.5, 51.5]",0.000235,0.00047,"14% Middle Frontal Gyrus, 7% Frontal Pole, 4% Superior Frontal Gyrus; 40% Right Cerebral Cortex"
+C6,-,230,-4.5,"[23.5, 9.5, 59.5]",0.000347,0.000694,"49% Superior Frontal Gyrus, 8% Middle Frontal Gyrus; 76% Right Cerebral Cortex, 19% Right Cerebral White Matter"
+C6,-,205,-4.52,"[17.5, 13.5, -24.5]",0.000798,0.001596,"65% Frontal Orbital Cortex; 68% Right Cerebral Cortex, 1% Right Cerebral White Matter"
+C6,-,195,-4.57,"[-48.5, -12.5, -2.5]",0.00112,0.00224,"35% Planum Polare, 17% Heschl's Gyrus (includes H1 and H2), 4% Superior Temporal Gyrus, anterior division, 1% Planum Temporale, 1% Central Opercular Cortex; 61% Left Cerebral Cortex, 36% Left Cerebral White Matter"
+C6,-,163,-4.5,"[-20.5, 29.5, -20.5]",0.0035,0.007,"59% Frontal Orbital Cortex, 10% Frontal Pole; 70% Left Cerebral Cortex, 30% Left Cerebral White Matter"
+C6,+,123,5.58,"[17.5, -62.5, -48.5]",0.0161,0.0322,"60% Right VIIIa, 30% Right VIIIb, 1% Right VIIb"
+C6,+,123,4.36,"[-6.5, 63.5, -12.5]",0.0161,0.0322,"76% Frontal Pole; 76% Left Cerebral Cortex, 20% Left Cerebral White Matter"
+C6,+,112,4.89,"[-4.5, -32.5, 5.5]",0.0251,0.0502,
+C6,+,110,4.54,"[-60.5, -48.5, 29.5]",0.0273,0.0546,
+C6,-,107,-5.29,"[19.5, -30.5, 9.5]",0.0309,0.0618,
+C6,-,93,-4.18,"[-24.5, 3.5, 61.5]",0.0557,0.1114,
+C6,-,92,-5.51,"[15.5, -46.5, -50.5]",0.0582,0.1164,
+C6,-,84,-4.43,"[-24.5, 29.5, 39.5]",0.0823,0.1646,
+C6,-,81,-4.35,"[-24.5, -38.5, 69.5]",0.0939,0.1878,
+C6,-,57,-4.44,"[-12.5, -70.5, -46.5]",0.273,0.546,
+C6,+,55,4.06,"[3.5, -60.5, -20.5]",0.298,0.596,
+C6,-,48,-4.63,"[-14.5, -86.5, -40.5]",0.403,0.806,
+C6,+,43,3.91,"[-4.5, 9.5, -30.5]",0.495,0.99,
+C6,-,38,-4.13,"[-16.5, -46.5, -24.5]",0.599,1.0,
+C6,-,35,-3.83,"[-28.5, -46.5, 11.5]",0.665,1.0,
+C6,+,35,4.55,"[-0.5, 35.5, -28.5]",0.665,1.0,
+C6,-,32,-3.83,"[-22.5, -14.5, -26.5]",0.732,1.0,
+C6,-,31,-3.65,"[29.5, -4.5, -38.5]",0.755,1.0,
+C6,+,30,3.9,"[-56.5, -22.5, 25.5]",0.776,1.0,
+C6,-,29,-4.0,"[21.5, 7.5, -38.5]",0.798,1.0,
+C6,-,25,-3.89,"[11.5, -22.5, -36.5]",0.876,1.0,
+C6,+,24,3.65,"[49.5, -34.5, -2.5]",0.893,1.0,
+C6,-,22,-3.76,"[27.5, 15.5, 45.5]",0.924,1.0,
+C6,+,17,3.82,"[45.5, 5.5, -40.5]",0.976,1.0,
+C6,-,17,-3.78,"[31.5, -8.5, -28.5]",0.976,1.0,
+C6,+,15,3.92,"[5.5, -24.5, -12.5]",0.987,1.0,
+C6,-,15,-3.68,"[23.5, 67.5, 1.5]",0.987,1.0,
+C6,+,15,3.51,"[-34.5, -80.5, -34.5]",0.987,1.0,
+C6,+,15,3.8,"[-28.5, -20.5, -6.5]",0.987,1.0,
+C6,-,14,-3.69,"[29.5, -36.5, 25.5]",0.991,1.0,
+C6,-,13,-4.04,"[-48.5, 45.5, 15.5]",0.994,1.0,
+C6,+,13,3.7,"[41.5, -34.5, 3.5]",0.994,1.0,
+C6,-,11,-3.52,"[-40.5, -52.5, 1.5]",0.998,1.0,
+C6,-,11,-3.84,"[5.5, -42.5, 23.5]",0.998,1.0,
+C6,-,11,-3.67,"[-16.5, -24.5, 23.5]",0.998,1.0,
+C6,+,10,3.4,"[-54.5, -8.5, -26.5]",0.999,1.0,
+C6,+,9,3.33,"[-10.5, -8.5, -14.5]",0.999,1.0,
+C6,+,9,3.88,"[15.5, 37.5, 13.5]",0.999,1.0,
+C6,-,7,-3.55,"[-18.5, -24.5, 57.5]",1.0,1.0,
+C6,+,7,3.61,"[-4.5, -18.5, -10.5]",1.0,1.0,
+C6,-,6,-3.41,"[-50.5, -4.5, -2.5]",1.0,1.0,
+C6,-,6,-3.7,"[-42.5, -36.5, 27.5]",1.0,1.0,
+C6,+,6,3.5,"[35.5, -38.5, 3.5]",1.0,1.0,
+C6,-,6,-3.28,"[23.5, -16.5, -20.5]",1.0,1.0,
+C6,-,5,-3.52,"[15.5, 51.5, -22.5]",1.0,1.0,
+C6,+,5,3.4,"[37.5, 5.5, -38.5]",1.0,1.0,
+C6,-,4,-3.32,"[-6.5, -46.5, 17.5]",1.0,1.0,
+C6,-,4,-3.13,"[37.5, -34.5, 19.5]",1.0,1.0,
+C6,+,4,3.32,"[3.5, -12.5, -14.5]",1.0,1.0,
+C6,-,4,-3.36,"[-34.5, -40.5, 29.5]",1.0,1.0,
+C6,+,3,3.59,"[-20.5, 39.5, 19.5]",1.0,1.0,
+C6,+,3,3.41,"[-14.5, 37.5, 5.5]",1.0,1.0,
+C6,-,3,-3.57,"[31.5, -40.5, 37.5]",1.0,1.0,
+C6,-,3,-3.39,"[49.5, -34.5, 35.5]",1.0,1.0,
+C6,-,2,-3.16,"[11.5, 19.5, -30.5]",1.0,1.0,
+C6,+,2,3.13,"[-34.5, 19.5, 37.5]",1.0,1.0,
+C6,+,2,3.25,"[13.5, 39.5, 45.5]",1.0,1.0,
+C6,+,2,3.49,"[-18.5, 53.5, -10.5]",1.0,1.0,
+C6,+,1,3.3,"[11.5, 63.5, -10.5]",1.0,1.0,
+C6,+,1,3.29,"[-12.5, -26.5, -12.5]",1.0,1.0,
+C6,+,1,3.18,"[49.5, -44.5, 7.5]",1.0,1.0,
+C6,+,1,3.15,"[-42.5, -18.5, -26.5]",1.0,1.0,
+C6,+,1,3.1,"[-64.5, -30.5, -16.5]",1.0,1.0,
+C6,+,1,3.13,"[-16.5, 43.5, 15.5]",1.0,1.0,
+C6,+,1,3.19,"[-42.5, -28.5, -18.5]",1.0,1.0,
+C6,-,1,-3.09,"[-32.5, -16.5, -24.5]",1.0,1.0,
+C6,-,1,-3.1,"[45.5, -12.5, -26.5]",1.0,1.0,
+C6,-,1,-3.18,"[-26.5, 39.5, 43.5]",1.0,1.0,
+C6,-,1,-3.2,"[-12.5, 15.5, -30.5]",1.0,1.0,
+C6,-,1,-3.2,"[-14.5, -38.5, -34.5]",1.0,1.0,
+C6,-,1,-3.22,"[-28.5, -32.5, 35.5]",1.0,1.0,
+C6,-,1,-3.1,"[19.5, -8.5, -24.5]",1.0,1.0,
+C6,-,1,-3.15,"[-64.5, -32.5, 33.5]",1.0,1.0,
+C6,-,1,-3.3,"[-20.5, -0.5, 31.5]",1.0,1.0,
+C6,-,1,-3.17,"[49.5, -6.5, -22.5]",1.0,1.0,
+C6,-,1,-3.1,"[3.5, 37.5, -18.5]",1.0,1.0,
+C6,-,1,-3.11,"[55.5, -14.5, -16.5]",1.0,1.0,
+C6,-,1,-3.1,"[-28.5, 35.5, -8.5]",1.0,1.0,
+C6,-,1,-3.16,"[-48.5, -56.5, 1.5]",1.0,1.0,
+C6,-,1,-3.14,"[-58.5, -68.5, -2.5]",1.0,1.0,
+C6,-,1,-3.46,"[-22.5, 67.5, -2.5]",1.0,1.0,
+C6,-,1,-3.11,"[-24.5, -40.5, 27.5]",1.0,1.0,

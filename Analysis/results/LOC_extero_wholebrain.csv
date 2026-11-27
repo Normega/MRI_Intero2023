@@ -1,0 +1,88 @@
+contrast,sign,size_vox,peak_z,peak_mni,p_cluster,p_fwe_two_sided,labels
+extero,-,61169,-7.74,"[11.5, -62.5, 13.5]",0.0,0.0,"31% Intracalcarine Cortex, 24% Supracalcarine Cortex, 24% Precuneous Cortex, 7% Cuneal Cortex, 1% Lingual Gyrus; 89% Right Cerebral Cortex, 11% Right Cerebral White Matter"
+extero,+,1252,6.67,"[17.5, -52.5, -24.5]",5.52e-14,1.104e-13,"60% Right V, 32% Right VI"
+extero,+,1239,6.65,"[-38.5, -20.5, 59.5]",6.97e-14,1.394e-13,"40% Precentral Gyrus, 12% Postcentral Gyrus; 59% Left Cerebral Cortex, 38% Left Cerebral White Matter"
+extero,-,1137,-5.26,"[-24.5, 19.5, 45.5]",4.51e-13,9.02e-13,"29% Superior Frontal Gyrus, 23% Middle Frontal Gyrus; 74% Left Cerebral Cortex, 25% Left Cerebral White Matter"
+extero,-,651,-7.44,"[27.5, -98.5, -6.5]",8.44e-09,1.688e-08,"64% Occipital Pole, 1% Lateral Occipital Cortex, inferior division; 67% Right Cerebral Cortex, 14% Right Cerebral White Matter"
+extero,+,482,5.93,"[-4.5, -2.5, 57.5]",4.17e-07,8.34e-07,"81% Juxtapositional Lobule Cortex (formerly Supplementary Motor Cortex); 85% Left Cerebral Cortex, 12% Left Cerebral White Matter"
+extero,+,418,5.44,"[-44.5, -56.5, -34.5]",2.26e-06,4.52e-06,100% Left Crus I
+extero,-,317,-4.38,"[57.5, 33.5, 13.5]",3.48e-05,6.96e-05,"14% Inferior Frontal Gyrus, pars triangularis, 9% Frontal Pole; 30% Right Cerebral Cortex"
+extero,-,277,-4.47,"[27.5, 31.5, 55.5]",0.000111,0.000222,"8% Superior Frontal Gyrus, 6% Middle Frontal Gyrus, 3% Frontal Pole; 31% Right Cerebral Cortex, 0% Right Cerebral White Matter"
+extero,+,260,5.16,"[45.5, -62.5, 5.5]",0.000185,0.00037,"42% Lateral Occipital Cortex, inferior division, 14% Middle Temporal Gyrus, temporooccipital part, 1% Lateral Occipital Cortex, superior division, 1% Inferior Temporal Gyrus, temporooccipital part; 61% Right Cerebral Cortex, 39% Right Cerebral White Matter"
+extero,-,187,-4.14,"[5.5, -20.5, -34.5]",0.00192,0.00384,100% Brain-Stem
+extero,+,161,4.07,"[49.5, -40.5, 51.5]",0.00473,0.00946,"56% Supramarginal Gyrus, posterior division, 8% Angular Gyrus, 3% Postcentral Gyrus, 2% Supramarginal Gyrus, anterior division, 2% Superior Parietal Lobule; 75% Right Cerebral Cortex, 20% Right Cerebral White Matter"
+extero,+,160,6.14,"[15.5, -64.5, -48.5]",0.0049,0.0098,"84% Right VIIIa, 11% Right VIIIb, 2% Right VIIb"
+extero,+,133,4.24,"[13.5, -102.0, 5.5]",0.0132,0.0264,"65% Occipital Pole; 66% Right Cerebral Cortex, 23% Right Cerebral White Matter"
+extero,+,122,4.66,"[21.5, -42.5, 13.5]",0.0201,0.0402,"66% Right Lateral Ventricle, 34% Right Cerebral White Matter, 0% Right Cerebral Cortex"
+extero,+,121,4.26,"[27.5, 45.5, -6.5]",0.0208,0.0416,"10% Frontal Pole; 90% Right Cerebral White Matter, 10% Right Cerebral Cortex"
+extero,+,114,4.67,"[59.5, -36.5, 23.5]",0.0274,0.0548,
+extero,+,97,4.99,"[-52.5, -26.5, 25.5]",0.0543,0.1086,
+extero,+,96,4.56,"[-34.5, -66.5, 7.5]",0.0566,0.1132,
+extero,+,93,4.66,"[-50.5, 1.5, 7.5]",0.0641,0.1282,
+extero,+,68,4.43,"[-52.5, -46.5, 27.5]",0.184,0.368,
+extero,+,65,4.26,"[-12.5, -38.5, 15.5]",0.21,0.42,
+extero,-,45,-3.9,"[-10.5, -66.5, -44.5]",0.48,0.96,
+extero,-,27,-4.01,"[7.5, -10.5, 7.5]",0.849,1.0,
+extero,+,26,3.5,"[49.5, 13.5, 7.5]",0.867,1.0,
+extero,-,22,-3.67,"[-16.5, -28.5, -4.5]",0.929,1.0,
+extero,+,21,3.92,"[39.5, -38.5, 27.5]",0.941,1.0,
+extero,+,21,3.71,"[-22.5, -8.5, 43.5]",0.941,1.0,
+extero,+,20,4.08,"[25.5, -0.5, 31.5]",0.952,1.0,
+extero,+,18,4.22,"[-28.5, -86.5, -42.5]",0.97,1.0,
+extero,+,17,3.47,"[-24.5, -12.5, 51.5]",0.977,1.0,
+extero,+,16,3.58,"[23.5, 41.5, 13.5]",0.983,1.0,
+extero,+,16,3.47,"[-30.5, 47.5, -6.5]",0.983,1.0,
+extero,+,15,4.07,"[37.5, 35.5, 23.5]",0.988,1.0,
+extero,+,15,3.61,"[33.5, -38.5, 11.5]",0.988,1.0,
+extero,+,14,4.01,"[-34.5, -38.5, 37.5]",0.992,1.0,
+extero,+,13,3.34,"[43.5, 49.5, -4.5]",0.994,1.0,
+extero,+,12,4.03,"[-24.5, -64.5, -44.5]",0.996,1.0,
+extero,-,12,-3.43,"[-30.5, 3.5, 9.5]",0.996,1.0,
+extero,-,9,-3.57,"[-6.5, -78.5, -36.5]",0.999,1.0,
+extero,+,9,3.74,"[47.5, -46.5, 9.5]",0.999,1.0,
+extero,+,8,3.65,"[23.5, -28.5, 29.5]",1.0,1.0,
+extero,-,8,-3.34,"[-16.5, -52.5, -48.5]",1.0,1.0,
+extero,-,8,-3.37,"[-42.5, 9.5, 51.5]",1.0,1.0,
+extero,-,7,-3.33,"[23.5, 35.5, 31.5]",1.0,1.0,
+extero,-,6,-3.2,"[53.5, -52.5, -8.5]",1.0,1.0,
+extero,+,6,3.25,"[49.5, 1.5, 47.5]",1.0,1.0,
+extero,+,6,3.39,"[-26.5, -56.5, 29.5]",1.0,1.0,
+extero,+,6,3.36,"[-36.5, -52.5, -48.5]",1.0,1.0,
+extero,+,6,3.36,"[37.5, -0.5, 23.5]",1.0,1.0,
+extero,-,5,-3.38,"[-24.5, -38.5, -44.5]",1.0,1.0,
+extero,-,5,-3.31,"[39.5, -66.5, -38.5]",1.0,1.0,
+extero,+,4,3.45,"[-36.5, -44.5, -0.5]",1.0,1.0,
+extero,+,4,3.23,"[43.5, -50.5, 39.5]",1.0,1.0,
+extero,-,4,-3.34,"[-10.5, -16.5, 15.5]",1.0,1.0,
+extero,-,4,-3.5,"[37.5, -74.5, -36.5]",1.0,1.0,
+extero,+,3,3.39,"[21.5, 17.5, 19.5]",1.0,1.0,
+extero,-,3,-3.26,"[-66.5, -28.5, 39.5]",1.0,1.0,
+extero,+,3,3.42,"[31.5, 33.5, 9.5]",1.0,1.0,
+extero,+,3,3.23,"[-62.5, 7.5, 23.5]",1.0,1.0,
+extero,-,2,-3.33,"[-8.5, -36.5, -42.5]",1.0,1.0,
+extero,-,2,-3.33,"[-6.5, -24.5, -40.5]",1.0,1.0,
+extero,-,2,-3.27,"[25.5, 67.5, 3.5]",1.0,1.0,
+extero,+,2,3.29,"[-8.5, 3.5, -28.5]",1.0,1.0,
+extero,+,2,3.35,"[-46.5, 11.5, 3.5]",1.0,1.0,
+extero,+,2,3.16,"[-42.5, -34.5, -4.5]",1.0,1.0,
+extero,+,2,3.29,"[-18.5, -0.5, 27.5]",1.0,1.0,
+extero,-,2,-3.21,"[13.5, 39.5, -24.5]",1.0,1.0,
+extero,-,2,-3.25,"[19.5, 43.5, 33.5]",1.0,1.0,
+extero,+,1,3.1,"[-24.5, 21.5, 23.5]",1.0,1.0,
+extero,+,1,3.12,"[19.5, 49.5, -10.5]",1.0,1.0,
+extero,+,1,3.09,"[1.5, -10.5, 21.5]",1.0,1.0,
+extero,+,1,3.24,"[-14.5, 33.5, -0.5]",1.0,1.0,
+extero,+,1,3.59,"[-32.5, 43.5, 11.5]",1.0,1.0,
+extero,+,1,3.22,"[-36.5, -38.5, 51.5]",1.0,1.0,
+extero,+,1,3.19,"[13.5, 25.5, 13.5]",1.0,1.0,
+extero,+,1,3.11,"[33.5, 21.5, 13.5]",1.0,1.0,
+extero,+,1,3.1,"[-22.5, 31.5, 17.5]",1.0,1.0,
+extero,+,1,3.23,"[-0.5, -18.5, 19.5]",1.0,1.0,
+extero,-,1,-3.1,"[-2.5, 51.5, 43.5]",1.0,1.0,
+extero,-,1,-3.1,"[-36.5, 1.5, 43.5]",1.0,1.0,
+extero,-,1,-3.13,"[-44.5, -24.5, -34.5]",1.0,1.0,
+extero,-,1,-3.09,"[9.5, -14.5, 17.5]",1.0,1.0,
+extero,-,1,-3.14,"[41.5, 33.5, 9.5]",1.0,1.0,
+extero,-,1,-3.23,"[-0.5, 55.5, -24.5]",1.0,1.0,
+extero,-,1,-3.12,"[5.5, -28.5, -16.5]",1.0,1.0,
+extero,-,1,-3.17,"[31.5, -4.5, 45.5]",1.0,1.0,
