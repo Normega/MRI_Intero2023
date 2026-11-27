@@ -17,7 +17,7 @@ see `DEIDENT_REVIEW.md` for the boundary and its rationale.
 | `Data/` | Derived, de-identified tables; `Data/events/` = BIDS-style event files; `Data/regressors/` = per-volume physiological regressors |
 | `FirstLevel/` | GLM-ready covariate sheets, one events + one confounds file per run, row-aligned with fMRIPrep confounds; `firstlevel_manifest.csv` carries the registered gates |
 | `Figures/` | QC and validation figures |
-| `Preregistration/` | The breathing-run analysis plan, the OSF form text (`osf_template_answers.md`, filed as the update to https://osf.io/swc7p), and `deviations.md`, the deviations from that registration. The localizer plan (`intero2023_localizer_prereg.md`) and its separate, linked OSF Secondary Data Preregistration (`osf_localizer_secondary_prereg.md`) |
+| `Preregistration/` | The breathing-run analysis plan, the OSF form text (`osf_template_answers.md`, filed as the update to https://osf.io/swc7p), and `deviations.md`, the deviations from that registration. The localizer plan (`intero2023_localizer_prereg.md`, v1.0, frozen at d29136b) and its form text (`osf_localizer_secondary_prereg.md`), registered as a separate, linked OSF Secondary Data Preregistration: https://osf.io/p5ztc (approved 2026-11-27) |
 
 ## Reproducing
 
