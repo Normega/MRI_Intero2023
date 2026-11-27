@@ -162,6 +162,52 @@ From the breathing runs (swc7p):
   - pacer adherence (phase-locking) in Match and in the paced epochs of the change-detection runs;
   - breathing rate, depth and RVT per condition.
 
+### Indices
+How each derived measure is computed. All are computed per participant; group inference is as in Analyses.
+
+**Imaging**
+1. **Contrast effects.** First-level contrast estimates (percent signal change) from the joint two-run model.
+   - A **mask index** is the mean of a contrast's effect over the voxels of a frozen a-priori mask.
+   - Voxelwise group tests use the maps themselves (FLAME).
+2. **Conjunction (C3).** Voxelwise minimum of the participant's C1 and C2 t maps.
+3. **Participant-specific ROI (fROI).**
+   - Within each mask, voxels are ranked by the participant's two-run C1 t (4 mm). The fROI is the top 10% of mask voxels (rounded up), with a minimum of 50.
+   - **fROI index:** mean breathing-run contrast effect over the fROI voxels.
+   - **Complement index:** the same mean over the remaining voxels of the mask.
+   - **ROI − complement:** the difference of the two indices per participant. Its dz has a bootstrap 95% CI (10,000 resamples of participants).
+4. **Reliability-gate indices.**
+   - **Cross-run effect:** C1 estimated in run k inside the fROI defined from run j, averaged over both directions.
+   - **Dice:** 2|A∩B| / (|A| + |B|) for the run-1 and run-2 fROIs.
+   - **Spatial similarity:** Pearson r between run-1 and run-2 C1 t maps within the mask. "Within" is the participant's own run 1 vs run 2. "Between" is the mean of their run 1 vs every other participant's run 2.
+5. **Pattern expression (T4, exploratory).** For each breathing-run paced epoch: the dot product of its LSS beta map with the participant's own unthresholded C1 t map, within SAL ∪ SMN. The C1 map is scaled to unit length, and the index is z-scored within participant.
+
+**Questionnaire**
+6. **MAIA.** Scored as in the IEAT and swc7p H6: the mean of six MAIA-2 subscales, omitting Not-Worrying and Not-Distracting, converted to the 0–5 metric. It is demeaned at group level when used as a covariate.
+
+**Respiration** (Biopac belt; 2nd-order zero-phase Butterworth band-pass, 0.05–1 Hz; polarity set per participant from the Match blocks)
+7. **Breathing rate and depth.**
+   - Breaths are defined trough → peak → trough, each 1.5–20 s long. The window is from block onset + 3 s to block offset.
+   - **Rate** = 60 / median breath period.
+   - **Relative depth** = median breath amplitude / the run's median amplitude.
+   - **RVT** = mean `rvt_z` over the volumes in the window.
+   - The participant index is the mean over blocks and runs.
+8. **ΔRVT.** The participant's mean RVT in Intero blocks minus their mean RVT in Extero blocks.
+9. **Pacer phase-locking (entrainment and adherence).**
+   - Belt phase comes from the Hilbert transform. Pacer phase comes from the task timing.
+   - PLV = |mean of e^{i(belt phase − pacer phase)}| over samples in the window.
+   - **Null PLV:** the same participant's Rest, Self and Intero blocks against a virtual pacer at the run's pacer rate.
+   - **Extero entrainment index** = mean Extero PLV − null PLV. **Match adherence index** = mean Match PLV − null PLV.
+   - **Change-detection runs:** the same PLV in each paced epoch against the actual pacer (from the pacer trace), with the free-breathing periods against a virtual pacer at the run's baseline rate as the null.
+10. **Breath-tracking accuracy** (compliant Intero blocks).
+    - At each press, ψ = belt phase, minus π for an inhale ('1') press, so ψ = 0 when the press falls on its breath onset.
+    - Block PLV = |mean of e^{iψ}| over the block's presses. The participant index is the length of the mean of the block resultant vectors.
+    - Chance level: 200 circular shifts of the presses within each block.
+    - **Secondary (post hoc, disclosed):** the proportion of breaths with a correct inhale-then-exhale press pair within ±1.5 s of the press lead, where the lead is estimated from the run's other Intero block.
+
+**Breathing-run behaviour** (exploratory relations only)
+11. **Detection rate:** change epochs reported in the correct direction / all change epochs.
+12. **Mean confidence:** mean confidence (1–7) over paced epochs.
+
 ### Missing data
 - **MAIA** is missing for some participants: 46 of the 48 Intero-eligible; 42 of the 44 fROI-eligible. Those participants are excluded from L3 and T3b only.
 - **Respiration:**
