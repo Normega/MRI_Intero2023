@@ -383,3 +383,54 @@ Each is logged in `Preregistration/localizer_deviations.md`.
 - **One post-hoc descriptive check:** the AInsR individual fROI, added after T1
   was seen and labelled as such.
 - No registered test was changed.
+
+## Exploratory: breathing-corrected versions of every localizer map
+Logged in `Preregistration/localizer_deviations.md` before it was run. Script:
+`Scripts/intero2023_loc_physio_maps.py`. Table:
+`Analysis/results/EXPLORATORY_LOC_physio_corrected_maps.csv`. Figure:
+`Figures/localizer/loc_physio_corrected.png`.
+
+Each descriptive map (Intero, Extero, Match and Self vs Rest; C1, C2, C4, C5) was
+refitted with FLAME 1 from the stage-A +RVT⊗RRF and +PetCO2 first levels. It is
+compared with the base model **in the same participants**:
+- RVT subset: N 32 for the Intero contrasts, 36 for the others. This is every
+  participant with RVT on every used run, so it is larger than the registered
+  two-run L1 co-report set of 29.
+- PetCO2 subset: N 24 and 26.
+
+**The deactivations survive breathing correction.**
+
+| Map | Whole-brain mean dz, base → +RVT | Retained (RVT) | Whole-brain mean dz, base → +PetCO2 | Retained (CO2) |
+|---|---|---|---|---|
+| Intero vs Rest | −1.33 → −1.25 | 94% | −1.15 → −1.16 | 99% |
+| Match vs Rest | −1.74 → −1.73 | 94% | −1.76 → −1.39 | 94% |
+| Extero vs Rest | −0.71 → −0.68 | 100% | −0.83 → −0.84 | 106% |
+| C1 Intero − Extero | −0.67 → −0.65 | 88% | −0.61 → −0.59 | 91% |
+| C2 Intero − Self | −1.12 → −1.01 | 95% | −1.14 → −1.23 | 107% |
+| C4 Match − Extero | −0.84 → −0.73 | 90% | −0.98 → −0.74 | 85% |
+
+- **Salience-region effects.** In the salience regions, C1 keeps 76–91% of its
+  mean with +RVT and 84–94% with +PetCO2. Correction moves effects towards zero
+  by a within-person change of dz ≈ 0.2–0.4. It never reverses a sign.
+- **Extent.** The extent of the C1 negative clusters shrinks:
+  - 45,767 → 37,931 voxels with +RVT;
+  - 28,432 → 20,390 voxels with +PetCO2.
+  
+  C4's extent halves with +PetCO2 (59,137 → 28,374 voxels), but its mean is 85%
+  retained.
+- **The periventricular positive clusters** in Intero, Match and C2 are still
+  present after either correction.
+- **Self.** The Self vs Rest positives (medial prefrontal, left inferior frontal,
+  temporal) are unchanged.
+- **Reading.**
+  - Breathing regressors explain only a small share of the condition
+    differences. That share is largest for the breath conditions (Intero, Match)
+    and in the insula and dACC.
+  - The widespread Intero deactivation is mostly not accounted for by
+    RVT⊗RRF or PetCO2 as modelled. This fits an attentional account (Farb et
+    al., 2023).
+  - The caveat is that both regressors are imperfect models of respiratory BOLD,
+    and they are fitted alongside block regressors they partly share variance
+    with.
+  - The stage-A loss of L1 significance in the PetCO2 subset reflects the
+    smaller N (24), not removal of the effect: the mask means keep 84–94%.
