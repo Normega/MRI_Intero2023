@@ -578,3 +578,55 @@ This is the swc7p H6 group model (nilearn permutation, 10,000, seed 20261126) wi
 - **One added sensitivity null, logged before running:** the length-matched null.
 - **Post hoc additions after the first tables were seen** (raw paced PLV, null-term diagnostics, paced PLV as moderator). They are logged and labelled and lie outside the FDR family.
 - No registered result was changed.
+
+## Exploratory: localizer model without the CSF and white-matter regressors
+Logged before running in `Preregistration/localizer_deviations.md`.
+- Script: `Scripts/intero2023_loc_notissue.py`
+- Table: `Analysis/results/EXPLORATORY_LOC_notissue_comparison.csv`
+- Figure: `Figures/localizer/loc_notissue_comparison.png`
+
+The 6 mm joint base model was refitted for all 54 participants with `csf` and `white_matter` removed. Nothing else changed. FLAME 1 was run in the stage-A sets (48 / 54).
+
+**Why test this.** The fMRIPrep CSF regressor is itself task-locked. Regressed on the task design, it falls in every task block relative to Rest: dz −0.30 (Intero), −0.60 (Extero), −0.53 (Match), −0.36 (Self); N 48. The white-matter signal is mostly flat: Match dz −0.41, Self +0.46, Intero and Extero ≈ 0.
+
+**Result 1: the CSF covariate does not create the periventricular positives.** They remain without the tissue regressors, at the edges of the lateral ventricles. Mean effect in the registered model's positive clusters, with tissue regressors → without:
+- Intero vs Rest: +0.156 → +0.150 PSC;
+- C1: +0.148 → +0.163;
+- Match vs Rest: +0.137 → +0.076.
+
+Their extent shrinks (Intero 8,151 → 4,831 voxels; Match 9,374 → 2,524), mainly because between-subject variance rises.
+- The Harvard–Oxford lateral-ventricle mask as a whole falls in both models. The positive signal is confined to the ventricle borders.
+- One possibility is the known anti-coupling between global grey-matter BOLD and CSF signal. This was not tested here.
+
+**Result 2: for Intero and C1, the tissue regressors mainly reduce noise.**
+
+| Map | Cortex mean PSC (with → without) | Cortex dz (with → without) |
+|---|---|---|
+| Intero vs Rest | −0.233 → −0.223 | −1.20 → −0.71 |
+| C1 Intero − Extero | −0.110 → −0.088 | −0.71 → −0.28 |
+
+- In the L1 masks, C1 means change by ≤ 0.03 PSC, but dz roughly halves: AInsL −0.65 → −0.28, AInsR −0.41 → −0.14, dACC −0.55 → −0.22.
+- The negative C1 extent falls from 73,074 to 33,622 voxels.
+- The registered model is therefore the more sensitive one for L1. Its estimate is not inflated.
+
+**Result 3: for the Match contrasts, the CSF regressor absorbed part of the effect.** Without the tissue regressors, the Match deactivation deepens:
+- cortex −0.277 → −0.373 PSC;
+- Match − Extero (C4) cortex −0.171 → −0.250.
+
+Match − Intero (C5, the L2 / H1-replication contrast) is much stronger:
+
+| Measure | With tissue regressors | Without |
+|---|---|---|
+| Whole-brain dz | −0.30 | −0.61 |
+| PIns dz | −0.04 | −0.39 |
+| SM dz | −0.13 | −0.50 |
+| COper | (not computed here) | (not computed here) |
+| Negative extent | 12,755 voxels | 68,082 voxels |
+
+- So the weak, peak-level L2 result is partly due to the registered nuisance model. Paced breathing produces a task-locked global and CSF signal change, and the CSF regressor removes part of it.
+- Whether the removed part is neural or vascular cannot be decided from these data.
+- The same CSF regressor is in the registered breathing-run models (swc7p), where H1 was supported regardless.
+
+**Result 4: Self vs Rest becomes more positive overall without the tissue regressors.** Whole-brain dz moves from −0.09 to +0.25.
+
+The registered model stays primary. None of the registered verdicts changes.
