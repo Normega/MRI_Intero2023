@@ -653,8 +653,48 @@ def icc31(a, b):
     return (msr - mse) / (msr + (k - 1) * mse)
 
 
+def acq_bold_blocks(pp):
+    """Every BOLD trigger block in a participant's .acq parts (rows of acq_parts())."""
+    bold = []
+    for p in pp.itertuples():
+        a = read_acq(p.path)
+        if a is None or a["blocks"].empty:
+            continue
+        for b in a["blocks"][a["blocks"].kind == "bold"].itertuples():
+            bold.append(dict(part=p.part, a=a, onset_s=b.onset_s, n_pulses=b.n_pulses, abs_time=b.abs_time))
+    return bold
+
+
+def grade_block(bold, tw, n_vol):
+    """Pick the BOLD block nearest the log's first-trigger wallclock `tw` and grade it with
+    grade_time_match() (R/intero_qc.R). Returns (block, dt_s, margin_s, pulse_delta, grade)."""
+    d = np.array([abs((b["abs_time"] - tw).total_seconds()) if pd.notna(b["abs_time"]) else np.inf
+                  for b in bold])
+    o = np.argsort(d); b = bold[o[0]]
+    dt = d[o[0]]; margin = d[o[1]] - dt if len(o) > 1 else np.inf
+    pdel = abs(b["n_pulses"] - n_vol)
+    if dt > 15: gr = "fail"
+    elif margin < 30: gr = "ambiguous"
+    elif dt <= 2 and pdel == 0: gr = "exact"
+    elif pdel > 5: gr = "degraded"
+    else: gr = "good"
+    return b, dt, margin, pdel, gr
+
+
+def cut_segment(b, n_vol):
+    """Belt samples from the block's first pulse to n_vol x TR + 5 s."""
+    a = b["a"]; fs = a["fs"]
+    i0 = int(round(b["onset_s"] * fs)); i1 = min(len(a["belt"]), i0 + int((n_vol * TR + 5) * fs))
+    return a["belt"][i0:i1], fs
+
+
 def stage_physio():
-    from scipy.signal import hilbert
+    x, blocks, presses, U, seg, POL, polarity = physio_segments()
+    return physio_measures(x, blocks, presses, U, seg, POL, polarity)
+
+
+def physio_segments():
+    """Localizer belt segments, usability table and per-participant belt polarity."""
     x = usable_runs()
     blocks = pd.read_csv(os.path.join(CACHE, "blocks.csv"))
     presses = pd.read_csv(os.path.join(CACHE, "presses.csv"))
@@ -678,13 +718,7 @@ def stage_physio():
     for sub in sorted(x.subject.unique()):
         pid = int(sub[4:])
         pp = parts[parts.pid == pid]
-        acqs = [(p.part, read_acq(p.path)) for p in pp.itertuples()]
-        bold = []
-        for part, a in acqs:
-            if a is None or a["blocks"].empty:
-                continue
-            for b in a["blocks"][a["blocks"].kind == "bold"].itertuples():
-                bold.append(dict(part=part, a=a, onset_s=b.onset_s, n_pulses=b.n_pulses, abs_time=b.abs_time))
+        bold = acq_bold_blocks(pp)
         for _, r in x[x.subject == sub].iterrows():
             rec = dict(subject=sub, run=r.run, protocol_version=r.protocol_version, n_vol=r.n_vol,
                        events_usable=r.recommended_use != "exclude_partial_log",
@@ -696,22 +730,12 @@ def stage_physio():
             rec["grade_time_recorded"] = c.grade_time.iloc[0] if len(c) else "no_record"
             tw = trig[(sub, r.run)]
             if bold and pd.notna(tw):
-                d = np.array([abs((b["abs_time"] - tw).total_seconds()) if pd.notna(b["abs_time"]) else np.inf
-                              for b in bold])
-                o = np.argsort(d); b = bold[o[0]]
-                dt = d[o[0]]; margin = d[o[1]] - dt if len(o) > 1 else np.inf
-                pdel = abs(b["n_pulses"] - r.n_vol)
-                if dt > 15: gr = "fail"
-                elif margin < 30: gr = "ambiguous"
-                elif dt <= 2 and pdel == 0: gr = "exact"
-                elif pdel > 5: gr = "degraded"
-                else: gr = "good"
+                b, dt, margin, pdel, gr = grade_block(bold, tw, r.n_vol)
                 rec.update(acq_part=b["part"], dt_s=round(dt, 3), margin_s=round(margin, 1),
                            n_pulses=b["n_pulses"], pulse_delta=pdel, grade_time=gr)
                 if gr != "fail":
-                    a = b["a"]; fs = a["fs"]
-                    i0 = int(round(b["onset_s"] * fs)); i1 = min(len(a["belt"]), i0 + int((r.n_vol * TR + 5) * fs))
-                    seg[(sub, r.run)] = dict(belt=a["belt"][i0:i1], fs=fs, grade_time=gr)
+                    belt, fs = cut_segment(b, r.n_vol)
+                    seg[(sub, r.run)] = dict(belt=belt, fs=fs, grade_time=gr)
             else:
                 rec.update(grade_time="no_acq" if not len(pp) else "no_bold_block")
             urows.append(rec)
@@ -752,7 +776,12 @@ def stage_physio():
           f"unresolved {sum(v == 0 for v in polarity.values())}; median |r| {prun.abs().median():.2f}; "
           f"runs whose sign disagrees with their participant's: "
           f"{int(sum(np.sign(v) != polarity.get(k[0], 0) for k, v in prun.items() if polarity.get(k[0], 0)))}")
+    return x, blocks, presses, U, seg, POL, polarity
 
+
+def physio_measures(x, blocks, presses, U, seg, POL, polarity):
+    from scipy.signal import hilbert
+    ok_belt = lambda k: k in seg and U.set_index(["subject", "run"]).loc[k, "belt_grade"] in ("good", "degraded")
     # ---- per-block breathing measures ----
     regdir = os.path.join(REPO, "Data", "regressors")
     brows, trows = [], []
