@@ -95,10 +95,17 @@ cortical/subcortical and the FSL cerebellar atlas, and are descriptive.
 | E4 | Aware vs unaware, whole-brain TFCE, two-sided (5,000 permutations) | 45 | Null. Smallest p: aware > unaware .56, aware < unaware .96. No voxel p < .05. |
 | E5 | JZS Bayes factors, H3 masks (r = 0.707) | 45 | Aware − unaware BF01: left anterior insula 5.1, right 2.2, dACC 5.8 (directional BF0+ 3.4, 1.2, 8.1). Confidence (H2, N 44) BF01: 2.6, 2.0, 5.5. |
 | E6 | Change vs No Change, H3 masks, two-sided voxel max-t, ×3 | 47 | Null: p_FWE×3 = 1.0 in all three; no voxel p < .05. Mask-mean dz +0.02, +0.10, −0.06; BF01 (r 0.707) 6.2, 5.0, 5.8. |
+| E7 | Transient response to the pacer change: FIR (15 × 2 s bins), joint model, H3 masks, two-sided voxel max-t, ×3 | 46 | Null. Primary (step − ramp, [12, 18) s minus [6, 12) s): best dACC t 3.40, p .54; insulae p 1.0. Mask-mean dz +0.05, +0.01, +0.06; BF01 6.0, 6.2, 5.9. Secondary step − No Change [12, 18) s: best right anterior insula t 3.43, p .31, dz +0.14; ramp − No Change [6, 12) s: p 1.0 everywhere. BF01 4.2–6.2 for every test. Whole brain (primary): largest cluster 26 voxels, p_FWE .67. |
 
 **Reading.** The salience masks show no detectable response to a change in
 pace, whether or not it was noticed (E3a, E6), and moderate evidence against
-one (E6 BF01 5–6). There is moderate evidence against aware > unaware in the
+one (E6 BF01 5–6). The same holds for a brief change-locked response (E7). Step,
+ramp and No Change epochs have the same FIR time course in all three masks: flat
+to about 10 s, then a fall of about 0.3–0.4% that lasts to the epoch end. Step
+sits slightly above ramp by a constant 0.03–0.08% in every bin, including the
+bins before any change. The one sharp difference, at 24–26 s, follows epoch
+length (No Change epochs last 20.2 s, change epochs 17.5 or 22.7 s) and is
+outside the logged windows. There is moderate evidence against aware > unaware in the
 left anterior insula and dACC. The right anterior insula is consistently the
 best region but inconclusive (BF01 2.2). The CAREN anterior insula and dACC masks
 are broad: they extend back to y = −20.5 and y = −44.5.
