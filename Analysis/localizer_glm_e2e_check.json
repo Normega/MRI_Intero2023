@@ -1,0 +1,44 @@
+{
+ "subject": "sub-067",
+ "run": 1,
+ "design_identical": true,
+ "contrasts": {
+  "C1": {
+   "effect_max_abs_diff": 8.346524116298326e-08,
+   "effect_max_rel_diff": 0.0008056194087103174,
+   "variance_max_abs_diff": 1.0352882373609873e-07,
+   "variance_max_rel_diff": 1.054047588725334e-07,
+   "t_max_abs_diff": 3.1987096882346577e-07,
+   "t_max_rel_diff": 0.0025341580382308663
+  },
+  "C5": {
+   "effect_max_abs_diff": 7.925136058517523e-08,
+   "effect_max_rel_diff": 0.0005916087151419669,
+   "variance_max_abs_diff": 1.0912736092549835e-07,
+   "variance_max_rel_diff": 1.0601717648952071e-07,
+   "t_max_abs_diff": 2.3456533693178017e-07,
+   "t_max_rel_diff": 0.0016207331188985799
+  },
+  "C6": {
+   "effect_max_abs_diff": 1.5497010874554462e-07,
+   "effect_max_rel_diff": 0.0017437997586709775,
+   "variance_max_abs_diff": 2.022282261648911e-07,
+   "variance_max_rel_diff": 1.061094484898323e-07,
+   "t_max_abs_diff": 2.091286512850843e-07,
+   "t_max_rel_diff": 0.0010981254114571812
+  }
+ },
+ "saved_fits": [
+  "joint:sm4:base",
+  "joint:sm6:base",
+  "joint:sm6:co2",
+  "joint:sm6:hp128",
+  "joint:sm6:hp320",
+  "joint:sm6:rvt",
+  "run1:sm4:base",
+  "run1:sm6:base",
+  "run2:sm4:base",
+  "run2:sm6:base"
+ ],
+ "seconds": 110.6
+}
