@@ -10,7 +10,7 @@
 
 **Before submitting.**
 1. Fill in the item marked **[PI to confirm]**, under Prior publication.
-2. Replace `<commit>` with the commit hash that freezes the plan.
+2. Replace d29136b with the commit hash that freezes the plan.
 
 ---
 
