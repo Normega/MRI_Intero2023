@@ -209,6 +209,7 @@ Not applicable.
 None. No publications, working papers or conference presentations are based on this dataset.
 - The breathing change-detection runs are registered at OSF swc7p (with its approved update).
 - Their results (registered tests and exploratory analyses E1–E10) are summarised only in the linked repository (`Analysis/RESULTS_SUMMARY.md`) and have not been published or presented.
+- No localizer analysis has been presented or published.
 
 ### Prior knowledge*
 **Norman Farb** designed the study and knows the following.
