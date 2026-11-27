@@ -96,6 +96,7 @@ cortical/subcortical and the FSL cerebellar atlas, and are descriptive.
 | E5 | JZS Bayes factors, H3 masks (r = 0.707) | 45 | Aware − unaware BF01: left anterior insula 5.1, right 2.2, dACC 5.8 (directional BF0+ 3.4, 1.2, 8.1). Confidence (H2, N 44) BF01: 2.6, 2.0, 5.5. |
 | E6 | Change vs No Change, H3 masks, two-sided voxel max-t, ×3 | 47 | Null: p_FWE×3 = 1.0 in all three; no voxel p < .05. Mask-mean dz +0.02, +0.10, −0.06; BF01 (r 0.707) 6.2, 5.0, 5.8. |
 | E7 | Transient response to the pacer change: FIR (15 × 2 s bins), joint model, H3 masks, two-sided voxel max-t, ×3 | 46 | Null. Primary (step − ramp, [12, 18) s minus [6, 12) s): best dACC t 3.40, p .54; insulae p 1.0. Mask-mean dz +0.05, +0.01, +0.06; BF01 6.0, 6.2, 5.9. Secondary step − No Change [12, 18) s: best right anterior insula t 3.43, p .31, dz +0.14; ramp − No Change [6, 12) s: p 1.0 everywhere. BF01 4.2–6.2 for every test. Whole brain (primary): largest cluster 26 voxels, p_FWE .67. |
+| E8 | Report period: the rating window after paced change epochs, split by the report, joint model, H3 masks, two-sided voxel max-t, ×3 | 36 / 32 / 44 | Primary (reported change − reported No Change, i.e. hit + wrong-direction − miss): null. p_FWE×3 1.0, 1.0, .68 (best dACC t −3.09). Mask-mean dz −0.11, −0.17, −0.20 (change < No Change); BF01 4.6, 3.4, 2.9. Whole brain: largest cluster 13 voxels, p_FWE .93. Robustness (28 two-run participants): run-1/run-2 sign agreement 54%, 57%, 68%; r −0.03, −0.02, +0.51. Secondary confidence modulator (N 44): null, p 1.0 everywhere, dz +0.25, +0.15, +0.04, BF01 1.7, 3.8, 5.9. Secondary Faster − Slower (**motor / key-mapping diagnostic**, N 32): Slower > Faster in left anterior insula (t −5.21, p ×3 .004), right anterior insula (t −4.68, p .017), dACC (t −4.20, p .071). dz −0.48 to −0.53, BF10 4.3–7.9. Whole brain: four negative clusters survive: right frontal pole (934 voxels, p .004), medial superior frontal / pre-SMA (487, p .010), pregenual ACC (198, p .037), left precuneus (194, p .038). There is no left-sensorimotor (finger) cluster. |
 
 **Reading.** The salience masks show no detectable response to a change in
 pace, whether or not it was noticed (E3a, E6), and moderate evidence against
@@ -105,7 +106,16 @@ to about 10 s, then a fall of about 0.3–0.4% that lasts to the epoch end. Step
 sits slightly above ramp by a constant 0.03–0.08% in every bin, including the
 bins before any change. The one sharp difference, at 24–26 s, follows epoch
 length (No Change epochs last 20.2 s, change epochs 17.5 or 22.7 s) and is
-outside the logged windows. There is moderate evidence against aware > unaware in the
+outside the logged windows. The report period does not carry the decision
+either (E8): the rating window after a reported change and after a miss do not
+differ in the masks or the whole brain (BF01 2.9–4.6, weaker than E6/E7 because
+N is 36), and the estimate is not stable across runs. The Faster − Slower
+diagnostic does differ (Slower > Faster in both anterior insulae and medial
+frontal cortex), but it is not a finger pattern. About 80% of each of its cells
+share the preceding stimulus direction, and Slower epochs are longer (23.0 s vs
+17.5 s) and breathed more slowly, which Model A does not split. It is therefore
+read as a carry-over from the preceding paced epoch, not as a report effect;
+untested. There is moderate evidence against aware > unaware in the
 left anterior insula and dACC. The right anterior insula is consistently the
 best region but inconclusive (BF01 2.2). The CAREN anterior insula and dACC masks
 are broad: they extend back to y = −20.5 and y = −44.5.

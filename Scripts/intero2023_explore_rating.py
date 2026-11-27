@@ -355,7 +355,7 @@ def atlas_labels(mni):
     import intero2023_group as G
     out = []
     for atlas in ("Harvard-Oxford Cortical Structural Atlas", "Harvard-Oxford Subcortical Structural Atlas",
-                  "Cerebellar Atlas in MNI152 space after normalization with FLIRT"):
+                  "Cerebellar Atlas in MNI152 space after normalization with FNIRT"):
         try:
             txt = G.sh(f'atlasquery -a "{atlas}" -c {mni[0]},{mni[1]},{mni[2]}').strip()
         except Exception as ex:
