@@ -203,6 +203,51 @@ Not applicable.
 
 ---
 
+## Sample size, rationale, and start and stopping rules
+*(The PI asked for these three fields, 2026-11-27. Paste them into the OSF fields of the same names, or under "Other" if the form has none.)*
+
+### Sample size
+No new data will be collected. The sample is every participant in the Intero2023 fMRI dataset who completed the localizer runs: **54 participants, 105 localizer runs**. Data collection ran from September 2023 to June 2024 at a single site (University of Toronto), with the same sample as OSF swc7p.
+
+After the pre-specified run exclusions, **102 runs from 54 participants** remain (48 participants with two runs). The exclusions are:
+- two runs in which the task program stopped mid-run;
+- two runs that fail the swc7p motion gate.
+
+Analysable N by test:
+
+| Test | N |
+|---|---|
+| Contrasts without the Intero condition | 54 |
+| L1 and L2 (Intero ≥ 3 of 4 compliant blocks) | 48 |
+| L3 (also requires MAIA) | 46 |
+| L4 / participant-specific ROIs (two usable runs) | 44 |
+| T1 (participant ROIs ∩ swc7p H3 set) | 40 |
+| T3b (participant ROIs ∩ swc7p H6 set) | about 40 |
+
+### Rationale for sample size
+The sample size is fixed by an existing dataset, which was collected for the breathing change-detection study (swc7p). It was not chosen for the localizer analyses, so no a-priori power analysis determined it. Instead we report the smallest effects detectable with 80% power at the registered α, with correction:
+
+| Test | Smallest detectable effect |
+|---|---|
+| L1 (N 48, two-sided, ×3) | dz = 0.48 (0.41 uncorrected) |
+| L2 (N 48, one-sided, ×3) | dz = 0.44 |
+| L3 (N 46, two-sided) | r = .40 |
+| L4 cross-run effect (N 44, one-sided) | dz = 0.38 |
+| T1 (N 40, one-sided, ×3) | dz = 0.48 |
+| T3b (N 40, one-sided) | r = .39 |
+
+How these compare with known effects:
+- **L2** replicates swc7p H1, which had dz ≈ −1 in this sample, so it is well powered.
+- **L1 and L3** are powered for medium-to-large effects only.
+- **T1** is powered only for a substantial gain over the swc7p anatomical-mask estimates of the awareness effect (dz ≤ .22). The registration therefore treats a Bayes factor BF01 > 3 in the participant-specific ROIs as an informative result, not only a failure to reject.
+
+### Start and stopping rules
+- **Stopping:** data collection is complete; it ended in June 2024 under the swc7p stopping rule. No more participants will be added, and the sample will not be changed in response to results.
+- **Start:** localizer imaging analysis starts only after this registration is submitted and time-stamped. Before that, only the pre-registration checks listed under Prior knowledge were done: logs, motion, headers, design efficiency and the respiration belt. No localizer BOLD signal was examined.
+- **No interim analyses.** Each confirmatory test is run once on the full analysable sample, with no optional stopping.
+
+---
+
 ## Knowledge of data
 
 ### Prior publication/dissemination
