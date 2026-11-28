@@ -163,6 +163,226 @@ def gate():
     print("\nGATE", "PASSES" if bool(out.passes.iloc[0]) and bool(out.passes.iloc[1]) else "FAILS")
 
 
+# =========================================================================== Steps 1-3
+# Run after the PI's post-hoc override of the failed gate (deviations.md, 2026-11-28), exactly as the E12 row
+# specifies; the open details are fixed in the override row.
+H1 = ["caren_PIns", "caren_COper", "caren_SM"]
+PM_ADH, PM_SR, PM_DIR = "paced_adh", "paced_steprampPM", "paced_dirPM"
+MODELS = {  # name -> (measure, collapse change epochs, physio columns, variant label for file names)
+    "E12adh": ("plv", False, [], "base"),            # primary
+    "E12collapsed": ("plv", True, [], "base"),       # sensitivity (a): no outcome split
+    "E12adhrvt": ("plv", False, g.PHYSIO_RVT, "rvt"),  # sensitivity (b): + RVT x RRF, S2b
+    "E12mae": ("mae", False, [], "base"),            # sensitivity (c): MAE as the modulator
+}
+
+
+def run_events(sub, ent, n, physio, P):
+    ev, cf, _ = g.read_run_physio(sub, ent, n, physio)
+    ev = ev.reset_index(drop=True)
+    ev["epoch_index"] = pd.to_numeric(ev.epoch_index, errors="coerce")
+    m = P[(P.subject == sub) & (P.bids_entity == ent)].set_index("epoch_index")
+    pk = ev.condition.isin(q.PACED_MOD)
+    for c in ("plv", "mae", "change_type", "direction"):
+        ev[c] = np.where(pk, ev.epoch_index.map(m[c]), np.nan) if c in ("plv", "mae") else \
+            ev.epoch_index.map(m[c]).where(pk)
+    assert ev.loc[pk, "change_type"].notna().all()
+    return ev, cf
+
+
+def e12_design(ev, cf, n, measure, collapse):
+    base = ev[["onset", "duration", "condition"]].rename(columns={"condition": "trial_type"}).assign(modulation=1.0)
+    if collapse:
+        base.loc[base.trial_type.isin(q.CHANGE_ONLY), "trial_type"] = "paced_change"
+    parts = [base]
+    a = ev[ev.condition.isin(q.PACED_MOD) & ev[measure].notna()]
+    if len(a) >= 2 and a[measure].std() > 0:
+        parts.append(a[["onset", "duration"]].assign(trial_type=PM_ADH, modulation=(a[measure] - a[measure].mean()).values))
+    ch = ev[ev.condition.isin(q.CHANGE_ONLY)]
+    for name, val in ((PM_SR, ch.change_type.map({"step": 0.5, "ramp": -0.5})),
+                      (PM_DIR, ch.direction.map({"Faster": 0.5, "Slower": -0.5}))):
+        assert val.notna().all()
+        if len(ch) >= 2 and val.std() > 0:
+            parts.append(ch[["onset", "duration"]].assign(trial_type=name, modulation=(val - val.mean()).values))
+    return q.design(pd.concat(parts, ignore_index=True), cf, n)
+
+
+def joint_designs(sub, runs, P, model):
+    measure, collapse, physio, _ = MODELS[model]
+    dms = []
+    for r in runs.itertuples():
+        ev, cf = run_events(sub, r.bids_entity, int(r.n_vol), physio, P)
+        dms.append(e12_design(ev, cf, int(r.n_vol), measure, collapse))
+    return dms, hj.build_joint_design(dms)
+
+
+def eligible(sub, runs, P, model, s2b):
+    measure, _, physio, _ = MODELS[model]
+    if physio and sub not in s2b:
+        return False
+    return P[(P.subject == sub) & P[measure].notna()].shape[0] >= 2
+
+
+def qc():
+    from intero2023_explore_fir import vif, rank_def
+    import intero2023_group as G
+    P = epoch_table(); man = g.run_list(); s2b = set(G.subject_sets()[0]["S2b"]); rows = []
+    for sub, runs in man.groupby("subject"):
+        for model in MODELS:
+            if not eligible(sub, runs, P, model, s2b):
+                continue
+            dms, J = joint_designs(sub, runs, P, model)
+            v = vif(J, [PM_ADH, PM_SR, PM_DIR])
+            Xc = J[[c for c in (PM_ADH, PM_SR, PM_DIR) if c in J]]
+            rows.append(dict(subject=sub, model=model, n_runs=len(dms), n_reg=J.shape[1], rank_deficient=int(rank_def(J)),
+                             n_adh_epochs=int(P[(P.subject == sub) & P[MODELS[model][0]].notna()].shape[0]),
+                             var_adh=hj.cvar(J, {PM_ADH: 1.0}),
+                             vif_adh=v.get(PM_ADH), vif_steprampPM=v.get(PM_SR), vif_dirPM=v.get(PM_DIR),
+                             r_adh_stepramp=float(np.corrcoef(Xc[PM_ADH], Xc[PM_SR])[0, 1]) if PM_SR in Xc else np.nan,
+                             r_adh_dir=float(np.corrcoef(Xc[PM_ADH], Xc[PM_DIR])[0, 1]) if PM_DIR in Xc else np.nan))
+    d = pd.DataFrame(rows); d.to_csv(os.path.join(RD, f"EXPLORATORY_{TAG}_design_qc_joint.csv"), index=False)
+    for m, u in d.groupby("model", sort=False):
+        ok = u.var_adh.notna()
+        print(f"{m:13s} N {ok.sum():2d} (eligible {len(u)}); rank-deficient {u.rank_deficient.sum()}; "
+              f"var median {u.var_adh.median():.3f} [{u.var_adh.min():.3f}, {u.var_adh.max():.3f}]; "
+              f"VIF adh median {u.vif_adh.median():.2f} max {u.vif_adh.max():.2f}; "
+              f"VIF stepramp {u.vif_steprampPM.median():.2f}, dir {u.vif_dirPM.median():.2f}; "
+              f"|r| adh-stepramp median {u.r_adh_stepramp.abs().median():.2f}, adh-dir {u.r_adh_dir.abs().median():.2f}")
+
+
+def subject(sub):
+    from nilearn.maskers import NiftiMasker
+    from nilearn.glm.first_level.first_level import mean_scaling
+    from intero2023_firstlevel import fit
+    import intero2023_group as G
+    P = epoch_table(); man = g.run_list(); runs = man[man.subject == sub]; assert len(runs), sub
+    s2b = set(G.subject_sets()[0]["S2b"])
+    todo = [m for m in MODELS if eligible(sub, runs, P, m, s2b)]
+    od = os.path.join(g.OUT, "firstlevel", sub); os.makedirs(od, exist_ok=True)
+    if not todo:
+        print(sub, "not eligible"); return
+    masker = NiftiMasker(mask_img=g.GROUP_MASK, smoothing_fwhm=6, standardize=False).fit()
+    Ys = []
+    for r in runs.itertuples():
+        Y = masker.transform(g.bold_path(sub, r.bids_entity)); assert Y.shape[0] == int(r.n_vol)
+        Ys.append(mean_scaling(Y, axis=0)[0])
+    Y = np.vstack(Ys); log = dict(subject=sub, models={})
+    for m in todo:
+        _, J = joint_designs(sub, runs, P, m)
+        if not np.isfinite(hj.cvar(J, {PM_ADH: 1.0})):
+            log["models"][m] = "not estimable"; continue
+        out, dof = fit(Y, J, {m: {PM_ADH: 1.0}})
+        e, v = out[m]
+        if not (v > 0).all():
+            raise ValueError(f"{sub} {m}: non-positive variances")
+        var = MODELS[m][3]
+        for arr, kind in ((e, "effect"), (v, "variance")):
+            g.save_float32(masker.inverse_transform(arr), os.path.join(od, f"{sub}_var-{var}_con-{m}joint_{kind}.nii.gz"))
+        log["models"][m] = dict(dof=dof, n_reg=J.shape[1])
+    json.dump(log, open(os.path.join(od, f"{sub}_e12.json"), "w"))
+    print(sub, "done", log["models"], flush=True)
+
+
+def group():
+    import nibabel as nib
+    from nilearn.maskers import NiftiMasker
+    from nilearn.glm.second_level import non_parametric_inference
+    import intero2023_group as G
+    from intero2023_explore_awareness import jzs_bf10
+    from intero2023_explore_rating import atlas_labels
+    man = g.run_list(); allsubs = sorted(man.subject.unique()); rows = []
+    roles = {"E12adh": ("primary", True), "E12collapsed": ("sensitivity (a): no outcome split", False),
+             "E12adhrvt": ("sensitivity (b): + RVT x RRF, S2b", False), "E12mae": ("sensitivity (c): MAE modulator", False)}
+    for name, (role, wb) in roles.items():
+        var = MODELS[name][3]
+        subs = [s for s in allsubs if os.path.exists(G.fl(s, var, f"{name}joint", "effect"))]
+        files = [G.fl(s, var, f"{name}joint", "effect") for s in subs]
+        imgs = [nib.load(f) for f in files]
+        dm = pd.DataFrame({"intercept": np.ones(len(files))})
+        json.dump(dict(N=len(subs), subjects=subs), open(os.path.join(RD, f"EXPLORATORY_{TAG}_{name}_subjects.json"), "w"))
+        for roi in H1:
+            rmask = nib.load(G.ROI(roi)).get_fdata() > 0
+            lp = non_parametric_inference(imgs, design_matrix=dm, second_level_contrast="intercept", mask=G.ROI(roi),
+                                          n_perm=G.N_PERM, two_sided_test=True, random_state=SEED, n_jobs=G.N_JOBS)
+            tmap = G.ols_t(imgs, dm, "intercept", G.ROI(roi))
+            lpv = lp.get_fdata()[rmask]; tv = tmap.get_fdata()[rmask]
+            k = int(np.nanargmax(np.abs(tv))); ijk = np.argwhere(rmask)[k]
+            pmin = float(10 ** -np.nanmax(lpv))
+            mk = NiftiMasker(mask_img=G.ROI(roi)).fit()
+            y = np.array([mk.transform(f).mean() for f in files])
+            row = dict(analysis=f"EXPLORATORY {TAG} (post-hoc override of the gate)", contrast=name, role=role, roi=roi,
+                       N=len(files), peak_abs_t_signed=round(float(tv[k]), 3),
+                       peak_mni=[round(float(c), 1) for c in nib.affines.apply_affine(tmap.affine, ijk)],
+                       p_fwe=pmin, p_fwe_bonf3=min(1.0, 3 * pmin), n_vox_p_lt_05=int((lpv > -np.log10(0.05)).sum()),
+                       mask_mean=float(y.mean()), mask_mean_dz=float(y.mean() / y.std(ddof=1)),
+                       mask_mean_t=float(stats.ttest_1samp(y, 0).statistic))
+            for r in (0.5, 0.707, 1.0):
+                row[f"BF10_r{r}"] = jzs_bf10(row["mask_mean_t"], len(y), r)
+            row["BF01_r0.707"] = 1 / row["BF10_r0.707"]
+            rows.append(row); print({k_: v_ for k_, v_ in row.items()}, flush=True)
+        if wb:
+            od = os.path.join(g.OUT, "group", f"EXPLORATORY_{TAG}_{name}"); os.makedirs(od, exist_ok=True)
+            res = non_parametric_inference(files, design_matrix=dm, second_level_contrast="intercept", mask=g.GROUP_MASK,
+                                           n_perm=G.N_PERM, two_sided_test=True, threshold=0.002,
+                                           random_state=SEED, n_jobs=G.N_JOBS)
+            for kk in ("t", "logp_max_size"):
+                g.save_float32(res[kk], os.path.join(od, f"wholebrain_{kk}.nii.gz"))
+            cl = G.cluster_table(res["t"], res["logp_max_size"], len(files) - 1)
+            if len(cl):
+                cl = cl.assign(labels=[atlas_labels(m) for m in cl.peak_mni])
+            cl.insert(0, "contrast", name)
+            cl.to_csv(os.path.join(RD, f"EXPLORATORY_{TAG}_{name}_wholebrain.csv"), index=False)
+            print(name, "whole brain:", cl.head(15).to_string() if len(cl) else "no cluster", flush=True)
+        pd.DataFrame(rows).to_csv(os.path.join(RD, f"EXPLORATORY_{TAG}_h1masks.csv"), index=False)
+
+
+# --------------------------------------------------------------------------- Step 2
+def ridge():
+    """LOSO linear kernel ridge on the T4 LSS betas: z(PLV) within participant x run, residualised on
+    [1, No Change, step-ramp, direction] in each training fold; mean within-participant Spearman; one-sided."""
+    sys.path.insert(0, HERE)
+    from intero2023_explore_awareness_decoder import perm_labels, within_spearman, boot_ci, T4D
+    P = epoch_table(); P = P[P.plv.notna()]
+    X, rows = [], []
+    for s in sorted(P.subject.unique()):
+        f = os.path.join(T4D, f"{s}_lss.npz")
+        if not os.path.exists(f):
+            continue
+        B = np.load(f)["beta"].astype(np.float64)
+        E = pd.read_csv(os.path.join(T4D, f"{s}_lss_epochs.csv")); E["epoch_index"] = E.epoch_index.astype(int)
+        E = E.reset_index().merge(P[P.subject == s][["bids_entity", "epoch_index", "plv", "change_type", "direction"]]
+                                  .rename(columns={"bids_entity": "entity"}), on=["entity", "epoch_index"])
+        E = E[E.condition.isin(q.PACED_MOD)]
+        for rn, u in E.groupby("run"):
+            if len(u) < 3 or u.plv.std() == 0:
+                continue
+            Bx = B[u["index"].values]; X.append(Bx - Bx.mean(0, keepdims=True))
+            rows.append(u.assign(z=(u.plv - u.plv.mean()) / u.plv.std()))
+    E = pd.concat(rows, ignore_index=True); X = np.vstack(X)
+    grp = E.subject.values; strata = (E.subject + "_" + E.run.astype(str)).values
+    C = np.column_stack([np.ones(len(E)), (E.change_type == "none").astype(float),
+                         np.select([E.change_type == "step", E.change_type == "ramp"], [0.5, -0.5], 0.0),
+                         np.select([E.direction == "Faster", E.direction == "Slower"], [0.5, -0.5], 0.0)])
+    rng = np.random.default_rng(SEED)
+    Y = np.column_stack([E.z.values] + [perm_labels(E.z.values, strata, rng) for _ in range(5000)])
+    Pr = np.full(Y.shape, np.nan); Yo = np.full(Y.shape, np.nan)
+    for s in np.unique(grp):
+        te = np.flatnonzero(grp == s); tr = np.flatnonzero(grp != s)
+        Bc = np.linalg.lstsq(C[tr], Y[tr], rcond=None)[0]
+        Ytr = Y[tr] - C[tr] @ Bc; Yo[te] = Y[te] - C[te] @ Bc
+        K = X[tr] @ X[tr].T; lam = float(np.mean(np.diag(K))); w, V = np.linalg.eigh(K)
+        Pr[te] = (X[te] @ X[tr].T) @ (V @ ((V.T @ Ytr) / (w + lam)[:, None]))
+    vals = np.array([np.mean(list(within_spearman(Yo[:, j], Pr[:, j], grp).values())) for j in range(Y.shape[1])])
+    rho = np.array(list(within_spearman(Yo[:, 0], Pr[:, 0], grp).values())); lo, hi = boot_ci(rho)
+    out = pd.DataFrame([dict(analysis=f"EXPLORATORY {TAG} Step 2 (post-hoc override of the gate)",
+                             test="LOSO kernel ridge, T4 LSS betas -> z(PLV) net of change type and direction",
+                             n_participants_scored=len(rho), n_epochs=len(E), mean_within_spearman=float(vals[0]),
+                             ci95_lo=lo, ci95_hi=hi, median_within_spearman=float(np.median(rho)), n_above_0=int((rho > 0).sum()),
+                             null_mean=float(vals[1:].mean()), null_95th=float(np.percentile(vals[1:], 95)),
+                             p_one_sided=float((1 + (vals[1:] >= vals[0]).sum()) / len(vals)), n_perm=len(vals) - 1)])
+    out.to_csv(os.path.join(RD, f"EXPLORATORY_{TAG}_ridge.csv"), index=False)
+    print(out.T.to_string())
+
+
 if __name__ == "__main__":
     a = sys.argv[1]
-    {"gate": gate}[a]()
+    {"gate": gate, "qc": qc, "subject": lambda: subject(sys.argv[2]), "group": group, "ridge": ridge}[a]()

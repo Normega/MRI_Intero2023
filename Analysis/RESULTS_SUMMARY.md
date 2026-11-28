@@ -218,15 +218,15 @@ them. The paced − free (C1) contrast, averaged over runs (N 47):
 
 ### Exploratory E12 / E13: pacer adherence and an awareness decoder (2026-11-28)
 
-Both were logged before running (`Preregistration/deviations.md`, E12, E13). One post-hoc check on E13 is logged separately.
+Both were logged before running (`Preregistration/deviations.md`, E12, E13). Two post-hoc items are logged in their own rows: the PI's override of the E12 gate, and a check on E13.
 Scripts:
-- `Scripts/intero2023_explore_adherence.py` (E12);
+- `Scripts/intero2023_explore_adherence.py` and `Scripts/intero2023_explore_adherence_mixed.R` (E12);
 - `Scripts/intero2023_explore_awareness_decoder.py` (E13);
 - `Scripts/intero2023_explore_e12e13_figures.py`.
 
 Figures: `Figures/EXPLORATORY_E12_gate.png`, `Figures/EXPLORATORY_E13_decoder.png`.
 
-**E12: epoch-level pacer adherence. Stopped at the gate; no brain value was computed.**
+**E12: epoch-level pacer adherence. The gate failed; Steps 1–3 were then run as a post-hoc override. All null.**
 Step 0 compares two per-epoch measures in 381 paced epochs (33 participants, 58 runs):
 - paced PLV, the planned primary;
 - the breath-period error (`adherence_mae_s`).
@@ -243,12 +243,26 @@ Descriptive (`EXPLORATORY_E12_gate.csv`):
 - **PLV.** 55% of its variance is within run, but only 38% of the total remains once change type and direction are removed. Split-half reliability of participant means .93; run-to-run ICC .51 (N 25).
 - **MAE.** It depends on the stimulus: Slower epochs average 1.07–1.16 s, Faster 0.57–0.73 s.
 
-**What was not run.** Under the pre-set rule, Steps 1–3 were not run:
-- the parametric-modulator GLM;
-- the LOSO ridge on the T4 betas;
-- the epoch mixed model on the T4 index.
+**Post-hoc override.** The PI overrode the gate: the plan's own single-r rule had passed, and PLV is reliable between people. The override is logged in its own dated row, committed before any fit. Steps 1–3 then ran exactly as the E12 row specifies.
 
-Their specifications are fixed in the E12 row. Running them now would be a post-hoc override. The plan's own single-r rule would have passed (−.42), so the stop rests on the stricter criterion added here. The per-epoch adherence signal sits at the edge of usable, as `R/intero_resp.R` already warned ("adherence is a run-level property").
+*Step 1: PLV modulator on paced epochs* (joint two-run Model A plus step-vs-ramp and direction modulators). H1 masks; sign-flip voxel max-t, two-sided, ×3; JZS BF01 at r 0.707 (`EXPLORATORY_E12_h1masks.csv`).
+
+| Model | N | p (×3): PIns / COper / SM | Mask-mean dz | BF01 |
+|---|---|---|---|---|
+| **Primary (PLV)** | 33 | 1.0 / 1.0 / .45 | −0.14 / +0.13 / +0.12 | 4.0 / 4.2 / 4.3 |
+| Paced change epochs collapsed (no outcome split) | 33 | .059 / .86 / .26 | −0.28 / −0.25 / −0.32 | 1.7 / 2.1 / 1.2 |
+| + RVT ⊗ RRF (S2b) | 32 | 1.0 / 1.0 / .66 | −0.11 / +0.20 / +0.16 | 4.5 / 2.9 / 3.6 |
+| MAE as the modulator | 35 | 1.0 / 1.0 / 1.0 | −0.10 / −0.01 / −0.00 | 4.6 / 5.5 / 5.5 |
+
+- **Whole brain (primary).** No cluster survives. The largest is 12 voxels in left middle frontal gyrus, p_FWE .09, negative.
+- **Design caveat.** A few one-run participants have weakly identified modulators: VIF up to 65 and variance multipliers up to 1,500. The mask means are therefore noisy (`EXPLORATORY_E12_design_qc_joint.csv`).
+- **The collapsed model.** Without the outcome split, the mask means turn negative (dz about −0.3, inconclusive), and posterior insula comes closest to the threshold (p .059). Reading: part of the adherence signal there is shared with the outcome regressors.
+
+*Step 2 (LOSO kernel ridge, T4 LSS betas → z(PLV) net of change type and direction; N 30, 378 epochs).* Mean within-participant Spearman ρ .077 [−.052, .208]; p .155, one-sided (Holm ×2: .155).
+
+*Step 3 (`lmer(PLV ~ T4 dot_own index + change type + direction + (1 | participant))`; N 30, 378 epochs).* Index slope 0.125 [0.016, 0.234]; t 2.25 (df 342); p .025, Holm ×2 **.051**. Epochs that express the localizer Intero pattern more tend to be followed more closely. The effect does not survive the logged correction (`EXPLORATORY_E12_mixed.csv`).
+
+**Reading.** In the H1 masks there is moderate evidence (BF01 about 4) against a within-participant relation between epoch adherence and BOLD. The pattern-based tests are null (Step 2) or borderline and uncorrected (Step 3). Pacer adherence has no detectable epoch-level brain correlate in these data. The per-epoch measure sits at the edge of usable, as `R/intero_resp.R` already warned ("adherence is a run-level property").
 
 **E13: LOSO decoder of aware vs unaware paced epochs.**
 - Features: the T4 LSS betas (SAL ∪ SMN, 4 mm), with each participant's mean paced pattern removed.

@@ -1,0 +1,2 @@
+analysis,test,n_participants_scored,n_epochs,mean_within_spearman,ci95_lo,ci95_hi,median_within_spearman,n_above_0,null_mean,null_95th,p_one_sided,n_perm
+EXPLORATORY E12 Step 2 (post-hoc override of the gate),"LOSO kernel ridge, T4 LSS betas -> z(PLV) net of change type and direction",30,378,0.0771978021978022,-0.05221611721611721,0.20799404761904752,0.07032967032967033,17,0.0010048278388278388,0.12051831501831506,0.15496900619876025,5000
