@@ -1,6 +1,6 @@
 # Results summary — registered imaging analyses (OSF swc7p, plan v0.8)
 
-Run 2026-11-26 after the swc7p update was approved. Pipeline and analyst
+Run 2026-11-26 after the swc7p update was approved. The localizer (OSF p5ztc) summary is at the end of this file. Pipeline and analyst
 choices: `Analysis/glm_implementation_notes.md`, committed before any group
 statistic existed. Full tables: `Analysis/results/`. Corrected p-values are
 FWE with the registered Bonferroni. Permutation p has a floor of 1e-4
@@ -183,3 +183,106 @@ H1 is unchanged by every correction: mask dz shifts by 10% or less, and p stays
 .0003. H6 survives RVT correction (S2 .028, S2b .022). In S1 it is null in the
 base model as well as the corrected one, so the loss there comes from the
 subset (see Sensitivity).
+
+### Nuisance model: the CSF regressor is task-locked (E11, exploratory)
+
+Logged before running (`Preregistration/deviations.md`, E11). Script:
+`Scripts/intero2023_explore_csf_breathing.py`. Table:
+`Analysis/results/EXPLORATORY_E11_csf_paced_free.csv`.
+
+The fMRIPrep `csf` and `white_matter` columns are in every registered model. Each
+was regressed (as percent of its run mean) on the run's Model A design without
+them. The paced − free (C1) contrast, averaged over runs (N 47):
+
+| Tissue signal | C1 mean (PSC) | dz | % < 0 | sign-flip p |
+|---|---|---|---|---|
+| CSF | −0.062 | −0.45 | 70% | .0025 |
+| White matter | −0.032 | −0.49 | 68% | .0015 |
+
+**Reading.**
+- **Both signals are lower during paced than free epochs.** So part of the
+  paced − free variance is shared with the nuisance regressors, and the
+  registered model removes it from H1's estimate.
+- **The localizer shows the same thing.** In the localizer, the same CSF regressor falls in every task block, and dropping
+  it roughly doubles the Match − Intero (L2) effect (whole-brain dz −0.30 →
+  −0.61; see `LOCALIZER_RESULTS.md`, "localizer model without the CSF and
+  white-matter regressors").
+- **H1 is therefore a conservative estimate.** It was supported, with dz about −1,
+  with this variance removed.
+- **What is not settled.** Whether the removed part is neural (the
+  global-grey-matter / CSF anti-coupling) or vascular / respiratory cannot be
+  decided from these data.
+- **What was not done.** No breathing-run refit without the tissue regressors has been run. The
+  null awareness tests (H3, H2, E1–E10) contrast conditions within paced
+  epochs, so a paced-vs-free-locked nuisance signal should affect them far less.
+
+# Localizer (OSF p5ztc, plan v1.0 at d29136b): summary
+
+Full results: `Analysis/LOCALIZER_RESULTS.md`. Deviations and every exploratory
+analysis: `Preregistration/localizer_deviations.md`. Figures:
+`Figures/localizer/`.
+
+**Conditions.** Rest is the implicit baseline. The four task conditions are:
+- **Intero:** track one's own breath with presses;
+- **Extero:** track a visual circle;
+- **Match:** breathe with the circle, the paced-breathing analogue;
+- **Self:** trait-word judgements.
+
+## Registered verdicts
+
+| Test | N | Verdict | Key numbers |
+|---|---|---|---|
+| **L1** Intero − Extero ≠ 0, salience masks (two-sided, ×3) | 48 | **Supported in all three masks: Intero < Extero** | AInsL z −4.95, p .0007, dz −0.65; AInsR z −4.99, p .0005, dz −0.40; dACC z −5.30, p .0001, dz −0.55. |
+| **L2** Match − Intero < 0, H1 masks (one-sided, ×3) | 48 | **Supported at peak level in COper and SM, not PIns; mask means null** | COper p .016, SM p .0495, 1 voxel each; mask dz −0.04 to −0.13, BF10 0.16–0.23. |
+| **L3** MAIA × (Intero − Extero), IEAT ACC sphere | 46 | **Not supported** | r −.02, p .79; BF01 6.2. |
+| **L4** reliability gate for participant-specific fROIs | 44 | **Not met in any parcel** | Cross-run C1 is negative everywhere (dz −0.17 to −0.53). The group fallback becomes primary in AInsR and the sphere. |
+| **T1** aware > unaware in the C1 fROIs (×3) | 40 | **Not supported** | dz +0.14 (AInsL), +0.33 (AInsR, fallback), −0.04 (dACC); BF01 4.1 / 0.84 / 5.7. |
+| **T3b** MAIA × paced − free in the sphere fROI (one-sided) | 40 | **Supported at the criterion; weak, not fROI-specific** | r .26, permutation p .042, BF10 0.57; the rest of the sphere is stronger (r .38). |
+| T3 (secondary) paced − free in the C5 fROIs | 41 | Negative in all five, no more than the parcel | dz −0.58 to −0.89. |
+
+**The direction of L1 is the expected one.** Attending to the breath rather than
+an external target produces widespread cortical deactivation (Farb et al.,
+2023, *eNeuro*). L1 was registered two-sided. The result replicates that
+pattern; it is not a reversal. Its suprathreshold voxels are part of one
+whole-brain negative cluster (about 72,500 voxels), so the effect is not specific to
+the salience masks.
+
+## Robustness
+
+- **Physiological correction.** RVT⊗RRF and PetCO2 keep 85–107% of each
+  contrast's whole-brain effect (Intero 94% / 99%, C1 88% / 91%).
+- **The CSF regressor.** The CSF regressor is task-locked in the localizer as well. Dropping the tissue regressors has two effects:
+  - **C1:** dz roughly halves. The tissue regressors mainly remove noise here, so the registered model is the more sensitive one for L1.
+  - **Match contrasts:** they become much stronger (C5 whole-brain dz −0.30 → −0.61). The weak L2 result is partly due to the nuisance model.
+
+  No verdict changes.
+- **The periventricular positive band.** It sits on the borders of the lateral ventricles in the task-vs-Rest maps. It survives physiological correction, and it survives removing the CSF regressor.
+
+## Exploratory (stage C; labelled, no verdict changes)
+
+- **Behaviour (C1).**
+  - Participants breathed with the pacer in both tasks: 38/40 in localizer Match, 33/33 in breathing-run change detection.
+  - Breath tracking was accurate (PLV .79 vs chance .26) but only moderately reliable (ICC .44).
+  - Tracking accuracy and adherence relate to no brain measure after FDR. Adherence does not moderate H1.
+- **Connectivity (C2).**
+  - Under Intero − Extero, salience–DMN coupling is less anticorrelated (network FC dz +0.69; background FC +0.48). This survives partialling out the global signal.
+  - The salience–somatomotor change is a global-signal effect.
+  - In the breathing runs, left–right anterior insula coupling is lower under pacing (q .022).
+- **Pattern analyses (C3).**
+  - **Decoding.** Intero vs Extero is decodable across participants (balanced accuracy .72 whole brain; .70–.71 salience, sensorimotor and DMN; .61 insula). This holds after the map mean is removed.
+  - **Match.** Match maps classify between the two training classes. In RSA, Match is the condition closest to Intero in 7 of 9 regions.
+  - **Breathing-run epochs (T4).** These express the localizer C1 pattern more when paced than free (+0.07). The expression does not track awareness (−0.017 [−0.047, 0.013], p .28) or confidence (p .86).
+  - **No posterior → anterior insula gradient** (dz −0.07).
+  - **Respiratory phase.** Inhale vs exhale responses look like breathing-depth artefact.
+
+## Synthesis
+
+Attending to the breath produces a robust, distributed cortical deactivation:
+- It is decodable across people.
+- It is shared with paced breath-matching.
+- It comes with reduced salience–DMN anticorrelation.
+
+The localizer does not yield reliable participant-specific "interoceptive"
+regions. Neither its regions nor its multivariate pattern carries the awareness
+of breathing changes. The breathing-run awareness null (BF01 ≈ 3–6) holds
+when the measures are defined by the localizer.
