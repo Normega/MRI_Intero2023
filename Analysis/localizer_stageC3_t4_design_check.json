@@ -1,0 +1,17 @@
+{
+ "subject": "sub-060",
+ "runs": [
+  {
+   "entity": "task-breathing_run-1",
+   "n_epochs": 14,
+   "all_full_rank": true,
+   "max_abs_merge_diff": 0.0
+  },
+  {
+   "entity": "task-breathing_run-2",
+   "n_epochs": 14,
+   "all_full_rank": true,
+   "max_abs_merge_diff": 0.0
+  }
+ ]
+}
