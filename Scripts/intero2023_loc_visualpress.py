@@ -1,4 +1,7 @@
-"""EXPLORATORY (localizer_deviations.md, 2026-11-28): circle-tracking presses recovered
+"""SUPERSEDED 2026-11-28: built on a wrong "first key wins" reading of the log; the log stores the
+LAST key in each window (localizer_deviations.md). Kept as run; its outputs are not used.
+
+EXPLORATORY (localizer_deviations.md, 2026-11-28): circle-tracking presses recovered
 from the censored Extero / Match logs, and their reliability. Behaviour only.
 
 Each Extero / Match half-cycle row stores the FIRST key in a window opening at the phase
