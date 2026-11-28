@@ -1,0 +1,8 @@
+set,epochs,participants,runs
+paced_primary,435,39,70
+paced_nochange,66,39,66
+paced_change,369,39,70
+free_transition,371,36,65
+free_transition_and_within,286,35,62
+two_run_participants,393,31,62
+trend_se_nochange_epochs,64,NA,NA

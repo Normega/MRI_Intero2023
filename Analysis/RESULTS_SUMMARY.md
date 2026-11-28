@@ -304,6 +304,57 @@ Single breathing features, as within-participant AUCs (descriptive, `EXPLORATORY
 - **The confidence regression is also above chance, with a small ρ.** Confidence is higher on aware epochs, so this result is not independent of the primary.
 - **Not run:** whole-brain parcel features. This needs a whole-brain LSS refit and an atlas that is not on disk.
 
+### Exploratory E14: does the report follow the visible pacer or the breath? (behaviour only, 2026-11-28)
+
+This analysis was logged before any model was fitted (`Preregistration/deviations.md`, E14, commit `2217c20`). The pacer circle itself speeds up or slows down, so a paced-epoch report can be made by eye.
+- Script: `Scripts/intero2023_explore_report_evidence.R`.
+- Tables: `Analysis/results/EXPLORATORY_E14_*.csv`.
+- Figure: `Figures/EXPLORATORY_E14_report_evidence.png`.
+
+The predictors are signed log period ratios; positive means the period lengthened (slower):
+- *z*: the instructed (pacer) change, fitted over the window the measured breaths cover;
+- *x*: the measured within-epoch breathing change.
+
+The report is ordered Faster < No Change < Slower and fitted with an ordinal probit (`clmm`) with a participant intercept. The sample is 435 paced epochs with a usable belt (39 participants, 70 runs). r(*x*, *z*) is .40 and the VIF is 1.19.
+
+| Test | N (epochs / participants) | Estimate [95% CI] | p |
+|---|---|---|---|
+| **Primary: instructed *z*** (pacer, beyond the breath) | 435 / 39 | **2.72 [2.13, 3.31]**; 0.68 per SD | 1e-19 (Holm ×2: 3e-19) |
+| **Primary: measured *x*** (breath, beyond the pacer) | 435 / 39 | 0.11 [−0.22, 0.45]; 0.05 per SD | .51 (Holm .51) |
+| Step vs ramp | 435 / 39 | −0.18 [−0.46, 0.09] | .20 |
+| No Change epochs: report ~ *x* | 66 / 39 | 0.21 [−0.84, 1.26] | .69 |
+| Free epochs F1: report ~ transition ratio (free period vs the last two paced breaths) | 371 / 36 | **1.07 [0.64, 1.50]** | 1e-6 |
+| F2: transition + within-free-epoch trend | 286 / 35 | transition 0.67 [0.16, 1.19]; trend −0.19 [−0.59, 0.20] | .010; .34 |
+| F3: transition + preceding pacer endpoint | 371 / 36 | transition 0.92 [0.45, 1.38]; endpoint −0.46 [−0.97, 0.06] | 1e-4; .08 |
+| Confidence ~ \|*z*\| + \|*x*\| + step (lmer) | 435 / 39 | \|*z*\| −0.01 [−0.88, 0.87]; \|*x*\| 0.07 [−0.35, 0.49] | .99; .74 |
+| Sensitivity: + previous paced report | 435 / 39 | *z* 2.77 [2.18, 3.37]; *x* 0.12 [−0.22, 0.46] | |
+| Sensitivity: two-run participants | 393 / 31 | *z* 2.56 [1.95, 3.17]; *x* 0.14 [−0.21, 0.50] | |
+
+**Measurement error.** The reliability of the measured change *beyond the pacer* is λ = 1 − σ_u² / Var(*x* \| *z*, step) = 1 − σ_u² / .142.
+- **At the noise estimates, λ is about 0.** The noise SD σ_u was estimated three ways: the plan's .40, the No Change SD .377, and the within-epoch trend SE .397. They give λ ≤ .005, so a corrected measured coefficient is not identified. This was established and logged before fitting.
+- **Illustrative noise levels.** At σ_u .25, .30 and .35 (λ .56, .37, .14), the corrected coefficients are:
+  - measured: 0.20, 0.30 and 0.80, every bootstrap CI spanning 0;
+  - instructed: 2.66 [1.84, 3.63], 2.59 [1.56, 3.76] and 2.27 [−3.43, 5.44].
+- **Tipping point.** True breathing could account for the whole instructed coefficient only if λ were below **.026** (σ_u ≥ .372). The noise estimates sit at or beyond that point. The bootstrap CI is not reported because only 75% of resamples gave a finite value (the logged rule needs 90%).
+
+**Dissociation epochs.** These are change epochs in which the measured breathing went the opposite way to the pacer. The value is P(report follows the pacer | a direction was reported), with a participant bootstrap CI.
+
+| Epochs | Count (participants) | P(follows pacer) [95% CI] |
+|---|---|---|
+| Breath on the pacer's side (concordant) | 276 (37) | .79 [.73, .86] |
+| Breath on the wrong side of 1 | 93 (35) | .70 [.56, .83] |
+| Wrong side, \|*x*\| ≥ .20 | 55 (28) | .77 [.60, .90] |
+
+- In the 93 wrong-side epochs, 45 reports followed the pacer, 29 were No Change and 19 followed the breath. Difference from concordant: −.09 [−.23, .03].
+- In the 55 strict epochs: 30 followed the pacer, 16 were No Change, 9 followed the breath. Difference: −.02 [−.19, .10].
+
+**Reading.**
+- **Paced epochs.** The report follows the instructed change strongly: per SD it is about 15 times the measured term. The measured breathing adds nothing detectable once the visible change is in the model. That holds overall, in No Change epochs, and in epochs where breathing went against the pacer, where the report still follows the pacer about 70–77% of the time.
+- **The paced data cannot separate vision from breath.** This was fixed before fitting. The per-epoch belt measure is so noisy that the part of breathing which deviates from the pacer is not measurable (λ ≈ 0). The tipping-point reliability (.026) lies inside the range of the noise estimates. So "the report follows the visible pacer" and "the report follows the part of the breath that follows the pacer" are confounded by design. The measured null is not evidence against breath sensing.
+- **Free epochs are the one place without a visual cue.** There, the report does track the measured change in breath period from the end of the paced epoch to natural breathing. This survives adjustment for the nominal pacer endpoint, which itself leans the way an inference would ("the pacer was fast, so I am now slower"; p .08). It is not explained by the trend within the free epoch, which has no relation to the report.
+- **Confidence** relates to neither the size of the instructed change nor the size of the measured change.
+- **Interpretation.** "Aware" in paced epochs (correct direction reported) is best read as "reported the direction of the visible pacer change". It cannot be certified as interoceptive. The free-epoch report is the only judgement in this task with demonstrated breath evidence: a felt pacer-to-natural transition, possibly helped by knowing what the pacer did.
+
 # Localizer (OSF p5ztc, plan v1.0 at d29136b): summary
 
 Full results: `Analysis/LOCALIZER_RESULTS.md`. Deviations and every exploratory
