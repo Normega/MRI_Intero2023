@@ -1,0 +1,13 @@
+index,measure,n_participants,n_epochs,r,spearman_brown,per_participant_r_median,template
+dot,"template split-half (loc run 1 vs run 2 C1 map), within-participant epoch r",41,567.0,0.2186,0.3588,0.3695,
+dot,"template split-half, participant mean paced index (between-participant r)",41,567.0,0.3165,0.4808,,
+dot,"breathing run 1 vs run 2, participant mean paced index",42,,0.6446,0.7839,,own
+dot,"breathing run 1 vs run 2, participant aware - unaware",27,,0.0812,0.1501,,own
+dot,"breathing run 1 vs run 2, participant mean paced index",42,,0.2148,0.3537,,loso
+dot,"breathing run 1 vs run 2, participant aware - unaware",27,,0.1639,0.2816,,loso
+corr,"template split-half (loc run 1 vs run 2 C1 map), within-participant epoch r",41,567.0,0.3103,0.4736,0.24,
+corr,"template split-half, participant mean paced index (between-participant r)",41,567.0,0.3726,0.5429,,
+corr,"breathing run 1 vs run 2, participant mean paced index",42,,0.4926,0.66,,own
+corr,"breathing run 1 vs run 2, participant aware - unaware",27,,0.1228,0.2188,,own
+corr,"breathing run 1 vs run 2, participant mean paced index",42,,0.1934,0.3241,,loso
+corr,"breathing run 1 vs run 2, participant aware - unaware",27,,-0.3048,-0.8767,,loso

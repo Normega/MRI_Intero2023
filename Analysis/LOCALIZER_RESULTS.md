@@ -821,3 +821,185 @@ All were logged in `Preregistration/localizer_deviations.md` before running (one
 - the global-signal reading rule.
 
 The gPPI figure shows only maps with a cluster that also survives ×20. That is a display choice; all 25 clusters are in the table. No post hoc analysis was added, and no earlier result was changed.
+
+# Stage C3 (exploratory): pattern expression, decoding, RSA, gradients, respiratory phase
+
+**Everything in this section is exploratory** (plan §8 T4, §9, §10). No result here tests a registered hypothesis, and none changes an earlier result.
+- Choices were committed before any stage-C3 value was computed (200a864): `Analysis/localizer_stageC3_implementation_notes.md` and `Preregistration/localizer_deviations.md` (entry "Stage C3").
+- Post hoc notes made after the tables were seen are logged separately and labelled below.
+- Scripts: `Scripts/intero2023_loc_t4.py` and `intero2023_loc_t4_mixed.R` (T4), `intero2023_loc_physio_relations.py`, `intero2023_loc_decoding.py`, `intero2023_loc_rsa.py`, `intero2023_loc_gradient.py`, `intero2023_loc_respphase.py`, `intero2023_loc_c3_figures.py`.
+- Tables: `Analysis/results/EXPLORATORY_LOC_C3_*.csv`. Figures: `Figures/localizer/loc_C3_t4_decoding.png` and `loc_C3_rsa_gradient.png`.
+
+**Checks.**
+- **LSS designs.** For sub-060, all 28 LSS designs are full rank, and the target column plus the remaining same-condition column reproduce the Model A column exactly (`Analysis/localizer_stageC3_t4_design_check.json`). All 44 participants' LSS fits completed without error.
+- **RSA refit.** The per-run localizer betas refitted in the ROI voxels equal the saved stage-A per-run 4 mm maps (max |Δ| 7.6e-7 over 44 participants).
+
+## T4: does the breathing-run epoch pattern look like the localizer C1 pattern, and does that track awareness or confidence?
+
+**Method in brief.**
+- **Betas.** LSS betas for every paced (595) and free (594) epoch of 44 participants: the localizer Intero set ∩ the swc7p set. The registered Model A design is used, at 4 mm, in CAREN SAL ∪ SMN (13,189 voxels).
+- **Index.** Each epoch's index is its projection on the participant's own two-run localizer C1 map. That map is Intero − Extero, mostly negative.
+  - **Primary, dot:** the dot product with the unit-length map, divided by √V, in PSC.
+  - **Secondary, corr:** the spatial correlation.
+- **How the sign reads.** A positive dot index means the epoch is lower where Intero is lower than Extero, so it looks Intero-like, *including the overall deactivation*. A positive corr index means the same spatial shape, whatever the epoch's mean level.
+- **Baseline caveat.** The breathing runs have no clean baseline, so only comparisons between epochs within participant are interpretable.
+- **Model:** the registered `index ~ confidence + outcome + (1 | participant)`, on 518 paced epochs with outcome aware, unaware or No Change. Wrong-direction epochs are excluded.
+
+**Result: no awareness or confidence effect** (`EXPLORATORY_LOC_C3_T4_mixed.csv`). Estimates are in index units, with 95% CI and Satterthwaite p.
+
+| Index, template | Confidence (per point) | Aware − unaware | Aware − No Change | Unaware − No Change | Outcome F |
+|---|---|---|---|---|---|
+| **dot, own (primary)** | −0.001 [−0.014, 0.012], p .86 | −0.017 [−0.047, 0.013], p .28 | −0.012 [−0.045, 0.021], p .47 | +0.004 [−0.033, 0.042], p .82 | F(2, 477) 0.68, p .51 |
+| corr, own | +0.005 [−0.006, 0.016], p .40 | −0.008 [−0.034, 0.017], p .52 | −0.003 [−0.031, 0.025], p .84 | +0.005 [−0.026, 0.037], p .74 | F(2, 478) 0.20, p .82 |
+| dot, LOSO group map | +0.000 [−0.017, 0.018], p .96 | −0.021 [−0.061, 0.019], p .31 | +0.001 [−0.044, 0.046], p .96 | +0.022 [−0.029, 0.073], p .39 | F(2, 484) 0.59, p .56 |
+| corr, LOSO group map | +0.008 [0.001, 0.015], p .022 | −0.011 [−0.028, 0.005], p .18 | +0.003 [−0.015, 0.022], p .71 | +0.015 [−0.006, 0.035], p .16 | F(2, 480) 1.24, p .29 |
+
+- **Sensitivity (dot, own).** The outcome contrasts stay null:
+  - with run intercepts: aware − unaware −0.001 [−0.026, 0.025], p .96;
+  - with confidence split into within- and between-participant parts: within −0.002 [−0.015, 0.012], between +0.009 [−0.051, 0.069];
+  - with wrong direction as a fourth outcome: every contrast p ≥ .26.
+- **Per network.** SAL alone and SMN alone are also null: outcome F p .71 and .46 (dot), aware − unaware p .57 and .22.
+- **The one p < .05** is the confidence slope for corr with the LOSO template (+0.008, p .022). It is one of 16 confidence and contrast estimates in that table's primary and secondary rows, and it is not seen with the participant's own map. It is not read as a finding.
+- **The index does vary, between epoch types.** In the added paced vs free check, paced epochs express the C1 pattern more than free epochs:
+  - dot +0.070 [0.056, 0.083], p 1e-22 (free epochs' level +0.056 [0.014, 0.099]);
+  - corr +0.055 [0.044, 0.067], p 2e-20.
+
+  So the C1 pattern is closer to the paced epochs than to the free epochs in both level and spatial shape. That matches the localizer, where breath-focused conditions (Intero, Match) share the same deactivation pattern (RSA below: Intero and Match are the closest pair in most regions). It does not mean free breathing is "less interoceptive".
+
+**Reliability (the noise ceiling;** `EXPLORATORY_LOC_C3_T4_reliability.csv`).
+
+| Measure | dot, own | corr, own |
+|---|---|---|
+| Template split-half: index from the run-1 vs run-2 localizer C1 map, across paced epochs within participant (41 participants, 567 epochs) | r .22 (Spearman–Brown .36) | r .31 (.47) |
+| Participant mean paced index, breathing run 1 vs run 2 (42) | r .65 (.78) | r .49 (.66) |
+| Participant aware − unaware, breathing run 1 vs run 2 (27 with both cells in both runs) | r .08 (.15) | r .12 (.22) |
+| ICC (participant intercept share), paced epochs | .55 (SD between .149, within .135) | .50 |
+
+- The participant's **average** expression of C1 is a reliable trait (cross-run r .65).
+- The **epoch-to-epoch** variation that an awareness effect would have to ride on is mostly noise. The template itself is only modestly reliable (split-half r .22), as the L4 gate already showed for individual C1 maps.
+- The participant-level aware − unaware difference does not replicate across runs (r .08).
+- The aware − unaware CI excludes differences beyond −0.047 and +0.013 (about a third and a tenth of the within-participant epoch SD of .135). Smaller effects cannot be excluded with this index.
+
+## Physiology-informed between-participant relations (§10.2; brief)
+
+Stage C1 already related breath tracking to MAIA, behaviour, adherence and C1 in the fROIs and masks; those are not repeated. The four new relations (BH-FDR ×4; `EXPLORATORY_LOC_C3_physio_relations.csv`) are all null:
+
+| Relation | n | ρ [95% CI] | BF10 | q |
+|---|---|---|---|---|
+| Tracking PLV × C1 SAL–DMN background-FC difference (stage C2) | 33 | −.00 [−.40, .38] | 0.14 | .98 |
+| Tracking PLV × mean paced-epoch T4 index | 32 | .12 [−.25, .47] | 0.21 | .98 |
+| Tracking PLV × aware − unaware T4 index | 30 | .12 [−.30, .49] | 0.76 | .98 |
+| Breathing-run adherence × mean paced-epoch T4 index | 32 | .01 [−.35, .35] | 0.14 | .98 |
+
+How well people track their breath is unrelated to the C2 coupling effect and to T4 expression. Beyond these, §10.2 is covered by stage C1.
+
+## LOSO decoding of Intero vs Extero (`EXPLORATORY_LOC_C3_decoding.csv`)
+
+Per-run 4 mm Intero and Extero maps (each vs Rest) of 48 participants (92 runs, 184 maps) were classified with a linear SVM (C = 1), leaving one participant out. Chance is .50. The p values are from 5,000 within-run label-swap permutations; the floor is .0002. CIs are participant-bootstrap.
+
+| Mask | Raw PSC maps: balanced accuracy [95% CI], p | Pattern only (map mean and scale removed) | Null 95th percentile |
+|---|---|---|---|
+| Whole brain | .72 [.66, .78], .0002 | .71 [.65, .77], .0002 | .55–.56 |
+| SAL | .70 [.65, .76], .0002 | .66 [.61, .72], .0002 | .55–.56 |
+| SMN | .71 [.65, .77], .0002 | .73 [.68, .79], .0002 | .55 |
+| DMN | .71 [.65, .77], .0002 | .67 [.62, .74], .0002 | .56 |
+| Insula (AInsL ∪ AInsR ∪ PIns) | .61 [.56, .67], .001 | .60 [.55, .66], .005 | .56 |
+
+- **Every one of the 10 tests survives Bonferroni ×10.** The largest corrected p is .046 (insula, pattern).
+- **Decoding does not depend only on the global deactivation.** With each map's mean and scale removed, accuracy changes by at most .04.
+- **The insula decodes worst** (.60–.61), although the mask means there differ strongly (L1). In the insula the condition difference is mainly a level shift that is shared across participants and carries little transferable spatial pattern.
+- **Applied to other conditions** (post hoc reading, logged). The classifier trained on Intero vs Extero calls 49–58% of held-out Match maps "Intero" in the raw features (55–63% pattern). For comparison, it calls 25–36% of held-out Extero maps and only 9–26% of held-out Self maps "Intero".
+  - So Match falls between the two training classes.
+  - Self is classified with Extero, so the classifier is not simply separating "Intero" from "anything else".
+  - The pre-set cross-decoding balanced accuracies (.58–.66, p ≤ .028) mix the Match share with the Extero accuracy. For that reason they are not read as generalisation to Match.
+
+## Cross-run crossnobis RSA (descriptive; `EXPLORATORY_LOC_C3_rsa.csv`)
+
+- **Data.** 44 participants. Ledoit–Wolf multivariate noise normalisation; distances are per voxel, and their expected value is 0 when two conditions do not differ. Rest enters as the zero pattern.
+- **Model RDMs.** The breath, visual and self models are only mildly collinear: r(visual, self) .53, r(breath, visual) −.09, r(breath, self) −.17, VIF ≤ 1.43. All three nonetheless share the large Self and Rest distances.
+
+**Distances.**
+- **Intero vs Extero** is reliably above 0 in four of the five a-priori parcels: AInsL dz .61, p .0002; dACC .43, p .006; PIns .35, p .025; IEAT sphere .58, p .0004. It is not above 0 in **AInsR** (dz .07, p .63). In SAL, SMN, DMN and VIS it is dz .71–.77, p < .0001.
+- **Intero vs Match is the smallest distance in seven of the nine a-priori parcels and networks** (AInsL, dACC, PIns, IEAT sphere, SAL, SMN, DMN). In AInsR, Intero vs Extero is smaller still (×100: 0.2 vs 0.9), and in VIS, Extero vs Match is (2.6 vs 3.4). In the parcels it is not distinguishable from 0 (dz .08–.20, p ≥ .18), except AInsR (.38, p .016). In the networks it is small but above 0 (dz .31–.57, p .0005–.049).
+- **Distances involving Self or Rest are the largest,** especially in VIS (×100: 9.5–24.1, against 2.6–6.2 among Intero, Extero and Match).
+- **The individual (circular) fROIs** in AInsL, dACC and PIns have *negative* Intero–Extero distances (dz −0.57 to −0.95). Those fROIs were selected on both runs' C1, so this pair is not interpretable there (logged).
+
+**Model fits.** These are per-participant Pearson r between the 10 distances and each model, as a group mean.
+- **Visual** fits every region; it is strongest in VIS (.65) and the networks (.44–.48).
+- **Self** fits DMN (.39) and VIS (.53). It is weak or absent in AInsL (.03) and PIns (.01).
+- **Breath** is positive in every a-priori parcel and network: .10 (AInsR) to .29 (SMN), all p < .05, VIS .07.
+  - It is the best-fitting model in PIns (.23 vs visual .18) and ties with visual in AInsL (.18 vs .18).
+- Because every model shares the Self and Rest pairs, these fits describe the geometry; they do not separate the explanations.
+- **Reading:** in most of the insula and cingulate, Intero and Match form one cluster, Extero sits close by, and Self and Rest are far away. This is what a breath-focus dimension predicts, and it fits the T4 and decoding results.
+
+## Insula posterior → anterior gradient of C1 (`EXPLORATORY_LOC_C3_gradient*.csv`)
+
+**No linear gradient.** The per-participant slope of the joint 4 mm C1 on MNI y in the CAREN insula (1,400 voxels; N 48) is −0.003 PSC per 10 mm [−0.016, 0.010], dz −0.07, p .62 (sign-flip .63).
+
+| Specification | Slope (PSC per 10 mm) [95% CI] | dz | p (sign-flip) |
+|---|---|---|---|
+| Primary, both hemispheres | −0.003 [−0.016, 0.010] | −0.07 | .63 |
+| Left / right | −0.006 / −0.001 | −0.11 / −0.02 | .46 / .89 |
+| + x and z covariates | −0.008 [−0.021, 0.006] | −0.17 | .25 |
+| Harvard–Oxford insula | −0.007 [−0.020, 0.006] | −0.16 | .27 |
+| 6 mm map | −0.003 [−0.014, 0.009] | −0.07 | .65 |
+| Intero vs Rest (descriptive) | +0.047 [0.033, 0.061] | +0.96 | .0001 |
+| Extero vs Rest (descriptive) | +0.050 [0.035, 0.065] | +0.95 | .0001 |
+
+- Both conditions are progressively less deactivated (relative to Rest) towards the anterior insula, by the same amount, so their difference has no slope.
+- The C1 profile is not monotonic (post hoc description of the pre-set profile table). It is least negative in the mid insula (−0.06 PSC at y −6) and most negative at both ends (−0.27 at y −30, −0.23 at y +30).
+- **The projection onto a principal cortical gradient was not done:** no gradient map is available locally (logged).
+
+## Inhale- vs exhale-locked responses by condition (descriptive; `EXPLORATORY_LOC_C3_respphase.csv`)
+
+**Feasibility.** The HRF-convolved inhale- and exhale-onset model was not fitted. It failed the pre-set rule: r(inhale, exhale) .91–.92 and VIF 9.2–29.5, because at about 12 breaths/min the HRF removes the alternation. This is logged.
+
+**Model used.** Per-condition, unconvolved cos/sin breath-phase regressors were added to the registered per-run model, at 6 mm, on mask means:
+- 69 runs, 40 participants (usable belt, timing and polarity);
+- Intero contrasts use 34 Intero-set participants;
+- inhale − exhale = the mean signal over the inhale half-cycle minus the exhale half-cycle;
+- BH-FDR within each family.
+
+**Results.**
+- **The signal is lower during inhalation than exhalation in the paced and pacer conditions.** This is strongest in Match: SM dz −1.54, COper −0.91, dACC −0.64, PIns −0.58, sphere −0.53, all q ≤ .009. It is also present in Extero (SM −0.69, q .001; dACC −0.43, AInsR −0.45, q ≤ .038) and in Intero in SM only (−0.77, q .001). Rest and Self show no inhale − exhale difference (q ≥ .15).
+- **Condition differences.** Match differs from Extero in SM (−0.66, q .004) and COper (−0.55, q .018). Match differs from Intero in SM and COper (−0.55 and −0.56, q .022). **Intero vs Extero does not differ** in any mask (q ≥ .10).
+- **Amplitude** of the phase-locked component is larger in Intero than in Rest in AInsL, AInsR, dACC, SM and the sphere (dz .48–.65, q .008–.029). It is larger in Match than in Extero in SM (.58, q .008) and PIns (.40, q .047).
+- **Reading.** Unconvolved respiratory-phase BOLD is dominated by physiological artefact (chest-motion B0 changes, head motion, CSF pulsation). It scales with breathing depth, and depth is greatest in Match and Intero (stage C1). The pattern follows depth and pacing; it is strongest in sensorimotor cortex, and attending to the breath without pacing (Intero vs Extero) does not change it. These are **not** neural inhale- or exhale-locked responses, and the data cannot isolate such responses at this TR.
+
+## Deviations (stage C3)
+
+**Logged before running (one entry, 200a864).** Readings and choices:
+- the T4 set (44);
+- the dot product as primary and correlation as secondary;
+- the outcome coding (wrong direction excluded, and added as a sensitivity);
+- the added paced vs free check, run intercepts and reliability measures;
+- the four §10.2 relations;
+- the decoding, RSA and gradient specifications;
+- the gradient projection not done;
+- the respiratory-phase onset model infeasible, so the phase model was used.
+
+**Post hoc (logged after the tables were seen):**
+- the cross-decoding balanced accuracy is not read as generalisation; the shares are reported instead, and the figure shows them;
+- the negative fROI Intero–Extero distances are not interpreted;
+- the gradient profile description;
+- two code fixes that did not change any value by choice: an empty F-test row, and a dtype error in the phase group step.
+
+No registered result was changed.
+
+# Synthesis: what the localizer shows about attention to the breath
+
+**What it shows.**
+- **Whole-brain deactivation.** Directing attention to one's own breath, rather than to a visual pacer, produces a large, reproducible and mostly whole-brain *deactivation*. It is strongest in sensorimotor, insular and cingulate cortex, and it largely survives RVT and PetCO2 correction (L1; physio-corrected maps).
+- **A distributed pattern.** The difference is a distributed pattern, not only a level shift. It is decodable across participants from whole brain and from each network after the map mean is removed (balanced accuracy .66–.73), and it is reliable within participants at the mask level (crossnobis).
+- **A breath-focus dimension.** Paced breath-matching (Match) shares that pattern. Intero and Match are the closest pair in most regions, a classifier puts Match between Intero and Extero, and breathing-run paced epochs express the localizer C1 pattern more than free epochs do.
+- **DMN coupling.** At the network level, breath attention comes with the DMN being less anticorrelated with the salience network (C2).
+
+**What it does not show.**
+- **No reliable participant-specific region.** It does not identify a reliable participant-specific "interoceptive attention" region: the top C1 voxels do not replicate across runs (L4).
+- **No awareness signal.** It gives no evidence that this pattern carries awareness of breathing changes:
+  - T1 and T2 were null in the fROIs;
+  - T4 was null at the level of single epochs, for outcome and confidence alike, with a reliable participant-level index but a noisy epoch-level one;
+  - tracking accuracy is unrelated to any brain measure.
+- **No IEAT replication or spatial gradient.** It does not replicate the IEAT MAIA effect (L3), and C1 has no posterior → anterior insula gradient.
+- **No neural respiratory-phase responses.** Respiratory-phase-locked signals behave like breathing-depth artefact, not like attention-dependent responses.
+- **Attention is not isolated.** The contrasts cannot fully separate attention from breathing depth, agency and press predictability (plan §11). The deactivation is the localizer's most robust neural correlate of attending to the breath, and its role in breath *awareness* remains untested by any positive result here.

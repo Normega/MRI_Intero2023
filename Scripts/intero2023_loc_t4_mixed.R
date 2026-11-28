@@ -50,8 +50,9 @@ contrast_rows <- function(m, idx, model, data) {
 
 omnibus_row <- function(m, idx, model, data, term = "outcome") {
   a <- anova(m, type = 3, ddf = "Satterthwaite")
+  fval <- a[term, "F value"]; ndf <- a[term, "NumDF"]; ddf <- a[term, "DenDF"]; pval <- a[term, "Pr(>F)"]
   tibble::tibble(index = idx, model = model, term = paste0("F: ", term),
-                 estimate = a[term, "F value"], df = a[term, "DenDF"], p = a[term, "Pr(>F)"],
+                 estimate = fval, num_df = ndf, df = ddf, p = pval,
                  n_participants = dplyr::n_distinct(data$subject), n_epochs = nrow(data))
 }
 

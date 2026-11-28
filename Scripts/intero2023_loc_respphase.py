@@ -247,9 +247,13 @@ def group():
         return pd.Series(dict(effect=(w * d.effect).sum() / w.sum(), n_runs=len(d)))
     P = R.groupby(["subject", "model", "term", "condition", "mask"]).apply(ffx).reset_index()
     P = P.pivot_table(index=["subject", "model", "condition", "mask"], columns="term", values="effect").reset_index()
-    if "sin" in P:
-        P["ie"] = np.where(P.model == "phase", -(4 / np.pi) * P["sin"], P.get("ie"))
-        P["amp"] = np.where(P.model == "phase", np.hypot(P["cos"], P["sin"]), np.nan)
+    if "sin" in P:            # phase model: inhale - exhale = -(4/pi) b_sin; amplitude = |(b_cos, b_sin)|
+        ph = P.model == "phase"
+        if "ie" not in P:
+            P["ie"] = np.nan
+        P.loc[ph, "ie"] = -(4 / np.pi) * P.loc[ph, "sin"]
+        P["amp"] = np.nan
+        P.loc[ph, "amp"] = np.hypot(P.loc[ph, "cos"], P.loc[ph, "sin"])
     P.round(6).to_csv(os.path.join(OD, "participant_values.csv"), index=False)
     out = []
     for (model, mask), d in P.groupby(["model", "mask"]):

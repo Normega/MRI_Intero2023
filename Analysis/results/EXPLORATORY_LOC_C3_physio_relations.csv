@@ -1,0 +1,5 @@
+x,y,n,spearman_rho,p_perm,rho_ci_lo,rho_ci_hi,pearson_r,pearson_p,bf10_jzs,q_fdr4
+tracking PLV,C1 SAL-DMN background FC (Intero - Extero),33,-0.004345,0.984202,-0.400984,0.382376,0.006483,0.971439,0.135105,0.984202
+tracking PLV,"T4 mean paced-epoch index (dot, own)",32,0.120601,0.505549,-0.244759,0.464927,0.173401,0.342573,0.214286,0.984202
+tracking PLV,"T4 aware - unaware index (dot, own)",30,0.123471,0.510549,-0.30266,0.492529,0.340312,0.06575,0.7582,0.984202
+breathing-run adherence (adhere_r),"T4 mean paced-epoch index (dot, own)",32,0.005865,0.974103,-0.345455,0.352482,0.047023,0.798289,0.141517,0.984202

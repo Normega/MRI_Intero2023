@@ -1,0 +1,113 @@
+index,model,term,estimate,se,df,t,p,ci_lo,ci_hi,n_participants,n_epochs,num_df,sd_between,sd_within
+dot_own,registered,(Intercept),0.128104,0.0447279,308.77,2.86408,0.00446865,0.0404393,0.215769,44,518,NA,NA,NA
+dot_own,registered,confidence,-0.00116565,0.00665012,505.419,-0.175282,0.860928,-0.0141996,0.0118683,44,518,NA,NA,NA
+dot_own,registered,outcomeunaware,0.0166207,0.0152243,481.61,1.09172,0.275502,-0.0132184,0.0464598,44,518,NA,NA,NA
+dot_own,registered,outcomenochange,0.0121793,0.0168439,472.577,0.723068,0.469996,-0.0208342,0.0451928,44,518,NA,NA,NA
+dot_own,registered,contrast: aware - unaware,-0.0166207,0.0152243,481.61,-1.09172,0.275502,-0.0465349,0.0132936,44,518,NA,NA,NA
+dot_own,registered,contrast: aware - nochange,-0.0121793,0.0168439,472.577,-0.723068,0.469996,-0.0452776,0.020919,44,518,NA,NA,NA
+dot_own,registered,contrast: unaware - nochange,0.00444137,0.019007,474.537,0.23367,0.815342,-0.032907,0.0417897,44,518,NA,NA,NA
+dot_own,registered,F: outcome,0.681595,NA,476.738,NA,0.506302,NA,NA,44,518,2,NA,NA
+dot_own,registered,ICC (participant intercept share),0.550145,NA,NA,NA,NA,NA,NA,44,518,NA,0.148957,0.134697
+dot_own,run_intercepts,(Intercept),0.135612,0.0403275,257.515,3.36277,8.88997e-4,0.0565716,0.214652,44,518,NA,NA,NA
+dot_own,run_intercepts,confidence,-0.00174497,0.00578871,470.623,-0.301444,0.763209,-0.0130906,0.00960068,44,518,NA,NA,NA
+dot_own,run_intercepts,outcomeunaware,6.12998e-4,0.0129195,443.52,0.0474474,0.962178,-0.0247088,0.0259348,44,518,NA,NA,NA
+dot_own,run_intercepts,outcomenochange,0.00586407,0.0138791,428.871,0.422509,0.672865,-0.0213386,0.0330667,44,518,NA,NA,NA
+dot_own,run_intercepts,contrast: aware - unaware,-6.12998e-4,0.0129195,443.52,-0.0474474,0.962178,-0.0260041,0.0247781,44,518,NA,NA,NA
+dot_own,run_intercepts,contrast: aware - nochange,-0.00586407,0.0138791,428.871,-0.422509,0.672865,-0.0331437,0.0214155,44,518,NA,NA,NA
+dot_own,run_intercepts,contrast: unaware - nochange,-0.00525107,0.0157857,432.658,-0.332647,0.739562,-0.0362773,0.0257751,44,518,NA,NA,NA
+dot_own,confidence_within_between,(Intercept),0.121502,0.024299,46.5294,5.00026,8.57896e-6,0.0738763,0.169127,44,518,NA,NA,NA
+dot_own,confidence_within_between,conf_w,-0.00165889,0.0068125,471.484,-0.243507,0.807718,-0.0150112,0.0116934,44,518,NA,NA,NA
+dot_own,confidence_within_between,conf_b,0.00883514,0.0306244,42.2453,0.2885,0.774375,-0.0511875,0.0688578,44,518,NA,NA,NA
+dot_own,confidence_within_between,outcomeunaware,0.0164066,0.0152449,479.332,1.0762,0.282377,-0.0134728,0.0462861,44,518,NA,NA,NA
+dot_own,confidence_within_between,outcomenochange,0.0120517,0.0168504,471.899,0.71522,0.474827,-0.0209744,0.0450778,44,518,NA,NA,NA
+dot_own,with_wrongdir,contrast: aware - unaware,-0.0169058,0.0149171,556.648,-1.13332,0.25757,-0.0462064,0.0123949,44,595,NA,NA,NA
+dot_own,with_wrongdir,contrast: aware - nochange,-0.012362100000000001,0.0166579,548.517,-0.742114,0.458336,-0.0450832,0.020359,44,595,NA,NA,NA
+dot_own,with_wrongdir,contrast: aware - wrongdir,-0.00361849,0.018789,559.741,-0.192585,0.847354,-0.0405241,0.0332871,44,595,NA,NA,NA
+dot_own,with_wrongdir,contrast: unaware - nochange,0.00454368,0.0187633,550.154,0.242158,0.808748,-0.0323128,0.0414002,44,595,NA,NA,NA
+dot_own,with_wrongdir,contrast: unaware - wrongdir,0.0132873,0.020566,558.459,0.64608,0.518493,-0.0271089,0.0536834,44,595,NA,NA,NA
+dot_own,with_wrongdir,contrast: nochange - wrongdir,0.00874359,0.0218961,553.322,0.399322,0.68981,-0.0342661,0.0517532,44,595,NA,NA,NA
+dot_own,paced_vs_free,(Intercept),0.0564492,0.0214945,45.0483,2.62622,0.0117551,0.0143208,0.0985776,44,1112,NA,NA,NA
+dot_own,paced_vs_free,epoch_typepaced,0.0698168,0.00696818,1025.22,10.0194,1.31962e-22,0.0561595,0.0834742,44,1112,NA,NA,NA
+corr_own,registered,(Intercept),0.0644901,0.0368553,338.212,1.74982,0.0810565,-0.00774498,0.136725,44,518,NA,NA,NA
+corr_own,registered,confidence,0.0047534,0.00561155,509.378,0.847075,0.397351,-0.00624503,0.0157518,44,518,NA,NA,NA
+corr_own,registered,outcomeunaware,0.00822669,0.0128959,483.756,0.637929,0.523822,-0.0170489,0.0335022,44,518,NA,NA,NA
+corr_own,registered,outcomenochange,0.00288414,0.0142835,472.956,0.201921,0.840065,-0.025111,0.0308793,44,518,NA,NA,NA
+corr_own,registered,contrast: aware - unaware,-0.00822669,0.0128959,483.756,-0.637929,0.523822,-0.0335656,0.0171123,44,518,NA,NA,NA
+corr_own,registered,contrast: aware - nochange,-0.00288414,0.0142835,472.956,-0.201921,0.840065,-0.0309511,0.0251828,44,518,NA,NA,NA
+corr_own,registered,contrast: unaware - nochange,0.00534254,0.0161141,475.326,0.331545,0.740379,-0.0263211,0.0370062,44,518,NA,NA,NA
+corr_own,registered,F: outcome,0.203535,NA,477.967,NA,0.815912,NA,NA,44,518,2,NA,NA
+corr_own,registered,ICC (participant intercept share),0.499234,NA,NA,NA,NA,NA,NA,44,518,NA,0.113957,0.114132
+corr_own,run_intercepts,(Intercept),0.0766426,0.0320394,267.133,2.39214,0.0174421,0.0138466,0.139439,44,518,NA,NA,NA
+corr_own,run_intercepts,confidence,0.00299236,0.00464412,469.85,0.644333,0.519674,-0.00610995,0.0120947,44,518,NA,NA,NA
+corr_own,run_intercepts,outcomeunaware,-0.0031354,0.0103646,443.154,-0.302512,0.762404,-0.0234496,0.0171788,44,518,NA,NA,NA
+corr_own,run_intercepts,outcomenochange,-0.00222356,0.0111268,429.794,-0.199838,0.841702,-0.0240317,0.0195846,44,518,NA,NA,NA
+corr_own,run_intercepts,contrast: aware - unaware,0.0031354,0.0103646,443.154,0.302512,0.762404,-0.0172344,0.0235052,44,518,NA,NA,NA
+corr_own,run_intercepts,contrast: aware - nochange,0.00222356,0.0111268,429.794,0.199838,0.841702,-0.0196462,0.0240933,44,518,NA,NA,NA
+corr_own,run_intercepts,contrast: unaware - nochange,-9.1184e-4,0.012658,433.17,-0.0720366,0.942606,-0.0257906,0.0239669,44,518,NA,NA,NA
+corr_own,confidence_within_between,(Intercept),0.0902362,0.0188076,47.5312,4.79787,1.62724e-5,0.0533741,0.127098,44,518,NA,NA,NA
+corr_own,confidence_within_between,conf_w,0.00461773,0.00577779,471.61,0.79922,0.424565,-0.00670654,0.015942,44,518,NA,NA,NA
+corr_own,confidence_within_between,conf_b,0.00709456,0.0235848,42.2821,0.300811,0.765033,-0.0391307,0.0533199,44,518,NA,NA,NA
+corr_own,confidence_within_between,outcomeunaware,0.00819011,0.0129175,481.034,0.634034,0.52636,-0.0171276,0.0335078,44,518,NA,NA,NA
+corr_own,confidence_within_between,outcomenochange,0.00286554,0.0142904,472.113,0.200522,0.841159,-0.0251431,0.0308742,44,518,NA,NA,NA
+corr_own,with_wrongdir,contrast: aware - unaware,-0.0082829,0.0125804,558.612,-0.658396,0.510555,-0.0329936,0.0164278,44,595,NA,NA,NA
+corr_own,with_wrongdir,contrast: aware - nochange,-0.00312412,0.0140606,548.883,-0.22219,0.824249,-0.0307433,0.024495,44,595,NA,NA,NA
+corr_own,with_wrongdir,contrast: aware - wrongdir,0.00189001,0.0158404,562.189,0.119315,0.905068,-0.0292236,0.0330037,44,595,NA,NA,NA
+corr_own,with_wrongdir,contrast: unaware - nochange,0.00515878,0.0158351,550.867,0.325782,0.744713,-0.0259457,0.0362633,44,595,NA,NA,NA
+corr_own,with_wrongdir,contrast: unaware - wrongdir,0.0101729,0.017341,560.746,0.58664,0.557682,-0.0238883,0.0442341,44,595,NA,NA,NA
+corr_own,with_wrongdir,contrast: nochange - wrongdir,0.00501413,0.0184729,554.632,0.271432,0.78616,-0.0312713,0.0412995,44,595,NA,NA,NA
+corr_own,paced_vs_free,(Intercept),0.0358922,0.0162497,45.2757,2.2088,0.0322916,0.00404343,0.0677411,44,1112,NA,NA,NA
+corr_own,paced_vs_free,epoch_typepaced,0.0553785,0.00584521,1025.63,9.47417,1.7943099999999997e-20,0.0439221,0.0668348,44,1112,NA,NA,NA
+dot_loso,registered,(Intercept),0.201619,0.0543643,393.109,3.70867,2.38317e-4,0.0950671,0.308171,44,518,NA,NA,NA
+dot_loso,registered,confidence,4.92102e-4,0.00876771,511.053,0.0561266,0.955263,-0.0166923,0.0176765,44,518,NA,NA,NA
+dot_loso,registered,outcomeunaware,0.0209184,0.0205384,493.737,1.0185,0.30894,-0.0193362,0.061173,44,518,NA,NA,NA
+dot_loso,registered,outcomenochange,-0.00111384,0.0228774,474.876,-0.0486873,0.961189,-0.0459527,0.043725,44,518,NA,NA,NA
+dot_loso,registered,contrast: aware - unaware,-0.0209184,0.0205384,493.737,-1.0185,0.30894,-0.0612719,0.0194351,44,518,NA,NA,NA
+dot_loso,registered,contrast: aware - nochange,0.00111384,0.0228774,474.876,0.0486873,0.961189,-0.0438396,0.0460673,44,518,NA,NA,NA
+dot_loso,registered,contrast: unaware - nochange,0.0220322,0.0257786,479.288,0.854673,0.393159,-0.0286207,0.0726852,44,518,NA,NA,NA
+dot_loso,registered,F: outcome,0.587031,NA,484.003,NA,0.556371,NA,NA,44,518,2,NA,NA
+dot_loso,registered,ICC (participant intercept share),0.320645,NA,NA,NA,NA,NA,NA,44,518,NA,0.125769,0.183067
+corr_loso,registered,(Intercept),0.0194577,0.0232876,368.301,0.835537,0.403957,-0.0261852,0.0651005,44,518,NA,NA,NA
+corr_loso,registered,confidence,0.00835613,0.00363835,513.166,2.29668,0.0220388,0.0012251,0.0154872,44,518,NA,NA,NA
+corr_loso,registered,outcomeunaware,0.0113685,0.00841212,487.06,1.35144,0.177183,-0.00511899,0.0278559,44,518,NA,NA,NA
+corr_loso,registered,outcomenochange,-0.00342727,0.00933365,473.559,-0.367195,0.713638,-0.0217209,0.0148664,44,518,NA,NA,NA
+corr_loso,registered,contrast: aware - unaware,-0.0113685,0.00841212,487.06,-1.35144,0.177183,-0.027897,0.00516007,44,518,NA,NA,NA
+corr_loso,registered,contrast: aware - nochange,0.00342727,0.00933365,473.559,0.367195,0.713638,-0.0149132,0.0217678,44,518,NA,NA,NA
+corr_loso,registered,contrast: unaware - nochange,0.0147957,0.010526,476.579,1.40564,0.160482,-0.0058873,0.0354788,44,518,NA,NA,NA
+corr_loso,registered,F: outcome,1.24098,NA,479.9,NA,0.290028,NA,NA,44,518,2,NA,NA
+corr_loso,registered,ICC (participant intercept share),0.409847,NA,NA,NA,NA,NA,NA,44,518,NA,0.0627033,0.0752423
+dot_own_SAL,registered,(Intercept),0.132302,0.0554189,326.053,2.38731,0.0175416,0.0236829,0.240921,44,518,NA,NA,NA
+dot_own_SAL,registered,confidence,-0.00341315,0.00836419,507.841,-0.408067,0.683396,-0.0198067,0.0129804,44,518,NA,NA,NA
+dot_own_SAL,registered,outcomeunaware,0.0108053,0.0191918,482.566,0.563016,0.573685,-0.0268099,0.0484205,44,518,NA,NA,NA
+dot_own_SAL,registered,outcomenochange,0.0158088,0.0212472,472.389,0.744041,0.457222,-0.025835,0.0574526,44,518,NA,NA,NA
+dot_own_SAL,registered,contrast: aware - unaware,-0.0108053,0.0191918,482.566,-0.563016,0.573685,-0.048515,0.0269045,44,518,NA,NA,NA
+dot_own_SAL,registered,contrast: aware - nochange,-0.0158088,0.0212472,472.389,-0.744041,0.457222,-0.0575596,0.025942,44,518,NA,NA,NA
+dot_own_SAL,registered,contrast: unaware - nochange,-0.00500354,0.0239725,474.611,-0.20872,0.834757,-0.052109,0.0421019,44,518,NA,NA,NA
+dot_own_SAL,registered,F: outcome,0.340119,NA,477.096,NA,0.711858,NA,NA,44,518,2,NA,NA
+dot_own_SAL,registered,ICC (participant intercept share),0.519132,NA,NA,NA,NA,NA,NA,44,518,NA,0.176429,0.169802
+dot_own_SMN,registered,(Intercept),0.125082,0.0453198,318.955,2.75998,0.00611476,0.0362565,0.213907,44,518,NA,NA,NA
+dot_own_SMN,registered,confidence,1.16774e-4,0.00679069,506.732,0.0171962,0.986287,-0.0131927,0.0134263,44,518,NA,NA,NA
+dot_own_SMN,registered,outcomeunaware,0.0191249,0.0155635,482.385,1.22883,0.219734,-0.011379,0.0496287,44,518,NA,NA,NA
+dot_own_SMN,registered,outcomenochange,0.0095626,0.0172247,472.872,0.555169,0.579042,-0.0241971,0.0433223,44,518,NA,NA,NA
+dot_own_SMN,registered,contrast: aware - unaware,-0.0191249,0.0155635,482.385,-1.22883,0.219734,-0.0497054,0.0114557,44,518,NA,NA,NA
+dot_own_SMN,registered,contrast: aware - nochange,-0.0095626,0.0172247,472.872,-0.555169,0.579042,-0.043409,0.0242838,44,518,NA,NA,NA
+dot_own_SMN,registered,contrast: unaware - nochange,0.00956226,0.0194353,474.943,0.492003,0.622944,-0.0286276,0.0477521,44,518,NA,NA,NA
+dot_own_SMN,registered,F: outcome,0.77398,NA,477.263,NA,0.461752,NA,NA,44,518,2,NA,NA
+dot_own_SMN,registered,ICC (participant intercept share),0.533493,NA,NA,NA,NA,NA,NA,44,518,NA,0.147322,0.137763
+corr_own_SAL,registered,(Intercept),0.0939137,0.0374267,326.035,2.50927,0.0125827,0.0205587,0.167269,44,518,NA,NA,NA
+corr_own_SAL,registered,confidence,0.00158684,0.00563853,507.653,0.281428,0.778497,-0.00946448,0.0126382,44,518,NA,NA,NA
+corr_own_SAL,registered,outcomeunaware,-0.00304667,0.0129339,482.946,-0.235558,0.813876,-0.0283966,0.0223032,44,518,NA,NA,NA
+corr_own_SAL,registered,outcomenochange,0.0064766,0.0143179,473.065,0.452343,0.651229,-0.0215859,0.0345391,44,518,NA,NA,NA
+corr_own_SAL,registered,contrast: aware - unaware,0.00304667,0.0129339,482.946,0.235558,0.813876,-0.0223669,0.0284603,44,518,NA,NA,NA
+corr_own_SAL,registered,contrast: aware - nochange,-0.0064766,0.0143179,473.065,-0.452343,0.651229,-0.0346111,0.0216579,44,518,NA,NA,NA
+corr_own_SAL,registered,contrast: unaware - nochange,-0.00952328,0.0161547,475.222,-0.589506,0.555802,-0.0412667,0.0222201,44,518,NA,NA,NA
+corr_own_SAL,registered,F: outcome,0.178169,NA,477.634,NA,0.836857,NA,NA,44,518,2,NA,NA
+corr_own_SAL,registered,ICC (participant intercept share),0.525053,NA,NA,NA,NA,NA,NA,44,518,NA,0.120206,0.114327
+corr_own_SMN,registered,(Intercept),0.0647665,0.0392133,354.117,1.65165,0.0994934,-0.0120902,0.141623,44,518,NA,NA,NA
+corr_own_SMN,registered,confidence,0.00422859,0.00605145,511.526,0.698773,0.485011,-0.00763203,0.0160892,44,518,NA,NA,NA
+corr_own_SMN,registered,outcomeunaware,0.0132504,0.0139464,485.24,0.950096,0.342536,-0.014084,0.0405848,44,518,NA,NA,NA
+corr_own_SMN,registered,outcomenochange,-7.30761e-4,0.0154597,473.129,-0.0472689,0.962319,-0.0310312,0.0295696,44,518,NA,NA,NA
+corr_own_SMN,registered,contrast: aware - unaware,-0.0132504,0.0139464,485.24,-0.950096,0.342536,-0.0406532,0.0141524,44,518,NA,NA,NA
+corr_own_SMN,registered,contrast: aware - nochange,7.30761e-4,0.0154597,473.129,0.0472689,0.962319,-0.0296473,0.0311089,44,518,NA,NA,NA
+corr_own_SMN,registered,contrast: unaware - nochange,0.0139812,0.017438,475.81,0.801766,0.423089,-0.0202838,0.0482461,44,518,NA,NA,NA
+corr_own_SMN,registered,F: outcome,0.512063,NA,478.779,NA,0.599586,NA,NA,44,518,2,NA,NA
+corr_own_SMN,registered,ICC (participant intercept share),0.463814,NA,NA,NA,NA,NA,NA,44,518,NA,0.114966,0.123611
