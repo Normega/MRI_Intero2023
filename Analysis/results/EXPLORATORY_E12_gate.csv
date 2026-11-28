@@ -1,0 +1,22 @@
+measure,n_epochs,n_participants,n_runs,r,df,p,criterion,passes,share_between_participant,share_between_run_within_participant,share_within_run,share_within_after_covariates,mean,sd,median,sd_within_run,spearman_brown,icc31,change_type,direction
+"gate: r(plv, mae), centred within participant x run",381.0,33.0,58.0,-0.4239728822384898,322.0,1.4438066792428707e-15,<= -0.4,True,,,,,,,,,,,,
+"gate: r(plv, mae), residualised within participant on run, No Change, step-ramp, direction",381.0,33.0,58.0,-0.3812872330858579,223.0,3.3732928243634487e-09,<= -0.4,False,,,,,,,,,,,,
+descriptive: Spearman of the participant x run centred values,381.0,,,-0.406220233768657,,,,,,,,,,,,,,,,
+"descriptive: r(plv, mae), centred within participant only",381.0,,,-0.43034170410606526,,,,,,,,,,,,,,,,
+"descriptive: r(plv, mae) of participant means (between participants)",,33.0,,-0.635241253907045,,,,,,,,,,,,,,,,
+plv: variance shares,406.0,33.0,,,,,,,0.3712441783992789,0.07885928099532026,0.5498965406054008,0.37853612292801286,0.8269007816870791,0.15706080166827932,0.8824555732247126,0.12564528426892607,,,,
+plv: odd/even split-half of participant means,,33.0,,0.8637873910632908,,,,,,,,,,,,,0.9269162300432776,,,
+"plv: run 1 vs run 2 participant means, ICC(3,1)",,25.0,,0.520790671405749,,,,,,,,,,,,,,0.5097520151264814,,
+plv: mean by change type x direction,58.0,,,,,,,,,,,,0.8304350425844389,0.14939145498042253,,,,,none,none
+plv: mean by change type x direction,116.0,,,,,,,,,,,,0.8516745072389171,0.13700410509820213,,,,,ramp,Faster
+plv: mean by change type x direction,116.0,,,,,,,,,,,,0.8210956456015722,0.1617947595903359,,,,,ramp,Slower
+plv: mean by change type x direction,58.0,,,,,,,,,,,,0.8349574187733263,0.14438911843696628,,,,,step,Faster
+plv: mean by change type x direction,58.0,,,,,,,,,,,,0.7773727047708107,0.19372913037052358,,,,,step,Slower
+mae: variance shares,396.0,35.0,,,,,,,0.26060678718861197,0.052912604882419556,0.6864806079289685,0.3082028841230167,0.8648846774894233,0.6339939755140057,0.668006135890898,0.5703946089078116,,,,
+mae: odd/even split-half of participant means,,35.0,,0.6763963669600187,,,,,,,,,,,,,0.8069647253967718,,,
+"mae: run 1 vs run 2 participant means, ICC(3,1)",,26.0,,0.5955971898626422,,,,,,,,,,,,,,0.5877382194752848,,
+mae: mean by change type x direction,60.0,,,,,,,,,,,,0.8563372861726918,0.6510302106602082,,,,,none,none
+mae: mean by change type x direction,113.0,,,,,,,,,,,,0.5740694936612706,0.32071981474361905,,,,,ramp,Faster
+mae: mean by change type x direction,115.0,,,,,,,,,,,,1.0737137166313986,0.7397089675753474,,,,,ramp,Slower
+mae: mean by change type x direction,53.0,,,,,,,,,,,,0.7325818610516149,0.4753369888900692,,,,,step,Faster
+mae: mean by change type x direction,55.0,,,,,,,,,,,,1.1625513869705488,0.7167158631795597,,,,,step,Slower

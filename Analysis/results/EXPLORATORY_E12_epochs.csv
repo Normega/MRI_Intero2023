@@ -1,0 +1,624 @@
+condition,epoch_index,change_direction,salience,subject,bids_entity,plv,window_s,belt_grade,actual_ratio,instructed_ratio,n_contained,mae,run,change_type,direction
+paced_aware,1,Slower,low,sub-052,task-breathing_run-1,,,,,,,,1,ramp,Slower
+paced_wrongdir,2,Faster,high,sub-052,task-breathing_run-1,,,,,,,,1,step,Faster
+paced_nochange,3,No Change,,sub-052,task-breathing_run-1,,,,,,,,1,none,none
+paced_unaware,4,Faster,low,sub-052,task-breathing_run-1,,,,,,,,1,ramp,Faster
+paced_aware,5,Slower,high,sub-052,task-breathing_run-1,,,,,,,,1,step,Slower
+paced_aware,1,Slower,low,sub-052,task-breathing_run-2,,,,,,,,2,ramp,Slower
+paced_aware,2,Faster,low,sub-052,task-breathing_run-2,,,,,,,,2,ramp,Faster
+paced_aware,3,Slower,high,sub-052,task-breathing_run-2,,,,,,,,2,step,Slower
+paced_nochange,4,No Change,,sub-052,task-breathing_run-2,,,,,,,,2,none,none
+paced_wrongdir,5,Faster,high,sub-052,task-breathing_run-2,,,,,,,,2,step,Faster
+paced_nochange,1,No Change,,sub-053,task-breathing_run-1,,,,,,,,1,none,none
+paced_aware,2,Faster,low,sub-053,task-breathing_run-1,,,,,,,,1,ramp,Faster
+paced_aware,3,Slower,low,sub-053,task-breathing_run-1,,,,,,,,1,ramp,Slower
+paced_aware,4,Faster,low,sub-053,task-breathing_run-1,,,,,,,,1,ramp,Faster
+paced_wrongdir,5,Faster,high,sub-053,task-breathing_run-1,,,,,,,,1,step,Faster
+paced_wrongdir,6,Slower,low,sub-053,task-breathing_run-1,,,,,,,,1,ramp,Slower
+paced_aware,7,Slower,high,sub-053,task-breathing_run-1,,,,,,,,1,step,Slower
+paced_unaware,1,Faster,low,sub-053,task-breathing_run-2,,,,,,,,2,ramp,Faster
+paced_nochange,2,No Change,,sub-053,task-breathing_run-2,,,,,,,,2,none,none
+paced_aware,3,Faster,low,sub-053,task-breathing_run-2,,,,,,,,2,ramp,Faster
+paced_wrongdir,4,Slower,low,sub-053,task-breathing_run-2,,,,,,,,2,ramp,Slower
+paced_aware,5,Slower,high,sub-053,task-breathing_run-2,,,,,,,,2,step,Slower
+paced_wrongdir,6,Faster,high,sub-053,task-breathing_run-2,,,,,,,,2,step,Faster
+paced_aware,7,Slower,low,sub-053,task-breathing_run-2,,,,,,,,2,ramp,Slower
+paced_aware,1,Slower,high,sub-054,task-breathing_run-1,,,,,,,,1,step,Slower
+paced_unaware,2,Faster,low,sub-054,task-breathing_run-1,,,,,,,,1,ramp,Faster
+paced_aware,3,Faster,low,sub-054,task-breathing_run-1,,,,,,,,1,ramp,Faster
+paced_nochange,4,No Change,,sub-054,task-breathing_run-1,,,,,,,,1,none,none
+paced_aware,5,Slower,low,sub-054,task-breathing_run-1,,,,,,,,1,ramp,Slower
+paced_aware,6,Slower,low,sub-054,task-breathing_run-1,,,,,,,,1,ramp,Slower
+paced_aware,7,Faster,high,sub-054,task-breathing_run-1,,,,,,,,1,step,Faster
+paced_aware,1,Faster,low,sub-054,task-breathing_run-2,0.390072,14.682393,good,1.04592,0.876976,3.0,0.430786,2,ramp,Faster
+paced_unaware,2,Faster,low,sub-054,task-breathing_run-2,0.335224,14.706111,good,0.765924,0.863819,3.0,0.211564,2,ramp,Faster
+paced_nochange,3,No Change,,sub-054,task-breathing_run-2,0.643245,16.600793,good,2.616734,0.999899,5.0,1.822631,2,none,none
+paced_aware,4,Faster,high,sub-054,task-breathing_run-2,0.769179,14.693376,good,0.953118,0.745165,3.0,0.792895,2,step,Faster
+paced_aware,5,Slower,low,sub-054,task-breathing_run-2,0.776227,18.490218,good,1.245885,1.132006,3.0,0.277502,2,ramp,Slower
+paced_aware,6,Slower,low,sub-054,task-breathing_run-2,0.784959,18.483195,good,1.273434,1.120644,3.0,0.327136,2,ramp,Slower
+paced_aware,7,Slower,high,sub-054,task-breathing_run-2,0.662378,18.490203,good,2.822686,1.266433,4.0,1.462303,2,step,Slower
+paced_nochange,1,No Change,,sub-055,task-breathing_run-1,,,degraded,0.977269,1.000397,4.0,1.110172,1,none,none
+paced_aware,2,Faster,low,sub-055,task-breathing_run-1,,,degraded,1.526933,0.78833,4.0,0.85373,1,ramp,Faster
+paced_aware,3,Slower,low,sub-055,task-breathing_run-1,,,degraded,0.669302,1.184044,4.0,1.429276,1,ramp,Slower
+paced_aware,4,Slower,low,sub-055,task-breathing_run-1,,,degraded,0.62508,1.285266,7.0,2.396114,1,ramp,Slower
+paced_aware,5,Slower,high,sub-055,task-breathing_run-1,,,degraded,0.624141,1.169766,4.0,2.064677,1,step,Slower
+paced_unaware,1,Faster,low,sub-055,task-breathing_run-2,,,fail,,,2.0,,2,ramp,Faster
+paced_nochange,2,No Change,,sub-055,task-breathing_run-2,,,fail,1.122147,1.00018,3.0,,2,none,none
+paced_aware,3,Slower,high,sub-055,task-breathing_run-2,,,fail,2.197898,1.390599,4.0,,2,step,Slower
+paced_aware,4,Faster,high,sub-055,task-breathing_run-2,,,fail,0.866623,0.655522,4.0,,2,step,Faster
+paced_aware,5,Slower,low,sub-055,task-breathing_run-2,,,fail,1.744954,1.204185,4.0,,2,ramp,Slower
+paced_aware,6,Slower,low,sub-055,task-breathing_run-2,,,fail,0.479412,1.196646,4.0,,2,ramp,Slower
+paced_wrongdir,7,Faster,low,sub-055,task-breathing_run-2,,,fail,0.956688,0.835726,3.0,,2,ramp,Faster
+paced_nochange,1,No Change,,sub-057,task-breathing_run-1,,,,,,,,1,none,none
+paced_aware,2,Slower,high,sub-057,task-breathing_run-1,,,,,,,,1,step,Slower
+paced_unaware,3,Slower,low,sub-057,task-breathing_run-1,,,,,,,,1,ramp,Slower
+paced_aware,4,Faster,low,sub-057,task-breathing_run-1,,,,,,,,1,ramp,Faster
+paced_aware,5,Faster,low,sub-057,task-breathing_run-1,,,,,,,,1,ramp,Faster
+paced_aware,6,Faster,high,sub-057,task-breathing_run-1,,,,,,,,1,step,Faster
+paced_unaware,7,Slower,low,sub-057,task-breathing_run-1,,,,,,,,1,ramp,Slower
+paced_wrongdir,1,Slower,low,sub-057,task-breathing_run-2,,,,,,,,2,ramp,Slower
+paced_aware,2,Faster,low,sub-057,task-breathing_run-2,,,,,,,,2,ramp,Faster
+paced_aware,3,Slower,high,sub-057,task-breathing_run-2,,,,,,,,2,step,Slower
+paced_aware,4,Faster,low,sub-057,task-breathing_run-2,,,,,,,,2,ramp,Faster
+paced_aware,5,Faster,high,sub-057,task-breathing_run-2,,,,,,,,2,step,Faster
+paced_unaware,6,Slower,low,sub-057,task-breathing_run-2,,,,,,,,2,ramp,Slower
+paced_aware,1,Slower,high,sub-059,task-breathing_run-1,0.792771,18.942963,good,1.715567,1.390166,4.0,0.845053,1,step,Slower
+paced_aware,2,Faster,low,sub-059,task-breathing_run-1,0.914104,14.216106,good,0.911748,0.831989,3.0,0.187183,1,ramp,Faster
+paced_unaware,3,Faster,low,sub-059,task-breathing_run-1,0.916537,14.215076,good,0.862695,0.826797,3.0,0.185087,1,ramp,Faster
+paced_nochange,4,No Change,,sub-059,task-breathing_run-1,0.883148,16.58313,good,1.084882,1.00114,3.0,0.191942,1,none,none
+paced_aware,5,Slower,low,sub-059,task-breathing_run-1,0.829835,18.96521,good,1.348112,1.143702,3.0,0.346437,1,ramp,Slower
+paced_aware,6,Faster,high,sub-059,task-breathing_run-1,0.883735,14.200483,good,0.862867,0.64583,4.0,0.558094,1,step,Faster
+paced_unaware,7,Slower,low,sub-059,task-breathing_run-1,0.857071,18.967944,good,1.222212,1.151795,3.0,0.211716,1,ramp,Slower
+paced_aware,1,Slower,low,sub-059,task-breathing_run-2,0.698434,18.950913,good,1.080072,1.142099,3.0,0.522706,2,ramp,Slower
+paced_nochange,2,No Change,,sub-059,task-breathing_run-2,0.860229,16.59966,good,1.025826,1.002138,3.0,0.275828,2,none,none
+paced_aware,3,Faster,low,sub-059,task-breathing_run-2,0.896068,14.209411,good,1.489254,0.799366,4.0,0.745491,2,ramp,Faster
+paced_wrongdir,4,Faster,low,sub-059,task-breathing_run-2,0.803681,14.215476,good,0.931729,0.825995,3.0,0.188152,2,ramp,Faster
+paced_aware,5,Slower,high,sub-059,task-breathing_run-2,0.638884,18.949904,good,2.687918,1.332038,4.0,1.619369,2,step,Slower
+paced_aware,6,Slower,low,sub-059,task-breathing_run-2,0.740714,18.966179,good,1.593876,1.147198,3.0,0.710519,2,ramp,Slower
+paced_aware,7,Faster,high,sub-059,task-breathing_run-2,0.864969,14.206481,good,0.676559,0.66108,5.0,1.271341,2,step,Faster
+paced_aware,1,Slower,high,sub-060,task-breathing_run-1,,,fail,1.399954,1.337725,5.0,,1,step,Slower
+paced_aware,2,Faster,low,sub-060,task-breathing_run-1,,,fail,0.855534,0.851843,3.0,,1,ramp,Faster
+paced_unaware,3,Slower,low,sub-060,task-breathing_run-1,,,fail,1.005716,1.17527,3.0,,1,ramp,Slower
+paced_aware,4,Slower,low,sub-060,task-breathing_run-1,,,fail,0.647115,1.203026,5.0,,1,ramp,Slower
+paced_aware,5,Faster,low,sub-060,task-breathing_run-1,,,fail,,,2.0,,1,ramp,Faster
+paced_aware,6,Faster,high,sub-060,task-breathing_run-1,,,fail,,,2.0,,1,step,Faster
+paced_nochange,7,No Change,,sub-060,task-breathing_run-1,,,fail,0.470624,1.001607,4.0,,1,none,none
+paced_aware,1,Faster,low,sub-060,task-breathing_run-2,,,fail,,,2.0,,2,ramp,Faster
+paced_aware,2,Faster,low,sub-060,task-breathing_run-2,,,fail,1.600509,0.807546,4.0,,2,ramp,Faster
+paced_unaware,3,Slower,low,sub-060,task-breathing_run-2,,,fail,1.048252,1.273941,6.0,,2,ramp,Slower
+paced_aware,4,Faster,high,sub-060,task-breathing_run-2,,,fail,0.522842,0.710594,4.0,,2,step,Faster
+paced_nochange,5,No Change,,sub-060,task-breathing_run-2,,,fail,0.934639,0.994793,3.0,,2,none,none
+paced_aware,6,Slower,high,sub-060,task-breathing_run-2,,,fail,,,1.0,,2,step,Slower
+paced_unaware,7,Slower,low,sub-060,task-breathing_run-2,,,fail,,,0.0,,2,ramp,Slower
+paced_nochange,1,No Change,,sub-061,task-breathing_run-1,0.911807,16.65114,good,1.316211,0.996011,3.0,0.591796,1,none,none
+paced_aware,2,Faster,low,sub-061,task-breathing_run-1,0.935592,14.283159,good,0.867216,0.815771,3.0,0.743759,1,ramp,Faster
+paced_unaware,3,Slower,low,sub-061,task-breathing_run-1,0.972777,19.033061,good,1.252239,1.154822,3.0,0.315135,1,ramp,Slower
+paced_aware,4,Slower,low,sub-061,task-breathing_run-1,0.965374,19.032653,good,1.160187,1.154969,3.0,0.316327,1,ramp,Slower
+paced_aware,5,Faster,high,sub-061,task-breathing_run-1,0.975922,14.299543,good,0.780819,0.670622,3.0,0.09052,1,step,Faster
+paced_unaware,6,Slower,high,sub-061,task-breathing_run-1,0.97513,19.049638,good,1.250783,1.356468,3.0,0.043449,1,step,Slower
+paced_aware,7,Faster,low,sub-061,task-breathing_run-1,0.957666,14.317257,good,0.743484,0.826643,3.0,0.293654,1,ramp,Faster
+paced_unaware,1,Faster,low,sub-061,task-breathing_run-2,0.964818,14.300628,good,0.783644,0.823461,3.0,0.535198,2,ramp,Faster
+paced_aware,2,Slower,high,sub-061,task-breathing_run-2,0.96621,19.050943,good,1.452916,1.346299,3.0,0.347239,2,step,Slower
+paced_aware,3,Slower,low,sub-061,task-breathing_run-2,0.96755,19.066844,good,1.233046,1.156264,3.0,0.152925,2,ramp,Slower
+paced_unaware,4,Faster,low,sub-061,task-breathing_run-2,0.926855,14.332603,good,0.543508,0.799505,3.0,0.637168,2,ramp,Faster
+paced_unaware,5,Faster,high,sub-061,task-breathing_run-2,0.916184,14.300376,good,0.649279,0.66898,3.0,0.855931,2,step,Faster
+paced_aware,6,Slower,low,sub-061,task-breathing_run-2,0.973296,19.050133,good,1.301418,1.151362,3.0,0.259693,2,ramp,Slower
+paced_nochange,7,No Change,,sub-061,task-breathing_run-2,0.976051,16.682291,good,0.721936,0.999676,3.0,0.556256,2,none,none
+paced_aware,1,Slower,low,sub-064,task-breathing_run-1,0.883983,19.551524,good,0.528365,1.270458,4.0,1.157841,1,ramp,Slower
+paced_aware,2,Faster,low,sub-064,task-breathing_run-1,0.932261,13.852047,good,0.756981,0.774143,3.0,0.177919,1,ramp,Faster
+paced_nochange,3,No Change,,sub-064,task-breathing_run-1,0.656205,16.684584,good,0.723146,1.000443,3.0,0.683684,1,none,none
+paced_aware,4,Faster,low,sub-064,task-breathing_run-1,0.882925,13.867937,good,0.930391,0.797855,3.0,0.328641,1,ramp,Faster
+paced_aware,5,Slower,high,sub-064,task-breathing_run-1,0.826258,19.551686,good,0.366662,1.42785,4.0,1.695514,1,step,Slower
+paced_unaware,6,Slower,low,sub-064,task-breathing_run-1,0.563427,19.533613,good,0.439509,1.237239,5.0,2.622309,1,ramp,Slower
+paced_unaware,7,Faster,high,sub-064,task-breathing_run-1,0.933211,13.801858,good,1.250765,0.608667,4.0,0.838602,1,step,Faster
+paced_unaware,1,Faster,high,sub-064,task-breathing_run-2,0.44549,13.85114,good,1.232057,0.814979,4.0,1.744428,2,step,Faster
+paced_aware,2,Slower,low,sub-064,task-breathing_run-2,0.944,19.501503,good,1.369013,1.169222,3.0,0.359288,2,ramp,Slower
+paced_nochange,3,No Change,,sub-064,task-breathing_run-2,0.778339,16.700819,good,0.491685,0.996512,5.0,1.391413,2,none,none
+paced_aware,4,Slower,low,sub-064,task-breathing_run-2,0.110771,19.533433,good,1.705613,1.201539,5.0,2.567893,2,ramp,Slower
+paced_aware,5,Faster,low,sub-064,task-breathing_run-2,0.191797,13.834096,good,0.905772,0.760687,4.0,0.870192,2,ramp,Faster
+paced_unaware,6,Slower,high,sub-064,task-breathing_run-2,0.347737,19.534972,good,1.024238,1.454615,4.0,2.047883,2,step,Slower
+paced_wrongdir,7,Faster,low,sub-064,task-breathing_run-2,0.655617,13.867903,good,1.047414,0.764052,4.0,0.950442,2,ramp,Faster
+paced_wrongdir,1,Slower,high,sub-065,task-breathing_run-1,0.911984,20.000884,good,1.788195,1.564365,4.0,0.667487,1,step,Slower
+paced_aware,2,Faster,low,sub-065,task-breathing_run-1,0.922987,13.35016,good,0.934846,0.776073,3.0,0.414113,1,ramp,Faster
+paced_aware,3,Faster,low,sub-065,task-breathing_run-1,0.973971,13.349839,good,0.787657,0.666557,4.0,0.719485,1,ramp,Faster
+paced_aware,4,Faster,high,sub-065,task-breathing_run-1,0.807855,13.348437,good,0.484262,0.587475,3.0,0.585553,1,step,Faster
+paced_nochange,5,No Change,,sub-065,task-breathing_run-1,0.874075,16.682352,good,1.260707,0.994787,4.0,0.572987,1,none,none
+paced_unaware,6,Slower,low,sub-065,task-breathing_run-1,0.945356,20.03408,good,1.450731,1.206551,3.0,0.574987,1,ramp,Slower
+paced_unaware,7,Slower,low,sub-065,task-breathing_run-1,0.861458,20.001216,good,1.109462,1.19375,3.0,0.5032,1,ramp,Slower
+paced_aware,1,Faster,high,sub-065,task-breathing_run-2,0.767424,13.333498,good,0.844753,0.532982,4.0,0.658957,2,step,Faster
+paced_nochange,2,No Change,,sub-065,task-breathing_run-2,0.978265,16.717247,good,0.973365,1.000123,3.0,0.299078,2,none,none
+paced_aware,3,Faster,low,sub-065,task-breathing_run-2,0.867285,13.382816,good,0.765552,0.728433,3.0,0.415656,2,ramp,Faster
+paced_aware,4,Faster,low,sub-065,task-breathing_run-2,0.791765,13.350496,good,1.281861,0.808171,3.0,0.911388,2,ramp,Faster
+paced_unaware,5,Slower,low,sub-065,task-breathing_run-2,0.870292,19.984365,good,0.657694,1.199123,4.0,2.135404,2,ramp,Slower
+paced_unaware,6,Slower,low,sub-065,task-breathing_run-2,0.92849,20.032928,good,1.309383,1.203595,3.0,0.207741,2,ramp,Slower
+paced_wrongdir,7,Slower,high,sub-065,task-breathing_run-2,0.912926,19.983731,good,1.455462,1.480332,3.0,0.238037,2,step,Slower
+paced_aware,1,Faster,low,sub-066,task-breathing_run-1,0.931613,14.283283,good,1.763308,0.80745,4.0,0.86724,1,ramp,Faster
+paced_aware,2,Slower,high,sub-066,task-breathing_run-1,0.961941,19.101405,good,1.249375,1.35492,3.0,0.108863,1,step,Slower
+paced_unaware,3,Slower,low,sub-066,task-breathing_run-1,0.918499,19.050759,good,1.205521,1.151082,3.0,0.218118,1,ramp,Slower
+paced_unaware,4,Faster,high,sub-066,task-breathing_run-1,0.906251,14.301349,good,0.757366,0.659662,3.0,0.424911,1,step,Faster
+paced_unaware,5,Slower,low,sub-066,task-breathing_run-1,0.875847,19.067568,good,1.123527,1.159114,3.0,0.224009,1,ramp,Slower
+paced_nochange,6,No Change,,sub-066,task-breathing_run-1,0.969081,16.701396,good,1.43066,0.999939,4.0,0.5682,1,none,none
+paced_aware,7,Faster,low,sub-066,task-breathing_run-1,0.919233,14.317469,good,0.853395,0.819872,3.0,0.192173,1,ramp,Faster
+paced_unaware,1,Slower,high,sub-066,task-breathing_run-2,0.95333,19.08389,good,2.095742,1.364472,4.0,0.749082,2,step,Slower
+paced_unaware,2,Faster,low,sub-066,task-breathing_run-2,0.946065,14.317355,good,0.667082,0.792488,3.0,0.591179,2,ramp,Faster
+paced_unaware,3,Slower,low,sub-066,task-breathing_run-2,0.965589,19.017304,good,1.098381,1.161718,3.0,0.417721,2,ramp,Slower
+paced_nochange,4,No Change,,sub-066,task-breathing_run-2,0.91636,16.717577,good,1.187662,1.008609,3.0,0.343274,2,none,none
+paced_aware,5,Faster,high,sub-066,task-breathing_run-2,0.9443,14.350109,good,0.789238,0.659559,3.0,0.230934,2,step,Faster
+paced_unaware,6,Slower,low,sub-066,task-breathing_run-2,0.877919,19.084477,good,1.231774,1.148405,3.0,0.194508,2,ramp,Slower
+paced_aware,7,Faster,low,sub-066,task-breathing_run-2,0.947743,14.301574,good,0.729835,0.82174,3.0,0.392429,2,ramp,Faster
+paced_aware,1,Slower,low,sub-067,task-breathing_run-1,0.923542,19.017302,good,1.215924,1.147656,3.0,0.176261,1,ramp,Slower
+paced_aware,2,Faster,high,sub-067,task-breathing_run-1,0.94013,14.283972,good,0.981062,0.642613,4.0,0.847,1,step,Faster
+paced_aware,3,Slower,low,sub-067,task-breathing_run-1,0.911752,19.052512,good,1.143467,1.156662,3.0,0.041002,1,ramp,Slower
+paced_nochange,4,No Change,,sub-067,task-breathing_run-1,0.733576,16.651374,good,1.718982,0.996861,4.0,0.744441,1,none,none
+paced_unaware,5,Faster,low,sub-067,task-breathing_run-1,0.934528,14.300466,good,0.707042,0.82925,3.0,0.363069,1,ramp,Faster
+paced_aware,6,Slower,high,sub-067,task-breathing_run-1,0.926814,19.050626,good,2.00379,1.393359,4.0,0.640107,1,step,Slower
+paced_aware,7,Faster,low,sub-067,task-breathing_run-1,0.821362,14.284523,good,0.92112,0.830974,3.0,0.167309,1,ramp,Faster
+paced_wrongdir,1,Faster,high,sub-067,task-breathing_run-2,0.950383,14.333264,good,1.167461,0.666279,4.0,0.640047,2,step,Faster
+paced_aware,2,Slower,low,sub-067,task-breathing_run-2,0.687349,19.067618,good,1.319195,1.139863,3.0,0.392454,2,ramp,Slower
+paced_aware,3,Slower,low,sub-067,task-breathing_run-2,0.91364,19.050177,good,2.110328,1.193179,4.0,0.828495,2,ramp,Slower
+paced_unaware,4,Slower,high,sub-067,task-breathing_run-2,0.845107,19.052361,good,1.781698,1.391588,4.0,0.692003,2,step,Slower
+paced_unaware,5,Faster,low,sub-067,task-breathing_run-2,0.922458,14.283979,good,1.359208,0.791333,4.0,0.716022,2,ramp,Faster
+paced_nochange,6,No Change,,sub-067,task-breathing_run-2,0.905416,16.700136,good,1.057377,1.00049,3.0,0.1474,2,none,none
+paced_unaware,7,Faster,low,sub-067,task-breathing_run-2,0.80562,14.300435,good,0.823759,0.815433,3.0,0.457142,2,ramp,Faster
+paced_unaware,1,Faster,low,sub-068,task-breathing_run-1,0.859408,13.349086,good,0.67869,0.75201,3.0,0.396902,1,ramp,Faster
+paced_aware,2,Slower,low,sub-068,task-breathing_run-1,0.688231,20.022532,good,1.306779,1.201823,4.0,1.922526,1,ramp,Slower
+paced_aware,3,Slower,high,sub-068,task-breathing_run-1,0.758348,19.99919,good,1.010658,1.467053,4.0,2.000018,1,step,Slower
+paced_aware,4,Slower,low,sub-068,task-breathing_run-1,0.761428,19.966291,good,1.032525,1.209734,3.0,0.640775,1,ramp,Slower
+paced_unaware,5,Faster,low,sub-068,task-breathing_run-1,0.798775,13.365413,good,0.851989,0.764683,3.0,0.188094,1,ramp,Faster
+paced_unaware,6,Faster,high,sub-068,task-breathing_run-1,0.802641,13.36695,good,0.687497,0.552962,3.0,0.522634,1,step,Faster
+paced_nochange,7,No Change,,sub-068,task-breathing_run-1,0.926729,16.700996,good,1.919213,0.997023,4.0,0.826565,1,none,none
+paced_aware,1,Slower,high,sub-068,task-breathing_run-2,0.534629,19.999717,good,0.599559,1.373624,4.0,2.167551,2,step,Slower
+paced_unaware,2,Faster,low,sub-068,task-breathing_run-2,0.941082,13.348419,good,1.105781,0.700058,4.0,0.51183,2,ramp,Faster
+paced_aware,3,Slower,low,sub-068,task-breathing_run-2,0.661442,20.00049,good,1.090054,1.196198,3.0,0.422951,2,ramp,Slower
+paced_nochange,4,No Change,,sub-068,task-breathing_run-2,0.787415,16.682896,good,1.118474,0.996508,3.0,0.654304,2,none,none
+paced_unaware,5,Faster,low,sub-068,task-breathing_run-2,0.898362,13.382427,good,0.698256,0.746057,3.0,0.125697,2,ramp,Faster
+paced_unaware,6,Faster,high,sub-068,task-breathing_run-2,0.905534,13.352096,good,0.543144,0.537915,3.0,0.323045,2,step,Faster
+paced_aware,7,Slower,low,sub-068,task-breathing_run-2,0.590581,20.000227,good,0.414264,1.249395,4.0,2.118886,2,ramp,Slower
+paced_unaware,1,Slower,low,sub-069,task-breathing_run-1,0.799924,19.067411,good,0.789515,1.11595,3.0,1.456377,1,ramp,Slower
+paced_wrongdir,2,Faster,low,sub-069,task-breathing_run-1,0.826283,14.316624,good,1.093634,0.848517,3.0,0.506116,1,ramp,Faster
+paced_aware,3,Faster,low,sub-069,task-breathing_run-1,0.605148,14.283789,good,0.612323,0.779536,4.0,0.658605,1,ramp,Faster
+paced_wrongdir,4,Faster,high,sub-069,task-breathing_run-1,0.637378,14.299876,good,1.50747,0.67405,3.0,1.191704,1,step,Faster
+paced_nochange,5,No Change,,sub-069,task-breathing_run-1,0.338345,16.717373,good,3.789587,,3.0,4.149644,1,none,none
+paced_wrongdir,6,Slower,high,sub-069,task-breathing_run-1,0.603445,19.068499,good,0.573345,1.359339,4.0,3.453311,1,step,Slower
+paced_wrongdir,7,Slower,low,sub-069,task-breathing_run-1,0.720735,19.059238,good,1.196824,1.268663,7.0,2.786985,1,ramp,Slower
+paced_wrongdir,1,Faster,low,sub-069,task-breathing_run-2,0.891966,14.28443,degraded,0.857143,0.847722,3.0,0.248693,2,ramp,Faster
+paced_aware,2,Slower,low,sub-069,task-breathing_run-2,0.709066,19.067899,degraded,0.840241,1.212557,4.0,1.912574,2,ramp,Slower
+paced_aware,3,Slower,low,sub-069,task-breathing_run-2,0.818827,19.033824,degraded,1.007132,1.237694,4.0,1.324625,2,ramp,Slower
+paced_nochange,4,No Change,,sub-069,task-breathing_run-2,0.902876,16.668771,degraded,0.777641,0.997966,4.0,0.559323,2,none,none
+paced_wrongdir,5,Faster,low,sub-069,task-breathing_run-2,0.894815,14.334214,degraded,0.930584,0.861636,3.0,0.793659,2,ramp,Faster
+paced_aware,6,Slower,high,sub-069,task-breathing_run-2,0.495767,19.033152,degraded,1.684308,1.349814,4.0,1.805058,2,step,Slower
+paced_wrongdir,7,Faster,high,sub-069,task-breathing_run-2,0.759993,14.267661,degraded,0.746706,0.737804,3.0,1.153824,2,step,Faster
+paced_aware,1,Faster,low,sub-070,task-breathing_run-1,0.831178,14.284617,good,0.74451,0.843712,4.0,1.443449,1,ramp,Faster
+paced_aware,2,Faster,high,sub-070,task-breathing_run-1,0.931271,14.284912,good,0.711946,0.715974,3.0,0.321851,1,step,Faster
+paced_aware,3,Slower,high,sub-070,task-breathing_run-1,0.914767,19.066099,good,1.088294,1.333958,3.0,0.352708,1,step,Slower
+paced_aware,4,Slower,low,sub-070,task-breathing_run-1,0.843475,19.06747,good,0.954329,1.221123,6.0,2.721472,1,ramp,Slower
+paced_aware,5,Slower,low,sub-070,task-breathing_run-1,0.558079,19.083446,good,2.132832,1.22798,5.0,1.501457,1,ramp,Slower
+paced_nochange,6,No Change,,sub-070,task-breathing_run-1,0.822173,16.684336,good,0.947271,1.000124,3.0,0.303382,1,none,none
+paced_aware,7,Faster,low,sub-070,task-breathing_run-1,0.812826,14.316309,good,0.853235,0.834572,3.0,0.176654,1,ramp,Faster
+paced_nochange,1,No Change,,sub-070,task-breathing_run-2,0.838251,16.700879,good,2.332322,0.999803,4.0,1.325382,2,none,none
+paced_aware,2,Slower,low,sub-070,task-breathing_run-2,0.368788,19.051074,good,1.083109,1.194382,4.0,1.279384,2,ramp,Slower
+paced_aware,3,Faster,high,sub-070,task-breathing_run-2,0.703561,14.300957,good,0.822223,0.715105,3.0,0.739098,2,step,Faster
+paced_aware,4,Faster,low,sub-070,task-breathing_run-2,0.907034,14.317493,good,0.644725,0.810633,3.0,0.464708,2,ramp,Faster
+paced_wrongdir,5,Faster,low,sub-070,task-breathing_run-2,0.815163,14.284316,good,0.989235,0.842533,3.0,0.23567,2,ramp,Faster
+paced_aware,6,Slower,low,sub-070,task-breathing_run-2,0.797546,19.050449,good,1.160163,1.141662,3.0,0.468298,2,ramp,Slower
+paced_aware,7,Slower,high,sub-070,task-breathing_run-2,0.759297,19.051692,good,0.784094,,3.0,2.456247,2,step,Slower
+paced_unaware,1,Faster,low,sub-071,task-breathing_run-1,,,fail,,,2.0,,1,ramp,Faster
+paced_nochange,2,No Change,,sub-071,task-breathing_run-1,,,fail,0.868386,0.997978,5.0,,1,none,none
+paced_unaware,3,Faster,low,sub-071,task-breathing_run-1,,,fail,0.715794,0.795844,3.0,,1,ramp,Faster
+paced_unaware,4,Slower,high,sub-071,task-breathing_run-1,,,fail,0.271076,1.34688,4.0,,1,step,Slower
+paced_aware,5,Slower,low,sub-071,task-breathing_run-1,,,fail,0.576895,1.205615,5.0,,1,ramp,Slower
+paced_unaware,6,Faster,high,sub-071,task-breathing_run-1,,,fail,,,2.0,,1,step,Faster
+paced_aware,7,Slower,low,sub-071,task-breathing_run-1,,,fail,0.432399,1.233472,6.0,,1,ramp,Slower
+paced_unaware,1,Faster,low,sub-071,task-breathing_run-2,,,fail,,,2.0,,2,ramp,Faster
+paced_unaware,2,Slower,low,sub-071,task-breathing_run-2,,,fail,0.553029,1.163378,4.0,,2,ramp,Slower
+paced_nochange,3,No Change,,sub-071,task-breathing_run-2,,,fail,0.392959,0.997182,4.0,,2,none,none
+paced_aware,4,Slower,low,sub-071,task-breathing_run-2,,,fail,0.725532,1.204076,5.0,,2,ramp,Slower
+paced_unaware,5,Faster,low,sub-071,task-breathing_run-2,,,fail,0.88891,0.739443,6.0,,2,ramp,Faster
+paced_unaware,6,Slower,high,sub-071,task-breathing_run-2,,,fail,0.79207,1.437658,3.0,,2,step,Slower
+paced_wrongdir,7,Faster,high,sub-071,task-breathing_run-2,,,fail,1.471996,0.881353,4.0,,2,step,Faster
+paced_aware,1,Faster,high,sub-072,task-breathing_run-1,0.977644,14.267194,good,0.631722,0.701782,3.0,0.330401,1,step,Faster
+paced_aware,2,Slower,low,sub-072,task-breathing_run-1,0.444465,19.084468,good,,,1.0,,1,ramp,Slower
+paced_aware,3,Slower,high,sub-072,task-breathing_run-1,0.939387,19.067524,good,2.43841,1.371894,4.0,1.945148,1,step,Slower
+paced_aware,4,Faster,low,sub-072,task-breathing_run-1,0.936159,14.26672,good,0.820089,0.848923,3.0,0.668383,1,ramp,Faster
+paced_aware,5,Faster,low,sub-072,task-breathing_run-1,0.892419,14.283943,good,0.857158,0.854369,3.0,0.509467,1,ramp,Faster
+paced_wrongdir,6,Slower,low,sub-072,task-breathing_run-1,0.935708,19.033523,good,1.920911,1.122404,3.0,0.899952,1,ramp,Slower
+paced_nochange,7,No Change,,sub-072,task-breathing_run-1,0.306816,16.702432,good,,,2.0,,1,none,none
+paced_aware,1,Slower,low,sub-072,task-breathing_run-2,0.955708,19.050918,degraded,1.459367,1.140883,3.0,0.641821,2,ramp,Slower
+paced_aware,2,Faster,low,sub-072,task-breathing_run-2,0.90606,14.282973,degraded,0.655296,0.838806,3.0,0.616184,2,ramp,Faster
+paced_wrongdir,3,Faster,low,sub-072,task-breathing_run-2,0.954747,14.283025,degraded,1.101708,0.84507,3.0,0.442175,2,ramp,Faster
+paced_nochange,4,No Change,,sub-072,task-breathing_run-2,0.962074,16.701454,degraded,0.896541,1.005419,3.0,0.239537,2,none,none
+paced_aware,5,Slower,low,sub-072,task-breathing_run-2,0.893345,19.001517,degraded,1.811104,1.118583,3.0,0.763652,2,ramp,Slower
+paced_unaware,6,Faster,high,sub-072,task-breathing_run-2,0.802911,14.284217,degraded,0.462756,0.664651,3.0,0.500793,2,step,Faster
+paced_unaware,7,Slower,high,sub-072,task-breathing_run-2,0.738124,19.066593,degraded,4.050842,1.434879,4.0,1.931031,2,step,Slower
+paced_unaware,1,Slower,low,sub-073,task-breathing_run-1,0.849284,19.050756,good,0.52465,1.221124,4.0,1.504677,1,ramp,Slower
+paced_nochange,2,No Change,,sub-073,task-breathing_run-1,0.88478,16.716903,good,1.593526,1.000738,3.0,0.860977,1,none,none
+paced_unaware,3,Faster,low,sub-073,task-breathing_run-1,0.89685,14.316575,good,0.629736,0.843331,3.0,0.846229,1,ramp,Faster
+paced_aware,4,Slower,high,sub-073,task-breathing_run-1,0.831803,19.066525,good,1.790709,1.32688,3.0,0.897759,1,step,Slower
+paced_unaware,5,Faster,high,sub-073,task-breathing_run-1,0.931387,14.332975,good,,,2.0,,1,step,Faster
+paced_unaware,6,Slower,low,sub-073,task-breathing_run-1,0.905069,19.051852,good,2.098347,1.119917,3.0,1.101239,1,ramp,Slower
+paced_unaware,7,Faster,low,sub-073,task-breathing_run-1,0.843776,14.300045,good,0.890976,0.831759,3.0,0.394534,1,ramp,Faster
+paced_aware,1,Slower,low,sub-073,task-breathing_run-2,0.845916,19.049272,good,1.57293,1.112422,3.0,1.050319,2,ramp,Slower
+paced_unaware,2,Slower,low,sub-073,task-breathing_run-2,0.837372,19.034508,good,1.04056,1.133246,3.0,1.026311,2,ramp,Slower
+paced_aware,3,Slower,high,sub-073,task-breathing_run-2,0.700857,19.068324,good,0.930402,1.358949,4.0,1.371068,2,step,Slower
+paced_aware,4,Faster,high,sub-073,task-breathing_run-2,0.513239,14.298574,good,0.3101,0.702914,3.0,1.891342,2,step,Faster
+paced_unaware,5,Faster,low,sub-073,task-breathing_run-2,0.629545,14.315862,good,1.0387,0.86906,3.0,0.908182,2,ramp,Faster
+paced_nochange,6,No Change,,sub-073,task-breathing_run-2,0.951733,16.683737,good,0.75956,1.007489,3.0,0.620926,2,none,none
+paced_unaware,7,Faster,low,sub-073,task-breathing_run-2,0.883932,14.283697,good,1.207685,0.850862,3.0,0.53303,2,ramp,Faster
+paced_wrongdir,1,Slower,high,sub-074,task-breathing_run-1,0.690225,19.01699,good,,,2.0,,1,step,Slower
+paced_unaware,2,Faster,low,sub-074,task-breathing_run-1,0.948137,14.283756,good,0.729456,0.814677,3.0,0.418453,1,ramp,Faster
+paced_nochange,3,No Change,,sub-074,task-breathing_run-1,0.885303,16.700406,good,0.851782,1.000371,3.0,0.316922,1,none,none
+paced_aware,4,Faster,high,sub-074,task-breathing_run-1,0.660227,14.317259,good,0.68214,0.703492,3.0,1.271827,1,step,Faster
+paced_aware,5,Faster,low,sub-074,task-breathing_run-1,0.859002,14.334327,good,0.886364,0.838657,3.0,0.823894,1,ramp,Faster
+paced_aware,6,Slower,low,sub-074,task-breathing_run-1,0.710539,19.052032,good,1.685881,1.105134,3.0,1.316428,1,ramp,Slower
+paced_unaware,7,Slower,low,sub-074,task-breathing_run-1,0.640036,19.017418,good,4.178826,1.160756,4.0,1.835306,1,ramp,Slower
+paced_wrongdir,1,Slower,high,sub-075,task-breathing_run-1,,,,,,,,1,step,Slower
+paced_aware,2,Faster,low,sub-075,task-breathing_run-1,,,,,,,,1,ramp,Faster
+paced_wrongdir,3,Slower,low,sub-075,task-breathing_run-1,,,,,,,,1,ramp,Slower
+paced_nochange,4,No Change,,sub-075,task-breathing_run-1,,,,,,,,1,none,none
+paced_aware,5,Faster,high,sub-075,task-breathing_run-1,,,,,,,,1,step,Faster
+paced_aware,6,Faster,low,sub-075,task-breathing_run-1,,,,,,,,1,ramp,Faster
+paced_wrongdir,7,Slower,low,sub-075,task-breathing_run-1,,,,,,,,1,ramp,Slower
+paced_wrongdir,1,Slower,high,sub-075,task-breathing_run-2,,,,,,,,2,step,Slower
+paced_aware,2,Faster,high,sub-075,task-breathing_run-2,,,,,,,,2,step,Faster
+paced_nochange,3,No Change,,sub-075,task-breathing_run-2,,,,,,,,2,none,none
+paced_aware,4,Faster,low,sub-075,task-breathing_run-2,,,,,,,,2,ramp,Faster
+paced_unaware,5,Slower,low,sub-075,task-breathing_run-2,,,,,,,,2,ramp,Slower
+paced_unaware,6,Faster,low,sub-075,task-breathing_run-2,,,,,,,,2,ramp,Faster
+paced_wrongdir,7,Slower,low,sub-075,task-breathing_run-2,,,,,,,,2,ramp,Slower
+paced_unaware,1,Faster,low,sub-076,task-breathing_run-1,0.443258,13.175887,good,0.972613,0.782616,3.0,0.698997,1,ramp,Faster
+paced_aware,2,Slower,high,sub-076,task-breathing_run-1,0.683123,19.8243,good,2.392205,1.457992,3.0,1.231469,1,step,Slower
+paced_unaware,3,Faster,low,sub-076,task-breathing_run-1,0.771849,13.180437,good,1.44047,0.813917,3.0,0.852741,1,ramp,Faster
+paced_nochange,4,No Change,,sub-076,task-breathing_run-1,0.470347,16.509824,good,1.154876,1.000487,3.0,1.507458,1,none,none
+paced_aware,5,Slower,low,sub-076,task-breathing_run-1,0.168631,19.83087,good,,,1.0,,1,ramp,Slower
+paced_wrongdir,6,Slower,low,sub-076,task-breathing_run-1,0.253321,19.830336,good,,,2.0,,1,ramp,Slower
+paced_aware,7,Faster,high,sub-076,task-breathing_run-1,0.316053,13.184708,good,,,2.0,,1,step,Faster
+paced_unaware,1,Slower,low,sub-076,task-breathing_run-2,,,fail,2.027281,1.163856,3.0,,2,ramp,Slower
+paced_aware,2,Slower,high,sub-076,task-breathing_run-2,,,fail,1.220583,1.542082,5.0,,2,step,Slower
+paced_unaware,3,Slower,low,sub-076,task-breathing_run-2,,,fail,1.00597,1.246092,4.0,,2,ramp,Slower
+paced_nochange,4,No Change,,sub-076,task-breathing_run-2,,,fail,0.887277,1.000023,5.0,,2,none,none
+paced_aware,5,Faster,low,sub-076,task-breathing_run-2,,,fail,0.673024,0.717485,5.0,,2,ramp,Faster
+paced_aware,6,Faster,high,sub-076,task-breathing_run-2,,,fail,,,2.0,,2,step,Faster
+paced_wrongdir,7,Faster,low,sub-076,task-breathing_run-2,,,fail,,,1.0,,2,ramp,Faster
+paced_aware,1,Faster,low,sub-077,task-breathing_run-1,0.881987,13.384898,good,0.606594,0.751682,3.0,0.304456,1,ramp,Faster
+paced_nochange,2,No Change,,sub-077,task-breathing_run-1,0.548267,16.701531,good,1.161992,1.00279,5.0,1.545607,1,none,none
+paced_unaware,3,Faster,low,sub-077,task-breathing_run-1,0.917908,13.368609,good,1.389873,0.798254,3.0,0.754987,1,ramp,Faster
+paced_aware,4,Slower,low,sub-077,task-breathing_run-1,0.89591,20.001557,good,1.070973,1.236862,3.0,0.308616,1,ramp,Slower
+paced_unaware,5,Slower,low,sub-077,task-breathing_run-1,0.91621,20.001955,good,0.979041,1.258548,4.0,0.975367,1,ramp,Slower
+paced_aware,6,Faster,high,sub-077,task-breathing_run-1,0.723796,13.367578,good,1.782938,0.610248,3.0,1.433403,1,step,Faster
+paced_aware,7,Slower,high,sub-077,task-breathing_run-1,0.85663,20.016545,good,0.686187,1.446147,3.0,1.293668,1,step,Slower
+paced_aware,1,Faster,low,sub-077,task-breathing_run-2,0.821627,13.332567,good,0.687692,0.74578,3.0,0.155512,2,ramp,Faster
+paced_unaware,2,Faster,low,sub-077,task-breathing_run-2,0.683541,13.367863,good,0.756473,0.808297,3.0,0.809382,2,ramp,Faster
+paced_nochange,3,No Change,,sub-077,task-breathing_run-2,0.677392,16.716661,good,1.286735,0.994961,3.0,1.840391,2,none,none
+paced_aware,4,Slower,low,sub-077,task-breathing_run-2,0.842179,20.000744,good,,,2.0,,2,ramp,Slower
+paced_aware,5,Faster,high,sub-077,task-breathing_run-2,0.88016,13.362411,good,0.874015,0.580358,3.0,1.164278,2,step,Faster
+paced_aware,6,Slower,low,sub-077,task-breathing_run-2,0.892072,20.016636,good,0.896072,1.275003,4.0,1.233523,2,ramp,Slower
+paced_aware,7,Slower,high,sub-077,task-breathing_run-2,0.762082,20.000367,good,2.558291,1.458021,3.0,2.39378,2,step,Slower
+paced_aware,1,Slower,high,sub-078,task-breathing_run-1,0.930052,19.033394,degraded,1.323823,1.29928,3.0,0.331452,1,step,Slower
+paced_aware,2,Slower,low,sub-078,task-breathing_run-1,0.914135,19.050556,degraded,0.987667,1.142772,4.0,1.851974,1,ramp,Slower
+paced_aware,3,Faster,low,sub-078,task-breathing_run-1,0.856226,14.315903,degraded,0.811523,0.835481,3.0,0.476053,1,ramp,Faster
+paced_aware,4,Faster,high,sub-078,task-breathing_run-1,0.763489,14.283337,degraded,0.562478,0.699844,3.0,0.494334,1,step,Faster
+paced_aware,5,Slower,low,sub-078,task-breathing_run-1,0.722339,19.06529,degraded,0.718054,1.19034,4.0,1.588917,1,ramp,Slower
+paced_nochange,6,No Change,,sub-078,task-breathing_run-1,0.743307,16.698193,degraded,1.112817,1.00051,3.0,1.030008,1,none,none
+paced_wrongdir,7,Faster,low,sub-078,task-breathing_run-1,0.877145,14.315399,degraded,0.613661,0.750386,4.0,0.377657,1,ramp,Faster
+paced_unaware,1,Faster,high,sub-078,task-breathing_run-2,0.834686,14.299578,degraded,,,2.0,,2,step,Faster
+paced_nochange,2,No Change,,sub-078,task-breathing_run-2,0.812062,16.717028,degraded,0.797527,1.001236,3.0,1.108872,2,none,none
+paced_unaware,3,Faster,low,sub-078,task-breathing_run-2,0.814685,14.299618,degraded,0.734256,0.81334,3.0,0.89244,2,ramp,Faster
+paced_aware,4,Slower,low,sub-078,task-breathing_run-2,0.607434,19.03394,degraded,0.576506,1.223811,5.0,1.961217,2,ramp,Slower
+paced_unaware,5,Faster,low,sub-078,task-breathing_run-2,0.932319,14.29995,degraded,0.997906,0.830848,3.0,0.311099,2,ramp,Faster
+paced_unaware,6,Slower,low,sub-078,task-breathing_run-2,0.821314,19.034226,degraded,0.351829,1.225655,4.0,2.279563,2,ramp,Slower
+paced_aware,7,Slower,high,sub-078,task-breathing_run-2,0.735888,19.032345,degraded,1.478643,1.319565,3.0,0.543594,2,step,Slower
+paced_wrongdir,1,Slower,high,sub-079,task-breathing_run-1,0.905061,19.839321,good,,,2.0,,1,step,Slower
+paced_aware,2,Faster,low,sub-079,task-breathing_run-1,0.953739,13.194522,good,0.355699,0.705568,3.0,1.188969,1,ramp,Faster
+paced_wrongdir,3,Slower,low,sub-079,task-breathing_run-1,0.85483,19.845121,good,1.170306,1.150119,3.0,1.19076,1,ramp,Slower
+paced_aware,4,Faster,low,sub-079,task-breathing_run-1,0.947984,13.198189,good,0.513556,0.739311,3.0,0.481257,1,ramp,Faster
+paced_wrongdir,5,Slower,low,sub-079,task-breathing_run-1,0.903233,19.847573,good,0.628243,1.205501,3.0,1.18286,1,ramp,Slower
+paced_nochange,6,No Change,,sub-079,task-breathing_run-1,0.836751,16.523024,good,0.681317,1.000124,3.0,1.400915,1,none,none
+paced_aware,7,Faster,high,sub-079,task-breathing_run-1,0.949556,13.197063,good,0.43498,0.546436,3.0,0.392504,1,step,Faster
+paced_unaware,1,Slower,high,sub-079,task-breathing_run-2,0.938367,19.842115,good,0.807965,1.558155,4.0,1.275933,2,step,Slower
+paced_nochange,2,No Change,,sub-079,task-breathing_run-2,0.943047,16.52441,good,0.793718,1.000244,4.0,0.684829,2,none,none
+paced_wrongdir,3,Slower,low,sub-079,task-breathing_run-2,0.904973,19.847374,good,1.448258,1.254067,4.0,1.009645,2,ramp,Slower
+paced_aware,4,Faster,low,sub-079,task-breathing_run-2,0.95419,13.193397,good,0.608239,0.745531,3.0,0.321598,2,ramp,Faster
+paced_aware,5,Faster,low,sub-079,task-breathing_run-2,0.878348,13.196241,good,0.666006,0.759772,3.0,0.457375,2,ramp,Faster
+paced_unaware,6,Slower,low,sub-079,task-breathing_run-2,0.887583,19.847392,good,0.933767,1.328125,4.0,2.311492,2,ramp,Slower
+paced_aware,7,Faster,high,sub-079,task-breathing_run-2,0.97472,13.196832,good,0.428569,0.543345,3.0,0.394965,2,step,Faster
+paced_wrongdir,1,Slower,low,sub-081,task-breathing_run-1,,,,,,,,1,ramp,Slower
+paced_unaware,2,Slower,low,sub-081,task-breathing_run-1,,,,,,,,1,ramp,Slower
+paced_aware,3,Faster,low,sub-081,task-breathing_run-1,,,,,,,,1,ramp,Faster
+paced_nochange,4,No Change,,sub-081,task-breathing_run-1,,,,,,,,1,none,none
+paced_aware,5,Slower,high,sub-081,task-breathing_run-1,,,,,,,,1,step,Slower
+paced_aware,6,Faster,high,sub-081,task-breathing_run-1,,,,,,,,1,step,Faster
+paced_aware,7,Faster,low,sub-081,task-breathing_run-1,,,,,,,,1,ramp,Faster
+paced_wrongdir,1,Slower,high,sub-081,task-breathing_run-2,,,,,,,,2,step,Slower
+paced_aware,2,Faster,low,sub-081,task-breathing_run-2,,,,,,,,2,ramp,Faster
+paced_aware,3,Faster,low,sub-081,task-breathing_run-2,,,,,,,,2,ramp,Faster
+paced_aware,4,Faster,high,sub-081,task-breathing_run-2,,,,,,,,2,step,Faster
+paced_nochange,5,No Change,,sub-081,task-breathing_run-2,,,,,,,,2,none,none
+paced_aware,6,Slower,low,sub-081,task-breathing_run-2,,,,,,,,2,ramp,Slower
+paced_aware,7,Slower,low,sub-081,task-breathing_run-2,,,,,,,,2,ramp,Slower
+paced_aware,1,Faster,low,sub-082,task-breathing_run-1,0.956671,13.817167,good,0.863405,0.814113,3.0,0.217177,1,ramp,Faster
+paced_wrongdir,2,Slower,low,sub-082,task-breathing_run-1,0.960863,19.51633,good,1.228185,1.184458,3.0,0.178815,1,ramp,Slower
+paced_aware,3,Faster,high,sub-082,task-breathing_run-1,0.963949,13.833194,good,0.758609,0.670423,3.0,0.271138,1,step,Faster
+paced_unaware,4,Slower,high,sub-082,task-breathing_run-1,0.939955,19.517712,good,1.11494,1.429511,3.0,0.489434,1,step,Slower
+paced_nochange,5,No Change,,sub-082,task-breathing_run-1,0.96743,16.700152,good,0.812745,0.996024,3.0,0.99548,1,none,none
+paced_wrongdir,6,Slower,low,sub-082,task-breathing_run-1,0.962984,19.56757,good,,,2.0,,1,ramp,Slower
+paced_aware,7,Faster,low,sub-082,task-breathing_run-1,0.973484,13.852001,good,0.818436,0.804057,3.0,0.02556,1,ramp,Faster
+paced_aware,1,Slower,low,sub-084,task-breathing_run-1,0.940135,19.034115,good,0.924097,1.153359,3.0,0.750892,1,ramp,Slower
+paced_aware,2,Faster,low,sub-084,task-breathing_run-1,0.945432,14.299729,good,0.904445,0.835215,3.0,0.308537,1,ramp,Faster
+paced_unaware,3,Slower,low,sub-084,task-breathing_run-1,0.957439,19.017849,good,1.593888,1.135976,3.0,0.60206,1,ramp,Slower
+paced_wrongdir,4,Slower,high,sub-084,task-breathing_run-1,0.949881,19.06647,good,1.888946,1.387503,3.0,0.758304,1,step,Slower
+paced_aware,5,Faster,high,sub-084,task-breathing_run-1,0.965138,14.265779,good,0.787901,0.715813,3.0,0.600539,1,step,Faster
+paced_aware,6,Faster,low,sub-084,task-breathing_run-1,0.973672,14.283749,good,0.915794,0.833969,3.0,0.241592,1,ramp,Faster
+paced_nochange,7,No Change,,sub-084,task-breathing_run-1,0.96392,16.683117,good,0.96299,0.99863,3.0,0.636341,1,none,none
+paced_unaware,1,Faster,low,sub-084,task-breathing_run-2,0.958595,14.333703,good,1.166589,0.858846,3.0,0.528293,2,ramp,Faster
+paced_nochange,2,No Change,,sub-084,task-breathing_run-2,0.934703,16.701384,good,1.233096,1.000071,3.0,0.339702,2,none,none
+paced_unaware,3,Faster,low,sub-084,task-breathing_run-2,0.902307,14.283181,good,1.133932,0.844503,3.0,0.451979,2,ramp,Faster
+paced_aware,4,Slower,high,sub-084,task-breathing_run-2,0.859989,19.034259,good,1.686866,1.287758,3.0,0.586088,2,step,Slower
+paced_unaware,5,Slower,low,sub-084,task-breathing_run-2,0.953912,19.035747,good,1.327179,1.14874,3.0,0.335332,2,ramp,Slower
+paced_aware,6,Faster,high,sub-084,task-breathing_run-2,0.905638,14.283498,good,0.921357,0.727966,3.0,0.375561,2,step,Faster
+paced_aware,7,Slower,low,sub-084,task-breathing_run-2,0.951256,19.050024,good,1.539586,1.138898,3.0,0.53423,2,ramp,Slower
+paced_nochange,1,No Change,,sub-086,task-breathing_run-1,0.92134,16.70061,good,1.431569,0.994846,3.0,0.972201,1,none,none
+paced_aware,2,Faster,low,sub-086,task-breathing_run-1,0.940713,14.784233,good,0.977098,0.869274,3.0,0.446264,1,ramp,Faster
+paced_aware,3,Slower,low,sub-086,task-breathing_run-1,0.884302,18.583603,good,1.448131,1.11462,3.0,0.47864,1,ramp,Slower
+paced_unaware,4,Faster,low,sub-086,task-breathing_run-1,0.85967,14.800794,good,1.09334,0.872503,3.0,0.375039,1,ramp,Faster
+paced_aware,5,Slower,low,sub-086,task-breathing_run-1,0.780898,18.584996,good,0.351562,1.171984,4.0,1.711844,1,ramp,Slower
+paced_aware,6,Slower,high,sub-086,task-breathing_run-1,0.708297,18.600438,good,1.206517,1.248608,3.0,0.306403,1,step,Slower
+paced_unaware,7,Faster,high,sub-086,task-breathing_run-1,0.925909,14.784194,good,0.906911,0.770503,3.0,0.292257,1,step,Faster
+paced_wrongdir,1,Slower,low,sub-086,task-breathing_run-2,0.902306,18.584637,good,1.058524,1.10885,3.0,0.561606,2,ramp,Slower
+paced_nochange,2,No Change,,sub-086,task-breathing_run-2,0.910077,16.667304,good,1.18687,1.000019,3.0,0.449067,2,none,none
+paced_aware,3,Faster,high,sub-086,task-breathing_run-2,0.934996,14.833232,good,0.941717,0.787081,3.0,0.595996,2,step,Faster
+paced_aware,4,Slower,low,sub-086,task-breathing_run-2,0.861277,18.600639,good,1.135814,1.129419,3.0,0.255278,2,ramp,Slower
+paced_wrongdir,5,Faster,low,sub-086,task-breathing_run-2,0.574509,14.817142,good,1.118587,0.888929,3.0,0.722838,2,ramp,Faster
+paced_aware,6,Faster,low,sub-086,task-breathing_run-2,0.606017,14.817814,good,,,2.0,,2,ramp,Faster
+paced_aware,7,Slower,high,sub-086,task-breathing_run-2,0.249534,18.59974,good,1.466346,1.276906,3.0,1.17612,2,step,Slower
+paced_aware,1,Faster,low,sub-087,task-breathing_run-1,,,fail,0.803835,0.844009,3.0,,1,ramp,Faster
+paced_wrongdir,2,Faster,high,sub-087,task-breathing_run-1,,,fail,0.702743,0.712425,3.0,,1,step,Faster
+paced_aware,3,Faster,low,sub-087,task-breathing_run-1,,,fail,0.958578,0.843356,3.0,,1,ramp,Faster
+paced_nochange,4,No Change,,sub-087,task-breathing_run-1,,,fail,1.182774,1.000178,3.0,,1,none,none
+paced_aware,5,Slower,low,sub-087,task-breathing_run-1,,,fail,0.338314,1.206707,4.0,,1,ramp,Slower
+paced_aware,6,Slower,high,sub-087,task-breathing_run-1,,,fail,1.241505,1.317123,3.0,,1,step,Slower
+paced_aware,7,Slower,low,sub-087,task-breathing_run-1,,,fail,1.07122,1.238339,4.0,,1,ramp,Slower
+paced_unaware,1,Faster,low,sub-087,task-breathing_run-2,0.884385,14.141602,degraded,,,2.0,,2,ramp,Faster
+paced_wrongdir,2,Slower,low,sub-087,task-breathing_run-2,0.865217,18.895131,degraded,1.170734,1.136699,3.0,0.889827,2,ramp,Slower
+paced_aware,3,Slower,low,sub-087,task-breathing_run-2,0.742179,18.893866,degraded,0.940289,1.231331,4.0,0.843694,2,ramp,Slower
+paced_nochange,4,No Change,,sub-087,task-breathing_run-2,0.776009,16.523611,degraded,1.119869,1.000282,3.0,0.228033,2,none,none
+paced_aware,5,Slower,high,sub-087,task-breathing_run-2,0.745559,18.893975,degraded,0.736826,1.38172,4.0,1.719825,2,step,Slower
+paced_aware,6,Faster,high,sub-087,task-breathing_run-2,0.853301,14.144109,degraded,0.912651,0.694307,4.0,1.64875,2,step,Faster
+paced_unaware,7,Faster,low,sub-087,task-breathing_run-2,0.876568,14.145668,degraded,0.755804,0.83774,3.0,0.211636,2,ramp,Faster
+paced_wrongdir,1,Slower,low,sub-088,task-breathing_run-1,0.931433,19.034813,good,1.410239,1.144001,3.0,0.413879,1,ramp,Slower
+paced_aware,2,Faster,low,sub-088,task-breathing_run-1,0.911166,14.31725,good,0.994711,0.838687,3.0,0.370906,1,ramp,Faster
+paced_aware,3,Slower,high,sub-088,task-breathing_run-1,0.846829,19.033297,good,1.580226,1.379093,3.0,0.804417,1,step,Slower
+paced_wrongdir,4,Slower,low,sub-088,task-breathing_run-1,0.922467,19.066855,good,0.851779,1.174183,3.0,0.564574,1,ramp,Slower
+paced_aware,5,Faster,high,sub-088,task-breathing_run-1,0.859596,14.300664,good,0.785614,0.636011,3.0,0.448805,1,step,Faster
+paced_nochange,6,No Change,,sub-088,task-breathing_run-1,0.620493,16.669333,good,0.430966,1.00007,3.0,2.146292,1,none,none
+paced_unaware,7,Faster,low,sub-088,task-breathing_run-1,0.539518,14.31783,good,,,2.0,,1,ramp,Faster
+paced_wrongdir,1,Slower,low,sub-088,task-breathing_run-2,0.614633,19.051485,degraded,1.181023,1.123564,3.0,1.037917,2,ramp,Slower
+paced_aware,2,Faster,low,sub-088,task-breathing_run-2,0.860985,14.30167,degraded,0.920999,0.842016,3.0,0.340573,2,ramp,Faster
+paced_wrongdir,3,Faster,high,sub-088,task-breathing_run-2,0.427072,14.300493,degraded,0.605723,0.730162,3.0,2.219135,2,step,Faster
+paced_wrongdir,4,Slower,low,sub-088,task-breathing_run-2,0.874872,19.050591,degraded,0.948874,1.222722,4.0,0.655612,2,ramp,Slower
+paced_aware,5,Faster,low,sub-088,task-breathing_run-2,0.666804,14.335139,degraded,,,2.0,,2,ramp,Faster
+paced_nochange,6,No Change,,sub-088,task-breathing_run-2,0.913697,16.684161,degraded,0.958861,1.00008,3.0,0.410385,2,none,none
+paced_aware,7,Slower,high,sub-088,task-breathing_run-2,0.855117,19.067507,degraded,1.697699,1.314653,4.0,0.716194,2,step,Slower
+paced_unaware,1,Slower,low,sub-089,task-breathing_run-1,,,good,1.226345,1.149369,3.0,0.119474,1,ramp,Slower
+paced_aware,2,Faster,high,sub-089,task-breathing_run-1,,,good,0.588275,0.67681,3.0,0.616223,1,step,Faster
+paced_aware,3,Slower,high,sub-089,task-breathing_run-1,,,good,0.767028,1.352557,3.0,0.898362,1,step,Slower
+paced_aware,4,Faster,low,sub-089,task-breathing_run-1,,,good,0.666315,0.797329,3.0,0.585647,1,ramp,Faster
+paced_aware,5,Faster,low,sub-089,task-breathing_run-1,,,good,,,2.0,,1,ramp,Faster
+paced_aware,6,Slower,low,sub-089,task-breathing_run-1,,,good,0.565203,1.118421,3.0,2.035055,1,ramp,Slower
+paced_nochange,7,No Change,,sub-089,task-breathing_run-1,,,good,0.829693,0.999968,3.0,0.669819,1,none,none
+paced_aware,1,Slower,low,sub-089,task-breathing_run-2,,,good,,,2.0,,2,ramp,Slower
+paced_aware,2,Faster,low,sub-089,task-breathing_run-2,,,good,0.931639,0.777823,4.0,0.435227,2,ramp,Faster
+paced_unaware,3,Slower,high,sub-089,task-breathing_run-2,,,good,1.199474,1.369726,4.0,1.258838,2,step,Slower
+paced_aware,4,Slower,low,sub-089,task-breathing_run-2,,,good,1.010485,1.206803,5.0,2.114569,2,ramp,Slower
+paced_nochange,5,No Change,,sub-089,task-breathing_run-2,,,good,1.62329,1.000168,5.0,1.457946,2,none,none
+paced_aware,6,Faster,high,sub-089,task-breathing_run-2,,,good,,,0.0,,2,step,Faster
+paced_aware,7,Faster,low,sub-089,task-breathing_run-2,,,good,,,0.0,,2,ramp,Faster
+paced_wrongdir,1,Slower,low,sub-092,task-breathing_run-1,0.94992,19.015133,good,1.38672,1.135839,3.0,0.523527,1,ramp,Slower
+paced_unaware,2,Faster,low,sub-092,task-breathing_run-1,0.922136,14.29966,good,1.012059,0.839459,3.0,0.348138,1,ramp,Faster
+paced_aware,3,Faster,high,sub-092,task-breathing_run-1,0.93477,14.282211,good,0.807018,0.717637,3.0,0.207758,1,step,Faster
+paced_aware,4,Slower,low,sub-092,task-breathing_run-1,0.941689,19.06715,good,1.340323,1.150641,3.0,0.45778,1,ramp,Slower
+paced_nochange,5,No Change,,sub-092,task-breathing_run-1,0.910846,16.701413,good,1.350164,0.996499,3.0,0.522235,1,none,none
+paced_aware,6,Slower,high,sub-092,task-breathing_run-1,0.912853,19.050285,good,0.882116,1.348593,4.0,1.444684,1,step,Slower
+paced_wrongdir,7,Faster,low,sub-092,task-breathing_run-1,0.917025,14.284054,good,0.937779,0.856592,3.0,0.553877,1,ramp,Faster
+paced_aware,1,Slower,low,sub-092,task-breathing_run-2,0.919717,19.033428,good,1.506986,1.215951,4.0,0.476662,2,ramp,Slower
+paced_aware,2,Slower,low,sub-092,task-breathing_run-2,0.927186,19.066599,good,1.486848,1.135779,3.0,0.493935,2,ramp,Slower
+paced_aware,3,Faster,low,sub-092,task-breathing_run-2,0.898885,14.316143,good,0.683615,0.838722,3.0,0.455662,2,ramp,Faster
+paced_unaware,4,Slower,high,sub-092,task-breathing_run-2,0.889915,19.067971,good,1.498618,1.32959,4.0,0.620306,2,step,Slower
+paced_wrongdir,5,Faster,low,sub-092,task-breathing_run-2,0.873433,14.282562,good,1.748763,0.865295,3.0,0.966497,2,ramp,Faster
+paced_nochange,6,No Change,,sub-092,task-breathing_run-2,0.65895,16.66618,good,1.656693,1.004619,4.0,0.97337,2,none,none
+paced_aware,7,Faster,high,sub-092,task-breathing_run-2,0.804042,14.299978,good,0.91677,0.746496,3.0,0.516984,2,step,Faster
+paced_unaware,1,Slower,high,sub-098,task-breathing_run-1,0.913508,18.891808,good,1.460662,1.276838,3.0,0.645033,1,step,Slower
+paced_aware,2,Slower,low,sub-098,task-breathing_run-1,0.95422,18.896446,good,1.268426,1.155729,3.0,0.386117,1,ramp,Slower
+paced_aware,3,Faster,low,sub-098,task-breathing_run-1,0.91932,14.147304,good,0.925096,0.846215,3.0,0.290708,1,ramp,Faster
+paced_nochange,4,No Change,,sub-098,task-breathing_run-1,0.938672,16.522932,good,0.66537,0.999809,4.0,0.839764,1,none,none
+paced_aware,5,Slower,low,sub-098,task-breathing_run-1,0.942111,18.896136,good,0.729664,1.176861,3.0,1.267135,1,ramp,Slower
+paced_aware,6,Faster,high,sub-098,task-breathing_run-1,0.910594,14.144338,good,0.541173,0.708537,3.0,0.726956,1,step,Faster
+paced_wrongdir,7,Faster,low,sub-098,task-breathing_run-1,0.924687,14.143411,good,0.698599,0.810737,3.0,0.498875,1,ramp,Faster
+paced_nochange,1,No Change,,sub-098,task-breathing_run-2,0.678069,16.515154,good,1.217347,0.999971,3.0,0.763098,2,none,none
+paced_aware,2,Slower,low,sub-098,task-breathing_run-2,0.921175,18.898165,good,0.775455,1.248382,4.0,0.963418,2,ramp,Slower
+paced_aware,3,Faster,high,sub-098,task-breathing_run-2,0.891994,14.144505,good,0.489776,0.692152,3.0,0.774393,2,step,Faster
+paced_aware,4,Slower,low,sub-098,task-breathing_run-2,0.828358,18.899743,good,0.656373,1.151881,3.0,0.973699,2,ramp,Slower
+paced_wrongdir,5,Faster,low,sub-098,task-breathing_run-2,0.880993,14.144808,good,0.464759,0.751615,4.0,0.748686,2,ramp,Faster
+paced_aware,6,Slower,high,sub-098,task-breathing_run-2,0.901184,18.895211,good,1.091066,1.426126,4.0,1.091471,2,step,Slower
+paced_wrongdir,7,Faster,low,sub-098,task-breathing_run-2,0.914422,14.147417,good,0.460179,0.806672,3.0,0.883928,2,ramp,Faster
+paced_unaware,1,Slower,low,sub-100,task-breathing_run-1,0.917371,18.895175,good,1.497034,1.121301,3.0,0.906536,1,ramp,Slower
+paced_aware,2,Faster,low,sub-100,task-breathing_run-1,0.932055,14.143673,good,0.979989,0.849716,3.0,0.329397,1,ramp,Faster
+paced_aware,3,Faster,low,sub-100,task-breathing_run-1,0.951662,14.143266,good,0.755195,0.823153,3.0,0.21939,1,ramp,Faster
+paced_aware,4,Faster,high,sub-100,task-breathing_run-1,0.924993,14.145391,good,0.85085,0.705889,3.0,0.310929,1,step,Faster
+paced_unaware,5,Slower,high,sub-100,task-breathing_run-1,0.906324,18.894991,good,1.484043,1.292257,3.0,0.405068,1,step,Slower
+paced_nochange,6,No Change,,sub-100,task-breathing_run-1,0.914082,16.521205,good,1.03,0.99987,3.0,0.243752,1,none,none
+paced_unaware,7,Slower,low,sub-100,task-breathing_run-1,0.907365,18.895403,good,1.331613,1.226403,4.0,0.76975,1,ramp,Slower
+paced_unaware,1,Slower,high,sub-100,task-breathing_run-2,0.914116,18.888447,good,1.32584,1.280793,3.0,0.562695,2,step,Slower
+paced_unaware,2,Slower,low,sub-100,task-breathing_run-2,0.931807,18.895719,good,1.386855,1.148828,3.0,0.360409,2,ramp,Slower
+paced_nochange,3,No Change,,sub-100,task-breathing_run-2,0.941057,16.519474,good,1.355822,1.000253,3.0,0.505187,2,none,none
+paced_aware,4,Faster,low,sub-100,task-breathing_run-2,0.924224,14.146293,good,1.185401,0.857481,3.0,0.647537,2,ramp,Faster
+paced_unaware,5,Slower,low,sub-100,task-breathing_run-2,0.893367,18.896771,good,1.547283,1.166472,3.0,0.704767,2,ramp,Slower
+paced_wrongdir,6,Faster,low,sub-100,task-breathing_run-2,0.928833,14.144585,good,1.287087,0.850816,3.0,0.603351,2,ramp,Faster
+paced_aware,7,Faster,high,sub-100,task-breathing_run-2,0.891219,14.146807,good,,,2.0,,2,step,Faster
+paced_aware,1,Faster,low,sub-102,task-breathing_run-1,,,fail,,,2.0,,1,ramp,Faster
+paced_aware,2,Faster,low,sub-102,task-breathing_run-1,,,fail,0.661271,0.71499,3.0,,1,ramp,Faster
+paced_unaware,3,Slower,high,sub-102,task-breathing_run-1,,,fail,1.239652,1.509622,4.0,,1,step,Slower
+paced_unaware,4,Slower,low,sub-102,task-breathing_run-1,,,fail,1.641123,1.268442,4.0,,1,ramp,Slower
+paced_unaware,5,Slower,low,sub-102,task-breathing_run-1,,,fail,1.25876,1.343031,6.0,,1,ramp,Slower
+paced_nochange,6,No Change,,sub-102,task-breathing_run-1,,,fail,1.136356,0.999846,3.0,,1,none,none
+paced_aware,7,Faster,high,sub-102,task-breathing_run-1,,,fail,0.962739,0.550227,3.0,,1,step,Faster
+paced_aware,1,Faster,low,sub-102,task-breathing_run-2,,,fail,0.714929,0.768099,3.0,,2,ramp,Faster
+paced_unaware,2,Faster,high,sub-102,task-breathing_run-2,,,fail,1.336241,0.552986,3.0,,2,step,Faster
+paced_aware,3,Faster,low,sub-102,task-breathing_run-2,,,fail,2.800551,0.788673,4.0,,2,ramp,Faster
+paced_wrongdir,4,Slower,low,sub-102,task-breathing_run-2,,,fail,0.45538,1.297751,5.0,,2,ramp,Slower
+paced_nochange,5,No Change,,sub-102,task-breathing_run-2,,,fail,1.19745,0.999946,4.0,,2,none,none
+paced_unaware,6,Slower,high,sub-102,task-breathing_run-2,,,fail,0.667555,1.579452,6.0,,2,step,Slower
+paced_unaware,7,Slower,low,sub-102,task-breathing_run-2,,,fail,0.823513,1.338465,6.0,,2,ramp,Slower
+paced_aware,1,Faster,high,sub-104,task-breathing_run-1,0.842832,13.193261,good,0.700269,0.531903,3.0,0.354643,1,step,Faster
+paced_aware,2,Slower,low,sub-104,task-breathing_run-1,0.955595,19.846331,good,1.879527,1.203002,3.0,0.928267,1,ramp,Slower
+paced_aware,3,Slower,low,sub-104,task-breathing_run-1,0.932631,19.842767,good,1.134259,1.215062,3.0,0.397146,1,ramp,Slower
+paced_wrongdir,4,Faster,low,sub-104,task-breathing_run-1,0.928482,13.194122,good,0.932243,0.789524,3.0,0.60036,1,ramp,Faster
+paced_nochange,5,No Change,,sub-104,task-breathing_run-1,0.878735,16.522088,good,1.721652,0.999846,3.0,0.841046,1,none,none
+paced_aware,6,Slower,high,sub-104,task-breathing_run-1,0.928358,19.847238,good,1.261379,1.438792,3.0,0.458237,1,step,Slower
+paced_unaware,7,Faster,low,sub-104,task-breathing_run-1,0.96411,13.196896,good,0.9116,0.788264,3.0,0.295146,1,ramp,Faster
+paced_aware,1,Faster,low,sub-106,task-breathing_run-1,0.960478,14.140199,good,,,2.0,,1,ramp,Faster
+paced_unaware,2,Slower,high,sub-106,task-breathing_run-1,0.941459,18.900471,good,1.190526,1.332177,3.0,0.639269,1,step,Slower
+paced_nochange,3,No Change,,sub-106,task-breathing_run-1,0.96308,16.519187,good,1.166045,0.999862,3.0,0.336368,1,none,none
+paced_aware,4,Faster,high,sub-106,task-breathing_run-1,0.969625,14.143878,good,0.924566,0.70511,3.0,0.494636,1,step,Faster
+paced_aware,5,Slower,low,sub-106,task-breathing_run-1,0.924662,18.895421,good,1.410104,1.14462,3.0,0.488056,1,ramp,Slower
+paced_aware,6,Slower,low,sub-106,task-breathing_run-1,0.935245,18.894401,good,1.165433,1.168419,3.0,0.587619,1,ramp,Slower
+paced_aware,7,Faster,low,sub-106,task-breathing_run-1,0.942687,14.147475,good,1.116101,0.847397,3.0,0.441955,1,ramp,Faster
+paced_nochange,1,No Change,,sub-106,task-breathing_run-2,0.950553,16.513475,good,0.805054,1.000888,3.0,0.586442,2,none,none
+paced_aware,2,Faster,high,sub-106,task-breathing_run-2,0.962085,14.146971,good,0.599751,0.705832,3.0,0.686511,2,step,Faster
+paced_wrongdir,3,Slower,low,sub-106,task-breathing_run-2,0.865887,18.892602,good,1.71862,1.148396,4.0,1.734727,2,ramp,Slower
+paced_unaware,4,Faster,low,sub-106,task-breathing_run-2,0.927066,14.144078,good,1.064607,0.835025,3.0,0.581766,2,ramp,Faster
+paced_unaware,5,Faster,low,sub-106,task-breathing_run-2,0.876868,14.141844,good,0.89814,0.844732,3.0,0.564972,2,ramp,Faster
+paced_aware,6,Slower,low,sub-106,task-breathing_run-2,0.734441,18.893993,good,2.568024,1.110594,3.0,1.677209,2,ramp,Slower
+paced_unaware,7,Slower,high,sub-106,task-breathing_run-2,0.205053,18.892696,good,,,1.0,,2,step,Slower
+paced_nochange,1,No Change,,sub-108,task-breathing_run-1,0.912727,16.515411,good,1.721242,1.000294,3.0,0.854372,1,none,none
+paced_aware,2,Slower,low,sub-108,task-breathing_run-1,0.928559,18.894859,good,1.545981,1.119695,3.0,0.899087,1,ramp,Slower
+paced_aware,3,Slower,high,sub-108,task-breathing_run-1,0.876504,18.892825,good,,,2.0,,1,step,Slower
+paced_aware,4,Slower,low,sub-108,task-breathing_run-1,0.917092,18.894438,good,,,2.0,,1,ramp,Slower
+paced_unaware,5,Faster,high,sub-108,task-breathing_run-1,0.946977,14.144662,good,0.841764,0.724039,3.0,0.545612,1,step,Faster
+paced_unaware,6,Faster,low,sub-108,task-breathing_run-1,0.943524,14.146762,good,0.53539,0.835847,3.0,1.214271,1,ramp,Faster
+paced_unaware,7,Faster,low,sub-108,task-breathing_run-1,0.958013,14.147673,good,1.927626,0.824599,4.0,1.649316,1,ramp,Faster
+paced_wrongdir,1,Slower,high,sub-108,task-breathing_run-2,0.877796,18.88689,good,1.167423,1.383618,3.0,0.970821,2,step,Slower
+paced_unaware,2,Faster,low,sub-108,task-breathing_run-2,0.932333,14.144613,good,,,2.0,,2,ramp,Faster
+paced_nochange,3,No Change,,sub-108,task-breathing_run-2,0.913749,16.523512,good,0.715204,0.999979,4.0,0.820189,2,none,none
+paced_unaware,4,Slower,low,sub-108,task-breathing_run-2,0.96897,18.896013,good,1.477189,1.14113,3.0,0.609713,2,ramp,Slower
+paced_unaware,5,Faster,high,sub-108,task-breathing_run-2,0.896197,14.14392,good,,,2.0,,2,step,Faster
+paced_aware,6,Faster,low,sub-108,task-breathing_run-2,0.793322,14.145159,good,1.538958,0.845182,3.0,0.977001,2,ramp,Faster
+paced_unaware,7,Slower,low,sub-108,task-breathing_run-2,0.910434,18.896949,good,1.336474,1.152571,3.0,0.727437,2,ramp,Slower
+paced_unaware,1,Slower,low,sub-112,task-breathing_run-1,0.830238,19.839919,good,0.671944,1.376645,4.0,2.054122,1,ramp,Slower
+paced_unaware,2,Slower,low,sub-112,task-breathing_run-1,0.832535,19.844977,good,0.913381,1.321597,4.0,1.602886,1,ramp,Slower
+paced_nochange,3,No Change,,sub-112,task-breathing_run-1,0.84269,16.520521,good,0.690304,1.000038,4.0,0.532246,1,none,none
+paced_aware,4,Slower,high,sub-112,task-breathing_run-1,0.764344,19.845702,good,0.773155,1.529933,4.0,1.882792,1,step,Slower
+paced_aware,5,Faster,high,sub-112,task-breathing_run-1,0.616034,13.195338,good,0.723875,0.527766,3.0,0.400891,1,step,Faster
+paced_aware,6,Faster,low,sub-112,task-breathing_run-1,0.821505,13.194903,good,0.772674,0.782121,3.0,0.353357,1,ramp,Faster
+paced_aware,7,Faster,low,sub-112,task-breathing_run-1,0.852426,13.19597,good,1.098259,0.790345,3.0,0.549404,1,ramp,Faster
+paced_aware,1,Faster,low,sub-112,task-breathing_run-2,0.85131,13.186801,degraded,0.620833,0.744125,3.0,0.896202,2,ramp,Faster
+paced_nochange,2,No Change,,sub-112,task-breathing_run-2,0.839386,16.519428,degraded,0.763775,0.999925,4.0,0.839338,2,none,none
+paced_unaware,3,Slower,low,sub-112,task-breathing_run-2,0.797721,19.846013,degraded,0.95138,1.329733,4.0,1.937245,2,ramp,Slower
+paced_aware,4,Faster,low,sub-112,task-breathing_run-2,0.664,13.197209,degraded,0.779508,0.775715,3.0,0.392388,2,ramp,Faster
+paced_unaware,5,Slower,low,sub-112,task-breathing_run-2,0.83487,19.848537,degraded,1.101779,1.281428,4.0,1.087523,2,ramp,Slower
+paced_aware,6,Slower,high,sub-112,task-breathing_run-2,0.771417,19.846334,degraded,0.543398,1.593222,4.0,2.384871,2,step,Slower
+paced_aware,7,Faster,high,sub-112,task-breathing_run-2,0.787569,13.194552,degraded,0.542238,0.57128,4.0,0.420591,2,step,Faster
+paced_aware,1,Faster,high,sub-114,task-breathing_run-1,0.840515,14.140389,good,1.512473,0.683487,3.0,0.979557,1,step,Faster
+paced_nochange,2,No Change,,sub-114,task-breathing_run-1,0.761705,16.521172,good,0.87291,1.000429,4.0,0.87379,1,none,none
+paced_wrongdir,3,Slower,low,sub-114,task-breathing_run-1,0.725116,18.865593,good,1.208054,1.181365,4.0,2.100566,1,ramp,Slower
+paced_wrongdir,4,Slower,low,sub-114,task-breathing_run-1,0.802393,18.867894,good,1.76425,1.194283,4.0,1.195128,1,ramp,Slower
+paced_aware,5,Faster,low,sub-114,task-breathing_run-1,0.720163,14.12007,good,1.220763,0.846402,3.0,0.957832,1,ramp,Faster
+paced_aware,6,Faster,low,sub-114,task-breathing_run-1,0.781789,14.119963,good,0.993329,0.831232,3.0,1.523245,1,ramp,Faster
+paced_wrongdir,7,Slower,high,sub-114,task-breathing_run-1,0.82752,18.868868,good,0.4849,1.351484,3.0,1.394133,1,step,Slower
+paced_wrongdir,1,Slower,low,sub-116,task-breathing_run-1,0.904968,18.889969,good,0.536453,1.23979,4.0,0.990491,1,ramp,Slower
+paced_wrongdir,2,Faster,low,sub-116,task-breathing_run-1,0.926797,14.144551,good,0.67116,0.824903,3.0,0.356693,1,ramp,Faster
+paced_unaware,3,Slower,low,sub-116,task-breathing_run-1,0.858591,18.895049,good,1.380158,1.18932,4.0,0.924758,1,ramp,Slower
+paced_aware,4,Faster,high,sub-116,task-breathing_run-1,0.927055,14.146113,good,0.536994,0.667584,3.0,0.392143,1,step,Faster
+paced_nochange,5,No Change,,sub-116,task-breathing_run-1,0.905353,16.521932,good,0.983871,0.999387,3.0,0.069757,1,none,none
+paced_wrongdir,6,Faster,low,sub-116,task-breathing_run-1,0.911346,14.14563,good,0.448118,0.824003,3.0,0.667629,1,ramp,Faster
+paced_aware,7,Slower,high,sub-116,task-breathing_run-1,0.844166,18.894976,good,1.074092,1.356739,3.0,1.149364,1,step,Slower
+paced_nochange,1,No Change,,sub-116,task-breathing_run-2,0.913821,16.513512,good,0.859384,0.999706,3.0,0.867608,2,none,none
+paced_unaware,2,Faster,low,sub-116,task-breathing_run-2,0.870258,14.142653,good,1.516449,0.864134,3.0,0.98828,2,ramp,Faster
+paced_wrongdir,3,Slower,low,sub-116,task-breathing_run-2,0.827181,18.896013,good,1.488523,1.114652,3.0,2.04092,2,ramp,Slower
+paced_aware,4,Faster,high,sub-116,task-breathing_run-2,0.86193,14.146585,good,1.599385,,3.0,1.794128,2,step,Faster
+paced_aware,5,Slower,low,sub-116,task-breathing_run-2,0.825603,18.897375,good,3.021559,1.11853,3.0,1.934895,2,ramp,Slower
+paced_wrongdir,6,Slower,high,sub-116,task-breathing_run-2,0.779198,18.897705,good,1.458997,1.440855,4.0,1.42892,2,step,Slower
+paced_wrongdir,7,Faster,low,sub-116,task-breathing_run-2,0.890809,14.147456,good,0.500709,0.821617,3.0,0.554256,2,ramp,Faster
+paced_nochange,1,No Change,,sub-118,task-breathing_run-1,,,fail,1.783958,1.000674,4.0,,1,none,none
+paced_wrongdir,2,Faster,low,sub-118,task-breathing_run-1,,,fail,1.51876,0.85493,3.0,,1,ramp,Faster
+paced_unaware,3,Faster,low,sub-118,task-breathing_run-1,,,fail,0.608544,0.805655,4.0,,1,ramp,Faster
+paced_unaware,4,Faster,high,sub-118,task-breathing_run-1,,,fail,0.34481,0.660852,4.0,,1,step,Faster
+paced_aware,5,Slower,high,sub-118,task-breathing_run-1,,,fail,0.711694,1.346085,6.0,,1,step,Slower
+paced_unaware,6,Slower,low,sub-118,task-breathing_run-1,,,fail,2.1106,1.220952,6.0,,1,ramp,Slower
+paced_unaware,7,Slower,low,sub-118,task-breathing_run-1,,,fail,0.507056,1.227734,6.0,,1,ramp,Slower
+paced_nochange,1,No Change,,sub-118,task-breathing_run-2,,,fail,2.251609,1.000425,4.0,,2,none,none
+paced_wrongdir,2,Faster,low,sub-118,task-breathing_run-2,,,fail,0.373134,0.756295,5.0,,2,ramp,Faster
+paced_wrongdir,3,Faster,low,sub-118,task-breathing_run-2,,,fail,0.502431,0.733021,6.0,,2,ramp,Faster
+paced_wrongdir,4,Slower,high,sub-118,task-breathing_run-2,,,fail,0.794528,1.396678,6.0,,2,step,Slower
+paced_wrongdir,5,Slower,low,sub-118,task-breathing_run-2,,,fail,0.749411,1.219717,7.0,,2,ramp,Slower
+paced_aware,6,Faster,high,sub-118,task-breathing_run-2,,,fail,1.268162,0.692598,4.0,,2,step,Faster
+paced_unaware,7,Slower,low,sub-118,task-breathing_run-2,,,fail,0.879969,1.266853,8.0,,2,ramp,Slower
+paced_wrongdir,1,Faster,high,sub-120,task-breathing_run-1,,,fail,0.712771,0.69655,3.0,,1,step,Faster
+paced_aware,2,Slower,low,sub-120,task-breathing_run-1,,,fail,0.591411,1.165514,4.0,,1,ramp,Slower
+paced_unaware,3,Slower,low,sub-120,task-breathing_run-1,,,fail,0.6919,1.251086,6.0,,1,ramp,Slower
+paced_nochange,4,No Change,,sub-120,task-breathing_run-1,,,fail,0.503057,0.999756,4.0,,1,none,none
+paced_unaware,5,Faster,low,sub-120,task-breathing_run-1,,,fail,3.028287,0.838707,5.0,,1,ramp,Faster
+paced_aware,6,Slower,high,sub-120,task-breathing_run-1,,,fail,0.862721,1.430799,6.0,,1,step,Slower
+paced_aware,7,Faster,low,sub-120,task-breathing_run-1,,,fail,0.853465,0.846415,3.0,,1,ramp,Faster
+paced_unaware,1,Faster,low,sub-120,task-breathing_run-2,,,fail,0.845044,,3.0,,2,ramp,Faster
+paced_aware,2,Slower,low,sub-120,task-breathing_run-2,,,fail,1.228371,1.176314,6.0,,2,ramp,Slower
+paced_aware,3,Faster,high,sub-120,task-breathing_run-2,,,fail,0.438001,0.658904,4.0,,2,step,Faster
+paced_aware,4,Slower,high,sub-120,task-breathing_run-2,,,fail,0.538355,1.394352,5.0,,2,step,Slower
+paced_unaware,5,Slower,low,sub-120,task-breathing_run-2,,,fail,0.573036,1.24314,7.0,,2,ramp,Slower
+paced_nochange,6,No Change,,sub-120,task-breathing_run-2,,,fail,0.536452,0.999775,6.0,,2,none,none
+paced_aware,7,Faster,low,sub-120,task-breathing_run-2,,,fail,0.967241,0.747541,6.0,,2,ramp,Faster
+paced_unaware,1,Faster,low,sub-130,task-breathing_run-1,0.863363,13.667734,good,0.927699,0.741351,4.0,0.948049,1,ramp,Faster
+paced_nochange,2,No Change,,sub-130,task-breathing_run-1,0.878867,16.52092,good,1.08203,0.999923,4.0,0.783775,1,none,none
+paced_aware,3,Faster,high,sub-130,task-breathing_run-1,0.852579,13.670029,good,0.839011,0.604935,4.0,0.849896,1,step,Faster
+paced_aware,4,Slower,low,sub-130,task-breathing_run-1,0.442691,19.373503,good,2.701289,1.112528,3.0,1.512341,1,ramp,Slower
+paced_aware,5,Slower,low,sub-130,task-breathing_run-1,0.666322,19.371548,good,1.992823,1.12816,3.0,1.182094,1,ramp,Slower
+paced_aware,6,Faster,low,sub-130,task-breathing_run-1,0.623988,13.668354,good,0.862917,0.778822,3.0,1.663083,1,ramp,Faster
+paced_aware,7,Slower,high,sub-130,task-breathing_run-1,0.601521,19.369304,good,1.215841,1.501461,4.0,1.477813,1,step,Slower
+paced_aware,1,Slower,low,sub-130,task-breathing_run-2,0.78356,19.36596,good,1.017464,1.214059,4.0,1.976303,2,ramp,Slower
+paced_nochange,2,No Change,,sub-130,task-breathing_run-2,0.881162,16.521374,good,0.930738,1.000069,4.0,1.313171,2,none,none
+paced_aware,3,Faster,high,sub-130,task-breathing_run-2,0.852355,13.666873,good,0.523444,0.622948,3.0,0.637592,2,step,Faster
+paced_unaware,4,Faster,low,sub-130,task-breathing_run-2,0.913001,13.672736,good,0.847434,0.837698,3.0,0.722276,2,ramp,Faster
+paced_aware,5,Slower,low,sub-130,task-breathing_run-2,0.809041,19.369928,good,0.97662,1.346311,5.0,2.375077,2,ramp,Slower
+paced_unaware,6,Slower,high,sub-130,task-breathing_run-2,0.165167,19.370453,good,,,1.0,,2,step,Slower
+paced_unaware,7,Faster,low,sub-130,task-breathing_run-2,0.89141,13.671572,good,0.893516,0.836216,3.0,0.818945,2,ramp,Faster
+paced_unaware,1,Faster,high,sub-132,task-breathing_run-1,,,fail,,,2.0,,1,step,Faster
+paced_aware,2,Slower,low,sub-132,task-breathing_run-1,,,fail,0.444625,1.323463,5.0,,1,ramp,Slower
+paced_unaware,3,Slower,low,sub-132,task-breathing_run-1,,,fail,0.360301,1.161333,3.0,,1,ramp,Slower
+paced_nochange,4,No Change,,sub-132,task-breathing_run-1,,,fail,1.872372,0.999397,5.0,,1,none,none
+paced_aware,5,Faster,low,sub-132,task-breathing_run-1,,,fail,1.860321,0.787152,4.0,,1,ramp,Faster
+paced_unaware,6,Slower,high,sub-132,task-breathing_run-1,,,fail,0.653918,1.477852,6.0,,1,step,Slower
+paced_aware,7,Faster,low,sub-132,task-breathing_run-1,,,fail,0.576405,0.789296,5.0,,1,ramp,Faster
+paced_aware,1,Faster,high,sub-132,task-breathing_run-2,,,fail,1.361125,0.9198,4.0,,2,step,Faster
+paced_aware,2,Slower,low,sub-132,task-breathing_run-2,,,fail,1.249906,1.251101,5.0,,2,ramp,Slower
+paced_nochange,3,No Change,,sub-132,task-breathing_run-2,,,fail,0.465032,1.000106,4.0,,2,none,none
+paced_unaware,4,Slower,high,sub-132,task-breathing_run-2,,,fail,2.083722,1.444248,6.0,,2,step,Slower
+paced_wrongdir,5,Slower,low,sub-132,task-breathing_run-2,,,fail,0.485694,1.277766,5.0,,2,ramp,Slower
+paced_aware,6,Faster,low,sub-132,task-breathing_run-2,,,fail,0.633714,0.692013,5.0,,2,ramp,Faster
+paced_aware,7,Faster,low,sub-132,task-breathing_run-2,,,fail,0.433248,0.722976,4.0,,2,ramp,Faster
+paced_nochange,1,No Change,,sub-134,task-breathing_run-1,,,fail,1.460603,0.999643,4.0,,1,none,none
+paced_unaware,2,Faster,low,sub-134,task-breathing_run-1,,,fail,1.039146,0.689356,5.0,,1,ramp,Faster
+paced_wrongdir,3,Faster,low,sub-134,task-breathing_run-1,,,fail,1.027757,0.769542,3.0,,1,ramp,Faster
+paced_aware,4,Slower,low,sub-134,task-breathing_run-1,,,fail,0.522215,1.352184,5.0,,1,ramp,Slower
+paced_unaware,5,Slower,low,sub-134,task-breathing_run-1,,,fail,1.76489,1.339493,5.0,,1,ramp,Slower
+paced_unaware,6,Slower,high,sub-134,task-breathing_run-1,,,fail,3.248293,1.395023,3.0,,1,step,Slower
+paced_aware,7,Faster,high,sub-134,task-breathing_run-1,,,fail,0.441908,0.552124,3.0,,1,step,Faster
+paced_unaware,1,Faster,high,sub-134,task-breathing_run-2,0.70529,13.18841,good,,,0.0,,2,step,Faster
+paced_aware,2,Slower,high,sub-134,task-breathing_run-2,0.412734,19.843889,good,,,0.0,,2,step,Slower
+paced_unaware,3,Faster,low,sub-134,task-breathing_run-2,0.605554,13.194109,good,0.400259,0.746339,3.0,1.023896,2,ramp,Faster
+paced_unaware,4,Faster,low,sub-134,task-breathing_run-2,0.906147,13.19497,good,0.869453,0.815634,3.0,0.782914,2,ramp,Faster
+paced_nochange,5,No Change,,sub-134,task-breathing_run-2,0.750594,16.519393,good,0.480156,1.000307,5.0,2.235319,2,none,none
+paced_aware,6,Slower,low,sub-134,task-breathing_run-2,0.538953,19.843499,good,1.413429,1.245755,4.0,2.545992,2,ramp,Slower
+paced_unaware,7,Slower,low,sub-134,task-breathing_run-2,0.885456,19.843401,good,1.157901,1.333553,6.0,3.12378,2,ramp,Slower
+paced_aware,1,Faster,high,sub-136,task-breathing_run-1,,,fail,1.006298,0.678232,4.0,,1,step,Faster
+paced_aware,2,Slower,high,sub-136,task-breathing_run-1,,,fail,0.28045,1.320978,3.0,,1,step,Slower
+paced_aware,3,Faster,low,sub-136,task-breathing_run-1,,,fail,2.026338,0.876462,4.0,,1,ramp,Faster
+paced_unaware,4,Faster,low,sub-136,task-breathing_run-1,,,fail,1.718362,,3.0,,1,ramp,Faster
+paced_aware,5,Slower,low,sub-136,task-breathing_run-1,,,fail,0.484214,1.212325,6.0,,1,ramp,Slower
+paced_nochange,6,No Change,,sub-136,task-breathing_run-1,,,fail,1.815885,0.999661,5.0,,1,none,none
+paced_aware,7,Slower,low,sub-136,task-breathing_run-1,,,fail,0.682185,1.270396,6.0,,1,ramp,Slower
+paced_aware,1,Slower,low,sub-136,task-breathing_run-2,,,fail,0.747012,1.151381,5.0,,2,ramp,Slower
+paced_aware,2,Faster,high,sub-136,task-breathing_run-2,,,fail,1.827921,0.713485,4.0,,2,step,Faster
+paced_aware,3,Faster,low,sub-136,task-breathing_run-2,,,fail,0.946835,0.762302,5.0,,2,ramp,Faster
+paced_nochange,4,No Change,,sub-136,task-breathing_run-2,,,fail,1.49633,0.999973,5.0,,2,none,none
+paced_unaware,5,Slower,low,sub-136,task-breathing_run-2,,,fail,1.097655,1.257049,7.0,,2,ramp,Slower
+paced_aware,6,Faster,low,sub-136,task-breathing_run-2,,,fail,1.590751,0.767976,5.0,,2,ramp,Faster
+paced_aware,7,Slower,high,sub-136,task-breathing_run-2,,,fail,0.665246,1.392362,4.0,,2,step,Slower
