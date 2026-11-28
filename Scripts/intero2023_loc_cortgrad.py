@@ -507,18 +507,22 @@ def figure():
     Pr = pd.read_csv(os.path.join(RD, "EXPLORATORY_LOC_cortgrad_profiles.csv"))
     A = pd.read_csv(os.path.join(RD, "EXPLORATORY_LOC_cortgrad_alignment.csv"))
     Pd = pd.read_csv(os.path.join(RD, "EXPLORATORY_LOC_cortgrad_paired.csv"))
-    fig, ax = plt.subplots(2, 2, figsize=(11, 8.2), facecolor=SURF)
+    fig, ax = plt.subplots(2, 2, figsize=(11.5, 8.8), facecolor=SURF)
     for a in ax.ravel():
         a.set_facecolor(SURF); a.grid(axis="y", color="#e6e5e1", lw=0.6); a.set_axisbelow(True)
     pole = {"G1": ("unimodal", "transmodal"), "G2": ("somatomotor", "visual")}
     for k, g_ in enumerate(PRIMARY_G):
         a = ax[0, k]
+        ends = {}
         for name, col in COL.items():
-            d = Pr[(Pr.gradient == g_) & (Pr.map == name)]
+            d = Pr[(Pr.gradient == g_) & (Pr["map"] == name)]
             a.fill_between(d.bin, d.ci_lo, d.ci_hi, color=col, alpha=0.15, lw=0)
             a.plot(d.bin, d.psc_mean, color=col, lw=2, marker="o", ms=4)
-            a.annotate(LAB[name], (10, d.psc_mean.iloc[-1]), xytext=(6, 0), textcoords="offset points",
-                       va="center", color=INK, fontsize=8.5)
+            ends[name] = d.psc_mean.iloc[-1]
+        ys = sorted(ends.items(), key=lambda kv: kv[1]); placed = []
+        for name, y in ys:                      # direct labels, nudged apart by >= 0.022 PSC
+            y = max(y, placed[-1] + 0.022) if placed else y; placed.append(y)
+            a.annotate(LAB[name], (10.15, y), va="center", color=INK, fontsize=8.5)
         a.axhline(0, color=INK2, lw=0.8)
         a.set_xticks(range(1, 11)); a.set_xlim(0.6, 11.9)
         a.set_xlabel(f"{g_} decile  ({pole[g_][0]} → {pole[g_][1]})"); a.set_ylabel("Mean PSC vs Rest")
@@ -529,12 +533,13 @@ def figure():
         d = A[A.gradient == g_].set_index("map").reindex(order); yy = np.arange(len(order)) + (k - 0.5) * 0.3
         a.hlines(yy, d.spin_null_lo, d.spin_null_hi, color="#c9c7c1", lw=4)
         a.plot(d.rho, yy, "o" if g_ == "G1" else "s", color=INK if g_ == "G1" else INK2, ms=6,
-               mfc=INK if g_ == "G1" else SURF, label=f"{g_} (bar: 95% spin null)")
+               mfc=INK if g_ == "G1" else SURF, label=f"{g_} (grey bar: 95% spin null)")
         for yi, r, p in zip(yy, d.rho, d.p_spin_holm9):
             if p < .05:
                 a.annotate("*", (r, yi), xytext=(6, -3), textcoords="offset points", fontsize=10)
     a.axvline(0, color=INK2, lw=0.8); a.set_yticks(range(len(order))); a.set_yticklabels([LAB[o] for o in order])
-    a.invert_yaxis(); a.set_xlabel("Spearman ρ, group parcel map × gradient"); a.legend(frameon=False, fontsize=8, loc="lower right")
+    a.invert_yaxis(); a.set_xlabel("Spearman ρ, group parcel map × gradient")
+    a.legend(frameon=False, fontsize=8, loc="upper center", bbox_to_anchor=(0.5, -0.13), ncol=2)
     a.set_title("C. Group-map alignment (* spin p Holm ×9 < .05)", loc="left", fontsize=9.5); a.grid(False)
     # paired
     a = ax[1, 1]; cons = list(PAIRED)
@@ -548,8 +553,9 @@ def figure():
                 a.annotate("*", (hi, yi), xytext=(4, -3), textcoords="offset points", fontsize=10)
     a.axvline(0, color=INK2, lw=0.8); a.set_yticks(range(len(cons)))
     a.set_yticklabels([f"{c}: {LAB[PAIRED[c][0]]} − {LAB[PAIRED[c][1]]}" for c in cons]); a.invert_yaxis()
-    a.set_xlabel("Δ Fisher z of participant alignment (95% bootstrap CI)"); a.legend(frameon=False, fontsize=8, loc="lower right")
-    a.set_title("D. Condition differences in alignment (* sign-flip Holm ×8 < .05)", loc="left", fontsize=9.5); a.grid(False)
+    a.set_xlabel("Δ Fisher z of participant alignment (95% bootstrap CI)")
+    a.legend(frameon=False, fontsize=8, loc="upper center", bbox_to_anchor=(0.5, -0.13), ncol=2)
+    a.set_title("D. Paired differences in alignment (* sign-flip Holm ×8 < .05)", loc="left", fontsize=9.5); a.grid(False)
     fig.suptitle("Localizer maps on the Margulies (2016) cortical gradients (Schaefer-400, cortex only; exploratory)",
                  x=0.01, ha="left", fontsize=11)
     fig.tight_layout(rect=(0, 0, 1, 0.97))

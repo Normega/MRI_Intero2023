@@ -986,6 +986,124 @@ Per-run 4 mm Intero and Extero maps (each vs Rest) of 48 participants (92 runs, 
 
 No registered result was changed.
 
+# Exploratory: cortical gradients and the breath-tracking correlate (Q1, Q4)
+
+**Both analyses are exploratory and post hoc.** Every earlier result had been seen. Each analysis was logged in `Preregistration/localizer_deviations.md` and committed (3e55705) before any alignment or brain–behaviour value was computed. A later row records the post hoc notes.
+- Script: `Scripts/intero2023_loc_cortgrad.py`. It is separate from the stage-C3 insula slope in `intero2023_loc_gradient.py`.
+- Tables: `Analysis/results/EXPLORATORY_LOC_cortgrad_*.csv` and `EXPLORATORY_LOC_Q4_*.csv`.
+- Figure: `Figures/localizer/loc_cortgrad.png`.
+
+**Downloaded maps** (kept outside the repo):
+- Schaefer-400 7-network: MNI152NLin2009cAsym res-02 from templateflow, and fsLR 32k from CBIG (commit 634f676).
+- Margulies et al. (2016) gradients G1–G3, fsLR 32k, via neuromaps 0.0.7 (OSF 4mw3a).
+- Installed: neuromaps 0.0.7, brainspace 0.3.0, brainsmash 0.11.0, statsmodels 0.15.0.
+- This reverses the stage-C3 note that the gradient projection could not be done.
+
+## Q1: where the localizer maps sit on the principal cortical gradients (tier A)
+
+**Method in brief.**
+- **Maps.** Nine per-participant effect maps (joint 6 mm, PSC):
+  - Intero, Extero, Match and Self vs Rest;
+  - C1, C2, C4 and C5;
+  - the breathing-run paced − free map (swc7p H1).
+- **Parcellation.** Each map is averaged in 394 Schaefer-400 cortical parcels. Six temporal-pole parcels are dropped because less than half of each lies in the brain mask.
+- **Gradients.** Each parcel takes the mean of Margulies G1 (unimodal → transmodal), G2 (somatomotor → visual) and G3 (default → frontoparietal/attention) over its fsLR vertices. Parcels correspond by label. Volumetric and surface centroids agree to a median of 3.8 mm.
+- **Tests.**
+  - *Group-map alignment:* Spearman ρ, tested against 10,000 Váša spins. BrainSMASH variogram surrogates are the sensitivity null. Holm ×9 within each gradient; G1 and G2 are primary and G3 descriptive.
+  - *Condition differences:* a paired sign-flip test on each participant's Fisher-z alignment, for 4 contrasts × G1/G2, Holm ×8.
+
+**Positive control: passed, narrowly.** Self vs Rest (N 54) aligns with the transmodal end of G1: ρ +.30, spin p .045, which meets the pre-set rule (ρ > 0, p < .05).
+- Under the BrainSMASH null, the same alignment gives p .081.
+- The control therefore holds with the spin null only. It is weak evidence that the pipeline recovers the expected Self pattern.
+- In the profile, Self is the only map that rises above Rest at the transmodal end (top decile +0.045 PSC).
+
+**Group-map alignment, Spearman ρ** (`EXPLORATORY_LOC_cortgrad_alignment.csv`). Each cell gives ρ, then spin p Holm ×9, then [BrainSMASH p Holm ×9]. Bold = p < .05 under both nulls.
+
+| Map | N | G1 (primary) | G2 (primary) | G3 (descriptive) |
+|---|---|---|---|---|
+| Intero vs Rest | 48 | −.21, .31 [1.0] | +.12, 1.0 [1.0] | **+.42, .0009 [.0009]** |
+| Extero vs Rest | 54 | +.17, .76 [1.0] | −.11, 1.0 [1.0] | **+.39, .0009 [.0009]** |
+| Match vs Rest | 54 | −.12, .76 [1.0] | −.03, 1.0 [1.0] | **+.21, .036 [.021]** |
+| Self vs Rest (C6) | 54 | +.30, .22 [.49] | −.24, 1.0 [1.0] | −.03, .73 [.71] |
+| **C1 Intero − Extero** | 48 | **−.48, .002 [.004]** | +.43, .16 [.17] | +.15, .26 [.16] |
+| C2 Intero − Self | 48 | −.31, .11 [.31] | +.34, .16 [.51] | **+.37, .0009 [.0009]** |
+| **C4 Match − Extero** | 54 | **−.41, .009 [.037]** | +.18, 1.0 [1.0] | **−.32, .002 [.0009]** |
+| C5 Match − Intero | 48 | +.21, .15 [1.0] | −.33, **.005** [.60] | **−.53, .0009 [.0009]** |
+| Breathing paced − free | 47 | +.06, .76 [1.0] | −.09, 1.0 [1.0] | **+.32, .0009 [.0012]** |
+
+**Condition differences in participant alignment** (`EXPLORATORY_LOC_cortgrad_paired.csv`). Δ = mean difference in Fisher z, with a 95% participant-bootstrap CI.
+
+| Contrast | N | G1: Δ [CI], dz, p Holm ×8 | G2: Δ [CI], dz, p Holm ×8 |
+|---|---|---|---|
+| C1 Intero − Extero | 48 | −0.18 [−0.24, −0.12], −0.85, **.0008** | +0.16 [0.10, 0.21], +0.79, **.0008** |
+| C2 Intero − Self | 48 | −0.24 [−0.33, −0.15], −0.78, **.0008** | +0.24 [0.18, 0.30], +1.10, **.0008** |
+| C4 Match − Extero | 54 | −0.14 [−0.21, −0.07], −0.55, **.0012** | +0.05 [−0.01, 0.11], +0.24, .18 |
+| C5 Match − Intero | 48 | +0.05 [−0.01, 0.11], +0.22, .18 | −0.09 [−0.15, −0.03], −0.42, **.013** |
+
+The participant alignments themselves are weak. Mean z lies between −0.16 and +0.14 on G1 and G2, so a single participant's map follows a gradient only loosely.
+
+**What the profiles show** (`EXPLORATORY_LOC_cortgrad_profiles.csv`; PSC by gradient decile).
+- **G1.**
+  - Intero and Match are deactivated in every decile, and most deeply at the transmodal end: Intero from −0.23 (lowest decile) to −0.30 (top); Match from −0.24 to −0.30.
+  - Extero is flat (−0.10 at both ends).
+  - So C1 is negative everywhere and most negative in the transmodal decile: −0.19, against −0.05 to −0.13 in deciles 1–8.
+  - **Reading.** The breath conditions deactivate the default/transmodal end more than the visual task does. Shifting attention to the breath moves the pattern away from the transmodal pole relative to Extero and Self. It does not move it toward that pole.
+- **G2.**
+  - Intero is flat along G2 (−0.19 to −0.28).
+  - Extero is most deactivated at the visual pole (−0.18 in the top decile, matching the calcarine and precuneus negatives of stage A).
+  - C1 is therefore near 0 at the visual pole (−0.01) and negative elsewhere.
+  - **Reading.** The positive C1 × G2 shift reflects Extero's visual-pole deactivation. It does not reflect an Intero shift toward the somatomotor pole.
+  - Match is somewhat more deactivated at the visual pole than Intero (C5 G2). That alignment is not robust to BrainSMASH (Holm .60).
+- **G3** (descriptive). Every task condition and the breathing-run paced − free map are least deactivated at the frontoparietal/attention end (Intero −0.32 in the lowest decile vs −0.13 in the top). They are most deactivated at the default and sensorimotor end. Relative to Rest, the attention networks are the least suppressed.
+- **Breathing runs.** Paced − free has no G1 or G2 alignment (ρ +.06, −.09; spin p .65, .60), only the shared G3 pattern. The swc7p deactivation is spread evenly along the hierarchy.
+
+**Against the plan's expectations.**
+- The plan's informative outcome was "Intero and Match shifted toward the somatomotor pole of G2 relative to Extero, with no G1 difference". It was **not** observed: the C1 difference is on G1, and the G2 effect comes from Extero. This reading is logged as post hoc.
+- Breath attention does separate from self-reference along G1 (C2 G1 dz −0.78). But it is not "unrelated to G1": Intero sits lower on G1 than Extero too.
+- As the plan expected, the gradients mainly restate stage A: the breath-focused deactivation is widespread, and deepest in sensorimotor and transmodal cortex.
+
+## Q4: does breath tracking have a brain correlate beyond pacer-following and breathing regularity?
+
+**What this can and cannot test.** There is no valid circle-tracking score. The Extero / Match logs keep only the last key in each window, and the scanner trigger usually overwrites the press (deviations log, 2026-11-28). So this analysis **does not isolate a "breath-specific" tracking effect beyond visual tracking.** It asks whether breath-tracking accuracy relates to the brain response once pacer-following (Match PLV), breathing regularity (Intero `period_cv`) and protocol version are held constant.
+
+**Model.**
+- One FLAME 1 model per map: C1 and Intero vs Rest, joint 6 mm.
+- N 34, the Intero set ∩ all covariates (4 on v1).
+- Covariates, all demeaned: tracking PLV (median .80, range .40–.94), Match PLV, `period_cv` and protocol.
+- VIF ≤ 2.83, so Match PLV was kept.
+- Tracking term tested two-sided:
+  - voxel FWE in the five a-priori parcels, ×5;
+  - whole-brain cluster FWE at z > 3.09.
+- **Check.** The zero-order Spearman ρ between tracking and the C1 mask means (−.05 to −.25) reproduces the stage-C1 rows for the same 34.
+
+**Result: null everywhere** (`EXPLORATORY_LOC_Q4_roi.csv`, `_maskmeans.csv`, `_wholebrain.csv`).
+
+| Parcel | C1: peak z, p ×5 | C1 mask mean: partial r, p (perm.), BF01 | Intero vs Rest: peak z, p ×5 | Intero mask mean: partial r, p (perm.), BF01 |
+|---|---|---|---|---|
+| AInsL | −1.89, 1.0 | −.11, .55, 2.2 | +1.92, 1.0 | +.06, .75, 2.5 |
+| AInsR | −2.14, 1.0 | −.19, .29, 1.6 | +1.75, 1.0 | −.02, .92, 2.6 |
+| dACC | −2.53, 1.0 | −.18, .35, 1.7 | +2.32, 1.0 | +.06, .75, 2.5 |
+| PIns | −1.97, 1.0 | −.18, .34, 1.7 | +2.81, .59 | +.02, .90, 2.6 |
+| IEAT sphere | −2.53, 1.0 | −.21, .25, 1.4 | −1.83, 1.0 | +.01, .97, 2.6 |
+
+- No voxel survives in any parcel; the smallest corrected p is .59. No whole-brain cluster survives either: the largest is 24 voxels, cluster p_FWE 1.0.
+- The mask-mean Bayes factors lean toward the null but are weak:
+  - BF01 1.4–2.2 for C1;
+  - BF01 2.5–2.6 for Intero vs Rest;
+  - JZS r = .707. At r = .354, BF10 is 0.66–0.92 for C1 and 0.57–0.59 for Intero.
+- Adjusting for the covariates does not reveal a tracking correlate hidden by suppression. The C1 partial correlations (−.11 to −.21) are of the same size and sign as the zero-order ones.
+- **Power.** The adjusted tracking score has a reliability of about .5 at best. With N 34, the test could detect only observed |r| ≳ .46. This result therefore cannot exclude small true relations; it adds no positive evidence for one.
+
+## Deviations (Q1, Q4)
+- **Logged before running (3e55705):** both full specifications, and the label-free checks (install, downloads, parcel coverage, label and centroid correspondence, gradient orientation, Q4 N and VIFs).
+- **Post hoc (logged after the tables were seen):**
+  - a figure-code fix (no value changed);
+  - the positive control's narrow margin, and its p .081 under BrainSMASH;
+  - the reading that the plan's G2 pattern was not observed;
+  - the C5 G2 alignment marked as not robust.
+- **Not run:** tier B (participant gradients); a surface refit of the first levels (the plan's sensitivity).
+- No registered result was changed.
+
 # Synthesis: what the localizer shows about attention to the breath
 
 **What it shows.**

@@ -1,0 +1,2 @@
+control,N,rho,p_spin,rule,passed
+C6_self toward transmodal end of G1,54,0.2962066518111806,0.044795520447955206,rho > 0 and two-sided spin p < .05,True
