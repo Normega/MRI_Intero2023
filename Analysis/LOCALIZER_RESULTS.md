@@ -629,3 +629,195 @@ Match − Intero (C5, the L2 / H1-replication contrast) is much stronger:
 **Result 4: Self vs Rest becomes more positive overall without the tissue regressors.** Whole-brain dz moves from −0.09 to +0.25.
 
 The registered model stays primary. None of the registered verdicts changes.
+
+# Stage C2 (exploratory): connectivity
+
+**Everything in this section is exploratory** (plan §6, §8 T5, §9). No result here tests a registered hypothesis, and none changes an earlier result.
+- Choices and readings were committed before any connectivity value was computed (9228853): `Analysis/localizer_stageC2_implementation_notes.md` and `Preregistration/localizer_deviations.md`.
+- Scripts: `Scripts/intero2023_loc_connectivity.py` (network FC, background FC, T5) and `Scripts/intero2023_loc_gppi.py` (gPPI).
+- Tables: `Analysis/results/EXPLORATORY_LOC_C2_*.csv`.
+- Figures: `Figures/localizer/loc_C2_network_fc.png` and `loc_C2_gppi_maps.png`.
+
+**Method in one paragraph.** Network FC uses the registered H7 pipeline (swc7p), imported unchanged:
+- unsmoothed BOLD, band-passed at 0.01–0.1 Hz;
+- the median signal of each CAREN network;
+- block windows shifted by 4 s, with FD > 0.5 mm volumes dropped;
+- each window demeaned, then windows concatenated within condition (median 59–60 volumes per condition);
+- Fisher z per pair, then a paired t on each condition difference.
+
+There are two versions:
+- **network FC:** nuisance regression only, so evoked responses stay in the signal;
+- **background FC:** the localizer task regressors are also removed. This is the form identical to H7.
+
+The plan lists both. How they were read is logged in the deviations file.
+
+**Checks.**
+- **H7 reproduction.** The T5 code recomputes the H7 network values for all 41 T5 participants exactly (max |Δz| 2e-11; `Analysis/localizer_stageC2_verification.json`).
+- **gPPI design.** Each condition boxcar, convolved on the microtime grid, matches nilearn's regressor (r ≥ .9997).
+- **Deconvolution.** On a simulated neural signal it recovers r .87–.997, depending on noise (`Analysis/localizer_gppi_design_check.json`). On the real seeds, the reconvolved fit is median r .77–.88 by seed (`EXPLORATORY_LOC_C2_gppi_firstlevel_qc.csv`).
+- **Volume rule.** The pre-set rule (≥ 2 windows and ≥ 20 volumes per condition) removed two one-run participants from the Intero contrasts, sub-058 and sub-108, so N is 46. It removed sub-058 from C4, so N is 53.
+
+## Network FC: primary pairs (plan §6)
+
+Values are dz of the paired Fisher-z difference, with two-sided p. Holm ×2 applies within C1.
+
+| Contrast, pair | Network FC (nuisance only) | + global signal partialled | Background FC (task removed) | + global signal partialled |
+|---|---|---|---|---|
+| C1 Intero − Extero, SAL–SMN (N 46) | +0.45, p .0035 (Holm .0035) | +0.09, p .54 | +0.29, p .058 (Holm .058) | +0.12, p .44 |
+| C1 Intero − Extero, SAL–DMN (N 46) | +0.69, p 3e-5 (Holm 5e-5) | +0.58, p .0003 | +0.48, p .0020 (Holm .0040) | +0.51, p .0013 |
+| C2 Intero − Self, SAL–DMN (N 46) | +0.75, p 7e-6 | +0.30, p .046 | +0.37, p .016 | +0.25, p .10 |
+
+- **SAL–DMN.** Coupling is higher during Intero than Extero. This holds:
+  - in both analyses;
+  - with the global signal partialled out;
+  - with the five-network mean partialled out (network FC +0.44, p .0045; background +0.41, p .008).
+
+  By the pre-set global-signal rule it can be called a network-coupling difference.
+  - After the global-signal partial, SAL and DMN are anticorrelated in both conditions. Intero is less anticorrelated: background −0.20 vs −0.38 in mean z.
+  - The difference therefore means "less anticorrelated during Intero", not "more positively coupled".
+- **SAL–SMN.** The C1 difference is present in network FC. It is weaker in background FC (p .058). It disappears in both once the global signal is partialled out (p .54 / .44), so it is **not separable from the global signal**.
+- **C2 SAL–DMN.** Strong in network FC. Smaller in background FC (p .016). After the global-signal partial: p .046 in network FC and .10 in background FC.
+- **Specifications.** The same pattern holds for median or mean signal and for a 4 or 6 s shift. C1 SAL–DMN p ≤ .002 in every specification, both analyses, with and without the global-signal partial. C1 SAL–SMN with the global signal partialled out has p ≥ .44 in every specification, both analyses.
+
+## Network FC: all 10 pairs (BH-FDR over 10; `EXPLORATORY_LOC_C2_netfc.csv`)
+
+| Contrast (N) | Network FC: pairs FDR < .05 | Background FC: pairs FDR < .05 | Background FC, global signal partialled |
+|---|---|---|---|
+| C1 Intero − Extero (46) | 6, all Intero > Extero: SAL–SMN, SAL–ECN, SAL–DMN, SMN–ECN, SMN–DMN, ECN–DMN | 4, all Intero > Extero: SAL–DMN, SMN–ECN, SMN–DMN, ECN–DMN (largest ECN–DMN +0.64, p 8e-5) | 5. Intero > Extero: SAL–DMN, SMN–DMN, ECN–DMN (+0.80, p 2e-6). Intero < Extero: SAL–VIS −0.40, SMN–VIS −0.42 |
+| C2 Intero − Self (46) | 8, all Intero > Self | 6, all Intero > Self | 0 |
+| C4 Match − Extero (53) | 3, all Match > Extero: SAL–SMN, SAL–ECN, SMN–ECN | 0 | 0 |
+| C5 Match − Intero (46) | 2, both Match < Intero: SAL–DMN −0.44, ECN–DMN −0.55 | 1: ECN–DMN −0.48 | 2: SAL–DMN −0.43, ECN–DMN −0.57 |
+
+- The robust pattern involves the DMN. Its coupling with SAL, SMN and ECN is higher during free-breath tracking (Intero) than during either pacer condition: C1 against Extero, and C5 (Match lower than Intero).
+- It survives task removal and the global-signal partial.
+- The C2 (vs Self) and C4 (Match vs Extero) differences do not survive the global-signal partial in background FC.
+
+## Amplitude, co-activation, and what they mean for the coupling differences (H7 checks)
+
+**Amplitude** is the temporal SD per network, C1 Intero − Extero:
+- Network FC: SD is higher during Intero in SAL (dz +0.54, p .001), SMN (+0.40, p .010) and ECN (+0.44, p .005). DMN and VIS do not differ (+0.01, +0.20).
+- Background FC: no network differs (dz −0.25 to +0.21, all p ≥ .10).
+
+So once the evoked responses are removed, the coupling differences are not accompanied by amplitude differences.
+
+**Co-activation** is the network-mean stage-A C1 effect. Intero is lower than Extero in SAL (dz −0.57), SMN (−0.77), ECN (−0.68) and DMN (−0.91), all p < .001; VIS −0.08. This is the stage-A deactivation. The coupling increases occur alongside lower mean activity.
+
+## Physiology and the CSF regressor
+
+The physiology regressor is added, and the model is compared with the base model in the same participants. Values are dz (p).
+
+| Pair, analysis | RVT set (N 31): base → +RVT | PetCO2 set (N 23): base → +PetCO2 |
+|---|---|---|
+| C1 SAL–DMN, network FC | +0.65 (.0011) → +0.54 (.0053) | +0.56 (.013) → +0.41 (.063) |
+| C1 SAL–DMN, background FC | +0.48 (.012) → +0.44 (.020) | +0.32 (.14) → +0.36 (.094) |
+| C1 SAL–SMN, network FC | +0.34 (.067) → +0.30 (.10) | +0.49 (.027) → +0.40 (.068) |
+| C1 SAL–SMN, background FC | +0.24 (.20) → +0.19 (.31) | +0.22 (.29) → +0.26 (.23) |
+| C2 SAL–DMN, network FC | +0.83 (.0001) → +0.79 (.0001) | +0.73 (.0019) → +0.64 (.0056) |
+| C2 SAL–DMN, background FC | +0.59 (.0027) → +0.66 (.0010) | +0.43 (.0496) → +0.50 (.025) |
+
+- **RVT⊗RRF** changes the primary pairs little.
+- **PetCO2.** In the small PetCO2 set, the C1 SAL–DMN network-FC effect falls from dz 0.56 to 0.41. Its background-FC effect was already weak in that subset. A partial CO2 contribution cannot be excluded at N 23.
+- **CSF regressor (`nocsf` sensitivity).** The fMRIPrep CSF regressor is task-locked: it falls in task blocks relative to Rest. Dropping it shifts the numbers slightly:
+  - the network-FC amplitude differences grow (SAL dz +0.64, SMN +0.44, ECN +0.42);
+  - background C1 SAL–SMN becomes p .016 (dz +0.37);
+  - with the global signal partialled out, that pair stays null (+0.21, p .17);
+  - C1 SAL–DMN is unchanged (network FC +0.69; background FC +0.53, p .0009).
+
+  Removing the regressor therefore takes out a little condition-locked variance. It does not change any reading above.
+
+## gPPI (seeds: gate-primary fROIs and a-priori masks; whole brain; FLAME 1, cluster FWE at z > 3.09, two-sided)
+
+- 25 clusters survive, in 11 of the 20 seed × contrast maps.
+- 11 of them, in 6 maps, would also survive a further ×20 across maps (p < .0025, marked †).
+- Positive = stronger coupling with the seed in the first condition.
+- `EXPLORATORY_LOC_C2_gppi_clusters.csv`; Harvard–Oxford labels at the peak.
+
+| Seed (N) | Contrast | Clusters: sign, voxels, peak MNI, label, p_FWE |
+|---|---|---|
+| fROI AInsL (44) | C1 | +158, (39.5, 31.5, −6.5), R frontal orbital / IFG pars triangularis, 9e-6†; +61, (33.5, 11.5, 63.5), R MFG, .021 |
+| fROI AInsL (44) | C4 | +73, (49.5, 33.5, 25.5), R MFG / frontal pole, .012 |
+| fROI AInsR (LOSO; 44) | C1 | +215, (51.5, 29.5, −4.5), R IFG pars triangularis, 8e-6†; +122, (39.5, 35.5, −12.5), R frontal pole / orbital, .0014†; +78, (53.5, 17.5, 15.5), R IFG pars opercularis, .024; +78, (−2.5, −36.5, 55.5), medial pre/postcentral, .024; +77, (41.5, −16.5, −28.5), R temporal fusiform, .026 |
+| fROI AInsR (LOSO; 44) | C4 | +73, (−56.5, 5.5, 15.5), L precentral, .046 |
+| fROI dACC (44) | C1 | +86, (23.5, 57.5, 23.5), R frontal pole, .008; +63, (45.5, −60.5, 25.5), R lateral occipital / angular, .047 |
+| fROI dACC (44) | C4 | −133, (−4.5, −76.5, −6.5), L lingual, 8e-5†; +91, (25.5, 57.5, 25.5), R frontal pole, .0019† |
+| fROI PIns (44) | C4 | −196, (1.5, −80.5, −0.5), lingual / intracalcarine, .0002†; −160, (−4.5, 47.5, −12.5), medial frontal, .0011†; +94, (−62.5, −48.5, 33.5), L supramarginal / angular, .031 |
+| fROI sphere (LOSO; 44) | C1 | +113, (−56.5, 7.5, 15.5), L precentral / IFG pars opercularis, .0064; +91, (45.5, −44.5, 57.5), R supramarginal / superior parietal, .023 |
+| mask AInsR (48) | C1 | +150, (51.5, 45.5, −4.5), R frontal pole, .0014† |
+| mask dACC (54) | C4 | −97, (1.5, −86.5, −2.5), lingual / intracalcarine, .021; −91, (37.5, −88.5, 15.5), R lateral occipital / occipital pole, .030 |
+| mask PIns (54) | C4 | −331, (−4.5, 47.5, −14.5), medial frontal, 1e-7†; −234, (−18.5, −96.5, −10.5), L occipital pole, 5e-6†; −171, (−6.5, −76.5, −6.5), L lingual, .0001†; −114, (23.5, −72.5, −4.5), R occipital fusiform, .0029 |
+
+These maps have no surviving cluster:
+- fROI PIns C1 (smallest p .17);
+- fROI sphere C4 (.077);
+- masks AInsL (C1 .47, C4 .61), dACC C1 (.76), PIns C1 (.29) and sphere (C1 .069, C4 .050);
+- mask AInsR C4 (.17).
+
+- **C1 (Intero − Extero).** Both anterior-insula seeds couple more with right ventrolateral prefrontal cortex during Intero: right IFG, orbital and frontal pole. So does the a-priori AInsR mask.
+  - For the AInsR seeds this cluster lies next to the seed, so local spread at 6 mm may contribute.
+  - For the AInsL fROI it is contralateral.
+  - The dACC and sphere fROIs give smaller frontal-pole, precentral and parietal clusters.
+  - Every C1 cluster is positive.
+- **C4 (Match − Extero).** The posterior-insula and dACC seeds (fROI and mask) couple **less** with visual cortex (lingual, intracalcarine, occipital pole) and with ventromedial prefrontal cortex during Match. Both conditions show the same pacer circle and take presses.
+- **fROI vs mask.** The fROI seeds give surviving C1 clusters more often than the a-priori masks: 4 of 5 fROI seeds against 1 of 5 masks. The fROI seeds are defined on C1, so this is expected and is not independent evidence.
+- **Within-network summaries** (mean gPPI effect per CAREN network, seed voxels excluded; `EXPLORATORY_LOC_C2_gppi_networks.csv`). None of the 100 survives FDR (over 50 per contrast). The smallest is sphere fROI C1 → ECN, dz +0.46, p .0038, q .19. 8 of 100 have uncorrected p < .05.
+- **+RVT check (rule fixed before running; `EXPLORATORY_LOC_C2_gppi_rvt.csv`).** Every seed with a surviving cluster was refitted with RVT⊗RRF in the participants with RVT (29 fROI, 32 or 36 mask). In each of the 25 clusters, the mean effect keeps its sign. +RVT retains 63–164% of the base mean in the same participants. The clusters were selected on the base maps, so the base means are inflated. The check concerns the change with RVT, not the size.
+- **Deconvolution caveat.** GCV regularises heavily (median λ 0.20–0.57 × s_max²). In 25 of the 950 seed-runs, λ sits at the top of the grid. The deconvolved signal is then shrunk towards zero, and those runs carry little PPI information.
+
+## T5: fROI-node coupling in the breathing runs, compared with H7 (`EXPLORATORY_LOC_C2_T5*.csv`)
+
+**Nodes.** The five gate-primary fROIs, coupled with the CAREN networks (with the fROI voxels removed) and with each other. That gives 35 pairs, with BH-FDR over 35. The pipeline is H7 Model A.
+
+| | T5a paced − free (N 41) | T5b aware − unaware (N 21) |
+|---|---|---|
+| fROI pairs FDR < .05 | 1: **AInsL–AInsR lower under pacing**, dz −0.58, p .0006, q .022 (mean z 0.10 vs 0.20) | 1: **AInsL fROI–DMN higher when aware**, dz +0.92, p .0004, q .015 (0.28 vs 0.00) |
+| Global signal partialled | −0.51, p .0022 (q .077) | +0.67, p .0063 (q .22) |
+| Five-network mean partialled | −0.48, p .0040 (q .14) | +0.36, p .12 |
+| Other specifications (mean signal, 6 s shift) | q ≤ .032 in all four | q ≤ .015 in all four. AInsL–VIS also reaches q .031 at 6 s |
+| RVT set: base → +RVT | N 24: −0.67 (.0035) → −0.65 (.0040) | N 13: +0.92 (.0061) → +0.75 (.019) |
+| PetCO2 set: base → +PetCO2 | N 21: −0.51 (.031) → −0.37 (.11) | N 12: +0.85 (.013) → +0.60 (.063) |
+| fROI amplitude (SD) | lower under pacing in all five fROIs, dz −0.33 to −0.50, p .003–.041 | dACC −0.46 (p .047); others p ≥ .24 |
+| **H7 network pairs, same participants** (from the registered H7 files) | SMN–VIS +0.48, p .0041, q .041 (in the full 47, q .055); SAL–VIS +0.38, p .021; the registered pairs SAL–SMN −0.20 (p .21) and SAL–ECN +0.10 (p .52) are null | none FDR < .05; SAL–DMN +0.53, p .024 (q .21); SAL–SMN −0.02, SAL–ECN +0.12 |
+
+**How T5 compares with H7.**
+- **Paced − free.** The fROI level shows one difference that H7's network level did not have: the two anterior-insula fROIs decouple under paced breathing.
+  - It comes with lower fROI amplitude under pacing, as H7 found for whole networks.
+  - It holds with the global signal partialled out (p .0022), so by the pre-set rule it is a coupling difference. It does not pass FDR after either partial.
+  - It weakens in the PetCO2 subset.
+  - Pacing lowers both coupling and signal amplitude here. The H7 caution about amplitude-driven correlation changes applies in reverse: lower variance with stable noise would also lower measured correlation.
+- **Aware − unaware.** The AInsL fROI–DMN result has the same direction as H7b's SAL–DMN (p .024, not FDR), but is larger.
+  - It rests on 21 participants.
+  - It weakens after the global-signal partial (p .0063, q .22) and the five-network partial (p .12).
+  - It shrinks with +RVT and +PetCO2 in subsets of 13 and 12.
+  - It should be treated as a lead to check, not a finding.
+  - Neither T5 result is the registered H7 pair (SAL–SMN, SAL–ECN). At the fROI level, those pairs remain null.
+
+## Reading
+
+- **Network FC.** During free-breath tracking (Intero), the default-mode network is less anticorrelated with the salience network, and more coupled with the somatomotor and executive networks, than during either pacer task (Extero, Match).
+  - This survives removal of the evoked responses, the global-signal and five-network partials, and RVT.
+  - It occurs alongside the stage-A deactivation, with no amplitude difference in background FC.
+  - The plan's other primary pair, C1 SAL–SMN, is a global-signal effect.
+  - Intero vs Self (C2) and Match vs Extero (C4) differences do not survive the global-signal partial in background FC.
+- **gPPI.**
+  - The anterior-insula seeds couple more with right ventrolateral prefrontal cortex during Intero than Extero.
+  - Posterior-insula and dACC seeds couple less with visual and ventromedial prefrontal cortex during Match than Extero.
+  - The clusters are modest (61–331 voxels), are not corrected across the 20 maps beyond the ×20 count above, and are stable to +RVT.
+- **T5.** The localizer fROIs add two exploratory leads to H7's null network results: anterior-insula decoupling under pacing, and AInsL–DMN coupling with awareness (N 21). Neither is a registered pair, and the awareness result is fragile.
+- **Caveats** (plan §11).
+  - C1 also differs in agency, press predictability and breathing (Intero breathing is deeper, RVT dz .88).
+  - Corrections for RVT⊗RRF and PetCO2 are partial models of respiratory BOLD, and the PetCO2 subsets are small.
+  - "Network FC" and "background FC" follow the reading logged before running.
+
+## Deviations (stage C2)
+
+All were logged in `Preregistration/localizer_deviations.md` before running (one entry, 9228853). They are:
+- the network-FC / background-FC reading;
+- added contrasts C4 and C5;
+- the volume rule;
+- the specifications without FIR;
+- the added `nocsf` sensitivity;
+- the gPPI seeds, sets, deconvolution, multiplicity and +RVT rule;
+- T5 nodes and voxel exclusions;
+- the global-signal reading rule.
+
+The gPPI figure shows only maps with a cluster that also survives ×20. That is a display choice; all 25 clusters are in the table. No post hoc analysis was added, and no earlier result was changed.

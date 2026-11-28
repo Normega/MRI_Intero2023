@@ -1,0 +1,1725 @@
+contrast,sign,size_vox,peak_z,peak_mni,p_cluster,p_fwe_two_sided,labels,seed,gppi_contrast,N
+gPPI C1 seed froiAInsL,+,158,4.16,"[39.5, 31.5, -6.5]",4.29e-06,8.58e-06,"20% Frontal Orbital Cortex, 8% Inferior Frontal Gyrus, pars triangularis, 5% Frontal Pole, 1% Frontal Operculum Cortex; 65% Right Cerebral White Matter, 35% Right Cerebral Cortex",froiAInsL,C1,44
+gPPI C1 seed froiAInsL,+,61,4.14,"[33.5, 11.5, 63.5]",0.0105,0.021,"28% Middle Frontal Gyrus, 3% Superior Frontal Gyrus; 48% Right Cerebral Cortex, 0% Right Cerebral White Matter",froiAInsL,C1,44
+gPPI C1 seed froiAInsL,+,35,3.71,"[-54.5, 3.5, 17.5]",0.149,0.298,"63% Precentral Gyrus, 5% Inferior Frontal Gyrus, pars opercularis; 76% Left Cerebral Cortex, 24% Left Cerebral White Matter",froiAInsL,C1,44
+gPPI C1 seed froiAInsL,+,29,4.09,"[29.5, 21.5, -8.5]",0.282,0.564,"41% Frontal Orbital Cortex, 30% Insular Cortex; 91% Right Cerebral Cortex, 9% Right Cerebral White Matter",froiAInsL,C1,44
+gPPI C1 seed froiAInsL,+,24,4.09,"[-36.5, 23.5, -10.5]",0.465,0.93,"63% Frontal Orbital Cortex, 1% Insular Cortex; 67% Left Cerebral Cortex, 32% Left Cerebral White Matter",froiAInsL,C1,44
+gPPI C1 seed froiAInsL,+,24,3.67,"[43.5, 11.5, -0.5]",0.465,0.93,"27% Frontal Operculum Cortex, 19% Central Opercular Cortex, 18% Insular Cortex, 3% Inferior Frontal Gyrus, pars opercularis; 90% Right Cerebral Cortex, 4% Right Cerebral White Matter",froiAInsL,C1,44
+gPPI C1 seed froiAInsL,+,22,3.5,"[-34.5, 17.5, 3.5]",0.558,1.0,"45% Insular Cortex, 17% Frontal Operculum Cortex, 2% Central Opercular Cortex, 1% Frontal Orbital Cortex; 96% Left Cerebral Cortex, 3% Left Cerebral White Matter",froiAInsL,C1,44
+gPPI C1 seed froiAInsL,+,20,3.79,"[-8.5, 15.5, 55.5]",0.658,1.0,"19% Superior Frontal Gyrus, 2% Paracingulate Gyrus, 2% Juxtapositional Lobule Cortex (formerly Supplementary Motor Cortex); 64% Left Cerebral White Matter, 36% Left Cerebral Cortex",froiAInsL,C1,44
+gPPI C1 seed froiAInsL,+,16,4.15,"[-6.5, 33.5, -4.5]",0.853,1.0,"47% Cingulate Gyrus, anterior division, 10% Paracingulate Gyrus, 4% Subcallosal Cortex; 65% Left Cerebral Cortex, 35% Left Cerebral White Matter",froiAInsL,C1,44
+gPPI C1 seed froiAInsL,+,14,3.83,"[41.5, -60.5, 5.5]",0.926,1.0,"17% Lateral Occipital Cortex, inferior division, 13% Middle Temporal Gyrus, temporooccipital part; 67% Right Cerebral White Matter, 33% Right Cerebral Cortex",froiAInsL,C1,44
+gPPI C1 seed froiAInsL,+,14,3.53,"[-40.5, 41.5, -8.5]",0.926,1.0,,froiAInsL,C1,44
+gPPI C1 seed froiAInsL,-,14,-3.58,"[31.5, -2.5, 25.5]",0.926,1.0,,froiAInsL,C1,44
+gPPI C1 seed froiAInsL,+,12,3.7,"[13.5, -6.5, 19.5]",0.973,1.0,,froiAInsL,C1,44
+gPPI C1 seed froiAInsL,+,10,3.9,"[31.5, -12.5, -10.5]",0.994,1.0,,froiAInsL,C1,44
+gPPI C1 seed froiAInsL,+,8,3.41,"[51.5, 19.5, 17.5]",0.999,1.0,,froiAInsL,C1,44
+gPPI C1 seed froiAInsL,+,6,3.55,"[9.5, -24.5, -12.5]",1.0,1.0,,froiAInsL,C1,44
+gPPI C1 seed froiAInsL,+,6,3.68,"[45.5, 13.5, 21.5]",1.0,1.0,,froiAInsL,C1,44
+gPPI C1 seed froiAInsL,+,5,3.49,"[17.5, -16.5, 39.5]",1.0,1.0,,froiAInsL,C1,44
+gPPI C1 seed froiAInsL,+,5,3.29,"[51.5, -62.5, 35.5]",1.0,1.0,,froiAInsL,C1,44
+gPPI C1 seed froiAInsL,+,5,3.4,"[55.5, 15.5, 27.5]",1.0,1.0,,froiAInsL,C1,44
+gPPI C1 seed froiAInsL,+,5,3.67,"[49.5, 5.5, 25.5]",1.0,1.0,,froiAInsL,C1,44
+gPPI C1 seed froiAInsL,+,5,3.22,"[59.5, 21.5, 17.5]",1.0,1.0,,froiAInsL,C1,44
+gPPI C1 seed froiAInsL,+,5,3.43,"[1.5, -62.5, -32.5]",1.0,1.0,,froiAInsL,C1,44
+gPPI C1 seed froiAInsL,+,5,3.47,"[-24.5, -48.5, 63.5]",1.0,1.0,,froiAInsL,C1,44
+gPPI C1 seed froiAInsL,+,5,3.34,"[-30.5, 17.5, -18.5]",1.0,1.0,,froiAInsL,C1,44
+gPPI C1 seed froiAInsL,+,5,3.31,"[-38.5, 13.5, -6.5]",1.0,1.0,,froiAInsL,C1,44
+gPPI C1 seed froiAInsL,+,5,3.55,"[-26.5, 53.5, -8.5]",1.0,1.0,,froiAInsL,C1,44
+gPPI C1 seed froiAInsL,+,5,3.27,"[49.5, 49.5, -2.5]",1.0,1.0,,froiAInsL,C1,44
+gPPI C1 seed froiAInsL,+,4,3.46,"[19.5, 29.5, 59.5]",1.0,1.0,,froiAInsL,C1,44
+gPPI C1 seed froiAInsL,+,4,3.33,"[-30.5, -16.5, -38.5]",1.0,1.0,,froiAInsL,C1,44
+gPPI C1 seed froiAInsL,+,4,3.21,"[-48.5, 47.5, 13.5]",1.0,1.0,,froiAInsL,C1,44
+gPPI C1 seed froiAInsL,+,4,3.13,"[7.5, 57.5, -16.5]",1.0,1.0,,froiAInsL,C1,44
+gPPI C1 seed froiAInsL,+,4,3.47,"[41.5, -14.5, -28.5]",1.0,1.0,,froiAInsL,C1,44
+gPPI C1 seed froiAInsL,+,4,3.21,"[-58.5, 15.5, -0.5]",1.0,1.0,,froiAInsL,C1,44
+gPPI C1 seed froiAInsL,+,3,3.23,"[-18.5, 3.5, 13.5]",1.0,1.0,,froiAInsL,C1,44
+gPPI C1 seed froiAInsL,+,3,3.26,"[13.5, 19.5, 57.5]",1.0,1.0,,froiAInsL,C1,44
+gPPI C1 seed froiAInsL,+,3,3.37,"[41.5, 13.5, -10.5]",1.0,1.0,,froiAInsL,C1,44
+gPPI C1 seed froiAInsL,+,3,3.13,"[41.5, 45.5, 5.5]",1.0,1.0,,froiAInsL,C1,44
+gPPI C1 seed froiAInsL,-,3,-3.41,"[17.5, 25.5, 39.5]",1.0,1.0,,froiAInsL,C1,44
+gPPI C1 seed froiAInsL,-,3,-3.34,"[-16.5, 51.5, 5.5]",1.0,1.0,,froiAInsL,C1,44
+gPPI C1 seed froiAInsL,-,3,-3.32,"[29.5, -20.5, 31.5]",1.0,1.0,,froiAInsL,C1,44
+gPPI C1 seed froiAInsL,+,3,3.41,"[27.5, 3.5, -28.5]",1.0,1.0,,froiAInsL,C1,44
+gPPI C1 seed froiAInsL,+,2,3.22,"[-38.5, 45.5, -0.5]",1.0,1.0,,froiAInsL,C1,44
+gPPI C1 seed froiAInsL,+,2,3.15,"[35.5, 57.5, -2.5]",1.0,1.0,,froiAInsL,C1,44
+gPPI C1 seed froiAInsL,+,2,3.22,"[19.5, -22.5, 61.5]",1.0,1.0,,froiAInsL,C1,44
+gPPI C1 seed froiAInsL,+,2,3.16,"[-26.5, 7.5, -34.5]",1.0,1.0,,froiAInsL,C1,44
+gPPI C1 seed froiAInsL,+,2,3.26,"[-36.5, 29.5, 39.5]",1.0,1.0,,froiAInsL,C1,44
+gPPI C1 seed froiAInsL,+,2,3.25,"[11.5, -20.5, -24.5]",1.0,1.0,,froiAInsL,C1,44
+gPPI C1 seed froiAInsL,+,2,3.18,"[-30.5, 3.5, -36.5]",1.0,1.0,,froiAInsL,C1,44
+gPPI C1 seed froiAInsL,+,2,3.21,"[53.5, 31.5, 27.5]",1.0,1.0,,froiAInsL,C1,44
+gPPI C1 seed froiAInsL,-,2,-3.18,"[37.5, -24.5, 49.5]",1.0,1.0,,froiAInsL,C1,44
+gPPI C1 seed froiAInsL,-,2,-3.18,"[-4.5, -84.5, 43.5]",1.0,1.0,,froiAInsL,C1,44
+gPPI C1 seed froiAInsL,-,2,-3.18,"[-8.5, -72.5, -4.5]",1.0,1.0,,froiAInsL,C1,44
+gPPI C1 seed froiAInsL,-,2,-3.28,"[1.5, -36.5, -8.5]",1.0,1.0,,froiAInsL,C1,44
+gPPI C1 seed froiAInsL,-,2,-3.24,"[19.5, -8.5, 35.5]",1.0,1.0,,froiAInsL,C1,44
+gPPI C1 seed froiAInsL,+,1,3.2,"[1.5, 25.5, 43.5]",1.0,1.0,,froiAInsL,C1,44
+gPPI C1 seed froiAInsL,+,1,3.11,"[39.5, 9.5, 61.5]",1.0,1.0,,froiAInsL,C1,44
+gPPI C1 seed froiAInsL,+,1,3.11,"[23.5, -36.5, 71.5]",1.0,1.0,,froiAInsL,C1,44
+gPPI C1 seed froiAInsL,+,1,3.15,"[-46.5, -36.5, 21.5]",1.0,1.0,,froiAInsL,C1,44
+gPPI C1 seed froiAInsL,+,1,3.25,"[-32.5, 25.5, 37.5]",1.0,1.0,,froiAInsL,C1,44
+gPPI C1 seed froiAInsL,+,1,3.13,"[33.5, 9.5, -28.5]",1.0,1.0,,froiAInsL,C1,44
+gPPI C1 seed froiAInsL,+,1,3.25,"[-34.5, 1.5, -34.5]",1.0,1.0,,froiAInsL,C1,44
+gPPI C1 seed froiAInsL,+,1,3.21,"[-46.5, -10.5, -12.5]",1.0,1.0,,froiAInsL,C1,44
+gPPI C1 seed froiAInsL,+,1,3.3,"[5.5, 27.5, -12.5]",1.0,1.0,,froiAInsL,C1,44
+gPPI C1 seed froiAInsL,+,1,3.2,"[15.5, -14.5, -6.5]",1.0,1.0,,froiAInsL,C1,44
+gPPI C1 seed froiAInsL,+,1,3.25,"[-12.5, -54.5, -22.5]",1.0,1.0,,froiAInsL,C1,44
+gPPI C1 seed froiAInsL,+,1,3.12,"[65.5, -44.5, 15.5]",1.0,1.0,,froiAInsL,C1,44
+gPPI C1 seed froiAInsL,+,1,3.13,"[37.5, 55.5, 9.5]",1.0,1.0,,froiAInsL,C1,44
+gPPI C1 seed froiAInsL,+,1,3.14,"[-20.5, 3.5, 9.5]",1.0,1.0,,froiAInsL,C1,44
+gPPI C1 seed froiAInsL,+,1,3.09,"[49.5, -6.5, 9.5]",1.0,1.0,,froiAInsL,C1,44
+gPPI C1 seed froiAInsL,+,1,3.13,"[-38.5, 47.5, 5.5]",1.0,1.0,,froiAInsL,C1,44
+gPPI C1 seed froiAInsL,+,1,3.12,"[-16.5, 7.5, 3.5]",1.0,1.0,,froiAInsL,C1,44
+gPPI C1 seed froiAInsL,+,1,3.11,"[3.5, 51.5, -0.5]",1.0,1.0,,froiAInsL,C1,44
+gPPI C1 seed froiAInsL,+,1,3.1,"[-4.5, -32.5, 69.5]",1.0,1.0,,froiAInsL,C1,44
+gPPI C1 seed froiAInsL,+,1,3.14,"[-46.5, 9.5, -2.5]",1.0,1.0,,froiAInsL,C1,44
+gPPI C1 seed froiAInsL,+,1,3.22,"[-60.5, 21.5, 19.5]",1.0,1.0,,froiAInsL,C1,44
+gPPI C1 seed froiAInsL,+,1,3.26,"[55.5, 23.5, -0.5]",1.0,1.0,,froiAInsL,C1,44
+gPPI C1 seed froiAInsL,-,1,-3.23,"[21.5, 15.5, -10.5]",1.0,1.0,,froiAInsL,C1,44
+gPPI C1 seed froiAInsL,-,1,-3.24,"[45.5, -44.5, -0.5]",1.0,1.0,,froiAInsL,C1,44
+gPPI C1 seed froiAInsL,-,1,-3.26,"[-38.5, -14.5, -0.5]",1.0,1.0,,froiAInsL,C1,44
+gPPI C1 seed froiAInsL,-,1,-3.16,"[23.5, -6.5, 39.5]",1.0,1.0,,froiAInsL,C1,44
+gPPI C1 seed froiAInsL,-,1,-3.11,"[17.5, -54.5, 59.5]",1.0,1.0,,froiAInsL,C1,44
+gPPI C4 seed froiAInsL,+,73,3.93,"[49.5, 33.5, 25.5]",0.00619,0.01238,"42% Middle Frontal Gyrus, 24% Frontal Pole, 1% Inferior Frontal Gyrus, pars triangularis; 81% Right Cerebral Cortex, 12% Right Cerebral White Matter",froiAInsL,C4,44
+gPPI C4 seed froiAInsL,+,44,3.92,"[-40.5, 3.5, 55.5]",0.0837,0.1674,"56% Middle Frontal Gyrus, 8% Precentral Gyrus, 2% Superior Frontal Gyrus; 83% Left Cerebral Cortex, 11% Left Cerebral White Matter",froiAInsL,C4,44
+gPPI C4 seed froiAInsL,+,28,4.02,"[-48.5, -34.5, 23.5]",0.384,0.768,"53% Parietal Operculum Cortex, 5% Supramarginal Gyrus, anterior division, 1% Planum Temporale, 1% Supramarginal Gyrus, posterior division, 1% Superior Temporal Gyrus, posterior division; 64% Left Cerebral Cortex, 33% Left Cerebral White Matter",froiAInsL,C4,44
+gPPI C4 seed froiAInsL,+,23,3.59,"[-44.5, 19.5, 33.5]",0.587,1.0,"54% Middle Frontal Gyrus, 3% Inferior Frontal Gyrus, pars opercularis, 1% Inferior Frontal Gyrus, pars triangularis; 67% Left Cerebral Cortex, 33% Left Cerebral White Matter",froiAInsL,C4,44
+gPPI C4 seed froiAInsL,-,22,-3.64,"[25.5, 33.5, 3.5]",0.632,1.0,100% Right Cerebral White Matter,froiAInsL,C4,44
+gPPI C4 seed froiAInsL,+,20,3.74,"[-56.5, 13.5, 21.5]",0.725,1.0,"61% Inferior Frontal Gyrus, pars opercularis, 16% Precentral Gyrus; 87% Left Cerebral Cortex, 2% Left Cerebral White Matter",froiAInsL,C4,44
+gPPI C4 seed froiAInsL,-,19,-3.89,"[-12.5, 53.5, 19.5]",0.771,1.0,"7% Frontal Pole, 3% Superior Frontal Gyrus, 1% Paracingulate Gyrus; 87% Left Cerebral White Matter, 13% Left Cerebral Cortex",froiAInsL,C4,44
+gPPI C4 seed froiAInsL,+,19,3.66,"[31.5, -6.5, 11.5]",0.771,1.0,"5% Insular Cortex; 77% Right Cerebral White Matter, 15% Right Cerebral Cortex, 8% Right Putamen",froiAInsL,C4,44
+gPPI C4 seed froiAInsL,+,18,3.53,"[21.5, -2.5, 57.5]",0.814,1.0,"43% Superior Frontal Gyrus, 11% Precentral Gyrus, 3% Middle Frontal Gyrus; 72% Right Cerebral Cortex, 26% Right Cerebral White Matter",froiAInsL,C4,44
+gPPI C4 seed froiAInsL,+,17,4.03,"[17.5, -42.5, -22.5]",0.854,1.0,"0% Right Cerebral Cortex; 79% Right V, 20% Right I-IV",froiAInsL,C4,44
+gPPI C4 seed froiAInsL,+,16,3.51,"[-48.5, -48.5, 13.5]",0.891,1.0,,froiAInsL,C4,44
+gPPI C4 seed froiAInsL,+,15,3.7,"[-12.5, -14.5, 37.5]",0.922,1.0,,froiAInsL,C4,44
+gPPI C4 seed froiAInsL,+,13,3.51,"[17.5, -26.5, 63.5]",0.967,1.0,,froiAInsL,C4,44
+gPPI C4 seed froiAInsL,+,12,3.43,"[41.5, 11.5, -0.5]",0.981,1.0,,froiAInsL,C4,44
+gPPI C4 seed froiAInsL,+,11,3.6,"[-62.5, -8.5, -12.5]",0.99,1.0,,froiAInsL,C4,44
+gPPI C4 seed froiAInsL,+,11,3.67,"[47.5, 13.5, 21.5]",0.99,1.0,,froiAInsL,C4,44
+gPPI C4 seed froiAInsL,-,11,-3.83,"[-16.5, 51.5, 5.5]",0.99,1.0,,froiAInsL,C4,44
+gPPI C4 seed froiAInsL,-,11,-3.71,"[9.5, -8.5, -22.5]",0.99,1.0,,froiAInsL,C4,44
+gPPI C4 seed froiAInsL,+,10,3.5,"[-58.5, 1.5, 17.5]",0.996,1.0,,froiAInsL,C4,44
+gPPI C4 seed froiAInsL,+,10,3.76,"[-28.5, -64.5, 49.5]",0.996,1.0,,froiAInsL,C4,44
+gPPI C4 seed froiAInsL,+,10,3.72,"[-32.5, 19.5, 53.5]",0.996,1.0,,froiAInsL,C4,44
+gPPI C4 seed froiAInsL,-,10,-3.61,"[-12.5, 57.5, -6.5]",0.996,1.0,,froiAInsL,C4,44
+gPPI C4 seed froiAInsL,-,9,-3.82,"[19.5, -58.5, 47.5]",0.998,1.0,,froiAInsL,C4,44
+gPPI C4 seed froiAInsL,+,9,3.33,"[39.5, -0.5, -10.5]",0.998,1.0,,froiAInsL,C4,44
+gPPI C4 seed froiAInsL,+,9,3.23,"[7.5, -58.5, -20.5]",0.998,1.0,,froiAInsL,C4,44
+gPPI C4 seed froiAInsL,+,8,3.46,"[-24.5, -10.5, 13.5]",1.0,1.0,,froiAInsL,C4,44
+gPPI C4 seed froiAInsL,+,8,3.38,"[47.5, 51.5, -4.5]",1.0,1.0,,froiAInsL,C4,44
+gPPI C4 seed froiAInsL,+,7,3.38,"[-50.5, 13.5, 35.5]",1.0,1.0,,froiAInsL,C4,44
+gPPI C4 seed froiAInsL,+,7,3.31,"[51.5, -6.5, 5.5]",1.0,1.0,,froiAInsL,C4,44
+gPPI C4 seed froiAInsL,+,7,3.4,"[-6.5, -30.5, 71.5]",1.0,1.0,,froiAInsL,C4,44
+gPPI C4 seed froiAInsL,-,6,-3.37,"[-20.5, 27.5, -8.5]",1.0,1.0,,froiAInsL,C4,44
+gPPI C4 seed froiAInsL,+,6,3.65,"[45.5, -10.5, 19.5]",1.0,1.0,,froiAInsL,C4,44
+gPPI C4 seed froiAInsL,+,5,3.25,"[-30.5, 11.5, 45.5]",1.0,1.0,,froiAInsL,C4,44
+gPPI C4 seed froiAInsL,+,5,3.4,"[29.5, -24.5, 9.5]",1.0,1.0,,froiAInsL,C4,44
+gPPI C4 seed froiAInsL,+,5,3.17,"[37.5, -60.5, 3.5]",1.0,1.0,,froiAInsL,C4,44
+gPPI C4 seed froiAInsL,+,5,3.53,"[-26.5, 1.5, 65.5]",1.0,1.0,,froiAInsL,C4,44
+gPPI C4 seed froiAInsL,-,5,-3.83,"[21.5, 17.5, -10.5]",1.0,1.0,,froiAInsL,C4,44
+gPPI C4 seed froiAInsL,+,5,3.38,"[5.5, -6.5, 43.5]",1.0,1.0,,froiAInsL,C4,44
+gPPI C4 seed froiAInsL,-,5,-3.55,"[-12.5, -38.5, 17.5]",1.0,1.0,,froiAInsL,C4,44
+gPPI C4 seed froiAInsL,-,5,-3.33,"[11.5, 25.5, 7.5]",1.0,1.0,,froiAInsL,C4,44
+gPPI C4 seed froiAInsL,-,5,-3.29,"[33.5, -16.5, 31.5]",1.0,1.0,,froiAInsL,C4,44
+gPPI C4 seed froiAInsL,+,4,3.25,"[-50.5, 9.5, 27.5]",1.0,1.0,,froiAInsL,C4,44
+gPPI C4 seed froiAInsL,+,4,3.19,"[-42.5, 7.5, 35.5]",1.0,1.0,,froiAInsL,C4,44
+gPPI C4 seed froiAInsL,+,4,3.25,"[-48.5, -50.5, 41.5]",1.0,1.0,,froiAInsL,C4,44
+gPPI C4 seed froiAInsL,-,4,-3.49,"[29.5, -8.5, 23.5]",1.0,1.0,,froiAInsL,C4,44
+gPPI C4 seed froiAInsL,+,4,3.44,"[-36.5, 21.5, -8.5]",1.0,1.0,,froiAInsL,C4,44
+gPPI C4 seed froiAInsL,+,4,3.62,"[-18.5, 5.5, 15.5]",1.0,1.0,,froiAInsL,C4,44
+gPPI C4 seed froiAInsL,-,3,-3.25,"[1.5, -86.5, -4.5]",1.0,1.0,,froiAInsL,C4,44
+gPPI C4 seed froiAInsL,+,3,3.4,"[-28.5, -22.5, 61.5]",1.0,1.0,,froiAInsL,C4,44
+gPPI C4 seed froiAInsL,+,3,3.26,"[-54.5, -40.5, 45.5]",1.0,1.0,,froiAInsL,C4,44
+gPPI C4 seed froiAInsL,-,3,-3.48,"[45.5, 1.5, -24.5]",1.0,1.0,,froiAInsL,C4,44
+gPPI C4 seed froiAInsL,+,3,3.1,"[15.5, -20.5, 43.5]",1.0,1.0,,froiAInsL,C4,44
+gPPI C4 seed froiAInsL,+,3,3.27,"[41.5, 35.5, -6.5]",1.0,1.0,,froiAInsL,C4,44
+gPPI C4 seed froiAInsL,+,3,3.28,"[-48.5, 5.5, -0.5]",1.0,1.0,,froiAInsL,C4,44
+gPPI C4 seed froiAInsL,+,3,3.36,"[-52.5, -44.5, 57.5]",1.0,1.0,,froiAInsL,C4,44
+gPPI C4 seed froiAInsL,+,3,3.26,"[-34.5, -18.5, 47.5]",1.0,1.0,,froiAInsL,C4,44
+gPPI C4 seed froiAInsL,+,3,3.25,"[17.5, -14.5, -10.5]",1.0,1.0,,froiAInsL,C4,44
+gPPI C4 seed froiAInsL,+,2,3.17,"[61.5, 5.5, -6.5]",1.0,1.0,,froiAInsL,C4,44
+gPPI C4 seed froiAInsL,+,2,3.17,"[27.5, -62.5, -26.5]",1.0,1.0,,froiAInsL,C4,44
+gPPI C4 seed froiAInsL,+,2,3.12,"[15.5, -4.5, 19.5]",1.0,1.0,,froiAInsL,C4,44
+gPPI C4 seed froiAInsL,+,2,3.14,"[-52.5, -50.5, 53.5]",1.0,1.0,,froiAInsL,C4,44
+gPPI C4 seed froiAInsL,+,2,3.21,"[-42.5, -52.5, 13.5]",1.0,1.0,,froiAInsL,C4,44
+gPPI C4 seed froiAInsL,+,2,3.32,"[25.5, 7.5, -38.5]",1.0,1.0,,froiAInsL,C4,44
+gPPI C4 seed froiAInsL,+,2,3.17,"[53.5, -20.5, -34.5]",1.0,1.0,,froiAInsL,C4,44
+gPPI C4 seed froiAInsL,-,2,-3.26,"[-18.5, 23.5, 7.5]",1.0,1.0,,froiAInsL,C4,44
+gPPI C4 seed froiAInsL,+,1,3.18,"[13.5, -16.5, -10.5]",1.0,1.0,,froiAInsL,C4,44
+gPPI C4 seed froiAInsL,+,1,3.1,"[53.5, 17.5, -10.5]",1.0,1.0,,froiAInsL,C4,44
+gPPI C4 seed froiAInsL,+,1,3.11,"[-34.5, 3.5, -38.5]",1.0,1.0,,froiAInsL,C4,44
+gPPI C4 seed froiAInsL,+,1,3.14,"[-42.5, -48.5, 49.5]",1.0,1.0,,froiAInsL,C4,44
+gPPI C4 seed froiAInsL,+,1,3.16,"[-4.5, -72.5, 57.5]",1.0,1.0,,froiAInsL,C4,44
+gPPI C4 seed froiAInsL,+,1,3.1,"[33.5, -26.5, -12.5]",1.0,1.0,,froiAInsL,C4,44
+gPPI C4 seed froiAInsL,+,1,3.16,"[-52.5, 21.5, -14.5]",1.0,1.0,,froiAInsL,C4,44
+gPPI C4 seed froiAInsL,+,1,3.38,"[51.5, 19.5, -14.5]",1.0,1.0,,froiAInsL,C4,44
+gPPI C4 seed froiAInsL,+,1,3.25,"[-16.5, 7.5, -32.5]",1.0,1.0,,froiAInsL,C4,44
+gPPI C4 seed froiAInsL,+,1,3.16,"[23.5, -62.5, -32.5]",1.0,1.0,,froiAInsL,C4,44
+gPPI C4 seed froiAInsL,+,1,3.09,"[-10.5, -8.5, 67.5]",1.0,1.0,,froiAInsL,C4,44
+gPPI C4 seed froiAInsL,+,1,3.09,"[17.5, -16.5, 39.5]",1.0,1.0,,froiAInsL,C4,44
+gPPI C4 seed froiAInsL,+,1,3.17,"[49.5, -44.5, 27.5]",1.0,1.0,,froiAInsL,C4,44
+gPPI C4 seed froiAInsL,+,1,3.16,"[-56.5, -10.5, -4.5]",1.0,1.0,,froiAInsL,C4,44
+gPPI C4 seed froiAInsL,+,1,3.13,"[-30.5, -24.5, 11.5]",1.0,1.0,,froiAInsL,C4,44
+gPPI C4 seed froiAInsL,+,1,3.4,"[-52.5, -8.5, 13.5]",1.0,1.0,,froiAInsL,C4,44
+gPPI C4 seed froiAInsL,+,1,3.2,"[37.5, -6.5, 13.5]",1.0,1.0,,froiAInsL,C4,44
+gPPI C4 seed froiAInsL,+,1,3.37,"[-12.5, -54.5, 19.5]",1.0,1.0,,froiAInsL,C4,44
+gPPI C4 seed froiAInsL,+,1,3.12,"[-14.5, 33.5, 19.5]",1.0,1.0,,froiAInsL,C4,44
+gPPI C4 seed froiAInsL,+,1,3.1,"[-4.5, -50.5, 5.5]",1.0,1.0,,froiAInsL,C4,44
+gPPI C4 seed froiAInsL,+,1,3.27,"[49.5, -30.5, 9.5]",1.0,1.0,,froiAInsL,C4,44
+gPPI C4 seed froiAInsL,-,1,-3.16,"[-8.5, -72.5, -4.5]",1.0,1.0,,froiAInsL,C4,44
+gPPI C4 seed froiAInsL,-,1,-3.11,"[-16.5, 33.5, 7.5]",1.0,1.0,,froiAInsL,C4,44
+gPPI C4 seed froiAInsL,-,1,-3.11,"[-2.5, 15.5, 9.5]",1.0,1.0,,froiAInsL,C4,44
+gPPI C4 seed froiAInsL,-,1,-3.24,"[35.5, -8.5, 29.5]",1.0,1.0,,froiAInsL,C4,44
+gPPI C4 seed froiAInsL,-,1,-3.09,"[11.5, 47.5, 29.5]",1.0,1.0,,froiAInsL,C4,44
+gPPI C4 seed froiAInsL,-,1,-3.14,"[11.5, -52.5, 57.5]",1.0,1.0,,froiAInsL,C4,44
+gPPI C1 seed froiAInsR,+,215,4.92,"[51.5, 29.5, -4.5]",3.93e-06,7.86e-06,"41% Inferior Frontal Gyrus, pars triangularis, 16% Frontal Orbital Cortex, 14% Frontal Pole, 8% Frontal Operculum Cortex; 87% Right Cerebral Cortex, 10% Right Cerebral White Matter",froiAInsR,C1,44
+gPPI C1 seed froiAInsR,+,122,4.18,"[39.5, 35.5, -12.5]",0.000677,0.001354,"47% Frontal Pole, 20% Frontal Orbital Cortex, 1% Inferior Frontal Gyrus, pars triangularis; 68% Right Cerebral Cortex, 32% Right Cerebral White Matter",froiAInsR,C1,44
+gPPI C1 seed froiAInsR,+,78,4.22,"[53.5, 17.5, 15.5]",0.0122,0.0244,"53% Inferior Frontal Gyrus, pars opercularis, 5% Inferior Frontal Gyrus, pars triangularis, 4% Precentral Gyrus; 73% Right Cerebral Cortex, 27% Right Cerebral White Matter",froiAInsR,C1,44
+gPPI C1 seed froiAInsR,+,78,4.3,"[-2.5, -36.5, 55.5]",0.0122,0.0244,"31% Precentral Gyrus, 26% Postcentral Gyrus, 7% Precuneous Cortex; 73% Left Cerebral Cortex, 2% Left Cerebral White Matter, 0% Right Cerebral Cortex",froiAInsR,C1,44
+gPPI C1 seed froiAInsR,+,77,4.48,"[41.5, -16.5, -28.5]",0.0131,0.0262,"44% Temporal Fusiform Cortex, posterior division, 26% Inferior Temporal Gyrus, posterior division, 6% Temporal Fusiform Cortex, anterior division, 2% Inferior Temporal Gyrus, anterior division, 1% Parahippocampal Gyrus, anterior division; 80% Right Cerebral Cortex, 20% Right Cerebral White Matter",froiAInsR,C1,44
+gPPI C1 seed froiAInsR,+,66,4.09,"[-26.5, -34.5, 61.5]",0.0291,0.0582,"56% Postcentral Gyrus, 10% Precentral Gyrus, 5% Superior Parietal Lobule; 74% Left Cerebral Cortex, 25% Left Cerebral White Matter",froiAInsR,C1,44
+gPPI C1 seed froiAInsR,+,64,3.75,"[59.5, -48.5, 3.5]",0.0337,0.0674,"60% Middle Temporal Gyrus, temporooccipital part, 2% Angular Gyrus, 2% Supramarginal Gyrus, posterior division; 68% Right Cerebral Cortex, 31% Right Cerebral White Matter",froiAInsR,C1,44
+gPPI C1 seed froiAInsR,+,63,4.28,"[-56.5, -24.5, -4.5]",0.0363,0.0726,"59% Superior Temporal Gyrus, posterior division, 17% Middle Temporal Gyrus, posterior division; 84% Left Cerebral Cortex, 16% Left Cerebral White Matter",froiAInsR,C1,44
+gPPI C1 seed froiAInsR,+,58,4.0,"[5.5, 49.5, -2.5]",0.0531,0.1062,"73% Paracingulate Gyrus, 13% Frontal Medial Cortex, 3% Cingulate Gyrus, anterior division, 3% Frontal Pole; 93% Right Cerebral Cortex, 6% Right Cerebral White Matter",froiAInsR,C1,44
+gPPI C1 seed froiAInsR,+,50,4.15,"[-36.5, 23.5, -12.5]",0.0987,0.1974,"50% Frontal Orbital Cortex; 53% Left Cerebral Cortex, 47% Left Cerebral White Matter",froiAInsR,C1,44
+gPPI C1 seed froiAInsR,+,49,4.02,"[-44.5, -2.5, 3.5]",0.107,0.214,,froiAInsR,C1,44
+gPPI C1 seed froiAInsR,+,48,4.32,"[-18.5, 7.5, 1.5]",0.115,0.23,,froiAInsR,C1,44
+gPPI C1 seed froiAInsR,+,41,3.73,"[-6.5, -34.5, 69.5]",0.201,0.402,,froiAInsR,C1,44
+gPPI C1 seed froiAInsR,-,41,-3.93,"[-0.5, 9.5, 5.5]",0.201,0.402,,froiAInsR,C1,44
+gPPI C1 seed froiAInsR,+,38,4.11,"[-8.5, 15.5, 57.5]",0.254,0.508,,froiAInsR,C1,44
+gPPI C1 seed froiAInsR,+,32,4.14,"[47.5, 7.5, -18.5]",0.401,0.802,,froiAInsR,C1,44
+gPPI C1 seed froiAInsR,+,29,3.79,"[59.5, -34.5, -0.5]",0.496,0.992,,froiAInsR,C1,44
+gPPI C1 seed froiAInsR,+,28,4.05,"[29.5, -0.5, -2.5]",0.531,1.0,,froiAInsR,C1,44
+gPPI C1 seed froiAInsR,+,28,4.1,"[-20.5, -16.5, 67.5]",0.531,1.0,,froiAInsR,C1,44
+gPPI C1 seed froiAInsR,+,28,3.98,"[-2.5, -0.5, 71.5]",0.531,1.0,,froiAInsR,C1,44
+gPPI C1 seed froiAInsR,+,27,3.7,"[-34.5, -52.5, 63.5]",0.567,1.0,,froiAInsR,C1,44
+gPPI C1 seed froiAInsR,+,27,3.87,"[-32.5, -2.5, 61.5]",0.567,1.0,,froiAInsR,C1,44
+gPPI C1 seed froiAInsR,+,25,3.95,"[13.5, -28.5, -30.5]",0.642,1.0,,froiAInsR,C1,44
+gPPI C1 seed froiAInsR,+,24,3.72,"[-22.5, 7.5, 57.5]",0.681,1.0,,froiAInsR,C1,44
+gPPI C1 seed froiAInsR,+,23,3.98,"[5.5, -20.5, 65.5]",0.719,1.0,,froiAInsR,C1,44
+gPPI C1 seed froiAInsR,+,23,4.04,"[-28.5, 9.5, 7.5]",0.719,1.0,,froiAInsR,C1,44
+gPPI C1 seed froiAInsR,+,23,3.51,"[-52.5, -54.5, 11.5]",0.719,1.0,,froiAInsR,C1,44
+gPPI C1 seed froiAInsR,-,21,-4.45,"[19.5, -24.5, 29.5]",0.794,1.0,,froiAInsR,C1,44
+gPPI C1 seed froiAInsR,+,20,3.54,"[19.5, -18.5, 67.5]",0.829,1.0,,froiAInsR,C1,44
+gPPI C1 seed froiAInsR,+,19,3.49,"[43.5, 13.5, -0.5]",0.861,1.0,,froiAInsR,C1,44
+gPPI C1 seed froiAInsR,+,19,3.8,"[19.5, 5.5, -0.5]",0.861,1.0,,froiAInsR,C1,44
+gPPI C1 seed froiAInsR,+,18,3.43,"[43.5, 25.5, -12.5]",0.891,1.0,,froiAInsR,C1,44
+gPPI C1 seed froiAInsR,+,17,3.54,"[-56.5, -28.5, 53.5]",0.917,1.0,,froiAInsR,C1,44
+gPPI C1 seed froiAInsR,+,16,3.58,"[23.5, -6.5, -16.5]",0.94,1.0,,froiAInsR,C1,44
+gPPI C1 seed froiAInsR,+,16,3.59,"[63.5, -46.5, 13.5]",0.94,1.0,,froiAInsR,C1,44
+gPPI C1 seed froiAInsR,+,16,3.76,"[37.5, 7.5, -40.5]",0.94,1.0,,froiAInsR,C1,44
+gPPI C1 seed froiAInsR,+,16,3.59,"[41.5, -48.5, -12.5]",0.94,1.0,,froiAInsR,C1,44
+gPPI C1 seed froiAInsR,+,15,3.54,"[47.5, -40.5, 59.5]",0.958,1.0,,froiAInsR,C1,44
+gPPI C1 seed froiAInsR,+,15,3.46,"[-4.5, -12.5, 35.5]",0.958,1.0,,froiAInsR,C1,44
+gPPI C1 seed froiAInsR,+,15,3.61,"[-50.5, -38.5, 23.5]",0.958,1.0,,froiAInsR,C1,44
+gPPI C1 seed froiAInsR,+,15,3.83,"[15.5, -20.5, -24.5]",0.958,1.0,,froiAInsR,C1,44
+gPPI C1 seed froiAInsR,+,14,3.92,"[-18.5, -2.5, 17.5]",0.973,1.0,,froiAInsR,C1,44
+gPPI C1 seed froiAInsR,+,14,3.44,"[17.5, 3.5, 15.5]",0.973,1.0,,froiAInsR,C1,44
+gPPI C1 seed froiAInsR,+,14,4.07,"[41.5, -60.5, 5.5]",0.973,1.0,,froiAInsR,C1,44
+gPPI C1 seed froiAInsR,+,13,3.95,"[9.5, -8.5, 9.5]",0.983,1.0,,froiAInsR,C1,44
+gPPI C1 seed froiAInsR,-,12,-3.72,"[-34.5, -64.5, 25.5]",0.99,1.0,,froiAInsR,C1,44
+gPPI C1 seed froiAInsR,+,12,3.48,"[45.5, 7.5, 39.5]",0.99,1.0,,froiAInsR,C1,44
+gPPI C1 seed froiAInsR,+,12,3.56,"[-30.5, -18.5, 13.5]",0.99,1.0,,froiAInsR,C1,44
+gPPI C1 seed froiAInsR,+,11,3.67,"[-32.5, -18.5, 71.5]",0.995,1.0,,froiAInsR,C1,44
+gPPI C1 seed froiAInsR,+,11,3.48,"[47.5, -30.5, 11.5]",0.995,1.0,,froiAInsR,C1,44
+gPPI C1 seed froiAInsR,+,10,3.54,"[-12.5, -54.5, -24.5]",0.998,1.0,,froiAInsR,C1,44
+gPPI C1 seed froiAInsR,+,10,3.77,"[-54.5, 7.5, 15.5]",0.998,1.0,,froiAInsR,C1,44
+gPPI C1 seed froiAInsR,-,10,-3.44,"[-24.5, -76.5, 5.5]",0.998,1.0,,froiAInsR,C1,44
+gPPI C1 seed froiAInsR,+,10,3.29,"[29.5, -14.5, 9.5]",0.998,1.0,,froiAInsR,C1,44
+gPPI C1 seed froiAInsR,+,9,3.41,"[39.5, 49.5, 1.5]",0.999,1.0,,froiAInsR,C1,44
+gPPI C1 seed froiAInsR,+,9,3.48,"[19.5, -34.5, -6.5]",0.999,1.0,,froiAInsR,C1,44
+gPPI C1 seed froiAInsR,+,9,3.37,"[27.5, 5.5, -30.5]",0.999,1.0,,froiAInsR,C1,44
+gPPI C1 seed froiAInsR,+,9,3.64,"[57.5, -62.5, -12.5]",0.999,1.0,,froiAInsR,C1,44
+gPPI C1 seed froiAInsR,+,9,3.65,"[-40.5, -36.5, 13.5]",0.999,1.0,,froiAInsR,C1,44
+gPPI C1 seed froiAInsR,+,8,3.37,"[47.5, -42.5, 53.5]",1.0,1.0,,froiAInsR,C1,44
+gPPI C1 seed froiAInsR,+,8,3.69,"[-34.5, -36.5, -12.5]",1.0,1.0,,froiAInsR,C1,44
+gPPI C1 seed froiAInsR,+,8,3.42,"[-6.5, -40.5, 61.5]",1.0,1.0,,froiAInsR,C1,44
+gPPI C1 seed froiAInsR,+,8,3.33,"[55.5, -36.5, -16.5]",1.0,1.0,,froiAInsR,C1,44
+gPPI C1 seed froiAInsR,-,8,-3.57,"[-46.5, -16.5, -20.5]",1.0,1.0,,froiAInsR,C1,44
+gPPI C1 seed froiAInsR,+,8,3.55,"[21.5, -8.5, -30.5]",1.0,1.0,,froiAInsR,C1,44
+gPPI C1 seed froiAInsR,+,8,3.94,"[59.5, -22.5, -28.5]",1.0,1.0,,froiAInsR,C1,44
+gPPI C1 seed froiAInsR,+,7,3.36,"[35.5, -24.5, 13.5]",1.0,1.0,,froiAInsR,C1,44
+gPPI C1 seed froiAInsR,+,7,3.52,"[-48.5, -34.5, 63.5]",1.0,1.0,,froiAInsR,C1,44
+gPPI C1 seed froiAInsR,+,7,3.51,"[27.5, -66.5, -12.5]",1.0,1.0,,froiAInsR,C1,44
+gPPI C1 seed froiAInsR,+,7,3.32,"[21.5, 3.5, -12.5]",1.0,1.0,,froiAInsR,C1,44
+gPPI C1 seed froiAInsR,+,7,3.55,"[45.5, 3.5, 57.5]",1.0,1.0,,froiAInsR,C1,44
+gPPI C1 seed froiAInsR,+,7,3.58,"[11.5, -44.5, -36.5]",1.0,1.0,,froiAInsR,C1,44
+gPPI C1 seed froiAInsR,+,6,3.65,"[-12.5, -24.5, -38.5]",1.0,1.0,,froiAInsR,C1,44
+gPPI C1 seed froiAInsR,+,6,3.44,"[-40.5, 15.5, -0.5]",1.0,1.0,,froiAInsR,C1,44
+gPPI C1 seed froiAInsR,+,6,3.33,"[-62.5, -2.5, -4.5]",1.0,1.0,,froiAInsR,C1,44
+gPPI C1 seed froiAInsR,+,6,3.56,"[-18.5, 5.5, 17.5]",1.0,1.0,,froiAInsR,C1,44
+gPPI C1 seed froiAInsR,+,6,3.47,"[25.5, -22.5, -20.5]",1.0,1.0,,froiAInsR,C1,44
+gPPI C1 seed froiAInsR,+,6,3.53,"[-16.5, -92.5, -8.5]",1.0,1.0,,froiAInsR,C1,44
+gPPI C1 seed froiAInsR,-,6,-3.66,"[15.5, 33.5, -4.5]",1.0,1.0,,froiAInsR,C1,44
+gPPI C1 seed froiAInsR,+,5,3.26,"[51.5, -52.5, 1.5]",1.0,1.0,,froiAInsR,C1,44
+gPPI C1 seed froiAInsR,+,5,3.44,"[3.5, -32.5, -42.5]",1.0,1.0,,froiAInsR,C1,44
+gPPI C1 seed froiAInsR,+,5,3.34,"[15.5, -6.5, 21.5]",1.0,1.0,,froiAInsR,C1,44
+gPPI C1 seed froiAInsR,+,5,3.26,"[45.5, 31.5, 21.5]",1.0,1.0,,froiAInsR,C1,44
+gPPI C1 seed froiAInsR,+,5,3.5,"[27.5, -46.5, 49.5]",1.0,1.0,,froiAInsR,C1,44
+gPPI C1 seed froiAInsR,+,5,3.25,"[-50.5, -32.5, -26.5]",1.0,1.0,,froiAInsR,C1,44
+gPPI C1 seed froiAInsR,+,4,3.25,"[-60.5, 19.5, 9.5]",1.0,1.0,,froiAInsR,C1,44
+gPPI C1 seed froiAInsR,+,4,3.56,"[19.5, -4.5, 63.5]",1.0,1.0,,froiAInsR,C1,44
+gPPI C1 seed froiAInsR,+,4,3.34,"[-6.5, -24.5, 63.5]",1.0,1.0,,froiAInsR,C1,44
+gPPI C1 seed froiAInsR,+,4,3.16,"[49.5, -44.5, 47.5]",1.0,1.0,,froiAInsR,C1,44
+gPPI C1 seed froiAInsR,+,4,3.24,"[47.5, -20.5, 11.5]",1.0,1.0,,froiAInsR,C1,44
+gPPI C1 seed froiAInsR,+,4,3.38,"[57.5, -8.5, -24.5]",1.0,1.0,,froiAInsR,C1,44
+gPPI C1 seed froiAInsR,-,4,-3.38,"[23.5, 31.5, 7.5]",1.0,1.0,,froiAInsR,C1,44
+gPPI C1 seed froiAInsR,-,3,-3.41,"[-4.5, -52.5, -2.5]",1.0,1.0,,froiAInsR,C1,44
+gPPI C1 seed froiAInsR,+,3,3.3,"[51.5, -6.5, 3.5]",1.0,1.0,,froiAInsR,C1,44
+gPPI C1 seed froiAInsR,+,3,3.15,"[57.5, 1.5, -20.5]",1.0,1.0,,froiAInsR,C1,44
+gPPI C1 seed froiAInsR,+,3,3.14,"[-22.5, -6.5, -16.5]",1.0,1.0,,froiAInsR,C1,44
+gPPI C1 seed froiAInsR,+,3,3.19,"[-36.5, 35.5, -12.5]",1.0,1.0,,froiAInsR,C1,44
+gPPI C1 seed froiAInsR,+,3,3.16,"[67.5, -12.5, -0.5]",1.0,1.0,,froiAInsR,C1,44
+gPPI C1 seed froiAInsR,+,3,3.17,"[31.5, 21.5, -10.5]",1.0,1.0,,froiAInsR,C1,44
+gPPI C1 seed froiAInsR,+,3,3.8,"[9.5, 47.5, 51.5]",1.0,1.0,,froiAInsR,C1,44
+gPPI C1 seed froiAInsR,-,3,-3.16,"[25.5, 33.5, 1.5]",1.0,1.0,,froiAInsR,C1,44
+gPPI C1 seed froiAInsR,+,2,3.2,"[-52.5, 13.5, 5.5]",1.0,1.0,,froiAInsR,C1,44
+gPPI C1 seed froiAInsR,+,2,3.15,"[-54.5, 37.5, -0.5]",1.0,1.0,,froiAInsR,C1,44
+gPPI C1 seed froiAInsR,+,2,3.24,"[5.5, 67.5, 11.5]",1.0,1.0,,froiAInsR,C1,44
+gPPI C1 seed froiAInsR,+,2,3.16,"[-54.5, 17.5, -2.5]",1.0,1.0,,froiAInsR,C1,44
+gPPI C1 seed froiAInsR,+,2,3.42,"[-42.5, -22.5, 3.5]",1.0,1.0,,froiAInsR,C1,44
+gPPI C1 seed froiAInsR,-,2,-3.16,"[17.5, 35.5, 35.5]",1.0,1.0,,froiAInsR,C1,44
+gPPI C1 seed froiAInsR,+,2,3.28,"[25.5, -4.5, 9.5]",1.0,1.0,,froiAInsR,C1,44
+gPPI C1 seed froiAInsR,+,2,3.31,"[15.5, 11.5, 63.5]",1.0,1.0,,froiAInsR,C1,44
+gPPI C1 seed froiAInsR,+,2,3.19,"[-20.5, 15.5, 63.5]",1.0,1.0,,froiAInsR,C1,44
+gPPI C1 seed froiAInsR,+,2,3.16,"[-4.5, 11.5, -28.5]",1.0,1.0,,froiAInsR,C1,44
+gPPI C1 seed froiAInsR,+,2,3.21,"[-2.5, -22.5, 53.5]",1.0,1.0,,froiAInsR,C1,44
+gPPI C1 seed froiAInsR,+,2,3.27,"[69.5, -30.5, 17.5]",1.0,1.0,,froiAInsR,C1,44
+gPPI C1 seed froiAInsR,+,2,3.28,"[-60.5, -16.5, 23.5]",1.0,1.0,,froiAInsR,C1,44
+gPPI C1 seed froiAInsR,+,2,3.43,"[-50.5, -14.5, 5.5]",1.0,1.0,,froiAInsR,C1,44
+gPPI C1 seed froiAInsR,+,1,3.1,"[49.5, 49.5, 3.5]",1.0,1.0,,froiAInsR,C1,44
+gPPI C1 seed froiAInsR,+,1,3.09,"[-46.5, -42.5, 61.5]",1.0,1.0,,froiAInsR,C1,44
+gPPI C1 seed froiAInsR,+,1,3.12,"[37.5, -36.5, 17.5]",1.0,1.0,,froiAInsR,C1,44
+gPPI C1 seed froiAInsR,+,1,3.1,"[65.5, -4.5, 1.5]",1.0,1.0,,froiAInsR,C1,44
+gPPI C1 seed froiAInsR,+,1,3.09,"[1.5, 29.5, -22.5]",1.0,1.0,,froiAInsR,C1,44
+gPPI C1 seed froiAInsR,+,1,3.19,"[-4.5, -8.5, -34.5]",1.0,1.0,,froiAInsR,C1,44
+gPPI C1 seed froiAInsR,+,1,3.13,"[3.5, -4.5, 63.5]",1.0,1.0,,froiAInsR,C1,44
+gPPI C1 seed froiAInsR,+,1,3.11,"[19.5, -24.5, 69.5]",1.0,1.0,,froiAInsR,C1,44
+gPPI C1 seed froiAInsR,+,1,3.12,"[-40.5, -30.5, 69.5]",1.0,1.0,,froiAInsR,C1,44
+gPPI C1 seed froiAInsR,+,1,3.28,"[-64.5, -28.5, 7.5]",1.0,1.0,,froiAInsR,C1,44
+gPPI C1 seed froiAInsR,+,1,3.14,"[-24.5, -40.5, 65.5]",1.0,1.0,,froiAInsR,C1,44
+gPPI C1 seed froiAInsR,+,1,3.17,"[31.5, -14.5, -20.5]",1.0,1.0,,froiAInsR,C1,44
+gPPI C1 seed froiAInsR,+,1,3.14,"[-2.5, 19.5, -20.5]",1.0,1.0,,froiAInsR,C1,44
+gPPI C1 seed froiAInsR,+,1,3.11,"[65.5, -42.5, -14.5]",1.0,1.0,,froiAInsR,C1,44
+gPPI C1 seed froiAInsR,+,1,3.12,"[59.5, -50.5, -10.5]",1.0,1.0,,froiAInsR,C1,44
+gPPI C1 seed froiAInsR,+,1,3.17,"[35.5, 25.5, -20.5]",1.0,1.0,,froiAInsR,C1,44
+gPPI C1 seed froiAInsR,+,1,3.14,"[67.5, -34.5, 17.5]",1.0,1.0,,froiAInsR,C1,44
+gPPI C1 seed froiAInsR,+,1,3.19,"[15.5, -40.5, 73.5]",1.0,1.0,,froiAInsR,C1,44
+gPPI C1 seed froiAInsR,+,1,3.24,"[49.5, -10.5, -2.5]",1.0,1.0,,froiAInsR,C1,44
+gPPI C1 seed froiAInsR,+,1,3.11,"[47.5, -38.5, 47.5]",1.0,1.0,,froiAInsR,C1,44
+gPPI C1 seed froiAInsR,+,1,3.16,"[-48.5, -26.5, 47.5]",1.0,1.0,,froiAInsR,C1,44
+gPPI C1 seed froiAInsR,+,1,3.25,"[31.5, -66.5, 49.5]",1.0,1.0,,froiAInsR,C1,44
+gPPI C1 seed froiAInsR,+,1,3.15,"[-52.5, -34.5, -2.5]",1.0,1.0,,froiAInsR,C1,44
+gPPI C1 seed froiAInsR,+,1,3.1,"[9.5, 19.5, 49.5]",1.0,1.0,,froiAInsR,C1,44
+gPPI C1 seed froiAInsR,+,1,3.09,"[63.5, -0.5, -6.5]",1.0,1.0,,froiAInsR,C1,44
+gPPI C1 seed froiAInsR,+,1,3.1,"[-42.5, -58.5, -6.5]",1.0,1.0,,froiAInsR,C1,44
+gPPI C1 seed froiAInsR,+,1,3.13,"[3.5, -10.5, 33.5]",1.0,1.0,,froiAInsR,C1,44
+gPPI C1 seed froiAInsR,-,1,-3.27,"[-0.5, -64.5, -8.5]",1.0,1.0,,froiAInsR,C1,44
+gPPI C1 seed froiAInsR,-,1,-3.21,"[-12.5, -34.5, -8.5]",1.0,1.0,,froiAInsR,C1,44
+gPPI C1 seed froiAInsR,-,1,-3.09,"[21.5, -72.5, 15.5]",1.0,1.0,,froiAInsR,C1,44
+gPPI C1 seed froiAInsR,-,1,-3.17,"[23.5, -8.5, 37.5]",1.0,1.0,,froiAInsR,C1,44
+gPPI C1 seed froiAInsR,-,1,-3.11,"[-4.5, -86.5, 41.5]",1.0,1.0,,froiAInsR,C1,44
+gPPI C1 seed froiAInsR,-,1,-3.43,"[-18.5, -6.5, 47.5]",1.0,1.0,,froiAInsR,C1,44
+gPPI C4 seed froiAInsR,+,73,4.17,"[-56.5, 5.5, 15.5]",0.0232,0.0464,"64% Precentral Gyrus, 12% Inferior Frontal Gyrus, pars opercularis; 86% Left Cerebral Cortex, 13% Left Cerebral White Matter",froiAInsR,C4,44
+gPPI C4 seed froiAInsR,+,51,3.94,"[65.5, -36.5, 21.5]",0.112,0.224,"40% Supramarginal Gyrus, posterior division, 23% Superior Temporal Gyrus, posterior division, 7% Planum Temporale, 5% Supramarginal Gyrus, anterior division, 4% Parietal Operculum Cortex, 1% Angular Gyrus; 86% Right Cerebral Cortex, 3% Right Cerebral White Matter",froiAInsR,C4,44
+gPPI C4 seed froiAInsR,+,46,3.93,"[27.5, 3.5, -0.5]",0.162,0.324,"100% Right Putamen, 0% Right Cerebral White Matter",froiAInsR,C4,44
+gPPI C4 seed froiAInsR,+,23,3.81,"[49.5, 49.5, -0.5]",0.753,1.0,"38% Frontal Pole; 43% Right Cerebral Cortex, 0% Right Cerebral White Matter",froiAInsR,C4,44
+gPPI C4 seed froiAInsR,+,23,4.24,"[47.5, -68.5, 7.5]",0.753,1.0,"63% Lateral Occipital Cortex, inferior division, 6% Lateral Occipital Cortex, superior division, 1% Middle Temporal Gyrus, temporooccipital part; 72% Right Cerebral Cortex, 28% Right Cerebral White Matter",froiAInsR,C4,44
+gPPI C4 seed froiAInsR,+,18,3.61,"[-60.5, -30.5, 5.5]",0.908,1.0,"35% Superior Temporal Gyrus, posterior division, 18% Planum Temporale, 1% Middle Temporal Gyrus, posterior division; 56% Left Cerebral Cortex, 44% Left Cerebral White Matter",froiAInsR,C4,44
+gPPI C4 seed froiAInsR,-,17,-4.09,"[1.5, -20.5, -0.5]",0.93,1.0,"33% Right Thalamus, 1% Left Thalamus, 0% Right Cerebral Cortex",froiAInsR,C4,44
+gPPI C4 seed froiAInsR,+,16,4.04,"[-48.5, -32.5, 21.5]",0.95,1.0,"56% Parietal Operculum Cortex, 3% Supramarginal Gyrus, anterior division, 3% Superior Temporal Gyrus, posterior division, 2% Planum Temporale, 1% Central Opercular Cortex; 69% Left Cerebral Cortex, 29% Left Cerebral White Matter",froiAInsR,C4,44
+gPPI C4 seed froiAInsR,+,16,3.95,"[-10.5, -14.5, 35.5]",0.95,1.0,"9% Cingulate Gyrus, anterior division, 8% Cingulate Gyrus, posterior division; 81% Left Cerebral White Matter, 19% Left Cerebral Cortex",froiAInsR,C4,44
+gPPI C4 seed froiAInsR,+,12,3.81,"[39.5, 7.5, -40.5]",0.992,1.0,"65% Temporal Pole, 4% Inferior Temporal Gyrus, anterior division, 1% Temporal Fusiform Cortex, anterior division, 1% Middle Temporal Gyrus, anterior division; 77% Right Cerebral Cortex, 23% Right Cerebral White Matter",froiAInsR,C4,44
+gPPI C4 seed froiAInsR,-,11,-3.45,"[-8.5, -52.5, -6.5]",0.996,1.0,,froiAInsR,C4,44
+gPPI C4 seed froiAInsR,-,11,-3.88,"[-12.5, 59.5, -6.5]",0.996,1.0,,froiAInsR,C4,44
+gPPI C4 seed froiAInsR,+,10,3.68,"[9.5, 5.5, -10.5]",0.998,1.0,,froiAInsR,C4,44
+gPPI C4 seed froiAInsR,-,9,-3.75,"[-30.5, -6.5, 27.5]",0.999,1.0,,froiAInsR,C4,44
+gPPI C4 seed froiAInsR,+,8,3.39,"[-56.5, -48.5, 49.5]",1.0,1.0,,froiAInsR,C4,44
+gPPI C4 seed froiAInsR,+,7,3.31,"[-28.5, -10.5, 21.5]",1.0,1.0,,froiAInsR,C4,44
+gPPI C4 seed froiAInsR,+,7,3.23,"[-22.5, 9.5, 59.5]",1.0,1.0,,froiAInsR,C4,44
+gPPI C4 seed froiAInsR,+,7,3.23,"[-52.5, 11.5, -2.5]",1.0,1.0,,froiAInsR,C4,44
+gPPI C4 seed froiAInsR,+,7,3.79,"[21.5, -26.5, -20.5]",1.0,1.0,,froiAInsR,C4,44
+gPPI C4 seed froiAInsR,+,7,3.56,"[-12.5, -54.5, -22.5]",1.0,1.0,,froiAInsR,C4,44
+gPPI C4 seed froiAInsR,-,7,-3.57,"[-12.5, 1.5, -18.5]",1.0,1.0,,froiAInsR,C4,44
+gPPI C4 seed froiAInsR,+,6,3.51,"[-8.5, -30.5, 71.5]",1.0,1.0,,froiAInsR,C4,44
+gPPI C4 seed froiAInsR,+,6,3.36,"[53.5, 7.5, 13.5]",1.0,1.0,,froiAInsR,C4,44
+gPPI C4 seed froiAInsR,+,6,3.19,"[3.5, 7.5, 61.5]",1.0,1.0,,froiAInsR,C4,44
+gPPI C4 seed froiAInsR,+,6,3.77,"[51.5, -6.5, -0.5]",1.0,1.0,,froiAInsR,C4,44
+gPPI C4 seed froiAInsR,+,5,3.3,"[-32.5, 9.5, 35.5]",1.0,1.0,,froiAInsR,C4,44
+gPPI C4 seed froiAInsR,+,5,3.47,"[-54.5, -10.5, -4.5]",1.0,1.0,,froiAInsR,C4,44
+gPPI C4 seed froiAInsR,+,5,3.54,"[-26.5, -16.5, 15.5]",1.0,1.0,,froiAInsR,C4,44
+gPPI C4 seed froiAInsR,+,5,3.31,"[17.5, -36.5, -2.5]",1.0,1.0,,froiAInsR,C4,44
+gPPI C4 seed froiAInsR,+,4,3.46,"[-36.5, -38.5, 19.5]",1.0,1.0,,froiAInsR,C4,44
+gPPI C4 seed froiAInsR,+,4,3.32,"[33.5, -14.5, -20.5]",1.0,1.0,,froiAInsR,C4,44
+gPPI C4 seed froiAInsR,+,4,3.39,"[29.5, -62.5, -28.5]",1.0,1.0,,froiAInsR,C4,44
+gPPI C4 seed froiAInsR,+,4,3.46,"[-50.5, -50.5, 11.5]",1.0,1.0,,froiAInsR,C4,44
+gPPI C4 seed froiAInsR,+,4,3.65,"[17.5, -34.5, 67.5]",1.0,1.0,,froiAInsR,C4,44
+gPPI C4 seed froiAInsR,+,4,3.25,"[-2.5, -0.5, 61.5]",1.0,1.0,,froiAInsR,C4,44
+gPPI C4 seed froiAInsR,+,4,3.17,"[5.5, -26.5, 63.5]",1.0,1.0,,froiAInsR,C4,44
+gPPI C4 seed froiAInsR,+,4,3.47,"[1.5, 1.5, -2.5]",1.0,1.0,,froiAInsR,C4,44
+gPPI C4 seed froiAInsR,+,4,3.2,"[-62.5, -34.5, 47.5]",1.0,1.0,,froiAInsR,C4,44
+gPPI C4 seed froiAInsR,-,4,-3.33,"[31.5, -8.5, 23.5]",1.0,1.0,,froiAInsR,C4,44
+gPPI C4 seed froiAInsR,+,4,3.28,"[-30.5, -20.5, 63.5]",1.0,1.0,,froiAInsR,C4,44
+gPPI C4 seed froiAInsR,+,4,3.27,"[29.5, 35.5, -16.5]",1.0,1.0,,froiAInsR,C4,44
+gPPI C4 seed froiAInsR,-,3,-3.48,"[9.5, 25.5, -28.5]",1.0,1.0,,froiAInsR,C4,44
+gPPI C4 seed froiAInsR,+,3,3.11,"[13.5, -22.5, 45.5]",1.0,1.0,,froiAInsR,C4,44
+gPPI C4 seed froiAInsR,-,3,-3.27,"[15.5, 33.5, -6.5]",1.0,1.0,,froiAInsR,C4,44
+gPPI C4 seed froiAInsR,-,3,-3.21,"[-0.5, -12.5, -20.5]",1.0,1.0,,froiAInsR,C4,44
+gPPI C4 seed froiAInsR,+,3,3.21,"[65.5, -4.5, -0.5]",1.0,1.0,,froiAInsR,C4,44
+gPPI C4 seed froiAInsR,-,3,-3.33,"[-18.5, 31.5, 7.5]",1.0,1.0,,froiAInsR,C4,44
+gPPI C4 seed froiAInsR,+,2,3.4,"[25.5, -56.5, 59.5]",1.0,1.0,,froiAInsR,C4,44
+gPPI C4 seed froiAInsR,+,2,3.41,"[-30.5, -50.5, -42.5]",1.0,1.0,,froiAInsR,C4,44
+gPPI C4 seed froiAInsR,+,2,3.2,"[27.5, -56.5, -34.5]",1.0,1.0,,froiAInsR,C4,44
+gPPI C4 seed froiAInsR,+,2,3.34,"[-6.5, -78.5, 53.5]",1.0,1.0,,froiAInsR,C4,44
+gPPI C4 seed froiAInsR,+,2,3.16,"[-52.5, -24.5, 45.5]",1.0,1.0,,froiAInsR,C4,44
+gPPI C4 seed froiAInsR,+,2,3.37,"[15.5, -42.5, -24.5]",1.0,1.0,,froiAInsR,C4,44
+gPPI C4 seed froiAInsR,+,2,3.25,"[-4.5, 9.5, -28.5]",1.0,1.0,,froiAInsR,C4,44
+gPPI C4 seed froiAInsR,-,2,-3.19,"[35.5, -82.5, 13.5]",1.0,1.0,,froiAInsR,C4,44
+gPPI C4 seed froiAInsR,+,2,3.45,"[61.5, 5.5, -4.5]",1.0,1.0,,froiAInsR,C4,44
+gPPI C4 seed froiAInsR,+,2,3.19,"[-22.5, -22.5, 5.5]",1.0,1.0,,froiAInsR,C4,44
+gPPI C4 seed froiAInsR,+,2,3.32,"[43.5, -22.5, -2.5]",1.0,1.0,,froiAInsR,C4,44
+gPPI C4 seed froiAInsR,+,2,3.22,"[35.5, -50.5, -44.5]",1.0,1.0,,froiAInsR,C4,44
+gPPI C4 seed froiAInsR,+,2,3.29,"[-56.5, -32.5, -20.5]",1.0,1.0,,froiAInsR,C4,44
+gPPI C4 seed froiAInsR,+,1,3.36,"[-22.5, -86.5, 3.5]",1.0,1.0,,froiAInsR,C4,44
+gPPI C4 seed froiAInsR,+,1,3.14,"[43.5, -62.5, 3.5]",1.0,1.0,,froiAInsR,C4,44
+gPPI C4 seed froiAInsR,+,1,3.09,"[-36.5, -26.5, 5.5]",1.0,1.0,,froiAInsR,C4,44
+gPPI C4 seed froiAInsR,+,1,3.17,"[-62.5, -14.5, 29.5]",1.0,1.0,,froiAInsR,C4,44
+gPPI C4 seed froiAInsR,+,1,3.1,"[51.5, -38.5, 57.5]",1.0,1.0,,froiAInsR,C4,44
+gPPI C4 seed froiAInsR,+,1,3.37,"[-52.5, -44.5, 57.5]",1.0,1.0,,froiAInsR,C4,44
+gPPI C4 seed froiAInsR,+,1,3.17,"[7.5, -62.5, -18.5]",1.0,1.0,,froiAInsR,C4,44
+gPPI C4 seed froiAInsR,+,1,3.1,"[3.5, -20.5, 59.5]",1.0,1.0,,froiAInsR,C4,44
+gPPI C4 seed froiAInsR,+,1,3.13,"[-4.5, -40.5, 57.5]",1.0,1.0,,froiAInsR,C4,44
+gPPI C4 seed froiAInsR,+,1,3.13,"[-34.5, -44.5, 43.5]",1.0,1.0,,froiAInsR,C4,44
+gPPI C4 seed froiAInsR,+,1,3.09,"[-60.5, -32.5, 43.5]",1.0,1.0,,froiAInsR,C4,44
+gPPI C4 seed froiAInsR,+,1,3.11,"[-34.5, -32.5, 45.5]",1.0,1.0,,froiAInsR,C4,44
+gPPI C4 seed froiAInsR,+,1,3.12,"[-50.5, 7.5, -0.5]",1.0,1.0,,froiAInsR,C4,44
+gPPI C4 seed froiAInsR,+,1,3.13,"[53.5, -50.5, -0.5]",1.0,1.0,,froiAInsR,C4,44
+gPPI C4 seed froiAInsR,+,1,3.18,"[39.5, 13.5, -4.5]",1.0,1.0,,froiAInsR,C4,44
+gPPI C4 seed froiAInsR,+,1,3.24,"[47.5, 3.5, 1.5]",1.0,1.0,,froiAInsR,C4,44
+gPPI C4 seed froiAInsR,+,1,3.13,"[7.5, -60.5, -12.5]",1.0,1.0,,froiAInsR,C4,44
+gPPI C4 seed froiAInsR,+,1,3.23,"[37.5, 39.5, -8.5]",1.0,1.0,,froiAInsR,C4,44
+gPPI C4 seed froiAInsR,-,1,-3.19,"[-6.5, 23.5, 61.5]",1.0,1.0,,froiAInsR,C4,44
+gPPI C4 seed froiAInsR,-,1,-3.35,"[-6.5, 69.5, 13.5]",1.0,1.0,,froiAInsR,C4,44
+gPPI C4 seed froiAInsR,-,1,-3.11,"[-2.5, 13.5, 7.5]",1.0,1.0,,froiAInsR,C4,44
+gPPI C4 seed froiAInsR,-,1,-3.23,"[9.5, -10.5, -22.5]",1.0,1.0,,froiAInsR,C4,44
+gPPI C4 seed froiAInsR,-,1,-3.15,"[-22.5, -70.5, -36.5]",1.0,1.0,,froiAInsR,C4,44
+gPPI C4 seed froiAInsR,-,1,-3.16,"[-6.5, 65.5, 27.5]",1.0,1.0,,froiAInsR,C4,44
+gPPI C1 seed froidACC,+,86,4.01,"[23.5, 57.5, 23.5]",0.00398,0.00796,"81% Frontal Pole; 83% Right Cerebral Cortex, 12% Right Cerebral White Matter",froidACC,C1,44
+gPPI C1 seed froidACC,+,63,3.7,"[45.5, -60.5, 25.5]",0.0236,0.0472,"34% Lateral Occipital Cortex, superior division, 18% Angular Gyrus; 53% Right Cerebral Cortex, 47% Right Cerebral White Matter",froidACC,C1,44
+gPPI C1 seed froidACC,+,20,3.77,"[-16.5, -52.5, 31.5]",0.783,1.0,"7% Precuneous Cortex, 7% Cingulate Gyrus, posterior division; 85% Left Cerebral White Matter, 15% Left Cerebral Cortex",froidACC,C1,44
+gPPI C1 seed froidACC,+,15,4.09,"[27.5, 5.5, -28.5]",0.943,1.0,"56% Temporal Pole, 20% Parahippocampal Gyrus, anterior division; 81% Right Cerebral Cortex, 12% Right Cerebral White Matter, 5% Right Amygdala",froidACC,C1,44
+gPPI C1 seed froidACC,+,14,3.42,"[45.5, 19.5, -12.5]",0.962,1.0,"36% Frontal Orbital Cortex, 9% Temporal Pole, 3% Insular Cortex, 1% Frontal Operculum Cortex; 56% Right Cerebral Cortex, 3% Right Cerebral White Matter",froidACC,C1,44
+gPPI C1 seed froidACC,+,14,3.8,"[41.5, -16.5, -26.5]",0.962,1.0,"41% Temporal Fusiform Cortex, posterior division, 24% Inferior Temporal Gyrus, posterior division, 6% Temporal Fusiform Cortex, anterior division, 2% Parahippocampal Gyrus, anterior division, 2% Inferior Temporal Gyrus, anterior division; 76% Right Cerebral Cortex, 24% Right Cerebral White Matter",froidACC,C1,44
+gPPI C1 seed froidACC,+,13,3.57,"[7.5, 27.5, 27.5]",0.977,1.0,"41% Cingulate Gyrus, anterior division, 34% Paracingulate Gyrus; 80% Right Cerebral Cortex, 20% Right Cerebral White Matter",froidACC,C1,44
+gPPI C1 seed froidACC,+,13,3.8,"[23.5, -54.5, -50.5]",0.977,1.0,"57% Right VIIIb, 34% Right VIIIa",froidACC,C1,44
+gPPI C1 seed froidACC,+,12,3.53,"[49.5, -42.5, 49.5]",0.987,1.0,"53% Supramarginal Gyrus, posterior division, 12% Angular Gyrus, 2% Superior Parietal Lobule, 1% Postcentral Gyrus; 71% Right Cerebral Cortex, 27% Right Cerebral White Matter",froidACC,C1,44
+gPPI C1 seed froidACC,+,12,3.42,"[43.5, 41.5, -18.5]",0.987,1.0,"75% Frontal Pole, 3% Frontal Orbital Cortex; 80% Right Cerebral Cortex, 2% Right Cerebral White Matter",froidACC,C1,44
+gPPI C1 seed froidACC,-,12,-3.6,"[-4.5, -76.5, -8.5]",0.987,1.0,,froidACC,C1,44
+gPPI C1 seed froidACC,+,8,3.39,"[13.5, -8.5, 19.5]",1.0,1.0,,froidACC,C1,44
+gPPI C1 seed froidACC,+,8,3.38,"[-30.5, -38.5, 51.5]",1.0,1.0,,froidACC,C1,44
+gPPI C1 seed froidACC,-,8,-3.88,"[19.5, 27.5, -10.5]",1.0,1.0,,froidACC,C1,44
+gPPI C1 seed froidACC,-,8,-3.54,"[1.5, -84.5, -6.5]",1.0,1.0,,froidACC,C1,44
+gPPI C1 seed froidACC,+,8,3.46,"[-58.5, 11.5, 13.5]",1.0,1.0,,froidACC,C1,44
+gPPI C1 seed froidACC,+,7,3.88,"[59.5, -22.5, -28.5]",1.0,1.0,,froidACC,C1,44
+gPPI C1 seed froidACC,+,7,3.4,"[23.5, 45.5, -18.5]",1.0,1.0,,froidACC,C1,44
+gPPI C1 seed froidACC,+,7,3.62,"[7.5, -36.5, 39.5]",1.0,1.0,,froidACC,C1,44
+gPPI C1 seed froidACC,+,6,3.55,"[-34.5, 25.5, 37.5]",1.0,1.0,,froidACC,C1,44
+gPPI C1 seed froidACC,+,6,3.42,"[-12.5, -14.5, 71.5]",1.0,1.0,,froidACC,C1,44
+gPPI C1 seed froidACC,+,5,3.35,"[49.5, -58.5, -28.5]",1.0,1.0,,froidACC,C1,44
+gPPI C1 seed froidACC,+,5,3.45,"[-56.5, -30.5, -6.5]",1.0,1.0,,froidACC,C1,44
+gPPI C1 seed froidACC,+,5,3.52,"[-16.5, 7.5, 1.5]",1.0,1.0,,froidACC,C1,44
+gPPI C1 seed froidACC,+,5,3.62,"[-16.5, 13.5, 35.5]",1.0,1.0,,froidACC,C1,44
+gPPI C1 seed froidACC,-,5,-3.58,"[-2.5, -62.5, -8.5]",1.0,1.0,,froidACC,C1,44
+gPPI C1 seed froidACC,-,5,-3.6,"[-30.5, -74.5, -2.5]",1.0,1.0,,froidACC,C1,44
+gPPI C1 seed froidACC,-,5,-3.62,"[-50.5, -16.5, 25.5]",1.0,1.0,,froidACC,C1,44
+gPPI C1 seed froidACC,+,4,3.4,"[-38.5, -22.5, 37.5]",1.0,1.0,,froidACC,C1,44
+gPPI C1 seed froidACC,+,4,3.24,"[5.5, 65.5, 13.5]",1.0,1.0,,froidACC,C1,44
+gPPI C1 seed froidACC,+,4,3.74,"[19.5, -24.5, 57.5]",1.0,1.0,,froidACC,C1,44
+gPPI C1 seed froidACC,+,4,3.43,"[7.5, 5.5, -2.5]",1.0,1.0,,froidACC,C1,44
+gPPI C1 seed froidACC,+,4,3.34,"[-32.5, 31.5, -2.5]",1.0,1.0,,froidACC,C1,44
+gPPI C1 seed froidACC,+,4,3.34,"[-32.5, -64.5, -32.5]",1.0,1.0,,froidACC,C1,44
+gPPI C1 seed froidACC,-,4,-3.75,"[-30.5, -32.5, -40.5]",1.0,1.0,,froidACC,C1,44
+gPPI C1 seed froidACC,+,3,3.26,"[-30.5, -16.5, -36.5]",1.0,1.0,,froidACC,C1,44
+gPPI C1 seed froidACC,+,3,3.41,"[31.5, -56.5, -32.5]",1.0,1.0,,froidACC,C1,44
+gPPI C1 seed froidACC,+,3,3.24,"[-40.5, 31.5, 43.5]",1.0,1.0,,froidACC,C1,44
+gPPI C1 seed froidACC,+,3,3.45,"[1.5, 23.5, 41.5]",1.0,1.0,,froidACC,C1,44
+gPPI C1 seed froidACC,+,3,3.12,"[-22.5, -36.5, 61.5]",1.0,1.0,,froidACC,C1,44
+gPPI C1 seed froidACC,-,3,-3.17,"[27.5, 33.5, 3.5]",1.0,1.0,,froidACC,C1,44
+gPPI C1 seed froidACC,-,3,-3.4,"[11.5, 55.5, 15.5]",1.0,1.0,,froidACC,C1,44
+gPPI C1 seed froidACC,+,3,3.34,"[29.5, 23.5, 51.5]",1.0,1.0,,froidACC,C1,44
+gPPI C1 seed froidACC,+,3,3.3,"[-32.5, -22.5, 63.5]",1.0,1.0,,froidACC,C1,44
+gPPI C1 seed froidACC,+,2,3.45,"[-20.5, -76.5, -44.5]",1.0,1.0,,froidACC,C1,44
+gPPI C1 seed froidACC,+,2,3.43,"[-34.5, -52.5, 61.5]",1.0,1.0,,froidACC,C1,44
+gPPI C1 seed froidACC,+,2,3.12,"[61.5, -36.5, -16.5]",1.0,1.0,,froidACC,C1,44
+gPPI C1 seed froidACC,+,2,3.13,"[-28.5, -34.5, 67.5]",1.0,1.0,,froidACC,C1,44
+gPPI C1 seed froidACC,+,2,3.37,"[21.5, 57.5, -12.5]",1.0,1.0,,froidACC,C1,44
+gPPI C1 seed froidACC,+,2,3.19,"[31.5, -44.5, 43.5]",1.0,1.0,,froidACC,C1,44
+gPPI C1 seed froidACC,-,2,-3.27,"[-2.5, -4.5, 1.5]",1.0,1.0,,froidACC,C1,44
+gPPI C1 seed froidACC,-,2,-3.43,"[-2.5, 7.5, 5.5]",1.0,1.0,,froidACC,C1,44
+gPPI C1 seed froidACC,-,2,-3.4,"[15.5, -98.5, 23.5]",1.0,1.0,,froidACC,C1,44
+gPPI C1 seed froidACC,-,2,-3.32,"[-22.5, -94.5, -0.5]",1.0,1.0,,froidACC,C1,44
+gPPI C1 seed froidACC,-,2,-3.16,"[-6.5, -52.5, -2.5]",1.0,1.0,,froidACC,C1,44
+gPPI C1 seed froidACC,+,2,3.21,"[53.5, 29.5, -8.5]",1.0,1.0,,froidACC,C1,44
+gPPI C1 seed froidACC,+,2,3.16,"[53.5, 39.5, -8.5]",1.0,1.0,,froidACC,C1,44
+gPPI C1 seed froidACC,+,1,3.44,"[9.5, -32.5, 51.5]",1.0,1.0,,froidACC,C1,44
+gPPI C1 seed froidACC,+,1,3.1,"[45.5, -56.5, 55.5]",1.0,1.0,,froidACC,C1,44
+gPPI C1 seed froidACC,+,1,3.15,"[-20.5, -16.5, 67.5]",1.0,1.0,,froidACC,C1,44
+gPPI C1 seed froidACC,+,1,3.13,"[-18.5, -28.5, 57.5]",1.0,1.0,,froidACC,C1,44
+gPPI C1 seed froidACC,+,1,3.19,"[15.5, -28.5, 65.5]",1.0,1.0,,froidACC,C1,44
+gPPI C1 seed froidACC,+,1,3.13,"[-44.5, -48.5, 61.5]",1.0,1.0,,froidACC,C1,44
+gPPI C1 seed froidACC,+,1,3.14,"[19.5, 55.5, -16.5]",1.0,1.0,,froidACC,C1,44
+gPPI C1 seed froidACC,+,1,3.47,"[-52.5, 19.5, -22.5]",1.0,1.0,,froidACC,C1,44
+gPPI C1 seed froidACC,+,1,3.12,"[49.5, 49.5, -0.5]",1.0,1.0,,froidACC,C1,44
+gPPI C1 seed froidACC,+,1,3.16,"[65.5, -46.5, 7.5]",1.0,1.0,,froidACC,C1,44
+gPPI C1 seed froidACC,+,1,3.13,"[7.5, 15.5, 67.5]",1.0,1.0,,froidACC,C1,44
+gPPI C1 seed froidACC,+,1,3.23,"[35.5, 19.5, 31.5]",1.0,1.0,,froidACC,C1,44
+gPPI C1 seed froidACC,+,1,3.25,"[47.5, 39.5, 29.5]",1.0,1.0,,froidACC,C1,44
+gPPI C1 seed froidACC,+,1,3.12,"[27.5, 43.5, 19.5]",1.0,1.0,,froidACC,C1,44
+gPPI C1 seed froidACC,+,1,3.13,"[43.5, -60.5, 15.5]",1.0,1.0,,froidACC,C1,44
+gPPI C1 seed froidACC,+,1,3.13,"[65.5, -36.5, -10.5]",1.0,1.0,,froidACC,C1,44
+gPPI C1 seed froidACC,+,1,3.23,"[-66.5, -22.5, 39.5]",1.0,1.0,,froidACC,C1,44
+gPPI C1 seed froidACC,-,1,-3.12,"[-0.5, -6.5, -8.5]",1.0,1.0,,froidACC,C1,44
+gPPI C1 seed froidACC,-,1,-3.18,"[-14.5, -98.5, -12.5]",1.0,1.0,,froidACC,C1,44
+gPPI C1 seed froidACC,-,1,-3.12,"[37.5, 9.5, 15.5]",1.0,1.0,,froidACC,C1,44
+gPPI C1 seed froidACC,-,1,-3.18,"[-4.5, -24.5, -16.5]",1.0,1.0,,froidACC,C1,44
+gPPI C1 seed froidACC,-,1,-3.1,"[-16.5, 17.5, 19.5]",1.0,1.0,,froidACC,C1,44
+gPPI C1 seed froidACC,-,1,-3.22,"[-18.5, -96.5, -16.5]",1.0,1.0,,froidACC,C1,44
+gPPI C1 seed froidACC,-,1,-3.12,"[-34.5, -64.5, 23.5]",1.0,1.0,,froidACC,C1,44
+gPPI C4 seed froidACC,-,133,-5.34,"[-4.5, -76.5, -6.5]",3.77e-05,7.54e-05,"78% Lingual Gyrus, 1% Occipital Fusiform Gyrus, 1% Intracalcarine Cortex; 80% Left Cerebral Cortex, 9% Left Cerebral White Matter, 2% Right Cerebral Cortex",froidACC,C4,44
+gPPI C4 seed froidACC,+,91,3.87,"[25.5, 57.5, 25.5]",0.000942,0.001884,"84% Frontal Pole; 86% Right Cerebral Cortex, 3% Right Cerebral White Matter",froidACC,C4,44
+gPPI C4 seed froidACC,-,46,-3.91,"[-6.5, -94.5, -8.5]",0.0546,0.1092,"51% Occipital Pole, 8% Lingual Gyrus, 7% Intracalcarine Cortex, 2% Occipital Fusiform Gyrus, 2% Lateral Occipital Cortex, inferior division; 71% Left Cerebral Cortex, 16% Left Cerebral White Matter, 0% Right Cerebral Cortex",froidACC,C4,44
+gPPI C4 seed froidACC,+,45,4.33,"[11.5, -8.5, 19.5]",0.0604,0.1208,"51% Right Lateral Ventricle, 29% Right Caudate, 10% Right Thalamus, 10% Right Cerebral White Matter, 1% Right Cerebral Cortex",froidACC,C4,44
+gPPI C4 seed froidACC,+,36,3.87,"[-2.5, -4.5, 55.5]",0.151,0.302,"84% Juxtapositional Lobule Cortex (formerly Supplementary Motor Cortex); 87% Left Cerebral Cortex, 2% Left Cerebral White Matter, 1% Right Cerebral Cortex",froidACC,C4,44
+gPPI C4 seed froidACC,+,30,3.81,"[7.5, 27.5, 27.5]",0.278,0.556,"41% Cingulate Gyrus, anterior division, 34% Paracingulate Gyrus; 80% Right Cerebral Cortex, 20% Right Cerebral White Matter",froidACC,C4,44
+gPPI C4 seed froidACC,+,23,3.56,"[1.5, -26.5, 25.5]",0.54,1.0,"44% Cingulate Gyrus, posterior division, 3% Cingulate Gyrus, anterior division; 43% Right Cerebral Cortex, 39% Right Cerebral White Matter, 9% Left Cerebral Cortex, 7% Left Cerebral White Matter",froidACC,C4,44
+gPPI C4 seed froidACC,+,22,3.84,"[43.5, -50.5, 51.5]",0.587,1.0,"41% Angular Gyrus, 23% Superior Parietal Lobule, 10% Supramarginal Gyrus, posterior division; 77% Right Cerebral Cortex, 17% Right Cerebral White Matter",froidACC,C4,44
+gPPI C4 seed froidACC,+,21,4.19,"[-8.5, -14.5, 35.5]",0.636,1.0,"8% Cingulate Gyrus, posterior division, 5% Cingulate Gyrus, anterior division; 86% Left Cerebral White Matter, 14% Left Cerebral Cortex",froidACC,C4,44
+gPPI C4 seed froidACC,+,20,3.9,"[45.5, -56.5, -34.5]",0.685,1.0,94% Right Crus I,froidACC,C4,44
+gPPI C4 seed froidACC,+,19,3.65,"[-44.5, 13.5, -22.5]",0.734,1.0,,froidACC,C4,44
+gPPI C4 seed froidACC,+,17,4.01,"[-20.5, 7.5, 63.5]",0.827,1.0,,froidACC,C4,44
+gPPI C4 seed froidACC,-,17,-3.37,"[15.5, -78.5, -12.5]",0.827,1.0,,froidACC,C4,44
+gPPI C4 seed froidACC,+,16,3.81,"[41.5, 35.5, 37.5]",0.869,1.0,,froidACC,C4,44
+gPPI C4 seed froidACC,+,16,3.85,"[-36.5, 31.5, 27.5]",0.869,1.0,,froidACC,C4,44
+gPPI C4 seed froidACC,+,14,3.84,"[25.5, 5.5, -0.5]",0.935,1.0,,froidACC,C4,44
+gPPI C4 seed froidACC,-,14,-3.56,"[17.5, -52.5, 5.5]",0.935,1.0,,froidACC,C4,44
+gPPI C4 seed froidACC,+,12,3.41,"[19.5, -24.5, 61.5]",0.976,1.0,,froidACC,C4,44
+gPPI C4 seed froidACC,+,12,3.6,"[-54.5, -50.5, 49.5]",0.976,1.0,,froidACC,C4,44
+gPPI C4 seed froidACC,+,11,3.52,"[31.5, -54.5, -30.5]",0.988,1.0,,froidACC,C4,44
+gPPI C4 seed froidACC,+,9,3.64,"[29.5, 35.5, 23.5]",0.998,1.0,,froidACC,C4,44
+gPPI C4 seed froidACC,+,8,3.64,"[31.5, -4.5, 11.5]",0.999,1.0,,froidACC,C4,44
+gPPI C4 seed froidACC,+,7,3.26,"[-44.5, 23.5, 37.5]",1.0,1.0,,froidACC,C4,44
+gPPI C4 seed froidACC,+,7,3.37,"[-56.5, 13.5, 19.5]",1.0,1.0,,froidACC,C4,44
+gPPI C4 seed froidACC,+,6,3.63,"[-56.5, -26.5, -30.5]",1.0,1.0,,froidACC,C4,44
+gPPI C4 seed froidACC,+,6,3.43,"[-48.5, -66.5, -34.5]",1.0,1.0,,froidACC,C4,44
+gPPI C4 seed froidACC,-,6,-3.41,"[9.5, -50.5, 1.5]",1.0,1.0,,froidACC,C4,44
+gPPI C4 seed froidACC,+,5,3.39,"[-48.5, -44.5, 29.5]",1.0,1.0,,froidACC,C4,44
+gPPI C4 seed froidACC,+,5,3.22,"[-40.5, -60.5, -30.5]",1.0,1.0,,froidACC,C4,44
+gPPI C4 seed froidACC,+,5,3.54,"[27.5, -56.5, 61.5]",1.0,1.0,,froidACC,C4,44
+gPPI C4 seed froidACC,+,5,3.36,"[-56.5, -26.5, -4.5]",1.0,1.0,,froidACC,C4,44
+gPPI C4 seed froidACC,+,5,3.39,"[41.5, -16.5, -26.5]",1.0,1.0,,froidACC,C4,44
+gPPI C4 seed froidACC,-,5,-3.69,"[-28.5, -42.5, 19.5]",1.0,1.0,,froidACC,C4,44
+gPPI C4 seed froidACC,+,4,3.28,"[-54.5, -42.5, 55.5]",1.0,1.0,,froidACC,C4,44
+gPPI C4 seed froidACC,+,4,3.58,"[21.5, -64.5, -34.5]",1.0,1.0,,froidACC,C4,44
+gPPI C4 seed froidACC,+,4,3.53,"[-24.5, 35.5, 15.5]",1.0,1.0,,froidACC,C4,44
+gPPI C4 seed froidACC,-,4,-3.36,"[-28.5, -74.5, -4.5]",1.0,1.0,,froidACC,C4,44
+gPPI C4 seed froidACC,-,4,-3.21,"[-30.5, -2.5, 29.5]",1.0,1.0,,froidACC,C4,44
+gPPI C4 seed froidACC,+,4,3.84,"[39.5, -2.5, -44.5]",1.0,1.0,,froidACC,C4,44
+gPPI C4 seed froidACC,+,4,3.6,"[-30.5, -50.5, -42.5]",1.0,1.0,,froidACC,C4,44
+gPPI C4 seed froidACC,-,4,-3.18,"[-6.5, 69.5, 13.5]",1.0,1.0,,froidACC,C4,44
+gPPI C4 seed froidACC,+,3,3.23,"[49.5, 45.5, -0.5]",1.0,1.0,,froidACC,C4,44
+gPPI C4 seed froidACC,+,3,3.31,"[-2.5, 35.5, 45.5]",1.0,1.0,,froidACC,C4,44
+gPPI C4 seed froidACC,+,3,3.24,"[-44.5, 51.5, -6.5]",1.0,1.0,,froidACC,C4,44
+gPPI C4 seed froidACC,+,3,3.46,"[25.5, -56.5, -34.5]",1.0,1.0,,froidACC,C4,44
+gPPI C4 seed froidACC,+,3,3.2,"[-62.5, -48.5, -8.5]",1.0,1.0,,froidACC,C4,44
+gPPI C4 seed froidACC,+,3,3.47,"[-16.5, -0.5, 59.5]",1.0,1.0,,froidACC,C4,44
+gPPI C4 seed froidACC,-,3,-3.2,"[-12.5, -36.5, -8.5]",1.0,1.0,,froidACC,C4,44
+gPPI C4 seed froidACC,-,3,-3.14,"[49.5, -16.5, 27.5]",1.0,1.0,,froidACC,C4,44
+gPPI C4 seed froidACC,-,3,-3.21,"[-20.5, -86.5, -6.5]",1.0,1.0,,froidACC,C4,44
+gPPI C4 seed froidACC,-,3,-3.35,"[35.5, -78.5, -8.5]",1.0,1.0,,froidACC,C4,44
+gPPI C4 seed froidACC,+,3,3.16,"[-46.5, -48.5, 41.5]",1.0,1.0,,froidACC,C4,44
+gPPI C4 seed froidACC,+,2,3.13,"[49.5, 39.5, 25.5]",1.0,1.0,,froidACC,C4,44
+gPPI C4 seed froidACC,+,2,3.5,"[-46.5, 9.5, -16.5]",1.0,1.0,,froidACC,C4,44
+gPPI C4 seed froidACC,+,2,3.3,"[23.5, -0.5, 59.5]",1.0,1.0,,froidACC,C4,44
+gPPI C4 seed froidACC,+,2,3.33,"[-10.5, -24.5, -36.5]",1.0,1.0,,froidACC,C4,44
+gPPI C4 seed froidACC,+,2,3.25,"[53.5, -22.5, -34.5]",1.0,1.0,,froidACC,C4,44
+gPPI C4 seed froidACC,+,2,3.1,"[-62.5, -24.5, 31.5]",1.0,1.0,,froidACC,C4,44
+gPPI C4 seed froidACC,+,2,3.19,"[-32.5, -66.5, -30.5]",1.0,1.0,,froidACC,C4,44
+gPPI C4 seed froidACC,+,2,3.14,"[27.5, -60.5, -28.5]",1.0,1.0,,froidACC,C4,44
+gPPI C4 seed froidACC,+,2,3.22,"[-8.5, -12.5, 61.5]",1.0,1.0,,froidACC,C4,44
+gPPI C4 seed froidACC,+,2,3.18,"[-30.5, 11.5, 45.5]",1.0,1.0,,froidACC,C4,44
+gPPI C4 seed froidACC,+,2,3.38,"[-38.5, -74.5, 11.5]",1.0,1.0,,froidACC,C4,44
+gPPI C4 seed froidACC,+,2,3.16,"[25.5, 5.5, 13.5]",1.0,1.0,,froidACC,C4,44
+gPPI C4 seed froidACC,-,2,-3.18,"[-4.5, -28.5, -50.5]",1.0,1.0,,froidACC,C4,44
+gPPI C4 seed froidACC,-,2,-3.25,"[-30.5, -82.5, -20.5]",1.0,1.0,,froidACC,C4,44
+gPPI C4 seed froidACC,+,1,3.41,"[55.5, -42.5, -28.5]",1.0,1.0,,froidACC,C4,44
+gPPI C4 seed froidACC,+,1,3.1,"[45.5, -58.5, 57.5]",1.0,1.0,,froidACC,C4,44
+gPPI C4 seed froidACC,+,1,3.14,"[39.5, 7.5, -42.5]",1.0,1.0,,froidACC,C4,44
+gPPI C4 seed froidACC,+,1,3.17,"[-48.5, 13.5, 27.5]",1.0,1.0,,froidACC,C4,44
+gPPI C4 seed froidACC,+,1,3.18,"[57.5, 5.5, 35.5]",1.0,1.0,,froidACC,C4,44
+gPPI C4 seed froidACC,+,1,3.11,"[-38.5, -64.5, -34.5]",1.0,1.0,,froidACC,C4,44
+gPPI C4 seed froidACC,+,1,3.25,"[-60.5, -24.5, 43.5]",1.0,1.0,,froidACC,C4,44
+gPPI C4 seed froidACC,+,1,3.17,"[-8.5, -80.5, -34.5]",1.0,1.0,,froidACC,C4,44
+gPPI C4 seed froidACC,+,1,3.15,"[-30.5, 21.5, 49.5]",1.0,1.0,,froidACC,C4,44
+gPPI C4 seed froidACC,+,1,3.44,"[23.5, -52.5, -50.5]",1.0,1.0,,froidACC,C4,44
+gPPI C4 seed froidACC,+,1,3.1,"[-34.5, -38.5, 17.5]",1.0,1.0,,froidACC,C4,44
+gPPI C4 seed froidACC,+,1,3.26,"[39.5, 1.5, -10.5]",1.0,1.0,,froidACC,C4,44
+gPPI C4 seed froidACC,+,1,3.11,"[47.5, 51.5, -6.5]",1.0,1.0,,froidACC,C4,44
+gPPI C4 seed froidACC,+,1,3.19,"[57.5, 9.5, -10.5]",1.0,1.0,,froidACC,C4,44
+gPPI C4 seed froidACC,+,1,3.1,"[-22.5, 55.5, 9.5]",1.0,1.0,,froidACC,C4,44
+gPPI C4 seed froidACC,+,1,3.26,"[29.5, -0.5, 67.5]",1.0,1.0,,froidACC,C4,44
+gPPI C4 seed froidACC,-,1,-3.12,"[-10.5, -56.5, -0.5]",1.0,1.0,,froidACC,C4,44
+gPPI C4 seed froidACC,-,1,-3.14,"[-26.5, -68.5, -4.5]",1.0,1.0,,froidACC,C4,44
+gPPI C4 seed froidACC,-,1,-3.15,"[-2.5, -4.5, 3.5]",1.0,1.0,,froidACC,C4,44
+gPPI C4 seed froidACC,-,1,-3.16,"[21.5, 29.5, 7.5]",1.0,1.0,,froidACC,C4,44
+gPPI C4 seed froidACC,-,1,-3.2,"[5.5, -72.5, -4.5]",1.0,1.0,,froidACC,C4,44
+gPPI C4 seed froidACC,-,1,-3.18,"[-10.5, 71.5, 11.5]",1.0,1.0,,froidACC,C4,44
+gPPI C4 seed froidACC,-,1,-3.09,"[33.5, -44.5, 15.5]",1.0,1.0,,froidACC,C4,44
+gPPI C4 seed froidACC,-,1,-3.11,"[-26.5, -84.5, -4.5]",1.0,1.0,,froidACC,C4,44
+gPPI C4 seed froidACC,-,1,-3.18,"[-16.5, 27.5, 23.5]",1.0,1.0,,froidACC,C4,44
+gPPI C4 seed froidACC,-,1,-3.19,"[41.5, -20.5, 51.5]",1.0,1.0,,froidACC,C4,44
+gPPI C1 seed froiPIns,+,58,4.35,"[-4.5, -36.5, 55.5]",0.0859,0.1718,"28% Postcentral Gyrus, 28% Precentral Gyrus, 7% Precuneous Cortex; 70% Left Cerebral Cortex, 22% Left Cerebral White Matter",froiPIns,C1,44
+gPPI C1 seed froiPIns,-,36,-4.05,"[-2.5, 7.5, 1.5]",0.384,0.768,"1% Subcallosal Cortex; 59% Left Lateral Ventricle, 26% Left Cerebral Cortex, 13% Left Cerebral White Matter, 1% Right Cerebral Cortex, 0% Right Cerebral White Matter, 0% Left Caudate, 0% Left Accumbens",froiPIns,C1,44
+gPPI C1 seed froiPIns,+,31,4.13,"[-10.5, -30.5, 69.5]",0.525,1.0,"28% Precentral Gyrus, 14% Postcentral Gyrus; 51% Left Cerebral White Matter, 49% Left Cerebral Cortex",froiPIns,C1,44
+gPPI C1 seed froiPIns,-,20,-3.98,"[13.5, 33.5, 33.5]",0.876,1.0,"2% Paracingulate Gyrus; 97% Right Cerebral White Matter, 3% Right Cerebral Cortex",froiPIns,C1,44
+gPPI C1 seed froiPIns,+,19,3.67,"[5.5, -40.5, 65.5]",0.901,1.0,"38% Postcentral Gyrus, 18% Precuneous Cortex, 1% Precentral Gyrus; 59% Right Cerebral Cortex, 34% Right Cerebral White Matter",froiPIns,C1,44
+gPPI C1 seed froiPIns,-,18,-4.06,"[-42.5, -10.5, 45.5]",0.923,1.0,"46% Precentral Gyrus, 1% Postcentral Gyrus; 54% Left Cerebral Cortex, 44% Left Cerebral White Matter",froiPIns,C1,44
+gPPI C1 seed froiPIns,+,15,3.84,"[11.5, -42.5, 15.5]",0.971,1.0,"1% Precuneous Cortex; 97% Right Cerebral White Matter, 2% Right Lateral Ventricle, 1% Right Cerebral Cortex, 0% Right Hippocampus",froiPIns,C1,44
+gPPI C1 seed froiPIns,+,11,3.79,"[27.5, 1.5, -28.5]",0.997,1.0,"25% Parahippocampal Gyrus, anterior division, 7% Temporal Pole; 37% Right Cerebral White Matter, 36% Right Cerebral Cortex, 26% Right Amygdala, 1% Right Hippocampus",froiPIns,C1,44
+gPPI C1 seed froiPIns,+,10,3.63,"[19.5, -22.5, 59.5]",0.998,1.0,"25% Precentral Gyrus, 4% Postcentral Gyrus; 67% Right Cerebral White Matter, 33% Right Cerebral Cortex",froiPIns,C1,44
+gPPI C1 seed froiPIns,+,10,3.53,"[-16.5, -32.5, -38.5]",0.998,1.0,81% Brain-Stem,froiPIns,C1,44
+gPPI C1 seed froiPIns,-,8,-3.54,"[5.5, 47.5, -14.5]",1.0,1.0,,froiPIns,C1,44
+gPPI C1 seed froiPIns,-,8,-3.83,"[21.5, 15.5, -8.5]",1.0,1.0,,froiPIns,C1,44
+gPPI C1 seed froiPIns,-,8,-3.73,"[51.5, 5.5, -8.5]",1.0,1.0,,froiPIns,C1,44
+gPPI C1 seed froiPIns,-,8,-3.45,"[9.5, 41.5, 1.5]",1.0,1.0,,froiPIns,C1,44
+gPPI C1 seed froiPIns,-,7,-3.44,"[17.5, 25.5, 39.5]",1.0,1.0,,froiPIns,C1,44
+gPPI C1 seed froiPIns,+,7,3.44,"[21.5, -18.5, -2.5]",1.0,1.0,,froiPIns,C1,44
+gPPI C1 seed froiPIns,-,7,-3.41,"[-0.5, -24.5, -2.5]",1.0,1.0,,froiPIns,C1,44
+gPPI C1 seed froiPIns,+,6,3.44,"[47.5, 15.5, 21.5]",1.0,1.0,,froiPIns,C1,44
+gPPI C1 seed froiPIns,-,6,-4.53,"[-32.5, -32.5, -40.5]",1.0,1.0,,froiPIns,C1,44
+gPPI C1 seed froiPIns,-,6,-3.52,"[-16.5, 49.5, 13.5]",1.0,1.0,,froiPIns,C1,44
+gPPI C1 seed froiPIns,-,6,-3.53,"[21.5, -28.5, 31.5]",1.0,1.0,,froiPIns,C1,44
+gPPI C1 seed froiPIns,-,5,-3.47,"[15.5, -54.5, 57.5]",1.0,1.0,,froiPIns,C1,44
+gPPI C1 seed froiPIns,-,5,-3.46,"[-8.5, -72.5, -4.5]",1.0,1.0,,froiPIns,C1,44
+gPPI C1 seed froiPIns,-,4,-3.47,"[-2.5, -64.5, 11.5]",1.0,1.0,,froiPIns,C1,44
+gPPI C1 seed froiPIns,-,4,-3.53,"[-24.5, -76.5, 5.5]",1.0,1.0,,froiPIns,C1,44
+gPPI C1 seed froiPIns,+,4,3.25,"[25.5, -20.5, 65.5]",1.0,1.0,,froiPIns,C1,44
+gPPI C1 seed froiPIns,+,4,3.45,"[3.5, -64.5, -28.5]",1.0,1.0,,froiPIns,C1,44
+gPPI C1 seed froiPIns,+,4,3.35,"[29.5, -18.5, -10.5]",1.0,1.0,,froiPIns,C1,44
+gPPI C1 seed froiPIns,+,4,3.35,"[39.5, -48.5, 9.5]",1.0,1.0,,froiPIns,C1,44
+gPPI C1 seed froiPIns,-,4,-3.2,"[23.5, -92.5, 27.5]",1.0,1.0,,froiPIns,C1,44
+gPPI C1 seed froiPIns,+,3,3.14,"[11.5, -20.5, -12.5]",1.0,1.0,,froiPIns,C1,44
+gPPI C1 seed froiPIns,+,3,3.36,"[13.5, -22.5, 75.5]",1.0,1.0,,froiPIns,C1,44
+gPPI C1 seed froiPIns,+,3,3.27,"[-42.5, 11.5, 15.5]",1.0,1.0,,froiPIns,C1,44
+gPPI C1 seed froiPIns,-,2,-3.18,"[-6.5, 47.5, -8.5]",1.0,1.0,,froiPIns,C1,44
+gPPI C1 seed froiPIns,-,2,-3.17,"[-22.5, -54.5, 17.5]",1.0,1.0,,froiPIns,C1,44
+gPPI C1 seed froiPIns,-,2,-3.19,"[-0.5, -72.5, -22.5]",1.0,1.0,,froiPIns,C1,44
+gPPI C1 seed froiPIns,-,2,-3.39,"[-0.5, 35.5, -20.5]",1.0,1.0,,froiPIns,C1,44
+gPPI C1 seed froiPIns,+,2,3.18,"[3.5, -18.5, 65.5]",1.0,1.0,,froiPIns,C1,44
+gPPI C1 seed froiPIns,+,2,3.18,"[63.5, -44.5, 11.5]",1.0,1.0,,froiPIns,C1,44
+gPPI C1 seed froiPIns,+,2,3.21,"[-32.5, -2.5, -40.5]",1.0,1.0,,froiPIns,C1,44
+gPPI C1 seed froiPIns,+,2,3.1,"[-34.5, 25.5, 27.5]",1.0,1.0,,froiPIns,C1,44
+gPPI C1 seed froiPIns,+,1,3.15,"[-24.5, -34.5, 63.5]",1.0,1.0,,froiPIns,C1,44
+gPPI C1 seed froiPIns,+,1,3.15,"[-0.5, -20.5, -34.5]",1.0,1.0,,froiPIns,C1,44
+gPPI C1 seed froiPIns,+,1,3.19,"[-24.5, 1.5, -36.5]",1.0,1.0,,froiPIns,C1,44
+gPPI C1 seed froiPIns,+,1,3.23,"[-12.5, -40.5, -26.5]",1.0,1.0,,froiPIns,C1,44
+gPPI C1 seed froiPIns,+,1,3.15,"[-34.5, -68.5, 47.5]",1.0,1.0,,froiPIns,C1,44
+gPPI C1 seed froiPIns,+,1,3.37,"[11.5, -18.5, -24.5]",1.0,1.0,,froiPIns,C1,44
+gPPI C1 seed froiPIns,+,1,3.19,"[41.5, -10.5, -26.5]",1.0,1.0,,froiPIns,C1,44
+gPPI C1 seed froiPIns,+,1,3.23,"[-34.5, -10.5, -14.5]",1.0,1.0,,froiPIns,C1,44
+gPPI C1 seed froiPIns,+,1,3.27,"[27.5, -60.5, 33.5]",1.0,1.0,,froiPIns,C1,44
+gPPI C1 seed froiPIns,+,1,3.11,"[-54.5, -48.5, 35.5]",1.0,1.0,,froiPIns,C1,44
+gPPI C1 seed froiPIns,+,1,3.12,"[15.5, -22.5, 43.5]",1.0,1.0,,froiPIns,C1,44
+gPPI C1 seed froiPIns,+,1,3.19,"[-48.5, -38.5, 45.5]",1.0,1.0,,froiPIns,C1,44
+gPPI C1 seed froiPIns,+,1,3.1,"[27.5, -16.5, 1.5]",1.0,1.0,,froiPIns,C1,44
+gPPI C1 seed froiPIns,+,1,3.18,"[15.5, -16.5, 39.5]",1.0,1.0,,froiPIns,C1,44
+gPPI C1 seed froiPIns,+,1,3.25,"[41.5, -34.5, 17.5]",1.0,1.0,,froiPIns,C1,44
+gPPI C1 seed froiPIns,+,1,3.23,"[-2.5, -42.5, 13.5]",1.0,1.0,,froiPIns,C1,44
+gPPI C1 seed froiPIns,+,1,3.17,"[-18.5, -42.5, 79.5]",1.0,1.0,,froiPIns,C1,44
+gPPI C1 seed froiPIns,+,1,3.19,"[49.5, -40.5, 19.5]",1.0,1.0,,froiPIns,C1,44
+gPPI C1 seed froiPIns,-,1,-3.12,"[-10.5, -40.5, -6.5]",1.0,1.0,,froiPIns,C1,44
+gPPI C1 seed froiPIns,-,1,-3.11,"[7.5, 55.5, 15.5]",1.0,1.0,,froiPIns,C1,44
+gPPI C1 seed froiPIns,-,1,-3.27,"[-36.5, -26.5, 31.5]",1.0,1.0,,froiPIns,C1,44
+gPPI C1 seed froiPIns,-,1,-3.31,"[11.5, 37.5, -12.5]",1.0,1.0,,froiPIns,C1,44
+gPPI C1 seed froiPIns,-,1,-3.14,"[-12.5, 31.5, -20.5]",1.0,1.0,,froiPIns,C1,44
+gPPI C4 seed froiPIns,-,196,-4.25,"[1.5, -80.5, -0.5]",0.00011,0.00022,"49% Lingual Gyrus, 33% Intracalcarine Cortex, 5% Supracalcarine Cortex; 61% Right Cerebral Cortex, 30% Left Cerebral Cortex, 5% Right Cerebral White Matter, 0% Left Cerebral White Matter",froiPIns,C4,44
+gPPI C4 seed froiPIns,-,160,-4.4,"[-4.5, 47.5, -12.5]",0.000553,0.001106,"72% Frontal Medial Cortex, 20% Paracingulate Gyrus, 2% Frontal Pole; 95% Left Cerebral Cortex, 4% Left Cerebral White Matter, 0% Right Cerebral Cortex",froiPIns,C4,44
+gPPI C4 seed froiPIns,+,94,4.13,"[-62.5, -48.5, 33.5]",0.0153,0.0306,"57% Supramarginal Gyrus, posterior division, 20% Angular Gyrus, 1% Supramarginal Gyrus, anterior division; 83% Left Cerebral Cortex, 5% Left Cerebral White Matter",froiPIns,C4,44
+gPPI C4 seed froiPIns,+,81,4.04,"[57.5, -44.5, 45.5]",0.0318,0.0636,"55% Supramarginal Gyrus, posterior division, 23% Angular Gyrus; 83% Right Cerebral Cortex, 7% Right Cerebral White Matter",froiPIns,C4,44
+gPPI C4 seed froiPIns,+,51,4.49,"[47.5, -48.5, 57.5]",0.191,0.382,"28% Angular Gyrus, 12% Supramarginal Gyrus, posterior division, 11% Superior Parietal Lobule; 57% Right Cerebral Cortex, 1% Right Cerebral White Matter",froiPIns,C4,44
+gPPI C4 seed froiPIns,+,43,3.82,"[45.5, 49.5, 19.5]",0.309,0.618,"31% Frontal Pole; 35% Right Cerebral Cortex, 0% Right Cerebral White Matter",froiPIns,C4,44
+gPPI C4 seed froiPIns,-,41,-3.61,"[-4.5, 51.5, 27.5]",0.348,0.696,"57% Superior Frontal Gyrus, 14% Paracingulate Gyrus, 5% Frontal Pole; 96% Left Cerebral Cortex, 2% Left Cerebral White Matter, 0% Right Cerebral Cortex",froiPIns,C4,44
+gPPI C4 seed froiPIns,-,39,-3.45,"[-14.5, 63.5, 21.5]",0.391,0.782,"73% Frontal Pole; 75% Left Cerebral Cortex, 5% Left Cerebral White Matter",froiPIns,C4,44
+gPPI C4 seed froiPIns,-,36,-4.18,"[-0.5, 67.5, -4.5]",0.463,0.926,"29% Frontal Pole; 20% Right Cerebral Cortex, 15% Left Cerebral Cortex",froiPIns,C4,44
+gPPI C4 seed froiPIns,+,27,3.58,"[43.5, -40.5, 41.5]",0.721,1.0,"40% Supramarginal Gyrus, posterior division, 9% Angular Gyrus, 4% Superior Parietal Lobule, 1% Supramarginal Gyrus, anterior division, 1% Postcentral Gyrus; 57% Right Cerebral Cortex, 43% Right Cerebral White Matter",froiPIns,C4,44
+gPPI C4 seed froiPIns,-,24,-3.7,"[-22.5, -86.5, -8.5]",0.808,1.0,,froiPIns,C4,44
+gPPI C4 seed froiPIns,-,24,-3.57,"[-10.5, -46.5, 15.5]",0.808,1.0,,froiPIns,C4,44
+gPPI C4 seed froiPIns,-,23,-3.86,"[-42.5, 29.5, -14.5]",0.835,1.0,,froiPIns,C4,44
+gPPI C4 seed froiPIns,+,23,3.68,"[47.5, 45.5, -0.5]",0.835,1.0,,froiPIns,C4,44
+gPPI C4 seed froiPIns,-,19,-3.72,"[-8.5, -96.5, -4.5]",0.926,1.0,,froiPIns,C4,44
+gPPI C4 seed froiPIns,+,18,3.99,"[-52.5, -44.5, 57.5]",0.943,1.0,,froiPIns,C4,44
+gPPI C4 seed froiPIns,-,18,-3.57,"[-2.5, 49.5, 11.5]",0.943,1.0,,froiPIns,C4,44
+gPPI C4 seed froiPIns,-,17,-3.79,"[7.5, 59.5, 13.5]",0.957,1.0,,froiPIns,C4,44
+gPPI C4 seed froiPIns,+,14,3.72,"[27.5, -2.5, 59.5]",0.986,1.0,,froiPIns,C4,44
+gPPI C4 seed froiPIns,+,11,3.69,"[-40.5, -48.5, 51.5]",0.997,1.0,,froiPIns,C4,44
+gPPI C4 seed froiPIns,-,9,-3.43,"[23.5, -72.5, -4.5]",0.999,1.0,,froiPIns,C4,44
+gPPI C4 seed froiPIns,+,8,3.42,"[25.5, -56.5, -34.5]",1.0,1.0,,froiPIns,C4,44
+gPPI C4 seed froiPIns,-,7,-3.58,"[21.5, -24.5, 27.5]",1.0,1.0,,froiPIns,C4,44
+gPPI C4 seed froiPIns,-,7,-3.43,"[-20.5, -16.5, -26.5]",1.0,1.0,,froiPIns,C4,44
+gPPI C4 seed froiPIns,-,7,-3.7,"[-16.5, 47.5, 13.5]",1.0,1.0,,froiPIns,C4,44
+gPPI C4 seed froiPIns,+,6,3.37,"[-50.5, -40.5, 45.5]",1.0,1.0,,froiPIns,C4,44
+gPPI C4 seed froiPIns,-,6,-3.72,"[25.5, -12.5, 67.5]",1.0,1.0,,froiPIns,C4,44
+gPPI C4 seed froiPIns,-,6,-3.53,"[-12.5, 3.5, -20.5]",1.0,1.0,,froiPIns,C4,44
+gPPI C4 seed froiPIns,-,6,-3.37,"[-2.5, 59.5, 17.5]",1.0,1.0,,froiPIns,C4,44
+gPPI C4 seed froiPIns,-,6,-3.44,"[-22.5, -94.5, -18.5]",1.0,1.0,,froiPIns,C4,44
+gPPI C4 seed froiPIns,+,6,3.59,"[17.5, -22.5, 45.5]",1.0,1.0,,froiPIns,C4,44
+gPPI C4 seed froiPIns,+,6,3.21,"[51.5, 31.5, 29.5]",1.0,1.0,,froiPIns,C4,44
+gPPI C4 seed froiPIns,+,5,3.33,"[-34.5, 19.5, 5.5]",1.0,1.0,,froiPIns,C4,44
+gPPI C4 seed froiPIns,+,5,3.44,"[-54.5, -32.5, -20.5]",1.0,1.0,,froiPIns,C4,44
+gPPI C4 seed froiPIns,-,5,-3.43,"[41.5, -40.5, -8.5]",1.0,1.0,,froiPIns,C4,44
+gPPI C4 seed froiPIns,-,5,-3.68,"[-60.5, -10.5, -30.5]",1.0,1.0,,froiPIns,C4,44
+gPPI C4 seed froiPIns,+,4,3.39,"[15.5, -6.5, 17.5]",1.0,1.0,,froiPIns,C4,44
+gPPI C4 seed froiPIns,+,4,3.33,"[-24.5, -66.5, -30.5]",1.0,1.0,,froiPIns,C4,44
+gPPI C4 seed froiPIns,+,4,3.22,"[67.5, -42.5, 29.5]",1.0,1.0,,froiPIns,C4,44
+gPPI C4 seed froiPIns,-,4,-3.3,"[49.5, -12.5, -20.5]",1.0,1.0,,froiPIns,C4,44
+gPPI C4 seed froiPIns,+,4,3.3,"[67.5, -34.5, 29.5]",1.0,1.0,,froiPIns,C4,44
+gPPI C4 seed froiPIns,-,4,-3.41,"[-44.5, 7.5, -26.5]",1.0,1.0,,froiPIns,C4,44
+gPPI C4 seed froiPIns,+,4,3.25,"[51.5, -50.5, -30.5]",1.0,1.0,,froiPIns,C4,44
+gPPI C4 seed froiPIns,-,3,-3.17,"[13.5, 27.5, 9.5]",1.0,1.0,,froiPIns,C4,44
+gPPI C4 seed froiPIns,-,3,-3.31,"[-28.5, -38.5, -12.5]",1.0,1.0,,froiPIns,C4,44
+gPPI C4 seed froiPIns,-,3,-3.28,"[17.5, -80.5, 5.5]",1.0,1.0,,froiPIns,C4,44
+gPPI C4 seed froiPIns,+,3,3.14,"[65.5, -44.5, 25.5]",1.0,1.0,,froiPIns,C4,44
+gPPI C4 seed froiPIns,+,3,3.48,"[21.5, 3.5, 19.5]",1.0,1.0,,froiPIns,C4,44
+gPPI C4 seed froiPIns,+,3,3.16,"[43.5, 9.5, -2.5]",1.0,1.0,,froiPIns,C4,44
+gPPI C4 seed froiPIns,+,2,3.1,"[7.5, 27.5, 41.5]",1.0,1.0,,froiPIns,C4,44
+gPPI C4 seed froiPIns,-,2,-3.43,"[-8.5, -40.5, -8.5]",1.0,1.0,,froiPIns,C4,44
+gPPI C4 seed froiPIns,-,2,-3.18,"[3.5, 37.5, -10.5]",1.0,1.0,,froiPIns,C4,44
+gPPI C4 seed froiPIns,-,2,-3.09,"[-42.5, -82.5, 33.5]",1.0,1.0,,froiPIns,C4,44
+gPPI C4 seed froiPIns,-,2,-3.36,"[49.5, -6.5, 35.5]",1.0,1.0,,froiPIns,C4,44
+gPPI C4 seed froiPIns,-,2,-3.24,"[-16.5, 33.5, 7.5]",1.0,1.0,,froiPIns,C4,44
+gPPI C4 seed froiPIns,-,2,-3.12,"[-26.5, -84.5, -18.5]",1.0,1.0,,froiPIns,C4,44
+gPPI C4 seed froiPIns,+,2,3.49,"[39.5, -0.5, 41.5]",1.0,1.0,,froiPIns,C4,44
+gPPI C4 seed froiPIns,+,2,3.21,"[43.5, 9.5, 39.5]",1.0,1.0,,froiPIns,C4,44
+gPPI C4 seed froiPIns,+,2,3.19,"[21.5, -70.5, 55.5]",1.0,1.0,,froiPIns,C4,44
+gPPI C4 seed froiPIns,+,2,3.24,"[37.5, 3.5, 13.5]",1.0,1.0,,froiPIns,C4,44
+gPPI C4 seed froiPIns,+,2,3.19,"[29.5, -62.5, -28.5]",1.0,1.0,,froiPIns,C4,44
+gPPI C4 seed froiPIns,+,2,3.45,"[-50.5, -52.5, -34.5]",1.0,1.0,,froiPIns,C4,44
+gPPI C4 seed froiPIns,+,2,3.19,"[43.5, -64.5, 9.5]",1.0,1.0,,froiPIns,C4,44
+gPPI C4 seed froiPIns,+,1,3.15,"[67.5, -38.5, 35.5]",1.0,1.0,,froiPIns,C4,44
+gPPI C4 seed froiPIns,+,1,3.12,"[-28.5, -20.5, 17.5]",1.0,1.0,,froiPIns,C4,44
+gPPI C4 seed froiPIns,+,1,3.09,"[-58.5, 11.5, 9.5]",1.0,1.0,,froiPIns,C4,44
+gPPI C4 seed froiPIns,+,1,3.12,"[-62.5, -36.5, 45.5]",1.0,1.0,,froiPIns,C4,44
+gPPI C4 seed froiPIns,+,1,3.14,"[33.5, -56.5, 45.5]",1.0,1.0,,froiPIns,C4,44
+gPPI C4 seed froiPIns,+,1,3.1,"[41.5, 19.5, -0.5]",1.0,1.0,,froiPIns,C4,44
+gPPI C4 seed froiPIns,+,1,3.17,"[15.5, -6.5, -4.5]",1.0,1.0,,froiPIns,C4,44
+gPPI C4 seed froiPIns,+,1,3.17,"[-8.5, -30.5, -42.5]",1.0,1.0,,froiPIns,C4,44
+gPPI C4 seed froiPIns,+,1,3.28,"[49.5, 49.5, -8.5]",1.0,1.0,,froiPIns,C4,44
+gPPI C4 seed froiPIns,-,1,-3.22,"[-22.5, -56.5, 19.5]",1.0,1.0,,froiPIns,C4,44
+gPPI C4 seed froiPIns,-,1,-3.11,"[-24.5, -30.5, 41.5]",1.0,1.0,,froiPIns,C4,44
+gPPI C4 seed froiPIns,-,1,-3.11,"[-6.5, 69.5, 13.5]",1.0,1.0,,froiPIns,C4,44
+gPPI C4 seed froiPIns,-,1,-3.11,"[23.5, -64.5, 9.5]",1.0,1.0,,froiPIns,C4,44
+gPPI C4 seed froiPIns,-,1,-3.2,"[-20.5, -52.5, 1.5]",1.0,1.0,,froiPIns,C4,44
+gPPI C4 seed froiPIns,-,1,-3.17,"[39.5, -56.5, -2.5]",1.0,1.0,,froiPIns,C4,44
+gPPI C4 seed froiPIns,-,1,-3.16,"[33.5, -46.5, -6.5]",1.0,1.0,,froiPIns,C4,44
+gPPI C4 seed froiPIns,-,1,-3.11,"[51.5, -26.5, -18.5]",1.0,1.0,,froiPIns,C4,44
+gPPI C4 seed froiPIns,-,1,-3.13,"[-16.5, -14.5, -32.5]",1.0,1.0,,froiPIns,C4,44
+gPPI C4 seed froiPIns,-,1,-3.15,"[-44.5, -50.5, -6.5]",1.0,1.0,,froiPIns,C4,44
+gPPI C1 seed froisphere,+,113,4.25,"[-56.5, 7.5, 15.5]",0.00322,0.00644,"50% Precentral Gyrus, 31% Inferior Frontal Gyrus, pars opercularis; 90% Left Cerebral Cortex, 8% Left Cerebral White Matter",froisphere,C1,44
+gPPI C1 seed froisphere,+,91,3.68,"[45.5, -44.5, 57.5]",0.0115,0.023,"25% Supramarginal Gyrus, posterior division, 18% Superior Parietal Lobule, 13% Angular Gyrus, 4% Postcentral Gyrus; 67% Right Cerebral Cortex, 4% Right Cerebral White Matter",froisphere,C1,44
+gPPI C1 seed froisphere,+,46,3.94,"[51.5, 41.5, -2.5]",0.207,0.414,"73% Frontal Pole, 6% Inferior Frontal Gyrus, pars triangularis; 83% Right Cerebral Cortex, 2% Right Cerebral White Matter",froisphere,C1,44
+gPPI C1 seed froisphere,+,40,3.79,"[-46.5, 13.5, -8.5]",0.309,0.618,"8% Temporal Pole, 3% Frontal Operculum Cortex, 3% Insular Cortex, 2% Frontal Orbital Cortex, 2% Inferior Frontal Gyrus, pars opercularis; 37% Left Cerebral Cortex",froisphere,C1,44
+gPPI C1 seed froisphere,+,37,3.4,"[-50.5, -48.5, 55.5]",0.375,0.75,"44% Supramarginal Gyrus, posterior division, 12% Angular Gyrus, 4% Superior Parietal Lobule, 2% Supramarginal Gyrus, anterior division, 1% Lateral Occipital Cortex, superior division; 67% Left Cerebral Cortex, 0% Left Cerebral White Matter",froisphere,C1,44
+gPPI C1 seed froisphere,+,33,3.63,"[-34.5, 1.5, 65.5]",0.481,0.962,"24% Middle Frontal Gyrus, 4% Superior Frontal Gyrus; 42% Left Cerebral Cortex, 1% Left Cerebral White Matter",froisphere,C1,44
+gPPI C1 seed froisphere,+,31,3.81,"[-56.5, 15.5, -2.5]",0.54,1.0,"14% Inferior Frontal Gyrus, pars opercularis, 2% Inferior Frontal Gyrus, pars triangularis, 1% Temporal Pole; 25% Left Cerebral Cortex, 0% Left Cerebral White Matter",froisphere,C1,44
+gPPI C1 seed froisphere,+,31,3.79,"[-6.5, -38.5, 55.5]",0.54,1.0,"34% Postcentral Gyrus, 14% Precuneous Cortex, 12% Precentral Gyrus; 66% Left Cerebral Cortex, 29% Left Cerebral White Matter",froisphere,C1,44
+gPPI C1 seed froisphere,+,28,3.96,"[-32.5, -22.5, 63.5]",0.636,1.0,"39% Precentral Gyrus, 14% Postcentral Gyrus; 61% Left Cerebral Cortex, 36% Left Cerebral White Matter",froisphere,C1,44
+gPPI C1 seed froisphere,+,27,3.57,"[61.5, 17.5, 17.5]",0.669,1.0,"18% Inferior Frontal Gyrus, pars opercularis, 6% Precentral Gyrus, 1% Inferior Frontal Gyrus, pars triangularis; 35% Right Cerebral Cortex, 0% Right Cerebral White Matter",froisphere,C1,44
+gPPI C1 seed froisphere,+,26,3.75,"[-58.5, -44.5, 47.5]",0.702,1.0,,froisphere,C1,44
+gPPI C1 seed froisphere,+,25,3.72,"[63.5, -46.5, 7.5]",0.735,1.0,,froisphere,C1,44
+gPPI C1 seed froisphere,+,25,3.54,"[21.5, 57.5, 21.5]",0.735,1.0,,froisphere,C1,44
+gPPI C1 seed froisphere,+,22,3.91,"[17.5, -28.5, 63.5]",0.828,1.0,,froisphere,C1,44
+gPPI C1 seed froisphere,+,18,3.88,"[53.5, 19.5, -2.5]",0.928,1.0,,froisphere,C1,44
+gPPI C1 seed froisphere,+,17,3.66,"[-34.5, -64.5, -32.5]",0.946,1.0,,froisphere,C1,44
+gPPI C1 seed froisphere,+,16,3.48,"[-34.5, -54.5, 61.5]",0.961,1.0,,froisphere,C1,44
+gPPI C1 seed froisphere,+,16,3.89,"[51.5, -50.5, 1.5]",0.961,1.0,,froisphere,C1,44
+gPPI C1 seed froisphere,+,14,3.42,"[59.5, -38.5, -0.5]",0.982,1.0,,froisphere,C1,44
+gPPI C1 seed froisphere,+,13,3.59,"[7.5, 27.5, 27.5]",0.989,1.0,,froisphere,C1,44
+gPPI C1 seed froisphere,+,12,3.47,"[49.5, 21.5, -8.5]",0.994,1.0,,froisphere,C1,44
+gPPI C1 seed froisphere,+,12,3.43,"[1.5, -30.5, 57.5]",0.994,1.0,,froisphere,C1,44
+gPPI C1 seed froisphere,+,12,3.97,"[-2.5, 1.5, 71.5]",0.994,1.0,,froisphere,C1,44
+gPPI C1 seed froisphere,+,11,3.46,"[21.5, -74.5, 53.5]",0.997,1.0,,froisphere,C1,44
+gPPI C1 seed froisphere,+,9,3.55,"[25.5, -38.5, 11.5]",0.999,1.0,,froisphere,C1,44
+gPPI C1 seed froisphere,+,8,3.73,"[-20.5, -76.5, -44.5]",1.0,1.0,,froisphere,C1,44
+gPPI C1 seed froisphere,+,8,3.4,"[37.5, -64.5, 53.5]",1.0,1.0,,froisphere,C1,44
+gPPI C1 seed froisphere,+,7,3.6,"[-46.5, -30.5, -28.5]",1.0,1.0,,froisphere,C1,44
+gPPI C1 seed froisphere,+,7,3.63,"[-36.5, 21.5, 1.5]",1.0,1.0,,froisphere,C1,44
+gPPI C1 seed froisphere,+,6,3.42,"[63.5, -46.5, 27.5]",1.0,1.0,,froisphere,C1,44
+gPPI C1 seed froisphere,+,6,3.7,"[5.5, 13.5, 69.5]",1.0,1.0,,froisphere,C1,44
+gPPI C1 seed froisphere,+,6,3.34,"[-14.5, -32.5, 51.5]",1.0,1.0,,froisphere,C1,44
+gPPI C1 seed froisphere,+,6,3.28,"[15.5, 13.5, 61.5]",1.0,1.0,,froisphere,C1,44
+gPPI C1 seed froisphere,+,6,3.78,"[-12.5, -14.5, 71.5]",1.0,1.0,,froisphere,C1,44
+gPPI C1 seed froisphere,+,5,3.18,"[45.5, 9.5, 37.5]",1.0,1.0,,froisphere,C1,44
+gPPI C1 seed froisphere,+,5,3.5,"[-26.5, -18.5, -38.5]",1.0,1.0,,froisphere,C1,44
+gPPI C1 seed froisphere,+,5,3.32,"[-42.5, 43.5, 5.5]",1.0,1.0,,froisphere,C1,44
+gPPI C1 seed froisphere,+,5,3.59,"[-20.5, 7.5, -0.5]",1.0,1.0,,froisphere,C1,44
+gPPI C1 seed froisphere,+,5,3.37,"[49.5, -56.5, -32.5]",1.0,1.0,,froisphere,C1,44
+gPPI C1 seed froisphere,+,5,3.58,"[27.5, 5.5, -26.5]",1.0,1.0,,froisphere,C1,44
+gPPI C1 seed froisphere,+,5,3.32,"[21.5, 7.5, 53.5]",1.0,1.0,,froisphere,C1,44
+gPPI C1 seed froisphere,+,5,3.39,"[-48.5, 17.5, -22.5]",1.0,1.0,,froisphere,C1,44
+gPPI C1 seed froisphere,-,5,-3.44,"[-22.5, -96.5, -0.5]",1.0,1.0,,froisphere,C1,44
+gPPI C1 seed froisphere,+,4,3.29,"[35.5, 25.5, 7.5]",1.0,1.0,,froisphere,C1,44
+gPPI C1 seed froisphere,+,4,3.57,"[-6.5, -18.5, 53.5]",1.0,1.0,,froisphere,C1,44
+gPPI C1 seed froisphere,+,4,3.35,"[31.5, -56.5, -30.5]",1.0,1.0,,froisphere,C1,44
+gPPI C1 seed froisphere,+,4,3.25,"[57.5, 15.5, 29.5]",1.0,1.0,,froisphere,C1,44
+gPPI C1 seed froisphere,+,4,3.53,"[17.5, -58.5, -36.5]",1.0,1.0,,froisphere,C1,44
+gPPI C1 seed froisphere,+,4,3.37,"[-24.5, -6.5, 71.5]",1.0,1.0,,froisphere,C1,44
+gPPI C1 seed froisphere,-,4,-3.43,"[21.5, -66.5, 33.5]",1.0,1.0,,froisphere,C1,44
+gPPI C1 seed froisphere,-,4,-3.29,"[37.5, -84.5, -0.5]",1.0,1.0,,froisphere,C1,44
+gPPI C1 seed froisphere,+,4,3.28,"[35.5, -56.5, 55.5]",1.0,1.0,,froisphere,C1,44
+gPPI C1 seed froisphere,-,4,-3.41,"[-6.5, -76.5, -4.5]",1.0,1.0,,froisphere,C1,44
+gPPI C1 seed froisphere,+,3,3.21,"[-46.5, 23.5, 45.5]",1.0,1.0,,froisphere,C1,44
+gPPI C1 seed froisphere,+,3,3.35,"[23.5, -54.5, -48.5]",1.0,1.0,,froisphere,C1,44
+gPPI C1 seed froisphere,+,3,3.25,"[-16.5, -6.5, 73.5]",1.0,1.0,,froisphere,C1,44
+gPPI C1 seed froisphere,+,3,3.24,"[19.5, -24.5, 57.5]",1.0,1.0,,froisphere,C1,44
+gPPI C1 seed froisphere,+,3,3.24,"[-14.5, -58.5, 37.5]",1.0,1.0,,froisphere,C1,44
+gPPI C1 seed froisphere,+,3,3.14,"[65.5, -38.5, -10.5]",1.0,1.0,,froisphere,C1,44
+gPPI C1 seed froisphere,-,3,-3.48,"[19.5, 33.5, -10.5]",1.0,1.0,,froisphere,C1,44
+gPPI C1 seed froisphere,+,3,3.41,"[61.5, -58.5, -12.5]",1.0,1.0,,froisphere,C1,44
+gPPI C1 seed froisphere,+,3,3.27,"[-28.5, -34.5, 67.5]",1.0,1.0,,froisphere,C1,44
+gPPI C1 seed froisphere,+,2,3.17,"[-56.5, -32.5, -4.5]",1.0,1.0,,froisphere,C1,44
+gPPI C1 seed froisphere,+,2,3.34,"[-42.5, -10.5, -12.5]",1.0,1.0,,froisphere,C1,44
+gPPI C1 seed froisphere,+,2,3.18,"[-20.5, -16.5, 67.5]",1.0,1.0,,froisphere,C1,44
+gPPI C1 seed froisphere,+,2,3.27,"[-66.5, -8.5, 9.5]",1.0,1.0,,froisphere,C1,44
+gPPI C1 seed froisphere,+,2,3.19,"[-32.5, 13.5, 5.5]",1.0,1.0,,froisphere,C1,44
+gPPI C1 seed froisphere,+,2,3.22,"[-32.5, 29.5, -2.5]",1.0,1.0,,froisphere,C1,44
+gPPI C1 seed froisphere,+,2,3.36,"[-56.5, -26.5, -4.5]",1.0,1.0,,froisphere,C1,44
+gPPI C1 seed froisphere,+,2,3.35,"[17.5, -64.5, 49.5]",1.0,1.0,,froisphere,C1,44
+gPPI C1 seed froisphere,+,2,3.22,"[41.5, -42.5, 39.5]",1.0,1.0,,froisphere,C1,44
+gPPI C1 seed froisphere,+,2,3.18,"[23.5, -40.5, 45.5]",1.0,1.0,,froisphere,C1,44
+gPPI C1 seed froisphere,-,2,-3.6,"[-50.5, -16.5, 25.5]",1.0,1.0,,froisphere,C1,44
+gPPI C1 seed froisphere,-,2,-3.21,"[25.5, -92.5, 3.5]",1.0,1.0,,froisphere,C1,44
+gPPI C1 seed froisphere,-,2,-3.27,"[7.5, -16.5, 33.5]",1.0,1.0,,froisphere,C1,44
+gPPI C1 seed froisphere,+,2,3.24,"[43.5, -60.5, 5.5]",1.0,1.0,,froisphere,C1,44
+gPPI C1 seed froisphere,-,2,-3.33,"[21.5, -6.5, 37.5]",1.0,1.0,,froisphere,C1,44
+gPPI C1 seed froisphere,+,1,3.1,"[-4.5, -8.5, 61.5]",1.0,1.0,,froisphere,C1,44
+gPPI C1 seed froisphere,+,1,3.17,"[23.5, 7.5, 63.5]",1.0,1.0,,froisphere,C1,44
+gPPI C1 seed froisphere,+,1,3.1,"[-4.5, -2.5, 67.5]",1.0,1.0,,froisphere,C1,44
+gPPI C1 seed froisphere,+,1,3.19,"[47.5, 25.5, -16.5]",1.0,1.0,,froisphere,C1,44
+gPPI C1 seed froisphere,+,1,3.11,"[-32.5, 23.5, -10.5]",1.0,1.0,,froisphere,C1,44
+gPPI C1 seed froisphere,+,1,3.15,"[5.5, 67.5, 11.5]",1.0,1.0,,froisphere,C1,44
+gPPI C1 seed froisphere,+,1,3.27,"[-64.5, -42.5, 21.5]",1.0,1.0,,froisphere,C1,44
+gPPI C1 seed froisphere,+,1,3.18,"[-14.5, -52.5, 29.5]",1.0,1.0,,froisphere,C1,44
+gPPI C1 seed froisphere,+,1,3.11,"[-42.5, -52.5, 45.5]",1.0,1.0,,froisphere,C1,44
+gPPI C1 seed froisphere,+,1,3.2,"[-36.5, -68.5, 47.5]",1.0,1.0,,froisphere,C1,44
+gPPI C1 seed froisphere,+,1,3.18,"[7.5, -32.5, 51.5]",1.0,1.0,,froisphere,C1,44
+gPPI C1 seed froisphere,+,1,3.13,"[9.5, -60.5, 53.5]",1.0,1.0,,froisphere,C1,44
+gPPI C1 seed froisphere,+,1,3.1,"[45.5, 9.5, -18.5]",1.0,1.0,,froisphere,C1,44
+gPPI C1 seed froisphere,+,1,3.12,"[45.5, -30.5, -24.5]",1.0,1.0,,froisphere,C1,44
+gPPI C1 seed froisphere,+,1,3.09,"[1.5, -14.5, 73.5]",1.0,1.0,,froisphere,C1,44
+gPPI C1 seed froisphere,+,1,3.23,"[-46.5, 9.5, -18.5]",1.0,1.0,,froisphere,C1,44
+gPPI C1 seed froisphere,-,1,-3.2,"[-8.5, -34.5, 9.5]",1.0,1.0,,froisphere,C1,44
+gPPI C1 seed froisphere,-,1,-3.14,"[1.5, 17.5, 11.5]",1.0,1.0,,froisphere,C1,44
+gPPI C1 seed froisphere,-,1,-3.11,"[-34.5, -78.5, 23.5]",1.0,1.0,,froisphere,C1,44
+gPPI C4 seed froisphere,+,76,3.61,"[47.5, -48.5, 57.5]",0.0385,0.077,"28% Angular Gyrus, 12% Supramarginal Gyrus, posterior division, 11% Superior Parietal Lobule; 57% Right Cerebral Cortex, 1% Right Cerebral White Matter",froisphere,C4,44
+gPPI C4 seed froisphere,+,48,4.1,"[-0.5, -2.5, 55.5]",0.216,0.432,"61% Juxtapositional Lobule Cortex (formerly Supplementary Motor Cortex), 1% Cingulate Gyrus, anterior division, 1% Precentral Gyrus; 45% Left Cerebral Cortex, 23% Right Cerebral Cortex",froisphere,C4,44
+gPPI C4 seed froisphere,+,45,3.75,"[-60.5, 9.5, 11.5]",0.26,0.52,"29% Precentral Gyrus, 29% Inferior Frontal Gyrus, pars opercularis; 71% Left Cerebral Cortex, 0% Left Cerebral White Matter",froisphere,C4,44
+gPPI C4 seed froisphere,+,40,3.77,"[1.5, -26.5, 25.5]",0.353,0.706,"44% Cingulate Gyrus, posterior division, 3% Cingulate Gyrus, anterior division; 43% Right Cerebral Cortex, 39% Right Cerebral White Matter, 9% Left Cerebral Cortex, 7% Left Cerebral White Matter",froisphere,C4,44
+gPPI C4 seed froisphere,+,35,3.77,"[57.5, 5.5, 35.5]",0.473,0.946,"68% Precentral Gyrus, 2% Middle Frontal Gyrus; 79% Right Cerebral Cortex, 8% Right Cerebral White Matter",froisphere,C4,44
+gPPI C4 seed froisphere,-,34,-4.12,"[-18.5, -80.5, -10.5]",0.5,1.0,"33% Occipital Fusiform Gyrus, 17% Lingual Gyrus, 1% Lateral Occipital Cortex, inferior division; 51% Left Cerebral Cortex, 48% Left Cerebral White Matter",froisphere,C4,44
+gPPI C4 seed froisphere,+,31,3.84,"[-24.5, -8.5, 49.5]",0.586,1.0,"22% Precentral Gyrus, 15% Superior Frontal Gyrus, 4% Middle Frontal Gyrus; 60% Left Cerebral Cortex, 40% Left Cerebral White Matter",froisphere,C4,44
+gPPI C4 seed froisphere,+,29,3.93,"[-58.5, 13.5, -2.5]",0.646,1.0,"10% Inferior Frontal Gyrus, pars opercularis, 1% Temporal Pole; 16% Left Cerebral Cortex",froisphere,C4,44
+gPPI C4 seed froisphere,+,28,3.72,"[33.5, -52.5, -30.5]",0.677,1.0,"92% Right VI, 8% Right Crus I",froisphere,C4,44
+gPPI C4 seed froisphere,+,26,3.98,"[-24.5, 45.5, -14.5]",0.739,1.0,"80% Frontal Pole; 79% Left Cerebral Cortex, 21% Left Cerebral White Matter",froisphere,C4,44
+gPPI C4 seed froisphere,+,23,3.74,"[1.5, 13.5, 63.5]",0.826,1.0,,froisphere,C4,44
+gPPI C4 seed froisphere,+,22,4.08,"[17.5, -28.5, 63.5]",0.853,1.0,,froisphere,C4,44
+gPPI C4 seed froisphere,+,22,3.81,"[23.5, 53.5, 17.5]",0.853,1.0,,froisphere,C4,44
+gPPI C4 seed froisphere,-,20,-3.7,"[-28.5, -84.5, 17.5]",0.901,1.0,,froisphere,C4,44
+gPPI C4 seed froisphere,+,20,3.37,"[59.5, -32.5, 1.5]",0.901,1.0,,froisphere,C4,44
+gPPI C4 seed froisphere,+,17,3.61,"[-44.5, 35.5, 25.5]",0.955,1.0,,froisphere,C4,44
+gPPI C4 seed froisphere,+,16,3.4,"[-40.5, -68.5, -28.5]",0.967,1.0,,froisphere,C4,44
+gPPI C4 seed froisphere,+,16,3.55,"[-60.5, -26.5, -8.5]",0.967,1.0,,froisphere,C4,44
+gPPI C4 seed froisphere,+,15,3.6,"[-18.5, 7.5, 65.5]",0.977,1.0,,froisphere,C4,44
+gPPI C4 seed froisphere,+,15,3.39,"[1.5, 33.5, 33.5]",0.977,1.0,,froisphere,C4,44
+gPPI C4 seed froisphere,+,15,3.49,"[49.5, 45.5, -0.5]",0.977,1.0,,froisphere,C4,44
+gPPI C4 seed froisphere,-,14,-3.63,"[-6.5, -76.5, -6.5]",0.985,1.0,,froisphere,C4,44
+gPPI C4 seed froisphere,+,12,3.65,"[-58.5, 9.5, 33.5]",0.995,1.0,,froisphere,C4,44
+gPPI C4 seed froisphere,+,12,3.73,"[43.5, -56.5, -34.5]",0.995,1.0,,froisphere,C4,44
+gPPI C4 seed froisphere,+,11,3.53,"[-44.5, 17.5, -20.5]",0.997,1.0,,froisphere,C4,44
+gPPI C4 seed froisphere,+,10,3.59,"[43.5, -48.5, 17.5]",0.999,1.0,,froisphere,C4,44
+gPPI C4 seed froisphere,+,10,3.71,"[25.5, -56.5, -34.5]",0.999,1.0,,froisphere,C4,44
+gPPI C4 seed froisphere,+,10,3.39,"[-54.5, -46.5, 51.5]",0.999,1.0,,froisphere,C4,44
+gPPI C4 seed froisphere,+,9,3.84,"[49.5, -52.5, -34.5]",0.999,1.0,,froisphere,C4,44
+gPPI C4 seed froisphere,+,9,3.43,"[-48.5, -48.5, 7.5]",0.999,1.0,,froisphere,C4,44
+gPPI C4 seed froisphere,+,9,3.73,"[3.5, -32.5, 47.5]",0.999,1.0,,froisphere,C4,44
+gPPI C4 seed froisphere,-,8,-3.55,"[-28.5, -74.5, -4.5]",1.0,1.0,,froisphere,C4,44
+gPPI C4 seed froisphere,+,8,3.49,"[55.5, 19.5, -0.5]",1.0,1.0,,froisphere,C4,44
+gPPI C4 seed froisphere,+,7,3.54,"[21.5, -0.5, 57.5]",1.0,1.0,,froisphere,C4,44
+gPPI C4 seed froisphere,+,6,3.4,"[-8.5, -14.5, 57.5]",1.0,1.0,,froisphere,C4,44
+gPPI C4 seed froisphere,+,6,3.53,"[-12.5, -16.5, 35.5]",1.0,1.0,,froisphere,C4,44
+gPPI C4 seed froisphere,+,5,3.19,"[37.5, 41.5, 25.5]",1.0,1.0,,froisphere,C4,44
+gPPI C4 seed froisphere,+,4,3.27,"[47.5, -18.5, 5.5]",1.0,1.0,,froisphere,C4,44
+gPPI C4 seed froisphere,+,4,3.5,"[-32.5, -36.5, 17.5]",1.0,1.0,,froisphere,C4,44
+gPPI C4 seed froisphere,+,4,3.4,"[-18.5, -58.5, 41.5]",1.0,1.0,,froisphere,C4,44
+gPPI C4 seed froisphere,+,3,3.53,"[43.5, 17.5, -4.5]",1.0,1.0,,froisphere,C4,44
+gPPI C4 seed froisphere,+,3,3.13,"[59.5, 15.5, 17.5]",1.0,1.0,,froisphere,C4,44
+gPPI C4 seed froisphere,+,3,3.14,"[27.5, 43.5, 21.5]",1.0,1.0,,froisphere,C4,44
+gPPI C4 seed froisphere,+,3,3.3,"[-4.5, 33.5, 39.5]",1.0,1.0,,froisphere,C4,44
+gPPI C4 seed froisphere,+,3,3.37,"[-32.5, 11.5, 47.5]",1.0,1.0,,froisphere,C4,44
+gPPI C4 seed froisphere,-,3,-3.21,"[-14.5, -34.5, 11.5]",1.0,1.0,,froisphere,C4,44
+gPPI C4 seed froisphere,-,3,-3.39,"[-32.5, 29.5, -16.5]",1.0,1.0,,froisphere,C4,44
+gPPI C4 seed froisphere,-,3,-3.44,"[-0.5, -34.5, 17.5]",1.0,1.0,,froisphere,C4,44
+gPPI C4 seed froisphere,-,3,-3.36,"[35.5, -44.5, 17.5]",1.0,1.0,,froisphere,C4,44
+gPPI C4 seed froisphere,+,3,3.52,"[-40.5, 7.5, 47.5]",1.0,1.0,,froisphere,C4,44
+gPPI C4 seed froisphere,+,3,3.23,"[-40.5, -60.5, -30.5]",1.0,1.0,,froisphere,C4,44
+gPPI C4 seed froisphere,+,3,3.49,"[-16.5, 13.5, -28.5]",1.0,1.0,,froisphere,C4,44
+gPPI C4 seed froisphere,+,3,3.38,"[-52.5, -6.5, 5.5]",1.0,1.0,,froisphere,C4,44
+gPPI C4 seed froisphere,-,3,-3.24,"[11.5, -12.5, -22.5]",1.0,1.0,,froisphere,C4,44
+gPPI C4 seed froisphere,-,3,-3.28,"[29.5, -86.5, 27.5]",1.0,1.0,,froisphere,C4,44
+gPPI C4 seed froisphere,+,2,3.16,"[5.5, -12.5, -36.5]",1.0,1.0,,froisphere,C4,44
+gPPI C4 seed froisphere,+,2,3.22,"[-32.5, -50.5, -32.5]",1.0,1.0,,froisphere,C4,44
+gPPI C4 seed froisphere,+,2,3.15,"[51.5, -46.5, 1.5]",1.0,1.0,,froisphere,C4,44
+gPPI C4 seed froisphere,+,2,3.21,"[27.5, 3.5, 11.5]",1.0,1.0,,froisphere,C4,44
+gPPI C4 seed froisphere,+,2,3.11,"[-54.5, 11.5, 23.5]",1.0,1.0,,froisphere,C4,44
+gPPI C4 seed froisphere,+,2,3.17,"[-18.5, -4.5, 33.5]",1.0,1.0,,froisphere,C4,44
+gPPI C4 seed froisphere,+,2,3.32,"[1.5, -6.5, 67.5]",1.0,1.0,,froisphere,C4,44
+gPPI C4 seed froisphere,+,2,3.15,"[-30.5, -42.5, -36.5]",1.0,1.0,,froisphere,C4,44
+gPPI C4 seed froisphere,+,2,3.25,"[3.5, 17.5, 47.5]",1.0,1.0,,froisphere,C4,44
+gPPI C4 seed froisphere,-,2,-3.28,"[7.5, -32.5, 13.5]",1.0,1.0,,froisphere,C4,44
+gPPI C4 seed froisphere,-,2,-3.19,"[3.5, -72.5, -4.5]",1.0,1.0,,froisphere,C4,44
+gPPI C4 seed froisphere,-,2,-3.15,"[-10.5, -34.5, -6.5]",1.0,1.0,,froisphere,C4,44
+gPPI C4 seed froisphere,-,2,-3.4,"[17.5, 33.5, -6.5]",1.0,1.0,,froisphere,C4,44
+gPPI C4 seed froisphere,-,2,-3.46,"[-0.5, -10.5, -8.5]",1.0,1.0,,froisphere,C4,44
+gPPI C4 seed froisphere,-,2,-3.17,"[-50.5, -20.5, -20.5]",1.0,1.0,,froisphere,C4,44
+gPPI C4 seed froisphere,+,1,3.18,"[-30.5, -50.5, -42.5]",1.0,1.0,,froisphere,C4,44
+gPPI C4 seed froisphere,+,1,3.2,"[25.5, -36.5, -36.5]",1.0,1.0,,froisphere,C4,44
+gPPI C4 seed froisphere,+,1,3.13,"[9.5, -10.5, -38.5]",1.0,1.0,,froisphere,C4,44
+gPPI C4 seed froisphere,+,1,3.11,"[-48.5, -66.5, -34.5]",1.0,1.0,,froisphere,C4,44
+gPPI C4 seed froisphere,+,1,3.19,"[17.5, 13.5, 61.5]",1.0,1.0,,froisphere,C4,44
+gPPI C4 seed froisphere,+,1,3.12,"[-6.5, -42.5, 25.5]",1.0,1.0,,froisphere,C4,44
+gPPI C4 seed froisphere,+,1,3.19,"[-60.5, -28.5, 1.5]",1.0,1.0,,froisphere,C4,44
+gPPI C4 seed froisphere,+,1,3.17,"[49.5, -44.5, 45.5]",1.0,1.0,,froisphere,C4,44
+gPPI C4 seed froisphere,+,1,3.25,"[-50.5, -2.5, 49.5]",1.0,1.0,,froisphere,C4,44
+gPPI C4 seed froisphere,+,1,3.16,"[-62.5, -48.5, 29.5]",1.0,1.0,,froisphere,C4,44
+gPPI C4 seed froisphere,+,1,3.12,"[-46.5, -50.5, 41.5]",1.0,1.0,,froisphere,C4,44
+gPPI C4 seed froisphere,+,1,3.16,"[49.5, -6.5, 51.5]",1.0,1.0,,froisphere,C4,44
+gPPI C4 seed froisphere,+,1,3.22,"[41.5, -16.5, -26.5]",1.0,1.0,,froisphere,C4,44
+gPPI C4 seed froisphere,-,1,-3.13,"[-28.5, -62.5, -10.5]",1.0,1.0,,froisphere,C4,44
+gPPI C4 seed froisphere,-,1,-3.15,"[33.5, -36.5, -20.5]",1.0,1.0,,froisphere,C4,44
+gPPI C1 seed maskAInsL,+,34,3.76,"[53.5, 21.5, 19.5]",0.235,0.47,"33% Inferior Frontal Gyrus, pars opercularis, 17% Inferior Frontal Gyrus, pars triangularis, 4% Middle Frontal Gyrus, 3% Precentral Gyrus; 69% Right Cerebral Cortex, 30% Right Cerebral White Matter",maskAInsL,C1,48
+gPPI C1 seed maskAInsL,+,26,3.86,"[39.5, 29.5, -12.5]",0.479,0.958,"49% Frontal Orbital Cortex, 14% Frontal Pole, 1% Frontal Operculum Cortex, 1% Inferior Frontal Gyrus, pars triangularis; 68% Right Cerebral Cortex, 32% Right Cerebral White Matter",maskAInsL,C1,48
+gPPI C1 seed maskAInsL,+,22,3.67,"[7.5, 3.5, -2.5]",0.652,1.0,"76% Right Cerebral White Matter, 9% Right Caudate, 6% Right Cerebral Cortex, 3% Right Accumbens, 2% Right Lateral Ventricle, 0% Right Pallidum, 0% Right Thalamus",maskAInsL,C1,48
+gPPI C1 seed maskAInsL,+,20,3.71,"[41.5, -14.5, -28.5]",0.742,1.0,"37% Temporal Fusiform Cortex, posterior division, 21% Inferior Temporal Gyrus, posterior division, 7% Temporal Fusiform Cortex, anterior division, 3% Inferior Temporal Gyrus, anterior division, 2% Parahippocampal Gyrus, anterior division; 74% Right Cerebral Cortex, 26% Right Cerebral White Matter",maskAInsL,C1,48
+gPPI C1 seed maskAInsL,+,12,3.7,"[-30.5, 9.5, -32.5]",0.983,1.0,"63% Temporal Pole; 69% Left Cerebral Cortex, 29% Left Cerebral White Matter",maskAInsL,C1,48
+gPPI C1 seed maskAInsL,+,12,3.42,"[23.5, 15.5, -22.5]",0.983,1.0,"82% Frontal Orbital Cortex; 85% Right Cerebral Cortex, 3% Right Cerebral White Matter",maskAInsL,C1,48
+gPPI C1 seed maskAInsL,+,12,3.78,"[5.5, 67.5, 11.5]",0.983,1.0,"81% Frontal Pole; 81% Right Cerebral Cortex, 7% Right Cerebral White Matter",maskAInsL,C1,48
+gPPI C1 seed maskAInsL,+,11,3.58,"[65.5, -44.5, 13.5]",0.991,1.0,"37% Supramarginal Gyrus, posterior division, 28% Angular Gyrus, 13% Middle Temporal Gyrus, temporooccipital part; 85% Right Cerebral Cortex, 5% Right Cerebral White Matter",maskAInsL,C1,48
+gPPI C1 seed maskAInsL,+,10,3.89,"[-32.5, 25.5, 37.5]",0.996,1.0,"37% Middle Frontal Gyrus, 2% Superior Frontal Gyrus; 50% Left Cerebral Cortex, 50% Left Cerebral White Matter",maskAInsL,C1,48
+gPPI C1 seed maskAInsL,+,10,3.34,"[11.5, 45.5, 47.5]",0.996,1.0,"77% Frontal Pole; 78% Right Cerebral Cortex, 6% Right Cerebral White Matter",maskAInsL,C1,48
+gPPI C1 seed maskAInsL,-,10,-3.55,"[19.5, -26.5, 31.5]",0.996,1.0,,maskAInsL,C1,48
+gPPI C1 seed maskAInsL,+,9,3.91,"[15.5, -16.5, 39.5]",0.999,1.0,,maskAInsL,C1,48
+gPPI C1 seed maskAInsL,+,8,3.98,"[49.5, -4.5, 9.5]",1.0,1.0,,maskAInsL,C1,48
+gPPI C1 seed maskAInsL,+,8,3.4,"[49.5, 47.5, -2.5]",1.0,1.0,,maskAInsL,C1,48
+gPPI C1 seed maskAInsL,+,7,3.53,"[13.5, -8.5, 19.5]",1.0,1.0,,maskAInsL,C1,48
+gPPI C1 seed maskAInsL,+,7,3.64,"[11.5, -46.5, -38.5]",1.0,1.0,,maskAInsL,C1,48
+gPPI C1 seed maskAInsL,+,6,3.7,"[9.5, -22.5, -12.5]",1.0,1.0,,maskAInsL,C1,48
+gPPI C1 seed maskAInsL,+,6,3.44,"[33.5, 9.5, -30.5]",1.0,1.0,,maskAInsL,C1,48
+gPPI C1 seed maskAInsL,+,6,3.29,"[9.5, 67.5, -8.5]",1.0,1.0,,maskAInsL,C1,48
+gPPI C1 seed maskAInsL,-,6,-3.38,"[31.5, -2.5, 23.5]",1.0,1.0,,maskAInsL,C1,48
+gPPI C1 seed maskAInsL,+,5,3.22,"[59.5, -36.5, -14.5]",1.0,1.0,,maskAInsL,C1,48
+gPPI C1 seed maskAInsL,+,5,3.41,"[-36.5, 11.5, -6.5]",1.0,1.0,,maskAInsL,C1,48
+gPPI C1 seed maskAInsL,+,5,3.54,"[-48.5, -28.5, -28.5]",1.0,1.0,,maskAInsL,C1,48
+gPPI C1 seed maskAInsL,+,5,3.59,"[15.5, -20.5, -24.5]",1.0,1.0,,maskAInsL,C1,48
+gPPI C1 seed maskAInsL,-,5,-3.65,"[-24.5, -10.5, 27.5]",1.0,1.0,,maskAInsL,C1,48
+gPPI C1 seed maskAInsL,+,5,3.53,"[-26.5, -34.5, 63.5]",1.0,1.0,,maskAInsL,C1,48
+gPPI C1 seed maskAInsL,+,4,3.33,"[13.5, 23.5, -14.5]",1.0,1.0,,maskAInsL,C1,48
+gPPI C1 seed maskAInsL,-,4,-3.54,"[-28.5, -32.5, -40.5]",1.0,1.0,,maskAInsL,C1,48
+gPPI C1 seed maskAInsL,-,4,-3.32,"[-18.5, 49.5, 5.5]",1.0,1.0,,maskAInsL,C1,48
+gPPI C1 seed maskAInsL,+,3,3.33,"[-38.5, 39.5, -6.5]",1.0,1.0,,maskAInsL,C1,48
+gPPI C1 seed maskAInsL,+,3,3.28,"[49.5, 37.5, 31.5]",1.0,1.0,,maskAInsL,C1,48
+gPPI C1 seed maskAInsL,+,3,3.18,"[5.5, 29.5, 27.5]",1.0,1.0,,maskAInsL,C1,48
+gPPI C1 seed maskAInsL,+,3,3.35,"[-4.5, -38.5, 55.5]",1.0,1.0,,maskAInsL,C1,48
+gPPI C1 seed maskAInsL,+,3,3.39,"[39.5, -4.5, 11.5]",1.0,1.0,,maskAInsL,C1,48
+gPPI C1 seed maskAInsL,+,3,3.26,"[3.5, -58.5, 15.5]",1.0,1.0,,maskAInsL,C1,48
+gPPI C1 seed maskAInsL,+,3,3.34,"[5.5, -18.5, 63.5]",1.0,1.0,,maskAInsL,C1,48
+gPPI C1 seed maskAInsL,+,3,3.29,"[-44.5, -36.5, 9.5]",1.0,1.0,,maskAInsL,C1,48
+gPPI C1 seed maskAInsL,-,3,-3.38,"[5.5, -90.5, -4.5]",1.0,1.0,,maskAInsL,C1,48
+gPPI C1 seed maskAInsL,+,3,3.34,"[-22.5, -4.5, -18.5]",1.0,1.0,,maskAInsL,C1,48
+gPPI C1 seed maskAInsL,+,2,3.18,"[-12.5, -42.5, 63.5]",1.0,1.0,,maskAInsL,C1,48
+gPPI C1 seed maskAInsL,+,2,3.14,"[-54.5, 3.5, 17.5]",1.0,1.0,,maskAInsL,C1,48
+gPPI C1 seed maskAInsL,+,2,3.22,"[-22.5, 5.5, 57.5]",1.0,1.0,,maskAInsL,C1,48
+gPPI C1 seed maskAInsL,+,2,3.22,"[19.5, -22.5, 61.5]",1.0,1.0,,maskAInsL,C1,48
+gPPI C1 seed maskAInsL,-,2,-3.15,"[-16.5, 17.5, 17.5]",1.0,1.0,,maskAInsL,C1,48
+gPPI C1 seed maskAInsL,+,2,3.16,"[-48.5, 9.5, -18.5]",1.0,1.0,,maskAInsL,C1,48
+gPPI C1 seed maskAInsL,+,2,3.11,"[27.5, 21.5, -8.5]",1.0,1.0,,maskAInsL,C1,48
+gPPI C1 seed maskAInsL,+,2,3.15,"[25.5, 9.5, 63.5]",1.0,1.0,,maskAInsL,C1,48
+gPPI C1 seed maskAInsL,+,2,3.22,"[-4.5, 3.5, -4.5]",1.0,1.0,,maskAInsL,C1,48
+gPPI C1 seed maskAInsL,-,2,-3.32,"[35.5, -6.5, 29.5]",1.0,1.0,,maskAInsL,C1,48
+gPPI C1 seed maskAInsL,-,2,-3.37,"[13.5, -100.0, 5.5]",1.0,1.0,,maskAInsL,C1,48
+gPPI C1 seed maskAInsL,+,1,3.19,"[15.5, -28.5, 65.5]",1.0,1.0,,maskAInsL,C1,48
+gPPI C1 seed maskAInsL,+,1,3.22,"[-20.5, 3.5, -34.5]",1.0,1.0,,maskAInsL,C1,48
+gPPI C1 seed maskAInsL,+,1,3.16,"[41.5, -60.5, 5.5]",1.0,1.0,,maskAInsL,C1,48
+gPPI C1 seed maskAInsL,+,1,3.14,"[47.5, 53.5, -2.5]",1.0,1.0,,maskAInsL,C1,48
+gPPI C1 seed maskAInsL,+,1,3.17,"[-14.5, 69.5, -2.5]",1.0,1.0,,maskAInsL,C1,48
+gPPI C1 seed maskAInsL,+,1,3.11,"[29.5, -56.5, -32.5]",1.0,1.0,,maskAInsL,C1,48
+gPPI C1 seed maskAInsL,+,1,3.13,"[-58.5, -42.5, -20.5]",1.0,1.0,,maskAInsL,C1,48
+gPPI C1 seed maskAInsL,+,1,3.23,"[23.5, -6.5, -16.5]",1.0,1.0,,maskAInsL,C1,48
+gPPI C1 seed maskAInsL,+,1,3.33,"[-30.5, -2.5, 55.5]",1.0,1.0,,maskAInsL,C1,48
+gPPI C1 seed maskAInsL,+,1,3.13,"[-48.5, 11.5, 13.5]",1.0,1.0,,maskAInsL,C1,48
+gPPI C1 seed maskAInsL,+,1,3.16,"[49.5, -72.5, 19.5]",1.0,1.0,,maskAInsL,C1,48
+gPPI C1 seed maskAInsL,+,1,3.26,"[-0.5, -44.5, 15.5]",1.0,1.0,,maskAInsL,C1,48
+gPPI C1 seed maskAInsL,+,1,3.12,"[-60.5, -34.5, -4.5]",1.0,1.0,,maskAInsL,C1,48
+gPPI C1 seed maskAInsL,+,1,3.11,"[-12.5, -18.5, 43.5]",1.0,1.0,,maskAInsL,C1,48
+gPPI C1 seed maskAInsL,-,1,-3.3,"[43.5, -26.5, 67.5]",1.0,1.0,,maskAInsL,C1,48
+gPPI C1 seed maskAInsL,-,1,-3.1,"[-20.5, 7.5, 35.5]",1.0,1.0,,maskAInsL,C1,48
+gPPI C1 seed maskAInsL,-,1,-3.2,"[29.5, -34.5, 25.5]",1.0,1.0,,maskAInsL,C1,48
+gPPI C1 seed maskAInsL,-,1,-3.09,"[-32.5, -62.5, 21.5]",1.0,1.0,,maskAInsL,C1,48
+gPPI C1 seed maskAInsL,-,1,-3.3,"[35.5, 9.5, 17.5]",1.0,1.0,,maskAInsL,C1,48
+gPPI C1 seed maskAInsL,-,1,-3.16,"[7.5, -32.5, 13.5]",1.0,1.0,,maskAInsL,C1,48
+gPPI C1 seed maskAInsL,-,1,-3.24,"[-28.5, -68.5, 9.5]",1.0,1.0,,maskAInsL,C1,48
+gPPI C1 seed maskAInsL,-,1,-3.23,"[-4.5, -52.5, -2.5]",1.0,1.0,,maskAInsL,C1,48
+gPPI C1 seed maskAInsL,-,1,-3.13,"[1.5, -86.5, -4.5]",1.0,1.0,,maskAInsL,C1,48
+gPPI C1 seed maskAInsL,-,1,-3.2,"[-28.5, -70.5, -36.5]",1.0,1.0,,maskAInsL,C1,48
+gPPI C1 seed maskAInsL,-,1,-3.19,"[-4.5, -84.5, 43.5]",1.0,1.0,,maskAInsL,C1,48
+gPPI C4 seed maskAInsL,+,33,4.01,"[-52.5, -44.5, 57.5]",0.303,0.606,"16% Supramarginal Gyrus, posterior division, 3% Angular Gyrus, 3% Supramarginal Gyrus, anterior division, 2% Superior Parietal Lobule; 28% Left Cerebral Cortex",maskAInsL,C4,54
+gPPI C4 seed maskAInsL,-,31,-3.89,"[33.5, -12.5, 31.5]",0.359,0.718,"100% Right Cerebral White Matter, 0% Right Cerebral Cortex",maskAInsL,C4,54
+gPPI C4 seed maskAInsL,+,26,3.92,"[15.5, -28.5, 61.5]",0.532,1.0,"37% Precentral Gyrus, 12% Postcentral Gyrus; 55% Right Cerebral Cortex, 44% Right Cerebral White Matter",maskAInsL,C4,54
+gPPI C4 seed maskAInsL,+,22,3.78,"[49.5, 47.5, -0.5]",0.698,1.0,"58% Frontal Pole; 64% Right Cerebral Cortex, 0% Right Cerebral White Matter",maskAInsL,C4,54
+gPPI C4 seed maskAInsL,+,14,3.76,"[-40.5, -36.5, 15.5]",0.962,1.0,"40% Parietal Operculum Cortex, 37% Planum Temporale, 5% Supramarginal Gyrus, posterior division, 1% Heschl's Gyrus (includes H1 and H2); 86% Left Cerebral Cortex, 12% Left Cerebral White Matter",maskAInsL,C4,54
+gPPI C4 seed maskAInsL,-,12,-4.08,"[31.5, -32.5, 25.5]",0.987,1.0,"100% Right Cerebral White Matter, 0% Right Cerebral Cortex",maskAInsL,C4,54
+gPPI C4 seed maskAInsL,+,12,3.69,"[-10.5, -14.5, 37.5]",0.987,1.0,"21% Cingulate Gyrus, anterior division, 12% Cingulate Gyrus, posterior division, 2% Juxtapositional Lobule Cortex (formerly Supplementary Motor Cortex), 1% Precentral Gyrus; 59% Left Cerebral White Matter, 41% Left Cerebral Cortex",maskAInsL,C4,54
+gPPI C4 seed maskAInsL,-,11,-4.01,"[47.5, -16.5, 59.5]",0.993,1.0,"40% Postcentral Gyrus, 12% Precentral Gyrus; 62% Right Cerebral Cortex, 14% Right Cerebral White Matter",maskAInsL,C4,54
+gPPI C4 seed maskAInsL,-,11,-3.62,"[3.5, -86.5, -4.5]",0.993,1.0,"44% Lingual Gyrus, 26% Intracalcarine Cortex, 5% Occipital Pole, 1% Supracalcarine Cortex; 67% Right Cerebral Cortex, 14% Left Cerebral Cortex, 10% Right Cerebral White Matter, 0% Left Cerebral White Matter",maskAInsL,C4,54
+gPPI C4 seed maskAInsL,+,9,3.43,"[67.5, -36.5, 19.5]",0.999,1.0,"24% Supramarginal Gyrus, posterior division, 23% Superior Temporal Gyrus, posterior division, 3% Planum Temporale, 3% Supramarginal Gyrus, anterior division, 2% Parietal Operculum Cortex, 1% Angular Gyrus; 67% Right Cerebral Cortex, 1% Right Cerebral White Matter",maskAInsL,C4,54
+gPPI C4 seed maskAInsL,-,8,-3.62,"[-12.5, 53.5, 19.5]",1.0,1.0,,maskAInsL,C4,54
+gPPI C4 seed maskAInsL,-,7,-3.41,"[-16.5, 23.5, -10.5]",1.0,1.0,,maskAInsL,C4,54
+gPPI C4 seed maskAInsL,-,7,-3.59,"[23.5, -14.5, 49.5]",1.0,1.0,,maskAInsL,C4,54
+gPPI C4 seed maskAInsL,+,6,3.49,"[49.5, -6.5, 7.5]",1.0,1.0,,maskAInsL,C4,54
+gPPI C4 seed maskAInsL,-,6,-3.63,"[-12.5, 57.5, -6.5]",1.0,1.0,,maskAInsL,C4,54
+gPPI C4 seed maskAInsL,+,6,3.41,"[55.5, 17.5, -2.5]",1.0,1.0,,maskAInsL,C4,54
+gPPI C4 seed maskAInsL,+,6,3.5,"[-54.5, 3.5, 17.5]",1.0,1.0,,maskAInsL,C4,54
+gPPI C4 seed maskAInsL,+,5,3.53,"[-26.5, -18.5, 15.5]",1.0,1.0,,maskAInsL,C4,54
+gPPI C4 seed maskAInsL,+,5,3.16,"[-40.5, 23.5, 31.5]",1.0,1.0,,maskAInsL,C4,54
+gPPI C4 seed maskAInsL,-,5,-3.4,"[-6.5, -94.5, -4.5]",1.0,1.0,,maskAInsL,C4,54
+gPPI C4 seed maskAInsL,-,4,-3.39,"[-6.5, -78.5, -6.5]",1.0,1.0,,maskAInsL,C4,54
+gPPI C4 seed maskAInsL,-,4,-3.29,"[-34.5, -84.5, 15.5]",1.0,1.0,,maskAInsL,C4,54
+gPPI C4 seed maskAInsL,+,4,3.42,"[-0.5, 1.5, -2.5]",1.0,1.0,,maskAInsL,C4,54
+gPPI C4 seed maskAInsL,+,4,3.44,"[31.5, -6.5, 9.5]",1.0,1.0,,maskAInsL,C4,54
+gPPI C4 seed maskAInsL,-,4,-3.3,"[1.5, -18.5, 45.5]",1.0,1.0,,maskAInsL,C4,54
+gPPI C4 seed maskAInsL,-,4,-3.29,"[-0.5, -22.5, -2.5]",1.0,1.0,,maskAInsL,C4,54
+gPPI C4 seed maskAInsL,-,4,-3.43,"[1.5, 67.5, -4.5]",1.0,1.0,,maskAInsL,C4,54
+gPPI C4 seed maskAInsL,+,4,3.47,"[15.5, -42.5, -24.5]",1.0,1.0,,maskAInsL,C4,54
+gPPI C4 seed maskAInsL,+,3,3.16,"[15.5, -6.5, 19.5]",1.0,1.0,,maskAInsL,C4,54
+gPPI C4 seed maskAInsL,-,3,-3.4,"[-30.5, 39.5, 5.5]",1.0,1.0,,maskAInsL,C4,54
+gPPI C4 seed maskAInsL,-,3,-3.26,"[-14.5, 5.5, -16.5]",1.0,1.0,,maskAInsL,C4,54
+gPPI C4 seed maskAInsL,-,3,-3.41,"[11.5, 45.5, 29.5]",1.0,1.0,,maskAInsL,C4,54
+gPPI C4 seed maskAInsL,+,3,3.3,"[19.5, -64.5, -36.5]",1.0,1.0,,maskAInsL,C4,54
+gPPI C4 seed maskAInsL,+,3,3.32,"[27.5, -56.5, 61.5]",1.0,1.0,,maskAInsL,C4,54
+gPPI C4 seed maskAInsL,+,3,3.12,"[-46.5, -34.5, 23.5]",1.0,1.0,,maskAInsL,C4,54
+gPPI C4 seed maskAInsL,-,2,-3.26,"[-2.5, -34.5, 17.5]",1.0,1.0,,maskAInsL,C4,54
+gPPI C4 seed maskAInsL,-,2,-3.22,"[21.5, -74.5, -4.5]",1.0,1.0,,maskAInsL,C4,54
+gPPI C4 seed maskAInsL,-,2,-3.33,"[-16.5, 49.5, -8.5]",1.0,1.0,,maskAInsL,C4,54
+gPPI C4 seed maskAInsL,-,2,-3.18,"[41.5, -26.5, 67.5]",1.0,1.0,,maskAInsL,C4,54
+gPPI C4 seed maskAInsL,-,2,-3.12,"[47.5, -12.5, -22.5]",1.0,1.0,,maskAInsL,C4,54
+gPPI C4 seed maskAInsL,+,2,3.33,"[-40.5, 45.5, -0.5]",1.0,1.0,,maskAInsL,C4,54
+gPPI C4 seed maskAInsL,-,2,-3.26,"[47.5, -16.5, 29.5]",1.0,1.0,,maskAInsL,C4,54
+gPPI C4 seed maskAInsL,-,2,-3.13,"[13.5, -54.5, 39.5]",1.0,1.0,,maskAInsL,C4,54
+gPPI C4 seed maskAInsL,+,2,3.17,"[27.5, -56.5, -34.5]",1.0,1.0,,maskAInsL,C4,54
+gPPI C4 seed maskAInsL,+,2,3.28,"[-46.5, -50.5, 41.5]",1.0,1.0,,maskAInsL,C4,54
+gPPI C4 seed maskAInsL,+,2,3.25,"[-34.5, 9.5, 35.5]",1.0,1.0,,maskAInsL,C4,54
+gPPI C4 seed maskAInsL,+,2,3.41,"[3.5, -2.5, 67.5]",1.0,1.0,,maskAInsL,C4,54
+gPPI C4 seed maskAInsL,+,2,3.4,"[39.5, 1.5, -10.5]",1.0,1.0,,maskAInsL,C4,54
+gPPI C4 seed maskAInsL,+,1,3.23,"[-38.5, -74.5, 9.5]",1.0,1.0,,maskAInsL,C4,54
+gPPI C4 seed maskAInsL,+,1,3.33,"[39.5, 17.5, -2.5]",1.0,1.0,,maskAInsL,C4,54
+gPPI C4 seed maskAInsL,+,1,3.18,"[47.5, 37.5, 33.5]",1.0,1.0,,maskAInsL,C4,54
+gPPI C4 seed maskAInsL,+,1,3.11,"[-8.5, -8.5, 69.5]",1.0,1.0,,maskAInsL,C4,54
+gPPI C4 seed maskAInsL,+,1,3.1,"[-62.5, -36.5, 47.5]",1.0,1.0,,maskAInsL,C4,54
+gPPI C4 seed maskAInsL,+,1,3.09,"[29.5, -64.5, -28.5]",1.0,1.0,,maskAInsL,C4,54
+gPPI C4 seed maskAInsL,+,1,3.17,"[7.5, 19.5, 49.5]",1.0,1.0,,maskAInsL,C4,54
+gPPI C4 seed maskAInsL,+,1,3.27,"[-20.5, -2.5, -18.5]",1.0,1.0,,maskAInsL,C4,54
+gPPI C4 seed maskAInsL,-,1,-3.09,"[-2.5, -68.5, 7.5]",1.0,1.0,,maskAInsL,C4,54
+gPPI C4 seed maskAInsL,-,1,-3.12,"[25.5, 33.5, 5.5]",1.0,1.0,,maskAInsL,C4,54
+gPPI C4 seed maskAInsL,-,1,-3.3,"[7.5, -52.5, 1.5]",1.0,1.0,,maskAInsL,C4,54
+gPPI C4 seed maskAInsL,-,1,-3.13,"[33.5, -86.5, 23.5]",1.0,1.0,,maskAInsL,C4,54
+gPPI C4 seed maskAInsL,-,1,-3.18,"[5.5, -40.5, -4.5]",1.0,1.0,,maskAInsL,C4,54
+gPPI C4 seed maskAInsL,-,1,-3.15,"[37.5, -6.5, 29.5]",1.0,1.0,,maskAInsL,C4,54
+gPPI C4 seed maskAInsL,-,1,-3.12,"[-38.5, -16.5, -10.5]",1.0,1.0,,maskAInsL,C4,54
+gPPI C4 seed maskAInsL,-,1,-3.13,"[27.5, -56.5, -16.5]",1.0,1.0,,maskAInsL,C4,54
+gPPI C4 seed maskAInsL,-,1,-3.22,"[-0.5, -12.5, -20.5]",1.0,1.0,,maskAInsL,C4,54
+gPPI C4 seed maskAInsL,-,1,-3.09,"[11.5, -10.5, -22.5]",1.0,1.0,,maskAInsL,C4,54
+gPPI C4 seed maskAInsL,-,1,-3.15,"[-18.5, -24.5, 59.5]",1.0,1.0,,maskAInsL,C4,54
+gPPI C1 seed maskAInsR,+,150,4.5,"[51.5, 45.5, -4.5]",0.000709,0.001418,"42% Frontal Pole; 46% Right Cerebral Cortex, 0% Right Cerebral White Matter",maskAInsR,C1,48
+gPPI C1 seed maskAInsR,+,44,3.81,"[3.5, 23.5, 63.5]",0.273,0.546,"31% Superior Frontal Gyrus; 49% Right Cerebral Cortex, 0% Right Cerebral White Matter",maskAInsR,C1,48
+gPPI C1 seed maskAInsR,+,41,4.2,"[41.5, -16.5, -28.5]",0.328,0.656,"44% Temporal Fusiform Cortex, posterior division, 26% Inferior Temporal Gyrus, posterior division, 6% Temporal Fusiform Cortex, anterior division, 2% Inferior Temporal Gyrus, anterior division, 1% Parahippocampal Gyrus, anterior division; 80% Right Cerebral Cortex, 20% Right Cerebral White Matter",maskAInsR,C1,48
+gPPI C1 seed maskAInsR,+,28,3.8,"[-54.5, 3.5, 17.5]",0.673,1.0,"63% Precentral Gyrus, 5% Inferior Frontal Gyrus, pars opercularis; 76% Left Cerebral Cortex, 24% Left Cerebral White Matter",maskAInsR,C1,48
+gPPI C1 seed maskAInsR,+,26,3.99,"[53.5, 17.5, 17.5]",0.735,1.0,"53% Inferior Frontal Gyrus, pars opercularis, 6% Inferior Frontal Gyrus, pars triangularis, 3% Precentral Gyrus, 1% Middle Frontal Gyrus; 72% Right Cerebral Cortex, 28% Right Cerebral White Matter",maskAInsR,C1,48
+gPPI C1 seed maskAInsR,+,20,3.55,"[-38.5, 45.5, 3.5]",0.899,1.0,"66% Frontal Pole; 64% Left Cerebral Cortex, 36% Left Cerebral White Matter",maskAInsR,C1,48
+gPPI C1 seed maskAInsR,+,18,3.98,"[5.5, 67.5, 13.5]",0.938,1.0,"73% Frontal Pole; 75% Right Cerebral Cortex, 6% Right Cerebral White Matter",maskAInsR,C1,48
+gPPI C1 seed maskAInsR,+,17,3.8,"[-28.5, 11.5, 5.5]",0.954,1.0,"2% Insular Cortex; 74% Left Cerebral White Matter, 14% Left Putamen, 11% Left Cerebral Cortex",maskAInsR,C1,48
+gPPI C1 seed maskAInsR,+,16,3.55,"[11.5, 45.5, 45.5]",0.967,1.0,"75% Frontal Pole; 76% Right Cerebral Cortex, 15% Right Cerebral White Matter",maskAInsR,C1,48
+gPPI C1 seed maskAInsR,+,14,3.61,"[19.5, 5.5, 1.5]",0.985,1.0,"69% Right Putamen, 24% Right Pallidum, 6% Right Cerebral White Matter",maskAInsR,C1,48
+gPPI C1 seed maskAInsR,-,14,-3.59,"[-10.5, -32.5, -8.5]",0.985,1.0,,maskAInsR,C1,48
+gPPI C1 seed maskAInsR,+,13,3.71,"[-2.5, -38.5, 55.5]",0.991,1.0,,maskAInsR,C1,48
+gPPI C1 seed maskAInsR,+,13,3.58,"[19.5, -26.5, 71.5]",0.991,1.0,,maskAInsR,C1,48
+gPPI C1 seed maskAInsR,+,13,3.31,"[-8.5, 67.5, -2.5]",0.991,1.0,,maskAInsR,C1,48
+gPPI C1 seed maskAInsR,+,12,3.66,"[39.5, 31.5, -6.5]",0.995,1.0,,maskAInsR,C1,48
+gPPI C1 seed maskAInsR,+,12,3.91,"[17.5, -16.5, 39.5]",0.995,1.0,,maskAInsR,C1,48
+gPPI C1 seed maskAInsR,+,9,3.78,"[33.5, 23.5, -20.5]",0.999,1.0,,maskAInsR,C1,48
+gPPI C1 seed maskAInsR,+,9,3.97,"[41.5, -60.5, 5.5]",0.999,1.0,,maskAInsR,C1,48
+gPPI C1 seed maskAInsR,-,9,-3.81,"[19.5, -26.5, 29.5]",0.999,1.0,,maskAInsR,C1,48
+gPPI C1 seed maskAInsR,+,7,3.65,"[-48.5, -30.5, -28.5]",1.0,1.0,,maskAInsR,C1,48
+gPPI C1 seed maskAInsR,+,7,3.39,"[-22.5, 7.5, 59.5]",1.0,1.0,,maskAInsR,C1,48
+gPPI C1 seed maskAInsR,+,7,3.38,"[11.5, 69.5, -8.5]",1.0,1.0,,maskAInsR,C1,48
+gPPI C1 seed maskAInsR,+,7,3.47,"[-12.5, -14.5, 71.5]",1.0,1.0,,maskAInsR,C1,48
+gPPI C1 seed maskAInsR,-,7,-3.52,"[-16.5, 49.5, 5.5]",1.0,1.0,,maskAInsR,C1,48
+gPPI C1 seed maskAInsR,+,6,3.47,"[65.5, -44.5, 11.5]",1.0,1.0,,maskAInsR,C1,48
+gPPI C1 seed maskAInsR,+,6,3.25,"[13.5, -8.5, 19.5]",1.0,1.0,,maskAInsR,C1,48
+gPPI C1 seed maskAInsR,-,6,-3.77,"[-24.5, -10.5, 27.5]",1.0,1.0,,maskAInsR,C1,48
+gPPI C1 seed maskAInsR,+,6,3.32,"[61.5, -50.5, -2.5]",1.0,1.0,,maskAInsR,C1,48
+gPPI C1 seed maskAInsR,-,5,-3.53,"[-34.5, -64.5, 23.5]",1.0,1.0,,maskAInsR,C1,48
+gPPI C1 seed maskAInsR,-,5,-3.54,"[17.5, 23.5, 39.5]",1.0,1.0,,maskAInsR,C1,48
+gPPI C1 seed maskAInsR,+,5,3.15,"[37.5, 35.5, -12.5]",1.0,1.0,,maskAInsR,C1,48
+gPPI C1 seed maskAInsR,-,5,-3.46,"[35.5, 9.5, 17.5]",1.0,1.0,,maskAInsR,C1,48
+gPPI C1 seed maskAInsR,+,5,3.56,"[-26.5, -4.5, -0.5]",1.0,1.0,,maskAInsR,C1,48
+gPPI C1 seed maskAInsR,+,4,3.46,"[17.5, -42.5, -26.5]",1.0,1.0,,maskAInsR,C1,48
+gPPI C1 seed maskAInsR,-,4,-3.44,"[21.5, -72.5, 15.5]",1.0,1.0,,maskAInsR,C1,48
+gPPI C1 seed maskAInsR,+,4,3.63,"[5.5, -20.5, 63.5]",1.0,1.0,,maskAInsR,C1,48
+gPPI C1 seed maskAInsR,+,4,3.78,"[59.5, -22.5, -28.5]",1.0,1.0,,maskAInsR,C1,48
+gPPI C1 seed maskAInsR,+,4,3.5,"[-36.5, 23.5, -12.5]",1.0,1.0,,maskAInsR,C1,48
+gPPI C1 seed maskAInsR,-,4,-3.22,"[-2.5, 7.5, 5.5]",1.0,1.0,,maskAInsR,C1,48
+gPPI C1 seed maskAInsR,-,3,-3.3,"[-48.5, -42.5, -10.5]",1.0,1.0,,maskAInsR,C1,48
+gPPI C1 seed maskAInsR,-,3,-3.36,"[-30.5, -32.5, -40.5]",1.0,1.0,,maskAInsR,C1,48
+gPPI C1 seed maskAInsR,-,3,-3.42,"[43.5, -26.5, 67.5]",1.0,1.0,,maskAInsR,C1,48
+gPPI C1 seed maskAInsR,+,3,3.35,"[47.5, 9.5, -20.5]",1.0,1.0,,maskAInsR,C1,48
+gPPI C1 seed maskAInsR,+,3,3.43,"[-8.5, -40.5, 61.5]",1.0,1.0,,maskAInsR,C1,48
+gPPI C1 seed maskAInsR,+,3,3.18,"[7.5, 5.5, -2.5]",1.0,1.0,,maskAInsR,C1,48
+gPPI C1 seed maskAInsR,+,3,3.48,"[-58.5, -42.5, -18.5]",1.0,1.0,,maskAInsR,C1,48
+gPPI C1 seed maskAInsR,+,3,3.44,"[-4.5, 9.5, -28.5]",1.0,1.0,,maskAInsR,C1,48
+gPPI C1 seed maskAInsR,+,3,3.22,"[59.5, -46.5, 3.5]",1.0,1.0,,maskAInsR,C1,48
+gPPI C1 seed maskAInsR,+,3,3.46,"[-24.5, -34.5, 61.5]",1.0,1.0,,maskAInsR,C1,48
+gPPI C1 seed maskAInsR,+,2,3.38,"[-6.5, -22.5, 65.5]",1.0,1.0,,maskAInsR,C1,48
+gPPI C1 seed maskAInsR,+,2,3.41,"[13.5, 23.5, -10.5]",1.0,1.0,,maskAInsR,C1,48
+gPPI C1 seed maskAInsR,+,2,3.21,"[11.5, -46.5, -38.5]",1.0,1.0,,maskAInsR,C1,48
+gPPI C1 seed maskAInsR,+,2,3.17,"[-36.5, 13.5, -4.5]",1.0,1.0,,maskAInsR,C1,48
+gPPI C1 seed maskAInsR,+,2,3.35,"[59.5, -36.5, 7.5]",1.0,1.0,,maskAInsR,C1,48
+gPPI C1 seed maskAInsR,-,2,-3.16,"[29.5, -94.5, -0.5]",1.0,1.0,,maskAInsR,C1,48
+gPPI C1 seed maskAInsR,-,2,-3.16,"[29.5, -10.5, 23.5]",1.0,1.0,,maskAInsR,C1,48
+gPPI C1 seed maskAInsR,-,2,-3.34,"[-18.5, -6.5, 47.5]",1.0,1.0,,maskAInsR,C1,48
+gPPI C1 seed maskAInsR,+,1,3.2,"[37.5, 7.5, -40.5]",1.0,1.0,,maskAInsR,C1,48
+gPPI C1 seed maskAInsR,+,1,3.28,"[57.5, 3.5, 11.5]",1.0,1.0,,maskAInsR,C1,48
+gPPI C1 seed maskAInsR,+,1,3.14,"[35.5, -36.5, 17.5]",1.0,1.0,,maskAInsR,C1,48
+gPPI C1 seed maskAInsR,+,1,3.1,"[-48.5, -38.5, 25.5]",1.0,1.0,,maskAInsR,C1,48
+gPPI C1 seed maskAInsR,+,1,3.2,"[-14.5, -30.5, 49.5]",1.0,1.0,,maskAInsR,C1,48
+gPPI C1 seed maskAInsR,+,1,3.26,"[-34.5, -22.5, 61.5]",1.0,1.0,,maskAInsR,C1,48
+gPPI C1 seed maskAInsR,+,1,3.15,"[-10.5, 7.5, 65.5]",1.0,1.0,,maskAInsR,C1,48
+gPPI C1 seed maskAInsR,+,1,3.09,"[23.5, 9.5, 63.5]",1.0,1.0,,maskAInsR,C1,48
+gPPI C1 seed maskAInsR,+,1,3.09,"[-54.5, -22.5, 1.5]",1.0,1.0,,maskAInsR,C1,48
+gPPI C1 seed maskAInsR,+,1,3.11,"[63.5, -36.5, -16.5]",1.0,1.0,,maskAInsR,C1,48
+gPPI C1 seed maskAInsR,+,1,3.12,"[29.5, 35.5, -16.5]",1.0,1.0,,maskAInsR,C1,48
+gPPI C1 seed maskAInsR,+,1,3.29,"[-16.5, 7.5, 3.5]",1.0,1.0,,maskAInsR,C1,48
+gPPI C1 seed maskAInsR,+,1,3.12,"[7.5, 49.5, -4.5]",1.0,1.0,,maskAInsR,C1,48
+gPPI C1 seed maskAInsR,+,1,3.24,"[-58.5, -26.5, -4.5]",1.0,1.0,,maskAInsR,C1,48
+gPPI C1 seed maskAInsR,+,1,3.15,"[65.5, -34.5, -12.5]",1.0,1.0,,maskAInsR,C1,48
+gPPI C1 seed maskAInsR,+,1,3.18,"[45.5, 27.5, -14.5]",1.0,1.0,,maskAInsR,C1,48
+gPPI C1 seed maskAInsR,+,1,3.11,"[21.5, -6.5, -14.5]",1.0,1.0,,maskAInsR,C1,48
+gPPI C1 seed maskAInsR,+,1,3.15,"[53.5, -54.5, 1.5]",1.0,1.0,,maskAInsR,C1,48
+gPPI C1 seed maskAInsR,+,1,3.09,"[43.5, 27.5, -20.5]",1.0,1.0,,maskAInsR,C1,48
+gPPI C1 seed maskAInsR,-,1,-3.1,"[-2.5, -48.5, -0.5]",1.0,1.0,,maskAInsR,C1,48
+gPPI C1 seed maskAInsR,-,1,-3.17,"[-20.5, 45.5, 21.5]",1.0,1.0,,maskAInsR,C1,48
+gPPI C1 seed maskAInsR,-,1,-3.36,"[-4.5, -52.5, -2.5]",1.0,1.0,,maskAInsR,C1,48
+gPPI C1 seed maskAInsR,-,1,-3.11,"[-18.5, -82.5, 25.5]",1.0,1.0,,maskAInsR,C1,48
+gPPI C1 seed maskAInsR,-,1,-3.13,"[-2.5, -64.5, -8.5]",1.0,1.0,,maskAInsR,C1,48
+gPPI C1 seed maskAInsR,-,1,-3.16,"[17.5, -58.5, 37.5]",1.0,1.0,,maskAInsR,C1,48
+gPPI C4 seed maskAInsR,-,64,-3.91,"[1.5, -80.5, -0.5]",0.0863,0.1726,"49% Lingual Gyrus, 33% Intracalcarine Cortex, 5% Supracalcarine Cortex; 61% Right Cerebral Cortex, 30% Left Cerebral Cortex, 5% Right Cerebral White Matter, 0% Left Cerebral White Matter",maskAInsR,C4,54
+gPPI C4 seed maskAInsR,-,39,-4.17,"[31.5, -10.5, 33.5]",0.391,0.782,100% Right Cerebral White Matter,maskAInsR,C4,54
+gPPI C4 seed maskAInsR,-,31,-3.96,"[-0.5, -22.5, -2.5]",0.601,1.0,"6% Left Thalamus, 0% Right Thalamus",maskAInsR,C4,54
+gPPI C4 seed maskAInsR,-,23,-3.8,"[9.5, -8.5, -22.5]",0.835,1.0,"16% Parahippocampal Gyrus, anterior division; 22% Right Cerebral Cortex, 16% Right Hippocampus, 3% Right Amygdala, 1% Brain-Stem",maskAInsR,C4,54
+gPPI C4 seed maskAInsR,-,22,-4.05,"[-8.5, -22.5, 37.5]",0.861,1.0,"38% Cingulate Gyrus, posterior division, 3% Precentral Gyrus, 2% Cingulate Gyrus, anterior division; 56% Left Cerebral White Matter, 44% Left Cerebral Cortex",maskAInsR,C4,54
+gPPI C4 seed maskAInsR,-,20,-4.1,"[-38.5, -16.5, -10.5]",0.906,1.0,"10% Planum Polare, 2% Insular Cortex; 78% Left Cerebral White Matter, 22% Left Cerebral Cortex, 0% Left Hippocampus",maskAInsR,C4,54
+gPPI C4 seed maskAInsR,-,17,-3.5,"[-26.5, -80.5, -8.5]",0.957,1.0,"52% Occipital Fusiform Gyrus, 5% Lateral Occipital Cortex, inferior division, 4% Lingual Gyrus; 61% Left Cerebral Cortex, 39% Left Cerebral White Matter",maskAInsR,C4,54
+gPPI C4 seed maskAInsR,-,16,-3.59,"[-6.5, -78.5, -8.5]",0.969,1.0,"70% Lingual Gyrus, 6% Occipital Fusiform Gyrus; 79% Left Cerebral Cortex, 17% Left Cerebral White Matter, 0% Right Cerebral Cortex",maskAInsR,C4,54
+gPPI C4 seed maskAInsR,-,14,-3.89,"[-12.5, 57.5, -6.5]",0.986,1.0,"11% Frontal Pole, 2% Frontal Medial Cortex; 88% Left Cerebral White Matter, 12% Left Cerebral Cortex",maskAInsR,C4,54
+gPPI C4 seed maskAInsR,-,13,-4.13,"[31.5, -8.5, 23.5]",0.991,1.0,"100% Right Cerebral White Matter, 0% Right Cerebral Cortex",maskAInsR,C4,54
+gPPI C4 seed maskAInsR,-,12,-3.67,"[23.5, -16.5, 47.5]",0.995,1.0,,maskAInsR,C4,54
+gPPI C4 seed maskAInsR,+,12,3.66,"[-26.5, -16.5, 15.5]",0.995,1.0,,maskAInsR,C4,54
+gPPI C4 seed maskAInsR,-,12,-3.61,"[-38.5, -86.5, -10.5]",0.995,1.0,,maskAInsR,C4,54
+gPPI C4 seed maskAInsR,-,10,-3.39,"[-12.5, 1.5, -20.5]",0.999,1.0,,maskAInsR,C4,54
+gPPI C4 seed maskAInsR,+,9,3.84,"[-30.5, -52.5, -42.5]",0.999,1.0,,maskAInsR,C4,54
+gPPI C4 seed maskAInsR,+,9,3.72,"[-34.5, 11.5, 35.5]",0.999,1.0,,maskAInsR,C4,54
+gPPI C4 seed maskAInsR,-,9,-3.69,"[13.5, -54.5, 33.5]",0.999,1.0,,maskAInsR,C4,54
+gPPI C4 seed maskAInsR,-,9,-3.58,"[-32.5, 41.5, 43.5]",0.999,1.0,,maskAInsR,C4,54
+gPPI C4 seed maskAInsR,-,9,-3.93,"[31.5, -32.5, 25.5]",0.999,1.0,,maskAInsR,C4,54
+gPPI C4 seed maskAInsR,+,8,3.5,"[1.5, 1.5, -2.5]",1.0,1.0,,maskAInsR,C4,54
+gPPI C4 seed maskAInsR,-,8,-3.24,"[27.5, -62.5, -6.5]",1.0,1.0,,maskAInsR,C4,54
+gPPI C4 seed maskAInsR,+,8,3.78,"[-28.5, -10.5, 21.5]",1.0,1.0,,maskAInsR,C4,54
+gPPI C4 seed maskAInsR,-,7,-3.58,"[3.5, -18.5, 45.5]",1.0,1.0,,maskAInsR,C4,54
+gPPI C4 seed maskAInsR,-,7,-3.38,"[45.5, -60.5, -14.5]",1.0,1.0,,maskAInsR,C4,54
+gPPI C4 seed maskAInsR,-,5,-3.33,"[-34.5, -82.5, 17.5]",1.0,1.0,,maskAInsR,C4,54
+gPPI C4 seed maskAInsR,-,5,-3.46,"[31.5, 33.5, 43.5]",1.0,1.0,,maskAInsR,C4,54
+gPPI C4 seed maskAInsR,+,5,3.43,"[-54.5, 1.5, 17.5]",1.0,1.0,,maskAInsR,C4,54
+gPPI C4 seed maskAInsR,-,5,-3.46,"[-0.5, -12.5, -20.5]",1.0,1.0,,maskAInsR,C4,54
+gPPI C4 seed maskAInsR,-,5,-3.33,"[23.5, -56.5, -16.5]",1.0,1.0,,maskAInsR,C4,54
+gPPI C4 seed maskAInsR,-,5,-3.3,"[37.5, -8.5, -14.5]",1.0,1.0,,maskAInsR,C4,54
+gPPI C4 seed maskAInsR,+,4,3.21,"[63.5, -38.5, 21.5]",1.0,1.0,,maskAInsR,C4,54
+gPPI C4 seed maskAInsR,-,4,-3.39,"[-6.5, -54.5, -2.5]",1.0,1.0,,maskAInsR,C4,54
+gPPI C4 seed maskAInsR,-,4,-3.44,"[45.5, -14.5, 59.5]",1.0,1.0,,maskAInsR,C4,54
+gPPI C4 seed maskAInsR,-,4,-3.56,"[25.5, -10.5, 69.5]",1.0,1.0,,maskAInsR,C4,54
+gPPI C4 seed maskAInsR,-,4,-3.2,"[-8.5, 65.5, 27.5]",1.0,1.0,,maskAInsR,C4,54
+gPPI C4 seed maskAInsR,-,4,-3.21,"[33.5, -86.5, 23.5]",1.0,1.0,,maskAInsR,C4,54
+gPPI C4 seed maskAInsR,-,4,-3.4,"[11.5, 37.5, 41.5]",1.0,1.0,,maskAInsR,C4,54
+gPPI C4 seed maskAInsR,-,4,-3.32,"[-2.5, 19.5, 39.5]",1.0,1.0,,maskAInsR,C4,54
+gPPI C4 seed maskAInsR,-,4,-3.42,"[-36.5, -62.5, 23.5]",1.0,1.0,,maskAInsR,C4,54
+gPPI C4 seed maskAInsR,-,3,-3.19,"[-6.5, -94.5, -6.5]",1.0,1.0,,maskAInsR,C4,54
+gPPI C4 seed maskAInsR,-,3,-3.32,"[-22.5, -70.5, -34.5]",1.0,1.0,,maskAInsR,C4,54
+gPPI C4 seed maskAInsR,-,3,-3.21,"[-26.5, -72.5, -4.5]",1.0,1.0,,maskAInsR,C4,54
+gPPI C4 seed maskAInsR,-,3,-3.14,"[-24.5, -84.5, 45.5]",1.0,1.0,,maskAInsR,C4,54
+gPPI C4 seed maskAInsR,-,3,-3.19,"[-4.5, 13.5, 7.5]",1.0,1.0,,maskAInsR,C4,54
+gPPI C4 seed maskAInsR,-,3,-3.4,"[11.5, 45.5, 29.5]",1.0,1.0,,maskAInsR,C4,54
+gPPI C4 seed maskAInsR,-,3,-3.29,"[-18.5, -24.5, 61.5]",1.0,1.0,,maskAInsR,C4,54
+gPPI C4 seed maskAInsR,-,3,-3.29,"[35.5, -90.5, -10.5]",1.0,1.0,,maskAInsR,C4,54
+gPPI C4 seed maskAInsR,-,3,-3.25,"[-2.5, -68.5, 7.5]",1.0,1.0,,maskAInsR,C4,54
+gPPI C4 seed maskAInsR,-,3,-3.26,"[-48.5, -28.5, 13.5]",1.0,1.0,,maskAInsR,C4,54
+gPPI C4 seed maskAInsR,+,2,3.23,"[35.5, 39.5, -8.5]",1.0,1.0,,maskAInsR,C4,54
+gPPI C4 seed maskAInsR,-,2,-3.37,"[-14.5, 21.5, 45.5]",1.0,1.0,,maskAInsR,C4,54
+gPPI C4 seed maskAInsR,-,2,-3.12,"[-22.5, -94.5, -16.5]",1.0,1.0,,maskAInsR,C4,54
+gPPI C4 seed maskAInsR,-,2,-3.42,"[-2.5, -34.5, 17.5]",1.0,1.0,,maskAInsR,C4,54
+gPPI C4 seed maskAInsR,-,2,-3.34,"[-14.5, -42.5, -6.5]",1.0,1.0,,maskAInsR,C4,54
+gPPI C4 seed maskAInsR,-,2,-3.41,"[-22.5, -34.5, 1.5]",1.0,1.0,,maskAInsR,C4,54
+gPPI C4 seed maskAInsR,-,2,-3.3,"[-22.5, -70.5, 27.5]",1.0,1.0,,maskAInsR,C4,54
+gPPI C4 seed maskAInsR,-,2,-3.27,"[-14.5, 21.5, -12.5]",1.0,1.0,,maskAInsR,C4,54
+gPPI C4 seed maskAInsR,+,1,3.25,"[-10.5, -12.5, 35.5]",1.0,1.0,,maskAInsR,C4,54
+gPPI C4 seed maskAInsR,+,1,3.12,"[-58.5, -44.5, -16.5]",1.0,1.0,,maskAInsR,C4,54
+gPPI C4 seed maskAInsR,+,1,3.17,"[19.5, -66.5, -36.5]",1.0,1.0,,maskAInsR,C4,54
+gPPI C4 seed maskAInsR,+,1,3.15,"[-16.5, -60.5, 47.5]",1.0,1.0,,maskAInsR,C4,54
+gPPI C4 seed maskAInsR,-,1,-3.21,"[5.5, -40.5, -4.5]",1.0,1.0,,maskAInsR,C4,54
+gPPI C4 seed maskAInsR,-,1,-3.24,"[23.5, -64.5, 9.5]",1.0,1.0,,maskAInsR,C4,54
+gPPI C4 seed maskAInsR,-,1,-3.25,"[-16.5, -74.5, 29.5]",1.0,1.0,,maskAInsR,C4,54
+gPPI C4 seed maskAInsR,-,1,-3.26,"[-2.5, -82.5, 11.5]",1.0,1.0,,maskAInsR,C4,54
+gPPI C4 seed maskAInsR,-,1,-3.15,"[31.5, -34.5, -20.5]",1.0,1.0,,maskAInsR,C4,54
+gPPI C4 seed maskAInsR,-,1,-3.22,"[-0.5, 59.5, 15.5]",1.0,1.0,,maskAInsR,C4,54
+gPPI C4 seed maskAInsR,-,1,-3.17,"[-32.5, -44.5, -48.5]",1.0,1.0,,maskAInsR,C4,54
+gPPI C1 seed maskdACC,+,38,4.09,"[5.5, 67.5, 13.5]",0.378,0.756,"73% Frontal Pole; 75% Right Cerebral Cortex, 6% Right Cerebral White Matter",maskdACC,C1,48
+gPPI C1 seed maskdACC,+,31,3.5,"[49.5, 37.5, -12.5]",0.567,1.0,"67% Frontal Pole, 11% Frontal Orbital Cortex, 6% Inferior Frontal Gyrus, pars triangularis; 87% Right Cerebral Cortex, 8% Right Cerebral White Matter",maskdACC,C1,48
+gPPI C1 seed maskdACC,+,30,3.84,"[21.5, 57.5, 21.5]",0.597,1.0,"80% Frontal Pole; 81% Right Cerebral Cortex, 18% Right Cerebral White Matter",maskdACC,C1,48
+gPPI C1 seed maskdACC,+,29,4.17,"[41.5, -16.5, -28.5]",0.628,1.0,"44% Temporal Fusiform Cortex, posterior division, 26% Inferior Temporal Gyrus, posterior division, 6% Temporal Fusiform Cortex, anterior division, 2% Inferior Temporal Gyrus, anterior division, 1% Parahippocampal Gyrus, anterior division; 80% Right Cerebral Cortex, 20% Right Cerebral White Matter",maskdACC,C1,48
+gPPI C1 seed maskdACC,+,26,3.57,"[-54.5, -32.5, -6.5]",0.724,1.0,"50% Middle Temporal Gyrus, posterior division, 11% Superior Temporal Gyrus, posterior division; 66% Left Cerebral Cortex, 34% Left Cerebral White Matter",maskdACC,C1,48
+gPPI C1 seed maskdACC,+,24,3.79,"[21.5, 7.5, 51.5]",0.785,1.0,"35% Superior Frontal Gyrus, 5% Middle Frontal Gyrus; 60% Right Cerebral Cortex, 40% Right Cerebral White Matter",maskdACC,C1,48
+gPPI C1 seed maskdACC,+,15,3.81,"[17.5, -26.5, 71.5]",0.976,1.0,"49% Precentral Gyrus, 16% Postcentral Gyrus; 74% Right Cerebral Cortex, 21% Right Cerebral White Matter",maskdACC,C1,48
+gPPI C1 seed maskdACC,+,15,3.37,"[45.5, 21.5, -6.5]",0.976,1.0,"33% Frontal Orbital Cortex, 26% Frontal Operculum Cortex, 4% Inferior Frontal Gyrus, pars triangularis, 3% Insular Cortex, 1% Inferior Frontal Gyrus, pars opercularis; 76% Right Cerebral Cortex, 9% Right Cerebral White Matter",maskdACC,C1,48
+gPPI C1 seed maskdACC,+,14,3.86,"[-30.5, 11.5, 3.5]",0.984,1.0,"15% Insular Cortex; 65% Left Cerebral White Matter, 31% Left Cerebral Cortex, 4% Left Putamen",maskdACC,C1,48
+gPPI C1 seed maskdACC,-,14,-3.64,"[3.5, -90.5, -4.5]",0.984,1.0,"30% Lingual Gyrus, 27% Occipital Pole, 13% Intracalcarine Cortex, 2% Supracalcarine Cortex; 62% Right Cerebral Cortex, 15% Left Cerebral Cortex, 10% Right Cerebral White Matter, 0% Left Cerebral White Matter",maskdACC,C1,48
+gPPI C1 seed maskdACC,+,12,3.54,"[5.5, 27.5, 27.5]",0.994,1.0,,maskdACC,C1,48
+gPPI C1 seed maskdACC,+,11,3.56,"[-12.5, -48.5, 29.5]",0.997,1.0,,maskdACC,C1,48
+gPPI C1 seed maskdACC,+,10,3.7,"[-54.5, 3.5, 15.5]",0.999,1.0,,maskdACC,C1,48
+gPPI C1 seed maskdACC,+,9,3.69,"[-48.5, -30.5, -28.5]",0.999,1.0,,maskdACC,C1,48
+gPPI C1 seed maskdACC,+,9,3.34,"[53.5, 21.5, 19.5]",0.999,1.0,,maskdACC,C1,48
+gPPI C1 seed maskdACC,+,9,3.31,"[55.5, 29.5, -6.5]",0.999,1.0,,maskdACC,C1,48
+gPPI C1 seed maskdACC,-,9,-3.5,"[-10.5, -32.5, -6.5]",0.999,1.0,,maskdACC,C1,48
+gPPI C1 seed maskdACC,-,8,-3.77,"[-16.5, -28.5, -14.5]",1.0,1.0,,maskdACC,C1,48
+gPPI C1 seed maskdACC,+,7,3.45,"[15.5, -16.5, 39.5]",1.0,1.0,,maskdACC,C1,48
+gPPI C1 seed maskdACC,-,7,-4.0,"[-32.5, -32.5, -40.5]",1.0,1.0,,maskdACC,C1,48
+gPPI C1 seed maskdACC,-,7,-3.4,"[41.5, -8.5, 25.5]",1.0,1.0,,maskdACC,C1,48
+gPPI C1 seed maskdACC,+,6,3.28,"[-32.5, 29.5, -2.5]",1.0,1.0,,maskdACC,C1,48
+gPPI C1 seed maskdACC,+,6,3.58,"[-18.5, 7.5, -0.5]",1.0,1.0,,maskdACC,C1,48
+gPPI C1 seed maskdACC,-,6,-3.42,"[-14.5, -76.5, -12.5]",1.0,1.0,,maskdACC,C1,48
+gPPI C1 seed maskdACC,-,5,-3.63,"[37.5, 9.5, 17.5]",1.0,1.0,,maskdACC,C1,48
+gPPI C1 seed maskdACC,-,5,-3.87,"[-4.5, -84.5, 43.5]",1.0,1.0,,maskdACC,C1,48
+gPPI C1 seed maskdACC,+,5,3.63,"[47.5, -30.5, 3.5]",1.0,1.0,,maskdACC,C1,48
+gPPI C1 seed maskdACC,+,5,3.49,"[27.5, 5.5, -28.5]",1.0,1.0,,maskdACC,C1,48
+gPPI C1 seed maskdACC,+,4,3.28,"[-40.5, 43.5, -2.5]",1.0,1.0,,maskdACC,C1,48
+gPPI C1 seed maskdACC,+,4,3.69,"[5.5, 15.5, 67.5]",1.0,1.0,,maskdACC,C1,48
+gPPI C1 seed maskdACC,+,4,3.29,"[-46.5, 13.5, -8.5]",1.0,1.0,,maskdACC,C1,48
+gPPI C1 seed maskdACC,+,4,3.37,"[43.5, 29.5, -14.5]",1.0,1.0,,maskdACC,C1,48
+gPPI C1 seed maskdACC,-,4,-3.45,"[29.5, -70.5, 17.5]",1.0,1.0,,maskdACC,C1,48
+gPPI C1 seed maskdACC,-,4,-3.55,"[57.5, -20.5, 29.5]",1.0,1.0,,maskdACC,C1,48
+gPPI C1 seed maskdACC,-,4,-3.29,"[11.5, -82.5, 49.5]",1.0,1.0,,maskdACC,C1,48
+gPPI C1 seed maskdACC,-,4,-3.29,"[15.5, 19.5, 15.5]",1.0,1.0,,maskdACC,C1,48
+gPPI C1 seed maskdACC,-,4,-3.42,"[-24.5, -10.5, 27.5]",1.0,1.0,,maskdACC,C1,48
+gPPI C1 seed maskdACC,-,3,-3.21,"[-2.5, -64.5, -8.5]",1.0,1.0,,maskdACC,C1,48
+gPPI C1 seed maskdACC,-,3,-3.17,"[-28.5, -62.5, 21.5]",1.0,1.0,,maskdACC,C1,48
+gPPI C1 seed maskdACC,-,3,-3.53,"[-50.5, -16.5, 25.5]",1.0,1.0,,maskdACC,C1,48
+gPPI C1 seed maskdACC,+,3,3.25,"[25.5, 17.5, -22.5]",1.0,1.0,,maskdACC,C1,48
+gPPI C1 seed maskdACC,+,3,3.23,"[-60.5, -42.5, -18.5]",1.0,1.0,,maskdACC,C1,48
+gPPI C1 seed maskdACC,+,3,3.38,"[5.5, 55.5, 29.5]",1.0,1.0,,maskdACC,C1,48
+gPPI C1 seed maskdACC,+,3,3.48,"[33.5, 23.5, -20.5]",1.0,1.0,,maskdACC,C1,48
+gPPI C1 seed maskdACC,+,3,3.16,"[-50.5, 17.5, -20.5]",1.0,1.0,,maskdACC,C1,48
+gPPI C1 seed maskdACC,+,2,3.13,"[-4.5, -38.5, 57.5]",1.0,1.0,,maskdACC,C1,48
+gPPI C1 seed maskdACC,+,2,3.3,"[7.5, -18.5, 63.5]",1.0,1.0,,maskdACC,C1,48
+gPPI C1 seed maskdACC,-,2,-3.29,"[-16.5, 17.5, 21.5]",1.0,1.0,,maskdACC,C1,48
+gPPI C1 seed maskdACC,-,2,-3.36,"[-18.5, -82.5, 25.5]",1.0,1.0,,maskdACC,C1,48
+gPPI C1 seed maskdACC,-,2,-3.1,"[-8.5, -80.5, -10.5]",1.0,1.0,,maskdACC,C1,48
+gPPI C1 seed maskdACC,-,2,-3.3,"[-8.5, -38.5, 75.5]",1.0,1.0,,maskdACC,C1,48
+gPPI C1 seed maskdACC,-,2,-3.22,"[-16.5, 51.5, 5.5]",1.0,1.0,,maskdACC,C1,48
+gPPI C1 seed maskdACC,-,2,-3.11,"[-0.5, -4.5, 3.5]",1.0,1.0,,maskdACC,C1,48
+gPPI C1 seed maskdACC,-,2,-3.42,"[-4.5, -52.5, -0.5]",1.0,1.0,,maskdACC,C1,48
+gPPI C1 seed maskdACC,-,2,-3.16,"[3.5, -90.5, 19.5]",1.0,1.0,,maskdACC,C1,48
+gPPI C1 seed maskdACC,+,2,3.15,"[29.5, 23.5, 1.5]",1.0,1.0,,maskdACC,C1,48
+gPPI C1 seed maskdACC,+,2,3.33,"[15.5, -28.5, 65.5]",1.0,1.0,,maskdACC,C1,48
+gPPI C1 seed maskdACC,+,1,3.19,"[35.5, 25.5, 7.5]",1.0,1.0,,maskdACC,C1,48
+gPPI C1 seed maskdACC,+,1,3.12,"[-30.5, 55.5, 11.5]",1.0,1.0,,maskdACC,C1,48
+gPPI C1 seed maskdACC,+,1,3.21,"[9.5, -32.5, 51.5]",1.0,1.0,,maskdACC,C1,48
+gPPI C1 seed maskdACC,+,1,3.16,"[-32.5, -64.5, -32.5]",1.0,1.0,,maskdACC,C1,48
+gPPI C1 seed maskdACC,+,1,3.25,"[59.5, -22.5, -28.5]",1.0,1.0,,maskdACC,C1,48
+gPPI C1 seed maskdACC,+,1,3.22,"[-62.5, 11.5, 17.5]",1.0,1.0,,maskdACC,C1,48
+gPPI C1 seed maskdACC,+,1,3.4,"[-42.5, 13.5, -12.5]",1.0,1.0,,maskdACC,C1,48
+gPPI C1 seed maskdACC,+,1,3.46,"[-4.5, 9.5, -28.5]",1.0,1.0,,maskdACC,C1,48
+gPPI C1 seed maskdACC,+,1,3.13,"[39.5, 31.5, -6.5]",1.0,1.0,,maskdACC,C1,48
+gPPI C1 seed maskdACC,+,1,3.14,"[-12.5, -14.5, 71.5]",1.0,1.0,,maskdACC,C1,48
+gPPI C1 seed maskdACC,+,1,3.11,"[-14.5, 67.5, -2.5]",1.0,1.0,,maskdACC,C1,48
+gPPI C1 seed maskdACC,+,1,3.11,"[-14.5, -14.5, 1.5]",1.0,1.0,,maskdACC,C1,48
+gPPI C1 seed maskdACC,+,1,3.11,"[-26.5, -2.5, 1.5]",1.0,1.0,,maskdACC,C1,48
+gPPI C1 seed maskdACC,+,1,3.13,"[59.5, -36.5, 7.5]",1.0,1.0,,maskdACC,C1,48
+gPPI C1 seed maskdACC,+,1,3.12,"[-30.5, -16.5, -36.5]",1.0,1.0,,maskdACC,C1,48
+gPPI C1 seed maskdACC,+,1,3.19,"[21.5, -6.5, -16.5]",1.0,1.0,,maskdACC,C1,48
+gPPI C1 seed maskdACC,+,1,3.11,"[59.5, -36.5, -14.5]",1.0,1.0,,maskdACC,C1,48
+gPPI C1 seed maskdACC,+,1,3.11,"[65.5, -40.5, -12.5]",1.0,1.0,,maskdACC,C1,48
+gPPI C1 seed maskdACC,-,1,-3.28,"[1.5, 17.5, 11.5]",1.0,1.0,,maskdACC,C1,48
+gPPI C1 seed maskdACC,-,1,-3.17,"[-10.5, -80.5, -14.5]",1.0,1.0,,maskdACC,C1,48
+gPPI C1 seed maskdACC,-,1,-3.23,"[-8.5, -22.5, 33.5]",1.0,1.0,,maskdACC,C1,48
+gPPI C1 seed maskdACC,-,1,-3.1,"[-16.5, -94.5, -16.5]",1.0,1.0,,maskdACC,C1,48
+gPPI C4 seed maskdACC,-,97,-4.09,"[1.5, -86.5, -2.5]",0.0107,0.0214,"41% Lingual Gyrus, 27% Intracalcarine Cortex, 8% Supracalcarine Cortex, 7% Occipital Pole; 52% Right Cerebral Cortex, 37% Left Cerebral Cortex, 4% Right Cerebral White Matter, 2% Left Cerebral White Matter",maskdACC,C4,54
+gPPI C4 seed maskdACC,-,91,-3.92,"[37.5, -88.5, 15.5]",0.015,0.03,"42% Lateral Occipital Cortex, superior division, 24% Occipital Pole, 4% Lateral Occipital Cortex, inferior division; 72% Right Cerebral Cortex, 8% Right Cerebral White Matter",maskdACC,C4,54
+gPPI C4 seed maskdACC,+,60,3.95,"[23.5, 57.5, 21.5]",0.0971,0.1942,"85% Frontal Pole; 86% Right Cerebral Cortex, 12% Right Cerebral White Matter",maskdACC,C4,54
+gPPI C4 seed maskdACC,-,55,-4.57,"[-6.5, -78.5, -8.5]",0.133,0.266,"70% Lingual Gyrus, 6% Occipital Fusiform Gyrus; 79% Left Cerebral Cortex, 17% Left Cerebral White Matter, 0% Right Cerebral Cortex",maskdACC,C4,54
+gPPI C4 seed maskdACC,-,55,-3.94,"[17.5, -52.5, 3.5]",0.133,0.266,"34% Precuneous Cortex, 30% Lingual Gyrus, 18% Cingulate Gyrus, posterior division, 5% Intracalcarine Cortex; 91% Right Cerebral Cortex, 9% Right Cerebral White Matter",maskdACC,C4,54
+gPPI C4 seed maskdACC,+,49,3.72,"[-50.5, 45.5, -8.5]",0.195,0.39,"58% Frontal Pole; 62% Left Cerebral Cortex, 0% Left Cerebral White Matter",maskdACC,C4,54
+gPPI C4 seed maskdACC,+,37,3.7,"[-46.5, -50.5, 39.5]",0.411,0.822,"21% Supramarginal Gyrus, posterior division, 20% Angular Gyrus, 2% Lateral Occipital Cortex, superior division, 1% Parietal Operculum Cortex; 53% Left Cerebral White Matter, 47% Left Cerebral Cortex",maskdACC,C4,54
+gPPI C4 seed maskdACC,+,25,4.2,"[-14.5, -14.5, 35.5]",0.762,1.0,"4% Cingulate Gyrus, posterior division, 3% Cingulate Gyrus, anterior division, 1% Juxtapositional Lobule Cortex (formerly Supplementary Motor Cortex); 91% Left Cerebral White Matter, 9% Left Cerebral Cortex",maskdACC,C4,54
+gPPI C4 seed maskdACC,+,23,4.57,"[19.5, -6.5, 21.5]",0.821,1.0,"85% Right Cerebral White Matter, 15% Right Caudate, 0% Right Lateral Ventricle",maskdACC,C4,54
+gPPI C4 seed maskdACC,-,16,-3.66,"[-22.5, -80.5, -10.5]",0.966,1.0,"48% Occipital Fusiform Gyrus, 13% Lingual Gyrus, 2% Lateral Occipital Cortex, inferior division; 65% Left Cerebral Cortex, 34% Left Cerebral White Matter",maskdACC,C4,54
+gPPI C4 seed maskdACC,+,14,3.92,"[47.5, 37.5, 33.5]",0.985,1.0,,maskdACC,C4,54
+gPPI C4 seed maskdACC,+,14,3.96,"[-42.5, 7.5, 47.5]",0.985,1.0,,maskdACC,C4,54
+gPPI C4 seed maskdACC,+,13,3.8,"[-60.5, -26.5, -6.5]",0.991,1.0,,maskdACC,C4,54
+gPPI C4 seed maskdACC,+,13,3.82,"[-56.5, 1.5, 17.5]",0.991,1.0,,maskdACC,C4,54
+gPPI C4 seed maskdACC,-,13,-3.83,"[-38.5, -18.5, -12.5]",0.991,1.0,,maskdACC,C4,54
+gPPI C4 seed maskdACC,-,13,-3.55,"[-30.5, -84.5, -18.5]",0.991,1.0,,maskdACC,C4,54
+gPPI C4 seed maskdACC,-,12,-3.52,"[31.5, -76.5, 17.5]",0.995,1.0,,maskdACC,C4,54
+gPPI C4 seed maskdACC,-,12,-3.59,"[-28.5, -42.5, 21.5]",0.995,1.0,,maskdACC,C4,54
+gPPI C4 seed maskdACC,-,12,-3.38,"[21.5, -74.5, -14.5]",0.995,1.0,,maskdACC,C4,54
+gPPI C4 seed maskdACC,+,11,3.7,"[-54.5, -50.5, 51.5]",0.997,1.0,,maskdACC,C4,54
+gPPI C4 seed maskdACC,+,11,3.74,"[45.5, -14.5, -28.5]",0.997,1.0,,maskdACC,C4,54
+gPPI C4 seed maskdACC,+,10,3.94,"[27.5, -56.5, -34.5]",0.999,1.0,,maskdACC,C4,54
+gPPI C4 seed maskdACC,+,10,3.65,"[29.5, -6.5, 11.5]",0.999,1.0,,maskdACC,C4,54
+gPPI C4 seed maskdACC,-,9,-3.33,"[35.5, -78.5, -8.5]",0.999,1.0,,maskdACC,C4,54
+gPPI C4 seed maskdACC,+,8,3.23,"[-42.5, 33.5, 37.5]",1.0,1.0,,maskdACC,C4,54
+gPPI C4 seed maskdACC,-,8,-3.3,"[-50.5, -28.5, 9.5]",1.0,1.0,,maskdACC,C4,54
+gPPI C4 seed maskdACC,+,7,3.84,"[-30.5, -52.5, -42.5]",1.0,1.0,,maskdACC,C4,54
+gPPI C4 seed maskdACC,+,7,3.48,"[-58.5, -30.5, 45.5]",1.0,1.0,,maskdACC,C4,54
+gPPI C4 seed maskdACC,+,7,3.49,"[-16.5, 3.5, 15.5]",1.0,1.0,,maskdACC,C4,54
+gPPI C4 seed maskdACC,+,7,3.7,"[-36.5, 31.5, 27.5]",1.0,1.0,,maskdACC,C4,54
+gPPI C4 seed maskdACC,+,7,3.67,"[-62.5, -44.5, -16.5]",1.0,1.0,,maskdACC,C4,54
+gPPI C4 seed maskdACC,-,6,-3.48,"[17.5, -80.5, -12.5]",1.0,1.0,,maskdACC,C4,54
+gPPI C4 seed maskdACC,+,6,3.46,"[-34.5, -68.5, -28.5]",1.0,1.0,,maskdACC,C4,54
+gPPI C4 seed maskdACC,-,6,-3.39,"[21.5, -74.5, -2.5]",1.0,1.0,,maskdACC,C4,54
+gPPI C4 seed maskdACC,-,6,-3.6,"[21.5, 29.5, 7.5]",1.0,1.0,,maskdACC,C4,54
+gPPI C4 seed maskdACC,+,6,3.59,"[27.5, 5.5, -0.5]",1.0,1.0,,maskdACC,C4,54
+gPPI C4 seed maskdACC,-,5,-3.3,"[-0.5, -68.5, 9.5]",1.0,1.0,,maskdACC,C4,54
+gPPI C4 seed maskdACC,-,5,-3.63,"[-30.5, 39.5, 5.5]",1.0,1.0,,maskdACC,C4,54
+gPPI C4 seed maskdACC,-,5,-3.44,"[15.5, -56.5, 35.5]",1.0,1.0,,maskdACC,C4,54
+gPPI C4 seed maskdACC,+,5,3.27,"[-54.5, 11.5, 23.5]",1.0,1.0,,maskdACC,C4,54
+gPPI C4 seed maskdACC,+,4,3.37,"[45.5, 47.5, -12.5]",1.0,1.0,,maskdACC,C4,54
+gPPI C4 seed maskdACC,+,4,3.58,"[17.5, -64.5, -36.5]",1.0,1.0,,maskdACC,C4,54
+gPPI C4 seed maskdACC,-,4,-3.26,"[-12.5, -96.5, -12.5]",1.0,1.0,,maskdACC,C4,54
+gPPI C4 seed maskdACC,+,3,3.43,"[51.5, -50.5, -30.5]",1.0,1.0,,maskdACC,C4,54
+gPPI C4 seed maskdACC,+,3,3.22,"[-30.5, 13.5, 45.5]",1.0,1.0,,maskdACC,C4,54
+gPPI C4 seed maskdACC,+,3,3.18,"[23.5, 47.5, 21.5]",1.0,1.0,,maskdACC,C4,54
+gPPI C4 seed maskdACC,-,3,-3.27,"[23.5, -64.5, -14.5]",1.0,1.0,,maskdACC,C4,54
+gPPI C4 seed maskdACC,-,3,-3.19,"[-26.5, -74.5, -6.5]",1.0,1.0,,maskdACC,C4,54
+gPPI C4 seed maskdACC,-,3,-3.29,"[35.5, -34.5, 25.5]",1.0,1.0,,maskdACC,C4,54
+gPPI C4 seed maskdACC,-,3,-3.28,"[-12.5, -36.5, -8.5]",1.0,1.0,,maskdACC,C4,54
+gPPI C4 seed maskdACC,+,2,3.14,"[-26.5, -16.5, 17.5]",1.0,1.0,,maskdACC,C4,54
+gPPI C4 seed maskdACC,-,2,-3.22,"[25.5, -22.5, 25.5]",1.0,1.0,,maskdACC,C4,54
+gPPI C4 seed maskdACC,-,2,-3.27,"[47.5, -16.5, 27.5]",1.0,1.0,,maskdACC,C4,54
+gPPI C4 seed maskdACC,-,2,-3.1,"[31.5, -84.5, 5.5]",1.0,1.0,,maskdACC,C4,54
+gPPI C4 seed maskdACC,-,2,-3.21,"[-8.5, -54.5, -0.5]",1.0,1.0,,maskdACC,C4,54
+gPPI C4 seed maskdACC,-,2,-3.2,"[31.5, -12.5, 33.5]",1.0,1.0,,maskdACC,C4,54
+gPPI C4 seed maskdACC,+,2,3.29,"[-60.5, 11.5, 11.5]",1.0,1.0,,maskdACC,C4,54
+gPPI C4 seed maskdACC,+,2,3.17,"[-56.5, -26.5, -30.5]",1.0,1.0,,maskdACC,C4,54
+gPPI C4 seed maskdACC,+,2,3.26,"[39.5, 1.5, -10.5]",1.0,1.0,,maskdACC,C4,54
+gPPI C4 seed maskdACC,+,2,3.4,"[45.5, -56.5, -34.5]",1.0,1.0,,maskdACC,C4,54
+gPPI C4 seed maskdACC,+,2,3.18,"[47.5, -52.5, 57.5]",1.0,1.0,,maskdACC,C4,54
+gPPI C4 seed maskdACC,+,1,3.23,"[-44.5, -40.5, 39.5]",1.0,1.0,,maskdACC,C4,54
+gPPI C4 seed maskdACC,+,1,3.19,"[-62.5, -44.5, 27.5]",1.0,1.0,,maskdACC,C4,54
+gPPI C4 seed maskdACC,+,1,3.1,"[5.5, 1.5, 59.5]",1.0,1.0,,maskdACC,C4,54
+gPPI C4 seed maskdACC,+,1,3.26,"[29.5, -20.5, 5.5]",1.0,1.0,,maskdACC,C4,54
+gPPI C4 seed maskdACC,+,1,3.09,"[-2.5, -32.5, 29.5]",1.0,1.0,,maskdACC,C4,54
+gPPI C4 seed maskdACC,+,1,3.1,"[3.5, 3.5, -6.5]",1.0,1.0,,maskdACC,C4,54
+gPPI C4 seed maskdACC,+,1,3.16,"[-34.5, 11.5, 37.5]",1.0,1.0,,maskdACC,C4,54
+gPPI C4 seed maskdACC,+,1,3.14,"[-54.5, -48.5, 39.5]",1.0,1.0,,maskdACC,C4,54
+gPPI C4 seed maskdACC,+,1,3.28,"[17.5, 49.5, -14.5]",1.0,1.0,,maskdACC,C4,54
+gPPI C4 seed maskdACC,+,1,3.13,"[23.5, -52.5, -50.5]",1.0,1.0,,maskdACC,C4,54
+gPPI C4 seed maskdACC,+,1,3.14,"[-44.5, -32.5, -34.5]",1.0,1.0,,maskdACC,C4,54
+gPPI C4 seed maskdACC,-,1,-3.12,"[-30.5, -68.5, 13.5]",1.0,1.0,,maskdACC,C4,54
+gPPI C4 seed maskdACC,-,1,-3.13,"[-56.5, -22.5, 5.5]",1.0,1.0,,maskdACC,C4,54
+gPPI C4 seed maskdACC,-,1,-3.17,"[21.5, 13.5, 19.5]",1.0,1.0,,maskdACC,C4,54
+gPPI C4 seed maskdACC,-,1,-3.12,"[-18.5, -84.5, -6.5]",1.0,1.0,,maskdACC,C4,54
+gPPI C4 seed maskdACC,-,1,-3.11,"[9.5, -18.5, -40.5]",1.0,1.0,,maskdACC,C4,54
+gPPI C4 seed maskdACC,-,1,-3.12,"[-20.5, -86.5, 43.5]",1.0,1.0,,maskdACC,C4,54
+gPPI C1 seed maskPIns,-,44,-3.8,"[3.5, -90.5, 15.5]",0.144,0.288,"49% Occipital Pole, 15% Cuneal Cortex, 13% Supracalcarine Cortex, 2% Intracalcarine Cortex; 69% Right Cerebral Cortex, 14% Right Cerebral White Matter, 12% Left Cerebral Cortex, 0% Left Cerebral White Matter",maskPIns,C1,48
+gPPI C1 seed maskPIns,-,32,-4.0,"[-2.5, 7.5, 3.5]",0.377,0.754,"76% Left Lateral Ventricle, 14% Left Cerebral Cortex, 8% Left Cerebral White Matter, 1% Right Cerebral Cortex, 0% Right Cerebral White Matter, 0% Right Lateral Ventricle, 0% Left Caudate",maskPIns,C1,48
+gPPI C1 seed maskPIns,+,21,3.97,"[-46.5, -38.5, 43.5]",0.777,1.0,"41% Supramarginal Gyrus, anterior division, 14% Supramarginal Gyrus, posterior division, 11% Superior Parietal Lobule, 8% Postcentral Gyrus; 79% Left Cerebral Cortex, 17% Left Cerebral White Matter",maskPIns,C1,48
+gPPI C1 seed maskPIns,+,18,3.87,"[-38.5, 19.5, 9.5]",0.881,1.0,"28% Frontal Operculum Cortex, 6% Inferior Frontal Gyrus, pars triangularis, 3% Inferior Frontal Gyrus, pars opercularis, 1% Frontal Orbital Cortex; 56% Left Cerebral White Matter, 44% Left Cerebral Cortex",maskPIns,C1,48
+gPPI C1 seed maskPIns,-,17,-4.15,"[-42.5, -10.5, 45.5]",0.909,1.0,"46% Precentral Gyrus, 1% Postcentral Gyrus; 54% Left Cerebral Cortex, 44% Left Cerebral White Matter",maskPIns,C1,48
+gPPI C1 seed maskPIns,+,16,3.92,"[-4.5, -36.5, 55.5]",0.933,1.0,"28% Postcentral Gyrus, 28% Precentral Gyrus, 7% Precuneous Cortex; 70% Left Cerebral Cortex, 22% Left Cerebral White Matter",maskPIns,C1,48
+gPPI C1 seed maskPIns,+,16,3.73,"[-22.5, 7.5, 59.5]",0.933,1.0,"45% Superior Frontal Gyrus, 3% Middle Frontal Gyrus; 69% Left Cerebral Cortex, 25% Left Cerebral White Matter",maskPIns,C1,48
+gPPI C1 seed maskPIns,+,13,3.6,"[-54.5, 3.5, 15.5]",0.981,1.0,"66% Precentral Gyrus, 5% Inferior Frontal Gyrus, pars opercularis; 77% Left Cerebral Cortex, 23% Left Cerebral White Matter",maskPIns,C1,48
+gPPI C1 seed maskPIns,-,12,-3.6,"[15.5, 33.5, 33.5]",0.989,1.0,"2% Frontal Pole; 98% Right Cerebral White Matter, 2% Right Cerebral Cortex",maskPIns,C1,48
+gPPI C1 seed maskPIns,-,12,-3.71,"[19.5, -26.5, 31.5]",0.989,1.0,"100% Right Cerebral White Matter, 0% Right Lateral Ventricle",maskPIns,C1,48
+gPPI C1 seed maskPIns,+,11,3.58,"[47.5, -40.5, 47.5]",0.995,1.0,,maskPIns,C1,48
+gPPI C1 seed maskPIns,-,10,-4.1,"[-32.5, -32.5, -40.5]",0.998,1.0,,maskPIns,C1,48
+gPPI C1 seed maskPIns,-,10,-3.64,"[-18.5, -84.5, 23.5]",0.998,1.0,,maskPIns,C1,48
+gPPI C1 seed maskPIns,+,10,3.65,"[15.5, -16.5, 39.5]",0.998,1.0,,maskPIns,C1,48
+gPPI C1 seed maskPIns,-,9,-3.43,"[-36.5, -62.5, 25.5]",0.999,1.0,,maskPIns,C1,48
+gPPI C1 seed maskPIns,+,9,3.57,"[-40.5, -48.5, 51.5]",0.999,1.0,,maskPIns,C1,48
+gPPI C1 seed maskPIns,+,9,3.4,"[-28.5, -4.5, 55.5]",0.999,1.0,,maskPIns,C1,48
+gPPI C1 seed maskPIns,+,8,3.7,"[-8.5, -40.5, 63.5]",1.0,1.0,,maskPIns,C1,48
+gPPI C1 seed maskPIns,-,7,-3.73,"[21.5, 15.5, -10.5]",1.0,1.0,,maskPIns,C1,48
+gPPI C1 seed maskPIns,-,7,-3.25,"[19.5, -70.5, 13.5]",1.0,1.0,,maskPIns,C1,48
+gPPI C1 seed maskPIns,-,6,-3.38,"[23.5, -92.5, 27.5]",1.0,1.0,,maskPIns,C1,48
+gPPI C1 seed maskPIns,+,6,3.36,"[19.5, -24.5, 57.5]",1.0,1.0,,maskPIns,C1,48
+gPPI C1 seed maskPIns,+,6,3.45,"[-54.5, -48.5, 35.5]",1.0,1.0,,maskPIns,C1,48
+gPPI C1 seed maskPIns,+,6,3.39,"[5.5, -40.5, 65.5]",1.0,1.0,,maskPIns,C1,48
+gPPI C1 seed maskPIns,-,6,-3.34,"[-2.5, 43.5, -18.5]",1.0,1.0,,maskPIns,C1,48
+gPPI C1 seed maskPIns,-,5,-3.69,"[-40.5, -18.5, 19.5]",1.0,1.0,,maskPIns,C1,48
+gPPI C1 seed maskPIns,-,5,-3.33,"[-24.5, -72.5, 7.5]",1.0,1.0,,maskPIns,C1,48
+gPPI C1 seed maskPIns,-,5,-3.47,"[9.5, 39.5, 3.5]",1.0,1.0,,maskPIns,C1,48
+gPPI C1 seed maskPIns,-,5,-3.26,"[13.5, 33.5, -4.5]",1.0,1.0,,maskPIns,C1,48
+gPPI C1 seed maskPIns,-,5,-3.36,"[-6.5, 47.5, -8.5]",1.0,1.0,,maskPIns,C1,48
+gPPI C1 seed maskPIns,+,4,3.29,"[67.5, -34.5, 17.5]",1.0,1.0,,maskPIns,C1,48
+gPPI C1 seed maskPIns,+,4,3.49,"[45.5, 15.5, 23.5]",1.0,1.0,,maskPIns,C1,48
+gPPI C1 seed maskPIns,+,4,3.23,"[23.5, 7.5, 51.5]",1.0,1.0,,maskPIns,C1,48
+gPPI C1 seed maskPIns,+,4,3.17,"[61.5, -50.5, 1.5]",1.0,1.0,,maskPIns,C1,48
+gPPI C1 seed maskPIns,+,4,3.29,"[9.5, -20.5, -14.5]",1.0,1.0,,maskPIns,C1,48
+gPPI C1 seed maskPIns,+,4,3.14,"[-54.5, -42.5, 47.5]",1.0,1.0,,maskPIns,C1,48
+gPPI C1 seed maskPIns,-,4,-3.25,"[-0.5, 65.5, -4.5]",1.0,1.0,,maskPIns,C1,48
+gPPI C1 seed maskPIns,+,4,3.27,"[25.5, -22.5, 65.5]",1.0,1.0,,maskPIns,C1,48
+gPPI C1 seed maskPIns,+,3,3.34,"[-20.5, -38.5, 65.5]",1.0,1.0,,maskPIns,C1,48
+gPPI C1 seed maskPIns,-,3,-3.22,"[-6.5, -74.5, -6.5]",1.0,1.0,,maskPIns,C1,48
+gPPI C1 seed maskPIns,-,3,-3.73,"[-4.5, -52.5, -0.5]",1.0,1.0,,maskPIns,C1,48
+gPPI C1 seed maskPIns,+,3,3.39,"[53.5, -50.5, -0.5]",1.0,1.0,,maskPIns,C1,48
+gPPI C1 seed maskPIns,+,3,3.37,"[-6.5, -32.5, 69.5]",1.0,1.0,,maskPIns,C1,48
+gPPI C1 seed maskPIns,+,3,3.39,"[11.5, -18.5, -24.5]",1.0,1.0,,maskPIns,C1,48
+gPPI C1 seed maskPIns,+,3,3.23,"[23.5, -38.5, 3.5]",1.0,1.0,,maskPIns,C1,48
+gPPI C1 seed maskPIns,+,3,3.33,"[-24.5, -34.5, 61.5]",1.0,1.0,,maskPIns,C1,48
+gPPI C1 seed maskPIns,+,2,3.23,"[-24.5, 1.5, -36.5]",1.0,1.0,,maskPIns,C1,48
+gPPI C1 seed maskPIns,+,2,3.14,"[-44.5, 11.5, 15.5]",1.0,1.0,,maskPIns,C1,48
+gPPI C1 seed maskPIns,+,2,3.13,"[29.5, -0.5, -2.5]",1.0,1.0,,maskPIns,C1,48
+gPPI C1 seed maskPIns,-,2,-3.54,"[23.5, -54.5, 37.5]",1.0,1.0,,maskPIns,C1,48
+gPPI C1 seed maskPIns,-,2,-3.16,"[15.5, 3.5, 39.5]",1.0,1.0,,maskPIns,C1,48
+gPPI C1 seed maskPIns,-,2,-3.32,"[43.5, -82.5, -2.5]",1.0,1.0,,maskPIns,C1,48
+gPPI C1 seed maskPIns,-,2,-3.16,"[-26.5, -64.5, -16.5]",1.0,1.0,,maskPIns,C1,48
+gPPI C1 seed maskPIns,-,2,-3.11,"[-44.5, -20.5, -18.5]",1.0,1.0,,maskPIns,C1,48
+gPPI C1 seed maskPIns,-,2,-3.18,"[-0.5, -74.5, -26.5]",1.0,1.0,,maskPIns,C1,48
+gPPI C1 seed maskPIns,-,2,-3.32,"[-2.5, 33.5, 3.5]",1.0,1.0,,maskPIns,C1,48
+gPPI C1 seed maskPIns,-,2,-3.3,"[-20.5, 7.5, 35.5]",1.0,1.0,,maskPIns,C1,48
+gPPI C1 seed maskPIns,+,1,3.11,"[19.5, -16.5, -0.5]",1.0,1.0,,maskPIns,C1,48
+gPPI C1 seed maskPIns,+,1,3.11,"[47.5, 27.5, -2.5]",1.0,1.0,,maskPIns,C1,48
+gPPI C1 seed maskPIns,+,1,3.09,"[41.5, -62.5, 7.5]",1.0,1.0,,maskPIns,C1,48
+gPPI C1 seed maskPIns,+,1,3.14,"[37.5, 51.5, 27.5]",1.0,1.0,,maskPIns,C1,48
+gPPI C1 seed maskPIns,+,1,3.26,"[5.5, -20.5, 65.5]",1.0,1.0,,maskPIns,C1,48
+gPPI C1 seed maskPIns,+,1,3.22,"[-20.5, -64.5, 45.5]",1.0,1.0,,maskPIns,C1,48
+gPPI C1 seed maskPIns,+,1,3.19,"[41.5, -44.5, 39.5]",1.0,1.0,,maskPIns,C1,48
+gPPI C1 seed maskPIns,+,1,3.25,"[-0.5, -20.5, -36.5]",1.0,1.0,,maskPIns,C1,48
+gPPI C1 seed maskPIns,+,1,3.18,"[-30.5, -4.5, -40.5]",1.0,1.0,,maskPIns,C1,48
+gPPI C1 seed maskPIns,+,1,3.11,"[-14.5, -30.5, -36.5]",1.0,1.0,,maskPIns,C1,48
+gPPI C1 seed maskPIns,+,1,3.1,"[53.5, 17.5, 19.5]",1.0,1.0,,maskPIns,C1,48
+gPPI C1 seed maskPIns,+,1,3.12,"[23.5, -6.5, -16.5]",1.0,1.0,,maskPIns,C1,48
+gPPI C1 seed maskPIns,+,1,3.1,"[1.5, -22.5, -26.5]",1.0,1.0,,maskPIns,C1,48
+gPPI C1 seed maskPIns,+,1,3.12,"[27.5, 3.5, -28.5]",1.0,1.0,,maskPIns,C1,48
+gPPI C1 seed maskPIns,+,1,3.2,"[43.5, -14.5, -28.5]",1.0,1.0,,maskPIns,C1,48
+gPPI C1 seed maskPIns,-,1,-3.11,"[21.5, -50.5, 73.5]",1.0,1.0,,maskPIns,C1,48
+gPPI C1 seed maskPIns,-,1,-3.14,"[-22.5, 25.5, 1.5]",1.0,1.0,,maskPIns,C1,48
+gPPI C1 seed maskPIns,-,1,-3.15,"[1.5, -38.5, -8.5]",1.0,1.0,,maskPIns,C1,48
+gPPI C1 seed maskPIns,-,1,-3.2,"[-6.5, -24.5, -16.5]",1.0,1.0,,maskPIns,C1,48
+gPPI C1 seed maskPIns,-,1,-3.1,"[-24.5, -28.5, 35.5]",1.0,1.0,,maskPIns,C1,48
+gPPI C1 seed maskPIns,-,1,-3.14,"[-12.5, -82.5, -16.5]",1.0,1.0,,maskPIns,C1,48
+gPPI C1 seed maskPIns,-,1,-3.34,"[-30.5, -10.5, 37.5]",1.0,1.0,,maskPIns,C1,48
+gPPI C1 seed maskPIns,-,1,-3.32,"[-8.5, 37.5, 49.5]",1.0,1.0,,maskPIns,C1,48
+gPPI C1 seed maskPIns,-,1,-3.1,"[15.5, -52.5, 59.5]",1.0,1.0,,maskPIns,C1,48
+gPPI C4 seed maskPIns,-,331,-4.89,"[-4.5, 47.5, -14.5]",5.96e-08,1.192e-07,"83% Frontal Medial Cortex, 5% Paracingulate Gyrus, 2% Frontal Pole; 93% Left Cerebral Cortex, 6% Left Cerebral White Matter, 1% Right Cerebral Cortex",maskPIns,C4,54
+gPPI C4 seed maskPIns,-,234,-4.14,"[-18.5, -96.5, -10.5]",2.38e-06,4.76e-06,"54% Occipital Pole, 4% Lateral Occipital Cortex, inferior division, 2% Occipital Fusiform Gyrus, 1% Lingual Gyrus; 60% Left Cerebral Cortex, 38% Left Cerebral White Matter",maskPIns,C4,54
+gPPI C4 seed maskPIns,-,171,-4.48,"[-6.5, -76.5, -6.5]",5.76e-05,0.0001152,"71% Lingual Gyrus, 5% Occipital Fusiform Gyrus, 1% Intracalcarine Cortex; 79% Left Cerebral Cortex, 19% Left Cerebral White Matter",maskPIns,C4,54
+gPPI C4 seed maskPIns,-,114,-4.45,"[23.5, -72.5, -4.5]",0.00146,0.00292,"37% Occipital Fusiform Gyrus, 13% Lingual Gyrus, 1% Lateral Occipital Cortex, inferior division; 54% Right Cerebral Cortex, 46% Right Cerebral White Matter",maskPIns,C4,54
+gPPI C4 seed maskPIns,-,62,-3.8,"[37.5, -86.5, 15.5]",0.0461,0.0922,"49% Lateral Occipital Cortex, superior division, 17% Occipital Pole, 5% Lateral Occipital Cortex, inferior division; 73% Right Cerebral Cortex, 18% Right Cerebral White Matter",maskPIns,C4,54
+gPPI C4 seed maskPIns,+,56,3.82,"[45.5, 9.5, -2.5]",0.0717,0.1434,"22% Central Opercular Cortex, 20% Insular Cortex, 16% Frontal Operculum Cortex, 4% Temporal Pole, 2% Inferior Frontal Gyrus, pars opercularis, 1% Precentral Gyrus; 85% Right Cerebral Cortex, 2% Right Cerebral White Matter",maskPIns,C4,54
+gPPI C4 seed maskPIns,+,49,3.85,"[25.5, -56.5, -32.5]",0.121,0.242,48% Right VI,maskPIns,C4,54
+gPPI C4 seed maskPIns,+,47,4.32,"[51.5, 45.5, 1.5]",0.141,0.282,"42% Frontal Pole; 46% Right Cerebral Cortex, 0% Right Cerebral White Matter",maskPIns,C4,54
+gPPI C4 seed maskPIns,+,42,3.79,"[67.5, -38.5, 33.5]",0.206,0.412,"23% Supramarginal Gyrus, posterior division, 2% Supramarginal Gyrus, anterior division, 1% Superior Temporal Gyrus, posterior division; 32% Right Cerebral Cortex",maskPIns,C4,54
+gPPI C4 seed maskPIns,-,39,-3.66,"[23.5, -82.5, -32.5]",0.258,0.516,"76% Right Crus I, 24% Right Crus II",maskPIns,C4,54
+gPPI C4 seed maskPIns,+,36,3.58,"[-32.5, 21.5, 7.5]",0.322,0.644,,maskPIns,C4,54
+gPPI C4 seed maskPIns,+,35,3.85,"[7.5, 21.5, 47.5]",0.347,0.694,,maskPIns,C4,54
+gPPI C4 seed maskPIns,+,34,3.59,"[63.5, -44.5, 43.5]",0.372,0.744,,maskPIns,C4,54
+gPPI C4 seed maskPIns,+,32,3.73,"[23.5, 5.5, 11.5]",0.429,0.858,,maskPIns,C4,54
+gPPI C4 seed maskPIns,+,32,3.8,"[-46.5, -2.5, 5.5]",0.429,0.858,,maskPIns,C4,54
+gPPI C4 seed maskPIns,+,31,4.01,"[49.5, 13.5, 19.5]",0.459,0.918,,maskPIns,C4,54
+gPPI C4 seed maskPIns,-,28,-3.67,"[-38.5, -88.5, -8.5]",0.559,1.0,,maskPIns,C4,54
+gPPI C4 seed maskPIns,+,26,3.63,"[-54.5, 13.5, -2.5]",0.631,1.0,,maskPIns,C4,54
+gPPI C4 seed maskPIns,+,24,4.02,"[15.5, -8.5, 17.5]",0.705,1.0,,maskPIns,C4,54
+gPPI C4 seed maskPIns,+,23,3.71,"[-36.5, -42.5, 39.5]",0.742,1.0,,maskPIns,C4,54
+gPPI C4 seed maskPIns,-,21,-3.58,"[-32.5, -86.5, 15.5]",0.812,1.0,,maskPIns,C4,54
+gPPI C4 seed maskPIns,+,21,3.56,"[63.5, -38.5, 21.5]",0.812,1.0,,maskPIns,C4,54
+gPPI C4 seed maskPIns,-,19,-3.74,"[47.5, -12.5, 59.5]",0.875,1.0,,maskPIns,C4,54
+gPPI C4 seed maskPIns,-,17,-3.52,"[49.5, -6.5, 33.5]",0.926,1.0,,maskPIns,C4,54
+gPPI C4 seed maskPIns,-,17,-3.99,"[37.5, -88.5, -8.5]",0.926,1.0,,maskPIns,C4,54
+gPPI C4 seed maskPIns,-,16,-3.64,"[15.5, -50.5, 3.5]",0.946,1.0,,maskPIns,C4,54
+gPPI C4 seed maskPIns,-,16,-3.9,"[43.5, -18.5, 45.5]",0.946,1.0,,maskPIns,C4,54
+gPPI C4 seed maskPIns,-,15,-4.11,"[-42.5, 31.5, -14.5]",0.963,1.0,,maskPIns,C4,54
+gPPI C4 seed maskPIns,-,15,-3.75,"[-14.5, -42.5, -6.5]",0.963,1.0,,maskPIns,C4,54
+gPPI C4 seed maskPIns,-,15,-4.06,"[21.5, -26.5, 29.5]",0.963,1.0,,maskPIns,C4,54
+gPPI C4 seed maskPIns,-,14,-3.73,"[1.5, 31.5, -24.5]",0.976,1.0,,maskPIns,C4,54
+gPPI C4 seed maskPIns,+,14,3.76,"[-14.5, 3.5, 13.5]",0.976,1.0,,maskPIns,C4,54
+gPPI C4 seed maskPIns,-,13,-3.63,"[-32.5, 29.5, -24.5]",0.985,1.0,,maskPIns,C4,54
+gPPI C4 seed maskPIns,-,13,-3.68,"[-28.5, -38.5, -12.5]",0.985,1.0,,maskPIns,C4,54
+gPPI C4 seed maskPIns,-,12,-3.84,"[-52.5, -42.5, -4.5]",0.992,1.0,,maskPIns,C4,54
+gPPI C4 seed maskPIns,-,12,-4.04,"[-60.5, -10.5, -30.5]",0.992,1.0,,maskPIns,C4,54
+gPPI C4 seed maskPIns,-,11,-3.55,"[-20.5, -56.5, -12.5]",0.996,1.0,,maskPIns,C4,54
+gPPI C4 seed maskPIns,-,11,-3.97,"[-12.5, 3.5, -20.5]",0.996,1.0,,maskPIns,C4,54
+gPPI C4 seed maskPIns,-,11,-3.62,"[41.5, -78.5, -8.5]",0.996,1.0,,maskPIns,C4,54
+gPPI C4 seed maskPIns,+,10,3.67,"[-18.5, 9.5, -0.5]",0.998,1.0,,maskPIns,C4,54
+gPPI C4 seed maskPIns,-,9,-3.34,"[-28.5, 37.5, 5.5]",0.999,1.0,,maskPIns,C4,54
+gPPI C4 seed maskPIns,+,9,3.88,"[45.5, -52.5, 59.5]",0.999,1.0,,maskPIns,C4,54
+gPPI C4 seed maskPIns,-,9,-3.67,"[33.5, -36.5, -20.5]",0.999,1.0,,maskPIns,C4,54
+gPPI C4 seed maskPIns,-,9,-3.54,"[-22.5, -86.5, 45.5]",0.999,1.0,,maskPIns,C4,54
+gPPI C4 seed maskPIns,-,9,-3.6,"[-16.5, 53.5, 37.5]",0.999,1.0,,maskPIns,C4,54
+gPPI C4 seed maskPIns,-,8,-3.5,"[11.5, -8.5, -24.5]",1.0,1.0,,maskPIns,C4,54
+gPPI C4 seed maskPIns,+,8,3.42,"[-54.5, 3.5, 17.5]",1.0,1.0,,maskPIns,C4,54
+gPPI C4 seed maskPIns,+,8,3.32,"[-48.5, -40.5, 45.5]",1.0,1.0,,maskPIns,C4,54
+gPPI C4 seed maskPIns,+,7,3.71,"[45.5, 49.5, 19.5]",1.0,1.0,,maskPIns,C4,54
+gPPI C4 seed maskPIns,-,7,-3.45,"[-46.5, -80.5, 33.5]",1.0,1.0,,maskPIns,C4,54
+gPPI C4 seed maskPIns,-,6,-3.29,"[-2.5, 53.5, 29.5]",1.0,1.0,,maskPIns,C4,54
+gPPI C4 seed maskPIns,-,6,-3.3,"[35.5, -86.5, -30.5]",1.0,1.0,,maskPIns,C4,54
+gPPI C4 seed maskPIns,-,6,-3.32,"[31.5, -76.5, 17.5]",1.0,1.0,,maskPIns,C4,54
+gPPI C4 seed maskPIns,-,6,-3.62,"[-16.5, 47.5, 13.5]",1.0,1.0,,maskPIns,C4,54
+gPPI C4 seed maskPIns,-,5,-3.3,"[7.5, -62.5, 13.5]",1.0,1.0,,maskPIns,C4,54
+gPPI C4 seed maskPIns,-,5,-3.52,"[13.5, -52.5, 75.5]",1.0,1.0,,maskPIns,C4,54
+gPPI C4 seed maskPIns,-,5,-3.22,"[-6.5, -70.5, 25.5]",1.0,1.0,,maskPIns,C4,54
+gPPI C4 seed maskPIns,-,5,-3.31,"[-20.5, -80.5, 21.5]",1.0,1.0,,maskPIns,C4,54
+gPPI C4 seed maskPIns,-,5,-3.62,"[-44.5, -52.5, -6.5]",1.0,1.0,,maskPIns,C4,54
+gPPI C4 seed maskPIns,-,5,-3.41,"[51.5, -10.5, 27.5]",1.0,1.0,,maskPIns,C4,54
+gPPI C4 seed maskPIns,-,4,-3.28,"[17.5, -36.5, -14.5]",1.0,1.0,,maskPIns,C4,54
+gPPI C4 seed maskPIns,-,4,-3.71,"[41.5, -16.5, 11.5]",1.0,1.0,,maskPIns,C4,54
+gPPI C4 seed maskPIns,+,4,3.59,"[-26.5, -20.5, 17.5]",1.0,1.0,,maskPIns,C4,54
+gPPI C4 seed maskPIns,+,4,3.56,"[9.5, 29.5, 43.5]",1.0,1.0,,maskPIns,C4,54
+gPPI C4 seed maskPIns,+,3,3.24,"[21.5, -72.5, 55.5]",1.0,1.0,,maskPIns,C4,54
+gPPI C4 seed maskPIns,+,3,3.25,"[-30.5, -46.5, -32.5]",1.0,1.0,,maskPIns,C4,54
+gPPI C4 seed maskPIns,-,3,-3.18,"[-30.5, -44.5, 21.5]",1.0,1.0,,maskPIns,C4,54
+gPPI C4 seed maskPIns,+,3,3.33,"[-62.5, -44.5, 27.5]",1.0,1.0,,maskPIns,C4,54
+gPPI C4 seed maskPIns,+,3,3.29,"[39.5, 7.5, -42.5]",1.0,1.0,,maskPIns,C4,54
+gPPI C4 seed maskPIns,-,3,-3.37,"[31.5, -10.5, 35.5]",1.0,1.0,,maskPIns,C4,54
+gPPI C4 seed maskPIns,-,3,-3.36,"[-64.5, -4.5, -20.5]",1.0,1.0,,maskPIns,C4,54
+gPPI C4 seed maskPIns,-,2,-3.14,"[25.5, -16.5, 51.5]",1.0,1.0,,maskPIns,C4,54
+gPPI C4 seed maskPIns,+,2,3.46,"[-56.5, -4.5, 1.5]",1.0,1.0,,maskPIns,C4,54
+gPPI C4 seed maskPIns,+,2,3.44,"[-34.5, -22.5, 57.5]",1.0,1.0,,maskPIns,C4,54
+gPPI C4 seed maskPIns,+,2,3.15,"[-40.5, 9.5, 7.5]",1.0,1.0,,maskPIns,C4,54
+gPPI C4 seed maskPIns,-,2,-3.48,"[1.5, -6.5, -34.5]",1.0,1.0,,maskPIns,C4,54
+gPPI C4 seed maskPIns,-,2,-3.25,"[-26.5, -84.5, -28.5]",1.0,1.0,,maskPIns,C4,54
+gPPI C4 seed maskPIns,-,2,-3.48,"[1.5, 13.5, -24.5]",1.0,1.0,,maskPIns,C4,54
+gPPI C4 seed maskPIns,-,2,-3.21,"[13.5, -54.5, 39.5]",1.0,1.0,,maskPIns,C4,54
+gPPI C4 seed maskPIns,-,2,-3.37,"[13.5, -54.5, 31.5]",1.0,1.0,,maskPIns,C4,54
+gPPI C4 seed maskPIns,-,2,-3.12,"[21.5, -50.5, 73.5]",1.0,1.0,,maskPIns,C4,54
+gPPI C4 seed maskPIns,-,2,-3.25,"[-20.5, -52.5, 1.5]",1.0,1.0,,maskPIns,C4,54
+gPPI C4 seed maskPIns,-,2,-3.23,"[17.5, 29.5, 1.5]",1.0,1.0,,maskPIns,C4,54
+gPPI C4 seed maskPIns,-,2,-3.25,"[31.5, -8.5, 25.5]",1.0,1.0,,maskPIns,C4,54
+gPPI C4 seed maskPIns,-,2,-3.17,"[-12.5, 65.5, 25.5]",1.0,1.0,,maskPIns,C4,54
+gPPI C4 seed maskPIns,-,2,-3.31,"[17.5, 27.5, 21.5]",1.0,1.0,,maskPIns,C4,54
+gPPI C4 seed maskPIns,+,2,3.25,"[-22.5, 15.5, 7.5]",1.0,1.0,,maskPIns,C4,54
+gPPI C4 seed maskPIns,+,2,3.17,"[59.5, 15.5, 1.5]",1.0,1.0,,maskPIns,C4,54
+gPPI C4 seed maskPIns,+,1,3.12,"[47.5, -50.5, -32.5]",1.0,1.0,,maskPIns,C4,54
+gPPI C4 seed maskPIns,+,1,3.16,"[37.5, -0.5, -44.5]",1.0,1.0,,maskPIns,C4,54
+gPPI C4 seed maskPIns,+,1,3.09,"[27.5, -56.5, 61.5]",1.0,1.0,,maskPIns,C4,54
+gPPI C4 seed maskPIns,+,1,3.1,"[-58.5, -50.5, 33.5]",1.0,1.0,,maskPIns,C4,54
+gPPI C4 seed maskPIns,+,1,3.12,"[-40.5, 37.5, 31.5]",1.0,1.0,,maskPIns,C4,54
+gPPI C4 seed maskPIns,+,1,3.11,"[37.5, 55.5, 23.5]",1.0,1.0,,maskPIns,C4,54
+gPPI C4 seed maskPIns,+,1,3.18,"[-52.5, 11.5, 9.5]",1.0,1.0,,maskPIns,C4,54
+gPPI C4 seed maskPIns,+,1,3.11,"[-32.5, -30.5, 45.5]",1.0,1.0,,maskPIns,C4,54
+gPPI C4 seed maskPIns,+,1,3.14,"[43.5, -38.5, 43.5]",1.0,1.0,,maskPIns,C4,54
+gPPI C4 seed maskPIns,+,1,3.35,"[23.5, 11.5, 67.5]",1.0,1.0,,maskPIns,C4,54
+gPPI C4 seed maskPIns,+,1,3.27,"[-10.5, -14.5, 35.5]",1.0,1.0,,maskPIns,C4,54
+gPPI C4 seed maskPIns,+,1,3.1,"[-38.5, -56.5, -28.5]",1.0,1.0,,maskPIns,C4,54
+gPPI C4 seed maskPIns,-,1,-3.26,"[15.5, 21.5, 37.5]",1.0,1.0,,maskPIns,C4,54
+gPPI C4 seed maskPIns,-,1,-3.18,"[23.5, -92.5, 27.5]",1.0,1.0,,maskPIns,C4,54
+gPPI C4 seed maskPIns,-,1,-3.29,"[-8.5, -22.5, 37.5]",1.0,1.0,,maskPIns,C4,54
+gPPI C4 seed maskPIns,-,1,-3.36,"[11.5, -64.5, -42.5]",1.0,1.0,,maskPIns,C4,54
+gPPI C4 seed maskPIns,-,1,-3.13,"[7.5, -26.5, -40.5]",1.0,1.0,,maskPIns,C4,54
+gPPI C4 seed maskPIns,-,1,-3.15,"[33.5, -84.5, -36.5]",1.0,1.0,,maskPIns,C4,54
+gPPI C4 seed maskPIns,-,1,-3.12,"[39.5, -64.5, -18.5]",1.0,1.0,,maskPIns,C4,54
+gPPI C4 seed maskPIns,-,1,-3.26,"[-68.5, -30.5, -14.5]",1.0,1.0,,maskPIns,C4,54
+gPPI C4 seed maskPIns,-,1,-3.09,"[9.5, 43.5, -14.5]",1.0,1.0,,maskPIns,C4,54
+gPPI C4 seed maskPIns,-,1,-3.13,"[-14.5, 51.5, -8.5]",1.0,1.0,,maskPIns,C4,54
+gPPI C4 seed maskPIns,-,1,-3.27,"[7.5, -52.5, 1.5]",1.0,1.0,,maskPIns,C4,54
+gPPI C4 seed maskPIns,-,1,-3.09,"[39.5, -76.5, 9.5]",1.0,1.0,,maskPIns,C4,54
+gPPI C4 seed maskPIns,-,1,-3.15,"[-68.5, -20.5, 9.5]",1.0,1.0,,maskPIns,C4,54
+gPPI C4 seed maskPIns,-,1,-3.14,"[13.5, 27.5, 9.5]",1.0,1.0,,maskPIns,C4,54
+gPPI C4 seed maskPIns,-,1,-3.13,"[-18.5, 35.5, 9.5]",1.0,1.0,,maskPIns,C4,54
+gPPI C4 seed maskPIns,-,1,-3.11,"[7.5, -86.5, 11.5]",1.0,1.0,,maskPIns,C4,54
+gPPI C4 seed maskPIns,-,1,-3.21,"[-2.5, 51.5, 11.5]",1.0,1.0,,maskPIns,C4,54
+gPPI C4 seed maskPIns,-,1,-3.11,"[7.5, -24.5, 19.5]",1.0,1.0,,maskPIns,C4,54
+gPPI C4 seed maskPIns,-,1,-3.12,"[-26.5, -92.5, 21.5]",1.0,1.0,,maskPIns,C4,54
+gPPI C4 seed maskPIns,-,1,-3.15,"[15.5, -46.5, 25.5]",1.0,1.0,,maskPIns,C4,54
+gPPI C4 seed maskPIns,-,1,-3.17,"[31.5, -30.5, 25.5]",1.0,1.0,,maskPIns,C4,54
+gPPI C4 seed maskPIns,-,1,-3.15,"[7.5, 39.5, 5.5]",1.0,1.0,,maskPIns,C4,54
+gPPI C1 seed masksphere,+,76,4.08,"[-46.5, 13.5, -8.5]",0.0346,0.0692,"8% Temporal Pole, 3% Frontal Operculum Cortex, 3% Insular Cortex, 2% Frontal Orbital Cortex, 2% Inferior Frontal Gyrus, pars opercularis; 37% Left Cerebral Cortex",masksphere,C1,48
+gPPI C1 seed masksphere,+,67,3.78,"[43.5, 15.5, -10.5]",0.0603,0.1206,"21% Insular Cortex, 12% Frontal Orbital Cortex, 7% Temporal Pole, 1% Frontal Operculum Cortex; 63% Right Cerebral Cortex, 1% Right Cerebral White Matter",masksphere,C1,48
+gPPI C1 seed masksphere,+,64,3.9,"[53.5, 37.5, -6.5]",0.0728,0.1456,"54% Frontal Pole, 12% Inferior Frontal Gyrus, pars triangularis, 1% Frontal Orbital Cortex; 74% Right Cerebral Cortex, 2% Right Cerebral White Matter",masksphere,C1,48
+gPPI C1 seed masksphere,+,52,4.34,"[5.5, 67.5, 13.5]",0.157,0.314,"73% Frontal Pole; 75% Right Cerebral Cortex, 6% Right Cerebral White Matter",masksphere,C1,48
+gPPI C1 seed masksphere,+,36,3.76,"[21.5, 57.5, 21.5]",0.429,0.858,"80% Frontal Pole; 81% Right Cerebral Cortex, 18% Right Cerebral White Matter",masksphere,C1,48
+gPPI C1 seed masksphere,+,29,4.2,"[41.5, -16.5, -28.5]",0.631,1.0,"44% Temporal Fusiform Cortex, posterior division, 26% Inferior Temporal Gyrus, posterior division, 6% Temporal Fusiform Cortex, anterior division, 2% Inferior Temporal Gyrus, anterior division, 1% Parahippocampal Gyrus, anterior division; 80% Right Cerebral Cortex, 20% Right Cerebral White Matter",masksphere,C1,48
+gPPI C1 seed masksphere,+,27,3.7,"[53.5, 19.5, 19.5]",0.694,1.0,"40% Inferior Frontal Gyrus, pars opercularis, 12% Inferior Frontal Gyrus, pars triangularis, 4% Middle Frontal Gyrus, 2% Precentral Gyrus; 69% Right Cerebral Cortex, 30% Right Cerebral White Matter",masksphere,C1,48
+gPPI C1 seed masksphere,+,25,4.24,"[5.5, 13.5, 69.5]",0.757,1.0,"40% Superior Frontal Gyrus, 4% Juxtapositional Lobule Cortex (formerly Supplementary Motor Cortex); 58% Right Cerebral Cortex, 0% Right Cerebral White Matter",masksphere,C1,48
+gPPI C1 seed masksphere,+,23,3.7,"[31.5, 23.5, -20.5]",0.816,1.0,"79% Frontal Orbital Cortex; 82% Right Cerebral Cortex, 9% Right Cerebral White Matter",masksphere,C1,48
+gPPI C1 seed masksphere,+,22,3.86,"[-30.5, 11.5, 3.5]",0.844,1.0,"15% Insular Cortex; 65% Left Cerebral White Matter, 31% Left Cerebral Cortex, 4% Left Putamen",masksphere,C1,48
+gPPI C1 seed masksphere,+,20,3.7,"[1.5, 31.5, 29.5]",0.894,1.0,,masksphere,C1,48
+gPPI C1 seed masksphere,-,19,-3.81,"[5.5, -90.5, -4.5]",0.916,1.0,,masksphere,C1,48
+gPPI C1 seed masksphere,+,17,3.49,"[5.5, 55.5, 29.5]",0.952,1.0,,masksphere,C1,48
+gPPI C1 seed masksphere,+,16,3.76,"[35.5, 25.5, 7.5]",0.965,1.0,,masksphere,C1,48
+gPPI C1 seed masksphere,+,15,3.83,"[-12.5, -48.5, 29.5]",0.976,1.0,,masksphere,C1,48
+gPPI C1 seed masksphere,+,12,3.92,"[-28.5, -36.5, 65.5]",0.994,1.0,,masksphere,C1,48
+gPPI C1 seed masksphere,+,11,3.63,"[45.5, 9.5, 39.5]",0.997,1.0,,masksphere,C1,48
+gPPI C1 seed masksphere,+,10,3.64,"[-48.5, -30.5, -28.5]",0.999,1.0,,masksphere,C1,48
+gPPI C1 seed masksphere,+,9,3.51,"[45.5, 27.5, -14.5]",0.999,1.0,,masksphere,C1,48
+gPPI C1 seed masksphere,+,9,3.5,"[23.5, 9.5, 63.5]",0.999,1.0,,masksphere,C1,48
+gPPI C1 seed masksphere,+,8,3.51,"[65.5, -46.5, 13.5]",1.0,1.0,,masksphere,C1,48
+gPPI C1 seed masksphere,-,8,-3.71,"[-16.5, -26.5, -14.5]",1.0,1.0,,masksphere,C1,48
+gPPI C1 seed masksphere,+,7,3.56,"[27.5, 5.5, -26.5]",1.0,1.0,,masksphere,C1,48
+gPPI C1 seed masksphere,+,7,3.71,"[21.5, -0.5, 51.5]",1.0,1.0,,masksphere,C1,48
+gPPI C1 seed masksphere,+,7,3.5,"[17.5, -18.5, 39.5]",1.0,1.0,,masksphere,C1,48
+gPPI C1 seed masksphere,-,7,-3.49,"[37.5, 9.5, 17.5]",1.0,1.0,,masksphere,C1,48
+gPPI C1 seed masksphere,+,7,3.54,"[-54.5, 3.5, 15.5]",1.0,1.0,,masksphere,C1,48
+gPPI C1 seed masksphere,+,6,3.64,"[49.5, -58.5, -28.5]",1.0,1.0,,masksphere,C1,48
+gPPI C1 seed masksphere,+,6,3.53,"[-20.5, 7.5, 59.5]",1.0,1.0,,masksphere,C1,48
+gPPI C1 seed masksphere,-,6,-3.26,"[-10.5, -32.5, -6.5]",1.0,1.0,,masksphere,C1,48
+gPPI C1 seed masksphere,+,6,3.26,"[-14.5, 67.5, -2.5]",1.0,1.0,,masksphere,C1,48
+gPPI C1 seed masksphere,+,5,3.69,"[51.5, 5.5, 51.5]",1.0,1.0,,masksphere,C1,48
+gPPI C1 seed masksphere,+,5,3.49,"[-48.5, 17.5, -22.5]",1.0,1.0,,masksphere,C1,48
+gPPI C1 seed masksphere,+,4,3.38,"[-6.5, -38.5, 55.5]",1.0,1.0,,masksphere,C1,48
+gPPI C1 seed masksphere,-,4,-3.84,"[-32.5, -32.5, -40.5]",1.0,1.0,,masksphere,C1,48
+gPPI C1 seed masksphere,-,4,-3.36,"[1.5, -74.5, 35.5]",1.0,1.0,,masksphere,C1,48
+gPPI C1 seed masksphere,-,4,-3.56,"[29.5, -70.5, 17.5]",1.0,1.0,,masksphere,C1,48
+gPPI C1 seed masksphere,+,4,3.25,"[7.5, 5.5, -2.5]",1.0,1.0,,masksphere,C1,48
+gPPI C1 seed masksphere,+,3,3.24,"[-30.5, 17.5, -18.5]",1.0,1.0,,masksphere,C1,48
+gPPI C1 seed masksphere,+,3,3.24,"[43.5, 35.5, -2.5]",1.0,1.0,,masksphere,C1,48
+gPPI C1 seed masksphere,+,3,3.28,"[-16.5, -58.5, 37.5]",1.0,1.0,,masksphere,C1,48
+gPPI C1 seed masksphere,-,3,-3.3,"[-16.5, 51.5, 5.5]",1.0,1.0,,masksphere,C1,48
+gPPI C1 seed masksphere,+,3,3.26,"[-60.5, -42.5, -18.5]",1.0,1.0,,masksphere,C1,48
+gPPI C1 seed masksphere,+,3,3.21,"[15.5, -28.5, 65.5]",1.0,1.0,,masksphere,C1,48
+gPPI C1 seed masksphere,+,3,3.23,"[-24.5, -44.5, -32.5]",1.0,1.0,,masksphere,C1,48
+gPPI C1 seed masksphere,-,3,-3.32,"[-2.5, -82.5, 41.5]",1.0,1.0,,masksphere,C1,48
+gPPI C1 seed masksphere,+,2,3.28,"[-66.5, -8.5, 11.5]",1.0,1.0,,masksphere,C1,48
+gPPI C1 seed masksphere,+,2,3.21,"[15.5, 3.5, 1.5]",1.0,1.0,,masksphere,C1,48
+gPPI C1 seed masksphere,+,2,3.18,"[61.5, -2.5, -22.5]",1.0,1.0,,masksphere,C1,48
+gPPI C1 seed masksphere,+,2,3.3,"[-62.5, -40.5, 13.5]",1.0,1.0,,masksphere,C1,48
+gPPI C1 seed masksphere,+,2,3.3,"[25.5, -56.5, 59.5]",1.0,1.0,,masksphere,C1,48
+gPPI C1 seed masksphere,+,2,3.33,"[9.5, -22.5, -10.5]",1.0,1.0,,masksphere,C1,48
+gPPI C1 seed masksphere,+,2,3.15,"[-56.5, -34.5, -4.5]",1.0,1.0,,masksphere,C1,48
+gPPI C1 seed masksphere,+,2,3.35,"[11.5, 11.5, 11.5]",1.0,1.0,,masksphere,C1,48
+gPPI C1 seed masksphere,+,2,3.36,"[9.5, -32.5, 51.5]",1.0,1.0,,masksphere,C1,48
+gPPI C1 seed masksphere,+,2,3.17,"[-8.5, 27.5, 25.5]",1.0,1.0,,masksphere,C1,48
+gPPI C1 seed masksphere,+,2,3.53,"[-6.5, -18.5, 53.5]",1.0,1.0,,masksphere,C1,48
+gPPI C1 seed masksphere,+,2,3.27,"[-32.5, 29.5, -0.5]",1.0,1.0,,masksphere,C1,48
+gPPI C1 seed masksphere,-,2,-3.36,"[17.5, 19.5, 15.5]",1.0,1.0,,masksphere,C1,48
+gPPI C1 seed masksphere,-,2,-3.63,"[5.5, -82.5, 45.5]",1.0,1.0,,masksphere,C1,48
+gPPI C1 seed masksphere,-,2,-3.42,"[-18.5, -84.5, 25.5]",1.0,1.0,,masksphere,C1,48
+gPPI C1 seed masksphere,+,2,3.4,"[-16.5, 7.5, 1.5]",1.0,1.0,,masksphere,C1,48
+gPPI C1 seed masksphere,+,2,3.25,"[-22.5, -6.5, -16.5]",1.0,1.0,,masksphere,C1,48
+gPPI C1 seed masksphere,+,2,3.24,"[47.5, -30.5, 3.5]",1.0,1.0,,masksphere,C1,48
+gPPI C1 seed masksphere,+,2,3.25,"[17.5, -24.5, 71.5]",1.0,1.0,,masksphere,C1,48
+gPPI C1 seed masksphere,+,1,3.26,"[59.5, -60.5, -14.5]",1.0,1.0,,masksphere,C1,48
+gPPI C1 seed masksphere,+,1,3.18,"[19.5, -22.5, 61.5]",1.0,1.0,,masksphere,C1,48
+gPPI C1 seed masksphere,+,1,3.29,"[-34.5, -8.5, -12.5]",1.0,1.0,,masksphere,C1,48
+gPPI C1 seed masksphere,+,1,3.19,"[61.5, -0.5, -14.5]",1.0,1.0,,masksphere,C1,48
+gPPI C1 seed masksphere,+,1,3.09,"[61.5, -4.5, -12.5]",1.0,1.0,,masksphere,C1,48
+gPPI C1 seed masksphere,+,1,3.12,"[-56.5, -26.5, -4.5]",1.0,1.0,,masksphere,C1,48
+gPPI C1 seed masksphere,+,1,3.1,"[33.5, 35.5, -14.5]",1.0,1.0,,masksphere,C1,48
+gPPI C1 seed masksphere,+,1,3.23,"[-6.5, -22.5, 63.5]",1.0,1.0,,masksphere,C1,48
+gPPI C1 seed masksphere,+,1,3.19,"[41.5, -4.5, 11.5]",1.0,1.0,,masksphere,C1,48
+gPPI C1 seed masksphere,+,1,3.14,"[9.5, 45.5, 45.5]",1.0,1.0,,masksphere,C1,48
+gPPI C1 seed masksphere,+,1,3.12,"[17.5, -46.5, -30.5]",1.0,1.0,,masksphere,C1,48
+gPPI C1 seed masksphere,+,1,3.12,"[59.5, -36.5, 7.5]",1.0,1.0,,masksphere,C1,48
+gPPI C1 seed masksphere,+,1,3.15,"[-60.5, 13.5, 25.5]",1.0,1.0,,masksphere,C1,48
+gPPI C1 seed masksphere,+,1,3.09,"[53.5, 21.5, -0.5]",1.0,1.0,,masksphere,C1,48
+gPPI C1 seed masksphere,+,1,3.09,"[59.5, -38.5, -0.5]",1.0,1.0,,masksphere,C1,48
+gPPI C1 seed masksphere,+,1,3.14,"[47.5, 37.5, 33.5]",1.0,1.0,,masksphere,C1,48
+gPPI C1 seed masksphere,+,1,3.19,"[21.5, -6.5, -16.5]",1.0,1.0,,masksphere,C1,48
+gPPI C1 seed masksphere,+,1,3.2,"[65.5, -40.5, -12.5]",1.0,1.0,,masksphere,C1,48
+gPPI C1 seed masksphere,-,1,-3.23,"[1.5, 17.5, 11.5]",1.0,1.0,,masksphere,C1,48
+gPPI C1 seed masksphere,-,1,-3.15,"[-2.5, 13.5, 13.5]",1.0,1.0,,masksphere,C1,48
+gPPI C1 seed masksphere,-,1,-3.17,"[-4.5, -52.5, -0.5]",1.0,1.0,,masksphere,C1,48
+gPPI C1 seed masksphere,-,1,-3.1,"[3.5, -10.5, 21.5]",1.0,1.0,,masksphere,C1,48
+gPPI C1 seed masksphere,-,1,-3.1,"[-26.5, -8.5, 25.5]",1.0,1.0,,masksphere,C1,48
+gPPI C1 seed masksphere,-,1,-3.34,"[-20.5, 7.5, 35.5]",1.0,1.0,,masksphere,C1,48
+gPPI C4 seed masksphere,+,79,3.8,"[23.5, 55.5, 19.5]",0.025,0.05,"82% Frontal Pole; 82% Right Cerebral Cortex, 17% Right Cerebral White Matter",masksphere,C4,54
+gPPI C4 seed masksphere,-,67,-4.23,"[-6.5, -78.5, -8.5]",0.0534,0.1068,"70% Lingual Gyrus, 6% Occipital Fusiform Gyrus; 79% Left Cerebral Cortex, 17% Left Cerebral White Matter, 0% Right Cerebral Cortex",masksphere,C4,54
+gPPI C4 seed masksphere,-,46,-3.78,"[17.5, -52.5, 3.5]",0.213,0.426,"34% Precuneous Cortex, 30% Lingual Gyrus, 18% Cingulate Gyrus, posterior division, 5% Intracalcarine Cortex; 91% Right Cerebral Cortex, 9% Right Cerebral White Matter",masksphere,C4,54
+gPPI C4 seed masksphere,-,34,-3.55,"[37.5, -88.5, 13.5]",0.46,0.92,"38% Lateral Occipital Cortex, superior division, 26% Occipital Pole, 9% Lateral Occipital Cortex, inferior division; 76% Right Cerebral Cortex, 10% Right Cerebral White Matter",masksphere,C4,54
+gPPI C4 seed masksphere,+,33,3.74,"[-50.5, 47.5, -8.5]",0.488,0.976,"32% Frontal Pole; 35% Left Cerebral Cortex, 0% Left Cerebral White Matter",masksphere,C4,54
+gPPI C4 seed masksphere,+,29,4.34,"[-14.5, -14.5, 35.5]",0.61,1.0,"4% Cingulate Gyrus, posterior division, 3% Cingulate Gyrus, anterior division, 1% Juxtapositional Lobule Cortex (formerly Supplementary Motor Cortex); 91% Left Cerebral White Matter, 9% Left Cerebral Cortex",masksphere,C4,54
+gPPI C4 seed masksphere,+,29,3.92,"[-54.5, -52.5, 53.5]",0.61,1.0,"12% Supramarginal Gyrus, posterior division, 11% Angular Gyrus, 3% Lateral Occipital Cortex, superior division; 32% Left Cerebral Cortex",masksphere,C4,54
+gPPI C4 seed masksphere,+,18,3.72,"[-46.5, -48.5, 39.5]",0.93,1.0,"20% Supramarginal Gyrus, posterior division, 12% Angular Gyrus, 1% Parietal Operculum Cortex, 1% Superior Parietal Lobule; 61% Left Cerebral White Matter, 39% Left Cerebral Cortex",masksphere,C4,54
+gPPI C4 seed masksphere,+,17,3.91,"[43.5, -16.5, -26.5]",0.947,1.0,"29% Inferior Temporal Gyrus, posterior division, 21% Temporal Fusiform Cortex, posterior division, 4% Temporal Fusiform Cortex, anterior division, 2% Inferior Temporal Gyrus, anterior division; 58% Right Cerebral Cortex, 42% Right Cerebral White Matter",masksphere,C4,54
+gPPI C4 seed masksphere,+,16,4.04,"[47.5, 37.5, 33.5]",0.962,1.0,"11% Frontal Pole, 6% Middle Frontal Gyrus; 23% Right Cerebral Cortex",masksphere,C4,54
+gPPI C4 seed masksphere,+,15,3.39,"[-46.5, 49.5, -0.5]",0.974,1.0,,masksphere,C4,54
+gPPI C4 seed masksphere,+,14,3.55,"[-32.5, -66.5, -30.5]",0.983,1.0,,masksphere,C4,54
+gPPI C4 seed masksphere,+,12,3.87,"[-40.5, 7.5, 47.5]",0.994,1.0,,masksphere,C4,54
+gPPI C4 seed masksphere,+,10,3.76,"[-62.5, -44.5, -16.5]",0.999,1.0,,masksphere,C4,54
+gPPI C4 seed masksphere,-,10,-3.62,"[-38.5, -18.5, -12.5]",0.999,1.0,,masksphere,C4,54
+gPPI C4 seed masksphere,+,9,3.58,"[-2.5, 33.5, 39.5]",0.999,1.0,,masksphere,C4,54
+gPPI C4 seed masksphere,+,9,3.62,"[-60.5, -26.5, -6.5]",0.999,1.0,,masksphere,C4,54
+gPPI C4 seed masksphere,-,9,-3.54,"[-48.5, -30.5, 5.5]",0.999,1.0,,masksphere,C4,54
+gPPI C4 seed masksphere,-,9,-3.91,"[47.5, -16.5, 27.5]",0.999,1.0,,masksphere,C4,54
+gPPI C4 seed masksphere,+,8,3.49,"[9.5, -74.5, -40.5]",1.0,1.0,,masksphere,C4,54
+gPPI C4 seed masksphere,+,8,3.77,"[19.5, -6.5, 21.5]",1.0,1.0,,masksphere,C4,54
+gPPI C4 seed masksphere,-,8,-3.61,"[31.5, -12.5, 33.5]",1.0,1.0,,masksphere,C4,54
+gPPI C4 seed masksphere,+,7,3.47,"[31.5, -6.5, 11.5]",1.0,1.0,,masksphere,C4,54
+gPPI C4 seed masksphere,+,7,3.69,"[-56.5, 1.5, 17.5]",1.0,1.0,,masksphere,C4,54
+gPPI C4 seed masksphere,+,7,3.72,"[17.5, -28.5, 63.5]",1.0,1.0,,masksphere,C4,54
+gPPI C4 seed masksphere,+,6,3.42,"[25.5, -58.5, 61.5]",1.0,1.0,,masksphere,C4,54
+gPPI C4 seed masksphere,+,6,3.31,"[-56.5, 11.5, 23.5]",1.0,1.0,,masksphere,C4,54
+gPPI C4 seed masksphere,+,6,3.45,"[41.5, 1.5, -10.5]",1.0,1.0,,masksphere,C4,54
+gPPI C4 seed masksphere,+,6,3.47,"[-54.5, -48.5, 39.5]",1.0,1.0,,masksphere,C4,54
+gPPI C4 seed masksphere,+,6,3.59,"[17.5, -66.5, -36.5]",1.0,1.0,,masksphere,C4,54
+gPPI C4 seed masksphere,-,5,-3.54,"[-0.5, -36.5, 17.5]",1.0,1.0,,masksphere,C4,54
+gPPI C4 seed masksphere,+,5,3.34,"[-30.5, -52.5, -42.5]",1.0,1.0,,masksphere,C4,54
+gPPI C4 seed masksphere,+,5,3.39,"[45.5, 47.5, -12.5]",1.0,1.0,,masksphere,C4,54
+gPPI C4 seed masksphere,-,5,-3.45,"[-36.5, -92.5, 19.5]",1.0,1.0,,masksphere,C4,54
+gPPI C4 seed masksphere,+,4,3.26,"[55.5, 19.5, -0.5]",1.0,1.0,,masksphere,C4,54
+gPPI C4 seed masksphere,-,4,-3.36,"[33.5, -34.5, 25.5]",1.0,1.0,,masksphere,C4,54
+gPPI C4 seed masksphere,+,4,3.24,"[47.5, -50.5, 57.5]",1.0,1.0,,masksphere,C4,54
+gPPI C4 seed masksphere,+,4,3.43,"[-40.5, -60.5, -30.5]",1.0,1.0,,masksphere,C4,54
+gPPI C4 seed masksphere,+,4,3.18,"[-40.5, -34.5, -32.5]",1.0,1.0,,masksphere,C4,54
+gPPI C4 seed masksphere,+,4,3.34,"[25.5, 5.5, 11.5]",1.0,1.0,,masksphere,C4,54
+gPPI C4 seed masksphere,+,3,3.3,"[27.5, -56.5, -34.5]",1.0,1.0,,masksphere,C4,54
+gPPI C4 seed masksphere,-,3,-3.47,"[-28.5, -74.5, -4.5]",1.0,1.0,,masksphere,C4,54
+gPPI C4 seed masksphere,-,3,-3.26,"[15.5, -56.5, 37.5]",1.0,1.0,,masksphere,C4,54
+gPPI C4 seed masksphere,+,3,3.5,"[51.5, -50.5, -30.5]",1.0,1.0,,masksphere,C4,54
+gPPI C4 seed masksphere,+,3,3.38,"[-4.5, 11.5, -26.5]",1.0,1.0,,masksphere,C4,54
+gPPI C4 seed masksphere,-,3,-3.4,"[-30.5, 39.5, 5.5]",1.0,1.0,,masksphere,C4,54
+gPPI C4 seed masksphere,-,3,-3.24,"[-0.5, -68.5, 9.5]",1.0,1.0,,masksphere,C4,54
+gPPI C4 seed masksphere,+,2,3.27,"[49.5, -6.5, 45.5]",1.0,1.0,,masksphere,C4,54
+gPPI C4 seed masksphere,+,2,3.1,"[-44.5, -48.5, 49.5]",1.0,1.0,,masksphere,C4,54
+gPPI C4 seed masksphere,+,2,3.31,"[27.5, 5.5, -0.5]",1.0,1.0,,masksphere,C4,54
+gPPI C4 seed masksphere,+,2,3.19,"[21.5, 43.5, -18.5]",1.0,1.0,,masksphere,C4,54
+gPPI C4 seed masksphere,+,2,3.37,"[-20.5, 7.5, 63.5]",1.0,1.0,,masksphere,C4,54
+gPPI C4 seed masksphere,+,2,3.13,"[-18.5, -24.5, 21.5]",1.0,1.0,,masksphere,C4,54
+gPPI C4 seed masksphere,-,2,-3.2,"[-12.5, 25.5, -10.5]",1.0,1.0,,masksphere,C4,54
+gPPI C4 seed masksphere,+,1,3.11,"[-44.5, -36.5, 47.5]",1.0,1.0,,masksphere,C4,54
+gPPI C4 seed masksphere,+,1,3.34,"[3.5, 3.5, -6.5]",1.0,1.0,,masksphere,C4,54
+gPPI C4 seed masksphere,+,1,3.13,"[43.5, -56.5, -34.5]",1.0,1.0,,masksphere,C4,54
+gPPI C4 seed masksphere,+,1,3.26,"[3.5, -0.5, 59.5]",1.0,1.0,,masksphere,C4,54
+gPPI C4 seed masksphere,+,1,3.21,"[41.5, 17.5, -2.5]",1.0,1.0,,masksphere,C4,54
+gPPI C4 seed masksphere,+,1,3.13,"[-56.5, 13.5, -2.5]",1.0,1.0,,masksphere,C4,54
+gPPI C4 seed masksphere,+,1,3.13,"[-30.5, 13.5, 45.5]",1.0,1.0,,masksphere,C4,54
+gPPI C4 seed masksphere,+,1,3.17,"[-44.5, -40.5, 39.5]",1.0,1.0,,masksphere,C4,54
+gPPI C4 seed masksphere,+,1,3.12,"[17.5, -10.5, -14.5]",1.0,1.0,,masksphere,C4,54
+gPPI C4 seed masksphere,+,1,3.21,"[-20.5, -58.5, 41.5]",1.0,1.0,,masksphere,C4,54
+gPPI C4 seed masksphere,+,1,3.13,"[-40.5, -30.5, 41.5]",1.0,1.0,,masksphere,C4,54
+gPPI C4 seed masksphere,+,1,3.39,"[29.5, -28.5, -30.5]",1.0,1.0,,masksphere,C4,54
+gPPI C4 seed masksphere,+,1,3.22,"[-46.5, 15.5, -22.5]",1.0,1.0,,masksphere,C4,54
+gPPI C4 seed masksphere,-,1,-3.24,"[-14.5, 29.5, 23.5]",1.0,1.0,,masksphere,C4,54
+gPPI C4 seed masksphere,-,1,-3.18,"[-10.5, 53.5, 21.5]",1.0,1.0,,masksphere,C4,54
+gPPI C4 seed masksphere,-,1,-3.31,"[-28.5, -42.5, 15.5]",1.0,1.0,,masksphere,C4,54
+gPPI C4 seed masksphere,-,1,-3.12,"[-50.5, -38.5, 11.5]",1.0,1.0,,masksphere,C4,54
+gPPI C4 seed masksphere,-,1,-3.22,"[-0.5, -12.5, -10.5]",1.0,1.0,,masksphere,C4,54
+gPPI C4 seed masksphere,-,1,-3.14,"[21.5, 29.5, 7.5]",1.0,1.0,,masksphere,C4,54
+gPPI C4 seed masksphere,-,1,-3.2,"[-56.5, -22.5, 5.5]",1.0,1.0,,masksphere,C4,54
+gPPI C4 seed masksphere,-,1,-3.26,"[-18.5, -84.5, -6.5]",1.0,1.0,,masksphere,C4,54
+gPPI C4 seed masksphere,-,1,-3.12,"[5.5, -40.5, -4.5]",1.0,1.0,,masksphere,C4,54
+gPPI C4 seed masksphere,-,1,-3.28,"[-2.5, 15.5, 13.5]",1.0,1.0,,masksphere,C4,54

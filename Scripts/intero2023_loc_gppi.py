@@ -9,6 +9,8 @@ Choices: Analysis/localizer_stageC2_implementation_notes.md (committed before an
   python Scripts/intero2023_loc_gppi.py subject sub-060 # first levels, one participant
   python Scripts/intero2023_loc_gppi.py flames          # FLAME 1 per seed x contrast
   python Scripts/intero2023_loc_gppi.py tables          # clusters, within-network summaries
+  python Scripts/intero2023_loc_gppi.py subjectrvt sub-060  # +RVT refit, seeds with a surviving cluster
+  python Scripts/intero2023_loc_gppi.py rvtcompare      # cluster means, base vs +RVT, same participants
 
 First level = the stage-A joint two-run 6 mm base model (intero2023_loc_common.design,
 build_joint_design; intero2023_firstlevel.fit, AR(1); PSC per run) plus, per seed:
@@ -48,8 +50,9 @@ NETS = LC.NETS
 LAMBDA_GRID = 10.0 ** np.linspace(-6, 1, 71)    # x s_max^2
 
 
-def gname(sub, seed, con, kind):
-    return os.path.join(GPD, sub, f"{sub}_task-localizer_gppi_seed-{seed}_con-{con}_{kind}.nii.gz")
+def gname(sub, seed, con, kind, var="base"):
+    v = "" if var == "base" else f"_var-{var}"
+    return os.path.join(GPD, sub, f"{sub}_task-localizer_gppi_seed-{seed}{v}_con-{con}_{kind}.nii.gz")
 
 
 @functools.lru_cache(maxsize=None)
@@ -132,8 +135,8 @@ def run_ppi(y, dm, ev, n):
     return pd.DataFrame(cols, index=dm.index), diag, psy_r
 
 
-def seed_designs(sub, runs, Y, smask_idx):
-    dms = L.run_designs(sub, runs)
+def seed_designs(sub, runs, Y, smask_idx, physio=()):
+    dms = L.run_designs(sub, runs, physio)
     out, diags = [], []
     for (k, dm), r in zip(dms, runs.itertuples()):
         assert k == int(r.run)
@@ -155,28 +158,36 @@ def load_data(sub, runs):
     return masker, Y
 
 
-def subject(sub):
+def subject(sub, var="base", seeds=None):
+    """var 'rvt': +rvt_rrf_z in the model (and in the seed adjustment), for `seeds` only
+    (the pre-logged rule: seeds with a surviving cluster)."""
     t0 = time.time()
     runs = L.run_list(); runs = runs[runs.subject == sub]
+    physio = tuple(L.PHYSIO_RVT) if var == "rvt" else ()
+    if var == "rvt":
+        assert runs.has_rvt.all(), sub
     os.makedirs(os.path.join(GPD, sub), exist_ok=True)
     masker, Y = load_data(sub, runs)
     gm = nib.load(g.GROUP_MASK).get_fdata() > 0
     log = dict(subject=sub, seeds={})
     Ym = np.vstack([Y[int(r.run)] for r in runs.itertuples()])
     for seed, m in seed_masks(sub).items():
+        if seeds is not None and seed not in seeds:
+            continue
         si = np.flatnonzero(m[gm])
-        dm, diags = seed_designs(sub, runs, Y, si)
+        dm, diags = seed_designs(sub, runs, Y, si, physio)
         specs = {c: s for c, s in GCON.items() if L.estimable(dm, s)}
         res, dof = fit(Ym, dm, specs)
         for c, (e, v) in res.items():
             if not (v > 0).all():
                 raise ValueError(f"{sub} {seed} {c}: non-positive variance")
             for kind, arr in (("effect", e), ("variance", v), ("t", (e / np.sqrt(v)).astype(np.float32))):
-                g.save_float32(masker.inverse_transform(arr), gname(sub, seed, c, kind))
+                g.save_float32(masker.inverse_transform(arr), gname(sub, seed, c, kind, var))
         log["seeds"][seed] = dict(n_vox=int(m.sum()), dof=dof, n_reg=int(dm.shape[1]), contrasts=sorted(res),
                                   runs=diags)
     log["seconds"] = round(time.time() - t0, 1)
-    json.dump(log, open(os.path.join(GPD, sub, f"{sub}_gppi.json"), "w"), indent=1)
+    js = f"{sub}_gppi.json" if var == "base" else f"{sub}_gppi_var-{var}.json"
+    json.dump(log, open(os.path.join(GPD, sub, js), "w"), indent=1)
     print(f"{sub} gPPI done in {log['seconds']} s", flush=True)
 
 
@@ -304,9 +315,129 @@ def tables():
     print("gPPI tables written", flush=True)
 
 
+def surviving():
+    C = pd.read_csv(os.path.join(RD, "EXPLORATORY_LOC_C2_gppi_clusters.csv"))
+    return C[C.p_fwe_two_sided < 0.05].reset_index(drop=True)
+
+
+def rvt_seeds():
+    return sorted(surviving().seed.unique())
+
+
+def rvt_compare():
+    """Pre-logged physiology rule: for each surviving cluster, the per-participant mean gPPI
+    effect inside the cluster, base vs +RVT, in participants with RVT on every used run."""
+    s, _, _ = L.participant_sets()
+    rows = []
+    for _, c in surviving().iterrows():
+        lab = fit_label(c.seed, c.gppi_contrast); od = LG.fit_dir(lab)
+        mask, _, _ = cluster_mask(lab, c.sign, c.peak_mni, int(c.size_vox))
+        subs = [x for x in json.load(open(os.path.join(od, "loc_meta.json")))["subjects"] if x in s["rvt"]]
+        b = np.array([nib.load(gname(x, c.seed, c.gppi_contrast, "effect")).get_fdata(dtype=np.float32)[mask].mean() for x in subs])
+        r = np.array([nib.load(gname(x, c.seed, c.gppi_contrast, "effect", "rvt")).get_fdata(dtype=np.float32)[mask].mean() for x in subs])
+        tb, pb = stats.ttest_1samp(b, 0); tr, pr = stats.ttest_1samp(r, 0)
+        rows.append(dict(seed=c.seed, gppi_contrast=c.gppi_contrast, sign=c.sign, size_vox=int(c.size_vox),
+                         peak_mni=c.peak_mni, N_full=int(c.N), N_rvt=len(subs), base_mean=float(b.mean()),
+                         base_dz=float(b.mean() / b.std(ddof=1)), base_p=float(pb), rvt_mean=float(r.mean()),
+                         rvt_dz=float(r.mean() / r.std(ddof=1)), rvt_p=float(pr),
+                         ratio_rvt_over_base=float(r.mean() / b.mean()), r_base_rvt=float(np.corrcoef(b, r)[0, 1])))
+    pd.DataFrame(rows).to_csv(os.path.join(RD, "EXPLORATORY_LOC_C2_gppi_rvt.csv"), index=False)
+    print(pd.DataFrame(rows).round(3).to_string())
+
+
+def cluster_mask(lab, sign, peak_mni, size):
+    from scipy import ndimage
+    zimg = nib.load(os.path.join(LG.fit_dir(lab), "stats", "zstat1.nii.gz")); z = zimg.get_fdata()
+    sg = 1 if sign == "+" else -1
+    L_, _ = ndimage.label(sg * z > 3.09, structure=np.ones((3, 3, 3)))
+    pk = json.loads(peak_mni) if isinstance(peak_mni, str) else peak_mni
+    ijk = np.round(nib.affines.apply_affine(np.linalg.inv(zimg.affine), pk)).astype(int)
+    m = L_ == L_[tuple(ijk)]
+    assert L_[tuple(ijk)] > 0 and m.sum() == size, (lab, m.sum(), size)
+    return m, z, zimg.affine
+
+
+def short_label(txt):
+    t = str(txt).split(";")[0].split(",")[0]
+    t = t.split("% ", 1)[-1] if "% " in t else t
+    t = t.replace("Inferior Frontal Gyrus", "IFG").replace("Middle Frontal Gyrus", "MFG").replace(" Cortex", "") \
+        .replace("Lateral Occipital", "Lat. occipital").replace("Supramarginal Gyrus", "Supramarginal") \
+        .replace("posterior division", "post.").replace("superior division", "sup.").replace("Temporal Fusiform", "Temporal fusiform")
+    return t
+
+
+def figure():
+    """Maps with a cluster that also survives x20 (p_FWE two-sided < .0025). One axial slice per
+    surviving cluster of those maps, at the cluster's peak; only surviving clusters are coloured."""
+    import matplotlib
+    matplotlib.use("Agg")
+    import matplotlib.pyplot as plt
+    from matplotlib.colors import LinearSegmentedColormap, Normalize
+    from nilearn import datasets, image
+    INK, INK2, SURF = "#0b0b0b", "#52514e", "#fcfcfb"
+    cmap = LinearSegmentedColormap.from_list("div", ["#2a78d6", "#f0efec", "#e34948"])
+    S = surviving()
+    keep = S[S.p_fwe_two_sided < 0.05 / 20][["seed", "gppi_contrast"]].drop_duplicates()
+    order = [("froiAInsL", "C1"), ("froiAInsR", "C1"), ("maskAInsR", "C1"), ("froidACC", "C4"), ("froiPIns", "C4"),
+             ("maskPIns", "C4")]
+    maps = [k for k in order if ((keep.seed == k[0]) & (keep.gppi_contrast == k[1])).any()]
+    assert len(maps) == len(keep), (maps, keep)
+    cname = {"C1": "C1 Intero − Extero", "C4": "C4 Match − Extero"}
+    ref = nib.load(g.GROUP_MASK)
+    bg = image.resample_to_img(datasets.load_mni152_template(resolution=2), ref, interpolation="continuous",
+                               force_resample=True, copy_header=True).get_fdata()
+    gm = ref.get_fdata() > 0
+    ncol = max(len(S[(S.seed == a) & (S.gppi_contrast == b)]) for a, b in maps)
+    norm = Normalize(-5.5, 5.5)
+    xi = np.flatnonzero(gm.any(axis=(1, 2))); yi = np.flatnonzero(gm.any(axis=(0, 2)))
+    x0, x1, y0, y1 = xi[0] - 1, xi[-1] + 2, yi[0] - 1, yi[-1] + 2
+    nr = len(maps)
+    fig = plt.figure(figsize=(2.45 * ncol + 0.4, 3.15 * nr + 1.0), facecolor=SURF)
+    gs = fig.add_gridspec(2 * nr + 1, ncol, height_ratios=[0.16, 1] * nr + [0.06], hspace=0.28, wspace=0.06,
+                          left=0.02, right=0.98, top=0.935, bottom=0.04)
+    vmin, vmax = np.percentile(bg[gm], 1), np.percentile(bg[gm], 99.5)
+    for i, (seed, con) in enumerate(maps):
+        lab = fit_label(seed, con)
+        cl = S[(S.seed == seed) & (S.gppi_contrast == con)].sort_values("p_fwe_two_sided")
+        m = np.zeros(ref.shape, bool)
+        for _, c in cl.iterrows():
+            mm, z, aff = cluster_mask(lab, c.sign, c.peak_mni, int(c.size_vox)); m |= mm
+        zz = np.where(m, z, np.nan)
+        kind = "fROI" if seed.startswith("froi") else "mask"
+        top = fig.add_subplot(gs[2 * i, :]); top.axis("off")
+        top.text(0, 0.0, f"{kind} {seed[4:]} seed · gPPI {cname[con]} · N {int(cl.N.iloc[0])}",
+                 fontsize=10.5, color=INK, transform=top.transAxes, va="bottom")
+        for j in range(ncol):
+            ax = fig.add_subplot(gs[2 * i + 1, j]); ax.axis("off"); ax.set_facecolor(SURF)
+            if j >= len(cl):
+                continue
+            c = cl.iloc[j]
+            pk = json.loads(c.peak_mni) if isinstance(c.peak_mni, str) else c.peak_mni
+            k = int(round(nib.affines.apply_affine(np.linalg.inv(aff), pk)[2]))
+            sl = np.where(gm[:, :, k], bg[:, :, k], np.nan)[x0:x1, y0:y1].T
+            ax.imshow(sl, cmap="gray", origin="lower", interpolation="nearest", vmin=vmin, vmax=vmax)
+            ax.imshow(zz[x0:x1, y0:y1, k].T, cmap=cmap, norm=norm, origin="lower", interpolation="nearest")
+            star = "" if c.p_fwe_two_sided < 0.05 / 20 else " (×20 n.s.)"
+            ax.set_title(f"{short_label(c.labels)}, z = {int(round(pk[2]))}\n{int(c.size_vox)} vox, p {c.p_fwe_two_sided:.1g}{star}",
+                         fontsize=7.8, color=INK2, pad=3)
+    cax = fig.add_subplot(gs[-1, max(0, ncol // 2 - 1): ncol // 2 + 2])
+    cb = fig.colorbar(matplotlib.cm.ScalarMappable(norm=norm, cmap=cmap), cax=cax, orientation="horizontal")
+    cb.set_label("FLAME z; red = stronger seed coupling in the first condition", color=INK2, fontsize=8.5)
+    cb.outline.set_visible(False)
+    fig.suptitle("Localizer gPPI (exploratory): maps with a cluster surviving ×20 across the 20 maps.\n"
+                 "One axial slice per surviving cluster (whole-brain cluster FWE, z > 3.09, two-sided), at its peak; "
+                 "image left = participant left.", x=0.02, ha="left", fontsize=10.5, color=INK)
+    fig.savefig(os.path.join(LC.FIG, "loc_C2_gppi_maps.png"), dpi=150, facecolor=SURF)
+    print("wrote Figures/localizer/loc_C2_gppi_maps.png")
+
+
 if __name__ == "__main__":
     cmd = sys.argv[1]
-    if cmd in ("subject", "check"):
-        {"subject": subject, "check": check}[cmd](sys.argv[2])
+    if cmd == "subject":
+        subject(sys.argv[2])
+    elif cmd == "subjectrvt":
+        subject(sys.argv[2], "rvt", set(rvt_seeds()))
+    elif cmd == "check":
+        check(sys.argv[2])
     else:
-        {"flames": flames, "tables": tables}[cmd]()
+        {"flames": flames, "tables": tables, "rvtcompare": rvt_compare, "figure": figure}[cmd]()

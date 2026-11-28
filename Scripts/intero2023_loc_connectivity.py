@@ -469,43 +469,44 @@ def figure():
     from matplotlib.colors import LinearSegmentedColormap
     INK, INK2, SURF = "#0b0b0b", "#52514e", "#fcfcfb"
     cmap = LinearSegmentedColormap.from_list("div", ["#2a78d6", "#f0efec", "#e34948"])
+    from matplotlib.patches import Rectangle
+    from matplotlib.cm import ScalarMappable
+    from matplotlib.colors import Normalize
     res = pd.read_csv(os.path.join(RD, "EXPLORATORY_LOC_C2_netfc.csv"))
-    res = res[res.primary_spec & (res.measure == "z")]
+    res = res[res.primary_spec]
     plt.rcParams.update({"font.family": "DejaVu Sans", "font.size": 9, "text.color": INK, "axes.labelcolor": INK,
                          "xtick.color": INK2, "ytick.color": INK2})
     cons = ["C1", "C2", "C4", "C5"]
     titles = {"C1": "C1 Intero − Extero", "C2": "C2 Intero − Self", "C4": "C4 Match − Extero",
               "C5": "C5 Match − Intero"}
-    fig, axes = plt.subplots(2, 4, figsize=(13.2, 7.0), facecolor=SURF)
-    lim = 1.0
-    for i, task in enumerate(("total", "background")):
+    rows_ = [("total", "z", "Network FC\n(nuisance only)"), ("background", "z", "Background FC\n(task removed)"),
+             ("background", "z_gs", "Background FC,\nglobal signal partialled")]
+    fig, axes = plt.subplots(3, 4, figsize=(14.0, 10.2), facecolor=SURF)
+    fig.subplots_adjust(top=0.93, hspace=0.32)
+    lim = 1.0; norm = Normalize(-lim, lim)
+    for i, (task, meas, ylab) in enumerate(rows_):
         for j, con in enumerate(cons):
             ax = axes[i, j]; ax.set_facecolor(SURF)
-            r = res[(res.analysis == task) & (res.contrast == con)].set_index("pair")
-            M = np.full((5, 5), np.nan); txt = {}
+            r = res[(res.analysis == task) & (res.contrast == con) & (res.measure == meas)].set_index("pair")
             for (ia, na), (ib, nb) in itertools.combinations(enumerate(NETS), 2):
                 row = r.loc[f"{na}-{nb}"]
-                M[ib, ia] = row.dz
                 star = "**" if row.p_fdr10 < .05 else ("*" if row.p < .05 else "")
-                txt[(ib, ia)] = f"{row.dz:+.2f}{star}"
-            im = ax.imshow(np.ma.masked_invalid(M), cmap=cmap, vmin=-lim, vmax=lim)
-            for (y, x), s_ in txt.items():
-                ax.text(x, y, s_, ha="center", va="center", fontsize=8, color=INK)
-            ax.set_xticks(range(5)); ax.set_yticks(range(5))
-            ax.set_xticklabels(NETS); ax.set_yticklabels(NETS)
-            ax.set_xlim(-0.5, 3.5); ax.set_ylim(4.5, 0.5)
+                ax.add_patch(Rectangle((ia - 0.5, ib - 0.5), 1, 1, facecolor=cmap(norm(row.dz)), edgecolor=SURF, lw=2))
+                ax.text(ia, ib, f"{row.dz:+.2f}{star}", ha="center", va="center", fontsize=7.8, color=INK)
+            ax.set_xticks(range(4)); ax.set_yticks(range(1, 5))
+            ax.set_xticklabels(NETS[:4]); ax.set_yticklabels(NETS[1:])
+            ax.set_xlim(-0.5, 3.5); ax.set_ylim(4.5, 0.5); ax.set_aspect("equal")
             for sp in ax.spines.values():
                 sp.set_visible(False)
             ax.tick_params(length=0)
-            n = int(r.N.iloc[0])
-            ax.set_title(f"{titles[con]}  (N {n})", fontsize=9.5, color=INK, loc="left")
+            ax.set_title(f"{titles[con]}  (N {int(r.N.iloc[0])})", fontsize=9.5, color=INK, loc="left")
             if j == 0:
-                ax.set_ylabel({"total": "Network FC (nuisance only)", "background": "Background FC (task removed)"}[task],
-                              fontsize=10, color=INK)
+                ax.set_ylabel(ylab, fontsize=10, color=INK)
+    im = ScalarMappable(norm=norm, cmap=cmap)
     cb = fig.colorbar(im, ax=axes, orientation="vertical", fraction=0.015, pad=0.02)
-    cb.set_label("dz of the paired Fisher-z difference", color=INK2)
+    cb.set_label("dz (positive = higher coupling in the first condition)", color=INK2)
     cb.outline.set_visible(False)
-    fig.suptitle("Localizer network connectivity by contrast (exploratory). * p < .05 uncorrected; ** BH-FDR < .05 over 10 pairs",
+    fig.suptitle("Localizer network connectivity, condition differences (exploratory). Cell = dz of the paired Fisher-z difference; * p < .05 uncorrected; ** BH-FDR < .05 over 10 pairs",
                  x=0.02, ha="left", fontsize=10.5, color=INK)
     os.makedirs(FIG, exist_ok=True)
     fig.savefig(os.path.join(FIG, "loc_C2_network_fc.png"), dpi=160, facecolor=SURF, bbox_inches="tight")

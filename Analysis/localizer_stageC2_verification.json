@@ -1,0 +1,72 @@
+{
+ "t5_vs_h7_max_abs_diff": 2.046118829923671e-11,
+ "t5_vs_h7_subjects": 41,
+ "localizer_volumes_per_condition": [
+  {
+   "condition": "extero",
+   "n_subjects": 54,
+   "vols_median": 60.0,
+   "vols_min": 12,
+   "vols_max": 65,
+   "epochs_median": 4.0,
+   "epochs_min": 2
+  },
+  {
+   "condition": "intero",
+   "n_subjects": 53,
+   "vols_median": 59.0,
+   "vols_min": 13,
+   "vols_max": 61,
+   "epochs_median": 4.0,
+   "epochs_min": 1
+  },
+  {
+   "condition": "match",
+   "n_subjects": 54,
+   "vols_median": 59.0,
+   "vols_min": 21,
+   "vols_max": 65,
+   "epochs_median": 4.0,
+   "epochs_min": 2
+  },
+  {
+   "condition": "rest",
+   "n_subjects": 54,
+   "vols_median": 60.0,
+   "vols_min": 30,
+   "vols_max": 61,
+   "epochs_median": 4.0,
+   "epochs_min": 2
+  },
+  {
+   "condition": "self",
+   "n_subjects": 54,
+   "vols_median": 60.0,
+   "vols_min": 29,
+   "vols_max": 61,
+   "epochs_median": 4.0,
+   "epochs_min": 2
+  }
+ ],
+ "t5_node_voxels_median": {
+  "overlap_dACC_sphere": 3.0,
+  "nvox_SAL": 4156.0,
+  "nvox_SMN": 9033.0,
+  "nvox_ECN": 7154.0,
+  "nvox_DMN": 9952.0,
+  "nvox_VIS": 8966.0,
+  "nvox_SALx": 3957.0,
+  "nvox_SMNx": 8983.0,
+  "nvox_ECNx": 7154.0,
+  "nvox_DMNx": 9952.0,
+  "nvox_VISx": 8966.0,
+  "nvox_AInsL": 59.0,
+  "nvox_AInsR": 53.0,
+  "nvox_dACC": 67.0,
+  "nvox_PIns": 50.0,
+  "nvox_sphere": 53.0,
+  "nvox_dACCx": 64.0,
+  "nvox_spherex": 50.0
+ },
+ "t5_overlap_dACC_sphere_n_subjects_gt0": 34
+}
