@@ -216,6 +216,80 @@ them. The paced − free (C1) contrast, averaged over runs (N 47):
   null awareness tests (H3, H2, E1–E10) contrast conditions within paced
   epochs, so a paced-vs-free-locked nuisance signal should affect them far less.
 
+### Exploratory E12 / E13: pacer adherence and an awareness decoder (2026-11-28)
+
+Both were logged before running (`Preregistration/deviations.md`, E12, E13). One post-hoc check on E13 is logged separately.
+Scripts:
+- `Scripts/intero2023_explore_adherence.py` (E12);
+- `Scripts/intero2023_explore_awareness_decoder.py` (E13);
+- `Scripts/intero2023_explore_e12e13_figures.py`.
+
+Figures: `Figures/EXPLORATORY_E12_gate.png`, `Figures/EXPLORATORY_E13_decoder.png`.
+
+**E12: epoch-level pacer adherence. Stopped at the gate; no brain value was computed.**
+Step 0 compares two per-epoch measures in 381 paced epochs (33 participants, 58 runs):
+- paced PLV, the planned primary;
+- the breath-period error (`adherence_mae_s`).
+
+The gate was fixed before computing. It required r ≤ −.40 both raw and net of change type and direction, the part of adherence the Step 1 modulator would use.
+
+| Gate measure | r | Criterion |
+|---|---|---|
+| r(PLV, MAE), centred within participant × run | −.424 | passes |
+| The same, net of run, No Change, step vs ramp and direction | −.381 | **fails** |
+
+Descriptive (`EXPLORATORY_E12_gate.csv`):
+- **Agreement between people is better.** Participant means correlate at −.64.
+- **PLV.** 55% of its variance is within run, but only 38% of the total remains once change type and direction are removed. Split-half reliability of participant means .93; run-to-run ICC .51 (N 25).
+- **MAE.** It depends on the stimulus: Slower epochs average 1.07–1.16 s, Faster 0.57–0.73 s.
+
+**What was not run.** Under the pre-set rule, Steps 1–3 were not run:
+- the parametric-modulator GLM;
+- the LOSO ridge on the T4 betas;
+- the epoch mixed model on the T4 index.
+
+Their specifications are fixed in the E12 row. Running them now would be a post-hoc override. The plan's own single-r rule would have passed (−.42), so the stop rests on the stricter criterion added here. The per-epoch adherence signal sits at the edge of usable, as `R/intero_resp.R` already warned ("adherence is a run-level property").
+
+**E13: LOSO decoder of aware vs unaware paced epochs.**
+- Features: the T4 LSS betas (SAL ∪ SMN, 4 mm), with each participant's mean paced pattern removed.
+- Classifier: linear SVM, C = 1, class-weighted.
+- Metric: within-participant AUC, averaged.
+- Null: 5,000 permutations within participant × run; p is one-sided.
+
+| Test | N scored | Mean within-participant AUC [95% CI] | Null mean | p |
+|---|---|---|---|---|
+| **Primary** | 42 | **.577** [.501, .650] | .481 | **.013** |
+| Control: salience and direction regressed out per training fold | 42 | .556 [.485, .624] | .482 | .040 |
+| Control: breathing only (MAE, ratio deviation, PLV, RVT) | 27 | .581 [.462, .695] | .492 | .077 |
+| Brain decoder on the benchmark's epochs (descriptive) | 27 | .528; brain − breathing −.053 [−.169, .072] | — | — |
+| Secondary: confidence (within-participant z), kernel ridge, mean Spearman ρ | 41 | ρ .123 [.044, .205] | −.018 | .007 (Holm, m = 1) |
+| Post-hoc check: primary on label-free LSS betas | 42 | .587 [.510, .662] | .484 | .009 |
+| Post-hoc check: confidence on label-free LSS betas | 41 | ρ .130 [.045, .217] | −.020 | .005 |
+
+Single breathing features, as within-participant AUCs (descriptive, `EXPLORATORY_E13_physio_features.csv`):
+
+| Feature | AUC | Direction in aware epochs |
+|---|---|---|
+| RVT | .594 | larger |
+| Direction-aligned period-ratio deviation | .567 | breathing changed more |
+| MAE | .547 | |
+| PLV | .466 | |
+
+**Reading.**
+- **The primary result.** Awareness is decodable within participants from salience and somatomotor patterns, above the permutation null and above the plan's expected .50–.55. It survives removing salience and direction (reading b not triggered). It also survives re-estimating the betas without outcome labels in the LSS design: the patterns correlate .98 with the T4 betas.
+- **The effect is weak.**
+  - The CI's lower bound is at .50.
+  - The median participant AUC is .55, and only 22 of 42 are above .5.
+  - It is one exploratory test after a long run of univariate nulls (H3, E1–E10, BF01 about 3–6).
+- **It is not shown to exceed breathing.**
+  - The breathing-only benchmark is not significant (p .077), so reading (c) is formally not triggered.
+  - In the 27 participants with breathing data, breathing alone does as well as the brain decoder (.58 vs .53).
+  - The strongest breathing feature is RVT: aware epochs have larger breathing volume.
+  - SMN is in the mask, and stage C3 showed breathing-depth signal in sensorimotor cortex.
+  - So a respiratory-volume route is plausible and untested. Regressing RVT out of the brain features was not pre-specified and has not been run.
+- **The confidence regression is also above chance, with a small ρ.** Confidence is higher on aware epochs, so this result is not independent of the primary.
+- **Not run:** whole-brain parcel features. This needs a whole-brain LSS refit and an atlas that is not on disk.
+
 # Localizer (OSF p5ztc, plan v1.0 at d29136b): summary
 
 Full results: `Analysis/LOCALIZER_RESULTS.md`. Deviations and every exploratory

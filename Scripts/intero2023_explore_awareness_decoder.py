@@ -5,6 +5,8 @@ one pre-specified multivariate test of aware vs unaware paced epochs in the brea
 
   python Scripts/intero2023_explore_awareness_decoder.py counts   # label-free counts and timing (no true label used)
   python Scripts/intero2023_explore_awareness_decoder.py run      # the logged tests
+  python Scripts/intero2023_explore_awareness_decoder.py lss1 <sub>  # post-hoc check: label-free LSS betas
+  python Scripts/intero2023_explore_awareness_decoder.py run_lss1    # post-hoc check: primary and S-conf on them
 
 Data. The stage-C3 T4 LSS betas (Scripts/intero2023_loc_t4.py lss): one beta pattern per paced and free
 epoch, swc7p Model A by-condition LSS, 4 mm, PSC, CAREN SAL u SMN (13,189 voxels), 44 participants
@@ -324,5 +326,88 @@ def run():
     np.save(os.path.join(OD, "null_confidence.npy"), nl)
 
 
+# --------------------------------------------------------------------------- post-hoc check (logged 2026-11-28)
+L1D = os.path.join(g.OUT, "e13_lss1")
+
+
+def lss1(sub):
+    """Post hoc, after E13 was seen: paced-epoch LSS betas with NO outcome information in the design. As T4's
+    lss() (intero2023_loc_t4), except that every non-target paced epoch is in one `paced_other` regressor."""
+    import time
+    import intero2023_loc_t4 as t4
+    from intero2023_firstlevel import fit
+    from nilearn.maskers import NiftiMasker
+    from nilearn.glm.first_level.first_level import mean_scaling
+    t0 = time.time()
+    img, _ = t4.union_mask()
+    masker = NiftiMasker(mask_img=img, smoothing_fwhm=t4.FWHM, standardize=False).fit()
+    runs = g.run_list(); runs = runs[runs.subject == sub]
+    Bs, rows = [], []
+    for r in runs.itertuples():
+        n = int(r.n_vol)
+        Y = masker.transform(g.bold_path(sub, r.bids_entity)); assert Y.shape[0] == n
+        Y, _ = mean_scaling(Y, axis=0)
+        ev, cf, _ = g.read_run_physio(sub, r.bids_entity, n, [])
+        ev = ev.reset_index(drop=True)
+        base = ev[["onset", "duration", "condition"]].copy()
+        paced = base.condition.isin(q.PACED_MOD).values
+        base.loc[paced, "condition"] = "paced_other"
+        for i in np.flatnonzero(paced):
+            e = base.copy(); e.loc[i, "condition"] = "target"
+            dm = q.model_a(e, cf, n)
+            assert not any(c in dm.columns for c in q.PACED_MOD)
+            out, dof = fit(Y, dm, {"target": {"target": 1.0}})
+            Bs.append(out["target"][0])
+            rows.append(dict(subject=sub, entity=r.bids_entity, run=int(r.bids_entity[-1]),
+                             epoch_index=int(ev.epoch_index[i]), condition=ev.condition[i], dof=dof, n_reg=dm.shape[1]))
+    os.makedirs(L1D, exist_ok=True)
+    np.savez_compressed(os.path.join(L1D, f"{sub}_lss1.npz"), beta=np.array(Bs, np.float32))
+    pd.DataFrame(rows).to_csv(os.path.join(L1D, f"{sub}_lss1_epochs.csv"), index=False)
+    print(f"{sub}: {len(rows)} paced epochs in {time.time() - t0:.0f} s", flush=True)
+
+
+def run_lss1():
+    """E13 primary and S-conf, exactly as run(), on the label-free LSS betas."""
+    X0, E = load()
+    X = []
+    for s in E.subject.unique():
+        L = pd.read_csv(os.path.join(L1D, f"{s}_lss1_epochs.csv"))
+        Es = E[E.subject == s]
+        assert (L.entity.values == Es.entity.values).all() and (L.epoch_index.values == Es.epoch_index.values).all() \
+            and (L.condition.values == Es.condition.values).all(), s
+        B = np.load(os.path.join(L1D, f"{s}_lss1.npz"))["beta"].astype(np.float64)
+        X.append(B - B.mean(0, keepdims=True))
+    X = np.vstack(X); assert X.shape == X0.shape
+    A = sets(E); Xa, Ea = X[A], E[A].reset_index(drop=True)
+    y = (Ea.condition == "paced_aware").astype(int).values; grp = Ea.subject.values
+    strata = (Ea.subject + "_" + Ea.run.astype(str)).values; n = len(y)
+    folds = fold_kernels(Xa, grp)
+    auc = within_auc(y, svm_decision(folds, y, n), grp); v = np.array(list(auc.values()))
+    null = run_perms(lambda yp: np.mean(list(within_auc(yp, svm_decision(folds, yp, n), grp).values())), y, strata)
+    lo, hi = boot_ci(v); obs = float(v.mean())
+    rows = [dict(analysis=f"EXPLORATORY {TAG} post-hoc check", betas="label-free LSS (paced_other)",
+                 test="primary decoder, as logged", n_participants_scored=len(v), estimate=obs, ci95_lo=lo, ci95_hi=hi,
+                 null_mean=float(null.mean()), p_one_sided=float((1 + (null >= obs).sum()) / (1 + len(null))), n_perm=len(null),
+                 r_pattern_vs_T4=float(np.mean([np.corrcoef(a, b)[0, 1] for a, b in zip(Xa, X0[A])])))]
+    print(rows[-1], flush=True)
+    cv = E.groupby("subject").confidence.transform("std"); kc = (cv > 0).values
+    Ec = E[kc].reset_index(drop=True); Xc = X[kc]
+    zc = ((Ec.confidence - Ec.groupby("subject").confidence.transform("mean")) / Ec.groupby("subject").confidence.transform("std")).values
+    gc = Ec.subject.values; sc = (Ec.subject + "_" + Ec.run.astype(str)).values
+    rng = np.random.default_rng(SEED)
+    Y = np.column_stack([zc] + [perm_labels(zc, sc, rng) for _ in range(N_PERM)])
+    Pr = kridge_all(Xc, Y, gc)
+    vals = np.array([np.mean(list(within_spearman(Y[:, j], Pr[:, j], gc).values())) for j in range(Y.shape[1])])
+    rho = np.array(list(within_spearman(zc, Pr[:, 0], gc).values())); lo, hi = boot_ci(rho)
+    rows.append(dict(analysis=f"EXPLORATORY {TAG} post-hoc check", betas="label-free LSS (paced_other)",
+                     test="S-conf kernel ridge, as logged", n_participants_scored=len(rho), estimate=float(vals[0]),
+                     ci95_lo=lo, ci95_hi=hi, null_mean=float(vals[1:].mean()),
+                     p_one_sided=float((1 + (vals[1:] >= vals[0]).sum()) / (1 + N_PERM)),
+                     n_perm=N_PERM))
+    print(rows[-1], flush=True)
+    pd.DataFrame(rows).to_csv(os.path.join(RD, f"EXPLORATORY_{TAG}_lss1.csv"), index=False)
+
+
 if __name__ == "__main__":
-    {"counts": counts, "run": run}[sys.argv[1]]()
+    a = sys.argv[1]
+    {"counts": counts, "run": run, "lss1": lambda: lss1(sys.argv[2]), "run_lss1": run_lss1}[a]()

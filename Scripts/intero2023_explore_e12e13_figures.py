@@ -65,10 +65,10 @@ def fig_e13():
         ax.plot([lo, hi], [k, k], color=GRID, lw=6, solid_capstyle="round")
         ax.plot([R.loc[role, "ci95_lo"], R.loc[role, "ci95_hi"]], [k, k], color=col, lw=2)
         ax.scatter([obs], [k], s=50, color=col, edgecolor=SURF, lw=1.5, zorder=3)
-        ax.text(0.385, k + 0.28, f"{lab}: AUC {obs:.3f}, p {p:.2f}, N {int(R.loc[role, 'n_participants_scored'])}",
+        ax.text(0.315, k + 0.28, f"{lab}: AUC {obs:.3f}, p {p:.3f}, N {int(R.loc[role, 'n_participants_scored'])}",
                 fontsize=8, color=INK)
     ax.axvline(0.5, color=MUTED, lw=0.8, ls=(0, (3, 3)))
-    ax.set_yticks([]); ax.set_ylim(-0.5, 2.8); ax.set_xlim(0.38, 0.72)
+    ax.set_yticks([]); ax.set_ylim(-0.5, 2.8); ax.set_xlim(0.30, 0.74)
     ax.set_xlabel("Mean within-participant AUC")
     ax.set_title("Observed (dot, 95% bootstrap CI)\nvs permutation null (grey, 95% range)", fontsize=9, loc="left")
     ax = axs[1]
