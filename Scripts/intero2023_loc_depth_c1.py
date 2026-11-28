@@ -343,7 +343,7 @@ def figure():
     import matplotlib.pyplot as plt
     T = pd.read_csv(os.path.join(RD, PFX + "models.csv"))
     S = pd.read_csv(os.path.join(RD, PFX + "subjects.csv"))
-    INK, MUTED, GRID, ACC, ACC2 = "#1f2328", "#6e7781", "#d0d7de", "#2b6cb0", "#c05621"
+    INK, MUTED, GRID, ACC, ACC2 = "#0b0b0b", "#52514e", "#dcdbd6", "#2a78d6", "#eb6834"
     names = {"caren_AInsL": "AInsL", "caren_AInsR": "AInsR", "caren_dACC": "dACC", GM: "Cortical grey matter"}
     fig, axs = plt.subplots(2, 4, figsize=(13, 6.8), sharex="row")
     for i, con in enumerate(["C1", "C4"]):
@@ -357,7 +357,7 @@ def figure():
             ax.plot(xx, t.intercept + t.slope * xx, color=ACC, lw=1.6, label="OLS")
             if t.corr_identifiable:
                 ax.plot(xx, t.intercept_corr + t.slope_corr * xx, color=ACC2, lw=1.4, ls="--",
-                        label="corrected for unreliability")
+                        label="corrected for unreliability (very imprecise)")
             ax.errorbar([0], [t.intercept], yerr=[[t.intercept - t.intercept_lo], [t.intercept_hi - t.intercept]],
                         fmt="o", color=INK, ms=5, capsize=3, zorder=5)
             p = t.intercept_p_holm3 if r in MASKS else t.intercept_p

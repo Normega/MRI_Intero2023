@@ -1104,6 +1104,95 @@ The participant alignments themselves are weak. Mean z lies between −0.16 and 
 - **Not run:** tier B (participant gradients); a surface refit of the first levels (the plan's sensitivity).
 - No registered result was changed.
 
+# Exploratory: does the breathing-depth difference explain the Intero deactivation across participants?
+
+**Exploratory and post hoc.** Every earlier localizer result had been seen. The full specification was logged in `Preregistration/localizer_deviations.md` and committed (aafc71b) before any intercept or slope was computed. A later row records the post hoc notes.
+- Script: `Scripts/intero2023_loc_depth_c1.py`.
+- Tables: `Analysis/results/EXPLORATORY_LOC_depth_{checks,models,subjects}.csv`.
+- Figure: `Figures/localizer/loc_depth_c1.png`.
+
+**Question.** Intero breathing is deeper than Extero breathing (RVT dz .88). Within-run RVT regressors remove 16–25% of L1. Here the question is asked between participants. Does a participant's Intero − Extero depth difference predict their C1? And what C1 does the regression predict at equal depth (x = 0, the intercept)?
+
+**Method in brief.**
+- **Depth measure, x.** It is scale-free, because belt gain differs between participants. Per run, x is the log of mean block RVT in Intero over mean block RVT in Extero. Block RVT = median breath amplitude / median breath period, from the step-1 block table. The participant value is the mean over usable runs, and zero means equal depth.
+  - The stored `rvt_z` is z-scored within run, so it cannot form a ratio.
+  - x correlates .75 with the Intero − Extero `rvt_z` difference.
+  - Secondary measure: the same ratio using breath amplitude only (depth).
+- **Outcome.** The registered joint 6 mm C1 mask mean in AInsL, AInsR and dACC. The extraction reproduces `LOC_L1_subjects.csv` exactly. Secondary outcome: the cortical grey-matter mean.
+- **Model.** OLS, C1 ~ 1 + x, with x uncentred and HC3 SEs. The primary test is the intercept, Holm ×3. The slope is tested Holm ×3 separately.
+- **Measurement-error correction (regression calibration).** The true-score variance is the run 1 × run 2 covariance of x. Each participant's reliability is the Spearman–Brown value for their number of runs. CIs come from a participant bootstrap that re-estimates the reliability in every draw (10,000 draws, seed 20261128).
+
+**N.** 31 of the 48 L1 participants (22 with both runs).
+- 13 have no usable belt run.
+- 4 have no Extero block with ≥ 2 detected breaths.
+- The 31 have mean C1 −0.115 / −0.084 / −0.131 PSC (dz −0.72 / −0.46 / −0.62). This is close to the full L1 sample.
+
+**The depth measure is noisy.**
+- Intero is deeper in 23 of 31 participants: mean x 0.53, i.e. about 1.7 × the Extero RVT, SD 0.77. x = 0 lies 0.7 SD below the mean, inside the data (8 participants have x ≤ 0).
+- Run 1 vs run 2: r .21 (95% CI −.23 to .58; n 22). Spearman–Brown reliability is .35 for a two-run mean and .21 for one run. The depth-only ratio gives .24 / .39.
+- The registered `rvt_z` difference is not reliable at all (r −.05).
+- One-run participants vary twice as much as single runs of two-run participants (var 1.10 vs 0.55). Their single runs are probably noisier still.
+
+**C1 on the depth ratio (N 31; `EXPLORATORY_LOC_depth_models.csv`).** CIs are 95% HC3.
+
+| Mask | Mean C1 | Intercept (C1 at equal depth) [95% CI] | p, Holm ×3 | Intercept / mean | Slope per log unit [95% CI] | p, Holm ×3 |
+|---|---|---|---|---|---|---|
+| AInsL | −0.115 | −0.076 [−0.148, −0.004] | .039, **.12** | 0.66 | −0.073 [−0.125, −0.020] | .009, **.026** |
+| AInsR | −0.084 | −0.042 [−0.128, +0.044] | .32, **.32** | 0.50 | −0.078 [−0.143, −0.014] | .019, **.037** |
+| dACC | −0.131 | −0.087 [−0.183, +0.010] | .076, **.15** | 0.66 | −0.083 [−0.152, −0.014] | .020, **.037** |
+| Cortical GM (secondary) | −0.105 | −0.069 [−0.131, −0.008] | .028 (unadjusted) | 0.66 | −0.066 [−0.107, −0.026] | .002 |
+
+- **Slope.** A larger Intero − Extero depth difference goes with a larger deactivation, in every mask (Holm p .026–.037; Spearman ρ −.42 to −.46). The same holds in cortical grey matter.
+- **Intercept.** At equal depth the predicted C1 is 50–66% of the mean and still negative in every mask. No mask passes Holm. AInsL is the only mask with an uncorrected p below .05 (.039).
+- **Influence.** Leave-one-out intercepts range from −0.092 to −0.060 (AInsL), −0.058 to −0.016 (AInsR) and −0.100 to −0.060 (dACC). The maximum leverage is .22.
+- **Depth only (secondary).** Intercepts −0.068 / −0.034 / −0.079 (Holm .12 / .39 / .16). Slopes −0.096 / −0.102 / −0.107 (Holm .003 / .006 / .005).
+- **Two-run participants only (sensitivity, n 22).** Intercepts −0.051 / −0.020 / −0.045 (p .23 / .72 / .44). Slopes −0.117 / −0.130 / −0.132 (p .029 / .082 / .046).
+
+**Corrected for the unreliability of x.**
+
+| Mask | Corrected intercept [bootstrap 95% CI] | Corrected slope [CI] |
+|---|---|---|
+| AInsL | +0.034 [−0.103, +0.724] | −0.29 [−1.66, −0.08] |
+| AInsR | +0.078 [−0.085, +0.918] | −0.31 [−2.01, −0.07] |
+| dACC | +0.041 [−0.146, +0.905] | −0.33 [−2.12, −0.06] |
+| Cortical GM | +0.027 [−0.084, +0.619] | −0.25 [−1.51, −0.08] |
+
+- Correcting the attenuated slope moves the point intercepts to about zero or slightly positive.
+- The correction is barely identified. In 3,065 of 10,000 bootstrap draws the reliability fell below the 0.10 floor. The upper CI bounds are therefore set largely by the floor.
+- The corrected values bound the problem; they are not an estimate. The uncorrected intercept overstates the C1 that remains at equal depth by an amount these data cannot fix. The plausible range runs from about the uncorrected value to zero or above.
+
+**Match − Extero (C4; N 37, 24 with both runs; Match/Extero RVT ratio, mean 0.78).**
+- C4 at equal depth stays clearly negative: intercepts −0.157 [−0.237, −0.077], −0.176 [−0.280, −0.071] and −0.178 [−0.274, −0.082] (Holm p .001 / .002 / .001). That is 75–87% of the mean C4.
+- The slopes are smaller: −0.067 / −0.035 / −0.072 (Holm .11 / .40 / .11).
+- Depth only: intercepts Holm ≤ .001 in all three masks.
+- Two-run only (n 24): intercepts −0.099 / −0.140 / −0.109 (p .041 / .068 / .031).
+- Corrected intercepts are −0.058 [−0.192, +0.879], −0.122 [−0.351, +0.571] and −0.078 [−0.245, +1.003]; 1,054 draws were floored.
+- C4 also contrasts breath control with visual tracking, and its depth difference is larger. Yet more of it remains at equal depth than for C1.
+
+**PetCO2 (descriptive, no correction).**
+- **C1 subset (n 20).** End-tidal CO2 is *higher* in Intero than in Extero blocks: +0.28 %CO2, dz 0.63, p .011. It is unrelated to x (ρ .10).
+  - C1 ~ ΔPetCO2: slopes −0.16 / −0.23 / −0.19 (p .07 / .04 / .12).
+  - Intercepts −0.081 / −0.017 / −0.077 (p .05 / .65 / .15).
+- **C4 subset (n 23).** ΔPetCO2 +0.40 %CO2, dz 0.71, p .003, ρ with x .71.
+  - C4 intercepts at ΔPetCO2 = 0 stay negative (p .001 / .015 / .004).
+- **Reading.** Deeper breaths sample more alveolar gas, so a higher end-tidal reading need not mean higher arterial CO2. In the small C1 subset, larger CO2 differences go with larger deactivations. That fits a CO2 contribution, but it is not a test of one.
+
+**Reading.**
+- **The slope.** Across participants, a larger Intero − Extero breathing-depth difference goes with a larger C1 deactivation in all three registered masks. The between-participant link between depth and the deactivation is real.
+- **The intercept.** At equal depth the predicted C1 shrinks to 50–66% of its mean. It is still negative in every mask, but not Holm-significant in any. The depth ratio is so unreliable (two-run reliability about .35) that even this intercept is probably an overstatement. The corrected intercept is near zero, with a CI too wide to say anything.
+- **What can be concluded.** These data do not show that the Intero deactivation survives at equal breathing depth. They do not show that it disappears either.
+- **Two caveats limit any causal reading:**
+  - deeper breathing may itself be part of attending to the breath;
+  - a between-participant slope can also reflect shared engagement (people who engage more may both breathe more deeply and deactivate more).
+- **How this fits the earlier results.** The within-run RVT co-report (L1 breathing-robust, 75–84% retained) remains the registered answer. This between-participant analysis is weaker evidence for a non-respiratory component. The Match − Extero contrast keeps most of its effect at equal depth.
+
+## Deviations (depth × C1)
+- **Logged before running (aafc71b):** the full specification, with the label-free checks (coverage, distributions, run 1 vs run 2 reliability).
+- **Post hoc (logged after the tables were seen):**
+  - the reading of the corrected estimates as uninformative, because 31% of bootstrap draws (C1) hit the reliability floor;
+  - a figure legend wording change.
+- No registered result was changed.
+
 # Synthesis: what the localizer shows about attention to the breath
 
 **What it shows.**
