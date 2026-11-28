@@ -1,0 +1,47 @@
+check,value,note
+vol_atlas_grid_equals_glm_grid,True,"(97, 115, 97)"
+parcels_kept,394,rule: >= 50% of atlas voxels in group brain mask
+parcel_dropped,7Networks_LH_Limbic_TempPole_1,in-mask fraction 0.19
+parcel_dropped,7Networks_LH_Limbic_TempPole_2,in-mask fraction 0.35
+parcel_dropped,7Networks_LH_Limbic_TempPole_4,in-mask fraction 0.49
+parcel_dropped,7Networks_RH_Limbic_TempPole_1,in-mask fraction 0.41
+parcel_dropped,7Networks_RH_Limbic_TempPole_2,in-mask fraction 0.22
+parcel_dropped,7Networks_RH_Limbic_TempPole_3,in-mask fraction 0.39
+kept_parcel_in_mask_voxels_min_median,55 / 294,
+surface_vertices_per_parcel_min,48,
+label_index_hemi_network_match,True,66 names differ only by CBIG's 2020 renaming of sub-labels
+centroid_distance_mm_median_p95_max,3.8 / 6.5 / 11.1,volumetric (MNI152NLin2009cAsym) vs fsLR S1200 midthickness parcel centroid; spaces differ slightly
+centroid_nearest_is_same_label,397/400,
+G1_sign_flipped_by_rule,False,"rule ['Default'] > ['Vis', 'SomMot']"
+G1_network_mean_Vis,-3.363,
+G1_network_mean_SomMot,-4.635,
+G1_network_mean_DorsAttn,-2.121,
+G1_network_mean_SalVentAttn,-1.835,
+G1_network_mean_Limbic,3.256,
+G1_network_mean_Cont,3.064,
+G1_network_mean_Default,4.513,
+G2_sign_flipped_by_rule,False,rule ['Vis'] > ['SomMot']
+G2_network_mean_Vis,4.022,
+G2_network_mean_SomMot,-2.193,
+G2_network_mean_DorsAttn,1.038,
+G2_network_mean_SalVentAttn,-0.59,
+G2_network_mean_Limbic,0.231,
+G2_network_mean_Cont,0.204,
+G2_network_mean_Default,-0.052,
+G3_sign_flipped_by_rule,False,rule ['Cont'] > ['Default']
+G3_network_mean_Vis,-0.901,
+G3_network_mean_SomMot,-1.163,
+G3_network_mean_DorsAttn,0.848,
+G3_network_mean_SalVentAttn,1.034,
+G3_network_mean_Limbic,-1.003,
+G3_network_mean_Cont,1.419,
+G3_network_mean_Default,-1.224,
+gradient_intercorrelation_spearman_G1G2_G1G3_G2G3,0.238 / 0.082 / 0.211,kept parcels
+q4_N,34,Intero set ∩ tracking PLV ∩ Match PLV ∩ Intero period_cv
+q4_n_protocol_v1,4,
+q4_period_cv_two_run_participants,27,
+q4_vif_tracking_plv,2.268,
+q4_vif_match_plv,2.828,
+q4_vif_period_cv,1.384,
+q4_vif_protocol,1.607,
+q4_match_plv_dropped,False,rule: drop Match PLV if any VIF > 5.0
